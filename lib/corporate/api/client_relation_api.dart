@@ -89,6 +89,10 @@ class ClientRelationApi {
   /// * [clientLeftSquareBracketRightSquareBracket] - 
   /// * [clientRelated] - 
   /// * [clientRelatedLeftSquareBracketRightSquareBracket] - 
+  /// * [orderLeftSquareBracketClientRelatedRightSquareBracket] - 
+  /// * [orderLeftSquareBracketTypeRightSquareBracket] - 
+  /// * [orderLeftSquareBracketBeginRightSquareBracket] - 
+  /// * [orderLeftSquareBracketEndRightSquareBracket] - 
   /// * [site] - 
   /// * [siteLeftSquareBracketRightSquareBracket] - 
   /// * [type] - 
@@ -115,6 +119,10 @@ class ClientRelationApi {
     BuiltList<String>? clientLeftSquareBracketRightSquareBracket,
     String? clientRelated,
     BuiltList<String>? clientRelatedLeftSquareBracketRightSquareBracket,
+    String? orderLeftSquareBracketClientRelatedRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketTypeRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketBeginRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketEndRightSquareBracket = 'asc',
     int? site,
     BuiltList<int>? siteLeftSquareBracketRightSquareBracket,
     String? type,
@@ -159,6 +167,10 @@ class ClientRelationApi {
       if (clientLeftSquareBracketRightSquareBracket != null) r'client[]': encodeCollectionQueryParameter<String>(_serializers, clientLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (clientRelated != null) r'clientRelated': encodeQueryParameter(_serializers, clientRelated, const FullType(String)),
       if (clientRelatedLeftSquareBracketRightSquareBracket != null) r'clientRelated[]': encodeCollectionQueryParameter<String>(_serializers, clientRelatedLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (orderLeftSquareBracketClientRelatedRightSquareBracket != null) r'order[clientRelated]': encodeQueryParameter(_serializers, orderLeftSquareBracketClientRelatedRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketTypeRightSquareBracket != null) r'order[type]': encodeQueryParameter(_serializers, orderLeftSquareBracketTypeRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketBeginRightSquareBracket != null) r'order[begin]': encodeQueryParameter(_serializers, orderLeftSquareBracketBeginRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketEndRightSquareBracket != null) r'order[end]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndRightSquareBracket, const FullType(String)),
       if (site != null) r'site': encodeQueryParameter(_serializers, site, const FullType(int)),
       if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': encodeCollectionQueryParameter<int>(_serializers, siteLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),

@@ -1,77 +1,90 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'package_jsonld.dart';
+part of 'package_jsonld_package_read.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-const PackageJsonldTypeEnum _$packageJsonldTypeEnum_standardLetter =
-    const PackageJsonldTypeEnum._('standardLetter');
-const PackageJsonldTypeEnum _$packageJsonldTypeEnum_trackedLetter =
-    const PackageJsonldTypeEnum._('trackedLetter');
-const PackageJsonldTypeEnum _$packageJsonldTypeEnum_registeredLetter =
-    const PackageJsonldTypeEnum._('registeredLetter');
-const PackageJsonldTypeEnum _$packageJsonldTypeEnum_package =
-    const PackageJsonldTypeEnum._('package');
-const PackageJsonldTypeEnum _$packageJsonldTypeEnum_foodPackage =
-    const PackageJsonldTypeEnum._('foodPackage');
+const PackageJsonldPackageReadTypeEnum
+    _$packageJsonldPackageReadTypeEnum_standardLetter =
+    const PackageJsonldPackageReadTypeEnum._('standardLetter');
+const PackageJsonldPackageReadTypeEnum
+    _$packageJsonldPackageReadTypeEnum_trackedLetter =
+    const PackageJsonldPackageReadTypeEnum._('trackedLetter');
+const PackageJsonldPackageReadTypeEnum
+    _$packageJsonldPackageReadTypeEnum_registeredLetter =
+    const PackageJsonldPackageReadTypeEnum._('registeredLetter');
+const PackageJsonldPackageReadTypeEnum
+    _$packageJsonldPackageReadTypeEnum_package =
+    const PackageJsonldPackageReadTypeEnum._('package');
+const PackageJsonldPackageReadTypeEnum
+    _$packageJsonldPackageReadTypeEnum_foodPackage =
+    const PackageJsonldPackageReadTypeEnum._('foodPackage');
 
-PackageJsonldTypeEnum _$packageJsonldTypeEnumValueOf(String name) {
+PackageJsonldPackageReadTypeEnum _$packageJsonldPackageReadTypeEnumValueOf(
+    String name) {
   switch (name) {
     case 'standardLetter':
-      return _$packageJsonldTypeEnum_standardLetter;
+      return _$packageJsonldPackageReadTypeEnum_standardLetter;
     case 'trackedLetter':
-      return _$packageJsonldTypeEnum_trackedLetter;
+      return _$packageJsonldPackageReadTypeEnum_trackedLetter;
     case 'registeredLetter':
-      return _$packageJsonldTypeEnum_registeredLetter;
+      return _$packageJsonldPackageReadTypeEnum_registeredLetter;
     case 'package':
-      return _$packageJsonldTypeEnum_package;
+      return _$packageJsonldPackageReadTypeEnum_package;
     case 'foodPackage':
-      return _$packageJsonldTypeEnum_foodPackage;
+      return _$packageJsonldPackageReadTypeEnum_foodPackage;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<PackageJsonldTypeEnum> _$packageJsonldTypeEnumValues =
-    new BuiltSet<PackageJsonldTypeEnum>(const <PackageJsonldTypeEnum>[
-  _$packageJsonldTypeEnum_standardLetter,
-  _$packageJsonldTypeEnum_trackedLetter,
-  _$packageJsonldTypeEnum_registeredLetter,
-  _$packageJsonldTypeEnum_package,
-  _$packageJsonldTypeEnum_foodPackage,
+final BuiltSet<PackageJsonldPackageReadTypeEnum>
+    _$packageJsonldPackageReadTypeEnumValues = new BuiltSet<
+        PackageJsonldPackageReadTypeEnum>(const <PackageJsonldPackageReadTypeEnum>[
+  _$packageJsonldPackageReadTypeEnum_standardLetter,
+  _$packageJsonldPackageReadTypeEnum_trackedLetter,
+  _$packageJsonldPackageReadTypeEnum_registeredLetter,
+  _$packageJsonldPackageReadTypeEnum_package,
+  _$packageJsonldPackageReadTypeEnum_foodPackage,
 ]);
 
-const PackageJsonldStatusEnum _$packageJsonldStatusEnum_received =
-    const PackageJsonldStatusEnum._('received');
-const PackageJsonldStatusEnum _$packageJsonldStatusEnum_handedOver =
-    const PackageJsonldStatusEnum._('handedOver');
+const PackageJsonldPackageReadStatusEnum
+    _$packageJsonldPackageReadStatusEnum_received =
+    const PackageJsonldPackageReadStatusEnum._('received');
+const PackageJsonldPackageReadStatusEnum
+    _$packageJsonldPackageReadStatusEnum_handedOver =
+    const PackageJsonldPackageReadStatusEnum._('handedOver');
 
-PackageJsonldStatusEnum _$packageJsonldStatusEnumValueOf(String name) {
+PackageJsonldPackageReadStatusEnum _$packageJsonldPackageReadStatusEnumValueOf(
+    String name) {
   switch (name) {
     case 'received':
-      return _$packageJsonldStatusEnum_received;
+      return _$packageJsonldPackageReadStatusEnum_received;
     case 'handedOver':
-      return _$packageJsonldStatusEnum_handedOver;
+      return _$packageJsonldPackageReadStatusEnum_handedOver;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<PackageJsonldStatusEnum> _$packageJsonldStatusEnumValues =
-    new BuiltSet<PackageJsonldStatusEnum>(const <PackageJsonldStatusEnum>[
-  _$packageJsonldStatusEnum_received,
-  _$packageJsonldStatusEnum_handedOver,
+final BuiltSet<PackageJsonldPackageReadStatusEnum>
+    _$packageJsonldPackageReadStatusEnumValues = new BuiltSet<
+        PackageJsonldPackageReadStatusEnum>(const <PackageJsonldPackageReadStatusEnum>[
+  _$packageJsonldPackageReadStatusEnum_received,
+  _$packageJsonldPackageReadStatusEnum_handedOver,
 ]);
 
-Serializer<PackageJsonldTypeEnum> _$packageJsonldTypeEnumSerializer =
-    new _$PackageJsonldTypeEnumSerializer();
-Serializer<PackageJsonldStatusEnum> _$packageJsonldStatusEnumSerializer =
-    new _$PackageJsonldStatusEnumSerializer();
+Serializer<PackageJsonldPackageReadTypeEnum>
+    _$packageJsonldPackageReadTypeEnumSerializer =
+    new _$PackageJsonldPackageReadTypeEnumSerializer();
+Serializer<PackageJsonldPackageReadStatusEnum>
+    _$packageJsonldPackageReadStatusEnumSerializer =
+    new _$PackageJsonldPackageReadStatusEnumSerializer();
 
-class _$PackageJsonldTypeEnumSerializer
-    implements PrimitiveSerializer<PackageJsonldTypeEnum> {
+class _$PackageJsonldPackageReadTypeEnumSerializer
+    implements PrimitiveSerializer<PackageJsonldPackageReadTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'standardLetter': 'standard_letter',
     'trackedLetter': 'tracked_letter',
@@ -88,24 +101,26 @@ class _$PackageJsonldTypeEnumSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[PackageJsonldTypeEnum];
+  final Iterable<Type> types = const <Type>[PackageJsonldPackageReadTypeEnum];
   @override
-  final String wireName = 'PackageJsonldTypeEnum';
+  final String wireName = 'PackageJsonldPackageReadTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, PackageJsonldTypeEnum object,
+  Object serialize(
+          Serializers serializers, PackageJsonldPackageReadTypeEnum object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  PackageJsonldTypeEnum deserialize(Serializers serializers, Object serialized,
+  PackageJsonldPackageReadTypeEnum deserialize(
+          Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      PackageJsonldTypeEnum.valueOf(
+      PackageJsonldPackageReadTypeEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$PackageJsonldStatusEnumSerializer
-    implements PrimitiveSerializer<PackageJsonldStatusEnum> {
+class _$PackageJsonldPackageReadStatusEnumSerializer
+    implements PrimitiveSerializer<PackageJsonldPackageReadStatusEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'received': 'received',
     'handedOver': 'handed_over',
@@ -116,24 +131,25 @@ class _$PackageJsonldStatusEnumSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[PackageJsonldStatusEnum];
+  final Iterable<Type> types = const <Type>[PackageJsonldPackageReadStatusEnum];
   @override
-  final String wireName = 'PackageJsonldStatusEnum';
+  final String wireName = 'PackageJsonldPackageReadStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, PackageJsonldStatusEnum object,
+  Object serialize(
+          Serializers serializers, PackageJsonldPackageReadStatusEnum object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  PackageJsonldStatusEnum deserialize(
+  PackageJsonldPackageReadStatusEnum deserialize(
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      PackageJsonldStatusEnum.valueOf(
+      PackageJsonldPackageReadStatusEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$PackageJsonld extends PackageJsonld {
+class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
   @override
   final AppointmentJsonldAppointmentReadContext? atContext;
   @override
@@ -149,9 +165,9 @@ class _$PackageJsonld extends PackageJsonld {
   @override
   final int site;
   @override
-  final PackageJsonldTypeEnum type;
+  final PackageJsonldPackageReadTypeEnum type;
   @override
-  final PackageJsonldStatusEnum status;
+  final PackageJsonldPackageReadStatusEnum status;
   @override
   final String? senderName;
   @override
@@ -159,18 +175,15 @@ class _$PackageJsonld extends PackageJsonld {
   @override
   final String? handoverDate;
   @override
-  final String? securityCode;
-  @override
   final String? handoverClient;
   @override
-  final DateTime? createdAt;
-  @override
-  final DateTime? updatedAt;
+  final String? securityCode;
 
-  factory _$PackageJsonld([void Function(PackageJsonldBuilder)? updates]) =>
-      (new PackageJsonldBuilder()..update(updates))._build();
+  factory _$PackageJsonldPackageRead(
+          [void Function(PackageJsonldPackageReadBuilder)? updates]) =>
+      (new PackageJsonldPackageReadBuilder()..update(updates))._build();
 
-  _$PackageJsonld._(
+  _$PackageJsonldPackageRead._(
       {this.atContext,
       this.atId,
       this.atType,
@@ -183,32 +196,36 @@ class _$PackageJsonld extends PackageJsonld {
       this.senderName,
       required this.receptionDate,
       this.handoverDate,
-      this.securityCode,
       this.handoverClient,
-      this.createdAt,
-      this.updatedAt})
+      this.securityCode})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        recipient, r'PackageJsonld', 'recipient');
-    BuiltValueNullFieldError.checkNotNull(staff, r'PackageJsonld', 'staff');
-    BuiltValueNullFieldError.checkNotNull(site, r'PackageJsonld', 'site');
-    BuiltValueNullFieldError.checkNotNull(type, r'PackageJsonld', 'type');
-    BuiltValueNullFieldError.checkNotNull(status, r'PackageJsonld', 'status');
+        recipient, r'PackageJsonldPackageRead', 'recipient');
     BuiltValueNullFieldError.checkNotNull(
-        receptionDate, r'PackageJsonld', 'receptionDate');
+        staff, r'PackageJsonldPackageRead', 'staff');
+    BuiltValueNullFieldError.checkNotNull(
+        site, r'PackageJsonldPackageRead', 'site');
+    BuiltValueNullFieldError.checkNotNull(
+        type, r'PackageJsonldPackageRead', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        status, r'PackageJsonldPackageRead', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        receptionDate, r'PackageJsonldPackageRead', 'receptionDate');
   }
 
   @override
-  PackageJsonld rebuild(void Function(PackageJsonldBuilder) updates) =>
+  PackageJsonldPackageRead rebuild(
+          void Function(PackageJsonldPackageReadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  PackageJsonldBuilder toBuilder() => new PackageJsonldBuilder()..replace(this);
+  PackageJsonldPackageReadBuilder toBuilder() =>
+      new PackageJsonldPackageReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is PackageJsonld &&
+    return other is PackageJsonldPackageRead &&
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
@@ -221,10 +238,8 @@ class _$PackageJsonld extends PackageJsonld {
         senderName == other.senderName &&
         receptionDate == other.receptionDate &&
         handoverDate == other.handoverDate &&
-        securityCode == other.securityCode &&
         handoverClient == other.handoverClient &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        securityCode == other.securityCode;
   }
 
   @override
@@ -242,17 +257,15 @@ class _$PackageJsonld extends PackageJsonld {
     _$hash = $jc(_$hash, senderName.hashCode);
     _$hash = $jc(_$hash, receptionDate.hashCode);
     _$hash = $jc(_$hash, handoverDate.hashCode);
-    _$hash = $jc(_$hash, securityCode.hashCode);
     _$hash = $jc(_$hash, handoverClient.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, securityCode.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'PackageJsonld')
+    return (newBuiltValueToStringHelper(r'PackageJsonldPackageRead')
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
@@ -265,17 +278,16 @@ class _$PackageJsonld extends PackageJsonld {
           ..add('senderName', senderName)
           ..add('receptionDate', receptionDate)
           ..add('handoverDate', handoverDate)
-          ..add('securityCode', securityCode)
           ..add('handoverClient', handoverClient)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('securityCode', securityCode))
         .toString();
   }
 }
 
-class PackageJsonldBuilder
-    implements Builder<PackageJsonld, PackageJsonldBuilder> {
-  _$PackageJsonld? _$v;
+class PackageJsonldPackageReadBuilder
+    implements
+        Builder<PackageJsonldPackageRead, PackageJsonldPackageReadBuilder> {
+  _$PackageJsonldPackageRead? _$v;
 
   AppointmentJsonldAppointmentReadContextBuilder? _atContext;
   AppointmentJsonldAppointmentReadContextBuilder get atContext =>
@@ -308,13 +320,14 @@ class PackageJsonldBuilder
   int? get site => _$this._site;
   set site(int? site) => _$this._site = site;
 
-  PackageJsonldTypeEnum? _type;
-  PackageJsonldTypeEnum? get type => _$this._type;
-  set type(PackageJsonldTypeEnum? type) => _$this._type = type;
+  PackageJsonldPackageReadTypeEnum? _type;
+  PackageJsonldPackageReadTypeEnum? get type => _$this._type;
+  set type(PackageJsonldPackageReadTypeEnum? type) => _$this._type = type;
 
-  PackageJsonldStatusEnum? _status;
-  PackageJsonldStatusEnum? get status => _$this._status;
-  set status(PackageJsonldStatusEnum? status) => _$this._status = status;
+  PackageJsonldPackageReadStatusEnum? _status;
+  PackageJsonldPackageReadStatusEnum? get status => _$this._status;
+  set status(PackageJsonldPackageReadStatusEnum? status) =>
+      _$this._status = status;
 
   String? _senderName;
   String? get senderName => _$this._senderName;
@@ -329,28 +342,20 @@ class PackageJsonldBuilder
   String? get handoverDate => _$this._handoverDate;
   set handoverDate(String? handoverDate) => _$this._handoverDate = handoverDate;
 
-  String? _securityCode;
-  String? get securityCode => _$this._securityCode;
-  set securityCode(String? securityCode) => _$this._securityCode = securityCode;
-
   String? _handoverClient;
   String? get handoverClient => _$this._handoverClient;
   set handoverClient(String? handoverClient) =>
       _$this._handoverClient = handoverClient;
 
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+  String? _securityCode;
+  String? get securityCode => _$this._securityCode;
+  set securityCode(String? securityCode) => _$this._securityCode = securityCode;
 
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
-  PackageJsonldBuilder() {
-    PackageJsonld._defaults(this);
+  PackageJsonldPackageReadBuilder() {
+    PackageJsonldPackageRead._defaults(this);
   }
 
-  PackageJsonldBuilder get _$this {
+  PackageJsonldPackageReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atContext = $v.atContext?.toBuilder();
@@ -365,56 +370,52 @@ class PackageJsonldBuilder
       _senderName = $v.senderName;
       _receptionDate = $v.receptionDate;
       _handoverDate = $v.handoverDate;
-      _securityCode = $v.securityCode;
       _handoverClient = $v.handoverClient;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
+      _securityCode = $v.securityCode;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(PackageJsonld other) {
+  void replace(PackageJsonldPackageRead other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$PackageJsonld;
+    _$v = other as _$PackageJsonldPackageRead;
   }
 
   @override
-  void update(void Function(PackageJsonldBuilder)? updates) {
+  void update(void Function(PackageJsonldPackageReadBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  PackageJsonld build() => _build();
+  PackageJsonldPackageRead build() => _build();
 
-  _$PackageJsonld _build() {
-    _$PackageJsonld _$result;
+  _$PackageJsonldPackageRead _build() {
+    _$PackageJsonldPackageRead _$result;
     try {
       _$result = _$v ??
-          new _$PackageJsonld._(
+          new _$PackageJsonldPackageRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
             id: id,
             recipient: BuiltValueNullFieldError.checkNotNull(
-                recipient, r'PackageJsonld', 'recipient'),
+                recipient, r'PackageJsonldPackageRead', 'recipient'),
             staff: BuiltValueNullFieldError.checkNotNull(
-                staff, r'PackageJsonld', 'staff'),
+                staff, r'PackageJsonldPackageRead', 'staff'),
             site: BuiltValueNullFieldError.checkNotNull(
-                site, r'PackageJsonld', 'site'),
+                site, r'PackageJsonldPackageRead', 'site'),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'PackageJsonld', 'type'),
+                type, r'PackageJsonldPackageRead', 'type'),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'PackageJsonld', 'status'),
+                status, r'PackageJsonldPackageRead', 'status'),
             senderName: senderName,
             receptionDate: BuiltValueNullFieldError.checkNotNull(
-                receptionDate, r'PackageJsonld', 'receptionDate'),
+                receptionDate, r'PackageJsonldPackageRead', 'receptionDate'),
             handoverDate: handoverDate,
-            securityCode: securityCode,
             handoverClient: handoverClient,
-            createdAt: createdAt,
-            updatedAt: updatedAt,
+            securityCode: securityCode,
           );
     } catch (_) {
       late String _$failedField;
@@ -423,7 +424,7 @@ class PackageJsonldBuilder
         _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'PackageJsonld', _$failedField, e.toString());
+            r'PackageJsonldPackageRead', _$failedField, e.toString());
       }
       rethrow;
     }

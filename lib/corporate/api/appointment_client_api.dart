@@ -92,6 +92,7 @@ class AppointmentClientApi {
   /// * [client] - 
   /// * [clientLeftSquareBracketRightSquareBracket] - 
   /// * [status] - 
+  /// * [orderLeftSquareBracketStatusRightSquareBracket] - 
   /// * [responseDateLeftSquareBracketBeforeRightSquareBracket] - 
   /// * [responseDateLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [responseDateLeftSquareBracketAfterRightSquareBracket] - 
@@ -116,6 +117,7 @@ class AppointmentClientApi {
     String? client,
     BuiltList<String>? clientLeftSquareBracketRightSquareBracket,
     String? status,
+    String? orderLeftSquareBracketStatusRightSquareBracket = 'asc',
     String? responseDateLeftSquareBracketBeforeRightSquareBracket,
     String? responseDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? responseDateLeftSquareBracketAfterRightSquareBracket,
@@ -158,6 +160,7 @@ class AppointmentClientApi {
       if (client != null) r'client': encodeQueryParameter(_serializers, client, const FullType(String)),
       if (clientLeftSquareBracketRightSquareBracket != null) r'client[]': encodeCollectionQueryParameter<String>(_serializers, clientLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
+      if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': encodeQueryParameter(_serializers, orderLeftSquareBracketStatusRightSquareBracket, const FullType(String)),
       if (responseDateLeftSquareBracketBeforeRightSquareBracket != null) r'responseDate[before]': encodeQueryParameter(_serializers, responseDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
       if (responseDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'responseDate[strictly_before]': encodeQueryParameter(_serializers, responseDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (responseDateLeftSquareBracketAfterRightSquareBracket != null) r'responseDate[after]': encodeQueryParameter(_serializers, responseDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),

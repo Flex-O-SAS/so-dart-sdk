@@ -93,6 +93,13 @@ class AppointmentApi {
   /// * [staffLeftSquareBracketRightSquareBracket] - 
   /// * [site] - 
   /// * [siteLeftSquareBracketRightSquareBracket] - 
+  /// * [orderLeftSquareBracketOrganiserRightSquareBracket] - 
+  /// * [orderLeftSquareBracketTypeRightSquareBracket] - 
+  /// * [orderLeftSquareBracketDescriptionRightSquareBracket] - 
+  /// * [orderLeftSquareBracketStatusRightSquareBracket] - 
+  /// * [orderLeftSquareBracketCancellationDateRightSquareBracket] - 
+  /// * [orderLeftSquareBracketBeginDateRightSquareBracket] - 
+  /// * [orderLeftSquareBracketEndDateRightSquareBracket] - 
   /// * [type] - 
   /// * [status] - 
   /// * [cancellationDateLeftSquareBracketBeforeRightSquareBracket] - 
@@ -124,6 +131,13 @@ class AppointmentApi {
     BuiltList<String>? staffLeftSquareBracketRightSquareBracket,
     int? site,
     BuiltList<int>? siteLeftSquareBracketRightSquareBracket,
+    String? orderLeftSquareBracketOrganiserRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketTypeRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketDescriptionRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketStatusRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketCancellationDateRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketBeginDateRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketEndDateRightSquareBracket = 'asc',
     String? type,
     String? status,
     String? cancellationDateLeftSquareBracketBeforeRightSquareBracket,
@@ -173,6 +187,13 @@ class AppointmentApi {
       if (staffLeftSquareBracketRightSquareBracket != null) r'staff[]': encodeCollectionQueryParameter<String>(_serializers, staffLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (site != null) r'site': encodeQueryParameter(_serializers, site, const FullType(int)),
       if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': encodeCollectionQueryParameter<int>(_serializers, siteLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (orderLeftSquareBracketOrganiserRightSquareBracket != null) r'order[organiser]': encodeQueryParameter(_serializers, orderLeftSquareBracketOrganiserRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketTypeRightSquareBracket != null) r'order[type]': encodeQueryParameter(_serializers, orderLeftSquareBracketTypeRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketDescriptionRightSquareBracket != null) r'order[description]': encodeQueryParameter(_serializers, orderLeftSquareBracketDescriptionRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': encodeQueryParameter(_serializers, orderLeftSquareBracketStatusRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketCancellationDateRightSquareBracket != null) r'order[cancellationDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketCancellationDateRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketBeginDateRightSquareBracket != null) r'order[beginDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketBeginDateRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndDateRightSquareBracket, const FullType(String)),
       if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
       if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
       if (cancellationDateLeftSquareBracketBeforeRightSquareBracket != null) r'cancellationDate[before]': encodeQueryParameter(_serializers, cancellationDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),

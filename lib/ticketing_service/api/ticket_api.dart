@@ -30,19 +30,7 @@ class TicketApi {
   /// Parameters:
   /// * [page] - The collection page number
   /// * [groupsLeftSquareBracketRightSquareBracket] - 
-  /// * [orderLeftSquareBracketIdRightSquareBracket] - 
-  /// * [orderLeftSquareBracketTitleRightSquareBracket] - 
-  /// * [orderLeftSquareBracketStartDateRightSquareBracket] - 
-  /// * [orderLeftSquareBracketEndDateRightSquareBracket] - 
-  /// * [orderLeftSquareBracketDescriptionRightSquareBracket] - 
-  /// * [orderLeftSquareBracketAuthorRightSquareBracket] - 
-  /// * [orderLeftSquareBracketAssigneeRightSquareBracket] - 
-  /// * [orderLeftSquareBracketStatusRightSquareBracket] - 
-  /// * [orderLeftSquareBracketSiteRightSquareBracket] - 
-  /// * [orderLeftSquareBracketLocationRightSquareBracket] - 
-  /// * [orderLeftSquareBracketMetadataRightSquareBracket] - 
   /// * [orderLeftSquareBracketCreatedAtRightSquareBracket] - 
-  /// * [orderLeftSquareBracketUpdatedAtRightSquareBracket] - 
   /// * [startDateLeftSquareBracketBeforeRightSquareBracket] - 
   /// * [startDateLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [startDateLeftSquareBracketAfterRightSquareBracket] - 
@@ -86,19 +74,7 @@ class TicketApi {
   Future<Response<ApiApiticketsGetCollection200Response>> apiApiticketsGetCollection({ 
     int? page = 1,
     BuiltList<String>? groupsLeftSquareBracketRightSquareBracket,
-    String? orderLeftSquareBracketIdRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketTitleRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketStartDateRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketEndDateRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketDescriptionRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketAuthorRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketAssigneeRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketStatusRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketSiteRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketLocationRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketMetadataRightSquareBracket = 'asc',
     String? orderLeftSquareBracketCreatedAtRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketUpdatedAtRightSquareBracket = 'asc',
     String? startDateLeftSquareBracketBeforeRightSquareBracket,
     String? startDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? startDateLeftSquareBracketAfterRightSquareBracket,
@@ -160,19 +136,7 @@ class TicketApi {
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
       if (groupsLeftSquareBracketRightSquareBracket != null) r'groups[]': encodeCollectionQueryParameter<String>(_serializers, groupsLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (orderLeftSquareBracketIdRightSquareBracket != null) r'order[id]': encodeQueryParameter(_serializers, orderLeftSquareBracketIdRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketTitleRightSquareBracket != null) r'order[title]': encodeQueryParameter(_serializers, orderLeftSquareBracketTitleRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketStartDateRightSquareBracket != null) r'order[startDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketStartDateRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndDateRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketDescriptionRightSquareBracket != null) r'order[description]': encodeQueryParameter(_serializers, orderLeftSquareBracketDescriptionRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketAuthorRightSquareBracket != null) r'order[author]': encodeQueryParameter(_serializers, orderLeftSquareBracketAuthorRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketAssigneeRightSquareBracket != null) r'order[assignee]': encodeQueryParameter(_serializers, orderLeftSquareBracketAssigneeRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': encodeQueryParameter(_serializers, orderLeftSquareBracketStatusRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketSiteRightSquareBracket != null) r'order[site]': encodeQueryParameter(_serializers, orderLeftSquareBracketSiteRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketLocationRightSquareBracket != null) r'order[location]': encodeQueryParameter(_serializers, orderLeftSquareBracketLocationRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketMetadataRightSquareBracket != null) r'order[metadata]': encodeQueryParameter(_serializers, orderLeftSquareBracketMetadataRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketUpdatedAtRightSquareBracket != null) r'order[updatedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketUpdatedAtRightSquareBracket, const FullType(String)),
       if (startDateLeftSquareBracketBeforeRightSquareBracket != null) r'startDate[before]': encodeQueryParameter(_serializers, startDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
       if (startDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'startDate[strictly_before]': encodeQueryParameter(_serializers, startDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (startDateLeftSquareBracketAfterRightSquareBracket != null) r'startDate[after]': encodeQueryParameter(_serializers, startDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),

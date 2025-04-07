@@ -4,18 +4,14 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'package_jsonld.g.dart';
+part 'package_package_read.g.dart';
 
 /// 
 ///
 /// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
 /// * [id] 
 /// * [recipient] 
 /// * [staff] 
@@ -25,21 +21,10 @@ part 'package_jsonld.g.dart';
 /// * [senderName] 
 /// * [receptionDate] 
 /// * [handoverDate] 
-/// * [securityCode] 
 /// * [handoverClient] 
-/// * [createdAt] 
-/// * [updatedAt] 
+/// * [securityCode] 
 @BuiltValue()
-abstract class PackageJsonld implements Built<PackageJsonld, PackageJsonldBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AppointmentJsonldAppointmentReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
+abstract class PackagePackageRead implements Built<PackagePackageRead, PackagePackageReadBuilder> {
   @BuiltValueField(wireName: r'id')
   int? get id;
 
@@ -53,11 +38,11 @@ abstract class PackageJsonld implements Built<PackageJsonld, PackageJsonldBuilde
   int get site;
 
   @BuiltValueField(wireName: r'type')
-  PackageJsonldTypeEnum get type;
+  PackagePackageReadTypeEnum get type;
   // enum typeEnum {  standard_letter,  tracked_letter,  registered_letter,  package,  food_package,  };
 
   @BuiltValueField(wireName: r'status')
-  PackageJsonldStatusEnum get status;
+  PackagePackageReadStatusEnum get status;
   // enum statusEnum {  received,  handed_over,  };
 
   @BuiltValueField(wireName: r'senderName')
@@ -69,62 +54,35 @@ abstract class PackageJsonld implements Built<PackageJsonld, PackageJsonldBuilde
   @BuiltValueField(wireName: r'handoverDate')
   String? get handoverDate;
 
-  @BuiltValueField(wireName: r'securityCode')
-  String? get securityCode;
-
   @BuiltValueField(wireName: r'handoverClient')
   String? get handoverClient;
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+  @BuiltValueField(wireName: r'securityCode')
+  String? get securityCode;
 
-  @BuiltValueField(wireName: r'updatedAt')
-  DateTime? get updatedAt;
+  PackagePackageRead._();
 
-  PackageJsonld._();
-
-  factory PackageJsonld([void updates(PackageJsonldBuilder b)]) = _$PackageJsonld;
+  factory PackagePackageRead([void updates(PackagePackageReadBuilder b)]) = _$PackagePackageRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PackageJsonldBuilder b) => b;
+  static void _defaults(PackagePackageReadBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<PackageJsonld> get serializer => _$PackageJsonldSerializer();
+  static Serializer<PackagePackageRead> get serializer => _$PackagePackageReadSerializer();
 }
 
-class _$PackageJsonldSerializer implements PrimitiveSerializer<PackageJsonld> {
+class _$PackagePackageReadSerializer implements PrimitiveSerializer<PackagePackageRead> {
   @override
-  final Iterable<Type> types = const [PackageJsonld, _$PackageJsonld];
+  final Iterable<Type> types = const [PackagePackageRead, _$PackagePackageRead];
 
   @override
-  final String wireName = r'PackageJsonld';
+  final String wireName = r'PackagePackageRead';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    PackageJsonld object, {
+    PackagePackageRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(AppointmentJsonldAppointmentReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.id != null) {
       yield r'id';
       yield serializers.serialize(
@@ -150,12 +108,12 @@ class _$PackageJsonldSerializer implements PrimitiveSerializer<PackageJsonld> {
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(PackageJsonldTypeEnum),
+      specifiedType: const FullType(PackagePackageReadTypeEnum),
     );
     yield r'status';
     yield serializers.serialize(
       object.status,
-      specifiedType: const FullType(PackageJsonldStatusEnum),
+      specifiedType: const FullType(PackagePackageReadStatusEnum),
     );
     if (object.senderName != null) {
       yield r'senderName';
@@ -176,11 +134,6 @@ class _$PackageJsonldSerializer implements PrimitiveSerializer<PackageJsonld> {
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'securityCode';
-    yield object.securityCode == null ? null : serializers.serialize(
-      object.securityCode,
-      specifiedType: const FullType.nullable(String),
-    );
     if (object.handoverClient != null) {
       yield r'handoverClient';
       yield serializers.serialize(
@@ -188,26 +141,17 @@ class _$PackageJsonldSerializer implements PrimitiveSerializer<PackageJsonld> {
         specifiedType: const FullType.nullable(String),
       );
     }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.updatedAt != null) {
-      yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
+    yield r'securityCode';
+    yield object.securityCode == null ? null : serializers.serialize(
+      object.securityCode,
+      specifiedType: const FullType.nullable(String),
+    );
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    PackageJsonld object, {
+    PackagePackageRead object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -218,34 +162,13 @@ class _$PackageJsonldSerializer implements PrimitiveSerializer<PackageJsonld> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required PackageJsonldBuilder result,
+    required PackagePackageReadBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AppointmentJsonldAppointmentReadContext),
-          ) as AppointmentJsonldAppointmentReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -277,15 +200,15 @@ class _$PackageJsonldSerializer implements PrimitiveSerializer<PackageJsonld> {
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(PackageJsonldTypeEnum),
-          ) as PackageJsonldTypeEnum;
+            specifiedType: const FullType(PackagePackageReadTypeEnum),
+          ) as PackagePackageReadTypeEnum;
           result.type = valueDes;
           break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(PackageJsonldStatusEnum),
-          ) as PackageJsonldStatusEnum;
+            specifiedType: const FullType(PackagePackageReadStatusEnum),
+          ) as PackagePackageReadStatusEnum;
           result.status = valueDes;
           break;
         case r'senderName':
@@ -311,14 +234,6 @@ class _$PackageJsonldSerializer implements PrimitiveSerializer<PackageJsonld> {
           if (valueDes == null) continue;
           result.handoverDate = valueDes;
           break;
-        case r'securityCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.securityCode = valueDes;
-          break;
         case r'handoverClient':
           final valueDes = serializers.deserialize(
             value,
@@ -327,19 +242,13 @@ class _$PackageJsonldSerializer implements PrimitiveSerializer<PackageJsonld> {
           if (valueDes == null) continue;
           result.handoverClient = valueDes;
           break;
-        case r'createdAt':
+        case r'securityCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.securityCode = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -350,12 +259,12 @@ class _$PackageJsonldSerializer implements PrimitiveSerializer<PackageJsonld> {
   }
 
   @override
-  PackageJsonld deserialize(
+  PackagePackageRead deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = PackageJsonldBuilder();
+    final result = PackagePackageReadBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
@@ -370,39 +279,39 @@ class _$PackageJsonldSerializer implements PrimitiveSerializer<PackageJsonld> {
   }
 }
 
-class PackageJsonldTypeEnum extends EnumClass {
+class PackagePackageReadTypeEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'standard_letter')
-  static const PackageJsonldTypeEnum standardLetter = _$packageJsonldTypeEnum_standardLetter;
+  static const PackagePackageReadTypeEnum standardLetter = _$packagePackageReadTypeEnum_standardLetter;
   @BuiltValueEnumConst(wireName: r'tracked_letter')
-  static const PackageJsonldTypeEnum trackedLetter = _$packageJsonldTypeEnum_trackedLetter;
+  static const PackagePackageReadTypeEnum trackedLetter = _$packagePackageReadTypeEnum_trackedLetter;
   @BuiltValueEnumConst(wireName: r'registered_letter')
-  static const PackageJsonldTypeEnum registeredLetter = _$packageJsonldTypeEnum_registeredLetter;
+  static const PackagePackageReadTypeEnum registeredLetter = _$packagePackageReadTypeEnum_registeredLetter;
   @BuiltValueEnumConst(wireName: r'package')
-  static const PackageJsonldTypeEnum package = _$packageJsonldTypeEnum_package;
+  static const PackagePackageReadTypeEnum package = _$packagePackageReadTypeEnum_package;
   @BuiltValueEnumConst(wireName: r'food_package')
-  static const PackageJsonldTypeEnum foodPackage = _$packageJsonldTypeEnum_foodPackage;
+  static const PackagePackageReadTypeEnum foodPackage = _$packagePackageReadTypeEnum_foodPackage;
 
-  static Serializer<PackageJsonldTypeEnum> get serializer => _$packageJsonldTypeEnumSerializer;
+  static Serializer<PackagePackageReadTypeEnum> get serializer => _$packagePackageReadTypeEnumSerializer;
 
-  const PackageJsonldTypeEnum._(String name): super(name);
+  const PackagePackageReadTypeEnum._(String name): super(name);
 
-  static BuiltSet<PackageJsonldTypeEnum> get values => _$packageJsonldTypeEnumValues;
-  static PackageJsonldTypeEnum valueOf(String name) => _$packageJsonldTypeEnumValueOf(name);
+  static BuiltSet<PackagePackageReadTypeEnum> get values => _$packagePackageReadTypeEnumValues;
+  static PackagePackageReadTypeEnum valueOf(String name) => _$packagePackageReadTypeEnumValueOf(name);
 }
 
-class PackageJsonldStatusEnum extends EnumClass {
+class PackagePackageReadStatusEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'received')
-  static const PackageJsonldStatusEnum received = _$packageJsonldStatusEnum_received;
+  static const PackagePackageReadStatusEnum received = _$packagePackageReadStatusEnum_received;
   @BuiltValueEnumConst(wireName: r'handed_over')
-  static const PackageJsonldStatusEnum handedOver = _$packageJsonldStatusEnum_handedOver;
+  static const PackagePackageReadStatusEnum handedOver = _$packagePackageReadStatusEnum_handedOver;
 
-  static Serializer<PackageJsonldStatusEnum> get serializer => _$packageJsonldStatusEnumSerializer;
+  static Serializer<PackagePackageReadStatusEnum> get serializer => _$packagePackageReadStatusEnumSerializer;
 
-  const PackageJsonldStatusEnum._(String name): super(name);
+  const PackagePackageReadStatusEnum._(String name): super(name);
 
-  static BuiltSet<PackageJsonldStatusEnum> get values => _$packageJsonldStatusEnumValues;
-  static PackageJsonldStatusEnum valueOf(String name) => _$packageJsonldStatusEnumValueOf(name);
+  static BuiltSet<PackagePackageReadStatusEnum> get values => _$packagePackageReadStatusEnumValues;
+  static PackagePackageReadStatusEnum valueOf(String name) => _$packagePackageReadStatusEnumValueOf(name);
 }
 

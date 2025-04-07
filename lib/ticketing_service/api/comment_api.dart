@@ -29,6 +29,8 @@ class CommentApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [ticketPeriodId] - 
+  /// * [ticketPeriodIdLeftSquareBracketRightSquareBracket] - 
   /// * [createdAtLeftSquareBracketBeforeRightSquareBracket] - 
   /// * [createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [createdAtLeftSquareBracketAfterRightSquareBracket] - 
@@ -37,6 +39,7 @@ class CommentApi {
   /// * [updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketAfterRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
+  /// * [orderLeftSquareBracketCreatedAtRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -48,6 +51,8 @@ class CommentApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiApicommentsGetCollection200Response>> apiApicommentsGetCollection({ 
     int? page = 1,
+    int? ticketPeriodId,
+    BuiltList<int>? ticketPeriodIdLeftSquareBracketRightSquareBracket,
     String? createdAtLeftSquareBracketBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketAfterRightSquareBracket,
@@ -56,6 +61,7 @@ class CommentApi {
     String? updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? updatedAtLeftSquareBracketAfterRightSquareBracket,
     String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+    String? orderLeftSquareBracketCreatedAtRightSquareBracket = 'asc',
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -85,6 +91,8 @@ class CommentApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (ticketPeriodId != null) r'ticket.id': encodeQueryParameter(_serializers, ticketPeriodId, const FullType(int)),
+      if (ticketPeriodIdLeftSquareBracketRightSquareBracket != null) r'ticket.id[]': encodeCollectionQueryParameter<int>(_serializers, ticketPeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
       if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
@@ -93,6 +101,7 @@ class CommentApi {
       if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
       if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

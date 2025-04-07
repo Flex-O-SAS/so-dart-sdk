@@ -12,6 +12,7 @@ part 'appointment_client_appointment_read.g.dart';
 /// 
 ///
 /// Properties:
+/// * [id] 
 /// * [client] 
 /// * [status] 
 /// * [comment] 
@@ -19,6 +20,9 @@ part 'appointment_client_appointment_read.g.dart';
 /// * [lastSentInvitationDate] 
 @BuiltValue()
 abstract class AppointmentClientAppointmentRead implements Built<AppointmentClientAppointmentRead, AppointmentClientAppointmentReadBuilder> {
+  @BuiltValueField(wireName: r'id')
+  String? get id;
+
   @BuiltValueField(wireName: r'client')
   String get client;
 
@@ -58,6 +62,13 @@ class _$AppointmentClientAppointmentReadSerializer implements PrimitiveSerialize
     AppointmentClientAppointmentRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
     yield r'client';
     yield serializers.serialize(
       object.client,
@@ -112,6 +123,14 @@ class _$AppointmentClientAppointmentReadSerializer implements PrimitiveSerialize
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.id = valueDes;
+          break;
         case r'client':
           final valueDes = serializers.deserialize(
             value,

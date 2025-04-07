@@ -3,10 +3,10 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/corporate/model/package_jsonld_package_read.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/corporate/model/api_appointments_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/corporate/model/api_appointments_get_collection200_response_search.dart';
-import 'package:so_dart_sdk/corporate/model/package_jsonld.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +22,7 @@ part 'api_packages_get_collection200_response.g.dart';
 @BuiltValue()
 abstract class ApiPackagesGetCollection200Response implements Built<ApiPackagesGetCollection200Response, ApiPackagesGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<PackageJsonld> get member;
+  BuiltList<PackageJsonldPackageRead> get member;
 
   @BuiltValueField(wireName: r'totalItems')
   int? get totalItems;
@@ -59,7 +59,7 @@ class _$ApiPackagesGetCollection200ResponseSerializer implements PrimitiveSerial
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(PackageJsonld)]),
+      specifiedType: const FullType(BuiltList, [FullType(PackageJsonldPackageRead)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -108,8 +108,8 @@ class _$ApiPackagesGetCollection200ResponseSerializer implements PrimitiveSerial
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(PackageJsonld)]),
-          ) as BuiltList<PackageJsonld>;
+            specifiedType: const FullType(BuiltList, [FullType(PackageJsonldPackageRead)]),
+          ) as BuiltList<PackageJsonldPackageRead>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':

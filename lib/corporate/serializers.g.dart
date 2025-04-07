@@ -55,12 +55,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ConstraintViolationJsonldJsonld.serializer)
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
-      ..add(Package.serializer)
-      ..add(PackageJsonld.serializer)
-      ..add(PackageJsonldStatusEnum.serializer)
-      ..add(PackageJsonldTypeEnum.serializer)
-      ..add(PackageStatusEnum.serializer)
-      ..add(PackageTypeEnum.serializer)
+      ..add(PackageJsonldPackageRead.serializer)
+      ..add(PackageJsonldPackageReadStatusEnum.serializer)
+      ..add(PackageJsonldPackageReadTypeEnum.serializer)
+      ..add(PackageJsonldPackageWrite.serializer)
+      ..add(PackageJsonldPackageWriteStatusEnum.serializer)
+      ..add(PackageJsonldPackageWriteTypeEnum.serializer)
+      ..add(PackagePackageRead.serializer)
+      ..add(PackagePackageReadStatusEnum.serializer)
+      ..add(PackagePackageReadTypeEnum.serializer)
+      ..add(PackagePackageWrite.serializer)
+      ..add(PackagePackageWriteStatusEnum.serializer)
+      ..add(PackagePackageWriteTypeEnum.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
@@ -106,8 +112,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(ConstraintViolationJsonViolationsInner)]),
           () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(PackageJsonld)]),
-          () => new ListBuilder<PackageJsonld>()))
+          const FullType(
+              BuiltList, const [const FullType(PackageJsonldPackageRead)]),
+          () => new ListBuilder<PackageJsonldPackageRead>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

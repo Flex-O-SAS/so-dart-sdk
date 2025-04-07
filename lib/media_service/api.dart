@@ -11,6 +11,7 @@ import 'package:so_dart_sdk/media_service/auth/bearer_auth.dart';
 import 'package:so_dart_sdk/media_service/auth/oauth.dart';
 import 'package:so_dart_sdk/media_service/api/document_api.dart';
 import 'package:so_dart_sdk/media_service/api/image_api.dart';
+import 'package:so_dart_sdk/media_service/api/media_api.dart';
 
 class SoDartSdk {
   static const String basePath = r'http://localhost';
@@ -76,5 +77,11 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   ImageApi getImageApi() {
     return ImageApi(dio, serializers);
+  }
+
+  /// Get MediaApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MediaApi getMediaApi() {
+    return MediaApi(dio, serializers);
   }
 }

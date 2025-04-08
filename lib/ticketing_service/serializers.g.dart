@@ -14,40 +14,34 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiApilinkedUsersGetCollection200Response.serializer)
       ..add(ApiApitagsGetCollection200Response.serializer)
       ..add(ApiApiticketsGetCollection200Response.serializer)
-      ..add(CommentCommentReadTimestampRead.serializer)
+      ..add(CommentCommentRead.serializer)
       ..add(CommentCommentWrite.serializer)
-      ..add(CommentJsonldCommentReadTimestampRead.serializer)
-      ..add(CommentJsonldCommentReadTimestampReadContext.serializer)
-      ..add(CommentJsonldCommentReadTimestampReadContextOneOf.serializer)
-      ..add(
-          CommentJsonldCommentReadTimestampReadContextOneOfHydraEnum.serializer)
+      ..add(CommentJsonldCommentRead.serializer)
+      ..add(CommentJsonldCommentReadContext.serializer)
+      ..add(CommentJsonldCommentReadContextOneOf.serializer)
+      ..add(CommentJsonldCommentReadContextOneOfHydraEnum.serializer)
       ..add(CommentJsonldCommentWrite.serializer)
-      ..add(CommentJsonldTicketReadTimestampRead.serializer)
-      ..add(CommentTicketReadTimestampRead.serializer)
-      ..add(LinkedUserJsonldLinkedUserReadTimestampRead.serializer)
+      ..add(ConstraintViolationJson.serializer)
+      ..add(ConstraintViolationJsonViolationsInner.serializer)
+      ..add(ConstraintViolationJsonldJsonld.serializer)
+      ..add(Error.serializer)
+      ..add(ErrorJsonld.serializer)
+      ..add(LinkedUserJsonldLinkedUserRead.serializer)
       ..add(LinkedUserJsonldLinkedUserWrite.serializer)
-      ..add(LinkedUserJsonldTicketReadTimestampRead.serializer)
       ..add(LinkedUserJsonldTicketWrite.serializer)
-      ..add(LinkedUserLinkedUserReadTimestampRead.serializer)
+      ..add(LinkedUserLinkedUserRead.serializer)
       ..add(LinkedUserLinkedUserWrite.serializer)
-      ..add(LinkedUserTicketReadTimestampRead.serializer)
       ..add(LinkedUserTicketWrite.serializer)
-      ..add(TagJsonldTagReadTimestampRead.serializer)
+      ..add(TagJsonldTagRead.serializer)
       ..add(TagJsonldTagWrite.serializer)
-      ..add(TagJsonldTicketReadTimestampRead.serializer)
-      ..add(TagTagReadTimestampRead.serializer)
+      ..add(TagTagRead.serializer)
       ..add(TagTagWrite.serializer)
-      ..add(TagTicketReadTimestampRead.serializer)
-      ..add(TicketCommentReadTimestampRead.serializer)
-      ..add(TicketJsonldCommentReadTimestampRead.serializer)
-      ..add(TicketJsonldLinkedUserReadTimestampRead.serializer)
-      ..add(TicketJsonldTicketReadTimestampRead.serializer)
-      ..add(TicketJsonldTicketReadTimestampReadStatusEnum.serializer)
+      ..add(TicketJsonldTicketRead.serializer)
+      ..add(TicketJsonldTicketReadStatusEnum.serializer)
       ..add(TicketJsonldTicketWrite.serializer)
       ..add(TicketJsonldTicketWriteStatusEnum.serializer)
-      ..add(TicketLinkedUserReadTimestampRead.serializer)
-      ..add(TicketTicketReadTimestampRead.serializer)
-      ..add(TicketTicketReadTimestampReadStatusEnum.serializer)
+      ..add(TicketTicketRead.serializer)
+      ..add(TicketTicketReadStatusEnum.serializer)
       ..add(TicketTicketWrite.serializer)
       ..add(TicketTicketWriteStatusEnum.serializer)
       ..addBuilderFactory(
@@ -58,54 +52,25 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<
               ApiApicommentsGetCollection200ResponseSearchMappingInner>())
       ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(CommentJsonldCommentReadTimestampRead)]),
-          () => new ListBuilder<CommentJsonldCommentReadTimestampRead>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(LinkedUserJsonldLinkedUserReadTimestampRead)
-          ]),
-          () => new ListBuilder<LinkedUserJsonldLinkedUserReadTimestampRead>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+          const FullType(
+              BuiltList, const [const FullType(CommentJsonldCommentRead)]),
+          () => new ListBuilder<CommentJsonldCommentRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(LinkedUserJsonldTicketReadTimestampRead)]),
-          () => new ListBuilder<LinkedUserJsonldTicketReadTimestampRead>())
+              const [const FullType(ConstraintViolationJsonViolationsInner)]),
+          () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(TagJsonldTicketReadTimestampRead)]),
-          () => new ListBuilder<TagJsonldTicketReadTimestampRead>())
+              const [const FullType(ConstraintViolationJsonViolationsInner)]),
+          () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(CommentJsonldTicketReadTimestampRead)]),
-          () => new ListBuilder<CommentJsonldTicketReadTimestampRead>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+              const [const FullType(LinkedUserJsonldLinkedUserRead)]),
+          () => new ListBuilder<LinkedUserJsonldLinkedUserRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(LinkedUserJsonldTicketWrite)]),
           () => new ListBuilder<LinkedUserJsonldTicketWrite>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(LinkedUserTicketReadTimestampRead)]),
-          () => new ListBuilder<LinkedUserTicketReadTimestampRead>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(TagTicketReadTimestampRead)]),
-          () => new ListBuilder<TagTicketReadTimestampRead>())
-      ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(CommentTicketReadTimestampRead)]),
-          () => new ListBuilder<CommentTicketReadTimestampRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
@@ -117,13 +82,30 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(TagJsonldTagReadTimestampRead)]),
-          () => new ListBuilder<TagJsonldTagReadTimestampRead>())
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(TicketJsonldTicketReadTimestampRead)]),
-          () => new ListBuilder<TicketJsonldTicketReadTimestampRead>()))
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(TagJsonldTagRead)]),
+          () => new ListBuilder<TagJsonldTagRead>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(TicketJsonldTicketRead)]),
+          () => new ListBuilder<TicketJsonldTicketRead>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

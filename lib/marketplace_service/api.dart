@@ -11,6 +11,7 @@ import 'package:so_dart_sdk/marketplace_service/auth/bearer_auth.dart';
 import 'package:so_dart_sdk/marketplace_service/auth/oauth.dart';
 import 'package:so_dart_sdk/marketplace_service/api/item_api.dart';
 import 'package:so_dart_sdk/marketplace_service/api/provider_api.dart';
+import 'package:so_dart_sdk/marketplace_service/api/reservation_api.dart';
 import 'package:so_dart_sdk/marketplace_service/api/service_api.dart';
 import 'package:so_dart_sdk/marketplace_service/api/tag_api.dart';
 
@@ -78,6 +79,12 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   ProviderApi getProviderApi() {
     return ProviderApi(dio, serializers);
+  }
+
+  /// Get ReservationApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ReservationApi getReservationApi() {
+    return ReservationApi(dio, serializers);
   }
 
   /// Get ServiceApi instance, base route and serializer can be overridden by a given but be careful,

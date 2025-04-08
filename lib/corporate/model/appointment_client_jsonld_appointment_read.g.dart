@@ -102,6 +102,8 @@ class _$AppointmentClientJsonldAppointmentRead
   @override
   final String? atType;
   @override
+  final String? id;
+  @override
   final String client;
   @override
   final AppointmentClientJsonldAppointmentReadStatusEnum status;
@@ -122,6 +124,7 @@ class _$AppointmentClientJsonldAppointmentRead
       {this.atContext,
       this.atId,
       this.atType,
+      this.id,
       required this.client,
       required this.status,
       this.comment,
@@ -151,6 +154,7 @@ class _$AppointmentClientJsonldAppointmentRead
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
+        id == other.id &&
         client == other.client &&
         status == other.status &&
         comment == other.comment &&
@@ -164,6 +168,7 @@ class _$AppointmentClientJsonldAppointmentRead
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, client.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, comment.hashCode);
@@ -180,6 +185,7 @@ class _$AppointmentClientJsonldAppointmentRead
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
+          ..add('id', id)
           ..add('client', client)
           ..add('status', status)
           ..add('comment', comment)
@@ -209,6 +215,10 @@ class AppointmentClientJsonldAppointmentReadBuilder
   String? _atType;
   String? get atType => _$this._atType;
   set atType(String? atType) => _$this._atType = atType;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _client;
   String? get client => _$this._client;
@@ -243,6 +253,7 @@ class AppointmentClientJsonldAppointmentReadBuilder
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
+      _id = $v.id;
       _client = $v.client;
       _status = $v.status;
       _comment = $v.comment;
@@ -276,6 +287,7 @@ class AppointmentClientJsonldAppointmentReadBuilder
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
+            id: id,
             client: BuiltValueNullFieldError.checkNotNull(
                 client, r'AppointmentClientJsonldAppointmentRead', 'client'),
             status: BuiltValueNullFieldError.checkNotNull(

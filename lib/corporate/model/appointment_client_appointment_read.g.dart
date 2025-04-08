@@ -95,6 +95,8 @@ class _$AppointmentClientAppointmentReadStatusEnumSerializer
 class _$AppointmentClientAppointmentRead
     extends AppointmentClientAppointmentRead {
   @override
+  final String? id;
+  @override
   final String client;
   @override
   final AppointmentClientAppointmentReadStatusEnum status;
@@ -110,7 +112,8 @@ class _$AppointmentClientAppointmentRead
       (new AppointmentClientAppointmentReadBuilder()..update(updates))._build();
 
   _$AppointmentClientAppointmentRead._(
-      {required this.client,
+      {this.id,
+      required this.client,
       required this.status,
       this.comment,
       this.responseDate,
@@ -135,6 +138,7 @@ class _$AppointmentClientAppointmentRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AppointmentClientAppointmentRead &&
+        id == other.id &&
         client == other.client &&
         status == other.status &&
         comment == other.comment &&
@@ -145,6 +149,7 @@ class _$AppointmentClientAppointmentRead
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, client.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, comment.hashCode);
@@ -157,6 +162,7 @@ class _$AppointmentClientAppointmentRead
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AppointmentClientAppointmentRead')
+          ..add('id', id)
           ..add('client', client)
           ..add('status', status)
           ..add('comment', comment)
@@ -171,6 +177,10 @@ class AppointmentClientAppointmentReadBuilder
         Builder<AppointmentClientAppointmentRead,
             AppointmentClientAppointmentReadBuilder> {
   _$AppointmentClientAppointmentRead? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _client;
   String? get client => _$this._client;
@@ -201,6 +211,7 @@ class AppointmentClientAppointmentReadBuilder
   AppointmentClientAppointmentReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _client = $v.client;
       _status = $v.status;
       _comment = $v.comment;
@@ -228,6 +239,7 @@ class AppointmentClientAppointmentReadBuilder
   _$AppointmentClientAppointmentRead _build() {
     final _$result = _$v ??
         new _$AppointmentClientAppointmentRead._(
+          id: id,
           client: BuiltValueNullFieldError.checkNotNull(
               client, r'AppointmentClientAppointmentRead', 'client'),
           status: BuiltValueNullFieldError.checkNotNull(

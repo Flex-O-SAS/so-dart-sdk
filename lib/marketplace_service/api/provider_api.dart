@@ -41,6 +41,14 @@ class ProviderApi {
   /// * [orderLeftSquareBracketAddressPeriodCityRightSquareBracket] - 
   /// * [orderLeftSquareBracketAddressPeriodCountryRightSquareBracket] - 
   /// * [isActive] - 
+  /// * [createdAtLeftSquareBracketBeforeRightSquareBracket] - 
+  /// * [createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
+  /// * [createdAtLeftSquareBracketAfterRightSquareBracket] - 
+  /// * [createdAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
+  /// * [updatedAtLeftSquareBracketBeforeRightSquareBracket] - 
+  /// * [updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
+  /// * [updatedAtLeftSquareBracketAfterRightSquareBracket] - 
+  /// * [updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
   /// * [acceptLanguage] - Provider Accept-Language
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -65,6 +73,14 @@ class ProviderApi {
     String? orderLeftSquareBracketAddressPeriodCityRightSquareBracket = 'asc',
     String? orderLeftSquareBracketAddressPeriodCountryRightSquareBracket = 'asc',
     bool? isActive,
+    String? createdAtLeftSquareBracketBeforeRightSquareBracket,
+    String? createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+    String? createdAtLeftSquareBracketAfterRightSquareBracket,
+    String? createdAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+    String? updatedAtLeftSquareBracketBeforeRightSquareBracket,
+    String? updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+    String? updatedAtLeftSquareBracketAfterRightSquareBracket,
+    String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
     String? acceptLanguage,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -108,6 +124,14 @@ class ProviderApi {
       if (orderLeftSquareBracketAddressPeriodCityRightSquareBracket != null) r'order[address.city]': encodeQueryParameter(_serializers, orderLeftSquareBracketAddressPeriodCityRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketAddressPeriodCountryRightSquareBracket != null) r'order[address.country]': encodeQueryParameter(_serializers, orderLeftSquareBracketAddressPeriodCountryRightSquareBracket, const FullType(String)),
       if (isActive != null) r'isActive': encodeQueryParameter(_serializers, isActive, const FullType(bool)),
+      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
+      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
+      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
+      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
+      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
+      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
+      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

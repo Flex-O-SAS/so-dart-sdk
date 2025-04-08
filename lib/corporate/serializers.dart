@@ -42,8 +42,10 @@ import 'package:so_dart_sdk/corporate/model/constraint_violation_json_violations
 import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld_jsonld.dart';
 import 'package:so_dart_sdk/corporate/model/error.dart';
 import 'package:so_dart_sdk/corporate/model/error_jsonld.dart';
-import 'package:so_dart_sdk/corporate/model/package.dart';
-import 'package:so_dart_sdk/corporate/model/package_jsonld.dart';
+import 'package:so_dart_sdk/corporate/model/package_jsonld_package_read.dart';
+import 'package:so_dart_sdk/corporate/model/package_jsonld_package_write.dart';
+import 'package:so_dart_sdk/corporate/model/package_package_read.dart';
+import 'package:so_dart_sdk/corporate/model/package_package_write.dart';
 
 part 'serializers.g.dart';
 
@@ -76,8 +78,10 @@ part 'serializers.g.dart';
   ConstraintViolationJsonldJsonld,
   Error,
   ErrorJsonld,
-  Package,
-  PackageJsonld,
+  PackageJsonldPackageRead,
+  PackageJsonldPackageWrite,
+  PackagePackageRead,
+  PackagePackageWrite,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(

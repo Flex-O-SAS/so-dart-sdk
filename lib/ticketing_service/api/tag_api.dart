@@ -11,9 +11,13 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/api_util.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apitags_get_collection200_response.dart';
-import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/error.dart';
+import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/tag_tag_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/tag_tag_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_tag_write.dart';
 
 class TagApi {
@@ -30,7 +34,6 @@ class TagApi {
   /// Parameters:
   /// * [page] - The collection page number
   /// * [name] - 
-  /// * [nameLeftSquareBracketRightSquareBracket] - 
   /// * [createdAtLeftSquareBracketBeforeRightSquareBracket] - 
   /// * [createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [createdAtLeftSquareBracketAfterRightSquareBracket] - 
@@ -39,6 +42,7 @@ class TagApi {
   /// * [updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketAfterRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
+  /// * [orderLeftSquareBracketCreatedAtRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -51,7 +55,6 @@ class TagApi {
   Future<Response<ApiApitagsGetCollection200Response>> apiApitagsGetCollection({ 
     int? page = 1,
     String? name,
-    BuiltList<String>? nameLeftSquareBracketRightSquareBracket,
     String? createdAtLeftSquareBracketBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketAfterRightSquareBracket,
@@ -60,6 +63,7 @@ class TagApi {
     String? updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? updatedAtLeftSquareBracketAfterRightSquareBracket,
     String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+    String? orderLeftSquareBracketCreatedAtRightSquareBracket = 'asc',
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -90,7 +94,6 @@ class TagApi {
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
       if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
-      if (nameLeftSquareBracketRightSquareBracket != null) r'name[]': encodeCollectionQueryParameter<String>(_serializers, nameLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
       if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
@@ -99,6 +102,7 @@ class TagApi {
       if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
       if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -207,9 +211,9 @@ class TagApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [TagJsonldTagReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [TagJsonldTagRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TagJsonldTagReadTimestampRead>> apiApitagsIdGet({ 
+  Future<Response<TagJsonldTagRead>> apiApitagsIdGet({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -246,14 +250,14 @@ class TagApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    TagJsonldTagReadTimestampRead? _responseData;
+    TagJsonldTagRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(TagJsonldTagReadTimestampRead),
-      ) as TagJsonldTagReadTimestampRead;
+        specifiedType: const FullType(TagJsonldTagRead),
+      ) as TagJsonldTagRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -265,7 +269,7 @@ class TagApi {
       );
     }
 
-    return Response<TagJsonldTagReadTimestampRead>(
+    return Response<TagJsonldTagRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -290,9 +294,9 @@ class TagApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [TagJsonldTagReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [TagJsonldTagRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TagJsonldTagReadTimestampRead>> apiApitagsIdPatch({ 
+  Future<Response<TagJsonldTagRead>> apiApitagsIdPatch({ 
     required String id,
     required TagTagWrite tagTagWrite,
     CancelToken? cancelToken,
@@ -350,14 +354,14 @@ class TagApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    TagJsonldTagReadTimestampRead? _responseData;
+    TagJsonldTagRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(TagJsonldTagReadTimestampRead),
-      ) as TagJsonldTagReadTimestampRead;
+        specifiedType: const FullType(TagJsonldTagRead),
+      ) as TagJsonldTagRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -369,7 +373,7 @@ class TagApi {
       );
     }
 
-    return Response<TagJsonldTagReadTimestampRead>(
+    return Response<TagJsonldTagRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -393,9 +397,9 @@ class TagApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [TagJsonldTagReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [TagJsonldTagRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TagJsonldTagReadTimestampRead>> apiApitagsPost({ 
+  Future<Response<TagJsonldTagRead>> apiApitagsPost({ 
     required TagJsonldTagWrite tagJsonldTagWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -452,14 +456,14 @@ class TagApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    TagJsonldTagReadTimestampRead? _responseData;
+    TagJsonldTagRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(TagJsonldTagReadTimestampRead),
-      ) as TagJsonldTagReadTimestampRead;
+        specifiedType: const FullType(TagJsonldTagRead),
+      ) as TagJsonldTagRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -471,7 +475,7 @@ class TagApi {
       );
     }
 
-    return Response<TagJsonldTagReadTimestampRead>(
+    return Response<TagJsonldTagRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

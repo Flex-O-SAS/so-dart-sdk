@@ -9,7 +9,7 @@ part of 'api_apicomments_get_collection200_response.dart';
 class _$ApiApicommentsGetCollection200Response
     extends ApiApicommentsGetCollection200Response {
   @override
-  final BuiltList<CommentJsonldCommentReadTimestampRead> member;
+  final BuiltList<CommentJsonldCommentRead> member;
   @override
   final int? totalItems;
   @override
@@ -79,11 +79,10 @@ class ApiApicommentsGetCollection200ResponseBuilder
             ApiApicommentsGetCollection200ResponseBuilder> {
   _$ApiApicommentsGetCollection200Response? _$v;
 
-  ListBuilder<CommentJsonldCommentReadTimestampRead>? _member;
-  ListBuilder<CommentJsonldCommentReadTimestampRead> get member =>
-      _$this._member ??=
-          new ListBuilder<CommentJsonldCommentReadTimestampRead>();
-  set member(ListBuilder<CommentJsonldCommentReadTimestampRead>? member) =>
+  ListBuilder<CommentJsonldCommentRead>? _member;
+  ListBuilder<CommentJsonldCommentRead> get member =>
+      _$this._member ??= new ListBuilder<CommentJsonldCommentRead>();
+  set member(ListBuilder<CommentJsonldCommentRead>? member) =>
       _$this._member = member;
 
   int? _totalItems;

@@ -5,8 +5,8 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_search.dart';
+import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_view.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read_timestamp_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +22,7 @@ part 'api_apitickets_get_collection200_response.g.dart';
 @BuiltValue()
 abstract class ApiApiticketsGetCollection200Response implements Built<ApiApiticketsGetCollection200Response, ApiApiticketsGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<TicketJsonldTicketReadTimestampRead> get member;
+  BuiltList<TicketJsonldTicketRead> get member;
 
   @BuiltValueField(wireName: r'totalItems')
   int? get totalItems;
@@ -59,7 +59,7 @@ class _$ApiApiticketsGetCollection200ResponseSerializer implements PrimitiveSeri
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(TicketJsonldTicketReadTimestampRead)]),
+      specifiedType: const FullType(BuiltList, [FullType(TicketJsonldTicketRead)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -108,8 +108,8 @@ class _$ApiApiticketsGetCollection200ResponseSerializer implements PrimitiveSeri
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(TicketJsonldTicketReadTimestampRead)]),
-          ) as BuiltList<TicketJsonldTicketReadTimestampRead>;
+            specifiedType: const FullType(BuiltList, [FullType(TicketJsonldTicketRead)]),
+          ) as BuiltList<TicketJsonldTicketRead>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':

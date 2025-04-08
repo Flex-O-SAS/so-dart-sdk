@@ -3,9 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read_timestamp_read.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_search.dart';
+import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_view.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -22,7 +22,7 @@ part 'api_apicomments_get_collection200_response.g.dart';
 @BuiltValue()
 abstract class ApiApicommentsGetCollection200Response implements Built<ApiApicommentsGetCollection200Response, ApiApicommentsGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<CommentJsonldCommentReadTimestampRead> get member;
+  BuiltList<CommentJsonldCommentRead> get member;
 
   @BuiltValueField(wireName: r'totalItems')
   int? get totalItems;
@@ -59,7 +59,7 @@ class _$ApiApicommentsGetCollection200ResponseSerializer implements PrimitiveSer
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(CommentJsonldCommentReadTimestampRead)]),
+      specifiedType: const FullType(BuiltList, [FullType(CommentJsonldCommentRead)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -108,8 +108,8 @@ class _$ApiApicommentsGetCollection200ResponseSerializer implements PrimitiveSer
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(CommentJsonldCommentReadTimestampRead)]),
-          ) as BuiltList<CommentJsonldCommentReadTimestampRead>;
+            specifiedType: const FullType(BuiltList, [FullType(CommentJsonldCommentRead)]),
+          ) as BuiltList<CommentJsonldCommentRead>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':

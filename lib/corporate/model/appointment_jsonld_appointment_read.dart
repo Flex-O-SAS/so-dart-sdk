@@ -61,7 +61,7 @@ abstract class AppointmentJsonldAppointmentRead implements Built<AppointmentJson
 
   @BuiltValueField(wireName: r'status')
   AppointmentJsonldAppointmentReadStatusEnum get status;
-  // enum statusEnum {  scheduled,  cancelled,  confirmed,  };
+  // enum statusEnum {  scheduled,  cancelled,  done,  };
 
   @BuiltValueField(wireName: r'cancellationDate')
   String? get cancellationDate;
@@ -374,8 +374,8 @@ class AppointmentJsonldAppointmentReadStatusEnum extends EnumClass {
   static const AppointmentJsonldAppointmentReadStatusEnum scheduled = _$appointmentJsonldAppointmentReadStatusEnum_scheduled;
   @BuiltValueEnumConst(wireName: r'cancelled')
   static const AppointmentJsonldAppointmentReadStatusEnum cancelled = _$appointmentJsonldAppointmentReadStatusEnum_cancelled;
-  @BuiltValueEnumConst(wireName: r'confirmed')
-  static const AppointmentJsonldAppointmentReadStatusEnum confirmed = _$appointmentJsonldAppointmentReadStatusEnum_confirmed;
+  @BuiltValueEnumConst(wireName: r'done')
+  static const AppointmentJsonldAppointmentReadStatusEnum done = _$appointmentJsonldAppointmentReadStatusEnum_done;
 
   static Serializer<AppointmentJsonldAppointmentReadStatusEnum> get serializer => _$appointmentJsonldAppointmentReadStatusEnumSerializer;
 

@@ -3,16 +3,19 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/marketplace_service/model/item_reservation_read_timestamp_read.dart';
+import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'reservation_reservation_read_timestamp_read.g.dart';
+part 'reservation_jsonld_reservation_read.g.dart';
 
 /// 
 ///
 /// Properties:
+/// * [atContext] 
+/// * [atId] 
+/// * [atType] 
 /// * [id] 
 /// * [item] 
 /// * [author] 
@@ -24,12 +27,21 @@ part 'reservation_reservation_read_timestamp_read.g.dart';
 /// * [createdAt] 
 /// * [updatedAt] 
 @BuiltValue()
-abstract class ReservationReservationReadTimestampRead implements Built<ReservationReservationReadTimestampRead, ReservationReservationReadTimestampReadBuilder> {
+abstract class ReservationJsonldReservationRead implements Built<ReservationJsonldReservationRead, ReservationJsonldReservationReadBuilder> {
+  @BuiltValueField(wireName: r'@context')
+  AddressJsonldProviderReadAddressReadContext? get atContext;
+
+  @BuiltValueField(wireName: r'@id')
+  String? get atId;
+
+  @BuiltValueField(wireName: r'@type')
+  String? get atType;
+
   @BuiltValueField(wireName: r'id')
   int? get id;
 
   @BuiltValueField(wireName: r'item')
-  ItemReservationReadTimestampRead get item;
+  String get item;
 
   @BuiltValueField(wireName: r'author')
   String get author;
@@ -44,7 +56,7 @@ abstract class ReservationReservationReadTimestampRead implements Built<Reservat
   DateTime get date;
 
   @BuiltValueField(wireName: r'paymentMethod')
-  ReservationReservationReadTimestampReadPaymentMethodEnum get paymentMethod;
+  ReservationJsonldReservationReadPaymentMethodEnum get paymentMethod;
   // enum paymentMethodEnum {  cb,  cash,  voucher,  };
 
   @BuiltValueField(wireName: r'ticket')
@@ -56,29 +68,50 @@ abstract class ReservationReservationReadTimestampRead implements Built<Reservat
   @BuiltValueField(wireName: r'updatedAt')
   DateTime? get updatedAt;
 
-  ReservationReservationReadTimestampRead._();
+  ReservationJsonldReservationRead._();
 
-  factory ReservationReservationReadTimestampRead([void updates(ReservationReservationReadTimestampReadBuilder b)]) = _$ReservationReservationReadTimestampRead;
+  factory ReservationJsonldReservationRead([void updates(ReservationJsonldReservationReadBuilder b)]) = _$ReservationJsonldReservationRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ReservationReservationReadTimestampReadBuilder b) => b;
+  static void _defaults(ReservationJsonldReservationReadBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ReservationReservationReadTimestampRead> get serializer => _$ReservationReservationReadTimestampReadSerializer();
+  static Serializer<ReservationJsonldReservationRead> get serializer => _$ReservationJsonldReservationReadSerializer();
 }
 
-class _$ReservationReservationReadTimestampReadSerializer implements PrimitiveSerializer<ReservationReservationReadTimestampRead> {
+class _$ReservationJsonldReservationReadSerializer implements PrimitiveSerializer<ReservationJsonldReservationRead> {
   @override
-  final Iterable<Type> types = const [ReservationReservationReadTimestampRead, _$ReservationReservationReadTimestampRead];
+  final Iterable<Type> types = const [ReservationJsonldReservationRead, _$ReservationJsonldReservationRead];
 
   @override
-  final String wireName = r'ReservationReservationReadTimestampRead';
+  final String wireName = r'ReservationJsonldReservationRead';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ReservationReservationReadTimestampRead object, {
+    ReservationJsonldReservationRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
+      );
+    }
+    if (object.atId != null) {
+      yield r'@id';
+      yield serializers.serialize(
+        object.atId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.atType != null) {
+      yield r'@type';
+      yield serializers.serialize(
+        object.atType,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.id != null) {
       yield r'id';
       yield serializers.serialize(
@@ -89,7 +122,7 @@ class _$ReservationReservationReadTimestampReadSerializer implements PrimitiveSe
     yield r'item';
     yield serializers.serialize(
       object.item,
-      specifiedType: const FullType(ItemReservationReadTimestampRead),
+      specifiedType: const FullType(String),
     );
     yield r'author';
     yield serializers.serialize(
@@ -116,7 +149,7 @@ class _$ReservationReservationReadTimestampReadSerializer implements PrimitiveSe
     yield r'paymentMethod';
     yield serializers.serialize(
       object.paymentMethod,
-      specifiedType: const FullType(ReservationReservationReadTimestampReadPaymentMethodEnum),
+      specifiedType: const FullType(ReservationJsonldReservationReadPaymentMethodEnum),
     );
     if (object.ticket != null) {
       yield r'ticket';
@@ -144,7 +177,7 @@ class _$ReservationReservationReadTimestampReadSerializer implements PrimitiveSe
   @override
   Object serialize(
     Serializers serializers,
-    ReservationReservationReadTimestampRead object, {
+    ReservationJsonldReservationRead object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -155,13 +188,34 @@ class _$ReservationReservationReadTimestampReadSerializer implements PrimitiveSe
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ReservationReservationReadTimestampReadBuilder result,
+    required ReservationJsonldReservationReadBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
+          ) as AddressJsonldProviderReadAddressReadContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'@id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atId = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
+          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -172,9 +226,9 @@ class _$ReservationReservationReadTimestampReadSerializer implements PrimitiveSe
         case r'item':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ItemReservationReadTimestampRead),
-          ) as ItemReservationReadTimestampRead;
-          result.item.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.item = valueDes;
           break;
         case r'author':
           final valueDes = serializers.deserialize(
@@ -208,8 +262,8 @@ class _$ReservationReservationReadTimestampReadSerializer implements PrimitiveSe
         case r'paymentMethod':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ReservationReservationReadTimestampReadPaymentMethodEnum),
-          ) as ReservationReservationReadTimestampReadPaymentMethodEnum;
+            specifiedType: const FullType(ReservationJsonldReservationReadPaymentMethodEnum),
+          ) as ReservationJsonldReservationReadPaymentMethodEnum;
           result.paymentMethod = valueDes;
           break;
         case r'ticket':
@@ -243,12 +297,12 @@ class _$ReservationReservationReadTimestampReadSerializer implements PrimitiveSe
   }
 
   @override
-  ReservationReservationReadTimestampRead deserialize(
+  ReservationJsonldReservationRead deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ReservationReservationReadTimestampReadBuilder();
+    final result = ReservationJsonldReservationReadBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
@@ -263,20 +317,20 @@ class _$ReservationReservationReadTimestampReadSerializer implements PrimitiveSe
   }
 }
 
-class ReservationReservationReadTimestampReadPaymentMethodEnum extends EnumClass {
+class ReservationJsonldReservationReadPaymentMethodEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'cb')
-  static const ReservationReservationReadTimestampReadPaymentMethodEnum cb = _$reservationReservationReadTimestampReadPaymentMethodEnum_cb;
+  static const ReservationJsonldReservationReadPaymentMethodEnum cb = _$reservationJsonldReservationReadPaymentMethodEnum_cb;
   @BuiltValueEnumConst(wireName: r'cash')
-  static const ReservationReservationReadTimestampReadPaymentMethodEnum cash = _$reservationReservationReadTimestampReadPaymentMethodEnum_cash;
+  static const ReservationJsonldReservationReadPaymentMethodEnum cash = _$reservationJsonldReservationReadPaymentMethodEnum_cash;
   @BuiltValueEnumConst(wireName: r'voucher')
-  static const ReservationReservationReadTimestampReadPaymentMethodEnum voucher = _$reservationReservationReadTimestampReadPaymentMethodEnum_voucher;
+  static const ReservationJsonldReservationReadPaymentMethodEnum voucher = _$reservationJsonldReservationReadPaymentMethodEnum_voucher;
 
-  static Serializer<ReservationReservationReadTimestampReadPaymentMethodEnum> get serializer => _$reservationReservationReadTimestampReadPaymentMethodEnumSerializer;
+  static Serializer<ReservationJsonldReservationReadPaymentMethodEnum> get serializer => _$reservationJsonldReservationReadPaymentMethodEnumSerializer;
 
-  const ReservationReservationReadTimestampReadPaymentMethodEnum._(String name): super(name);
+  const ReservationJsonldReservationReadPaymentMethodEnum._(String name): super(name);
 
-  static BuiltSet<ReservationReservationReadTimestampReadPaymentMethodEnum> get values => _$reservationReservationReadTimestampReadPaymentMethodEnumValues;
-  static ReservationReservationReadTimestampReadPaymentMethodEnum valueOf(String name) => _$reservationReservationReadTimestampReadPaymentMethodEnumValueOf(name);
+  static BuiltSet<ReservationJsonldReservationReadPaymentMethodEnum> get values => _$reservationJsonldReservationReadPaymentMethodEnumValues;
+  static ReservationJsonldReservationReadPaymentMethodEnum valueOf(String name) => _$reservationJsonldReservationReadPaymentMethodEnumValueOf(name);
 }
 

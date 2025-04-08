@@ -1,56 +1,50 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'reservation_jsonld_reservation_read_timestamp_read.dart';
+part of 'reservation_jsonld_reservation_read.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-const ReservationJsonldReservationReadTimestampReadPaymentMethodEnum
-    _$reservationJsonldReservationReadTimestampReadPaymentMethodEnum_cb =
-    const ReservationJsonldReservationReadTimestampReadPaymentMethodEnum._(
-        'cb');
-const ReservationJsonldReservationReadTimestampReadPaymentMethodEnum
-    _$reservationJsonldReservationReadTimestampReadPaymentMethodEnum_cash =
-    const ReservationJsonldReservationReadTimestampReadPaymentMethodEnum._(
-        'cash');
-const ReservationJsonldReservationReadTimestampReadPaymentMethodEnum
-    _$reservationJsonldReservationReadTimestampReadPaymentMethodEnum_voucher =
-    const ReservationJsonldReservationReadTimestampReadPaymentMethodEnum._(
-        'voucher');
+const ReservationJsonldReservationReadPaymentMethodEnum
+    _$reservationJsonldReservationReadPaymentMethodEnum_cb =
+    const ReservationJsonldReservationReadPaymentMethodEnum._('cb');
+const ReservationJsonldReservationReadPaymentMethodEnum
+    _$reservationJsonldReservationReadPaymentMethodEnum_cash =
+    const ReservationJsonldReservationReadPaymentMethodEnum._('cash');
+const ReservationJsonldReservationReadPaymentMethodEnum
+    _$reservationJsonldReservationReadPaymentMethodEnum_voucher =
+    const ReservationJsonldReservationReadPaymentMethodEnum._('voucher');
 
-ReservationJsonldReservationReadTimestampReadPaymentMethodEnum
-    _$reservationJsonldReservationReadTimestampReadPaymentMethodEnumValueOf(
-        String name) {
+ReservationJsonldReservationReadPaymentMethodEnum
+    _$reservationJsonldReservationReadPaymentMethodEnumValueOf(String name) {
   switch (name) {
     case 'cb':
-      return _$reservationJsonldReservationReadTimestampReadPaymentMethodEnum_cb;
+      return _$reservationJsonldReservationReadPaymentMethodEnum_cb;
     case 'cash':
-      return _$reservationJsonldReservationReadTimestampReadPaymentMethodEnum_cash;
+      return _$reservationJsonldReservationReadPaymentMethodEnum_cash;
     case 'voucher':
-      return _$reservationJsonldReservationReadTimestampReadPaymentMethodEnum_voucher;
+      return _$reservationJsonldReservationReadPaymentMethodEnum_voucher;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<ReservationJsonldReservationReadTimestampReadPaymentMethodEnum>
-    _$reservationJsonldReservationReadTimestampReadPaymentMethodEnumValues =
-    new BuiltSet<
-        ReservationJsonldReservationReadTimestampReadPaymentMethodEnum>(const <ReservationJsonldReservationReadTimestampReadPaymentMethodEnum>[
-  _$reservationJsonldReservationReadTimestampReadPaymentMethodEnum_cb,
-  _$reservationJsonldReservationReadTimestampReadPaymentMethodEnum_cash,
-  _$reservationJsonldReservationReadTimestampReadPaymentMethodEnum_voucher,
+final BuiltSet<ReservationJsonldReservationReadPaymentMethodEnum>
+    _$reservationJsonldReservationReadPaymentMethodEnumValues = new BuiltSet<
+        ReservationJsonldReservationReadPaymentMethodEnum>(const <ReservationJsonldReservationReadPaymentMethodEnum>[
+  _$reservationJsonldReservationReadPaymentMethodEnum_cb,
+  _$reservationJsonldReservationReadPaymentMethodEnum_cash,
+  _$reservationJsonldReservationReadPaymentMethodEnum_voucher,
 ]);
 
-Serializer<ReservationJsonldReservationReadTimestampReadPaymentMethodEnum>
-    _$reservationJsonldReservationReadTimestampReadPaymentMethodEnumSerializer =
-    new _$ReservationJsonldReservationReadTimestampReadPaymentMethodEnumSerializer();
+Serializer<ReservationJsonldReservationReadPaymentMethodEnum>
+    _$reservationJsonldReservationReadPaymentMethodEnumSerializer =
+    new _$ReservationJsonldReservationReadPaymentMethodEnumSerializer();
 
-class _$ReservationJsonldReservationReadTimestampReadPaymentMethodEnumSerializer
+class _$ReservationJsonldReservationReadPaymentMethodEnumSerializer
     implements
-        PrimitiveSerializer<
-            ReservationJsonldReservationReadTimestampReadPaymentMethodEnum> {
+        PrimitiveSerializer<ReservationJsonldReservationReadPaymentMethodEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'cb': 'cb',
     'cash': 'cash',
@@ -64,28 +58,27 @@ class _$ReservationJsonldReservationReadTimestampReadPaymentMethodEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ReservationJsonldReservationReadTimestampReadPaymentMethodEnum
+    ReservationJsonldReservationReadPaymentMethodEnum
   ];
   @override
-  final String wireName =
-      'ReservationJsonldReservationReadTimestampReadPaymentMethodEnum';
+  final String wireName = 'ReservationJsonldReservationReadPaymentMethodEnum';
 
   @override
   Object serialize(Serializers serializers,
-          ReservationJsonldReservationReadTimestampReadPaymentMethodEnum object,
+          ReservationJsonldReservationReadPaymentMethodEnum object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  ReservationJsonldReservationReadTimestampReadPaymentMethodEnum deserialize(
+  ReservationJsonldReservationReadPaymentMethodEnum deserialize(
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      ReservationJsonldReservationReadTimestampReadPaymentMethodEnum.valueOf(
+      ReservationJsonldReservationReadPaymentMethodEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$ReservationJsonldReservationReadTimestampRead
-    extends ReservationJsonldReservationReadTimestampRead {
+class _$ReservationJsonldReservationRead
+    extends ReservationJsonldReservationRead {
   @override
   final AddressJsonldProviderReadAddressReadContext? atContext;
   @override
@@ -95,7 +88,7 @@ class _$ReservationJsonldReservationReadTimestampRead
   @override
   final int? id;
   @override
-  final ItemJsonldReservationReadTimestampRead item;
+  final String item;
   @override
   final String author;
   @override
@@ -105,8 +98,7 @@ class _$ReservationJsonldReservationReadTimestampRead
   @override
   final DateTime date;
   @override
-  final ReservationJsonldReservationReadTimestampReadPaymentMethodEnum
-      paymentMethod;
+  final ReservationJsonldReservationReadPaymentMethodEnum paymentMethod;
   @override
   final String? ticket;
   @override
@@ -114,14 +106,11 @@ class _$ReservationJsonldReservationReadTimestampRead
   @override
   final DateTime? updatedAt;
 
-  factory _$ReservationJsonldReservationReadTimestampRead(
-          [void Function(ReservationJsonldReservationReadTimestampReadBuilder)?
-              updates]) =>
-      (new ReservationJsonldReservationReadTimestampReadBuilder()
-            ..update(updates))
-          ._build();
+  factory _$ReservationJsonldReservationRead(
+          [void Function(ReservationJsonldReservationReadBuilder)? updates]) =>
+      (new ReservationJsonldReservationReadBuilder()..update(updates))._build();
 
-  _$ReservationJsonldReservationReadTimestampRead._(
+  _$ReservationJsonldReservationRead._(
       {this.atContext,
       this.atId,
       this.atType,
@@ -137,31 +126,30 @@ class _$ReservationJsonldReservationReadTimestampRead
       this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        item, r'ReservationJsonldReservationReadTimestampRead', 'item');
+        item, r'ReservationJsonldReservationRead', 'item');
     BuiltValueNullFieldError.checkNotNull(
-        author, r'ReservationJsonldReservationReadTimestampRead', 'author');
+        author, r'ReservationJsonldReservationRead', 'author');
     BuiltValueNullFieldError.checkNotNull(
-        quantity, r'ReservationJsonldReservationReadTimestampRead', 'quantity');
+        quantity, r'ReservationJsonldReservationRead', 'quantity');
     BuiltValueNullFieldError.checkNotNull(
-        date, r'ReservationJsonldReservationReadTimestampRead', 'date');
-    BuiltValueNullFieldError.checkNotNull(paymentMethod,
-        r'ReservationJsonldReservationReadTimestampRead', 'paymentMethod');
+        date, r'ReservationJsonldReservationRead', 'date');
+    BuiltValueNullFieldError.checkNotNull(
+        paymentMethod, r'ReservationJsonldReservationRead', 'paymentMethod');
   }
 
   @override
-  ReservationJsonldReservationReadTimestampRead rebuild(
-          void Function(ReservationJsonldReservationReadTimestampReadBuilder)
-              updates) =>
+  ReservationJsonldReservationRead rebuild(
+          void Function(ReservationJsonldReservationReadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ReservationJsonldReservationReadTimestampReadBuilder toBuilder() =>
-      new ReservationJsonldReservationReadTimestampReadBuilder()..replace(this);
+  ReservationJsonldReservationReadBuilder toBuilder() =>
+      new ReservationJsonldReservationReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ReservationJsonldReservationReadTimestampRead &&
+    return other is ReservationJsonldReservationRead &&
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
@@ -199,8 +187,7 @@ class _$ReservationJsonldReservationReadTimestampRead
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(
-            r'ReservationJsonldReservationReadTimestampRead')
+    return (newBuiltValueToStringHelper(r'ReservationJsonldReservationRead')
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
@@ -218,11 +205,11 @@ class _$ReservationJsonldReservationReadTimestampRead
   }
 }
 
-class ReservationJsonldReservationReadTimestampReadBuilder
+class ReservationJsonldReservationReadBuilder
     implements
-        Builder<ReservationJsonldReservationReadTimestampRead,
-            ReservationJsonldReservationReadTimestampReadBuilder> {
-  _$ReservationJsonldReservationReadTimestampRead? _$v;
+        Builder<ReservationJsonldReservationRead,
+            ReservationJsonldReservationReadBuilder> {
+  _$ReservationJsonldReservationRead? _$v;
 
   AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
   AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
@@ -244,11 +231,9 @@ class ReservationJsonldReservationReadTimestampReadBuilder
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
 
-  ItemJsonldReservationReadTimestampReadBuilder? _item;
-  ItemJsonldReservationReadTimestampReadBuilder get item =>
-      _$this._item ??= new ItemJsonldReservationReadTimestampReadBuilder();
-  set item(ItemJsonldReservationReadTimestampReadBuilder? item) =>
-      _$this._item = item;
+  String? _item;
+  String? get item => _$this._item;
+  set item(String? item) => _$this._item = item;
 
   String? _author;
   String? get author => _$this._author;
@@ -266,13 +251,11 @@ class ReservationJsonldReservationReadTimestampReadBuilder
   DateTime? get date => _$this._date;
   set date(DateTime? date) => _$this._date = date;
 
-  ReservationJsonldReservationReadTimestampReadPaymentMethodEnum?
-      _paymentMethod;
-  ReservationJsonldReservationReadTimestampReadPaymentMethodEnum?
-      get paymentMethod => _$this._paymentMethod;
+  ReservationJsonldReservationReadPaymentMethodEnum? _paymentMethod;
+  ReservationJsonldReservationReadPaymentMethodEnum? get paymentMethod =>
+      _$this._paymentMethod;
   set paymentMethod(
-          ReservationJsonldReservationReadTimestampReadPaymentMethodEnum?
-              paymentMethod) =>
+          ReservationJsonldReservationReadPaymentMethodEnum? paymentMethod) =>
       _$this._paymentMethod = paymentMethod;
 
   String? _ticket;
@@ -287,18 +270,18 @@ class ReservationJsonldReservationReadTimestampReadBuilder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
-  ReservationJsonldReservationReadTimestampReadBuilder() {
-    ReservationJsonldReservationReadTimestampRead._defaults(this);
+  ReservationJsonldReservationReadBuilder() {
+    ReservationJsonldReservationRead._defaults(this);
   }
 
-  ReservationJsonldReservationReadTimestampReadBuilder get _$this {
+  ReservationJsonldReservationReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
       _id = $v.id;
-      _item = $v.item.toBuilder();
+      _item = $v.item;
       _author = $v.author;
       _description = $v.description;
       _quantity = $v.quantity;
@@ -313,42 +296,39 @@ class ReservationJsonldReservationReadTimestampReadBuilder
   }
 
   @override
-  void replace(ReservationJsonldReservationReadTimestampRead other) {
+  void replace(ReservationJsonldReservationRead other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ReservationJsonldReservationReadTimestampRead;
+    _$v = other as _$ReservationJsonldReservationRead;
   }
 
   @override
-  void update(
-      void Function(ReservationJsonldReservationReadTimestampReadBuilder)?
-          updates) {
+  void update(void Function(ReservationJsonldReservationReadBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ReservationJsonldReservationReadTimestampRead build() => _build();
+  ReservationJsonldReservationRead build() => _build();
 
-  _$ReservationJsonldReservationReadTimestampRead _build() {
-    _$ReservationJsonldReservationReadTimestampRead _$result;
+  _$ReservationJsonldReservationRead _build() {
+    _$ReservationJsonldReservationRead _$result;
     try {
       _$result = _$v ??
-          new _$ReservationJsonldReservationReadTimestampRead._(
+          new _$ReservationJsonldReservationRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
             id: id,
-            item: item.build(),
-            author: BuiltValueNullFieldError.checkNotNull(author,
-                r'ReservationJsonldReservationReadTimestampRead', 'author'),
+            item: BuiltValueNullFieldError.checkNotNull(
+                item, r'ReservationJsonldReservationRead', 'item'),
+            author: BuiltValueNullFieldError.checkNotNull(
+                author, r'ReservationJsonldReservationRead', 'author'),
             description: description,
-            quantity: BuiltValueNullFieldError.checkNotNull(quantity,
-                r'ReservationJsonldReservationReadTimestampRead', 'quantity'),
+            quantity: BuiltValueNullFieldError.checkNotNull(
+                quantity, r'ReservationJsonldReservationRead', 'quantity'),
             date: BuiltValueNullFieldError.checkNotNull(
-                date, r'ReservationJsonldReservationReadTimestampRead', 'date'),
-            paymentMethod: BuiltValueNullFieldError.checkNotNull(
-                paymentMethod,
-                r'ReservationJsonldReservationReadTimestampRead',
-                'paymentMethod'),
+                date, r'ReservationJsonldReservationRead', 'date'),
+            paymentMethod: BuiltValueNullFieldError.checkNotNull(paymentMethod,
+                r'ReservationJsonldReservationRead', 'paymentMethod'),
             ticket: ticket,
             createdAt: createdAt,
             updatedAt: updatedAt,
@@ -358,14 +338,9 @@ class ReservationJsonldReservationReadTimestampReadBuilder
       try {
         _$failedField = 'atContext';
         _atContext?.build();
-
-        _$failedField = 'item';
-        item.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'ReservationJsonldReservationReadTimestampRead',
-            _$failedField,
-            e.toString());
+            r'ReservationJsonldReservationRead', _$failedField, e.toString());
       }
       rethrow;
     }

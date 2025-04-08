@@ -43,6 +43,7 @@ class ItemApi {
   /// * [orderLeftSquareBracketBeginDateRightSquareBracket] - 
   /// * [orderLeftSquareBracketEndDateRightSquareBracket] - 
   /// * [isBookable] - 
+  /// * [isOnline] - 
   /// * [createdAtLeftSquareBracketBeforeRightSquareBracket] - 
   /// * [createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [createdAtLeftSquareBracketAfterRightSquareBracket] - 
@@ -77,6 +78,7 @@ class ItemApi {
     String? orderLeftSquareBracketBeginDateRightSquareBracket = 'asc',
     String? orderLeftSquareBracketEndDateRightSquareBracket = 'asc',
     bool? isBookable,
+    bool? isOnline,
     String? createdAtLeftSquareBracketBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketAfterRightSquareBracket,
@@ -130,6 +132,7 @@ class ItemApi {
       if (orderLeftSquareBracketBeginDateRightSquareBracket != null) r'order[beginDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketBeginDateRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndDateRightSquareBracket, const FullType(String)),
       if (isBookable != null) r'isBookable': encodeQueryParameter(_serializers, isBookable, const FullType(bool)),
+      if (isOnline != null) r'isOnline': encodeQueryParameter(_serializers, isOnline, const FullType(bool)),
       if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
       if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
@@ -497,6 +500,7 @@ class ItemApi {
   /// * [orderLeftSquareBracketBeginDateRightSquareBracket] - 
   /// * [orderLeftSquareBracketEndDateRightSquareBracket] - 
   /// * [isBookable] - 
+  /// * [isOnline] - 
   /// * [createdAtLeftSquareBracketBeforeRightSquareBracket] - 
   /// * [createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [createdAtLeftSquareBracketAfterRightSquareBracket] - 
@@ -532,6 +536,7 @@ class ItemApi {
     String? orderLeftSquareBracketBeginDateRightSquareBracket = 'asc',
     String? orderLeftSquareBracketEndDateRightSquareBracket = 'asc',
     bool? isBookable,
+    bool? isOnline,
     String? createdAtLeftSquareBracketBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketAfterRightSquareBracket,
@@ -585,6 +590,7 @@ class ItemApi {
       if (orderLeftSquareBracketBeginDateRightSquareBracket != null) r'order[beginDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketBeginDateRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndDateRightSquareBracket, const FullType(String)),
       if (isBookable != null) r'isBookable': encodeQueryParameter(_serializers, isBookable, const FullType(bool)),
+      if (isOnline != null) r'isOnline': encodeQueryParameter(_serializers, isOnline, const FullType(bool)),
       if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
       if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),

@@ -28,9 +28,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ItemJsonldItemReadServiceRead.serializer)
       ..add(ItemJsonldItemWrite.serializer)
       ..add(ItemJsonldProviderReadAddressRead.serializer)
-      ..add(ItemJsonldReservationReadTimestampRead.serializer)
       ..add(ItemProviderReadAddressRead.serializer)
-      ..add(ItemReservationReadTimestampRead.serializer)
       ..add(ProviderItemReadServiceRead.serializer)
       ..add(ProviderJsonldItemReadServiceRead.serializer)
       ..add(ProviderJsonldProviderReadAddressRead.serializer)
@@ -39,13 +37,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ProviderProviderReadAddressRead.serializer)
       ..add(ProviderProviderWriteAddressWrite.serializer)
       ..add(ProviderTagRead.serializer)
-      ..add(ReservationJsonldReservationReadTimestampRead.serializer)
-      ..add(ReservationJsonldReservationReadTimestampReadPaymentMethodEnum
-          .serializer)
+      ..add(ReservationJsonldReservationRead.serializer)
+      ..add(ReservationJsonldReservationReadPaymentMethodEnum.serializer)
       ..add(ReservationJsonldReservationWrite.serializer)
       ..add(ReservationJsonldReservationWritePaymentMethodEnum.serializer)
-      ..add(ReservationReservationReadTimestampRead.serializer)
-      ..add(ReservationReservationReadTimestampReadPaymentMethodEnum.serializer)
+      ..add(ReservationReservationRead.serializer)
+      ..add(ReservationReservationReadPaymentMethodEnum.serializer)
       ..add(ReservationReservationWrite.serializer)
       ..add(ReservationReservationWritePaymentMethodEnum.serializer)
       ..add(ServiceItemReadServiceRead.serializer)
@@ -96,11 +93,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(ProviderTagRead)]),
           () => new ListBuilder<ProviderTagRead>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(ReservationJsonldReservationReadTimestampRead)
-          ]),
-          () =>
-              new ListBuilder<ReservationJsonldReservationReadTimestampRead>())
+          const FullType(BuiltList,
+              const [const FullType(ReservationJsonldReservationRead)]),
+          () => new ListBuilder<ReservationJsonldReservationRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ServiceJsonldServiceRead)]),

@@ -11,9 +11,9 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/marketplace_service/api_util.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_reservations_get_collection200_response.dart';
-import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_read_timestamp_read.dart';
+import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_write.dart';
-import 'package:so_dart_sdk/marketplace_service/model/reservation_reservation_read_timestamp_read.dart';
+import 'package:so_dart_sdk/marketplace_service/model/reservation_reservation_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/reservation_reservation_write.dart';
 
 class ReservationApi {
@@ -160,9 +160,9 @@ class ReservationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ReservationJsonldReservationReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [ReservationJsonldReservationRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ReservationJsonldReservationReadTimestampRead>> apiReservationsGetItem({ 
+  Future<Response<ReservationJsonldReservationRead>> apiReservationsGetItem({ 
     required String id,
     String? acceptLanguage,
     CancelToken? cancelToken,
@@ -201,14 +201,14 @@ class ReservationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ReservationJsonldReservationReadTimestampRead? _responseData;
+    ReservationJsonldReservationRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(ReservationJsonldReservationReadTimestampRead),
-      ) as ReservationJsonldReservationReadTimestampRead;
+        specifiedType: const FullType(ReservationJsonldReservationRead),
+      ) as ReservationJsonldReservationRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -220,7 +220,7 @@ class ReservationApi {
       );
     }
 
-    return Response<ReservationJsonldReservationReadTimestampRead>(
+    return Response<ReservationJsonldReservationRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -245,9 +245,9 @@ class ReservationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ReservationJsonldReservationReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [ReservationJsonldReservationRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ReservationJsonldReservationReadTimestampRead>> apiReservationsPostItem({ 
+  Future<Response<ReservationJsonldReservationRead>> apiReservationsPostItem({ 
     required ReservationJsonldReservationWrite reservationJsonldReservationWrite,
     String? acceptLanguage,
     CancelToken? cancelToken,
@@ -306,14 +306,14 @@ class ReservationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ReservationJsonldReservationReadTimestampRead? _responseData;
+    ReservationJsonldReservationRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(ReservationJsonldReservationReadTimestampRead),
-      ) as ReservationJsonldReservationReadTimestampRead;
+        specifiedType: const FullType(ReservationJsonldReservationRead),
+      ) as ReservationJsonldReservationRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -325,7 +325,7 @@ class ReservationApi {
       );
     }
 
-    return Response<ReservationJsonldReservationReadTimestampRead>(
+    return Response<ReservationJsonldReservationRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -9,7 +9,7 @@ part of 'api_reservations_get_collection200_response.dart';
 class _$ApiReservationsGetCollection200Response
     extends ApiReservationsGetCollection200Response {
   @override
-  final BuiltList<ReservationJsonldReservationReadTimestampRead> member;
+  final BuiltList<ReservationJsonldReservationRead> member;
   @override
   final int? totalItems;
   @override
@@ -79,12 +79,10 @@ class ApiReservationsGetCollection200ResponseBuilder
             ApiReservationsGetCollection200ResponseBuilder> {
   _$ApiReservationsGetCollection200Response? _$v;
 
-  ListBuilder<ReservationJsonldReservationReadTimestampRead>? _member;
-  ListBuilder<ReservationJsonldReservationReadTimestampRead> get member =>
-      _$this._member ??=
-          new ListBuilder<ReservationJsonldReservationReadTimestampRead>();
-  set member(
-          ListBuilder<ReservationJsonldReservationReadTimestampRead>? member) =>
+  ListBuilder<ReservationJsonldReservationRead>? _member;
+  ListBuilder<ReservationJsonldReservationRead> get member =>
+      _$this._member ??= new ListBuilder<ReservationJsonldReservationRead>();
+  set member(ListBuilder<ReservationJsonldReservationRead>? member) =>
       _$this._member = member;
 
   int? _totalItems;

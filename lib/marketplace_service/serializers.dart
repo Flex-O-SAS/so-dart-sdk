@@ -33,9 +33,7 @@ import 'package:so_dart_sdk/marketplace_service/model/item_item_write.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_jsonld_item_read_service_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_jsonld_item_write.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_jsonld_provider_read_address_read.dart';
-import 'package:so_dart_sdk/marketplace_service/model/item_jsonld_reservation_read_timestamp_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_provider_read_address_read.dart';
-import 'package:so_dart_sdk/marketplace_service/model/item_reservation_read_timestamp_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_item_read_service_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_item_read_service_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_provider_read_address_read.dart';
@@ -44,9 +42,9 @@ import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_tag_read.d
 import 'package:so_dart_sdk/marketplace_service/model/provider_provider_read_address_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_provider_write_address_write.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_tag_read.dart';
-import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_read_timestamp_read.dart';
+import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_write.dart';
-import 'package:so_dart_sdk/marketplace_service/model/reservation_reservation_read_timestamp_read.dart';
+import 'package:so_dart_sdk/marketplace_service/model/reservation_reservation_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/reservation_reservation_write.dart';
 import 'package:so_dart_sdk/marketplace_service/model/service_item_read_service_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/service_jsonld_item_read_service_read.dart';
@@ -81,9 +79,7 @@ part 'serializers.g.dart';
   ItemJsonldItemReadServiceRead,
   ItemJsonldItemWrite,
   ItemJsonldProviderReadAddressRead,
-  ItemJsonldReservationReadTimestampRead,
   ItemProviderReadAddressRead,
-  ItemReservationReadTimestampRead,
   ProviderItemReadServiceRead,
   ProviderJsonldItemReadServiceRead,
   ProviderJsonldProviderReadAddressRead,
@@ -92,9 +88,9 @@ part 'serializers.g.dart';
   ProviderProviderReadAddressRead,
   ProviderProviderWriteAddressWrite,
   ProviderTagRead,
-  ReservationJsonldReservationReadTimestampRead,
+  ReservationJsonldReservationRead,
   ReservationJsonldReservationWrite,
-  ReservationReservationReadTimestampRead,
+  ReservationReservationRead,
   ReservationReservationWrite,
   ServiceItemReadServiceRead,
   ServiceJsonldItemReadServiceRead,

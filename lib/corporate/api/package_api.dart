@@ -15,8 +15,10 @@ import 'package:so_dart_sdk/corporate/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld_jsonld.dart';
 import 'package:so_dart_sdk/corporate/model/error.dart';
 import 'package:so_dart_sdk/corporate/model/error_jsonld.dart';
-import 'package:so_dart_sdk/corporate/model/package.dart';
-import 'package:so_dart_sdk/corporate/model/package_jsonld.dart';
+import 'package:so_dart_sdk/corporate/model/package_jsonld_package_read.dart';
+import 'package:so_dart_sdk/corporate/model/package_jsonld_package_write.dart';
+import 'package:so_dart_sdk/corporate/model/package_package_read.dart';
+import 'package:so_dart_sdk/corporate/model/package_package_write.dart';
 
 class PackageApi {
 
@@ -85,20 +87,27 @@ class PackageApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [id] - 
+  /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [recipient] - 
   /// * [recipientLeftSquareBracketRightSquareBracket] - 
   /// * [staff] - 
   /// * [staffLeftSquareBracketRightSquareBracket] - 
   /// * [senderName] - 
   /// * [senderNameLeftSquareBracketRightSquareBracket] - 
-  /// * [securityCode] - 
-  /// * [securityCodeLeftSquareBracketRightSquareBracket] - 
   /// * [handoverClient] - 
   /// * [handoverClientLeftSquareBracketRightSquareBracket] - 
+  /// * [securityCode] - 
+  /// * [securityCodeLeftSquareBracketRightSquareBracket] - 
   /// * [site] - 
   /// * [siteLeftSquareBracketRightSquareBracket] - 
   /// * [type] - 
   /// * [status] - 
+  /// * [orderLeftSquareBracketTypeRightSquareBracket] - 
+  /// * [orderLeftSquareBracketStatusRightSquareBracket] - 
+  /// * [orderLeftSquareBracketSenderNameRightSquareBracket] - 
+  /// * [orderLeftSquareBracketReceptionDateRightSquareBracket] - 
+  /// * [orderLeftSquareBracketHandoverDateRightSquareBracket] - 
   /// * [receptionDateLeftSquareBracketBeforeRightSquareBracket] - 
   /// * [receptionDateLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [receptionDateLeftSquareBracketAfterRightSquareBracket] - 
@@ -118,20 +127,27 @@ class PackageApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiPackagesGetCollection200Response>> apiPackagesGetCollection({ 
     int? page = 1,
+    int? id,
+    BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     String? recipient,
     BuiltList<String>? recipientLeftSquareBracketRightSquareBracket,
     String? staff,
     BuiltList<String>? staffLeftSquareBracketRightSquareBracket,
     String? senderName,
     BuiltList<String>? senderNameLeftSquareBracketRightSquareBracket,
-    String? securityCode,
-    BuiltList<String>? securityCodeLeftSquareBracketRightSquareBracket,
     String? handoverClient,
     BuiltList<String>? handoverClientLeftSquareBracketRightSquareBracket,
+    String? securityCode,
+    BuiltList<String>? securityCodeLeftSquareBracketRightSquareBracket,
     int? site,
     BuiltList<int>? siteLeftSquareBracketRightSquareBracket,
     String? type,
     String? status,
+    String? orderLeftSquareBracketTypeRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketStatusRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketSenderNameRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketReceptionDateRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketHandoverDateRightSquareBracket = 'asc',
     String? receptionDateLeftSquareBracketBeforeRightSquareBracket,
     String? receptionDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? receptionDateLeftSquareBracketAfterRightSquareBracket,
@@ -169,20 +185,27 @@ class PackageApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
+      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (recipient != null) r'recipient': encodeQueryParameter(_serializers, recipient, const FullType(String)),
       if (recipientLeftSquareBracketRightSquareBracket != null) r'recipient[]': encodeCollectionQueryParameter<String>(_serializers, recipientLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (staff != null) r'staff': encodeQueryParameter(_serializers, staff, const FullType(String)),
       if (staffLeftSquareBracketRightSquareBracket != null) r'staff[]': encodeCollectionQueryParameter<String>(_serializers, staffLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (senderName != null) r'senderName': encodeQueryParameter(_serializers, senderName, const FullType(String)),
       if (senderNameLeftSquareBracketRightSquareBracket != null) r'senderName[]': encodeCollectionQueryParameter<String>(_serializers, senderNameLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (securityCode != null) r'securityCode': encodeQueryParameter(_serializers, securityCode, const FullType(String)),
-      if (securityCodeLeftSquareBracketRightSquareBracket != null) r'securityCode[]': encodeCollectionQueryParameter<String>(_serializers, securityCodeLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (handoverClient != null) r'handoverClient': encodeQueryParameter(_serializers, handoverClient, const FullType(String)),
       if (handoverClientLeftSquareBracketRightSquareBracket != null) r'handoverClient[]': encodeCollectionQueryParameter<String>(_serializers, handoverClientLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (securityCode != null) r'securityCode': encodeQueryParameter(_serializers, securityCode, const FullType(String)),
+      if (securityCodeLeftSquareBracketRightSquareBracket != null) r'securityCode[]': encodeCollectionQueryParameter<String>(_serializers, securityCodeLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (site != null) r'site': encodeQueryParameter(_serializers, site, const FullType(int)),
       if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': encodeCollectionQueryParameter<int>(_serializers, siteLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
       if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
+      if (orderLeftSquareBracketTypeRightSquareBracket != null) r'order[type]': encodeQueryParameter(_serializers, orderLeftSquareBracketTypeRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': encodeQueryParameter(_serializers, orderLeftSquareBracketStatusRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketSenderNameRightSquareBracket != null) r'order[senderName]': encodeQueryParameter(_serializers, orderLeftSquareBracketSenderNameRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketReceptionDateRightSquareBracket != null) r'order[receptionDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketReceptionDateRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketHandoverDateRightSquareBracket != null) r'order[handoverDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketHandoverDateRightSquareBracket, const FullType(String)),
       if (receptionDateLeftSquareBracketBeforeRightSquareBracket != null) r'receptionDate[before]': encodeQueryParameter(_serializers, receptionDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
       if (receptionDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'receptionDate[strictly_before]': encodeQueryParameter(_serializers, receptionDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (receptionDateLeftSquareBracketAfterRightSquareBracket != null) r'receptionDate[after]': encodeQueryParameter(_serializers, receptionDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
@@ -245,9 +268,9 @@ class PackageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [PackageJsonld] as data
+  /// Returns a [Future] containing a [Response] with a [PackageJsonldPackageRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<PackageJsonld>> apiPackagesGetItem({ 
+  Future<Response<PackageJsonldPackageRead>> apiPackagesGetItem({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -284,14 +307,14 @@ class PackageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    PackageJsonld? _responseData;
+    PackageJsonldPackageRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(PackageJsonld),
-      ) as PackageJsonld;
+        specifiedType: const FullType(PackageJsonldPackageRead),
+      ) as PackageJsonldPackageRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -303,7 +326,7 @@ class PackageApi {
       );
     }
 
-    return Response<PackageJsonld>(
+    return Response<PackageJsonldPackageRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -319,7 +342,7 @@ class PackageApi {
   /// Creates a Package resource.
   ///
   /// Parameters:
-  /// * [packageJsonld] - The new Package resource
+  /// * [packageJsonldPackageWrite] - The new Package resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -327,10 +350,10 @@ class PackageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [PackageJsonld] as data
+  /// Returns a [Future] containing a [Response] with a [PackageJsonldPackageRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<PackageJsonld>> apiPackagesPostItem({ 
-    required PackageJsonld packageJsonld,
+  Future<Response<PackageJsonldPackageRead>> apiPackagesPostItem({ 
+    required PackageJsonldPackageWrite packageJsonldPackageWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -362,8 +385,8 @@ class PackageApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(PackageJsonld);
-      _bodyData = _serializers.serialize(packageJsonld, specifiedType: _type);
+      const _type = FullType(PackageJsonldPackageWrite);
+      _bodyData = _serializers.serialize(packageJsonldPackageWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -386,14 +409,14 @@ class PackageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    PackageJsonld? _responseData;
+    PackageJsonldPackageRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(PackageJsonld),
-      ) as PackageJsonld;
+        specifiedType: const FullType(PackageJsonldPackageRead),
+      ) as PackageJsonldPackageRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -405,7 +428,7 @@ class PackageApi {
       );
     }
 
-    return Response<PackageJsonld>(
+    return Response<PackageJsonldPackageRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -422,7 +445,7 @@ class PackageApi {
   ///
   /// Parameters:
   /// * [id] - Package identifier
-  /// * [package] - The updated Package resource
+  /// * [packagePackageWrite] - The updated Package resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -430,11 +453,11 @@ class PackageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [PackageJsonld] as data
+  /// Returns a [Future] containing a [Response] with a [PackageJsonldPackageRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<PackageJsonld>> apiPackagesPutItem({ 
+  Future<Response<PackageJsonldPackageRead>> apiPackagesPutItem({ 
     required String id,
-    required Package package,
+    required PackagePackageWrite packagePackageWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -466,8 +489,8 @@ class PackageApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(Package);
-      _bodyData = _serializers.serialize(package, specifiedType: _type);
+      const _type = FullType(PackagePackageWrite);
+      _bodyData = _serializers.serialize(packagePackageWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -490,14 +513,14 @@ class PackageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    PackageJsonld? _responseData;
+    PackageJsonldPackageRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(PackageJsonld),
-      ) as PackageJsonld;
+        specifiedType: const FullType(PackageJsonldPackageRead),
+      ) as PackageJsonldPackageRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -509,7 +532,7 @@ class PackageApi {
       );
     }
 
-    return Response<PackageJsonld>(
+    return Response<PackageJsonldPackageRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

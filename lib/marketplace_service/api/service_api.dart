@@ -31,6 +31,14 @@ class ServiceApi {
   /// * [prioritizationLeftSquareBracketRightSquareBracket] - 
   /// * [orderLeftSquareBracketLabelRightSquareBracket] - 
   /// * [orderLeftSquareBracketPrioritizationRightSquareBracket] - 
+  /// * [createdAtLeftSquareBracketBeforeRightSquareBracket] - 
+  /// * [createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
+  /// * [createdAtLeftSquareBracketAfterRightSquareBracket] - 
+  /// * [createdAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
+  /// * [updatedAtLeftSquareBracketBeforeRightSquareBracket] - 
+  /// * [updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
+  /// * [updatedAtLeftSquareBracketAfterRightSquareBracket] - 
+  /// * [updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
   /// * [acceptLanguage] - Service Accept-Language
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -48,6 +56,14 @@ class ServiceApi {
     BuiltList<int>? prioritizationLeftSquareBracketRightSquareBracket,
     String? orderLeftSquareBracketLabelRightSquareBracket = 'asc',
     String? orderLeftSquareBracketPrioritizationRightSquareBracket = 'desc',
+    String? createdAtLeftSquareBracketBeforeRightSquareBracket,
+    String? createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+    String? createdAtLeftSquareBracketAfterRightSquareBracket,
+    String? createdAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+    String? updatedAtLeftSquareBracketBeforeRightSquareBracket,
+    String? updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+    String? updatedAtLeftSquareBracketAfterRightSquareBracket,
+    String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
     String? acceptLanguage,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -84,6 +100,14 @@ class ServiceApi {
       if (prioritizationLeftSquareBracketRightSquareBracket != null) r'prioritization[]': encodeCollectionQueryParameter<int>(_serializers, prioritizationLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (orderLeftSquareBracketLabelRightSquareBracket != null) r'order[label]': encodeQueryParameter(_serializers, orderLeftSquareBracketLabelRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketPrioritizationRightSquareBracket != null) r'order[prioritization]': encodeQueryParameter(_serializers, orderLeftSquareBracketPrioritizationRightSquareBracket, const FullType(String)),
+      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
+      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
+      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
+      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
+      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
+      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
+      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

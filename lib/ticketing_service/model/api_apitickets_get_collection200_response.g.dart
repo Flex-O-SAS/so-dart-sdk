@@ -9,7 +9,7 @@ part of 'api_apitickets_get_collection200_response.dart';
 class _$ApiApiticketsGetCollection200Response
     extends ApiApiticketsGetCollection200Response {
   @override
-  final BuiltList<TicketJsonldTicketReadTimestampRead> member;
+  final BuiltList<TicketJsonldTicketRead> member;
   @override
   final int? totalItems;
   @override
@@ -79,10 +79,10 @@ class ApiApiticketsGetCollection200ResponseBuilder
             ApiApiticketsGetCollection200ResponseBuilder> {
   _$ApiApiticketsGetCollection200Response? _$v;
 
-  ListBuilder<TicketJsonldTicketReadTimestampRead>? _member;
-  ListBuilder<TicketJsonldTicketReadTimestampRead> get member =>
-      _$this._member ??= new ListBuilder<TicketJsonldTicketReadTimestampRead>();
-  set member(ListBuilder<TicketJsonldTicketReadTimestampRead>? member) =>
+  ListBuilder<TicketJsonldTicketRead>? _member;
+  ListBuilder<TicketJsonldTicketRead> get member =>
+      _$this._member ??= new ListBuilder<TicketJsonldTicketRead>();
+  set member(ListBuilder<TicketJsonldTicketRead>? member) =>
       _$this._member = member;
 
   int? _totalItems;

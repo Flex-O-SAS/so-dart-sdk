@@ -11,9 +11,13 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/api_util.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apitickets_get_collection200_response.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/error.dart';
+import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write.dart';
 
 class TicketApi {
@@ -30,19 +34,7 @@ class TicketApi {
   /// Parameters:
   /// * [page] - The collection page number
   /// * [groupsLeftSquareBracketRightSquareBracket] - 
-  /// * [orderLeftSquareBracketIdRightSquareBracket] - 
-  /// * [orderLeftSquareBracketTitleRightSquareBracket] - 
-  /// * [orderLeftSquareBracketStartDateRightSquareBracket] - 
-  /// * [orderLeftSquareBracketEndDateRightSquareBracket] - 
-  /// * [orderLeftSquareBracketDescriptionRightSquareBracket] - 
-  /// * [orderLeftSquareBracketAuthorRightSquareBracket] - 
-  /// * [orderLeftSquareBracketAssigneeRightSquareBracket] - 
-  /// * [orderLeftSquareBracketStatusRightSquareBracket] - 
-  /// * [orderLeftSquareBracketSiteRightSquareBracket] - 
-  /// * [orderLeftSquareBracketLocationRightSquareBracket] - 
-  /// * [orderLeftSquareBracketMetadataRightSquareBracket] - 
   /// * [orderLeftSquareBracketCreatedAtRightSquareBracket] - 
-  /// * [orderLeftSquareBracketUpdatedAtRightSquareBracket] - 
   /// * [startDateLeftSquareBracketBeforeRightSquareBracket] - 
   /// * [startDateLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [startDateLeftSquareBracketAfterRightSquareBracket] - 
@@ -86,19 +78,7 @@ class TicketApi {
   Future<Response<ApiApiticketsGetCollection200Response>> apiApiticketsGetCollection({ 
     int? page = 1,
     BuiltList<String>? groupsLeftSquareBracketRightSquareBracket,
-    String? orderLeftSquareBracketIdRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketTitleRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketStartDateRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketEndDateRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketDescriptionRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketAuthorRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketAssigneeRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketStatusRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketSiteRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketLocationRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketMetadataRightSquareBracket = 'asc',
     String? orderLeftSquareBracketCreatedAtRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketUpdatedAtRightSquareBracket = 'asc',
     String? startDateLeftSquareBracketBeforeRightSquareBracket,
     String? startDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? startDateLeftSquareBracketAfterRightSquareBracket,
@@ -160,19 +140,7 @@ class TicketApi {
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
       if (groupsLeftSquareBracketRightSquareBracket != null) r'groups[]': encodeCollectionQueryParameter<String>(_serializers, groupsLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (orderLeftSquareBracketIdRightSquareBracket != null) r'order[id]': encodeQueryParameter(_serializers, orderLeftSquareBracketIdRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketTitleRightSquareBracket != null) r'order[title]': encodeQueryParameter(_serializers, orderLeftSquareBracketTitleRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketStartDateRightSquareBracket != null) r'order[startDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketStartDateRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndDateRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketDescriptionRightSquareBracket != null) r'order[description]': encodeQueryParameter(_serializers, orderLeftSquareBracketDescriptionRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketAuthorRightSquareBracket != null) r'order[author]': encodeQueryParameter(_serializers, orderLeftSquareBracketAuthorRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketAssigneeRightSquareBracket != null) r'order[assignee]': encodeQueryParameter(_serializers, orderLeftSquareBracketAssigneeRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': encodeQueryParameter(_serializers, orderLeftSquareBracketStatusRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketSiteRightSquareBracket != null) r'order[site]': encodeQueryParameter(_serializers, orderLeftSquareBracketSiteRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketLocationRightSquareBracket != null) r'order[location]': encodeQueryParameter(_serializers, orderLeftSquareBracketLocationRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketMetadataRightSquareBracket != null) r'order[metadata]': encodeQueryParameter(_serializers, orderLeftSquareBracketMetadataRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketUpdatedAtRightSquareBracket != null) r'order[updatedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketUpdatedAtRightSquareBracket, const FullType(String)),
       if (startDateLeftSquareBracketBeforeRightSquareBracket != null) r'startDate[before]': encodeQueryParameter(_serializers, startDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
       if (startDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'startDate[strictly_before]': encodeQueryParameter(_serializers, startDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (startDateLeftSquareBracketAfterRightSquareBracket != null) r'startDate[after]': encodeQueryParameter(_serializers, startDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
@@ -312,9 +280,9 @@ class TicketApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [TicketJsonldTicketReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [TicketJsonldTicketRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TicketJsonldTicketReadTimestampRead>> apiApiticketsIdGet({ 
+  Future<Response<TicketJsonldTicketRead>> apiApiticketsIdGet({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -351,14 +319,14 @@ class TicketApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    TicketJsonldTicketReadTimestampRead? _responseData;
+    TicketJsonldTicketRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(TicketJsonldTicketReadTimestampRead),
-      ) as TicketJsonldTicketReadTimestampRead;
+        specifiedType: const FullType(TicketJsonldTicketRead),
+      ) as TicketJsonldTicketRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -370,7 +338,7 @@ class TicketApi {
       );
     }
 
-    return Response<TicketJsonldTicketReadTimestampRead>(
+    return Response<TicketJsonldTicketRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -395,9 +363,9 @@ class TicketApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [TicketJsonldTicketReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [TicketJsonldTicketRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TicketJsonldTicketReadTimestampRead>> apiApiticketsIdPatch({ 
+  Future<Response<TicketJsonldTicketRead>> apiApiticketsIdPatch({ 
     required String id,
     required TicketTicketWrite ticketTicketWrite,
     CancelToken? cancelToken,
@@ -455,14 +423,14 @@ class TicketApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    TicketJsonldTicketReadTimestampRead? _responseData;
+    TicketJsonldTicketRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(TicketJsonldTicketReadTimestampRead),
-      ) as TicketJsonldTicketReadTimestampRead;
+        specifiedType: const FullType(TicketJsonldTicketRead),
+      ) as TicketJsonldTicketRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -474,7 +442,7 @@ class TicketApi {
       );
     }
 
-    return Response<TicketJsonldTicketReadTimestampRead>(
+    return Response<TicketJsonldTicketRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -498,9 +466,9 @@ class TicketApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [TicketJsonldTicketReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [TicketJsonldTicketRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TicketJsonldTicketReadTimestampRead>> apiApiticketsPost({ 
+  Future<Response<TicketJsonldTicketRead>> apiApiticketsPost({ 
     required TicketJsonldTicketWrite ticketJsonldTicketWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -557,14 +525,14 @@ class TicketApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    TicketJsonldTicketReadTimestampRead? _responseData;
+    TicketJsonldTicketRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(TicketJsonldTicketReadTimestampRead),
-      ) as TicketJsonldTicketReadTimestampRead;
+        specifiedType: const FullType(TicketJsonldTicketRead),
+      ) as TicketJsonldTicketRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -576,7 +544,7 @@ class TicketApi {
       );
     }
 
-    return Response<TicketJsonldTicketReadTimestampRead>(
+    return Response<TicketJsonldTicketRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

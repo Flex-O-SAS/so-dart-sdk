@@ -3,10 +3,10 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_user_read.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_search.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_view.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_user_read_timestamp_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +22,7 @@ part 'api_apilinked_users_get_collection200_response.g.dart';
 @BuiltValue()
 abstract class ApiApilinkedUsersGetCollection200Response implements Built<ApiApilinkedUsersGetCollection200Response, ApiApilinkedUsersGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<LinkedUserJsonldLinkedUserReadTimestampRead> get member;
+  BuiltList<LinkedUserJsonldLinkedUserRead> get member;
 
   @BuiltValueField(wireName: r'totalItems')
   int? get totalItems;
@@ -59,7 +59,7 @@ class _$ApiApilinkedUsersGetCollection200ResponseSerializer implements Primitive
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(LinkedUserJsonldLinkedUserReadTimestampRead)]),
+      specifiedType: const FullType(BuiltList, [FullType(LinkedUserJsonldLinkedUserRead)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -108,8 +108,8 @@ class _$ApiApilinkedUsersGetCollection200ResponseSerializer implements Primitive
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(LinkedUserJsonldLinkedUserReadTimestampRead)]),
-          ) as BuiltList<LinkedUserJsonldLinkedUserReadTimestampRead>;
+            specifiedType: const FullType(BuiltList, [FullType(LinkedUserJsonldLinkedUserRead)]),
+          ) as BuiltList<LinkedUserJsonldLinkedUserRead>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':

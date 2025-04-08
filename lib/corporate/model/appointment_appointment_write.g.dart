@@ -33,8 +33,8 @@ const AppointmentAppointmentWriteStatusEnum
     _$appointmentAppointmentWriteStatusEnum_cancelled =
     const AppointmentAppointmentWriteStatusEnum._('cancelled');
 const AppointmentAppointmentWriteStatusEnum
-    _$appointmentAppointmentWriteStatusEnum_confirmed =
-    const AppointmentAppointmentWriteStatusEnum._('confirmed');
+    _$appointmentAppointmentWriteStatusEnum_done =
+    const AppointmentAppointmentWriteStatusEnum._('done');
 
 AppointmentAppointmentWriteStatusEnum
     _$appointmentAppointmentWriteStatusEnumValueOf(String name) {
@@ -43,8 +43,8 @@ AppointmentAppointmentWriteStatusEnum
       return _$appointmentAppointmentWriteStatusEnum_scheduled;
     case 'cancelled':
       return _$appointmentAppointmentWriteStatusEnum_cancelled;
-    case 'confirmed':
-      return _$appointmentAppointmentWriteStatusEnum_confirmed;
+    case 'done':
+      return _$appointmentAppointmentWriteStatusEnum_done;
     default:
       throw new ArgumentError(name);
   }
@@ -55,7 +55,7 @@ final BuiltSet<AppointmentAppointmentWriteStatusEnum>
         AppointmentAppointmentWriteStatusEnum>(const <AppointmentAppointmentWriteStatusEnum>[
   _$appointmentAppointmentWriteStatusEnum_scheduled,
   _$appointmentAppointmentWriteStatusEnum_cancelled,
-  _$appointmentAppointmentWriteStatusEnum_confirmed,
+  _$appointmentAppointmentWriteStatusEnum_done,
 ]);
 
 Serializer<AppointmentAppointmentWriteTypeEnum>
@@ -100,12 +100,12 @@ class _$AppointmentAppointmentWriteStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'scheduled': 'scheduled',
     'cancelled': 'cancelled',
-    'confirmed': 'confirmed',
+    'done': 'done',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'scheduled': 'scheduled',
     'cancelled': 'cancelled',
-    'confirmed': 'confirmed',
+    'done': 'done',
   };
 
   @override

@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_read.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_search.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_view.dart';
@@ -22,7 +22,7 @@ part 'api_apitags_get_collection200_response.g.dart';
 @BuiltValue()
 abstract class ApiApitagsGetCollection200Response implements Built<ApiApitagsGetCollection200Response, ApiApitagsGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<TagJsonldTagReadTimestampRead> get member;
+  BuiltList<TagJsonldTagRead> get member;
 
   @BuiltValueField(wireName: r'totalItems')
   int? get totalItems;
@@ -59,7 +59,7 @@ class _$ApiApitagsGetCollection200ResponseSerializer implements PrimitiveSeriali
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(TagJsonldTagReadTimestampRead)]),
+      specifiedType: const FullType(BuiltList, [FullType(TagJsonldTagRead)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -108,8 +108,8 @@ class _$ApiApitagsGetCollection200ResponseSerializer implements PrimitiveSeriali
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(TagJsonldTagReadTimestampRead)]),
-          ) as BuiltList<TagJsonldTagReadTimestampRead>;
+            specifiedType: const FullType(BuiltList, [FullType(TagJsonldTagRead)]),
+          ) as BuiltList<TagJsonldTagRead>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':

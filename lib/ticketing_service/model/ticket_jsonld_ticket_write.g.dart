@@ -102,7 +102,7 @@ class _$TicketJsonldTicketWrite extends TicketJsonldTicketWrite {
   @override
   final String? location;
   @override
-  final BuiltList<String>? metadata;
+  final JsonObject? metadata;
   @override
   final BuiltList<LinkedUserJsonldTicketWrite>? linkedUsers;
   @override
@@ -247,10 +247,9 @@ class TicketJsonldTicketWriteBuilder
   String? get location => _$this._location;
   set location(String? location) => _$this._location = location;
 
-  ListBuilder<String>? _metadata;
-  ListBuilder<String> get metadata =>
-      _$this._metadata ??= new ListBuilder<String>();
-  set metadata(ListBuilder<String>? metadata) => _$this._metadata = metadata;
+  JsonObject? _metadata;
+  JsonObject? get metadata => _$this._metadata;
+  set metadata(JsonObject? metadata) => _$this._metadata = metadata;
 
   ListBuilder<LinkedUserJsonldTicketWrite>? _linkedUsers;
   ListBuilder<LinkedUserJsonldTicketWrite> get linkedUsers =>
@@ -278,7 +277,7 @@ class TicketJsonldTicketWriteBuilder
       _status = $v.status;
       _site = $v.site;
       _location = $v.location;
-      _metadata = $v.metadata?.toBuilder();
+      _metadata = $v.metadata;
       _linkedUsers = $v.linkedUsers?.toBuilder();
       _tags = $v.tags?.toBuilder();
       _$v = null;
@@ -320,15 +319,13 @@ class TicketJsonldTicketWriteBuilder
             site: BuiltValueNullFieldError.checkNotNull(
                 site, r'TicketJsonldTicketWrite', 'site'),
             location: location,
-            metadata: _metadata?.build(),
+            metadata: metadata,
             linkedUsers: _linkedUsers?.build(),
             tags: _tags?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'metadata';
-        _metadata?.build();
         _$failedField = 'linkedUsers';
         _linkedUsers?.build();
         _$failedField = 'tags';

@@ -6,7 +6,7 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_items_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_items_get_collection200_response_search.dart';
-import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_read_timestamp_read.dart';
+import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +22,7 @@ part 'api_reservations_get_collection200_response.g.dart';
 @BuiltValue()
 abstract class ApiReservationsGetCollection200Response implements Built<ApiReservationsGetCollection200Response, ApiReservationsGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<ReservationJsonldReservationReadTimestampRead> get member;
+  BuiltList<ReservationJsonldReservationRead> get member;
 
   @BuiltValueField(wireName: r'totalItems')
   int? get totalItems;
@@ -59,7 +59,7 @@ class _$ApiReservationsGetCollection200ResponseSerializer implements PrimitiveSe
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(ReservationJsonldReservationReadTimestampRead)]),
+      specifiedType: const FullType(BuiltList, [FullType(ReservationJsonldReservationRead)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -108,8 +108,8 @@ class _$ApiReservationsGetCollection200ResponseSerializer implements PrimitiveSe
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(ReservationJsonldReservationReadTimestampRead)]),
-          ) as BuiltList<ReservationJsonldReservationReadTimestampRead>;
+            specifiedType: const FullType(BuiltList, [FullType(ReservationJsonldReservationRead)]),
+          ) as BuiltList<ReservationJsonldReservationRead>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':

@@ -33,8 +33,8 @@ const AppointmentJsonldAppointmentWriteStatusEnum
     _$appointmentJsonldAppointmentWriteStatusEnum_cancelled =
     const AppointmentJsonldAppointmentWriteStatusEnum._('cancelled');
 const AppointmentJsonldAppointmentWriteStatusEnum
-    _$appointmentJsonldAppointmentWriteStatusEnum_confirmed =
-    const AppointmentJsonldAppointmentWriteStatusEnum._('confirmed');
+    _$appointmentJsonldAppointmentWriteStatusEnum_done =
+    const AppointmentJsonldAppointmentWriteStatusEnum._('done');
 
 AppointmentJsonldAppointmentWriteStatusEnum
     _$appointmentJsonldAppointmentWriteStatusEnumValueOf(String name) {
@@ -43,8 +43,8 @@ AppointmentJsonldAppointmentWriteStatusEnum
       return _$appointmentJsonldAppointmentWriteStatusEnum_scheduled;
     case 'cancelled':
       return _$appointmentJsonldAppointmentWriteStatusEnum_cancelled;
-    case 'confirmed':
-      return _$appointmentJsonldAppointmentWriteStatusEnum_confirmed;
+    case 'done':
+      return _$appointmentJsonldAppointmentWriteStatusEnum_done;
     default:
       throw new ArgumentError(name);
   }
@@ -55,7 +55,7 @@ final BuiltSet<AppointmentJsonldAppointmentWriteStatusEnum>
         AppointmentJsonldAppointmentWriteStatusEnum>(const <AppointmentJsonldAppointmentWriteStatusEnum>[
   _$appointmentJsonldAppointmentWriteStatusEnum_scheduled,
   _$appointmentJsonldAppointmentWriteStatusEnum_cancelled,
-  _$appointmentJsonldAppointmentWriteStatusEnum_confirmed,
+  _$appointmentJsonldAppointmentWriteStatusEnum_done,
 ]);
 
 Serializer<AppointmentJsonldAppointmentWriteTypeEnum>
@@ -101,12 +101,12 @@ class _$AppointmentJsonldAppointmentWriteStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'scheduled': 'scheduled',
     'cancelled': 'cancelled',
-    'confirmed': 'confirmed',
+    'done': 'done',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'scheduled': 'scheduled',
     'cancelled': 'cancelled',
-    'confirmed': 'confirmed',
+    'done': 'done',
   };
 
   @override

@@ -21,35 +21,30 @@ import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collecti
 import 'package:so_dart_sdk/ticketing_service/model/api_apilinked_users_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apitags_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apitickets_get_collection200_response.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_comment_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/comment_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read_timestamp_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read_timestamp_read_context.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read_timestamp_read_context_one_of.dart';
+import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read_context.dart';
+import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read_context_one_of.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_ticket_read_timestamp_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_ticket_read_timestamp_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_user_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json_violations_inner.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/error.dart';
+import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_user_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_user_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_ticket_read_timestamp_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_ticket_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_ticket_read_timestamp_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_ticket_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_ticket_read_timestamp_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/tag_tag_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/tag_tag_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_tag_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/tag_ticket_read_timestamp_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_comment_read_timestamp_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_comment_read_timestamp_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_linked_user_read_timestamp_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_linked_user_read_timestamp_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write.dart';
 
 part 'serializers.g.dart';
@@ -62,35 +57,30 @@ part 'serializers.g.dart';
   ApiApilinkedUsersGetCollection200Response,
   ApiApitagsGetCollection200Response,
   ApiApiticketsGetCollection200Response,
-  CommentCommentReadTimestampRead,
+  CommentCommentRead,
   CommentCommentWrite,
-  CommentJsonldCommentReadTimestampRead,
-  CommentJsonldCommentReadTimestampReadContext,
-  CommentJsonldCommentReadTimestampReadContextOneOf,
+  CommentJsonldCommentRead,
+  CommentJsonldCommentReadContext,
+  CommentJsonldCommentReadContextOneOf,
   CommentJsonldCommentWrite,
-  CommentJsonldTicketReadTimestampRead,
-  CommentTicketReadTimestampRead,
-  LinkedUserJsonldLinkedUserReadTimestampRead,
+  ConstraintViolationJson,
+  ConstraintViolationJsonViolationsInner,
+  ConstraintViolationJsonldJsonld,
+  Error,
+  ErrorJsonld,
+  LinkedUserJsonldLinkedUserRead,
   LinkedUserJsonldLinkedUserWrite,
-  LinkedUserJsonldTicketReadTimestampRead,
   LinkedUserJsonldTicketWrite,
-  LinkedUserLinkedUserReadTimestampRead,
+  LinkedUserLinkedUserRead,
   LinkedUserLinkedUserWrite,
-  LinkedUserTicketReadTimestampRead,
   LinkedUserTicketWrite,
-  TagJsonldTagReadTimestampRead,
+  TagJsonldTagRead,
   TagJsonldTagWrite,
-  TagJsonldTicketReadTimestampRead,
-  TagTagReadTimestampRead,
+  TagTagRead,
   TagTagWrite,
-  TagTicketReadTimestampRead,
-  TicketCommentReadTimestampRead,
-  TicketJsonldCommentReadTimestampRead,
-  TicketJsonldLinkedUserReadTimestampRead,
-  TicketJsonldTicketReadTimestampRead,
+  TicketJsonldTicketRead,
   TicketJsonldTicketWrite,
-  TicketLinkedUserReadTimestampRead,
-  TicketTicketReadTimestampRead,
+  TicketTicketRead,
   TicketTicketWrite,
 ])
 Serializers serializers = (_$serializers.toBuilder()

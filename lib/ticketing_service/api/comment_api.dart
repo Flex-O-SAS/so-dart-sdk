@@ -11,10 +11,14 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/api_util.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_comment_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/comment_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/error.dart';
+import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
 
 class CommentApi {
 
@@ -37,6 +41,9 @@ class CommentApi {
   /// * [updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketAfterRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
+  /// * [orderLeftSquareBracketCreatedAtRightSquareBracket] - 
+  /// * [ticketPeriodId] - 
+  /// * [ticketPeriodIdLeftSquareBracketRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -56,6 +63,9 @@ class CommentApi {
     String? updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? updatedAtLeftSquareBracketAfterRightSquareBracket,
     String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+    String? orderLeftSquareBracketCreatedAtRightSquareBracket = 'asc',
+    int? ticketPeriodId,
+    BuiltList<int>? ticketPeriodIdLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -93,6 +103,9 @@ class CommentApi {
       if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
       if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
+      if (ticketPeriodId != null) r'ticket.id': encodeQueryParameter(_serializers, ticketPeriodId, const FullType(int)),
+      if (ticketPeriodIdLeftSquareBracketRightSquareBracket != null) r'ticket.id[]': encodeCollectionQueryParameter<int>(_serializers, ticketPeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
     };
 
     final _response = await _dio.request<Object>(
@@ -201,9 +214,9 @@ class CommentApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CommentJsonldCommentReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [CommentJsonldCommentRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CommentJsonldCommentReadTimestampRead>> apiApicommentsIdGet({ 
+  Future<Response<CommentJsonldCommentRead>> apiApicommentsIdGet({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -240,14 +253,14 @@ class CommentApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CommentJsonldCommentReadTimestampRead? _responseData;
+    CommentJsonldCommentRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(CommentJsonldCommentReadTimestampRead),
-      ) as CommentJsonldCommentReadTimestampRead;
+        specifiedType: const FullType(CommentJsonldCommentRead),
+      ) as CommentJsonldCommentRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -259,7 +272,7 @@ class CommentApi {
       );
     }
 
-    return Response<CommentJsonldCommentReadTimestampRead>(
+    return Response<CommentJsonldCommentRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -284,9 +297,9 @@ class CommentApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CommentJsonldCommentReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [CommentJsonldCommentRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CommentJsonldCommentReadTimestampRead>> apiApicommentsIdPatch({ 
+  Future<Response<CommentJsonldCommentRead>> apiApicommentsIdPatch({ 
     required String id,
     required CommentCommentWrite commentCommentWrite,
     CancelToken? cancelToken,
@@ -344,14 +357,14 @@ class CommentApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CommentJsonldCommentReadTimestampRead? _responseData;
+    CommentJsonldCommentRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(CommentJsonldCommentReadTimestampRead),
-      ) as CommentJsonldCommentReadTimestampRead;
+        specifiedType: const FullType(CommentJsonldCommentRead),
+      ) as CommentJsonldCommentRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -363,7 +376,7 @@ class CommentApi {
       );
     }
 
-    return Response<CommentJsonldCommentReadTimestampRead>(
+    return Response<CommentJsonldCommentRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -387,9 +400,9 @@ class CommentApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CommentJsonldCommentReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [CommentJsonldCommentRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CommentJsonldCommentReadTimestampRead>> apiApicommentsPost({ 
+  Future<Response<CommentJsonldCommentRead>> apiApicommentsPost({ 
     required CommentJsonldCommentWrite commentJsonldCommentWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -446,14 +459,14 @@ class CommentApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CommentJsonldCommentReadTimestampRead? _responseData;
+    CommentJsonldCommentRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(CommentJsonldCommentReadTimestampRead),
-      ) as CommentJsonldCommentReadTimestampRead;
+        specifiedType: const FullType(CommentJsonldCommentRead),
+      ) as CommentJsonldCommentRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -465,7 +478,7 @@ class CommentApi {
       );
     }
 
-    return Response<CommentJsonldCommentReadTimestampRead>(
+    return Response<CommentJsonldCommentRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

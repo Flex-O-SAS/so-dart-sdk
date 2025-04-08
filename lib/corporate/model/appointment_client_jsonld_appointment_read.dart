@@ -16,6 +16,7 @@ part 'appointment_client_jsonld_appointment_read.g.dart';
 /// * [atContext] 
 /// * [atId] 
 /// * [atType] 
+/// * [id] 
 /// * [client] 
 /// * [status] 
 /// * [comment] 
@@ -31,6 +32,9 @@ abstract class AppointmentClientJsonldAppointmentRead implements Built<Appointme
 
   @BuiltValueField(wireName: r'@type')
   String? get atType;
+
+  @BuiltValueField(wireName: r'id')
+  String? get id;
 
   @BuiltValueField(wireName: r'client')
   String get client;
@@ -90,6 +94,13 @@ class _$AppointmentClientJsonldAppointmentReadSerializer implements PrimitiveSer
       yield serializers.serialize(
         object.atType,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType.nullable(String),
       );
     }
     yield r'client';
@@ -166,6 +177,14 @@ class _$AppointmentClientJsonldAppointmentReadSerializer implements PrimitiveSer
             specifiedType: const FullType(String),
           ) as String;
           result.atType = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.id = valueDes;
           break;
         case r'client':
           final valueDes = serializers.deserialize(

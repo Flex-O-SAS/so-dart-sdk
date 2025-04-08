@@ -2,6 +2,7 @@ analysis_options.yaml
 lib/media_service/api.dart
 lib/media_service/api/document_api.dart
 lib/media_service/api/image_api.dart
+lib/media_service/api/media_api.dart
 lib/media_service/api_util.dart
 lib/media_service/auth/api_key_auth.dart
 lib/media_service/auth/auth.dart

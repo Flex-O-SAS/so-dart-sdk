@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_ticket_write.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -56,7 +57,7 @@ abstract class TicketTicketWrite implements Built<TicketTicketWrite, TicketTicke
   String? get location;
 
   @BuiltValueField(wireName: r'metadata')
-  BuiltList<String>? get metadata;
+  JsonObject? get metadata;
 
   @BuiltValueField(wireName: r'linkedUsers')
   BuiltList<LinkedUserTicketWrite>? get linkedUsers;
@@ -142,7 +143,7 @@ class _$TicketTicketWriteSerializer implements PrimitiveSerializer<TicketTicketW
       yield r'metadata';
       yield serializers.serialize(
         object.metadata,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.linkedUsers != null) {
@@ -251,9 +252,9 @@ class _$TicketTicketWriteSerializer implements PrimitiveSerializer<TicketTicketW
         case r'metadata':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.metadata.replace(valueDes);
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.metadata = valueDes;
           break;
         case r'linkedUsers':
           final valueDes = serializers.deserialize(

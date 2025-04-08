@@ -7,6 +7,8 @@ rm -Rf "${cwd}/lib"
 services=("marketplace-service" "ticketing-service" "corporate" "media-service")
 
 export DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
+export TRUSTED_HOSTS=""
+export TRUSTED_PROXIES=""
 
 echo "" > "${cwd}/lib/all.dart"
 for service in "${services[@]}"

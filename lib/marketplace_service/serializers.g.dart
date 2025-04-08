@@ -20,6 +20,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiItemsGetCollection200ResponseSearchMappingInner.serializer)
       ..add(ApiItemsGetCollection200ResponseView.serializer)
       ..add(ApiProvidersGetCollection200Response.serializer)
+      ..add(ApiReservationsGetCollection200Response.serializer)
       ..add(ApiServicesGetCollection200Response.serializer)
       ..add(ApiTagsGetCollection200Response.serializer)
       ..add(ItemItemReadServiceRead.serializer)
@@ -27,7 +28,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ItemJsonldItemReadServiceRead.serializer)
       ..add(ItemJsonldItemWrite.serializer)
       ..add(ItemJsonldProviderReadAddressRead.serializer)
+      ..add(ItemJsonldReservationReadTimestampRead.serializer)
       ..add(ItemProviderReadAddressRead.serializer)
+      ..add(ItemReservationReadTimestampRead.serializer)
       ..add(ProviderItemReadServiceRead.serializer)
       ..add(ProviderJsonldItemReadServiceRead.serializer)
       ..add(ProviderJsonldProviderReadAddressRead.serializer)
@@ -36,6 +39,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ProviderProviderReadAddressRead.serializer)
       ..add(ProviderProviderWriteAddressWrite.serializer)
       ..add(ProviderTagRead.serializer)
+      ..add(ReservationJsonldReservationReadTimestampRead.serializer)
+      ..add(ReservationJsonldReservationReadTimestampReadPaymentMethodEnum
+          .serializer)
+      ..add(ReservationJsonldReservationWrite.serializer)
+      ..add(ReservationJsonldReservationWritePaymentMethodEnum.serializer)
+      ..add(ReservationReservationReadTimestampRead.serializer)
+      ..add(ReservationReservationReadTimestampReadPaymentMethodEnum.serializer)
+      ..add(ReservationReservationWrite.serializer)
+      ..add(ReservationReservationWritePaymentMethodEnum.serializer)
       ..add(ServiceItemReadServiceRead.serializer)
       ..add(ServiceJsonldItemReadServiceRead.serializer)
       ..add(ServiceJsonldServiceRead.serializer)
@@ -83,6 +95,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ProviderTagRead)]),
           () => new ListBuilder<ProviderTagRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(ReservationJsonldReservationReadTimestampRead)
+          ]),
+          () =>
+              new ListBuilder<ReservationJsonldReservationReadTimestampRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ServiceJsonldServiceRead)]),

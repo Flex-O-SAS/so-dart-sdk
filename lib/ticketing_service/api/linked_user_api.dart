@@ -11,9 +11,13 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/api_util.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apilinked_users_get_collection200_response.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_user_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/error.dart';
+import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_user_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_user_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_read_timestamp_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_write.dart';
 
 class LinkedUserApi {
@@ -37,6 +41,7 @@ class LinkedUserApi {
   /// * [updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketAfterRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
+  /// * [orderLeftSquareBracketCreatedAtRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -56,6 +61,7 @@ class LinkedUserApi {
     String? updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? updatedAtLeftSquareBracketAfterRightSquareBracket,
     String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+    String? orderLeftSquareBracketCreatedAtRightSquareBracket = 'asc',
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -93,6 +99,7 @@ class LinkedUserApi {
       if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
       if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -201,9 +208,9 @@ class LinkedUserApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [LinkedUserJsonldLinkedUserReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [LinkedUserJsonldLinkedUserRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LinkedUserJsonldLinkedUserReadTimestampRead>> apiApilinkedUsersIdGet({ 
+  Future<Response<LinkedUserJsonldLinkedUserRead>> apiApilinkedUsersIdGet({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -240,14 +247,14 @@ class LinkedUserApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    LinkedUserJsonldLinkedUserReadTimestampRead? _responseData;
+    LinkedUserJsonldLinkedUserRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(LinkedUserJsonldLinkedUserReadTimestampRead),
-      ) as LinkedUserJsonldLinkedUserReadTimestampRead;
+        specifiedType: const FullType(LinkedUserJsonldLinkedUserRead),
+      ) as LinkedUserJsonldLinkedUserRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -259,7 +266,7 @@ class LinkedUserApi {
       );
     }
 
-    return Response<LinkedUserJsonldLinkedUserReadTimestampRead>(
+    return Response<LinkedUserJsonldLinkedUserRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -284,9 +291,9 @@ class LinkedUserApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [LinkedUserJsonldLinkedUserReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [LinkedUserJsonldLinkedUserRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LinkedUserJsonldLinkedUserReadTimestampRead>> apiApilinkedUsersIdPatch({ 
+  Future<Response<LinkedUserJsonldLinkedUserRead>> apiApilinkedUsersIdPatch({ 
     required String id,
     required LinkedUserLinkedUserWrite linkedUserLinkedUserWrite,
     CancelToken? cancelToken,
@@ -344,14 +351,14 @@ class LinkedUserApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    LinkedUserJsonldLinkedUserReadTimestampRead? _responseData;
+    LinkedUserJsonldLinkedUserRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(LinkedUserJsonldLinkedUserReadTimestampRead),
-      ) as LinkedUserJsonldLinkedUserReadTimestampRead;
+        specifiedType: const FullType(LinkedUserJsonldLinkedUserRead),
+      ) as LinkedUserJsonldLinkedUserRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -363,7 +370,7 @@ class LinkedUserApi {
       );
     }
 
-    return Response<LinkedUserJsonldLinkedUserReadTimestampRead>(
+    return Response<LinkedUserJsonldLinkedUserRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -387,9 +394,9 @@ class LinkedUserApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [LinkedUserJsonldLinkedUserReadTimestampRead] as data
+  /// Returns a [Future] containing a [Response] with a [LinkedUserJsonldLinkedUserRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LinkedUserJsonldLinkedUserReadTimestampRead>> apiApilinkedUsersPost({ 
+  Future<Response<LinkedUserJsonldLinkedUserRead>> apiApilinkedUsersPost({ 
     required LinkedUserJsonldLinkedUserWrite linkedUserJsonldLinkedUserWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -446,14 +453,14 @@ class LinkedUserApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    LinkedUserJsonldLinkedUserReadTimestampRead? _responseData;
+    LinkedUserJsonldLinkedUserRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(LinkedUserJsonldLinkedUserReadTimestampRead),
-      ) as LinkedUserJsonldLinkedUserReadTimestampRead;
+        specifiedType: const FullType(LinkedUserJsonldLinkedUserRead),
+      ) as LinkedUserJsonldLinkedUserRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -465,7 +472,7 @@ class LinkedUserApi {
       );
     }
 
-    return Response<LinkedUserJsonldLinkedUserReadTimestampRead>(
+    return Response<LinkedUserJsonldLinkedUserRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

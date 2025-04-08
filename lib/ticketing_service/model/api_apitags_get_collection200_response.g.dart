@@ -9,7 +9,7 @@ part of 'api_apitags_get_collection200_response.dart';
 class _$ApiApitagsGetCollection200Response
     extends ApiApitagsGetCollection200Response {
   @override
-  final BuiltList<TagJsonldTagReadTimestampRead> member;
+  final BuiltList<TagJsonldTagRead> member;
   @override
   final int? totalItems;
   @override
@@ -77,11 +77,10 @@ class ApiApitagsGetCollection200ResponseBuilder
             ApiApitagsGetCollection200ResponseBuilder> {
   _$ApiApitagsGetCollection200Response? _$v;
 
-  ListBuilder<TagJsonldTagReadTimestampRead>? _member;
-  ListBuilder<TagJsonldTagReadTimestampRead> get member =>
-      _$this._member ??= new ListBuilder<TagJsonldTagReadTimestampRead>();
-  set member(ListBuilder<TagJsonldTagReadTimestampRead>? member) =>
-      _$this._member = member;
+  ListBuilder<TagJsonldTagRead>? _member;
+  ListBuilder<TagJsonldTagRead> get member =>
+      _$this._member ??= new ListBuilder<TagJsonldTagRead>();
+  set member(ListBuilder<TagJsonldTagRead>? member) => _$this._member = member;
 
   int? _totalItems;
   int? get totalItems => _$this._totalItems;

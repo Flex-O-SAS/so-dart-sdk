@@ -9,7 +9,7 @@ part of 'api_apilinked_users_get_collection200_response.dart';
 class _$ApiApilinkedUsersGetCollection200Response
     extends ApiApilinkedUsersGetCollection200Response {
   @override
-  final BuiltList<LinkedUserJsonldLinkedUserReadTimestampRead> member;
+  final BuiltList<LinkedUserJsonldLinkedUserRead> member;
   @override
   final int? totalItems;
   @override
@@ -79,12 +79,10 @@ class ApiApilinkedUsersGetCollection200ResponseBuilder
             ApiApilinkedUsersGetCollection200ResponseBuilder> {
   _$ApiApilinkedUsersGetCollection200Response? _$v;
 
-  ListBuilder<LinkedUserJsonldLinkedUserReadTimestampRead>? _member;
-  ListBuilder<LinkedUserJsonldLinkedUserReadTimestampRead> get member =>
-      _$this._member ??=
-          new ListBuilder<LinkedUserJsonldLinkedUserReadTimestampRead>();
-  set member(
-          ListBuilder<LinkedUserJsonldLinkedUserReadTimestampRead>? member) =>
+  ListBuilder<LinkedUserJsonldLinkedUserRead>? _member;
+  ListBuilder<LinkedUserJsonldLinkedUserRead> get member =>
+      _$this._member ??= new ListBuilder<LinkedUserJsonldLinkedUserRead>();
+  set member(ListBuilder<LinkedUserJsonldLinkedUserRead>? member) =>
       _$this._member = member;
 
   int? _totalItems;

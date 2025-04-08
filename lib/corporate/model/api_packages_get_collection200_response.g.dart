@@ -9,7 +9,7 @@ part of 'api_packages_get_collection200_response.dart';
 class _$ApiPackagesGetCollection200Response
     extends ApiPackagesGetCollection200Response {
   @override
-  final BuiltList<PackageJsonld> member;
+  final BuiltList<PackageJsonldPackageRead> member;
   @override
   final int? totalItems;
   @override
@@ -77,10 +77,11 @@ class ApiPackagesGetCollection200ResponseBuilder
             ApiPackagesGetCollection200ResponseBuilder> {
   _$ApiPackagesGetCollection200Response? _$v;
 
-  ListBuilder<PackageJsonld>? _member;
-  ListBuilder<PackageJsonld> get member =>
-      _$this._member ??= new ListBuilder<PackageJsonld>();
-  set member(ListBuilder<PackageJsonld>? member) => _$this._member = member;
+  ListBuilder<PackageJsonldPackageRead>? _member;
+  ListBuilder<PackageJsonldPackageRead> get member =>
+      _$this._member ??= new ListBuilder<PackageJsonldPackageRead>();
+  set member(ListBuilder<PackageJsonldPackageRead>? member) =>
+      _$this._member = member;
 
   int? _totalItems;
   int? get totalItems => _$this._totalItems;

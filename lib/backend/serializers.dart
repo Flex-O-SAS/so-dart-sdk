@@ -1,0 +1,72 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+
+// ignore_for_file: unused_import
+
+import 'package:one_of_serializer/any_of_serializer.dart';
+import 'package:one_of_serializer/one_of_serializer.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
+import 'package:built_value/standard_json_plugin.dart';
+import 'package:built_value/iso_8601_date_time_serializer.dart';
+import 'package:so_dart_sdk/backend/date_serializer.dart';
+import 'package:so_dart_sdk/backend/model/date.dart';
+
+import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search.dart';
+import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search_mapping_inner.dart';
+import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_individuals_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
+import 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read.dart';
+import 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read_context.dart';
+import 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read_context_one_of.dart';
+import 'package:so_dart_sdk/backend/model/collection_jsonld_individual_search.dart';
+import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
+import 'package:so_dart_sdk/backend/model/error.dart';
+import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
+import 'package:so_dart_sdk/backend/model/staff_jsonld_staff_search.dart';
+
+part 'serializers.g.dart';
+
+@SerializersFor([
+  ApiCentersGetCollection200Response,
+  ApiCentersGetCollection200ResponseSearch,
+  ApiCentersGetCollection200ResponseSearchMappingInner,
+  ApiCentersGetCollection200ResponseView,
+  ApiEnterprisesGetCollection200Response,
+  ApiIndividualsGetCollection200Response,
+  ApiStaffGetCollection200Response,
+  CenterJsonldCenterSearch,
+  CollectionJsonldEnterpriseSearchEnterpriseRead,
+  CollectionJsonldEnterpriseSearchEnterpriseReadContext,
+  CollectionJsonldEnterpriseSearchEnterpriseReadContextOneOf,
+  CollectionJsonldIndividualSearch,
+  EnterpriseJsonldEnterpriseSearchEnterpriseRead,
+  Error,
+  ErrorJsonld,
+  IndividualJsonldIndividualSearch,
+  StaffJsonldStaffSearch,
+])
+Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(int)]),
+        () => ListBuilder<int>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(String)]),
+        () => ListBuilder<String>(),
+      )
+      ..add(const OneOfSerializer())
+      ..add(const AnyOfSerializer())
+      ..add(const DateSerializer())
+      ..add(Iso8601DateTimeSerializer()))
+    .build();
+
+Serializers standardSerializers =
+    (serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();

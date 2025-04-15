@@ -4,7 +4,7 @@ service="corporate"
 
 rm -Rf "${cwd}/services"
 rm -Rf "${cwd}/lib"
-services=("marketplace-service" "ticketing-service" "corporate" "media-service")
+services=("backend" "marketplace-service" "ticketing-service" "corporate" "media-service")
 
 export DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
 export TRUSTED_HOSTS=""
@@ -16,7 +16,7 @@ do
     git clone git@github.com:Flex-O-SAS/${service}.git "${cwd}/services/${service}"
     cd "${cwd}/services/${service}"
     composer install --no-scripts
-    bin/console api:openapi:export --spec-version 3.0.0 --output "${cwd}/services/${service}/openapi.json"
+    php -d memory_limit=-1 bin/console api:openapi:export --spec-version 3.0.0 --output "${cwd}/services/${service}/openapi.json"
     cd "${cwd}"
     service_dart="${service//-/_}"
     openapi-generator generate \

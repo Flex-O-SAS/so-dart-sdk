@@ -2,6 +2,41 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+export 'package:so_dart_sdk/backend/api.dart';
+export 'package:so_dart_sdk/backend/auth/api_key_auth.dart';
+export 'package:so_dart_sdk/backend/auth/basic_auth.dart';
+export 'package:so_dart_sdk/backend/auth/bearer_auth.dart';
+export 'package:so_dart_sdk/backend/auth/oauth.dart';
+export 'package:so_dart_sdk/backend/serializers.dart';
+export 'package:so_dart_sdk/backend/model/date.dart';
+
+export 'package:so_dart_sdk/backend/api/center_api.dart';
+export 'package:so_dart_sdk/backend/api/enterprise_api.dart';
+export 'package:so_dart_sdk/backend/api/individual_api.dart';
+export 'package:so_dart_sdk/backend/api/staff_api.dart';
+
+export 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response.dart';
+export 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search.dart';
+export 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search_mapping_inner.dart';
+export 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_view.dart';
+export 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
+export 'package:so_dart_sdk/backend/model/api_individuals_get_collection200_response.dart';
+export 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
+export 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
+export 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read.dart';
+export 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read_context.dart';
+export 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read_context_one_of.dart';
+export 'package:so_dart_sdk/backend/model/collection_jsonld_individual_search.dart';
+export 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
+export 'package:so_dart_sdk/backend/model/error.dart';
+export 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+export 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
+export 'package:so_dart_sdk/backend/model/staff_jsonld_staff_search.dart';
+
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+
 export 'package:so_dart_sdk/marketplace_service/api.dart';
 export 'package:so_dart_sdk/marketplace_service/auth/api_key_auth.dart';
 export 'package:so_dart_sdk/marketplace_service/auth/basic_auth.dart';

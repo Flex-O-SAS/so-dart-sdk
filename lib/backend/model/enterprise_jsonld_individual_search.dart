@@ -3,13 +3,11 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'individual_jsonld_individual_search.g.dart';
+part 'enterprise_jsonld_individual_search.g.dart';
 
 /// 
 ///
@@ -17,16 +15,13 @@ part 'individual_jsonld_individual_search.g.dart';
 /// * [atContext] 
 /// * [atId] 
 /// * [atType] 
-/// * [firstname] 
-/// * [lastname] 
-/// * [enterprises] 
 /// * [email] 
 /// * [phone] 
 /// * [mobile] 
 /// * [reference] 
 /// * [id] 
 @BuiltValue()
-abstract class IndividualJsonldIndividualSearch implements Built<IndividualJsonldIndividualSearch, IndividualJsonldIndividualSearchBuilder> {
+abstract class EnterpriseJsonldIndividualSearch implements Built<EnterpriseJsonldIndividualSearch, EnterpriseJsonldIndividualSearchBuilder> {
   @BuiltValueField(wireName: r'@context')
   CollectionJsonldEnterpriseSearchEnterpriseReadContext? get atContext;
 
@@ -35,15 +30,6 @@ abstract class IndividualJsonldIndividualSearch implements Built<IndividualJsonl
 
   @BuiltValueField(wireName: r'@type')
   String? get atType;
-
-  @BuiltValueField(wireName: r'firstname')
-  String? get firstname;
-
-  @BuiltValueField(wireName: r'lastname')
-  String? get lastname;
-
-  @BuiltValueField(wireName: r'enterprises')
-  BuiltList<EnterpriseJsonldIndividualSearch>? get enterprises;
 
   @BuiltValueField(wireName: r'email')
   String? get email;
@@ -60,27 +46,27 @@ abstract class IndividualJsonldIndividualSearch implements Built<IndividualJsonl
   @BuiltValueField(wireName: r'id')
   int? get id;
 
-  IndividualJsonldIndividualSearch._();
+  EnterpriseJsonldIndividualSearch._();
 
-  factory IndividualJsonldIndividualSearch([void updates(IndividualJsonldIndividualSearchBuilder b)]) = _$IndividualJsonldIndividualSearch;
+  factory EnterpriseJsonldIndividualSearch([void updates(EnterpriseJsonldIndividualSearchBuilder b)]) = _$EnterpriseJsonldIndividualSearch;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(IndividualJsonldIndividualSearchBuilder b) => b;
+  static void _defaults(EnterpriseJsonldIndividualSearchBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<IndividualJsonldIndividualSearch> get serializer => _$IndividualJsonldIndividualSearchSerializer();
+  static Serializer<EnterpriseJsonldIndividualSearch> get serializer => _$EnterpriseJsonldIndividualSearchSerializer();
 }
 
-class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerializer<IndividualJsonldIndividualSearch> {
+class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerializer<EnterpriseJsonldIndividualSearch> {
   @override
-  final Iterable<Type> types = const [IndividualJsonldIndividualSearch, _$IndividualJsonldIndividualSearch];
+  final Iterable<Type> types = const [EnterpriseJsonldIndividualSearch, _$EnterpriseJsonldIndividualSearch];
 
   @override
-  final String wireName = r'IndividualJsonldIndividualSearch';
+  final String wireName = r'EnterpriseJsonldIndividualSearch';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    IndividualJsonldIndividualSearch object, {
+    EnterpriseJsonldIndividualSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atContext != null) {
@@ -102,27 +88,6 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
       yield serializers.serialize(
         object.atType,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.firstname != null) {
-      yield r'firstname';
-      yield serializers.serialize(
-        object.firstname,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.lastname != null) {
-      yield r'lastname';
-      yield serializers.serialize(
-        object.lastname,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.enterprises != null) {
-      yield r'enterprises';
-      yield serializers.serialize(
-        object.enterprises,
-        specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldIndividualSearch)]),
       );
     }
     if (object.email != null) {
@@ -165,7 +130,7 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
   @override
   Object serialize(
     Serializers serializers,
-    IndividualJsonldIndividualSearch object, {
+    EnterpriseJsonldIndividualSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -176,7 +141,7 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required IndividualJsonldIndividualSearchBuilder result,
+    required EnterpriseJsonldIndividualSearchBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -203,28 +168,6 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
             specifiedType: const FullType(String),
           ) as String;
           result.atType = valueDes;
-          break;
-        case r'firstname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.firstname = valueDes;
-          break;
-        case r'lastname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastname = valueDes;
-          break;
-        case r'enterprises':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldIndividualSearch)]),
-          ) as BuiltList<EnterpriseJsonldIndividualSearch>;
-          result.enterprises.replace(valueDes);
           break;
         case r'email':
           final valueDes = serializers.deserialize(
@@ -273,12 +216,12 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
   }
 
   @override
-  IndividualJsonldIndividualSearch deserialize(
+  EnterpriseJsonldIndividualSearch deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = IndividualJsonldIndividualSearchBuilder();
+    final result = EnterpriseJsonldIndividualSearchBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

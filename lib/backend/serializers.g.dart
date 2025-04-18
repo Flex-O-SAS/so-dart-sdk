@@ -21,8 +21,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           CollectionJsonldEnterpriseSearchEnterpriseReadContextOneOf.serializer)
       ..add(CollectionJsonldEnterpriseSearchEnterpriseReadContextOneOfHydraEnum
           .serializer)
-      ..add(CollectionJsonldIndividualSearch.serializer)
       ..add(EnterpriseJsonldEnterpriseSearchEnterpriseRead.serializer)
+      ..add(EnterpriseJsonldIndividualSearch.serializer)
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
       ..add(IndividualJsonldIndividualSearch.serializer)
@@ -43,6 +43,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () =>
               new ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(EnterpriseJsonldIndividualSearch)]),
+          () => new ListBuilder<EnterpriseJsonldIndividualSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(IndividualJsonldIndividualSearch)]),

@@ -1,25 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'individual_jsonld_individual_search.dart';
+part of 'enterprise_jsonld_individual_search.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$IndividualJsonldIndividualSearch
-    extends IndividualJsonldIndividualSearch {
+class _$EnterpriseJsonldIndividualSearch
+    extends EnterpriseJsonldIndividualSearch {
   @override
   final CollectionJsonldEnterpriseSearchEnterpriseReadContext? atContext;
   @override
   final String? atId;
   @override
   final String? atType;
-  @override
-  final String? firstname;
-  @override
-  final String? lastname;
-  @override
-  final BuiltList<EnterpriseJsonldIndividualSearch>? enterprises;
   @override
   final String? email;
   @override
@@ -31,17 +25,14 @@ class _$IndividualJsonldIndividualSearch
   @override
   final int? id;
 
-  factory _$IndividualJsonldIndividualSearch(
-          [void Function(IndividualJsonldIndividualSearchBuilder)? updates]) =>
-      (new IndividualJsonldIndividualSearchBuilder()..update(updates))._build();
+  factory _$EnterpriseJsonldIndividualSearch(
+          [void Function(EnterpriseJsonldIndividualSearchBuilder)? updates]) =>
+      (new EnterpriseJsonldIndividualSearchBuilder()..update(updates))._build();
 
-  _$IndividualJsonldIndividualSearch._(
+  _$EnterpriseJsonldIndividualSearch._(
       {this.atContext,
       this.atId,
       this.atType,
-      this.firstname,
-      this.lastname,
-      this.enterprises,
       this.email,
       this.phone,
       this.mobile,
@@ -50,24 +41,21 @@ class _$IndividualJsonldIndividualSearch
       : super._();
 
   @override
-  IndividualJsonldIndividualSearch rebuild(
-          void Function(IndividualJsonldIndividualSearchBuilder) updates) =>
+  EnterpriseJsonldIndividualSearch rebuild(
+          void Function(EnterpriseJsonldIndividualSearchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  IndividualJsonldIndividualSearchBuilder toBuilder() =>
-      new IndividualJsonldIndividualSearchBuilder()..replace(this);
+  EnterpriseJsonldIndividualSearchBuilder toBuilder() =>
+      new EnterpriseJsonldIndividualSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is IndividualJsonldIndividualSearch &&
+    return other is EnterpriseJsonldIndividualSearch &&
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
-        firstname == other.firstname &&
-        lastname == other.lastname &&
-        enterprises == other.enterprises &&
         email == other.email &&
         phone == other.phone &&
         mobile == other.mobile &&
@@ -81,9 +69,6 @@ class _$IndividualJsonldIndividualSearch
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, firstname.hashCode);
-    _$hash = $jc(_$hash, lastname.hashCode);
-    _$hash = $jc(_$hash, enterprises.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, mobile.hashCode);
@@ -95,13 +80,10 @@ class _$IndividualJsonldIndividualSearch
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'IndividualJsonldIndividualSearch')
+    return (newBuiltValueToStringHelper(r'EnterpriseJsonldIndividualSearch')
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
-          ..add('firstname', firstname)
-          ..add('lastname', lastname)
-          ..add('enterprises', enterprises)
           ..add('email', email)
           ..add('phone', phone)
           ..add('mobile', mobile)
@@ -111,11 +93,11 @@ class _$IndividualJsonldIndividualSearch
   }
 }
 
-class IndividualJsonldIndividualSearchBuilder
+class EnterpriseJsonldIndividualSearchBuilder
     implements
-        Builder<IndividualJsonldIndividualSearch,
-            IndividualJsonldIndividualSearchBuilder> {
-  _$IndividualJsonldIndividualSearch? _$v;
+        Builder<EnterpriseJsonldIndividualSearch,
+            EnterpriseJsonldIndividualSearchBuilder> {
+  _$EnterpriseJsonldIndividualSearch? _$v;
 
   CollectionJsonldEnterpriseSearchEnterpriseReadContextBuilder? _atContext;
   CollectionJsonldEnterpriseSearchEnterpriseReadContextBuilder get atContext =>
@@ -133,21 +115,6 @@ class IndividualJsonldIndividualSearchBuilder
   String? _atType;
   String? get atType => _$this._atType;
   set atType(String? atType) => _$this._atType = atType;
-
-  String? _firstname;
-  String? get firstname => _$this._firstname;
-  set firstname(String? firstname) => _$this._firstname = firstname;
-
-  String? _lastname;
-  String? get lastname => _$this._lastname;
-  set lastname(String? lastname) => _$this._lastname = lastname;
-
-  ListBuilder<EnterpriseJsonldIndividualSearch>? _enterprises;
-  ListBuilder<EnterpriseJsonldIndividualSearch> get enterprises =>
-      _$this._enterprises ??=
-          new ListBuilder<EnterpriseJsonldIndividualSearch>();
-  set enterprises(ListBuilder<EnterpriseJsonldIndividualSearch>? enterprises) =>
-      _$this._enterprises = enterprises;
 
   String? _email;
   String? get email => _$this._email;
@@ -169,19 +136,16 @@ class IndividualJsonldIndividualSearchBuilder
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
 
-  IndividualJsonldIndividualSearchBuilder() {
-    IndividualJsonldIndividualSearch._defaults(this);
+  EnterpriseJsonldIndividualSearchBuilder() {
+    EnterpriseJsonldIndividualSearch._defaults(this);
   }
 
-  IndividualJsonldIndividualSearchBuilder get _$this {
+  EnterpriseJsonldIndividualSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _firstname = $v.firstname;
-      _lastname = $v.lastname;
-      _enterprises = $v.enterprises?.toBuilder();
       _email = $v.email;
       _phone = $v.phone;
       _mobile = $v.mobile;
@@ -193,30 +157,27 @@ class IndividualJsonldIndividualSearchBuilder
   }
 
   @override
-  void replace(IndividualJsonldIndividualSearch other) {
+  void replace(EnterpriseJsonldIndividualSearch other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$IndividualJsonldIndividualSearch;
+    _$v = other as _$EnterpriseJsonldIndividualSearch;
   }
 
   @override
-  void update(void Function(IndividualJsonldIndividualSearchBuilder)? updates) {
+  void update(void Function(EnterpriseJsonldIndividualSearchBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  IndividualJsonldIndividualSearch build() => _build();
+  EnterpriseJsonldIndividualSearch build() => _build();
 
-  _$IndividualJsonldIndividualSearch _build() {
-    _$IndividualJsonldIndividualSearch _$result;
+  _$EnterpriseJsonldIndividualSearch _build() {
+    _$EnterpriseJsonldIndividualSearch _$result;
     try {
       _$result = _$v ??
-          new _$IndividualJsonldIndividualSearch._(
+          new _$EnterpriseJsonldIndividualSearch._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
-            firstname: firstname,
-            lastname: lastname,
-            enterprises: _enterprises?.build(),
             email: email,
             phone: phone,
             mobile: mobile,
@@ -228,12 +189,9 @@ class IndividualJsonldIndividualSearchBuilder
       try {
         _$failedField = 'atContext';
         _atContext?.build();
-
-        _$failedField = 'enterprises';
-        _enterprises?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'IndividualJsonldIndividualSearch', _$failedField, e.toString());
+            r'EnterpriseJsonldIndividualSearch', _$failedField, e.toString());
       }
       rethrow;
     }

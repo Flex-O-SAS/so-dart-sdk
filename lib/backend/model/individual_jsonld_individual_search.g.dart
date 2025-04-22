@@ -9,7 +9,7 @@ part of 'individual_jsonld_individual_search.dart';
 class _$IndividualJsonldIndividualSearch
     extends IndividualJsonldIndividualSearch {
   @override
-  final CollectionJsonldEnterpriseSearchEnterpriseReadContext? atContext;
+  final CenterJsonldPublicCenterReadContext? atContext;
   @override
   final String? atId;
   @override
@@ -19,7 +19,7 @@ class _$IndividualJsonldIndividualSearch
   @override
   final String? lastname;
   @override
-  final BuiltList<EnterpriseJsonldIndividualSearch>? enterprises;
+  final CollectionJsonldIndividualSearch? enterprises;
   @override
   final String? email;
   @override
@@ -117,13 +117,10 @@ class IndividualJsonldIndividualSearchBuilder
             IndividualJsonldIndividualSearchBuilder> {
   _$IndividualJsonldIndividualSearch? _$v;
 
-  CollectionJsonldEnterpriseSearchEnterpriseReadContextBuilder? _atContext;
-  CollectionJsonldEnterpriseSearchEnterpriseReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new CollectionJsonldEnterpriseSearchEnterpriseReadContextBuilder();
-  set atContext(
-          CollectionJsonldEnterpriseSearchEnterpriseReadContextBuilder?
-              atContext) =>
+  CenterJsonldPublicCenterReadContextBuilder? _atContext;
+  CenterJsonldPublicCenterReadContextBuilder get atContext =>
+      _$this._atContext ??= new CenterJsonldPublicCenterReadContextBuilder();
+  set atContext(CenterJsonldPublicCenterReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
@@ -142,11 +139,10 @@ class IndividualJsonldIndividualSearchBuilder
   String? get lastname => _$this._lastname;
   set lastname(String? lastname) => _$this._lastname = lastname;
 
-  ListBuilder<EnterpriseJsonldIndividualSearch>? _enterprises;
-  ListBuilder<EnterpriseJsonldIndividualSearch> get enterprises =>
-      _$this._enterprises ??=
-          new ListBuilder<EnterpriseJsonldIndividualSearch>();
-  set enterprises(ListBuilder<EnterpriseJsonldIndividualSearch>? enterprises) =>
+  CollectionJsonldIndividualSearchBuilder? _enterprises;
+  CollectionJsonldIndividualSearchBuilder get enterprises =>
+      _$this._enterprises ??= new CollectionJsonldIndividualSearchBuilder();
+  set enterprises(CollectionJsonldIndividualSearchBuilder? enterprises) =>
       _$this._enterprises = enterprises;
 
   String? _email;

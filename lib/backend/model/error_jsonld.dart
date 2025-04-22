@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read_context.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -24,7 +24,7 @@ part 'error_jsonld.g.dart';
 @BuiltValue()
 abstract class ErrorJsonld implements Built<ErrorJsonld, ErrorJsonldBuilder> {
   @BuiltValueField(wireName: r'@context')
-  CollectionJsonldEnterpriseSearchEnterpriseReadContext? get atContext;
+  CenterJsonldPublicCenterReadContext? get atContext;
 
   @BuiltValueField(wireName: r'@id')
   String? get atId;
@@ -79,7 +79,7 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(CollectionJsonldEnterpriseSearchEnterpriseReadContext),
+        specifiedType: const FullType(CenterJsonldPublicCenterReadContext),
       );
     }
     if (object.atId != null) {
@@ -164,8 +164,8 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CollectionJsonldEnterpriseSearchEnterpriseReadContext),
-          ) as CollectionJsonldEnterpriseSearchEnterpriseReadContext;
+            specifiedType: const FullType(CenterJsonldPublicCenterReadContext),
+          ) as CenterJsonldPublicCenterReadContext;
           result.atContext.replace(valueDes);
           break;
         case r'@id':

@@ -25,13 +25,14 @@ export 'package:so_dart_sdk/backend/model/api_publiccenters_get_collection200_re
 export 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read.dart';
+export 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_assets_inner.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context_one_of.dart';
-export 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read.dart';
-export 'package:so_dart_sdk/backend/model/collection_jsonld_individual_search.dart';
 export 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
+export 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
 export 'package:so_dart_sdk/backend/model/error.dart';
 export 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+export 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_enterprise_read.dart';
 export 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
 export 'package:so_dart_sdk/backend/model/staff_jsonld_staff_search.dart';
 

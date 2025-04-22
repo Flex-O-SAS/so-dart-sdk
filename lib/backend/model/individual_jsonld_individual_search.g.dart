@@ -19,7 +19,7 @@ class _$IndividualJsonldIndividualSearch
   @override
   final String? lastname;
   @override
-  final CollectionJsonldIndividualSearch? enterprises;
+  final BuiltList<EnterpriseJsonldIndividualSearch>? enterprises;
   @override
   final String? email;
   @override
@@ -139,10 +139,11 @@ class IndividualJsonldIndividualSearchBuilder
   String? get lastname => _$this._lastname;
   set lastname(String? lastname) => _$this._lastname = lastname;
 
-  CollectionJsonldIndividualSearchBuilder? _enterprises;
-  CollectionJsonldIndividualSearchBuilder get enterprises =>
-      _$this._enterprises ??= new CollectionJsonldIndividualSearchBuilder();
-  set enterprises(CollectionJsonldIndividualSearchBuilder? enterprises) =>
+  ListBuilder<EnterpriseJsonldIndividualSearch>? _enterprises;
+  ListBuilder<EnterpriseJsonldIndividualSearch> get enterprises =>
+      _$this._enterprises ??=
+          new ListBuilder<EnterpriseJsonldIndividualSearch>();
+  set enterprises(ListBuilder<EnterpriseJsonldIndividualSearch>? enterprises) =>
       _$this._enterprises = enterprises;
 
   String? _email;

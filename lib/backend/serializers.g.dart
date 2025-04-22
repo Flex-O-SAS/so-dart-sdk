@@ -17,14 +17,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiStaffGetCollection200Response.serializer)
       ..add(CenterJsonldCenterSearch.serializer)
       ..add(CenterJsonldPublicCenterRead.serializer)
+      ..add(CenterJsonldPublicCenterReadAssetsInner.serializer)
       ..add(CenterJsonldPublicCenterReadContext.serializer)
       ..add(CenterJsonldPublicCenterReadContextOneOf.serializer)
       ..add(CenterJsonldPublicCenterReadContextOneOfHydraEnum.serializer)
-      ..add(CollectionJsonldEnterpriseSearchEnterpriseRead.serializer)
-      ..add(CollectionJsonldIndividualSearch.serializer)
       ..add(EnterpriseJsonldEnterpriseSearchEnterpriseRead.serializer)
+      ..add(EnterpriseJsonldIndividualSearch.serializer)
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
+      ..add(IndividualJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(IndividualJsonldIndividualSearch.serializer)
       ..add(StaffJsonldStaffSearch.serializer)
       ..addBuilderFactory(
@@ -42,11 +43,31 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(CenterJsonldPublicCenterRead)]),
           () => new ListBuilder<CenterJsonldPublicCenterRead>())
       ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CenterJsonldPublicCenterReadAssetsInner)]),
+          () => new ListBuilder<CenterJsonldPublicCenterReadAssetsInner>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead)
           ]),
           () =>
               new ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead)
+          ]),
+          () =>
+              new ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(EnterpriseJsonldIndividualSearch)]),
+          () => new ListBuilder<EnterpriseJsonldIndividualSearch>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(IndividualJsonldEnterpriseSearchEnterpriseRead)
+          ]),
+          () =>
+              new ListBuilder<IndividualJsonldEnterpriseSearchEnterpriseRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(IndividualJsonldIndividualSearch)]),
@@ -56,8 +77,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(StaffJsonldStaffSearch)]),
           () => new ListBuilder<StaffJsonldStaffSearch>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(dynamic)]),
-          () => new ListBuilder<dynamic>()))
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

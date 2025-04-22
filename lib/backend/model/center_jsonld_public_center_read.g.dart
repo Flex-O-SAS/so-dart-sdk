@@ -20,7 +20,7 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
   @override
   final String? phone;
   @override
-  final BuiltList<dynamic>? assets;
+  final BuiltList<CenterJsonldPublicCenterReadAssetsInner>? assets;
   @override
   final String? address;
   @override
@@ -148,10 +148,12 @@ class CenterJsonldPublicCenterReadBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
-  ListBuilder<dynamic>? _assets;
-  ListBuilder<dynamic> get assets =>
-      _$this._assets ??= new ListBuilder<dynamic>();
-  set assets(ListBuilder<dynamic>? assets) => _$this._assets = assets;
+  ListBuilder<CenterJsonldPublicCenterReadAssetsInner>? _assets;
+  ListBuilder<CenterJsonldPublicCenterReadAssetsInner> get assets =>
+      _$this._assets ??=
+          new ListBuilder<CenterJsonldPublicCenterReadAssetsInner>();
+  set assets(ListBuilder<CenterJsonldPublicCenterReadAssetsInner>? assets) =>
+      _$this._assets = assets;
 
   String? _address;
   String? get address => _$this._address;

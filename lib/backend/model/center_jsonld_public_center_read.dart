@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/app_api_dtos_commons_v1_assets_asset_dto.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_assets_inner.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -47,7 +47,7 @@ abstract class CenterJsonldPublicCenterRead implements Built<CenterJsonldPublicC
   String? get phone;
 
   @BuiltValueField(wireName: r'assets')
-  BuiltList<AppApiDtosCommonsV1AssetsAssetDto>? get assets;
+  BuiltList<CenterJsonldPublicCenterReadAssetsInner>? get assets;
 
   @BuiltValueField(wireName: r'address')
   String? get address;
@@ -133,7 +133,7 @@ class _$CenterJsonldPublicCenterReadSerializer implements PrimitiveSerializer<Ce
       yield r'assets';
       yield serializers.serialize(
         object.assets,
-        specifiedType: const FullType(BuiltList, [FullType(AppApiDtosCommonsV1AssetsAssetDto)]),
+        specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadAssetsInner)]),
       );
     }
     if (object.address != null) {
@@ -241,8 +241,8 @@ class _$CenterJsonldPublicCenterReadSerializer implements PrimitiveSerializer<Ce
         case r'assets':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(AppApiDtosCommonsV1AssetsAssetDto)]),
-          ) as BuiltList<AppApiDtosCommonsV1AssetsAssetDto>;
+            specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadAssetsInner)]),
+          ) as BuiltList<CenterJsonldPublicCenterReadAssetsInner>;
           result.assets.replace(valueDes);
           break;
         case r'address':

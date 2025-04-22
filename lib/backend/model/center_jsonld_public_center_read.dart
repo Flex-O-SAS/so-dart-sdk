@@ -3,46 +3,42 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/collection_jsonld_individual_search.dart';
+import 'package:so_dart_sdk/backend/model/app_api_dtos_commons_v1_assets_asset_dto.dart';
+import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'individual_jsonld_individual_search.g.dart';
+part 'center_jsonld_public_center_read.g.dart';
 
 /// 
 ///
 /// Properties:
-/// * [atContext] 
 /// * [atId] 
 /// * [atType] 
-/// * [firstname] 
-/// * [lastname] 
-/// * [enterprises] 
+/// * [atContext] 
+/// * [name] 
 /// * [email] 
 /// * [phone] 
-/// * [mobile] 
-/// * [reference] 
+/// * [assets] 
+/// * [address] 
+/// * [zipcode] 
+/// * [city] 
+/// * [country] 
 /// * [id] 
 @BuiltValue()
-abstract class IndividualJsonldIndividualSearch implements Built<IndividualJsonldIndividualSearch, IndividualJsonldIndividualSearchBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldPublicCenterReadContext? get atContext;
-
+abstract class CenterJsonldPublicCenterRead implements Built<CenterJsonldPublicCenterRead, CenterJsonldPublicCenterReadBuilder> {
   @BuiltValueField(wireName: r'@id')
   String? get atId;
 
   @BuiltValueField(wireName: r'@type')
   String? get atType;
 
-  @BuiltValueField(wireName: r'firstname')
-  String? get firstname;
+  @BuiltValueField(wireName: r'@context')
+  CenterJsonldPublicCenterReadContext? get atContext;
 
-  @BuiltValueField(wireName: r'lastname')
-  String? get lastname;
-
-  @BuiltValueField(wireName: r'enterprises')
-  CollectionJsonldIndividualSearch? get enterprises;
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
   @BuiltValueField(wireName: r'email')
   String? get email;
@@ -50,45 +46,47 @@ abstract class IndividualJsonldIndividualSearch implements Built<IndividualJsonl
   @BuiltValueField(wireName: r'phone')
   String? get phone;
 
-  @BuiltValueField(wireName: r'mobile')
-  String? get mobile;
+  @BuiltValueField(wireName: r'assets')
+  BuiltList<AppApiDtosCommonsV1AssetsAssetDto>? get assets;
 
-  @BuiltValueField(wireName: r'reference')
-  String? get reference;
+  @BuiltValueField(wireName: r'address')
+  String? get address;
+
+  @BuiltValueField(wireName: r'zipcode')
+  String? get zipcode;
+
+  @BuiltValueField(wireName: r'city')
+  String? get city;
+
+  @BuiltValueField(wireName: r'country')
+  String? get country;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
 
-  IndividualJsonldIndividualSearch._();
+  CenterJsonldPublicCenterRead._();
 
-  factory IndividualJsonldIndividualSearch([void updates(IndividualJsonldIndividualSearchBuilder b)]) = _$IndividualJsonldIndividualSearch;
+  factory CenterJsonldPublicCenterRead([void updates(CenterJsonldPublicCenterReadBuilder b)]) = _$CenterJsonldPublicCenterRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(IndividualJsonldIndividualSearchBuilder b) => b;
+  static void _defaults(CenterJsonldPublicCenterReadBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<IndividualJsonldIndividualSearch> get serializer => _$IndividualJsonldIndividualSearchSerializer();
+  static Serializer<CenterJsonldPublicCenterRead> get serializer => _$CenterJsonldPublicCenterReadSerializer();
 }
 
-class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerializer<IndividualJsonldIndividualSearch> {
+class _$CenterJsonldPublicCenterReadSerializer implements PrimitiveSerializer<CenterJsonldPublicCenterRead> {
   @override
-  final Iterable<Type> types = const [IndividualJsonldIndividualSearch, _$IndividualJsonldIndividualSearch];
+  final Iterable<Type> types = const [CenterJsonldPublicCenterRead, _$CenterJsonldPublicCenterRead];
 
   @override
-  final String wireName = r'IndividualJsonldIndividualSearch';
+  final String wireName = r'CenterJsonldPublicCenterRead';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    IndividualJsonldIndividualSearch object, {
+    CenterJsonldPublicCenterRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldPublicCenterReadContext),
-      );
-    }
     if (object.atId != null) {
       yield r'@id';
       yield serializers.serialize(
@@ -103,25 +101,18 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
         specifiedType: const FullType(String),
       );
     }
-    if (object.firstname != null) {
-      yield r'firstname';
+    if (object.atContext != null) {
+      yield r'@context';
       yield serializers.serialize(
-        object.firstname,
-        specifiedType: const FullType.nullable(String),
+        object.atContext,
+        specifiedType: const FullType(CenterJsonldPublicCenterReadContext),
       );
     }
-    if (object.lastname != null) {
-      yield r'lastname';
+    if (object.name != null) {
+      yield r'name';
       yield serializers.serialize(
-        object.lastname,
+        object.name,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.enterprises != null) {
-      yield r'enterprises';
-      yield serializers.serialize(
-        object.enterprises,
-        specifiedType: const FullType(CollectionJsonldIndividualSearch),
       );
     }
     if (object.email != null) {
@@ -138,18 +129,39 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
         specifiedType: const FullType.nullable(String),
       );
     }
-    if (object.mobile != null) {
-      yield r'mobile';
+    if (object.assets != null) {
+      yield r'assets';
       yield serializers.serialize(
-        object.mobile,
+        object.assets,
+        specifiedType: const FullType(BuiltList, [FullType(AppApiDtosCommonsV1AssetsAssetDto)]),
+      );
+    }
+    if (object.address != null) {
+      yield r'address';
+      yield serializers.serialize(
+        object.address,
         specifiedType: const FullType.nullable(String),
       );
     }
-    if (object.reference != null) {
-      yield r'reference';
+    if (object.zipcode != null) {
+      yield r'zipcode';
       yield serializers.serialize(
-        object.reference,
-        specifiedType: const FullType(String),
+        object.zipcode,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.city != null) {
+      yield r'city';
+      yield serializers.serialize(
+        object.city,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.country != null) {
+      yield r'country';
+      yield serializers.serialize(
+        object.country,
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.id != null) {
@@ -164,7 +176,7 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
   @override
   Object serialize(
     Serializers serializers,
-    IndividualJsonldIndividualSearch object, {
+    CenterJsonldPublicCenterRead object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -175,20 +187,13 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required IndividualJsonldIndividualSearchBuilder result,
+    required CenterJsonldPublicCenterReadBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CenterJsonldPublicCenterReadContext),
-          ) as CenterJsonldPublicCenterReadContext;
-          result.atContext.replace(valueDes);
-          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
@@ -203,27 +208,19 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
           ) as String;
           result.atType = valueDes;
           break;
-        case r'firstname':
+        case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.firstname = valueDes;
+            specifiedType: const FullType(CenterJsonldPublicCenterReadContext),
+          ) as CenterJsonldPublicCenterReadContext;
+          result.atContext.replace(valueDes);
           break;
-        case r'lastname':
+        case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.lastname = valueDes;
-          break;
-        case r'enterprises':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CollectionJsonldIndividualSearch),
-          ) as CollectionJsonldIndividualSearch;
-          result.enterprises.replace(valueDes);
+          result.name = valueDes;
           break;
         case r'email':
           final valueDes = serializers.deserialize(
@@ -241,20 +238,44 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
           if (valueDes == null) continue;
           result.phone = valueDes;
           break;
-        case r'mobile':
+        case r'assets':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AppApiDtosCommonsV1AssetsAssetDto)]),
+          ) as BuiltList<AppApiDtosCommonsV1AssetsAssetDto>;
+          result.assets.replace(valueDes);
+          break;
+        case r'address':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType.nullable(String),
           ) as String?;
           if (valueDes == null) continue;
-          result.mobile = valueDes;
+          result.address = valueDes;
           break;
-        case r'reference':
+        case r'zipcode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.reference = valueDes;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.zipcode = valueDes;
+          break;
+        case r'city':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.city = valueDes;
+          break;
+        case r'country':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.country = valueDes;
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -272,12 +293,12 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
   }
 
   @override
-  IndividualJsonldIndividualSearch deserialize(
+  CenterJsonldPublicCenterRead deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = IndividualJsonldIndividualSearchBuilder();
+    final result = CenterJsonldPublicCenterReadBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

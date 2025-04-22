@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read.dart';
-import 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read_context.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -26,7 +26,7 @@ part 'enterprise_jsonld_enterprise_search_enterprise_read.g.dart';
 @BuiltValue()
 abstract class EnterpriseJsonldEnterpriseSearchEnterpriseRead implements Built<EnterpriseJsonldEnterpriseSearchEnterpriseRead, EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder> {
   @BuiltValueField(wireName: r'@context')
-  CollectionJsonldEnterpriseSearchEnterpriseReadContext? get atContext;
+  CenterJsonldPublicCenterReadContext? get atContext;
 
   @BuiltValueField(wireName: r'@id')
   String? get atId;
@@ -82,7 +82,7 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(CollectionJsonldEnterpriseSearchEnterpriseReadContext),
+        specifiedType: const FullType(CenterJsonldPublicCenterReadContext),
       );
     }
     if (object.atId != null) {
@@ -174,8 +174,8 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CollectionJsonldEnterpriseSearchEnterpriseReadContext),
-          ) as CollectionJsonldEnterpriseSearchEnterpriseReadContext;
+            specifiedType: const FullType(CenterJsonldPublicCenterReadContext),
+          ) as CenterJsonldPublicCenterReadContext;
           result.atContext.replace(valueDes);
           break;
         case r'@id':

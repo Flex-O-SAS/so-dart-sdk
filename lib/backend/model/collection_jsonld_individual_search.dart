@@ -7,7 +7,7 @@ import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_conte
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'collection_jsonld_enterprise_search_enterprise_read.g.dart';
+part 'collection_jsonld_individual_search.g.dart';
 
 /// 
 ///
@@ -16,7 +16,7 @@ part 'collection_jsonld_enterprise_search_enterprise_read.g.dart';
 /// * [atId] 
 /// * [atType] 
 @BuiltValue()
-abstract class CollectionJsonldEnterpriseSearchEnterpriseRead implements Built<CollectionJsonldEnterpriseSearchEnterpriseRead, CollectionJsonldEnterpriseSearchEnterpriseReadBuilder> {
+abstract class CollectionJsonldIndividualSearch implements Built<CollectionJsonldIndividualSearch, CollectionJsonldIndividualSearchBuilder> {
   @BuiltValueField(wireName: r'@context')
   CenterJsonldPublicCenterReadContext? get atContext;
 
@@ -26,27 +26,27 @@ abstract class CollectionJsonldEnterpriseSearchEnterpriseRead implements Built<C
   @BuiltValueField(wireName: r'@type')
   String? get atType;
 
-  CollectionJsonldEnterpriseSearchEnterpriseRead._();
+  CollectionJsonldIndividualSearch._();
 
-  factory CollectionJsonldEnterpriseSearchEnterpriseRead([void updates(CollectionJsonldEnterpriseSearchEnterpriseReadBuilder b)]) = _$CollectionJsonldEnterpriseSearchEnterpriseRead;
+  factory CollectionJsonldIndividualSearch([void updates(CollectionJsonldIndividualSearchBuilder b)]) = _$CollectionJsonldIndividualSearch;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CollectionJsonldEnterpriseSearchEnterpriseReadBuilder b) => b;
+  static void _defaults(CollectionJsonldIndividualSearchBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CollectionJsonldEnterpriseSearchEnterpriseRead> get serializer => _$CollectionJsonldEnterpriseSearchEnterpriseReadSerializer();
+  static Serializer<CollectionJsonldIndividualSearch> get serializer => _$CollectionJsonldIndividualSearchSerializer();
 }
 
-class _$CollectionJsonldEnterpriseSearchEnterpriseReadSerializer implements PrimitiveSerializer<CollectionJsonldEnterpriseSearchEnterpriseRead> {
+class _$CollectionJsonldIndividualSearchSerializer implements PrimitiveSerializer<CollectionJsonldIndividualSearch> {
   @override
-  final Iterable<Type> types = const [CollectionJsonldEnterpriseSearchEnterpriseRead, _$CollectionJsonldEnterpriseSearchEnterpriseRead];
+  final Iterable<Type> types = const [CollectionJsonldIndividualSearch, _$CollectionJsonldIndividualSearch];
 
   @override
-  final String wireName = r'CollectionJsonldEnterpriseSearchEnterpriseRead';
+  final String wireName = r'CollectionJsonldIndividualSearch';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    CollectionJsonldEnterpriseSearchEnterpriseRead object, {
+    CollectionJsonldIndividualSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atContext != null) {
@@ -75,7 +75,7 @@ class _$CollectionJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
   @override
   Object serialize(
     Serializers serializers,
-    CollectionJsonldEnterpriseSearchEnterpriseRead object, {
+    CollectionJsonldIndividualSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -86,7 +86,7 @@ class _$CollectionJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required CollectionJsonldEnterpriseSearchEnterpriseReadBuilder result,
+    required CollectionJsonldIndividualSearchBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -123,12 +123,12 @@ class _$CollectionJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
   }
 
   @override
-  CollectionJsonldEnterpriseSearchEnterpriseRead deserialize(
+  CollectionJsonldIndividualSearch deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = CollectionJsonldEnterpriseSearchEnterpriseReadBuilder();
+    final result = CollectionJsonldIndividualSearchBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

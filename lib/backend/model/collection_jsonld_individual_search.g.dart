@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'collection_jsonld_enterprise_search_enterprise_read.dart';
+part of 'collection_jsonld_individual_search.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$CollectionJsonldEnterpriseSearchEnterpriseRead
-    extends CollectionJsonldEnterpriseSearchEnterpriseRead {
+class _$CollectionJsonldIndividualSearch
+    extends CollectionJsonldIndividualSearch {
   @override
   final CenterJsonldPublicCenterReadContext? atContext;
   @override
@@ -15,32 +15,26 @@ class _$CollectionJsonldEnterpriseSearchEnterpriseRead
   @override
   final String? atType;
 
-  factory _$CollectionJsonldEnterpriseSearchEnterpriseRead(
-          [void Function(CollectionJsonldEnterpriseSearchEnterpriseReadBuilder)?
-              updates]) =>
-      (new CollectionJsonldEnterpriseSearchEnterpriseReadBuilder()
-            ..update(updates))
-          ._build();
+  factory _$CollectionJsonldIndividualSearch(
+          [void Function(CollectionJsonldIndividualSearchBuilder)? updates]) =>
+      (new CollectionJsonldIndividualSearchBuilder()..update(updates))._build();
 
-  _$CollectionJsonldEnterpriseSearchEnterpriseRead._(
-      {this.atContext, this.atId, this.atType})
+  _$CollectionJsonldIndividualSearch._({this.atContext, this.atId, this.atType})
       : super._();
 
   @override
-  CollectionJsonldEnterpriseSearchEnterpriseRead rebuild(
-          void Function(CollectionJsonldEnterpriseSearchEnterpriseReadBuilder)
-              updates) =>
+  CollectionJsonldIndividualSearch rebuild(
+          void Function(CollectionJsonldIndividualSearchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CollectionJsonldEnterpriseSearchEnterpriseReadBuilder toBuilder() =>
-      new CollectionJsonldEnterpriseSearchEnterpriseReadBuilder()
-        ..replace(this);
+  CollectionJsonldIndividualSearchBuilder toBuilder() =>
+      new CollectionJsonldIndividualSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CollectionJsonldEnterpriseSearchEnterpriseRead &&
+    return other is CollectionJsonldIndividualSearch &&
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType;
@@ -58,8 +52,7 @@ class _$CollectionJsonldEnterpriseSearchEnterpriseRead
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(
-            r'CollectionJsonldEnterpriseSearchEnterpriseRead')
+    return (newBuiltValueToStringHelper(r'CollectionJsonldIndividualSearch')
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType))
@@ -67,11 +60,11 @@ class _$CollectionJsonldEnterpriseSearchEnterpriseRead
   }
 }
 
-class CollectionJsonldEnterpriseSearchEnterpriseReadBuilder
+class CollectionJsonldIndividualSearchBuilder
     implements
-        Builder<CollectionJsonldEnterpriseSearchEnterpriseRead,
-            CollectionJsonldEnterpriseSearchEnterpriseReadBuilder> {
-  _$CollectionJsonldEnterpriseSearchEnterpriseRead? _$v;
+        Builder<CollectionJsonldIndividualSearch,
+            CollectionJsonldIndividualSearchBuilder> {
+  _$CollectionJsonldIndividualSearch? _$v;
 
   CenterJsonldPublicCenterReadContextBuilder? _atContext;
   CenterJsonldPublicCenterReadContextBuilder get atContext =>
@@ -87,11 +80,11 @@ class CollectionJsonldEnterpriseSearchEnterpriseReadBuilder
   String? get atType => _$this._atType;
   set atType(String? atType) => _$this._atType = atType;
 
-  CollectionJsonldEnterpriseSearchEnterpriseReadBuilder() {
-    CollectionJsonldEnterpriseSearchEnterpriseRead._defaults(this);
+  CollectionJsonldIndividualSearchBuilder() {
+    CollectionJsonldIndividualSearch._defaults(this);
   }
 
-  CollectionJsonldEnterpriseSearchEnterpriseReadBuilder get _$this {
+  CollectionJsonldIndividualSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atContext = $v.atContext?.toBuilder();
@@ -103,26 +96,24 @@ class CollectionJsonldEnterpriseSearchEnterpriseReadBuilder
   }
 
   @override
-  void replace(CollectionJsonldEnterpriseSearchEnterpriseRead other) {
+  void replace(CollectionJsonldIndividualSearch other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CollectionJsonldEnterpriseSearchEnterpriseRead;
+    _$v = other as _$CollectionJsonldIndividualSearch;
   }
 
   @override
-  void update(
-      void Function(CollectionJsonldEnterpriseSearchEnterpriseReadBuilder)?
-          updates) {
+  void update(void Function(CollectionJsonldIndividualSearchBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  CollectionJsonldEnterpriseSearchEnterpriseRead build() => _build();
+  CollectionJsonldIndividualSearch build() => _build();
 
-  _$CollectionJsonldEnterpriseSearchEnterpriseRead _build() {
-    _$CollectionJsonldEnterpriseSearchEnterpriseRead _$result;
+  _$CollectionJsonldIndividualSearch _build() {
+    _$CollectionJsonldIndividualSearch _$result;
     try {
       _$result = _$v ??
-          new _$CollectionJsonldEnterpriseSearchEnterpriseRead._(
+          new _$CollectionJsonldIndividualSearch._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -134,9 +125,7 @@ class CollectionJsonldEnterpriseSearchEnterpriseReadBuilder
         _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'CollectionJsonldEnterpriseSearchEnterpriseRead',
-            _$failedField,
-            e.toString());
+            r'CollectionJsonldIndividualSearch', _$failedField, e.toString());
       }
       rethrow;
     }

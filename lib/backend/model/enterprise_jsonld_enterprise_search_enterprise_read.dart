@@ -3,8 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read.dart';
+import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context.dart';
+import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -41,7 +42,7 @@ abstract class EnterpriseJsonldEnterpriseSearchEnterpriseRead implements Built<E
   String? get type;
 
   @BuiltValueField(wireName: r'individuals')
-  CollectionJsonldEnterpriseSearchEnterpriseRead? get individuals;
+  BuiltList<IndividualJsonldEnterpriseSearchEnterpriseRead>? get individuals;
 
   @BuiltValueField(wireName: r'email')
   String? get email;
@@ -117,7 +118,7 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
       yield r'individuals';
       yield serializers.serialize(
         object.individuals,
-        specifiedType: const FullType(CollectionJsonldEnterpriseSearchEnterpriseRead),
+        specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldEnterpriseSearchEnterpriseRead)]),
       );
     }
     if (object.email != null) {
@@ -210,8 +211,8 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
         case r'individuals':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CollectionJsonldEnterpriseSearchEnterpriseRead),
-          ) as CollectionJsonldEnterpriseSearchEnterpriseRead;
+            specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldEnterpriseSearchEnterpriseRead)]),
+          ) as BuiltList<IndividualJsonldEnterpriseSearchEnterpriseRead>;
           result.individuals.replace(valueDes);
           break;
         case r'email':

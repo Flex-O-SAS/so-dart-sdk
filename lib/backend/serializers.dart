@@ -20,13 +20,15 @@ import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_individuals_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_publiccenters_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context_one_of.dart';
 import 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read.dart';
-import 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read_context.dart';
-import 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read_context_one_of.dart';
+import 'package:so_dart_sdk/backend/model/collection_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
-import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
@@ -41,13 +43,15 @@ part 'serializers.g.dart';
   ApiCentersGetCollection200ResponseView,
   ApiEnterprisesGetCollection200Response,
   ApiIndividualsGetCollection200Response,
+  ApiPubliccentersGetCollection200Response,
   ApiStaffGetCollection200Response,
   CenterJsonldCenterSearch,
+  CenterJsonldPublicCenterRead,
+  CenterJsonldPublicCenterReadContext,
+  CenterJsonldPublicCenterReadContextOneOf,
   CollectionJsonldEnterpriseSearchEnterpriseRead,
-  CollectionJsonldEnterpriseSearchEnterpriseReadContext,
-  CollectionJsonldEnterpriseSearchEnterpriseReadContextOneOf,
+  CollectionJsonldIndividualSearch,
   EnterpriseJsonldEnterpriseSearchEnterpriseRead,
-  EnterpriseJsonldIndividualSearch,
   Error,
   ErrorJsonld,
   IndividualJsonldIndividualSearch,

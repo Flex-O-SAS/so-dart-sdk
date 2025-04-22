@@ -24,13 +24,14 @@ import 'package:so_dart_sdk/backend/model/api_publiccenters_get_collection200_re
 import 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_assets_inner.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context_one_of.dart';
-import 'package:so_dart_sdk/backend/model/collection_jsonld_enterprise_search_enterprise_read.dart';
-import 'package:so_dart_sdk/backend/model/collection_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
+import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/staff_jsonld_staff_search.dart';
 
@@ -47,13 +48,14 @@ part 'serializers.g.dart';
   ApiStaffGetCollection200Response,
   CenterJsonldCenterSearch,
   CenterJsonldPublicCenterRead,
+  CenterJsonldPublicCenterReadAssetsInner,
   CenterJsonldPublicCenterReadContext,
   CenterJsonldPublicCenterReadContextOneOf,
-  CollectionJsonldEnterpriseSearchEnterpriseRead,
-  CollectionJsonldIndividualSearch,
   EnterpriseJsonldEnterpriseSearchEnterpriseRead,
+  EnterpriseJsonldIndividualSearch,
   Error,
   ErrorJsonld,
+  IndividualJsonldEnterpriseSearchEnterpriseRead,
   IndividualJsonldIndividualSearch,
   StaffJsonldStaffSearch,
 ])

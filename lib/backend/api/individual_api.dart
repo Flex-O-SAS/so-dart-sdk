@@ -29,6 +29,8 @@ class IndividualApi {
   /// Parameters:
   /// * [page] - The collection page number
   /// * [groupsLeftSquareBracketRightSquareBracket] - 
+  /// * [firstname] - 
+  /// * [lastname] - 
   /// * [clientLinksPeriodEnterprise] - 
   /// * [clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket] - 
   /// * [reference] - 
@@ -47,6 +49,8 @@ class IndividualApi {
   Future<Response<ApiIndividualsGetCollection200Response>> apiIndividualsGetCollection({ 
     int? page = 1,
     BuiltList<String>? groupsLeftSquareBracketRightSquareBracket,
+    String? firstname,
+    String? lastname,
     String? clientLinksPeriodEnterprise,
     BuiltList<String>? clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket,
     String? reference,
@@ -76,6 +80,8 @@ class IndividualApi {
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
       if (groupsLeftSquareBracketRightSquareBracket != null) r'groups[]': encodeCollectionQueryParameter<String>(_serializers, groupsLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (firstname != null) r'firstname': encodeQueryParameter(_serializers, firstname, const FullType(String)),
+      if (lastname != null) r'lastname': encodeQueryParameter(_serializers, lastname, const FullType(String)),
       if (clientLinksPeriodEnterprise != null) r'clientLinks.enterprise': encodeQueryParameter(_serializers, clientLinksPeriodEnterprise, const FullType(String)),
       if (clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket != null) r'clientLinks.enterprise[]': encodeCollectionQueryParameter<String>(_serializers, clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),

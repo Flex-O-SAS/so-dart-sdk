@@ -12,7 +12,7 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
   @override
   final String? atType;
   @override
-  final CenterJsonldPublicCenterReadContext? atContext;
+  final CenterJsonldHappeningReadContext? atContext;
   @override
   final String? name;
   @override
@@ -130,10 +130,10 @@ class CenterJsonldPublicCenterReadBuilder
   String? get atType => _$this._atType;
   set atType(String? atType) => _$this._atType = atType;
 
-  CenterJsonldPublicCenterReadContextBuilder? _atContext;
-  CenterJsonldPublicCenterReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldPublicCenterReadContextBuilder();
-  set atContext(CenterJsonldPublicCenterReadContextBuilder? atContext) =>
+  CenterJsonldHappeningReadContextBuilder? _atContext;
+  CenterJsonldHappeningReadContextBuilder get atContext =>
+      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _name;

@@ -14,7 +14,8 @@ part 'appointment_client_appointment_client_read.g.dart';
 /// Properties:
 /// * [id] 
 /// * [appointment] 
-/// * [client] 
+/// * [email] 
+/// * [phone] 
 /// * [status] 
 /// * [comment] 
 /// * [responseDate] 
@@ -27,8 +28,11 @@ abstract class AppointmentClientAppointmentClientRead implements Built<Appointme
   @BuiltValueField(wireName: r'appointment')
   String? get appointment;
 
-  @BuiltValueField(wireName: r'client')
-  String get client;
+  @BuiltValueField(wireName: r'email')
+  String get email;
+
+  @BuiltValueField(wireName: r'phone')
+  String? get phone;
 
   @BuiltValueField(wireName: r'status')
   AppointmentClientAppointmentClientReadStatusEnum get status;
@@ -78,11 +82,18 @@ class _$AppointmentClientAppointmentClientReadSerializer implements PrimitiveSer
       object.appointment,
       specifiedType: const FullType.nullable(String),
     );
-    yield r'client';
+    yield r'email';
     yield serializers.serialize(
-      object.client,
+      object.email,
       specifiedType: const FullType(String),
     );
+    if (object.phone != null) {
+      yield r'phone';
+      yield serializers.serialize(
+        object.phone,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
     yield r'status';
     yield serializers.serialize(
       object.status,
@@ -148,12 +159,20 @@ class _$AppointmentClientAppointmentClientReadSerializer implements PrimitiveSer
           if (valueDes == null) continue;
           result.appointment = valueDes;
           break;
-        case r'client':
+        case r'email':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.client = valueDes;
+          result.email = valueDes;
+          break;
+        case r'phone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.phone = valueDes;
           break;
         case r'status':
           final valueDes = serializers.deserialize(

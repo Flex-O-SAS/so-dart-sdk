@@ -96,7 +96,9 @@ class _$AppointmentClientAppointmentWriteStatusEnumSerializer
 class _$AppointmentClientAppointmentWrite
     extends AppointmentClientAppointmentWrite {
   @override
-  final String client;
+  final String email;
+  @override
+  final String? phone;
   @override
   final AppointmentClientAppointmentWriteStatusEnum status;
 
@@ -106,10 +108,10 @@ class _$AppointmentClientAppointmentWrite
           ._build();
 
   _$AppointmentClientAppointmentWrite._(
-      {required this.client, required this.status})
+      {required this.email, this.phone, required this.status})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        client, r'AppointmentClientAppointmentWrite', 'client');
+        email, r'AppointmentClientAppointmentWrite', 'email');
     BuiltValueNullFieldError.checkNotNull(
         status, r'AppointmentClientAppointmentWrite', 'status');
   }
@@ -127,14 +129,16 @@ class _$AppointmentClientAppointmentWrite
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AppointmentClientAppointmentWrite &&
-        client == other.client &&
+        email == other.email &&
+        phone == other.phone &&
         status == other.status;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, client.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -143,7 +147,8 @@ class _$AppointmentClientAppointmentWrite
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AppointmentClientAppointmentWrite')
-          ..add('client', client)
+          ..add('email', email)
+          ..add('phone', phone)
           ..add('status', status))
         .toString();
   }
@@ -155,9 +160,13 @@ class AppointmentClientAppointmentWriteBuilder
             AppointmentClientAppointmentWriteBuilder> {
   _$AppointmentClientAppointmentWrite? _$v;
 
-  String? _client;
-  String? get client => _$this._client;
-  set client(String? client) => _$this._client = client;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
+
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(String? phone) => _$this._phone = phone;
 
   AppointmentClientAppointmentWriteStatusEnum? _status;
   AppointmentClientAppointmentWriteStatusEnum? get status => _$this._status;
@@ -171,7 +180,8 @@ class AppointmentClientAppointmentWriteBuilder
   AppointmentClientAppointmentWriteBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _client = $v.client;
+      _email = $v.email;
+      _phone = $v.phone;
       _status = $v.status;
       _$v = null;
     }
@@ -196,8 +206,9 @@ class AppointmentClientAppointmentWriteBuilder
   _$AppointmentClientAppointmentWrite _build() {
     final _$result = _$v ??
         new _$AppointmentClientAppointmentWrite._(
-          client: BuiltValueNullFieldError.checkNotNull(
-              client, r'AppointmentClientAppointmentWrite', 'client'),
+          email: BuiltValueNullFieldError.checkNotNull(
+              email, r'AppointmentClientAppointmentWrite', 'email'),
+          phone: phone,
           status: BuiltValueNullFieldError.checkNotNull(
               status, r'AppointmentClientAppointmentWrite', 'status'),
         );

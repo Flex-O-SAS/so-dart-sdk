@@ -12,6 +12,7 @@ export 'package:so_dart_sdk/backend/model/date.dart';
 
 export 'package:so_dart_sdk/backend/api/center_api.dart';
 export 'package:so_dart_sdk/backend/api/enterprise_api.dart';
+export 'package:so_dart_sdk/backend/api/happening_api.dart';
 export 'package:so_dart_sdk/backend/api/individual_api.dart';
 export 'package:so_dart_sdk/backend/api/staff_api.dart';
 
@@ -20,18 +21,26 @@ export 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response
 export 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search_mapping_inner.dart';
 export 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_view.dart';
 export 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
+export 'package:so_dart_sdk/backend/model/api_happenings_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_individuals_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_publiccenters_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
+export 'package:so_dart_sdk/backend/model/center_jsonld_happening_read.dart';
+export 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
+export 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context_one_of.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_assets_inner.dart';
-export 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context.dart';
-export 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context_one_of.dart';
 export 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
 export 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
 export 'package:so_dart_sdk/backend/model/error.dart';
 export 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+export 'package:so_dart_sdk/backend/model/happening_jsonld_happening_read.dart';
+export 'package:so_dart_sdk/backend/model/happening_jsonld_happening_search.dart';
+export 'package:so_dart_sdk/backend/model/happening_partner_link_jsonld_happening_read.dart';
+export 'package:so_dart_sdk/backend/model/happening_partner_link_jsonld_happening_search.dart';
+export 'package:so_dart_sdk/backend/model/happening_staff_feed_back_jsonld_happening_read.dart';
+export 'package:so_dart_sdk/backend/model/happening_staff_feed_back_jsonld_happening_search.dart';
 export 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_enterprise_read.dart';
 export 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
 export 'package:so_dart_sdk/backend/model/staff_jsonld_staff_search.dart';

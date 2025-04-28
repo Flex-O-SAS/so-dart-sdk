@@ -11,6 +11,7 @@ import 'package:so_dart_sdk/backend/auth/bearer_auth.dart';
 import 'package:so_dart_sdk/backend/auth/oauth.dart';
 import 'package:so_dart_sdk/backend/api/center_api.dart';
 import 'package:so_dart_sdk/backend/api/enterprise_api.dart';
+import 'package:so_dart_sdk/backend/api/happening_api.dart';
 import 'package:so_dart_sdk/backend/api/individual_api.dart';
 import 'package:so_dart_sdk/backend/api/staff_api.dart';
 
@@ -78,6 +79,12 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   EnterpriseApi getEnterpriseApi() {
     return EnterpriseApi(dio, serializers);
+  }
+
+  /// Get HappeningApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  HappeningApi getHappeningApi() {
+    return HappeningApi(dio, serializers);
   }
 
   /// Get IndividualApi instance, base route and serializer can be overridden by a given but be careful,

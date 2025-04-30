@@ -27,6 +27,7 @@ class HappeningApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [itemsPerPage] - The number of items per page
   /// * [orderLeftSquareBracketPublicatedAtRightSquareBracket] - 
   /// * [isActive] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -40,6 +41,7 @@ class HappeningApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiHappeningsGetCollection200Response>> apiHappeningsGetCollection({ 
     int? page = 1,
+    int? itemsPerPage = 30,
     String? orderLeftSquareBracketPublicatedAtRightSquareBracket = 'asc',
     bool? isActive,
     CancelToken? cancelToken,
@@ -64,6 +66,7 @@ class HappeningApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (itemsPerPage != null) r'itemsPerPage': encodeQueryParameter(_serializers, itemsPerPage, const FullType(int)),
       if (orderLeftSquareBracketPublicatedAtRightSquareBracket != null) r'order[publicatedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketPublicatedAtRightSquareBracket, const FullType(String)),
       if (isActive != null) r'isActive': encodeQueryParameter(_serializers, isActive, const FullType(bool)),
     };

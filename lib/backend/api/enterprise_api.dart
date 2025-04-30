@@ -28,6 +28,8 @@ class EnterpriseApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [email] - 
+  /// * [emailLeftSquareBracketRightSquareBracket] - 
   /// * [reference] - 
   /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
@@ -43,6 +45,8 @@ class EnterpriseApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiEnterprisesGetCollection200Response>> apiEnterprisesGetCollection({ 
     int? page = 1,
+    String? email,
+    BuiltList<String>? emailLeftSquareBracketRightSquareBracket,
     String? reference,
     BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     int? id,
@@ -69,6 +73,8 @@ class EnterpriseApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
+      if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': encodeCollectionQueryParameter<String>(_serializers, emailLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
       if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),

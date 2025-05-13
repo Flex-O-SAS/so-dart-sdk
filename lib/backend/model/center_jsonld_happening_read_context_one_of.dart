@@ -8,43 +8,43 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'center_jsonld_public_center_read_context_one_of.g.dart';
+part 'center_jsonld_happening_read_context_one_of.g.dart';
 
-/// CenterJsonldPublicCenterReadContextOneOf
+/// CenterJsonldHappeningReadContextOneOf
 ///
 /// Properties:
 /// * [atVocab] 
 /// * [hydra] 
 @BuiltValue()
-abstract class CenterJsonldPublicCenterReadContextOneOf implements Built<CenterJsonldPublicCenterReadContextOneOf, CenterJsonldPublicCenterReadContextOneOfBuilder> {
+abstract class CenterJsonldHappeningReadContextOneOf implements Built<CenterJsonldHappeningReadContextOneOf, CenterJsonldHappeningReadContextOneOfBuilder> {
   @BuiltValueField(wireName: r'@vocab')
   String get atVocab;
 
   @BuiltValueField(wireName: r'hydra')
-  CenterJsonldPublicCenterReadContextOneOfHydraEnum get hydra;
+  CenterJsonldHappeningReadContextOneOfHydraEnum get hydra;
   // enum hydraEnum {  http://www.w3.org/ns/hydra/core#,  };
 
-  CenterJsonldPublicCenterReadContextOneOf._();
+  CenterJsonldHappeningReadContextOneOf._();
 
-  factory CenterJsonldPublicCenterReadContextOneOf([void updates(CenterJsonldPublicCenterReadContextOneOfBuilder b)]) = _$CenterJsonldPublicCenterReadContextOneOf;
+  factory CenterJsonldHappeningReadContextOneOf([void updates(CenterJsonldHappeningReadContextOneOfBuilder b)]) = _$CenterJsonldHappeningReadContextOneOf;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CenterJsonldPublicCenterReadContextOneOfBuilder b) => b;
+  static void _defaults(CenterJsonldHappeningReadContextOneOfBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CenterJsonldPublicCenterReadContextOneOf> get serializer => _$CenterJsonldPublicCenterReadContextOneOfSerializer();
+  static Serializer<CenterJsonldHappeningReadContextOneOf> get serializer => _$CenterJsonldHappeningReadContextOneOfSerializer();
 }
 
-class _$CenterJsonldPublicCenterReadContextOneOfSerializer implements PrimitiveSerializer<CenterJsonldPublicCenterReadContextOneOf> {
+class _$CenterJsonldHappeningReadContextOneOfSerializer implements PrimitiveSerializer<CenterJsonldHappeningReadContextOneOf> {
   @override
-  final Iterable<Type> types = const [CenterJsonldPublicCenterReadContextOneOf, _$CenterJsonldPublicCenterReadContextOneOf];
+  final Iterable<Type> types = const [CenterJsonldHappeningReadContextOneOf, _$CenterJsonldHappeningReadContextOneOf];
 
   @override
-  final String wireName = r'CenterJsonldPublicCenterReadContextOneOf';
+  final String wireName = r'CenterJsonldHappeningReadContextOneOf';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    CenterJsonldPublicCenterReadContextOneOf object, {
+    CenterJsonldHappeningReadContextOneOf object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'@vocab';
@@ -55,14 +55,14 @@ class _$CenterJsonldPublicCenterReadContextOneOfSerializer implements PrimitiveS
     yield r'hydra';
     yield serializers.serialize(
       object.hydra,
-      specifiedType: const FullType(CenterJsonldPublicCenterReadContextOneOfHydraEnum),
+      specifiedType: const FullType(CenterJsonldHappeningReadContextOneOfHydraEnum),
     );
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    CenterJsonldPublicCenterReadContextOneOf object, {
+    CenterJsonldHappeningReadContextOneOf object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -73,7 +73,7 @@ class _$CenterJsonldPublicCenterReadContextOneOfSerializer implements PrimitiveS
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required CenterJsonldPublicCenterReadContextOneOfBuilder result,
+    required CenterJsonldHappeningReadContextOneOfBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -90,8 +90,8 @@ class _$CenterJsonldPublicCenterReadContextOneOfSerializer implements PrimitiveS
         case r'hydra':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CenterJsonldPublicCenterReadContextOneOfHydraEnum),
-          ) as CenterJsonldPublicCenterReadContextOneOfHydraEnum;
+            specifiedType: const FullType(CenterJsonldHappeningReadContextOneOfHydraEnum),
+          ) as CenterJsonldHappeningReadContextOneOfHydraEnum;
           result.hydra = valueDes;
           break;
         default:
@@ -103,12 +103,12 @@ class _$CenterJsonldPublicCenterReadContextOneOfSerializer implements PrimitiveS
   }
 
   @override
-  CenterJsonldPublicCenterReadContextOneOf deserialize(
+  CenterJsonldHappeningReadContextOneOf deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = CenterJsonldPublicCenterReadContextOneOfBuilder();
+    final result = CenterJsonldHappeningReadContextOneOfBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
@@ -123,16 +123,16 @@ class _$CenterJsonldPublicCenterReadContextOneOfSerializer implements PrimitiveS
   }
 }
 
-class CenterJsonldPublicCenterReadContextOneOfHydraEnum extends EnumClass {
+class CenterJsonldHappeningReadContextOneOfHydraEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'http://www.w3.org/ns/hydra/core#')
-  static const CenterJsonldPublicCenterReadContextOneOfHydraEnum httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash = _$centerJsonldPublicCenterReadContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
+  static const CenterJsonldHappeningReadContextOneOfHydraEnum httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash = _$centerJsonldHappeningReadContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
 
-  static Serializer<CenterJsonldPublicCenterReadContextOneOfHydraEnum> get serializer => _$centerJsonldPublicCenterReadContextOneOfHydraEnumSerializer;
+  static Serializer<CenterJsonldHappeningReadContextOneOfHydraEnum> get serializer => _$centerJsonldHappeningReadContextOneOfHydraEnumSerializer;
 
-  const CenterJsonldPublicCenterReadContextOneOfHydraEnum._(String name): super(name);
+  const CenterJsonldHappeningReadContextOneOfHydraEnum._(String name): super(name);
 
-  static BuiltSet<CenterJsonldPublicCenterReadContextOneOfHydraEnum> get values => _$centerJsonldPublicCenterReadContextOneOfHydraEnumValues;
-  static CenterJsonldPublicCenterReadContextOneOfHydraEnum valueOf(String name) => _$centerJsonldPublicCenterReadContextOneOfHydraEnumValueOf(name);
+  static BuiltSet<CenterJsonldHappeningReadContextOneOfHydraEnum> get values => _$centerJsonldHappeningReadContextOneOfHydraEnumValues;
+  static CenterJsonldHappeningReadContextOneOfHydraEnum valueOf(String name) => _$centerJsonldHappeningReadContextOneOfHydraEnumValueOf(name);
 }
 

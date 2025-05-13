@@ -12,12 +12,16 @@ part 'appointment_client_appointment_write.g.dart';
 /// 
 ///
 /// Properties:
-/// * [client] 
+/// * [email] 
+/// * [phone] 
 /// * [status] 
 @BuiltValue()
 abstract class AppointmentClientAppointmentWrite implements Built<AppointmentClientAppointmentWrite, AppointmentClientAppointmentWriteBuilder> {
-  @BuiltValueField(wireName: r'client')
-  String get client;
+  @BuiltValueField(wireName: r'email')
+  String get email;
+
+  @BuiltValueField(wireName: r'phone')
+  String? get phone;
 
   @BuiltValueField(wireName: r'status')
   AppointmentClientAppointmentWriteStatusEnum get status;
@@ -46,11 +50,18 @@ class _$AppointmentClientAppointmentWriteSerializer implements PrimitiveSerializ
     AppointmentClientAppointmentWrite object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'client';
+    yield r'email';
     yield serializers.serialize(
-      object.client,
+      object.email,
       specifiedType: const FullType(String),
     );
+    if (object.phone != null) {
+      yield r'phone';
+      yield serializers.serialize(
+        object.phone,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
     yield r'status';
     yield serializers.serialize(
       object.status,
@@ -79,12 +90,20 @@ class _$AppointmentClientAppointmentWriteSerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'client':
+        case r'email':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.client = valueDes;
+          result.email = valueDes;
+          break;
+        case r'phone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.phone = valueDes;
           break;
         case r'status':
           final valueDes = serializers.deserialize(

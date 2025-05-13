@@ -100,7 +100,9 @@ class _$AppointmentClientAppointmentClientRead
   @override
   final String? appointment;
   @override
-  final String client;
+  final String email;
+  @override
+  final String? phone;
   @override
   final AppointmentClientAppointmentClientReadStatusEnum status;
   @override
@@ -119,14 +121,15 @@ class _$AppointmentClientAppointmentClientRead
   _$AppointmentClientAppointmentClientRead._(
       {this.id,
       this.appointment,
-      required this.client,
+      required this.email,
+      this.phone,
       required this.status,
       this.comment,
       this.responseDate,
       this.lastSentInvitationDate})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        client, r'AppointmentClientAppointmentClientRead', 'client');
+        email, r'AppointmentClientAppointmentClientRead', 'email');
     BuiltValueNullFieldError.checkNotNull(
         status, r'AppointmentClientAppointmentClientRead', 'status');
   }
@@ -147,7 +150,8 @@ class _$AppointmentClientAppointmentClientRead
     return other is AppointmentClientAppointmentClientRead &&
         id == other.id &&
         appointment == other.appointment &&
-        client == other.client &&
+        email == other.email &&
+        phone == other.phone &&
         status == other.status &&
         comment == other.comment &&
         responseDate == other.responseDate &&
@@ -159,7 +163,8 @@ class _$AppointmentClientAppointmentClientRead
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, appointment.hashCode);
-    _$hash = $jc(_$hash, client.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, responseDate.hashCode);
@@ -174,7 +179,8 @@ class _$AppointmentClientAppointmentClientRead
             r'AppointmentClientAppointmentClientRead')
           ..add('id', id)
           ..add('appointment', appointment)
-          ..add('client', client)
+          ..add('email', email)
+          ..add('phone', phone)
           ..add('status', status)
           ..add('comment', comment)
           ..add('responseDate', responseDate)
@@ -197,9 +203,13 @@ class AppointmentClientAppointmentClientReadBuilder
   String? get appointment => _$this._appointment;
   set appointment(String? appointment) => _$this._appointment = appointment;
 
-  String? _client;
-  String? get client => _$this._client;
-  set client(String? client) => _$this._client = client;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
+
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(String? phone) => _$this._phone = phone;
 
   AppointmentClientAppointmentClientReadStatusEnum? _status;
   AppointmentClientAppointmentClientReadStatusEnum? get status =>
@@ -229,7 +239,8 @@ class AppointmentClientAppointmentClientReadBuilder
     if ($v != null) {
       _id = $v.id;
       _appointment = $v.appointment;
-      _client = $v.client;
+      _email = $v.email;
+      _phone = $v.phone;
       _status = $v.status;
       _comment = $v.comment;
       _responseDate = $v.responseDate;
@@ -259,8 +270,9 @@ class AppointmentClientAppointmentClientReadBuilder
         new _$AppointmentClientAppointmentClientRead._(
           id: id,
           appointment: appointment,
-          client: BuiltValueNullFieldError.checkNotNull(
-              client, r'AppointmentClientAppointmentClientRead', 'client'),
+          email: BuiltValueNullFieldError.checkNotNull(
+              email, r'AppointmentClientAppointmentClientRead', 'email'),
+          phone: phone,
           status: BuiltValueNullFieldError.checkNotNull(
               status, r'AppointmentClientAppointmentClientRead', 'status'),
           comment: comment,

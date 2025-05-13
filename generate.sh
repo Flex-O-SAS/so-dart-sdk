@@ -32,3 +32,4 @@ done
 
 mv "${cwd}/lib/all.dart" "${cwd}/lib/so_dart_sdk.dart"
 
+dart run build_runner build

@@ -25,6 +25,8 @@ part 'appointment_appointment_read.g.dart';
 /// * [beginDate] 
 /// * [endDate] 
 /// * [appointmentClients] 
+/// * [createdAt] 
+/// * [updatedAt] 
 @BuiltValue()
 abstract class AppointmentAppointmentRead implements Built<AppointmentAppointmentRead, AppointmentAppointmentReadBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -64,6 +66,12 @@ abstract class AppointmentAppointmentRead implements Built<AppointmentAppointmen
 
   @BuiltValueField(wireName: r'appointmentClients')
   BuiltList<AppointmentClientAppointmentRead>? get appointmentClients;
+
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
+
+  @BuiltValueField(wireName: r'updatedAt')
+  DateTime? get updatedAt;
 
   AppointmentAppointmentRead._();
 
@@ -158,6 +166,20 @@ class _$AppointmentAppointmentReadSerializer implements PrimitiveSerializer<Appo
       yield serializers.serialize(
         object.appointmentClients,
         specifiedType: const FullType(BuiltList, [FullType(AppointmentClientAppointmentRead)]),
+      );
+    }
+    if (object.createdAt != null) {
+      yield r'createdAt';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.updatedAt != null) {
+      yield r'updatedAt';
+      yield serializers.serialize(
+        object.updatedAt,
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -270,6 +292,20 @@ class _$AppointmentAppointmentReadSerializer implements PrimitiveSerializer<Appo
             specifiedType: const FullType(BuiltList, [FullType(AppointmentClientAppointmentRead)]),
           ) as BuiltList<AppointmentClientAppointmentRead>;
           result.appointmentClients.replace(valueDes);
+          break;
+        case r'createdAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
+          break;
+        case r'updatedAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.updatedAt = valueDes;
           break;
         default:
           unhandled.add(key);

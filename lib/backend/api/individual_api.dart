@@ -33,6 +33,8 @@ class IndividualApi {
   /// * [lastname] - 
   /// * [clientLinksPeriodEnterprise] - 
   /// * [clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket] - 
+  /// * [email] - 
+  /// * [emailLeftSquareBracketRightSquareBracket] - 
   /// * [reference] - 
   /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
@@ -53,6 +55,8 @@ class IndividualApi {
     String? lastname,
     String? clientLinksPeriodEnterprise,
     BuiltList<String>? clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket,
+    String? email,
+    BuiltList<String>? emailLeftSquareBracketRightSquareBracket,
     String? reference,
     BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     int? id,
@@ -84,6 +88,8 @@ class IndividualApi {
       if (lastname != null) r'lastname': encodeQueryParameter(_serializers, lastname, const FullType(String)),
       if (clientLinksPeriodEnterprise != null) r'clientLinks.enterprise': encodeQueryParameter(_serializers, clientLinksPeriodEnterprise, const FullType(String)),
       if (clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket != null) r'clientLinks.enterprise[]': encodeCollectionQueryParameter<String>(_serializers, clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
+      if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': encodeCollectionQueryParameter<String>(_serializers, emailLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
       if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),

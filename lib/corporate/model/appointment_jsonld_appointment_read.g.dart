@@ -161,6 +161,10 @@ class _$AppointmentJsonldAppointmentRead
   final DateTime endDate;
   @override
   final BuiltList<AppointmentClientJsonldAppointmentRead>? appointmentClients;
+  @override
+  final DateTime? createdAt;
+  @override
+  final DateTime? updatedAt;
 
   factory _$AppointmentJsonldAppointmentRead(
           [void Function(AppointmentJsonldAppointmentReadBuilder)? updates]) =>
@@ -181,7 +185,9 @@ class _$AppointmentJsonldAppointmentRead
       this.cancellationReason,
       required this.beginDate,
       required this.endDate,
-      this.appointmentClients})
+      this.appointmentClients,
+      this.createdAt,
+      this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         organiser, r'AppointmentJsonldAppointmentRead', 'organiser');
@@ -224,7 +230,9 @@ class _$AppointmentJsonldAppointmentRead
         cancellationReason == other.cancellationReason &&
         beginDate == other.beginDate &&
         endDate == other.endDate &&
-        appointmentClients == other.appointmentClients;
+        appointmentClients == other.appointmentClients &&
+        createdAt == other.createdAt &&
+        updatedAt == other.updatedAt;
   }
 
   @override
@@ -245,6 +253,8 @@ class _$AppointmentJsonldAppointmentRead
     _$hash = $jc(_$hash, beginDate.hashCode);
     _$hash = $jc(_$hash, endDate.hashCode);
     _$hash = $jc(_$hash, appointmentClients.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -266,7 +276,9 @@ class _$AppointmentJsonldAppointmentRead
           ..add('cancellationReason', cancellationReason)
           ..add('beginDate', beginDate)
           ..add('endDate', endDate)
-          ..add('appointmentClients', appointmentClients))
+          ..add('appointmentClients', appointmentClients)
+          ..add('createdAt', createdAt)
+          ..add('updatedAt', updatedAt))
         .toString();
   }
 }
@@ -349,6 +361,14 @@ class AppointmentJsonldAppointmentReadBuilder
               appointmentClients) =>
       _$this._appointmentClients = appointmentClients;
 
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
   AppointmentJsonldAppointmentReadBuilder() {
     AppointmentJsonldAppointmentRead._defaults(this);
   }
@@ -371,6 +391,8 @@ class AppointmentJsonldAppointmentReadBuilder
       _beginDate = $v.beginDate;
       _endDate = $v.endDate;
       _appointmentClients = $v.appointmentClients?.toBuilder();
+      _createdAt = $v.createdAt;
+      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -416,6 +438,8 @@ class AppointmentJsonldAppointmentReadBuilder
             endDate: BuiltValueNullFieldError.checkNotNull(
                 endDate, r'AppointmentJsonldAppointmentRead', 'endDate'),
             appointmentClients: _appointmentClients?.build(),
+            createdAt: createdAt,
+            updatedAt: updatedAt,
           );
     } catch (_) {
       late String _$failedField;

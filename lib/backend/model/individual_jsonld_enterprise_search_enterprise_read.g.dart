@@ -9,7 +9,7 @@ part of 'individual_jsonld_enterprise_search_enterprise_read.dart';
 class _$IndividualJsonldEnterpriseSearchEnterpriseRead
     extends IndividualJsonldEnterpriseSearchEnterpriseRead {
   @override
-  final CenterJsonldPublicCenterReadContext? atContext;
+  final CenterJsonldHappeningReadContext? atContext;
   @override
   final String? atId;
   @override
@@ -117,10 +117,10 @@ class IndividualJsonldEnterpriseSearchEnterpriseReadBuilder
             IndividualJsonldEnterpriseSearchEnterpriseReadBuilder> {
   _$IndividualJsonldEnterpriseSearchEnterpriseRead? _$v;
 
-  CenterJsonldPublicCenterReadContextBuilder? _atContext;
-  CenterJsonldPublicCenterReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldPublicCenterReadContextBuilder();
-  set atContext(CenterJsonldPublicCenterReadContextBuilder? atContext) =>
+  CenterJsonldHappeningReadContextBuilder? _atContext;
+  CenterJsonldHappeningReadContextBuilder get atContext =>
+      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;

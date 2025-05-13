@@ -8,32 +8,28 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
-import 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
-import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
+import 'package:so_dart_sdk/backend/model/api_happenings_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/happening_jsonld_happening_read.dart';
 
-class EnterpriseApi {
+class HappeningApi {
 
   final Dio _dio;
 
   final Serializers _serializers;
 
-  const EnterpriseApi(this._dio, this._serializers);
+  const HappeningApi(this._dio, this._serializers);
 
-  /// Retrieves the collection of Enterprise resources.
-  /// Retrieves the collection of Enterprise resources.
+  /// Retrieves the collection of Happening resources.
+  /// Retrieves the collection of Happening resources.
   ///
   /// Parameters:
   /// * [page] - The collection page number
-  /// * [email] - 
-  /// * [emailLeftSquareBracketRightSquareBracket] - 
-  /// * [reference] - 
-  /// * [referenceLeftSquareBracketRightSquareBracket] - 
-  /// * [id] - 
-  /// * [idLeftSquareBracketRightSquareBracket] - 
+  /// * [itemsPerPage] - The number of items per page
+  /// * [orderLeftSquareBracketPublicatedAtRightSquareBracket] - 
+  /// * [isActive] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -41,16 +37,13 @@ class EnterpriseApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ApiEnterprisesGetCollection200Response] as data
+  /// Returns a [Future] containing a [Response] with a [ApiHappeningsGetCollection200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApiEnterprisesGetCollection200Response>> apiEnterprisesGetCollection({ 
+  Future<Response<ApiHappeningsGetCollection200Response>> apiHappeningsGetCollection({ 
     int? page = 1,
-    String? email,
-    BuiltList<String>? emailLeftSquareBracketRightSquareBracket,
-    String? reference,
-    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
-    int? id,
-    BuiltList<int>? idLeftSquareBracketRightSquareBracket,
+    int? itemsPerPage = 30,
+    String? orderLeftSquareBracketPublicatedAtRightSquareBracket = 'asc',
+    bool? isActive,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -58,7 +51,7 @@ class EnterpriseApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api-p/enterprises';
+    final _path = r'/api-p/happenings';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -73,12 +66,9 @@ class EnterpriseApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
-      if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': encodeCollectionQueryParameter<String>(_serializers, emailLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
-      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
-      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (itemsPerPage != null) r'itemsPerPage': encodeQueryParameter(_serializers, itemsPerPage, const FullType(int)),
+      if (orderLeftSquareBracketPublicatedAtRightSquareBracket != null) r'order[publicatedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketPublicatedAtRightSquareBracket, const FullType(String)),
+      if (isActive != null) r'isActive': encodeQueryParameter(_serializers, isActive, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -90,14 +80,14 @@ class EnterpriseApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApiEnterprisesGetCollection200Response? _responseData;
+    ApiHappeningsGetCollection200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(ApiEnterprisesGetCollection200Response),
-      ) as ApiEnterprisesGetCollection200Response;
+        specifiedType: const FullType(ApiHappeningsGetCollection200Response),
+      ) as ApiHappeningsGetCollection200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -109,7 +99,7 @@ class EnterpriseApi {
       );
     }
 
-    return Response<ApiEnterprisesGetCollection200Response>(
+    return Response<ApiHappeningsGetCollection200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -121,11 +111,11 @@ class EnterpriseApi {
     );
   }
 
-  /// Retrieves a Enterprise resource.
-  /// Retrieves a Enterprise resource.
+  /// Retrieves a Happening resource.
+  /// Retrieves a Happening resource.
   ///
   /// Parameters:
-  /// * [id] - Enterprise identifier
+  /// * [id] - Happening identifier
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -133,9 +123,9 @@ class EnterpriseApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [EnterpriseJsonldEnterpriseSearchEnterpriseRead] as data
+  /// Returns a [Future] containing a [Response] with a [HappeningJsonldHappeningRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<EnterpriseJsonldEnterpriseSearchEnterpriseRead>> apiEnterprisesIdGet({ 
+  Future<Response<HappeningJsonldHappeningRead>> apiHappeningsIdGet({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -144,7 +134,7 @@ class EnterpriseApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api-p/enterprises/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api-p/happenings/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -165,14 +155,14 @@ class EnterpriseApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    EnterpriseJsonldEnterpriseSearchEnterpriseRead? _responseData;
+    HappeningJsonldHappeningRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead),
-      ) as EnterpriseJsonldEnterpriseSearchEnterpriseRead;
+        specifiedType: const FullType(HappeningJsonldHappeningRead),
+      ) as HappeningJsonldHappeningRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -184,7 +174,7 @@ class EnterpriseApi {
       );
     }
 
-    return Response<EnterpriseJsonldEnterpriseSearchEnterpriseRead>(
+    return Response<HappeningJsonldHappeningRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

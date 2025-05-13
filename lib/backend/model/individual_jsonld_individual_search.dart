@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_context.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -28,7 +28,7 @@ part 'individual_jsonld_individual_search.g.dart';
 @BuiltValue()
 abstract class IndividualJsonldIndividualSearch implements Built<IndividualJsonldIndividualSearch, IndividualJsonldIndividualSearchBuilder> {
   @BuiltValueField(wireName: r'@context')
-  CenterJsonldPublicCenterReadContext? get atContext;
+  CenterJsonldHappeningReadContext? get atContext;
 
   @BuiltValueField(wireName: r'@id')
   String? get atId;
@@ -87,7 +87,7 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(CenterJsonldPublicCenterReadContext),
+        specifiedType: const FullType(CenterJsonldHappeningReadContext),
       );
     }
     if (object.atId != null) {
@@ -186,8 +186,8 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CenterJsonldPublicCenterReadContext),
-          ) as CenterJsonldPublicCenterReadContext;
+            specifiedType: const FullType(CenterJsonldHappeningReadContext),
+          ) as CenterJsonldHappeningReadContext;
           result.atContext.replace(valueDes);
           break;
         case r'@id':

@@ -12,19 +12,27 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiCentersGetCollection200ResponseSearchMappingInner.serializer)
       ..add(ApiCentersGetCollection200ResponseView.serializer)
       ..add(ApiEnterprisesGetCollection200Response.serializer)
+      ..add(ApiHappeningsGetCollection200Response.serializer)
       ..add(ApiIndividualsGetCollection200Response.serializer)
       ..add(ApiPubliccentersGetCollection200Response.serializer)
       ..add(ApiStaffGetCollection200Response.serializer)
       ..add(CenterJsonldCenterSearch.serializer)
+      ..add(CenterJsonldHappeningRead.serializer)
+      ..add(CenterJsonldHappeningReadContext.serializer)
+      ..add(CenterJsonldHappeningReadContextOneOf.serializer)
+      ..add(CenterJsonldHappeningReadContextOneOfHydraEnum.serializer)
       ..add(CenterJsonldPublicCenterRead.serializer)
       ..add(CenterJsonldPublicCenterReadAssetsInner.serializer)
-      ..add(CenterJsonldPublicCenterReadContext.serializer)
-      ..add(CenterJsonldPublicCenterReadContextOneOf.serializer)
-      ..add(CenterJsonldPublicCenterReadContextOneOfHydraEnum.serializer)
       ..add(EnterpriseJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(EnterpriseJsonldIndividualSearch.serializer)
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
+      ..add(HappeningJsonldHappeningRead.serializer)
+      ..add(HappeningJsonldHappeningSearch.serializer)
+      ..add(HappeningPartnerLinkJsonldHappeningRead.serializer)
+      ..add(HappeningPartnerLinkJsonldHappeningSearch.serializer)
+      ..add(HappeningStaffFeedBackJsonldHappeningRead.serializer)
+      ..add(HappeningStaffFeedBackJsonldHappeningSearch.serializer)
       ..add(IndividualJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(IndividualJsonldIndividualSearch.serializer)
       ..add(StaffJsonldStaffSearch.serializer)
@@ -62,6 +70,20 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(EnterpriseJsonldIndividualSearch)]),
           () => new ListBuilder<EnterpriseJsonldIndividualSearch>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(HappeningJsonldHappeningSearch)]),
+          () => new ListBuilder<HappeningJsonldHappeningSearch>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(HappeningStaffFeedBackJsonldHappeningRead)
+          ]),
+          () => new ListBuilder<HappeningStaffFeedBackJsonldHappeningRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(HappeningStaffFeedBackJsonldHappeningSearch)
+          ]),
+          () => new ListBuilder<HappeningStaffFeedBackJsonldHappeningSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(IndividualJsonldEnterpriseSearchEnterpriseRead)

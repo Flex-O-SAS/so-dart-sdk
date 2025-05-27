@@ -17,19 +17,19 @@ CommentJsonldCommentReadContextHydraEnum
     case 'httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash':
       return _$commentJsonldCommentReadContextHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<CommentJsonldCommentReadContextHydraEnum>
-    _$commentJsonldCommentReadContextHydraEnumValues = new BuiltSet<
+    _$commentJsonldCommentReadContextHydraEnumValues = BuiltSet<
         CommentJsonldCommentReadContextHydraEnum>(const <CommentJsonldCommentReadContextHydraEnum>[
   _$commentJsonldCommentReadContextHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash,
 ]);
 
 Serializer<CommentJsonldCommentReadContextHydraEnum>
     _$commentJsonldCommentReadContextHydraEnumSerializer =
-    new _$CommentJsonldCommentReadContextHydraEnumSerializer();
+    _$CommentJsonldCommentReadContextHydraEnumSerializer();
 
 class _$CommentJsonldCommentReadContextHydraEnumSerializer
     implements PrimitiveSerializer<CommentJsonldCommentReadContextHydraEnum> {
@@ -70,13 +70,9 @@ class _$CommentJsonldCommentReadContext
 
   factory _$CommentJsonldCommentReadContext(
           [void Function(CommentJsonldCommentReadContextBuilder)? updates]) =>
-      (new CommentJsonldCommentReadContextBuilder()..update(updates))._build();
+      (CommentJsonldCommentReadContextBuilder()..update(updates))._build();
 
-  _$CommentJsonldCommentReadContext._({required this.oneOf}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        oneOf, r'CommentJsonldCommentReadContext', 'oneOf');
-  }
-
+  _$CommentJsonldCommentReadContext._({required this.oneOf}) : super._();
   @override
   CommentJsonldCommentReadContext rebuild(
           void Function(CommentJsonldCommentReadContextBuilder) updates) =>
@@ -84,7 +80,7 @@ class _$CommentJsonldCommentReadContext
 
   @override
   CommentJsonldCommentReadContextBuilder toBuilder() =>
-      new CommentJsonldCommentReadContextBuilder()..replace(this);
+      CommentJsonldCommentReadContextBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -133,7 +129,6 @@ class CommentJsonldCommentReadContextBuilder
 
   @override
   void replace(CommentJsonldCommentReadContext other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CommentJsonldCommentReadContext;
   }
 
@@ -147,7 +142,7 @@ class CommentJsonldCommentReadContextBuilder
 
   _$CommentJsonldCommentReadContext _build() {
     final _$result = _$v ??
-        new _$CommentJsonldCommentReadContext._(
+        _$CommentJsonldCommentReadContext._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
               oneOf, r'CommentJsonldCommentReadContext', 'oneOf'),
         );

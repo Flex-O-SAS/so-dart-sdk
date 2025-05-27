@@ -30,7 +30,7 @@ class _$CommentJsonldCommentRead extends CommentJsonldCommentRead {
 
   factory _$CommentJsonldCommentRead(
           [void Function(CommentJsonldCommentReadBuilder)? updates]) =>
-      (new CommentJsonldCommentReadBuilder()..update(updates))._build();
+      (CommentJsonldCommentReadBuilder()..update(updates))._build();
 
   _$CommentJsonldCommentRead._(
       {this.atContext,
@@ -43,17 +43,7 @@ class _$CommentJsonldCommentRead extends CommentJsonldCommentRead {
       this.createdAt,
       this.updatedAt,
       required this.ticket})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        author, r'CommentJsonldCommentRead', 'author');
-    BuiltValueNullFieldError.checkNotNull(
-        description, r'CommentJsonldCommentRead', 'description');
-    BuiltValueNullFieldError.checkNotNull(
-        notify, r'CommentJsonldCommentRead', 'notify');
-    BuiltValueNullFieldError.checkNotNull(
-        ticket, r'CommentJsonldCommentRead', 'ticket');
-  }
-
+      : super._();
   @override
   CommentJsonldCommentRead rebuild(
           void Function(CommentJsonldCommentReadBuilder) updates) =>
@@ -61,7 +51,7 @@ class _$CommentJsonldCommentRead extends CommentJsonldCommentRead {
 
   @override
   CommentJsonldCommentReadBuilder toBuilder() =>
-      new CommentJsonldCommentReadBuilder()..replace(this);
+      CommentJsonldCommentReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -120,7 +110,7 @@ class CommentJsonldCommentReadBuilder
 
   CommentJsonldCommentReadContextBuilder? _atContext;
   CommentJsonldCommentReadContextBuilder get atContext =>
-      _$this._atContext ??= new CommentJsonldCommentReadContextBuilder();
+      _$this._atContext ??= CommentJsonldCommentReadContextBuilder();
   set atContext(CommentJsonldCommentReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -184,7 +174,6 @@ class CommentJsonldCommentReadBuilder
 
   @override
   void replace(CommentJsonldCommentRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CommentJsonldCommentRead;
   }
 
@@ -200,7 +189,7 @@ class CommentJsonldCommentReadBuilder
     _$CommentJsonldCommentRead _$result;
     try {
       _$result = _$v ??
-          new _$CommentJsonldCommentRead._(
+          _$CommentJsonldCommentRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -222,7 +211,7 @@ class CommentJsonldCommentReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'CommentJsonldCommentRead', _$failedField, e.toString());
       }
       rethrow;

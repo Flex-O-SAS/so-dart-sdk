@@ -11,7 +11,7 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response.dart';
-import 'package:so_dart_sdk/backend/model/api_publiccenters_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_centers_public_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
@@ -136,9 +136,9 @@ class CenterApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ApiPubliccentersGetCollection200Response] as data
+  /// Returns a [Future] containing a [Response] with a [ApiCentersPublicGetCollection200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApiPubliccentersGetCollection200Response>> apiPubliccentersGetCollection({ 
+  Future<Response<ApiCentersPublicGetCollection200Response>> apiCentersPublicGetCollection({ 
     int? page = 1,
     String? reference,
     BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
@@ -183,14 +183,14 @@ class CenterApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApiPubliccentersGetCollection200Response? _responseData;
+    ApiCentersPublicGetCollection200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(ApiPubliccentersGetCollection200Response),
-      ) as ApiPubliccentersGetCollection200Response;
+        specifiedType: const FullType(ApiCentersPublicGetCollection200Response),
+      ) as ApiCentersPublicGetCollection200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -202,7 +202,7 @@ class CenterApi {
       );
     }
 
-    return Response<ApiPubliccentersGetCollection200Response>(
+    return Response<ApiCentersPublicGetCollection200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -228,7 +228,7 @@ class CenterApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CenterJsonldPublicCenterRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CenterJsonldPublicCenterRead>> apiPubliccentersIdGet({ 
+  Future<Response<CenterJsonldPublicCenterRead>> apiCentersPublicGetItem({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

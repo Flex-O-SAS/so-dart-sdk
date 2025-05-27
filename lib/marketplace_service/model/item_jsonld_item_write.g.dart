@@ -32,7 +32,7 @@ class _$ItemJsonldItemWrite extends ItemJsonldItemWrite {
 
   factory _$ItemJsonldItemWrite(
           [void Function(ItemJsonldItemWriteBuilder)? updates]) =>
-      (new ItemJsonldItemWriteBuilder()..update(updates))._build();
+      (ItemJsonldItemWriteBuilder()..update(updates))._build();
 
   _$ItemJsonldItemWrite._(
       {required this.provider,
@@ -46,21 +46,7 @@ class _$ItemJsonldItemWrite extends ItemJsonldItemWrite {
       this.imageLink,
       required this.beginDate,
       this.endDate})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        provider, r'ItemJsonldItemWrite', 'provider');
-    BuiltValueNullFieldError.checkNotNull(
-        service, r'ItemJsonldItemWrite', 'service');
-    BuiltValueNullFieldError.checkNotNull(
-        label, r'ItemJsonldItemWrite', 'label');
-    BuiltValueNullFieldError.checkNotNull(
-        isBookable, r'ItemJsonldItemWrite', 'isBookable');
-    BuiltValueNullFieldError.checkNotNull(
-        isOnline, r'ItemJsonldItemWrite', 'isOnline');
-    BuiltValueNullFieldError.checkNotNull(
-        beginDate, r'ItemJsonldItemWrite', 'beginDate');
-  }
-
+      : super._();
   @override
   ItemJsonldItemWrite rebuild(
           void Function(ItemJsonldItemWriteBuilder) updates) =>
@@ -68,7 +54,7 @@ class _$ItemJsonldItemWrite extends ItemJsonldItemWrite {
 
   @override
   ItemJsonldItemWriteBuilder toBuilder() =>
-      new ItemJsonldItemWriteBuilder()..replace(this);
+      ItemJsonldItemWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -196,7 +182,6 @@ class ItemJsonldItemWriteBuilder
 
   @override
   void replace(ItemJsonldItemWrite other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ItemJsonldItemWrite;
   }
 
@@ -210,7 +195,7 @@ class ItemJsonldItemWriteBuilder
 
   _$ItemJsonldItemWrite _build() {
     final _$result = _$v ??
-        new _$ItemJsonldItemWrite._(
+        _$ItemJsonldItemWrite._(
           provider: BuiltValueNullFieldError.checkNotNull(
               provider, r'ItemJsonldItemWrite', 'provider'),
           service: BuiltValueNullFieldError.checkNotNull(

@@ -24,7 +24,7 @@ class _$TagJsonldTagRead extends TagJsonldTagRead {
 
   factory _$TagJsonldTagRead(
           [void Function(TagJsonldTagReadBuilder)? updates]) =>
-      (new TagJsonldTagReadBuilder()..update(updates))._build();
+      (TagJsonldTagReadBuilder()..update(updates))._build();
 
   _$TagJsonldTagRead._(
       {this.atId,
@@ -34,21 +34,14 @@ class _$TagJsonldTagRead extends TagJsonldTagRead {
       required this.label,
       required this.providers,
       required this.service})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(label, r'TagJsonldTagRead', 'label');
-    BuiltValueNullFieldError.checkNotNull(
-        providers, r'TagJsonldTagRead', 'providers');
-    BuiltValueNullFieldError.checkNotNull(
-        service, r'TagJsonldTagRead', 'service');
-  }
-
+      : super._();
   @override
   TagJsonldTagRead rebuild(void Function(TagJsonldTagReadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   TagJsonldTagReadBuilder toBuilder() =>
-      new TagJsonldTagReadBuilder()..replace(this);
+      TagJsonldTagReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -106,7 +99,7 @@ class TagJsonldTagReadBuilder
   AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
   AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
       _$this._atContext ??=
-          new AddressJsonldProviderReadAddressReadContextBuilder();
+          AddressJsonldProviderReadAddressReadContextBuilder();
   set atContext(
           AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
@@ -121,13 +114,13 @@ class TagJsonldTagReadBuilder
 
   ListBuilder<ProviderJsonldTagRead>? _providers;
   ListBuilder<ProviderJsonldTagRead> get providers =>
-      _$this._providers ??= new ListBuilder<ProviderJsonldTagRead>();
+      _$this._providers ??= ListBuilder<ProviderJsonldTagRead>();
   set providers(ListBuilder<ProviderJsonldTagRead>? providers) =>
       _$this._providers = providers;
 
   ServiceJsonldTagReadBuilder? _service;
   ServiceJsonldTagReadBuilder get service =>
-      _$this._service ??= new ServiceJsonldTagReadBuilder();
+      _$this._service ??= ServiceJsonldTagReadBuilder();
   set service(ServiceJsonldTagReadBuilder? service) =>
       _$this._service = service;
 
@@ -152,7 +145,6 @@ class TagJsonldTagReadBuilder
 
   @override
   void replace(TagJsonldTagRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagJsonldTagRead;
   }
 
@@ -168,7 +160,7 @@ class TagJsonldTagReadBuilder
     _$TagJsonldTagRead _$result;
     try {
       _$result = _$v ??
-          new _$TagJsonldTagRead._(
+          _$TagJsonldTagRead._(
             atId: atId,
             atType: atType,
             atContext: _atContext?.build(),
@@ -189,7 +181,7 @@ class TagJsonldTagReadBuilder
         _$failedField = 'service';
         service.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'TagJsonldTagRead', _$failedField, e.toString());
       }
       rethrow;

@@ -34,7 +34,7 @@ class _$ItemItemReadServiceRead extends ItemItemReadServiceRead {
 
   factory _$ItemItemReadServiceRead(
           [void Function(ItemItemReadServiceReadBuilder)? updates]) =>
-      (new ItemItemReadServiceReadBuilder()..update(updates))._build();
+      (ItemItemReadServiceReadBuilder()..update(updates))._build();
 
   _$ItemItemReadServiceRead._(
       {this.id,
@@ -49,21 +49,7 @@ class _$ItemItemReadServiceRead extends ItemItemReadServiceRead {
       this.imageLink,
       required this.beginDate,
       this.endDate})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        provider, r'ItemItemReadServiceRead', 'provider');
-    BuiltValueNullFieldError.checkNotNull(
-        service, r'ItemItemReadServiceRead', 'service');
-    BuiltValueNullFieldError.checkNotNull(
-        label, r'ItemItemReadServiceRead', 'label');
-    BuiltValueNullFieldError.checkNotNull(
-        isBookable, r'ItemItemReadServiceRead', 'isBookable');
-    BuiltValueNullFieldError.checkNotNull(
-        isOnline, r'ItemItemReadServiceRead', 'isOnline');
-    BuiltValueNullFieldError.checkNotNull(
-        beginDate, r'ItemItemReadServiceRead', 'beginDate');
-  }
-
+      : super._();
   @override
   ItemItemReadServiceRead rebuild(
           void Function(ItemItemReadServiceReadBuilder) updates) =>
@@ -71,7 +57,7 @@ class _$ItemItemReadServiceRead extends ItemItemReadServiceRead {
 
   @override
   ItemItemReadServiceReadBuilder toBuilder() =>
-      new ItemItemReadServiceReadBuilder()..replace(this);
+      ItemItemReadServiceReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -140,13 +126,13 @@ class ItemItemReadServiceReadBuilder
 
   ProviderItemReadServiceReadBuilder? _provider;
   ProviderItemReadServiceReadBuilder get provider =>
-      _$this._provider ??= new ProviderItemReadServiceReadBuilder();
+      _$this._provider ??= ProviderItemReadServiceReadBuilder();
   set provider(ProviderItemReadServiceReadBuilder? provider) =>
       _$this._provider = provider;
 
   ServiceItemReadServiceReadBuilder? _service;
   ServiceItemReadServiceReadBuilder get service =>
-      _$this._service ??= new ServiceItemReadServiceReadBuilder();
+      _$this._service ??= ServiceItemReadServiceReadBuilder();
   set service(ServiceItemReadServiceReadBuilder? service) =>
       _$this._service = service;
 
@@ -212,7 +198,6 @@ class ItemItemReadServiceReadBuilder
 
   @override
   void replace(ItemItemReadServiceRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ItemItemReadServiceRead;
   }
 
@@ -228,7 +213,7 @@ class ItemItemReadServiceReadBuilder
     _$ItemItemReadServiceRead _$result;
     try {
       _$result = _$v ??
-          new _$ItemItemReadServiceRead._(
+          _$ItemItemReadServiceRead._(
             id: id,
             provider: provider.build(),
             service: service.build(),
@@ -254,7 +239,7 @@ class ItemItemReadServiceReadBuilder
         _$failedField = 'service';
         service.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'ItemItemReadServiceRead', _$failedField, e.toString());
       }
       rethrow;

@@ -16,12 +16,12 @@ AppointmentAppointmentReadTypeEnum _$appointmentAppointmentReadTypeEnumValueOf(
     case 'visit':
       return _$appointmentAppointmentReadTypeEnum_visit;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<AppointmentAppointmentReadTypeEnum>
-    _$appointmentAppointmentReadTypeEnumValues = new BuiltSet<
+    _$appointmentAppointmentReadTypeEnumValues = BuiltSet<
         AppointmentAppointmentReadTypeEnum>(const <AppointmentAppointmentReadTypeEnum>[
   _$appointmentAppointmentReadTypeEnum_visit,
 ]);
@@ -46,12 +46,12 @@ AppointmentAppointmentReadStatusEnum
     case 'done':
       return _$appointmentAppointmentReadStatusEnum_done;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<AppointmentAppointmentReadStatusEnum>
-    _$appointmentAppointmentReadStatusEnumValues = new BuiltSet<
+    _$appointmentAppointmentReadStatusEnumValues = BuiltSet<
         AppointmentAppointmentReadStatusEnum>(const <AppointmentAppointmentReadStatusEnum>[
   _$appointmentAppointmentReadStatusEnum_scheduled,
   _$appointmentAppointmentReadStatusEnum_cancelled,
@@ -60,10 +60,10 @@ final BuiltSet<AppointmentAppointmentReadStatusEnum>
 
 Serializer<AppointmentAppointmentReadTypeEnum>
     _$appointmentAppointmentReadTypeEnumSerializer =
-    new _$AppointmentAppointmentReadTypeEnumSerializer();
+    _$AppointmentAppointmentReadTypeEnumSerializer();
 Serializer<AppointmentAppointmentReadStatusEnum>
     _$appointmentAppointmentReadStatusEnumSerializer =
-    new _$AppointmentAppointmentReadStatusEnumSerializer();
+    _$AppointmentAppointmentReadStatusEnumSerializer();
 
 class _$AppointmentAppointmentReadTypeEnumSerializer
     implements PrimitiveSerializer<AppointmentAppointmentReadTypeEnum> {
@@ -159,7 +159,7 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
 
   factory _$AppointmentAppointmentRead(
           [void Function(AppointmentAppointmentReadBuilder)? updates]) =>
-      (new AppointmentAppointmentReadBuilder()..update(updates))._build();
+      (AppointmentAppointmentReadBuilder()..update(updates))._build();
 
   _$AppointmentAppointmentRead._(
       {this.id,
@@ -176,21 +176,7 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
       this.appointmentClients,
       this.createdAt,
       this.updatedAt})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        organiser, r'AppointmentAppointmentRead', 'organiser');
-    BuiltValueNullFieldError.checkNotNull(
-        site, r'AppointmentAppointmentRead', 'site');
-    BuiltValueNullFieldError.checkNotNull(
-        type, r'AppointmentAppointmentRead', 'type');
-    BuiltValueNullFieldError.checkNotNull(
-        status, r'AppointmentAppointmentRead', 'status');
-    BuiltValueNullFieldError.checkNotNull(
-        beginDate, r'AppointmentAppointmentRead', 'beginDate');
-    BuiltValueNullFieldError.checkNotNull(
-        endDate, r'AppointmentAppointmentRead', 'endDate');
-  }
-
+      : super._();
   @override
   AppointmentAppointmentRead rebuild(
           void Function(AppointmentAppointmentReadBuilder) updates) =>
@@ -198,7 +184,7 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
 
   @override
   AppointmentAppointmentReadBuilder toBuilder() =>
-      new AppointmentAppointmentReadBuilder()..replace(this);
+      AppointmentAppointmentReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -317,7 +303,7 @@ class AppointmentAppointmentReadBuilder
   ListBuilder<AppointmentClientAppointmentRead>? _appointmentClients;
   ListBuilder<AppointmentClientAppointmentRead> get appointmentClients =>
       _$this._appointmentClients ??=
-          new ListBuilder<AppointmentClientAppointmentRead>();
+          ListBuilder<AppointmentClientAppointmentRead>();
   set appointmentClients(
           ListBuilder<AppointmentClientAppointmentRead>? appointmentClients) =>
       _$this._appointmentClients = appointmentClients;
@@ -358,7 +344,6 @@ class AppointmentAppointmentReadBuilder
 
   @override
   void replace(AppointmentAppointmentRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AppointmentAppointmentRead;
   }
 
@@ -374,7 +359,7 @@ class AppointmentAppointmentReadBuilder
     _$AppointmentAppointmentRead _$result;
     try {
       _$result = _$v ??
-          new _$AppointmentAppointmentRead._(
+          _$AppointmentAppointmentRead._(
             id: id,
             organiser: BuiltValueNullFieldError.checkNotNull(
                 organiser, r'AppointmentAppointmentRead', 'organiser'),
@@ -402,7 +387,7 @@ class AppointmentAppointmentReadBuilder
         _$failedField = 'appointmentClients';
         _appointmentClients?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AppointmentAppointmentRead', _$failedField, e.toString());
       }
       rethrow;

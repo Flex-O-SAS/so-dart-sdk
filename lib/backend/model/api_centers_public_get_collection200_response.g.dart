@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_happenings_get_collection200_response.dart';
+part of 'api_centers_public_get_collection200_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiHappeningsGetCollection200Response
-    extends ApiHappeningsGetCollection200Response {
+class _$ApiCentersPublicGetCollection200Response
+    extends ApiCentersPublicGetCollection200Response {
   @override
-  final BuiltList<HappeningJsonldHappeningSearch> member;
+  final BuiltList<CenterJsonldPublicCenterRead> member;
   @override
   final int? totalItems;
   @override
@@ -17,33 +17,29 @@ class _$ApiHappeningsGetCollection200Response
   @override
   final ApiCentersGetCollection200ResponseSearch? search;
 
-  factory _$ApiHappeningsGetCollection200Response(
-          [void Function(ApiHappeningsGetCollection200ResponseBuilder)?
+  factory _$ApiCentersPublicGetCollection200Response(
+          [void Function(ApiCentersPublicGetCollection200ResponseBuilder)?
               updates]) =>
-      (new ApiHappeningsGetCollection200ResponseBuilder()..update(updates))
+      (ApiCentersPublicGetCollection200ResponseBuilder()..update(updates))
           ._build();
 
-  _$ApiHappeningsGetCollection200Response._(
+  _$ApiCentersPublicGetCollection200Response._(
       {required this.member, this.totalItems, this.view, this.search})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        member, r'ApiHappeningsGetCollection200Response', 'member');
-  }
-
+      : super._();
   @override
-  ApiHappeningsGetCollection200Response rebuild(
-          void Function(ApiHappeningsGetCollection200ResponseBuilder)
+  ApiCentersPublicGetCollection200Response rebuild(
+          void Function(ApiCentersPublicGetCollection200ResponseBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiHappeningsGetCollection200ResponseBuilder toBuilder() =>
-      new ApiHappeningsGetCollection200ResponseBuilder()..replace(this);
+  ApiCentersPublicGetCollection200ResponseBuilder toBuilder() =>
+      ApiCentersPublicGetCollection200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiHappeningsGetCollection200Response &&
+    return other is ApiCentersPublicGetCollection200Response &&
         member == other.member &&
         totalItems == other.totalItems &&
         view == other.view &&
@@ -64,7 +60,7 @@ class _$ApiHappeningsGetCollection200Response
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ApiHappeningsGetCollection200Response')
+            r'ApiCentersPublicGetCollection200Response')
           ..add('member', member)
           ..add('totalItems', totalItems)
           ..add('view', view)
@@ -73,16 +69,16 @@ class _$ApiHappeningsGetCollection200Response
   }
 }
 
-class ApiHappeningsGetCollection200ResponseBuilder
+class ApiCentersPublicGetCollection200ResponseBuilder
     implements
-        Builder<ApiHappeningsGetCollection200Response,
-            ApiHappeningsGetCollection200ResponseBuilder> {
-  _$ApiHappeningsGetCollection200Response? _$v;
+        Builder<ApiCentersPublicGetCollection200Response,
+            ApiCentersPublicGetCollection200ResponseBuilder> {
+  _$ApiCentersPublicGetCollection200Response? _$v;
 
-  ListBuilder<HappeningJsonldHappeningSearch>? _member;
-  ListBuilder<HappeningJsonldHappeningSearch> get member =>
-      _$this._member ??= new ListBuilder<HappeningJsonldHappeningSearch>();
-  set member(ListBuilder<HappeningJsonldHappeningSearch>? member) =>
+  ListBuilder<CenterJsonldPublicCenterRead>? _member;
+  ListBuilder<CenterJsonldPublicCenterRead> get member =>
+      _$this._member ??= ListBuilder<CenterJsonldPublicCenterRead>();
+  set member(ListBuilder<CenterJsonldPublicCenterRead>? member) =>
       _$this._member = member;
 
   int? _totalItems;
@@ -91,21 +87,21 @@ class ApiHappeningsGetCollection200ResponseBuilder
 
   ApiCentersGetCollection200ResponseViewBuilder? _view;
   ApiCentersGetCollection200ResponseViewBuilder get view =>
-      _$this._view ??= new ApiCentersGetCollection200ResponseViewBuilder();
+      _$this._view ??= ApiCentersGetCollection200ResponseViewBuilder();
   set view(ApiCentersGetCollection200ResponseViewBuilder? view) =>
       _$this._view = view;
 
   ApiCentersGetCollection200ResponseSearchBuilder? _search;
   ApiCentersGetCollection200ResponseSearchBuilder get search =>
-      _$this._search ??= new ApiCentersGetCollection200ResponseSearchBuilder();
+      _$this._search ??= ApiCentersGetCollection200ResponseSearchBuilder();
   set search(ApiCentersGetCollection200ResponseSearchBuilder? search) =>
       _$this._search = search;
 
-  ApiHappeningsGetCollection200ResponseBuilder() {
-    ApiHappeningsGetCollection200Response._defaults(this);
+  ApiCentersPublicGetCollection200ResponseBuilder() {
+    ApiCentersPublicGetCollection200Response._defaults(this);
   }
 
-  ApiHappeningsGetCollection200ResponseBuilder get _$this {
+  ApiCentersPublicGetCollection200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _member = $v.member.toBuilder();
@@ -118,25 +114,24 @@ class ApiHappeningsGetCollection200ResponseBuilder
   }
 
   @override
-  void replace(ApiHappeningsGetCollection200Response other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiHappeningsGetCollection200Response;
+  void replace(ApiCentersPublicGetCollection200Response other) {
+    _$v = other as _$ApiCentersPublicGetCollection200Response;
   }
 
   @override
   void update(
-      void Function(ApiHappeningsGetCollection200ResponseBuilder)? updates) {
+      void Function(ApiCentersPublicGetCollection200ResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiHappeningsGetCollection200Response build() => _build();
+  ApiCentersPublicGetCollection200Response build() => _build();
 
-  _$ApiHappeningsGetCollection200Response _build() {
-    _$ApiHappeningsGetCollection200Response _$result;
+  _$ApiCentersPublicGetCollection200Response _build() {
+    _$ApiCentersPublicGetCollection200Response _$result;
     try {
       _$result = _$v ??
-          new _$ApiHappeningsGetCollection200Response._(
+          _$ApiCentersPublicGetCollection200Response._(
             member: member.build(),
             totalItems: totalItems,
             view: _view?.build(),
@@ -153,8 +148,8 @@ class ApiHappeningsGetCollection200ResponseBuilder
         _$failedField = 'search';
         _search?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'ApiHappeningsGetCollection200Response',
+        throw BuiltValueNestedFieldError(
+            r'ApiCentersPublicGetCollection200Response',
             _$failedField,
             e.toString());
       }

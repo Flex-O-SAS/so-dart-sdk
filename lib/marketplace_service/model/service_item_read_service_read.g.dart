@@ -18,12 +18,11 @@ class _$ServiceItemReadServiceRead extends ServiceItemReadServiceRead {
 
   factory _$ServiceItemReadServiceRead(
           [void Function(ServiceItemReadServiceReadBuilder)? updates]) =>
-      (new ServiceItemReadServiceReadBuilder()..update(updates))._build();
+      (ServiceItemReadServiceReadBuilder()..update(updates))._build();
 
   _$ServiceItemReadServiceRead._(
       {this.id, this.label, this.prioritization, this.imageLink})
       : super._();
-
   @override
   ServiceItemReadServiceRead rebuild(
           void Function(ServiceItemReadServiceReadBuilder) updates) =>
@@ -31,7 +30,7 @@ class _$ServiceItemReadServiceRead extends ServiceItemReadServiceRead {
 
   @override
   ServiceItemReadServiceReadBuilder toBuilder() =>
-      new ServiceItemReadServiceReadBuilder()..replace(this);
+      ServiceItemReadServiceReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -105,7 +104,6 @@ class ServiceItemReadServiceReadBuilder
 
   @override
   void replace(ServiceItemReadServiceRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ServiceItemReadServiceRead;
   }
 
@@ -119,7 +117,7 @@ class ServiceItemReadServiceReadBuilder
 
   _$ServiceItemReadServiceRead _build() {
     final _$result = _$v ??
-        new _$ServiceItemReadServiceRead._(
+        _$ServiceItemReadServiceRead._(
           id: id,
           label: label,
           prioritization: prioritization,

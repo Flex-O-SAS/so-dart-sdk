@@ -40,7 +40,7 @@ class _$ProviderJsonldProviderReadAddressRead
   factory _$ProviderJsonldProviderReadAddressRead(
           [void Function(ProviderJsonldProviderReadAddressReadBuilder)?
               updates]) =>
-      (new ProviderJsonldProviderReadAddressReadBuilder()..update(updates))
+      (ProviderJsonldProviderReadAddressReadBuilder()..update(updates))
           ._build();
 
   _$ProviderJsonldProviderReadAddressRead._(
@@ -58,15 +58,7 @@ class _$ProviderJsonldProviderReadAddressRead
       required this.address,
       required this.isActive,
       this.tags})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        name, r'ProviderJsonldProviderReadAddressRead', 'name');
-    BuiltValueNullFieldError.checkNotNull(
-        address, r'ProviderJsonldProviderReadAddressRead', 'address');
-    BuiltValueNullFieldError.checkNotNull(
-        isActive, r'ProviderJsonldProviderReadAddressRead', 'isActive');
-  }
-
+      : super._();
   @override
   ProviderJsonldProviderReadAddressRead rebuild(
           void Function(ProviderJsonldProviderReadAddressReadBuilder)
@@ -75,7 +67,7 @@ class _$ProviderJsonldProviderReadAddressRead
 
   @override
   ProviderJsonldProviderReadAddressReadBuilder toBuilder() =>
-      new ProviderJsonldProviderReadAddressReadBuilder()..replace(this);
+      ProviderJsonldProviderReadAddressReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -149,7 +141,7 @@ class ProviderJsonldProviderReadAddressReadBuilder
   AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
   AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
       _$this._atContext ??=
-          new AddressJsonldProviderReadAddressReadContextBuilder();
+          AddressJsonldProviderReadAddressReadContextBuilder();
   set atContext(
           AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
@@ -192,13 +184,13 @@ class ProviderJsonldProviderReadAddressReadBuilder
 
   ListBuilder<ItemJsonldProviderReadAddressRead>? _items;
   ListBuilder<ItemJsonldProviderReadAddressRead> get items =>
-      _$this._items ??= new ListBuilder<ItemJsonldProviderReadAddressRead>();
+      _$this._items ??= ListBuilder<ItemJsonldProviderReadAddressRead>();
   set items(ListBuilder<ItemJsonldProviderReadAddressRead>? items) =>
       _$this._items = items;
 
   AddressJsonldProviderReadAddressReadBuilder? _address;
   AddressJsonldProviderReadAddressReadBuilder get address =>
-      _$this._address ??= new AddressJsonldProviderReadAddressReadBuilder();
+      _$this._address ??= AddressJsonldProviderReadAddressReadBuilder();
   set address(AddressJsonldProviderReadAddressReadBuilder? address) =>
       _$this._address = address;
 
@@ -208,7 +200,7 @@ class ProviderJsonldProviderReadAddressReadBuilder
 
   ListBuilder<TagJsonldProviderReadAddressRead>? _tags;
   ListBuilder<TagJsonldProviderReadAddressRead> get tags =>
-      _$this._tags ??= new ListBuilder<TagJsonldProviderReadAddressRead>();
+      _$this._tags ??= ListBuilder<TagJsonldProviderReadAddressRead>();
   set tags(ListBuilder<TagJsonldProviderReadAddressRead>? tags) =>
       _$this._tags = tags;
 
@@ -240,7 +232,6 @@ class ProviderJsonldProviderReadAddressReadBuilder
 
   @override
   void replace(ProviderJsonldProviderReadAddressRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ProviderJsonldProviderReadAddressRead;
   }
 
@@ -257,7 +248,7 @@ class ProviderJsonldProviderReadAddressReadBuilder
     _$ProviderJsonldProviderReadAddressRead _$result;
     try {
       _$result = _$v ??
-          new _$ProviderJsonldProviderReadAddressRead._(
+          _$ProviderJsonldProviderReadAddressRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -289,7 +280,7 @@ class ProviderJsonldProviderReadAddressReadBuilder
         _$failedField = 'tags';
         _tags?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'ProviderJsonldProviderReadAddressRead',
             _$failedField,
             e.toString());

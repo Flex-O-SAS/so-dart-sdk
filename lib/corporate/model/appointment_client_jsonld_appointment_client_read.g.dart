@@ -37,13 +37,12 @@ AppointmentClientJsonldAppointmentClientReadStatusEnum
     case 'absent':
       return _$appointmentClientJsonldAppointmentClientReadStatusEnum_absent;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<AppointmentClientJsonldAppointmentClientReadStatusEnum>
-    _$appointmentClientJsonldAppointmentClientReadStatusEnumValues =
-    new BuiltSet<
+    _$appointmentClientJsonldAppointmentClientReadStatusEnumValues = BuiltSet<
         AppointmentClientJsonldAppointmentClientReadStatusEnum>(const <AppointmentClientJsonldAppointmentClientReadStatusEnum>[
   _$appointmentClientJsonldAppointmentClientReadStatusEnum_pending,
   _$appointmentClientJsonldAppointmentClientReadStatusEnum_accepted,
@@ -54,7 +53,7 @@ final BuiltSet<AppointmentClientJsonldAppointmentClientReadStatusEnum>
 
 Serializer<AppointmentClientJsonldAppointmentClientReadStatusEnum>
     _$appointmentClientJsonldAppointmentClientReadStatusEnumSerializer =
-    new _$AppointmentClientJsonldAppointmentClientReadStatusEnumSerializer();
+    _$AppointmentClientJsonldAppointmentClientReadStatusEnumSerializer();
 
 class _$AppointmentClientJsonldAppointmentClientReadStatusEnumSerializer
     implements
@@ -125,8 +124,7 @@ class _$AppointmentClientJsonldAppointmentClientRead
   factory _$AppointmentClientJsonldAppointmentClientRead(
           [void Function(AppointmentClientJsonldAppointmentClientReadBuilder)?
               updates]) =>
-      (new AppointmentClientJsonldAppointmentClientReadBuilder()
-            ..update(updates))
+      (AppointmentClientJsonldAppointmentClientReadBuilder()..update(updates))
           ._build();
 
   _$AppointmentClientJsonldAppointmentClientRead._(
@@ -141,13 +139,7 @@ class _$AppointmentClientJsonldAppointmentClientRead
       this.comment,
       this.responseDate,
       this.lastSentInvitationDate})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        email, r'AppointmentClientJsonldAppointmentClientRead', 'email');
-    BuiltValueNullFieldError.checkNotNull(
-        status, r'AppointmentClientJsonldAppointmentClientRead', 'status');
-  }
-
+      : super._();
   @override
   AppointmentClientJsonldAppointmentClientRead rebuild(
           void Function(AppointmentClientJsonldAppointmentClientReadBuilder)
@@ -156,7 +148,7 @@ class _$AppointmentClientJsonldAppointmentClientRead
 
   @override
   AppointmentClientJsonldAppointmentClientReadBuilder toBuilder() =>
-      new AppointmentClientJsonldAppointmentClientReadBuilder()..replace(this);
+      AppointmentClientJsonldAppointmentClientReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -220,8 +212,7 @@ class AppointmentClientJsonldAppointmentClientReadBuilder
 
   AppointmentJsonldAppointmentReadContextBuilder? _atContext;
   AppointmentJsonldAppointmentReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new AppointmentJsonldAppointmentReadContextBuilder();
+      _$this._atContext ??= AppointmentJsonldAppointmentReadContextBuilder();
   set atContext(AppointmentJsonldAppointmentReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -293,7 +284,6 @@ class AppointmentClientJsonldAppointmentClientReadBuilder
 
   @override
   void replace(AppointmentClientJsonldAppointmentClientRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AppointmentClientJsonldAppointmentClientRead;
   }
 
@@ -311,7 +301,7 @@ class AppointmentClientJsonldAppointmentClientReadBuilder
     _$AppointmentClientJsonldAppointmentClientRead _$result;
     try {
       _$result = _$v ??
-          new _$AppointmentClientJsonldAppointmentClientRead._(
+          _$AppointmentClientJsonldAppointmentClientRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -332,7 +322,7 @@ class AppointmentClientJsonldAppointmentClientReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AppointmentClientJsonldAppointmentClientRead',
             _$failedField,
             e.toString());

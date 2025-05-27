@@ -20,12 +20,11 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
 
   factory _$CenterJsonldCenterSearch(
           [void Function(CenterJsonldCenterSearchBuilder)? updates]) =>
-      (new CenterJsonldCenterSearchBuilder()..update(updates))._build();
+      (CenterJsonldCenterSearchBuilder()..update(updates))._build();
 
   _$CenterJsonldCenterSearch._(
       {this.atId, this.atType, this.reference, this.name, this.id})
       : super._();
-
   @override
   CenterJsonldCenterSearch rebuild(
           void Function(CenterJsonldCenterSearchBuilder) updates) =>
@@ -33,7 +32,7 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
 
   @override
   CenterJsonldCenterSearchBuilder toBuilder() =>
-      new CenterJsonldCenterSearchBuilder()..replace(this);
+      CenterJsonldCenterSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -114,7 +113,6 @@ class CenterJsonldCenterSearchBuilder
 
   @override
   void replace(CenterJsonldCenterSearch other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CenterJsonldCenterSearch;
   }
 
@@ -128,7 +126,7 @@ class CenterJsonldCenterSearchBuilder
 
   _$CenterJsonldCenterSearch _build() {
     final _$result = _$v ??
-        new _$CenterJsonldCenterSearch._(
+        _$CenterJsonldCenterSearch._(
           atId: atId,
           atType: atType,
           reference: reference,

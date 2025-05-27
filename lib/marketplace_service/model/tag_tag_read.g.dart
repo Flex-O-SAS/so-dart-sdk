@@ -17,26 +17,20 @@ class _$TagTagRead extends TagTagRead {
   final ServiceTagRead service;
 
   factory _$TagTagRead([void Function(TagTagReadBuilder)? updates]) =>
-      (new TagTagReadBuilder()..update(updates))._build();
+      (TagTagReadBuilder()..update(updates))._build();
 
   _$TagTagRead._(
       {this.id,
       required this.label,
       required this.providers,
       required this.service})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(label, r'TagTagRead', 'label');
-    BuiltValueNullFieldError.checkNotNull(
-        providers, r'TagTagRead', 'providers');
-    BuiltValueNullFieldError.checkNotNull(service, r'TagTagRead', 'service');
-  }
-
+      : super._();
   @override
   TagTagRead rebuild(void Function(TagTagReadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  TagTagReadBuilder toBuilder() => new TagTagReadBuilder()..replace(this);
+  TagTagReadBuilder toBuilder() => TagTagReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -83,13 +77,13 @@ class TagTagReadBuilder implements Builder<TagTagRead, TagTagReadBuilder> {
 
   ListBuilder<ProviderTagRead>? _providers;
   ListBuilder<ProviderTagRead> get providers =>
-      _$this._providers ??= new ListBuilder<ProviderTagRead>();
+      _$this._providers ??= ListBuilder<ProviderTagRead>();
   set providers(ListBuilder<ProviderTagRead>? providers) =>
       _$this._providers = providers;
 
   ServiceTagReadBuilder? _service;
   ServiceTagReadBuilder get service =>
-      _$this._service ??= new ServiceTagReadBuilder();
+      _$this._service ??= ServiceTagReadBuilder();
   set service(ServiceTagReadBuilder? service) => _$this._service = service;
 
   TagTagReadBuilder() {
@@ -110,7 +104,6 @@ class TagTagReadBuilder implements Builder<TagTagRead, TagTagReadBuilder> {
 
   @override
   void replace(TagTagRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagTagRead;
   }
 
@@ -126,7 +119,7 @@ class TagTagReadBuilder implements Builder<TagTagRead, TagTagReadBuilder> {
     _$TagTagRead _$result;
     try {
       _$result = _$v ??
-          new _$TagTagRead._(
+          _$TagTagRead._(
             id: id,
             label: BuiltValueNullFieldError.checkNotNull(
                 label, r'TagTagRead', 'label'),
@@ -141,7 +134,7 @@ class TagTagReadBuilder implements Builder<TagTagRead, TagTagReadBuilder> {
         _$failedField = 'service';
         service.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'TagTagRead', _$failedField, e.toString());
       }
       rethrow;

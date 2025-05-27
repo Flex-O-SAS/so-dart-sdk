@@ -6,7 +6,7 @@ part of 'serializers.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializers _$serializers = (new Serializers().toBuilder()
+Serializers _$serializers = (Serializers().toBuilder()
       ..add(AddressJsonldProviderReadAddressRead.serializer)
       ..add(AddressJsonldProviderReadAddressReadContext.serializer)
       ..add(AddressJsonldProviderReadAddressReadContextOneOf.serializer)
@@ -59,56 +59,56 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [
             const FullType(ApiItemsGetCollection200ResponseSearchMappingInner)
           ]),
-          () => new ListBuilder<
-              ApiItemsGetCollection200ResponseSearchMappingInner>())
+          () =>
+              ListBuilder<ApiItemsGetCollection200ResponseSearchMappingInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ItemJsonldItemReadServiceRead)]),
-          () => new ListBuilder<ItemJsonldItemReadServiceRead>())
+          () => ListBuilder<ItemJsonldItemReadServiceRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ItemJsonldProviderReadAddressRead)]),
-          () => new ListBuilder<ItemJsonldProviderReadAddressRead>())
+          () => ListBuilder<ItemJsonldProviderReadAddressRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(TagJsonldProviderReadAddressRead)]),
-          () => new ListBuilder<TagJsonldProviderReadAddressRead>())
+          () => ListBuilder<TagJsonldProviderReadAddressRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ItemProviderReadAddressRead)]),
-          () => new ListBuilder<ItemProviderReadAddressRead>())
+          () => ListBuilder<ItemProviderReadAddressRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(TagProviderReadAddressRead)]),
-          () => new ListBuilder<TagProviderReadAddressRead>())
+          () => ListBuilder<TagProviderReadAddressRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ProviderJsonldProviderReadAddressRead)]),
-          () => new ListBuilder<ProviderJsonldProviderReadAddressRead>())
+          () => ListBuilder<ProviderJsonldProviderReadAddressRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ProviderJsonldTagRead)]),
-          () => new ListBuilder<ProviderJsonldTagRead>())
+          () => ListBuilder<ProviderJsonldTagRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ProviderTagRead)]),
-          () => new ListBuilder<ProviderTagRead>())
+          () => ListBuilder<ProviderTagRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ReservationJsonldReservationRead)]),
-          () => new ListBuilder<ReservationJsonldReservationRead>())
+          () => ListBuilder<ReservationJsonldReservationRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ServiceJsonldServiceRead)]),
-          () => new ListBuilder<ServiceJsonldServiceRead>())
+          () => ListBuilder<ServiceJsonldServiceRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(TagJsonldTagRead)]),
-          () => new ListBuilder<TagJsonldTagRead>()))
+          () => ListBuilder<TagJsonldTagRead>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

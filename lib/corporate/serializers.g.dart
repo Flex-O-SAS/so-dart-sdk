@@ -6,7 +6,7 @@ part of 'serializers.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializers _$serializers = (new Serializers().toBuilder()
+Serializers _$serializers = (Serializers().toBuilder()
       ..add(ApiAppointmentClientGetCollection200Response.serializer)
       ..add(ApiAppointmentsGetCollection200Response.serializer)
       ..add(ApiAppointmentsGetCollection200ResponseSearch.serializer)
@@ -72,49 +72,49 @@ Serializers _$serializers = (new Serializers().toBuilder()
             const FullType(
                 ApiAppointmentsGetCollection200ResponseSearchMappingInner)
           ]),
-          () => new ListBuilder<
+          () => ListBuilder<
               ApiAppointmentsGetCollection200ResponseSearchMappingInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(AppointmentClientAppointmentRead)]),
-          () => new ListBuilder<AppointmentClientAppointmentRead>())
+          () => ListBuilder<AppointmentClientAppointmentRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(AppointmentClientAppointmentWrite)]),
-          () => new ListBuilder<AppointmentClientAppointmentWrite>())
+          () => ListBuilder<AppointmentClientAppointmentWrite>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(AppointmentClientJsonldAppointmentClientRead)
           ]),
-          () => new ListBuilder<AppointmentClientJsonldAppointmentClientRead>())
+          () => ListBuilder<AppointmentClientJsonldAppointmentClientRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(AppointmentClientJsonldAppointmentRead)]),
-          () => new ListBuilder<AppointmentClientJsonldAppointmentRead>())
+          () => ListBuilder<AppointmentClientJsonldAppointmentRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(AppointmentClientJsonldAppointmentWrite)]),
-          () => new ListBuilder<AppointmentClientJsonldAppointmentWrite>())
+          () => ListBuilder<AppointmentClientJsonldAppointmentWrite>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(AppointmentJsonldAppointmentRead)]),
-          () => new ListBuilder<AppointmentJsonldAppointmentRead>())
+          () => ListBuilder<AppointmentJsonldAppointmentRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ClientRelationJsonld)]),
-          () => new ListBuilder<ClientRelationJsonld>())
+          () => ListBuilder<ClientRelationJsonld>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ConstraintViolationJsonViolationsInner)]),
-          () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
+          () => ListBuilder<ConstraintViolationJsonViolationsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ConstraintViolationJsonViolationsInner)]),
-          () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
+          () => ListBuilder<ConstraintViolationJsonViolationsInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(PackageJsonldPackageRead)]),
-          () => new ListBuilder<PackageJsonldPackageRead>()))
+          () => ListBuilder<PackageJsonldPackageRead>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

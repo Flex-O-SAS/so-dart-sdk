@@ -24,7 +24,7 @@ class _$CommentCommentRead extends CommentCommentRead {
 
   factory _$CommentCommentRead(
           [void Function(CommentCommentReadBuilder)? updates]) =>
-      (new CommentCommentReadBuilder()..update(updates))._build();
+      (CommentCommentReadBuilder()..update(updates))._build();
 
   _$CommentCommentRead._(
       {this.id,
@@ -34,17 +34,7 @@ class _$CommentCommentRead extends CommentCommentRead {
       this.createdAt,
       this.updatedAt,
       required this.ticket})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        author, r'CommentCommentRead', 'author');
-    BuiltValueNullFieldError.checkNotNull(
-        description, r'CommentCommentRead', 'description');
-    BuiltValueNullFieldError.checkNotNull(
-        notify, r'CommentCommentRead', 'notify');
-    BuiltValueNullFieldError.checkNotNull(
-        ticket, r'CommentCommentRead', 'ticket');
-  }
-
+      : super._();
   @override
   CommentCommentRead rebuild(
           void Function(CommentCommentReadBuilder) updates) =>
@@ -52,7 +42,7 @@ class _$CommentCommentRead extends CommentCommentRead {
 
   @override
   CommentCommentReadBuilder toBuilder() =>
-      new CommentCommentReadBuilder()..replace(this);
+      CommentCommentReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -148,7 +138,6 @@ class CommentCommentReadBuilder
 
   @override
   void replace(CommentCommentRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CommentCommentRead;
   }
 
@@ -162,7 +151,7 @@ class CommentCommentReadBuilder
 
   _$CommentCommentRead _build() {
     final _$result = _$v ??
-        new _$CommentCommentRead._(
+        _$CommentCommentRead._(
           id: id,
           author: BuiltValueNullFieldError.checkNotNull(
               author, r'CommentCommentRead', 'author'),

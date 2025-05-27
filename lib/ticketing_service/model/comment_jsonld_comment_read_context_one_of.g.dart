@@ -17,19 +17,19 @@ CommentJsonldCommentReadContextOneOfHydraEnum
     case 'httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash':
       return _$commentJsonldCommentReadContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<CommentJsonldCommentReadContextOneOfHydraEnum>
-    _$commentJsonldCommentReadContextOneOfHydraEnumValues = new BuiltSet<
+    _$commentJsonldCommentReadContextOneOfHydraEnumValues = BuiltSet<
         CommentJsonldCommentReadContextOneOfHydraEnum>(const <CommentJsonldCommentReadContextOneOfHydraEnum>[
   _$commentJsonldCommentReadContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash,
 ]);
 
 Serializer<CommentJsonldCommentReadContextOneOfHydraEnum>
     _$commentJsonldCommentReadContextOneOfHydraEnumSerializer =
-    new _$CommentJsonldCommentReadContextOneOfHydraEnumSerializer();
+    _$CommentJsonldCommentReadContextOneOfHydraEnumSerializer();
 
 class _$CommentJsonldCommentReadContextOneOfHydraEnumSerializer
     implements
@@ -74,18 +74,11 @@ class _$CommentJsonldCommentReadContextOneOf
   factory _$CommentJsonldCommentReadContextOneOf(
           [void Function(CommentJsonldCommentReadContextOneOfBuilder)?
               updates]) =>
-      (new CommentJsonldCommentReadContextOneOfBuilder()..update(updates))
-          ._build();
+      (CommentJsonldCommentReadContextOneOfBuilder()..update(updates))._build();
 
   _$CommentJsonldCommentReadContextOneOf._(
       {required this.atVocab, required this.hydra})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        atVocab, r'CommentJsonldCommentReadContextOneOf', 'atVocab');
-    BuiltValueNullFieldError.checkNotNull(
-        hydra, r'CommentJsonldCommentReadContextOneOf', 'hydra');
-  }
-
+      : super._();
   @override
   CommentJsonldCommentReadContextOneOf rebuild(
           void Function(CommentJsonldCommentReadContextOneOfBuilder) updates) =>
@@ -93,7 +86,7 @@ class _$CommentJsonldCommentReadContextOneOf
 
   @override
   CommentJsonldCommentReadContextOneOfBuilder toBuilder() =>
-      new CommentJsonldCommentReadContextOneOfBuilder()..replace(this);
+      CommentJsonldCommentReadContextOneOfBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -152,7 +145,6 @@ class CommentJsonldCommentReadContextOneOfBuilder
 
   @override
   void replace(CommentJsonldCommentReadContextOneOf other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CommentJsonldCommentReadContextOneOf;
   }
 
@@ -167,7 +159,7 @@ class CommentJsonldCommentReadContextOneOfBuilder
 
   _$CommentJsonldCommentReadContextOneOf _build() {
     final _$result = _$v ??
-        new _$CommentJsonldCommentReadContextOneOf._(
+        _$CommentJsonldCommentReadContextOneOf._(
           atVocab: BuiltValueNullFieldError.checkNotNull(
               atVocab, r'CommentJsonldCommentReadContextOneOf', 'atVocab'),
           hydra: BuiltValueNullFieldError.checkNotNull(

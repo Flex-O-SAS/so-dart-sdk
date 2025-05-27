@@ -17,19 +17,19 @@ AddressJsonldProviderReadAddressReadContextHydraEnum
     case 'httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash':
       return _$addressJsonldProviderReadAddressReadContextHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<AddressJsonldProviderReadAddressReadContextHydraEnum>
-    _$addressJsonldProviderReadAddressReadContextHydraEnumValues = new BuiltSet<
+    _$addressJsonldProviderReadAddressReadContextHydraEnumValues = BuiltSet<
         AddressJsonldProviderReadAddressReadContextHydraEnum>(const <AddressJsonldProviderReadAddressReadContextHydraEnum>[
   _$addressJsonldProviderReadAddressReadContextHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash,
 ]);
 
 Serializer<AddressJsonldProviderReadAddressReadContextHydraEnum>
     _$addressJsonldProviderReadAddressReadContextHydraEnumSerializer =
-    new _$AddressJsonldProviderReadAddressReadContextHydraEnumSerializer();
+    _$AddressJsonldProviderReadAddressReadContextHydraEnumSerializer();
 
 class _$AddressJsonldProviderReadAddressReadContextHydraEnumSerializer
     implements
@@ -74,16 +74,11 @@ class _$AddressJsonldProviderReadAddressReadContext
   factory _$AddressJsonldProviderReadAddressReadContext(
           [void Function(AddressJsonldProviderReadAddressReadContextBuilder)?
               updates]) =>
-      (new AddressJsonldProviderReadAddressReadContextBuilder()
-            ..update(updates))
+      (AddressJsonldProviderReadAddressReadContextBuilder()..update(updates))
           ._build();
 
   _$AddressJsonldProviderReadAddressReadContext._({required this.oneOf})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        oneOf, r'AddressJsonldProviderReadAddressReadContext', 'oneOf');
-  }
-
+      : super._();
   @override
   AddressJsonldProviderReadAddressReadContext rebuild(
           void Function(AddressJsonldProviderReadAddressReadContextBuilder)
@@ -92,7 +87,7 @@ class _$AddressJsonldProviderReadAddressReadContext
 
   @override
   AddressJsonldProviderReadAddressReadContextBuilder toBuilder() =>
-      new AddressJsonldProviderReadAddressReadContextBuilder()..replace(this);
+      AddressJsonldProviderReadAddressReadContextBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -143,7 +138,6 @@ class AddressJsonldProviderReadAddressReadContextBuilder
 
   @override
   void replace(AddressJsonldProviderReadAddressReadContext other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AddressJsonldProviderReadAddressReadContext;
   }
 
@@ -159,7 +153,7 @@ class AddressJsonldProviderReadAddressReadContextBuilder
 
   _$AddressJsonldProviderReadAddressReadContext _build() {
     final _$result = _$v ??
-        new _$AddressJsonldProviderReadAddressReadContext._(
+        _$AddressJsonldProviderReadAddressReadContext._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
               oneOf, r'AddressJsonldProviderReadAddressReadContext', 'oneOf'),
         );

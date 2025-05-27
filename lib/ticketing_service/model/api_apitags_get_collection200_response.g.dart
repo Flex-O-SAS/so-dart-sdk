@@ -20,16 +20,11 @@ class _$ApiApitagsGetCollection200Response
   factory _$ApiApitagsGetCollection200Response(
           [void Function(ApiApitagsGetCollection200ResponseBuilder)?
               updates]) =>
-      (new ApiApitagsGetCollection200ResponseBuilder()..update(updates))
-          ._build();
+      (ApiApitagsGetCollection200ResponseBuilder()..update(updates))._build();
 
   _$ApiApitagsGetCollection200Response._(
       {required this.member, this.totalItems, this.view, this.search})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        member, r'ApiApitagsGetCollection200Response', 'member');
-  }
-
+      : super._();
   @override
   ApiApitagsGetCollection200Response rebuild(
           void Function(ApiApitagsGetCollection200ResponseBuilder) updates) =>
@@ -37,7 +32,7 @@ class _$ApiApitagsGetCollection200Response
 
   @override
   ApiApitagsGetCollection200ResponseBuilder toBuilder() =>
-      new ApiApitagsGetCollection200ResponseBuilder()..replace(this);
+      ApiApitagsGetCollection200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -79,7 +74,7 @@ class ApiApitagsGetCollection200ResponseBuilder
 
   ListBuilder<TagJsonldTagRead>? _member;
   ListBuilder<TagJsonldTagRead> get member =>
-      _$this._member ??= new ListBuilder<TagJsonldTagRead>();
+      _$this._member ??= ListBuilder<TagJsonldTagRead>();
   set member(ListBuilder<TagJsonldTagRead>? member) => _$this._member = member;
 
   int? _totalItems;
@@ -88,14 +83,13 @@ class ApiApitagsGetCollection200ResponseBuilder
 
   ApiApicommentsGetCollection200ResponseViewBuilder? _view;
   ApiApicommentsGetCollection200ResponseViewBuilder get view =>
-      _$this._view ??= new ApiApicommentsGetCollection200ResponseViewBuilder();
+      _$this._view ??= ApiApicommentsGetCollection200ResponseViewBuilder();
   set view(ApiApicommentsGetCollection200ResponseViewBuilder? view) =>
       _$this._view = view;
 
   ApiApicommentsGetCollection200ResponseSearchBuilder? _search;
   ApiApicommentsGetCollection200ResponseSearchBuilder get search =>
-      _$this._search ??=
-          new ApiApicommentsGetCollection200ResponseSearchBuilder();
+      _$this._search ??= ApiApicommentsGetCollection200ResponseSearchBuilder();
   set search(ApiApicommentsGetCollection200ResponseSearchBuilder? search) =>
       _$this._search = search;
 
@@ -117,7 +111,6 @@ class ApiApitagsGetCollection200ResponseBuilder
 
   @override
   void replace(ApiApitagsGetCollection200Response other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiApitagsGetCollection200Response;
   }
 
@@ -134,7 +127,7 @@ class ApiApitagsGetCollection200ResponseBuilder
     _$ApiApitagsGetCollection200Response _$result;
     try {
       _$result = _$v ??
-          new _$ApiApitagsGetCollection200Response._(
+          _$ApiApitagsGetCollection200Response._(
             member: member.build(),
             totalItems: totalItems,
             view: _view?.build(),
@@ -151,7 +144,7 @@ class ApiApitagsGetCollection200ResponseBuilder
         _$failedField = 'search';
         _search?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'ApiApitagsGetCollection200Response', _$failedField, e.toString());
       }
       rethrow;

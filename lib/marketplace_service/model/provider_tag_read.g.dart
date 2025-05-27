@@ -13,19 +13,15 @@ class _$ProviderTagRead extends ProviderTagRead {
   final String name;
 
   factory _$ProviderTagRead([void Function(ProviderTagReadBuilder)? updates]) =>
-      (new ProviderTagReadBuilder()..update(updates))._build();
+      (ProviderTagReadBuilder()..update(updates))._build();
 
-  _$ProviderTagRead._({this.id, required this.name}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(name, r'ProviderTagRead', 'name');
-  }
-
+  _$ProviderTagRead._({this.id, required this.name}) : super._();
   @override
   ProviderTagRead rebuild(void Function(ProviderTagReadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ProviderTagReadBuilder toBuilder() =>
-      new ProviderTagReadBuilder()..replace(this);
+  ProviderTagReadBuilder toBuilder() => ProviderTagReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -79,7 +75,6 @@ class ProviderTagReadBuilder
 
   @override
   void replace(ProviderTagRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ProviderTagRead;
   }
 
@@ -93,7 +88,7 @@ class ProviderTagReadBuilder
 
   _$ProviderTagRead _build() {
     final _$result = _$v ??
-        new _$ProviderTagRead._(
+        _$ProviderTagRead._(
           id: id,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'ProviderTagRead', 'name'),

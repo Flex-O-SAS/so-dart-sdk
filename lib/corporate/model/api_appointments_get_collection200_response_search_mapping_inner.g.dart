@@ -21,14 +21,13 @@ class _$ApiAppointmentsGetCollection200ResponseSearchMappingInner
           [void Function(
                   ApiAppointmentsGetCollection200ResponseSearchMappingInnerBuilder)?
               updates]) =>
-      (new ApiAppointmentsGetCollection200ResponseSearchMappingInnerBuilder()
+      (ApiAppointmentsGetCollection200ResponseSearchMappingInnerBuilder()
             ..update(updates))
           ._build();
 
   _$ApiAppointmentsGetCollection200ResponseSearchMappingInner._(
       {this.atType, this.variable, this.property, this.required_})
       : super._();
-
   @override
   ApiAppointmentsGetCollection200ResponseSearchMappingInner rebuild(
           void Function(
@@ -39,7 +38,7 @@ class _$ApiAppointmentsGetCollection200ResponseSearchMappingInner
   @override
   ApiAppointmentsGetCollection200ResponseSearchMappingInnerBuilder
       toBuilder() =>
-          new ApiAppointmentsGetCollection200ResponseSearchMappingInnerBuilder()
+          ApiAppointmentsGetCollection200ResponseSearchMappingInnerBuilder()
             ..replace(this);
 
   @override
@@ -116,7 +115,6 @@ class ApiAppointmentsGetCollection200ResponseSearchMappingInnerBuilder
   @override
   void replace(
       ApiAppointmentsGetCollection200ResponseSearchMappingInner other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiAppointmentsGetCollection200ResponseSearchMappingInner;
   }
 
@@ -133,7 +131,7 @@ class ApiAppointmentsGetCollection200ResponseSearchMappingInnerBuilder
 
   _$ApiAppointmentsGetCollection200ResponseSearchMappingInner _build() {
     final _$result = _$v ??
-        new _$ApiAppointmentsGetCollection200ResponseSearchMappingInner._(
+        _$ApiAppointmentsGetCollection200ResponseSearchMappingInner._(
           atType: atType,
           variable: variable,
           property: property,

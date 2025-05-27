@@ -24,13 +24,12 @@ class _$ApiApicommentsGetCollection200ResponseView
   factory _$ApiApicommentsGetCollection200ResponseView(
           [void Function(ApiApicommentsGetCollection200ResponseViewBuilder)?
               updates]) =>
-      (new ApiApicommentsGetCollection200ResponseViewBuilder()..update(updates))
+      (ApiApicommentsGetCollection200ResponseViewBuilder()..update(updates))
           ._build();
 
   _$ApiApicommentsGetCollection200ResponseView._(
       {this.atId, this.atType, this.first, this.last, this.previous, this.next})
       : super._();
-
   @override
   ApiApicommentsGetCollection200ResponseView rebuild(
           void Function(ApiApicommentsGetCollection200ResponseViewBuilder)
@@ -39,7 +38,7 @@ class _$ApiApicommentsGetCollection200ResponseView
 
   @override
   ApiApicommentsGetCollection200ResponseViewBuilder toBuilder() =>
-      new ApiApicommentsGetCollection200ResponseViewBuilder()..replace(this);
+      ApiApicommentsGetCollection200ResponseViewBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -130,7 +129,6 @@ class ApiApicommentsGetCollection200ResponseViewBuilder
 
   @override
   void replace(ApiApicommentsGetCollection200ResponseView other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiApicommentsGetCollection200ResponseView;
   }
 
@@ -146,7 +144,7 @@ class ApiApicommentsGetCollection200ResponseViewBuilder
 
   _$ApiApicommentsGetCollection200ResponseView _build() {
     final _$result = _$v ??
-        new _$ApiApicommentsGetCollection200ResponseView._(
+        _$ApiApicommentsGetCollection200ResponseView._(
           atId: atId,
           atType: atType,
           first: first,

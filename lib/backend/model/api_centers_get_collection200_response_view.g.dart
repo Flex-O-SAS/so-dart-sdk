@@ -24,13 +24,12 @@ class _$ApiCentersGetCollection200ResponseView
   factory _$ApiCentersGetCollection200ResponseView(
           [void Function(ApiCentersGetCollection200ResponseViewBuilder)?
               updates]) =>
-      (new ApiCentersGetCollection200ResponseViewBuilder()..update(updates))
+      (ApiCentersGetCollection200ResponseViewBuilder()..update(updates))
           ._build();
 
   _$ApiCentersGetCollection200ResponseView._(
       {this.atId, this.atType, this.first, this.last, this.previous, this.next})
       : super._();
-
   @override
   ApiCentersGetCollection200ResponseView rebuild(
           void Function(ApiCentersGetCollection200ResponseViewBuilder)
@@ -39,7 +38,7 @@ class _$ApiCentersGetCollection200ResponseView
 
   @override
   ApiCentersGetCollection200ResponseViewBuilder toBuilder() =>
-      new ApiCentersGetCollection200ResponseViewBuilder()..replace(this);
+      ApiCentersGetCollection200ResponseViewBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -130,7 +129,6 @@ class ApiCentersGetCollection200ResponseViewBuilder
 
   @override
   void replace(ApiCentersGetCollection200ResponseView other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiCentersGetCollection200ResponseView;
   }
 
@@ -145,7 +143,7 @@ class ApiCentersGetCollection200ResponseViewBuilder
 
   _$ApiCentersGetCollection200ResponseView _build() {
     final _$result = _$v ??
-        new _$ApiCentersGetCollection200ResponseView._(
+        _$ApiCentersGetCollection200ResponseView._(
           atId: atId,
           atType: atType,
           first: first,

@@ -22,7 +22,7 @@ class _$StaffJsonldStaffSearch extends StaffJsonldStaffSearch {
 
   factory _$StaffJsonldStaffSearch(
           [void Function(StaffJsonldStaffSearchBuilder)? updates]) =>
-      (new StaffJsonldStaffSearchBuilder()..update(updates))._build();
+      (StaffJsonldStaffSearchBuilder()..update(updates))._build();
 
   _$StaffJsonldStaffSearch._(
       {this.atId,
@@ -32,7 +32,6 @@ class _$StaffJsonldStaffSearch extends StaffJsonldStaffSearch {
       this.reference,
       this.id})
       : super._();
-
   @override
   StaffJsonldStaffSearch rebuild(
           void Function(StaffJsonldStaffSearchBuilder) updates) =>
@@ -40,7 +39,7 @@ class _$StaffJsonldStaffSearch extends StaffJsonldStaffSearch {
 
   @override
   StaffJsonldStaffSearchBuilder toBuilder() =>
-      new StaffJsonldStaffSearchBuilder()..replace(this);
+      StaffJsonldStaffSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -128,7 +127,6 @@ class StaffJsonldStaffSearchBuilder
 
   @override
   void replace(StaffJsonldStaffSearch other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$StaffJsonldStaffSearch;
   }
 
@@ -142,7 +140,7 @@ class StaffJsonldStaffSearchBuilder
 
   _$StaffJsonldStaffSearch _build() {
     final _$result = _$v ??
-        new _$StaffJsonldStaffSearch._(
+        _$StaffJsonldStaffSearch._(
           atId: atId,
           atType: atType,
           firstname: firstname,

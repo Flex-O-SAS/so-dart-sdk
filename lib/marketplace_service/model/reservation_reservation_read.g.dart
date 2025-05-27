@@ -26,12 +26,12 @@ ReservationReservationReadPaymentMethodEnum
     case 'voucher':
       return _$reservationReservationReadPaymentMethodEnum_voucher;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<ReservationReservationReadPaymentMethodEnum>
-    _$reservationReservationReadPaymentMethodEnumValues = new BuiltSet<
+    _$reservationReservationReadPaymentMethodEnumValues = BuiltSet<
         ReservationReservationReadPaymentMethodEnum>(const <ReservationReservationReadPaymentMethodEnum>[
   _$reservationReservationReadPaymentMethodEnum_cb,
   _$reservationReservationReadPaymentMethodEnum_cash,
@@ -40,7 +40,7 @@ final BuiltSet<ReservationReservationReadPaymentMethodEnum>
 
 Serializer<ReservationReservationReadPaymentMethodEnum>
     _$reservationReservationReadPaymentMethodEnumSerializer =
-    new _$ReservationReservationReadPaymentMethodEnumSerializer();
+    _$ReservationReservationReadPaymentMethodEnumSerializer();
 
 class _$ReservationReservationReadPaymentMethodEnumSerializer
     implements
@@ -101,7 +101,7 @@ class _$ReservationReservationRead extends ReservationReservationRead {
 
   factory _$ReservationReservationRead(
           [void Function(ReservationReservationReadBuilder)? updates]) =>
-      (new ReservationReservationReadBuilder()..update(updates))._build();
+      (ReservationReservationReadBuilder()..update(updates))._build();
 
   _$ReservationReservationRead._(
       {this.id,
@@ -114,19 +114,7 @@ class _$ReservationReservationRead extends ReservationReservationRead {
       this.ticket,
       this.createdAt,
       this.updatedAt})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        item, r'ReservationReservationRead', 'item');
-    BuiltValueNullFieldError.checkNotNull(
-        author, r'ReservationReservationRead', 'author');
-    BuiltValueNullFieldError.checkNotNull(
-        quantity, r'ReservationReservationRead', 'quantity');
-    BuiltValueNullFieldError.checkNotNull(
-        date, r'ReservationReservationRead', 'date');
-    BuiltValueNullFieldError.checkNotNull(
-        paymentMethod, r'ReservationReservationRead', 'paymentMethod');
-  }
-
+      : super._();
   @override
   ReservationReservationRead rebuild(
           void Function(ReservationReservationReadBuilder) updates) =>
@@ -134,7 +122,7 @@ class _$ReservationReservationRead extends ReservationReservationRead {
 
   @override
   ReservationReservationReadBuilder toBuilder() =>
-      new ReservationReservationReadBuilder()..replace(this);
+      ReservationReservationReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -258,7 +246,6 @@ class ReservationReservationReadBuilder
 
   @override
   void replace(ReservationReservationRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ReservationReservationRead;
   }
 
@@ -272,7 +259,7 @@ class ReservationReservationReadBuilder
 
   _$ReservationReservationRead _build() {
     final _$result = _$v ??
-        new _$ReservationReservationRead._(
+        _$ReservationReservationRead._(
           id: id,
           item: BuiltValueNullFieldError.checkNotNull(
               item, r'ReservationReservationRead', 'item'),

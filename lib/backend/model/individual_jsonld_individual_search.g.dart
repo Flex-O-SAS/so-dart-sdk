@@ -33,7 +33,7 @@ class _$IndividualJsonldIndividualSearch
 
   factory _$IndividualJsonldIndividualSearch(
           [void Function(IndividualJsonldIndividualSearchBuilder)? updates]) =>
-      (new IndividualJsonldIndividualSearchBuilder()..update(updates))._build();
+      (IndividualJsonldIndividualSearchBuilder()..update(updates))._build();
 
   _$IndividualJsonldIndividualSearch._(
       {this.atContext,
@@ -48,7 +48,6 @@ class _$IndividualJsonldIndividualSearch
       this.reference,
       this.id})
       : super._();
-
   @override
   IndividualJsonldIndividualSearch rebuild(
           void Function(IndividualJsonldIndividualSearchBuilder) updates) =>
@@ -56,7 +55,7 @@ class _$IndividualJsonldIndividualSearch
 
   @override
   IndividualJsonldIndividualSearchBuilder toBuilder() =>
-      new IndividualJsonldIndividualSearchBuilder()..replace(this);
+      IndividualJsonldIndividualSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -119,7 +118,7 @@ class IndividualJsonldIndividualSearchBuilder
 
   CenterJsonldHappeningReadContextBuilder? _atContext;
   CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+      _$this._atContext ??= CenterJsonldHappeningReadContextBuilder();
   set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -141,8 +140,7 @@ class IndividualJsonldIndividualSearchBuilder
 
   ListBuilder<EnterpriseJsonldIndividualSearch>? _enterprises;
   ListBuilder<EnterpriseJsonldIndividualSearch> get enterprises =>
-      _$this._enterprises ??=
-          new ListBuilder<EnterpriseJsonldIndividualSearch>();
+      _$this._enterprises ??= ListBuilder<EnterpriseJsonldIndividualSearch>();
   set enterprises(ListBuilder<EnterpriseJsonldIndividualSearch>? enterprises) =>
       _$this._enterprises = enterprises;
 
@@ -191,7 +189,6 @@ class IndividualJsonldIndividualSearchBuilder
 
   @override
   void replace(IndividualJsonldIndividualSearch other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$IndividualJsonldIndividualSearch;
   }
 
@@ -207,7 +204,7 @@ class IndividualJsonldIndividualSearchBuilder
     _$IndividualJsonldIndividualSearch _$result;
     try {
       _$result = _$v ??
-          new _$IndividualJsonldIndividualSearch._(
+          _$IndividualJsonldIndividualSearch._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -229,7 +226,7 @@ class IndividualJsonldIndividualSearchBuilder
         _$failedField = 'enterprises';
         _enterprises?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'IndividualJsonldIndividualSearch', _$failedField, e.toString());
       }
       rethrow;

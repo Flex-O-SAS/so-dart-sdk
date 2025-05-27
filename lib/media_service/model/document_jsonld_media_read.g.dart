@@ -34,7 +34,7 @@ class _$DocumentJsonldMediaRead extends DocumentJsonldMediaRead {
 
   factory _$DocumentJsonldMediaRead(
           [void Function(DocumentJsonldMediaReadBuilder)? updates]) =>
-      (new DocumentJsonldMediaReadBuilder()..update(updates))._build();
+      (DocumentJsonldMediaReadBuilder()..update(updates))._build();
 
   _$DocumentJsonldMediaRead._(
       {this.atContext,
@@ -50,7 +50,6 @@ class _$DocumentJsonldMediaRead extends DocumentJsonldMediaRead {
       this.beginDate,
       this.endDate})
       : super._();
-
   @override
   DocumentJsonldMediaRead rebuild(
           void Function(DocumentJsonldMediaReadBuilder) updates) =>
@@ -58,7 +57,7 @@ class _$DocumentJsonldMediaRead extends DocumentJsonldMediaRead {
 
   @override
   DocumentJsonldMediaReadBuilder toBuilder() =>
-      new DocumentJsonldMediaReadBuilder()..replace(this);
+      DocumentJsonldMediaReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -123,7 +122,7 @@ class DocumentJsonldMediaReadBuilder
 
   DocumentJsonldMediaReadContextBuilder? _atContext;
   DocumentJsonldMediaReadContextBuilder get atContext =>
-      _$this._atContext ??= new DocumentJsonldMediaReadContextBuilder();
+      _$this._atContext ??= DocumentJsonldMediaReadContextBuilder();
   set atContext(DocumentJsonldMediaReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -156,14 +155,13 @@ class DocumentJsonldMediaReadBuilder
   set mimeType(String? mimeType) => _$this._mimeType = mimeType;
 
   ListBuilder<int>? _dimensions;
-  ListBuilder<int> get dimensions =>
-      _$this._dimensions ??= new ListBuilder<int>();
+  ListBuilder<int> get dimensions => _$this._dimensions ??= ListBuilder<int>();
   set dimensions(ListBuilder<int>? dimensions) =>
       _$this._dimensions = dimensions;
 
   ListBuilder<String>? _metadata;
   ListBuilder<String> get metadata =>
-      _$this._metadata ??= new ListBuilder<String>();
+      _$this._metadata ??= ListBuilder<String>();
   set metadata(ListBuilder<String>? metadata) => _$this._metadata = metadata;
 
   String? _beginDate;
@@ -200,7 +198,6 @@ class DocumentJsonldMediaReadBuilder
 
   @override
   void replace(DocumentJsonldMediaRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$DocumentJsonldMediaRead;
   }
 
@@ -216,7 +213,7 @@ class DocumentJsonldMediaReadBuilder
     _$DocumentJsonldMediaRead _$result;
     try {
       _$result = _$v ??
-          new _$DocumentJsonldMediaRead._(
+          _$DocumentJsonldMediaRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -241,7 +238,7 @@ class DocumentJsonldMediaReadBuilder
         _$failedField = 'metadata';
         _metadata?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'DocumentJsonldMediaRead', _$failedField, e.toString());
       }
       rethrow;

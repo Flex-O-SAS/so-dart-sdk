@@ -16,12 +16,12 @@ AppointmentJsonldAppointmentWriteTypeEnum
     case 'visit':
       return _$appointmentJsonldAppointmentWriteTypeEnum_visit;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<AppointmentJsonldAppointmentWriteTypeEnum>
-    _$appointmentJsonldAppointmentWriteTypeEnumValues = new BuiltSet<
+    _$appointmentJsonldAppointmentWriteTypeEnumValues = BuiltSet<
         AppointmentJsonldAppointmentWriteTypeEnum>(const <AppointmentJsonldAppointmentWriteTypeEnum>[
   _$appointmentJsonldAppointmentWriteTypeEnum_visit,
 ]);
@@ -46,12 +46,12 @@ AppointmentJsonldAppointmentWriteStatusEnum
     case 'done':
       return _$appointmentJsonldAppointmentWriteStatusEnum_done;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<AppointmentJsonldAppointmentWriteStatusEnum>
-    _$appointmentJsonldAppointmentWriteStatusEnumValues = new BuiltSet<
+    _$appointmentJsonldAppointmentWriteStatusEnumValues = BuiltSet<
         AppointmentJsonldAppointmentWriteStatusEnum>(const <AppointmentJsonldAppointmentWriteStatusEnum>[
   _$appointmentJsonldAppointmentWriteStatusEnum_scheduled,
   _$appointmentJsonldAppointmentWriteStatusEnum_cancelled,
@@ -60,10 +60,10 @@ final BuiltSet<AppointmentJsonldAppointmentWriteStatusEnum>
 
 Serializer<AppointmentJsonldAppointmentWriteTypeEnum>
     _$appointmentJsonldAppointmentWriteTypeEnumSerializer =
-    new _$AppointmentJsonldAppointmentWriteTypeEnumSerializer();
+    _$AppointmentJsonldAppointmentWriteTypeEnumSerializer();
 Serializer<AppointmentJsonldAppointmentWriteStatusEnum>
     _$appointmentJsonldAppointmentWriteStatusEnumSerializer =
-    new _$AppointmentJsonldAppointmentWriteStatusEnumSerializer();
+    _$AppointmentJsonldAppointmentWriteStatusEnumSerializer();
 
 class _$AppointmentJsonldAppointmentWriteTypeEnumSerializer
     implements PrimitiveSerializer<AppointmentJsonldAppointmentWriteTypeEnum> {
@@ -157,8 +157,7 @@ class _$AppointmentJsonldAppointmentWrite
 
   factory _$AppointmentJsonldAppointmentWrite(
           [void Function(AppointmentJsonldAppointmentWriteBuilder)? updates]) =>
-      (new AppointmentJsonldAppointmentWriteBuilder()..update(updates))
-          ._build();
+      (AppointmentJsonldAppointmentWriteBuilder()..update(updates))._build();
 
   _$AppointmentJsonldAppointmentWrite._(
       {required this.organiser,
@@ -172,21 +171,7 @@ class _$AppointmentJsonldAppointmentWrite
       required this.beginDate,
       required this.endDate,
       this.appointmentClients})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        organiser, r'AppointmentJsonldAppointmentWrite', 'organiser');
-    BuiltValueNullFieldError.checkNotNull(
-        site, r'AppointmentJsonldAppointmentWrite', 'site');
-    BuiltValueNullFieldError.checkNotNull(
-        type, r'AppointmentJsonldAppointmentWrite', 'type');
-    BuiltValueNullFieldError.checkNotNull(
-        status, r'AppointmentJsonldAppointmentWrite', 'status');
-    BuiltValueNullFieldError.checkNotNull(
-        beginDate, r'AppointmentJsonldAppointmentWrite', 'beginDate');
-    BuiltValueNullFieldError.checkNotNull(
-        endDate, r'AppointmentJsonldAppointmentWrite', 'endDate');
-  }
-
+      : super._();
   @override
   AppointmentJsonldAppointmentWrite rebuild(
           void Function(AppointmentJsonldAppointmentWriteBuilder) updates) =>
@@ -194,7 +179,7 @@ class _$AppointmentJsonldAppointmentWrite
 
   @override
   AppointmentJsonldAppointmentWriteBuilder toBuilder() =>
-      new AppointmentJsonldAppointmentWriteBuilder()..replace(this);
+      AppointmentJsonldAppointmentWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -302,7 +287,7 @@ class AppointmentJsonldAppointmentWriteBuilder
   ListBuilder<AppointmentClientJsonldAppointmentWrite>? _appointmentClients;
   ListBuilder<AppointmentClientJsonldAppointmentWrite> get appointmentClients =>
       _$this._appointmentClients ??=
-          new ListBuilder<AppointmentClientJsonldAppointmentWrite>();
+          ListBuilder<AppointmentClientJsonldAppointmentWrite>();
   set appointmentClients(
           ListBuilder<AppointmentClientJsonldAppointmentWrite>?
               appointmentClients) =>
@@ -333,7 +318,6 @@ class AppointmentJsonldAppointmentWriteBuilder
 
   @override
   void replace(AppointmentJsonldAppointmentWrite other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AppointmentJsonldAppointmentWrite;
   }
 
@@ -350,7 +334,7 @@ class AppointmentJsonldAppointmentWriteBuilder
     _$AppointmentJsonldAppointmentWrite _$result;
     try {
       _$result = _$v ??
-          new _$AppointmentJsonldAppointmentWrite._(
+          _$AppointmentJsonldAppointmentWrite._(
             organiser: BuiltValueNullFieldError.checkNotNull(
                 organiser, r'AppointmentJsonldAppointmentWrite', 'organiser'),
             staff: staff,
@@ -375,7 +359,7 @@ class AppointmentJsonldAppointmentWriteBuilder
         _$failedField = 'appointmentClients';
         _appointmentClients?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AppointmentJsonldAppointmentWrite', _$failedField, e.toString());
       }
       rethrow;

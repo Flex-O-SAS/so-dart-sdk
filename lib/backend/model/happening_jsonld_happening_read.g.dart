@@ -45,7 +45,7 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
 
   factory _$HappeningJsonldHappeningRead(
           [void Function(HappeningJsonldHappeningReadBuilder)? updates]) =>
-      (new HappeningJsonldHappeningReadBuilder()..update(updates))._build();
+      (HappeningJsonldHappeningReadBuilder()..update(updates))._build();
 
   _$HappeningJsonldHappeningRead._(
       {this.atContext,
@@ -66,7 +66,6 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
       this.begin,
       this.end})
       : super._();
-
   @override
   HappeningJsonldHappeningRead rebuild(
           void Function(HappeningJsonldHappeningReadBuilder) updates) =>
@@ -74,7 +73,7 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
 
   @override
   HappeningJsonldHappeningReadBuilder toBuilder() =>
-      new HappeningJsonldHappeningReadBuilder()..replace(this);
+      HappeningJsonldHappeningReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -155,7 +154,7 @@ class HappeningJsonldHappeningReadBuilder
 
   CenterJsonldHappeningReadContextBuilder? _atContext;
   CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+      _$this._atContext ??= CenterJsonldHappeningReadContextBuilder();
   set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -181,7 +180,7 @@ class HappeningJsonldHappeningReadBuilder
 
   CenterJsonldHappeningReadBuilder? _center;
   CenterJsonldHappeningReadBuilder get center =>
-      _$this._center ??= new CenterJsonldHappeningReadBuilder();
+      _$this._center ??= CenterJsonldHappeningReadBuilder();
   set center(CenterJsonldHappeningReadBuilder? center) =>
       _$this._center = center;
 
@@ -208,7 +207,7 @@ class HappeningJsonldHappeningReadBuilder
   HappeningPartnerLinkJsonldHappeningReadBuilder? _happeningPartnerLink;
   HappeningPartnerLinkJsonldHappeningReadBuilder get happeningPartnerLink =>
       _$this._happeningPartnerLink ??=
-          new HappeningPartnerLinkJsonldHappeningReadBuilder();
+          HappeningPartnerLinkJsonldHappeningReadBuilder();
   set happeningPartnerLink(
           HappeningPartnerLinkJsonldHappeningReadBuilder?
               happeningPartnerLink) =>
@@ -222,7 +221,7 @@ class HappeningJsonldHappeningReadBuilder
       _happeningStaffFeedBacks;
   ListBuilder<HappeningStaffFeedBackJsonldHappeningRead>
       get happeningStaffFeedBacks => _$this._happeningStaffFeedBacks ??=
-          new ListBuilder<HappeningStaffFeedBackJsonldHappeningRead>();
+          ListBuilder<HappeningStaffFeedBackJsonldHappeningRead>();
   set happeningStaffFeedBacks(
           ListBuilder<HappeningStaffFeedBackJsonldHappeningRead>?
               happeningStaffFeedBacks) =>
@@ -267,7 +266,6 @@ class HappeningJsonldHappeningReadBuilder
 
   @override
   void replace(HappeningJsonldHappeningRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$HappeningJsonldHappeningRead;
   }
 
@@ -283,7 +281,7 @@ class HappeningJsonldHappeningReadBuilder
     _$HappeningJsonldHappeningRead _$result;
     try {
       _$result = _$v ??
-          new _$HappeningJsonldHappeningRead._(
+          _$HappeningJsonldHappeningRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -317,7 +315,7 @@ class HappeningJsonldHappeningReadBuilder
         _$failedField = 'happeningStaffFeedBacks';
         _happeningStaffFeedBacks?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'HappeningJsonldHappeningRead', _$failedField, e.toString());
       }
       rethrow;

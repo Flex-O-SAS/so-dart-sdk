@@ -18,24 +18,14 @@ class _$CommentJsonldCommentWrite extends CommentJsonldCommentWrite {
 
   factory _$CommentJsonldCommentWrite(
           [void Function(CommentJsonldCommentWriteBuilder)? updates]) =>
-      (new CommentJsonldCommentWriteBuilder()..update(updates))._build();
+      (CommentJsonldCommentWriteBuilder()..update(updates))._build();
 
   _$CommentJsonldCommentWrite._(
       {required this.author,
       required this.description,
       required this.notify,
       required this.ticket})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        author, r'CommentJsonldCommentWrite', 'author');
-    BuiltValueNullFieldError.checkNotNull(
-        description, r'CommentJsonldCommentWrite', 'description');
-    BuiltValueNullFieldError.checkNotNull(
-        notify, r'CommentJsonldCommentWrite', 'notify');
-    BuiltValueNullFieldError.checkNotNull(
-        ticket, r'CommentJsonldCommentWrite', 'ticket');
-  }
-
+      : super._();
   @override
   CommentJsonldCommentWrite rebuild(
           void Function(CommentJsonldCommentWriteBuilder) updates) =>
@@ -43,7 +33,7 @@ class _$CommentJsonldCommentWrite extends CommentJsonldCommentWrite {
 
   @override
   CommentJsonldCommentWriteBuilder toBuilder() =>
-      new CommentJsonldCommentWriteBuilder()..replace(this);
+      CommentJsonldCommentWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -116,7 +106,6 @@ class CommentJsonldCommentWriteBuilder
 
   @override
   void replace(CommentJsonldCommentWrite other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CommentJsonldCommentWrite;
   }
 
@@ -130,7 +119,7 @@ class CommentJsonldCommentWriteBuilder
 
   _$CommentJsonldCommentWrite _build() {
     final _$result = _$v ??
-        new _$CommentJsonldCommentWrite._(
+        _$CommentJsonldCommentWrite._(
           author: BuiltValueNullFieldError.checkNotNull(
               author, r'CommentJsonldCommentWrite', 'author'),
           description: BuiltValueNullFieldError.checkNotNull(

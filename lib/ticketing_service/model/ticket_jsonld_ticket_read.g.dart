@@ -30,12 +30,12 @@ TicketJsonldTicketReadStatusEnum _$ticketJsonldTicketReadStatusEnumValueOf(
     case 'cancelled':
       return _$ticketJsonldTicketReadStatusEnum_cancelled;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<TicketJsonldTicketReadStatusEnum>
-    _$ticketJsonldTicketReadStatusEnumValues = new BuiltSet<
+    _$ticketJsonldTicketReadStatusEnumValues = BuiltSet<
         TicketJsonldTicketReadStatusEnum>(const <TicketJsonldTicketReadStatusEnum>[
   _$ticketJsonldTicketReadStatusEnum_created,
   _$ticketJsonldTicketReadStatusEnum_inProgress,
@@ -45,7 +45,7 @@ final BuiltSet<TicketJsonldTicketReadStatusEnum>
 
 Serializer<TicketJsonldTicketReadStatusEnum>
     _$ticketJsonldTicketReadStatusEnumSerializer =
-    new _$TicketJsonldTicketReadStatusEnumSerializer();
+    _$TicketJsonldTicketReadStatusEnumSerializer();
 
 class _$TicketJsonldTicketReadStatusEnumSerializer
     implements PrimitiveSerializer<TicketJsonldTicketReadStatusEnum> {
@@ -123,7 +123,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
 
   factory _$TicketJsonldTicketRead(
           [void Function(TicketJsonldTicketReadBuilder)? updates]) =>
-      (new TicketJsonldTicketReadBuilder()..update(updates))._build();
+      (TicketJsonldTicketReadBuilder()..update(updates))._build();
 
   _$TicketJsonldTicketRead._(
       {this.atContext,
@@ -145,21 +145,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
       this.linkedUsers,
       this.tags,
       this.comments})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'TicketJsonldTicketRead', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        startDate, r'TicketJsonldTicketRead', 'startDate');
-    BuiltValueNullFieldError.checkNotNull(
-        description, r'TicketJsonldTicketRead', 'description');
-    BuiltValueNullFieldError.checkNotNull(
-        author, r'TicketJsonldTicketRead', 'author');
-    BuiltValueNullFieldError.checkNotNull(
-        status, r'TicketJsonldTicketRead', 'status');
-    BuiltValueNullFieldError.checkNotNull(
-        site, r'TicketJsonldTicketRead', 'site');
-  }
-
+      : super._();
   @override
   TicketJsonldTicketRead rebuild(
           void Function(TicketJsonldTicketReadBuilder) updates) =>
@@ -167,7 +153,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
 
   @override
   TicketJsonldTicketReadBuilder toBuilder() =>
-      new TicketJsonldTicketReadBuilder()..replace(this);
+      TicketJsonldTicketReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -252,7 +238,7 @@ class TicketJsonldTicketReadBuilder
 
   CommentJsonldCommentReadContextBuilder? _atContext;
   CommentJsonldCommentReadContextBuilder get atContext =>
-      _$this._atContext ??= new CommentJsonldCommentReadContextBuilder();
+      _$this._atContext ??= CommentJsonldCommentReadContextBuilder();
   set atContext(CommentJsonldCommentReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -319,17 +305,17 @@ class TicketJsonldTicketReadBuilder
 
   ListBuilder<String>? _linkedUsers;
   ListBuilder<String> get linkedUsers =>
-      _$this._linkedUsers ??= new ListBuilder<String>();
+      _$this._linkedUsers ??= ListBuilder<String>();
   set linkedUsers(ListBuilder<String>? linkedUsers) =>
       _$this._linkedUsers = linkedUsers;
 
   ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
+  ListBuilder<String> get tags => _$this._tags ??= ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   ListBuilder<String>? _comments;
   ListBuilder<String> get comments =>
-      _$this._comments ??= new ListBuilder<String>();
+      _$this._comments ??= ListBuilder<String>();
   set comments(ListBuilder<String>? comments) => _$this._comments = comments;
 
   TicketJsonldTicketReadBuilder() {
@@ -365,7 +351,6 @@ class TicketJsonldTicketReadBuilder
 
   @override
   void replace(TicketJsonldTicketRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TicketJsonldTicketRead;
   }
 
@@ -381,7 +366,7 @@ class TicketJsonldTicketReadBuilder
     _$TicketJsonldTicketRead _$result;
     try {
       _$result = _$v ??
-          new _$TicketJsonldTicketRead._(
+          _$TicketJsonldTicketRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -421,7 +406,7 @@ class TicketJsonldTicketReadBuilder
         _$failedField = 'comments';
         _comments?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'TicketJsonldTicketRead', _$failedField, e.toString());
       }
       rethrow;

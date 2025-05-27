@@ -20,17 +20,12 @@ class _$ApiAppointmentClientGetCollection200Response
   factory _$ApiAppointmentClientGetCollection200Response(
           [void Function(ApiAppointmentClientGetCollection200ResponseBuilder)?
               updates]) =>
-      (new ApiAppointmentClientGetCollection200ResponseBuilder()
-            ..update(updates))
+      (ApiAppointmentClientGetCollection200ResponseBuilder()..update(updates))
           ._build();
 
   _$ApiAppointmentClientGetCollection200Response._(
       {required this.member, this.totalItems, this.view, this.search})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        member, r'ApiAppointmentClientGetCollection200Response', 'member');
-  }
-
+      : super._();
   @override
   ApiAppointmentClientGetCollection200Response rebuild(
           void Function(ApiAppointmentClientGetCollection200ResponseBuilder)
@@ -39,7 +34,7 @@ class _$ApiAppointmentClientGetCollection200Response
 
   @override
   ApiAppointmentClientGetCollection200ResponseBuilder toBuilder() =>
-      new ApiAppointmentClientGetCollection200ResponseBuilder()..replace(this);
+      ApiAppointmentClientGetCollection200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -83,7 +78,7 @@ class ApiAppointmentClientGetCollection200ResponseBuilder
   ListBuilder<AppointmentClientJsonldAppointmentClientRead>? _member;
   ListBuilder<AppointmentClientJsonldAppointmentClientRead> get member =>
       _$this._member ??=
-          new ListBuilder<AppointmentClientJsonldAppointmentClientRead>();
+          ListBuilder<AppointmentClientJsonldAppointmentClientRead>();
   set member(
           ListBuilder<AppointmentClientJsonldAppointmentClientRead>? member) =>
       _$this._member = member;
@@ -94,14 +89,13 @@ class ApiAppointmentClientGetCollection200ResponseBuilder
 
   ApiAppointmentsGetCollection200ResponseViewBuilder? _view;
   ApiAppointmentsGetCollection200ResponseViewBuilder get view =>
-      _$this._view ??= new ApiAppointmentsGetCollection200ResponseViewBuilder();
+      _$this._view ??= ApiAppointmentsGetCollection200ResponseViewBuilder();
   set view(ApiAppointmentsGetCollection200ResponseViewBuilder? view) =>
       _$this._view = view;
 
   ApiAppointmentsGetCollection200ResponseSearchBuilder? _search;
   ApiAppointmentsGetCollection200ResponseSearchBuilder get search =>
-      _$this._search ??=
-          new ApiAppointmentsGetCollection200ResponseSearchBuilder();
+      _$this._search ??= ApiAppointmentsGetCollection200ResponseSearchBuilder();
   set search(ApiAppointmentsGetCollection200ResponseSearchBuilder? search) =>
       _$this._search = search;
 
@@ -123,7 +117,6 @@ class ApiAppointmentClientGetCollection200ResponseBuilder
 
   @override
   void replace(ApiAppointmentClientGetCollection200Response other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiAppointmentClientGetCollection200Response;
   }
 
@@ -141,7 +134,7 @@ class ApiAppointmentClientGetCollection200ResponseBuilder
     _$ApiAppointmentClientGetCollection200Response _$result;
     try {
       _$result = _$v ??
-          new _$ApiAppointmentClientGetCollection200Response._(
+          _$ApiAppointmentClientGetCollection200Response._(
             member: member.build(),
             totalItems: totalItems,
             view: _view?.build(),
@@ -158,7 +151,7 @@ class ApiAppointmentClientGetCollection200ResponseBuilder
         _$failedField = 'search';
         _search?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'ApiAppointmentClientGetCollection200Response',
             _$failedField,
             e.toString());

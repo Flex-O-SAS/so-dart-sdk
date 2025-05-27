@@ -21,14 +21,12 @@ class _$ApiAppointmentsGetCollection200ResponseSearch
   factory _$ApiAppointmentsGetCollection200ResponseSearch(
           [void Function(ApiAppointmentsGetCollection200ResponseSearchBuilder)?
               updates]) =>
-      (new ApiAppointmentsGetCollection200ResponseSearchBuilder()
-            ..update(updates))
+      (ApiAppointmentsGetCollection200ResponseSearchBuilder()..update(updates))
           ._build();
 
   _$ApiAppointmentsGetCollection200ResponseSearch._(
       {this.atType, this.template, this.variableRepresentation, this.mapping})
       : super._();
-
   @override
   ApiAppointmentsGetCollection200ResponseSearch rebuild(
           void Function(ApiAppointmentsGetCollection200ResponseSearchBuilder)
@@ -37,7 +35,7 @@ class _$ApiAppointmentsGetCollection200ResponseSearch
 
   @override
   ApiAppointmentsGetCollection200ResponseSearchBuilder toBuilder() =>
-      new ApiAppointmentsGetCollection200ResponseSearchBuilder()..replace(this);
+      ApiAppointmentsGetCollection200ResponseSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -94,7 +92,7 @@ class ApiAppointmentsGetCollection200ResponseSearchBuilder
   ListBuilder<ApiAppointmentsGetCollection200ResponseSearchMappingInner>?
       _mapping;
   ListBuilder<ApiAppointmentsGetCollection200ResponseSearchMappingInner>
-      get mapping => _$this._mapping ??= new ListBuilder<
+      get mapping => _$this._mapping ??= ListBuilder<
           ApiAppointmentsGetCollection200ResponseSearchMappingInner>();
   set mapping(
           ListBuilder<
@@ -120,7 +118,6 @@ class ApiAppointmentsGetCollection200ResponseSearchBuilder
 
   @override
   void replace(ApiAppointmentsGetCollection200ResponseSearch other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiAppointmentsGetCollection200ResponseSearch;
   }
 
@@ -138,7 +135,7 @@ class ApiAppointmentsGetCollection200ResponseSearchBuilder
     _$ApiAppointmentsGetCollection200ResponseSearch _$result;
     try {
       _$result = _$v ??
-          new _$ApiAppointmentsGetCollection200ResponseSearch._(
+          _$ApiAppointmentsGetCollection200ResponseSearch._(
             atType: atType,
             template: template,
             variableRepresentation: variableRepresentation,
@@ -150,7 +147,7 @@ class ApiAppointmentsGetCollection200ResponseSearchBuilder
         _$failedField = 'mapping';
         _mapping?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'ApiAppointmentsGetCollection200ResponseSearch',
             _$failedField,
             e.toString());

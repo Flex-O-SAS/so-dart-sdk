@@ -37,7 +37,7 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
 
   factory _$HappeningJsonldHappeningSearch(
           [void Function(HappeningJsonldHappeningSearchBuilder)? updates]) =>
-      (new HappeningJsonldHappeningSearchBuilder()..update(updates))._build();
+      (HappeningJsonldHappeningSearchBuilder()..update(updates))._build();
 
   _$HappeningJsonldHappeningSearch._(
       {this.atId,
@@ -54,7 +54,6 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
       this.begin,
       this.end})
       : super._();
-
   @override
   HappeningJsonldHappeningSearch rebuild(
           void Function(HappeningJsonldHappeningSearchBuilder) updates) =>
@@ -62,7 +61,7 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
 
   @override
   HappeningJsonldHappeningSearchBuilder toBuilder() =>
-      new HappeningJsonldHappeningSearchBuilder()..replace(this);
+      HappeningJsonldHappeningSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -164,7 +163,7 @@ class HappeningJsonldHappeningSearchBuilder
   HappeningPartnerLinkJsonldHappeningSearchBuilder? _happeningPartnerLink;
   HappeningPartnerLinkJsonldHappeningSearchBuilder get happeningPartnerLink =>
       _$this._happeningPartnerLink ??=
-          new HappeningPartnerLinkJsonldHappeningSearchBuilder();
+          HappeningPartnerLinkJsonldHappeningSearchBuilder();
   set happeningPartnerLink(
           HappeningPartnerLinkJsonldHappeningSearchBuilder?
               happeningPartnerLink) =>
@@ -178,7 +177,7 @@ class HappeningJsonldHappeningSearchBuilder
       _happeningStaffFeedBacks;
   ListBuilder<HappeningStaffFeedBackJsonldHappeningSearch>
       get happeningStaffFeedBacks => _$this._happeningStaffFeedBacks ??=
-          new ListBuilder<HappeningStaffFeedBackJsonldHappeningSearch>();
+          ListBuilder<HappeningStaffFeedBackJsonldHappeningSearch>();
   set happeningStaffFeedBacks(
           ListBuilder<HappeningStaffFeedBackJsonldHappeningSearch>?
               happeningStaffFeedBacks) =>
@@ -219,7 +218,6 @@ class HappeningJsonldHappeningSearchBuilder
 
   @override
   void replace(HappeningJsonldHappeningSearch other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$HappeningJsonldHappeningSearch;
   }
 
@@ -235,7 +233,7 @@ class HappeningJsonldHappeningSearchBuilder
     _$HappeningJsonldHappeningSearch _$result;
     try {
       _$result = _$v ??
-          new _$HappeningJsonldHappeningSearch._(
+          _$HappeningJsonldHappeningSearch._(
             atId: atId,
             atType: atType,
             id: id,
@@ -259,7 +257,7 @@ class HappeningJsonldHappeningSearchBuilder
         _$failedField = 'happeningStaffFeedBacks';
         _happeningStaffFeedBacks?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'HappeningJsonldHappeningSearch', _$failedField, e.toString());
       }
       rethrow;

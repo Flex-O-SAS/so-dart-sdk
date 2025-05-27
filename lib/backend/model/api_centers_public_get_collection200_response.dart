@@ -10,9 +10,9 @@ import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read.dart'
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_publiccenters_get_collection200_response.g.dart';
+part 'api_centers_public_get_collection200_response.g.dart';
 
-/// ApiPubliccentersGetCollection200Response
+/// ApiCentersPublicGetCollection200Response
 ///
 /// Properties:
 /// * [member] 
@@ -20,7 +20,7 @@ part 'api_publiccenters_get_collection200_response.g.dart';
 /// * [view] 
 /// * [search] 
 @BuiltValue()
-abstract class ApiPubliccentersGetCollection200Response implements Built<ApiPubliccentersGetCollection200Response, ApiPubliccentersGetCollection200ResponseBuilder> {
+abstract class ApiCentersPublicGetCollection200Response implements Built<ApiCentersPublicGetCollection200Response, ApiCentersPublicGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
   BuiltList<CenterJsonldPublicCenterRead> get member;
 
@@ -33,27 +33,27 @@ abstract class ApiPubliccentersGetCollection200Response implements Built<ApiPubl
   @BuiltValueField(wireName: r'search')
   ApiCentersGetCollection200ResponseSearch? get search;
 
-  ApiPubliccentersGetCollection200Response._();
+  ApiCentersPublicGetCollection200Response._();
 
-  factory ApiPubliccentersGetCollection200Response([void updates(ApiPubliccentersGetCollection200ResponseBuilder b)]) = _$ApiPubliccentersGetCollection200Response;
+  factory ApiCentersPublicGetCollection200Response([void updates(ApiCentersPublicGetCollection200ResponseBuilder b)]) = _$ApiCentersPublicGetCollection200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiPubliccentersGetCollection200ResponseBuilder b) => b;
+  static void _defaults(ApiCentersPublicGetCollection200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiPubliccentersGetCollection200Response> get serializer => _$ApiPubliccentersGetCollection200ResponseSerializer();
+  static Serializer<ApiCentersPublicGetCollection200Response> get serializer => _$ApiCentersPublicGetCollection200ResponseSerializer();
 }
 
-class _$ApiPubliccentersGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiPubliccentersGetCollection200Response> {
+class _$ApiCentersPublicGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiCentersPublicGetCollection200Response> {
   @override
-  final Iterable<Type> types = const [ApiPubliccentersGetCollection200Response, _$ApiPubliccentersGetCollection200Response];
+  final Iterable<Type> types = const [ApiCentersPublicGetCollection200Response, _$ApiCentersPublicGetCollection200Response];
 
   @override
-  final String wireName = r'ApiPubliccentersGetCollection200Response';
+  final String wireName = r'ApiCentersPublicGetCollection200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiPubliccentersGetCollection200Response object, {
+    ApiCentersPublicGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'member';
@@ -87,7 +87,7 @@ class _$ApiPubliccentersGetCollection200ResponseSerializer implements PrimitiveS
   @override
   Object serialize(
     Serializers serializers,
-    ApiPubliccentersGetCollection200Response object, {
+    ApiCentersPublicGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -98,7 +98,7 @@ class _$ApiPubliccentersGetCollection200ResponseSerializer implements PrimitiveS
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiPubliccentersGetCollection200ResponseBuilder result,
+    required ApiCentersPublicGetCollection200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -142,12 +142,12 @@ class _$ApiPubliccentersGetCollection200ResponseSerializer implements PrimitiveS
   }
 
   @override
-  ApiPubliccentersGetCollection200Response deserialize(
+  ApiCentersPublicGetCollection200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiPubliccentersGetCollection200ResponseBuilder();
+    final result = ApiCentersPublicGetCollection200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

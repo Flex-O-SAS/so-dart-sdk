@@ -18,13 +18,12 @@ class _$HappeningPartnerLinkJsonldHappeningRead
   factory _$HappeningPartnerLinkJsonldHappeningRead(
           [void Function(HappeningPartnerLinkJsonldHappeningReadBuilder)?
               updates]) =>
-      (new HappeningPartnerLinkJsonldHappeningReadBuilder()..update(updates))
+      (HappeningPartnerLinkJsonldHappeningReadBuilder()..update(updates))
           ._build();
 
   _$HappeningPartnerLinkJsonldHappeningRead._(
       {this.atContext, this.atId, this.atType})
       : super._();
-
   @override
   HappeningPartnerLinkJsonldHappeningRead rebuild(
           void Function(HappeningPartnerLinkJsonldHappeningReadBuilder)
@@ -33,7 +32,7 @@ class _$HappeningPartnerLinkJsonldHappeningRead
 
   @override
   HappeningPartnerLinkJsonldHappeningReadBuilder toBuilder() =>
-      new HappeningPartnerLinkJsonldHappeningReadBuilder()..replace(this);
+      HappeningPartnerLinkJsonldHappeningReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -73,7 +72,7 @@ class HappeningPartnerLinkJsonldHappeningReadBuilder
 
   CenterJsonldHappeningReadContextBuilder? _atContext;
   CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+      _$this._atContext ??= CenterJsonldHappeningReadContextBuilder();
   set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -102,7 +101,6 @@ class HappeningPartnerLinkJsonldHappeningReadBuilder
 
   @override
   void replace(HappeningPartnerLinkJsonldHappeningRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$HappeningPartnerLinkJsonldHappeningRead;
   }
 
@@ -119,7 +117,7 @@ class HappeningPartnerLinkJsonldHappeningReadBuilder
     _$HappeningPartnerLinkJsonldHappeningRead _$result;
     try {
       _$result = _$v ??
-          new _$HappeningPartnerLinkJsonldHappeningRead._(
+          _$HappeningPartnerLinkJsonldHappeningRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -130,7 +128,7 @@ class HappeningPartnerLinkJsonldHappeningReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'HappeningPartnerLinkJsonldHappeningRead',
             _$failedField,
             e.toString());

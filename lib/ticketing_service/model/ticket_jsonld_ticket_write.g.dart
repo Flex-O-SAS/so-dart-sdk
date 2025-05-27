@@ -31,12 +31,12 @@ TicketJsonldTicketWriteStatusEnum _$ticketJsonldTicketWriteStatusEnumValueOf(
     case 'cancelled':
       return _$ticketJsonldTicketWriteStatusEnum_cancelled;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<TicketJsonldTicketWriteStatusEnum>
-    _$ticketJsonldTicketWriteStatusEnumValues = new BuiltSet<
+    _$ticketJsonldTicketWriteStatusEnumValues = BuiltSet<
         TicketJsonldTicketWriteStatusEnum>(const <TicketJsonldTicketWriteStatusEnum>[
   _$ticketJsonldTicketWriteStatusEnum_created,
   _$ticketJsonldTicketWriteStatusEnum_inProgress,
@@ -46,7 +46,7 @@ final BuiltSet<TicketJsonldTicketWriteStatusEnum>
 
 Serializer<TicketJsonldTicketWriteStatusEnum>
     _$ticketJsonldTicketWriteStatusEnumSerializer =
-    new _$TicketJsonldTicketWriteStatusEnumSerializer();
+    _$TicketJsonldTicketWriteStatusEnumSerializer();
 
 class _$TicketJsonldTicketWriteStatusEnumSerializer
     implements PrimitiveSerializer<TicketJsonldTicketWriteStatusEnum> {
@@ -110,7 +110,7 @@ class _$TicketJsonldTicketWrite extends TicketJsonldTicketWrite {
 
   factory _$TicketJsonldTicketWrite(
           [void Function(TicketJsonldTicketWriteBuilder)? updates]) =>
-      (new TicketJsonldTicketWriteBuilder()..update(updates))._build();
+      (TicketJsonldTicketWriteBuilder()..update(updates))._build();
 
   _$TicketJsonldTicketWrite._(
       {required this.title,
@@ -125,21 +125,7 @@ class _$TicketJsonldTicketWrite extends TicketJsonldTicketWrite {
       this.metadata,
       this.linkedUsers,
       this.tags})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'TicketJsonldTicketWrite', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        startDate, r'TicketJsonldTicketWrite', 'startDate');
-    BuiltValueNullFieldError.checkNotNull(
-        description, r'TicketJsonldTicketWrite', 'description');
-    BuiltValueNullFieldError.checkNotNull(
-        author, r'TicketJsonldTicketWrite', 'author');
-    BuiltValueNullFieldError.checkNotNull(
-        status, r'TicketJsonldTicketWrite', 'status');
-    BuiltValueNullFieldError.checkNotNull(
-        site, r'TicketJsonldTicketWrite', 'site');
-  }
-
+      : super._();
   @override
   TicketJsonldTicketWrite rebuild(
           void Function(TicketJsonldTicketWriteBuilder) updates) =>
@@ -147,7 +133,7 @@ class _$TicketJsonldTicketWrite extends TicketJsonldTicketWrite {
 
   @override
   TicketJsonldTicketWriteBuilder toBuilder() =>
-      new TicketJsonldTicketWriteBuilder()..replace(this);
+      TicketJsonldTicketWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -253,12 +239,12 @@ class TicketJsonldTicketWriteBuilder
 
   ListBuilder<LinkedUserJsonldTicketWrite>? _linkedUsers;
   ListBuilder<LinkedUserJsonldTicketWrite> get linkedUsers =>
-      _$this._linkedUsers ??= new ListBuilder<LinkedUserJsonldTicketWrite>();
+      _$this._linkedUsers ??= ListBuilder<LinkedUserJsonldTicketWrite>();
   set linkedUsers(ListBuilder<LinkedUserJsonldTicketWrite>? linkedUsers) =>
       _$this._linkedUsers = linkedUsers;
 
   ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
+  ListBuilder<String> get tags => _$this._tags ??= ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   TicketJsonldTicketWriteBuilder() {
@@ -287,7 +273,6 @@ class TicketJsonldTicketWriteBuilder
 
   @override
   void replace(TicketJsonldTicketWrite other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TicketJsonldTicketWrite;
   }
 
@@ -303,7 +288,7 @@ class TicketJsonldTicketWriteBuilder
     _$TicketJsonldTicketWrite _$result;
     try {
       _$result = _$v ??
-          new _$TicketJsonldTicketWrite._(
+          _$TicketJsonldTicketWrite._(
             title: BuiltValueNullFieldError.checkNotNull(
                 title, r'TicketJsonldTicketWrite', 'title'),
             startDate: BuiltValueNullFieldError.checkNotNull(
@@ -331,7 +316,7 @@ class TicketJsonldTicketWriteBuilder
         _$failedField = 'tags';
         _tags?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'TicketJsonldTicketWrite', _$failedField, e.toString());
       }
       rethrow;

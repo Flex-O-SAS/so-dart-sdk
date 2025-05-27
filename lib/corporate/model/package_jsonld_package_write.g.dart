@@ -36,12 +36,12 @@ PackageJsonldPackageWriteTypeEnum _$packageJsonldPackageWriteTypeEnumValueOf(
     case 'foodPackage':
       return _$packageJsonldPackageWriteTypeEnum_foodPackage;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<PackageJsonldPackageWriteTypeEnum>
-    _$packageJsonldPackageWriteTypeEnumValues = new BuiltSet<
+    _$packageJsonldPackageWriteTypeEnumValues = BuiltSet<
         PackageJsonldPackageWriteTypeEnum>(const <PackageJsonldPackageWriteTypeEnum>[
   _$packageJsonldPackageWriteTypeEnum_standardLetter,
   _$packageJsonldPackageWriteTypeEnum_trackedLetter,
@@ -65,12 +65,12 @@ PackageJsonldPackageWriteStatusEnum
     case 'handedOver':
       return _$packageJsonldPackageWriteStatusEnum_handedOver;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<PackageJsonldPackageWriteStatusEnum>
-    _$packageJsonldPackageWriteStatusEnumValues = new BuiltSet<
+    _$packageJsonldPackageWriteStatusEnumValues = BuiltSet<
         PackageJsonldPackageWriteStatusEnum>(const <PackageJsonldPackageWriteStatusEnum>[
   _$packageJsonldPackageWriteStatusEnum_received,
   _$packageJsonldPackageWriteStatusEnum_handedOver,
@@ -78,10 +78,10 @@ final BuiltSet<PackageJsonldPackageWriteStatusEnum>
 
 Serializer<PackageJsonldPackageWriteTypeEnum>
     _$packageJsonldPackageWriteTypeEnumSerializer =
-    new _$PackageJsonldPackageWriteTypeEnumSerializer();
+    _$PackageJsonldPackageWriteTypeEnumSerializer();
 Serializer<PackageJsonldPackageWriteStatusEnum>
     _$packageJsonldPackageWriteStatusEnumSerializer =
-    new _$PackageJsonldPackageWriteStatusEnumSerializer();
+    _$PackageJsonldPackageWriteStatusEnumSerializer();
 
 class _$PackageJsonldPackageWriteTypeEnumSerializer
     implements PrimitiveSerializer<PackageJsonldPackageWriteTypeEnum> {
@@ -175,7 +175,7 @@ class _$PackageJsonldPackageWrite extends PackageJsonldPackageWrite {
 
   factory _$PackageJsonldPackageWrite(
           [void Function(PackageJsonldPackageWriteBuilder)? updates]) =>
-      (new PackageJsonldPackageWriteBuilder()..update(updates))._build();
+      (PackageJsonldPackageWriteBuilder()..update(updates))._build();
 
   _$PackageJsonldPackageWrite._(
       {required this.recipient,
@@ -188,21 +188,7 @@ class _$PackageJsonldPackageWrite extends PackageJsonldPackageWrite {
       this.handoverDate,
       this.handoverClient,
       this.securityCode})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        recipient, r'PackageJsonldPackageWrite', 'recipient');
-    BuiltValueNullFieldError.checkNotNull(
-        staff, r'PackageJsonldPackageWrite', 'staff');
-    BuiltValueNullFieldError.checkNotNull(
-        site, r'PackageJsonldPackageWrite', 'site');
-    BuiltValueNullFieldError.checkNotNull(
-        type, r'PackageJsonldPackageWrite', 'type');
-    BuiltValueNullFieldError.checkNotNull(
-        status, r'PackageJsonldPackageWrite', 'status');
-    BuiltValueNullFieldError.checkNotNull(
-        receptionDate, r'PackageJsonldPackageWrite', 'receptionDate');
-  }
-
+      : super._();
   @override
   PackageJsonldPackageWrite rebuild(
           void Function(PackageJsonldPackageWriteBuilder) updates) =>
@@ -210,7 +196,7 @@ class _$PackageJsonldPackageWrite extends PackageJsonldPackageWrite {
 
   @override
   PackageJsonldPackageWriteBuilder toBuilder() =>
-      new PackageJsonldPackageWriteBuilder()..replace(this);
+      PackageJsonldPackageWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -334,7 +320,6 @@ class PackageJsonldPackageWriteBuilder
 
   @override
   void replace(PackageJsonldPackageWrite other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$PackageJsonldPackageWrite;
   }
 
@@ -348,7 +333,7 @@ class PackageJsonldPackageWriteBuilder
 
   _$PackageJsonldPackageWrite _build() {
     final _$result = _$v ??
-        new _$PackageJsonldPackageWrite._(
+        _$PackageJsonldPackageWrite._(
           recipient: BuiltValueNullFieldError.checkNotNull(
               recipient, r'PackageJsonldPackageWrite', 'recipient'),
           staff: BuiltValueNullFieldError.checkNotNull(

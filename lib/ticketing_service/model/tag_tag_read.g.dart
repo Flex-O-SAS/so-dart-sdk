@@ -17,17 +17,16 @@ class _$TagTagRead extends TagTagRead {
   final DateTime? updatedAt;
 
   factory _$TagTagRead([void Function(TagTagReadBuilder)? updates]) =>
-      (new TagTagReadBuilder()..update(updates))._build();
+      (TagTagReadBuilder()..update(updates))._build();
 
   _$TagTagRead._({this.id, this.name, this.createdAt, this.updatedAt})
       : super._();
-
   @override
   TagTagRead rebuild(void Function(TagTagReadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  TagTagReadBuilder toBuilder() => new TagTagReadBuilder()..replace(this);
+  TagTagReadBuilder toBuilder() => TagTagReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -98,7 +97,6 @@ class TagTagReadBuilder implements Builder<TagTagRead, TagTagReadBuilder> {
 
   @override
   void replace(TagTagRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagTagRead;
   }
 
@@ -112,7 +110,7 @@ class TagTagReadBuilder implements Builder<TagTagRead, TagTagReadBuilder> {
 
   _$TagTagRead _build() {
     final _$result = _$v ??
-        new _$TagTagRead._(
+        _$TagTagRead._(
           id: id,
           name: name,
           createdAt: createdAt,

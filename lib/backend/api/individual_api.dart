@@ -150,7 +150,7 @@ class IndividualApi {
   ///
   /// Returns a [Future] containing a [Response] with a [IndividualJsonldIndividualSearch] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<IndividualJsonldIndividualSearch>> apiIndividualsIdGet({ 
+  Future<Response<IndividualJsonldIndividualSearch>> apiIndividualsGetItem({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

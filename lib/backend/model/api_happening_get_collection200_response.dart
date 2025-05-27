@@ -10,9 +10,9 @@ import 'package:so_dart_sdk/backend/model/happening_jsonld_happening_search.dart
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_happenings_get_collection200_response.g.dart';
+part 'api_happening_get_collection200_response.g.dart';
 
-/// ApiHappeningsGetCollection200Response
+/// ApiHappeningGetCollection200Response
 ///
 /// Properties:
 /// * [member] 
@@ -20,7 +20,7 @@ part 'api_happenings_get_collection200_response.g.dart';
 /// * [view] 
 /// * [search] 
 @BuiltValue()
-abstract class ApiHappeningsGetCollection200Response implements Built<ApiHappeningsGetCollection200Response, ApiHappeningsGetCollection200ResponseBuilder> {
+abstract class ApiHappeningGetCollection200Response implements Built<ApiHappeningGetCollection200Response, ApiHappeningGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
   BuiltList<HappeningJsonldHappeningSearch> get member;
 
@@ -33,27 +33,27 @@ abstract class ApiHappeningsGetCollection200Response implements Built<ApiHappeni
   @BuiltValueField(wireName: r'search')
   ApiCentersGetCollection200ResponseSearch? get search;
 
-  ApiHappeningsGetCollection200Response._();
+  ApiHappeningGetCollection200Response._();
 
-  factory ApiHappeningsGetCollection200Response([void updates(ApiHappeningsGetCollection200ResponseBuilder b)]) = _$ApiHappeningsGetCollection200Response;
+  factory ApiHappeningGetCollection200Response([void updates(ApiHappeningGetCollection200ResponseBuilder b)]) = _$ApiHappeningGetCollection200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiHappeningsGetCollection200ResponseBuilder b) => b;
+  static void _defaults(ApiHappeningGetCollection200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiHappeningsGetCollection200Response> get serializer => _$ApiHappeningsGetCollection200ResponseSerializer();
+  static Serializer<ApiHappeningGetCollection200Response> get serializer => _$ApiHappeningGetCollection200ResponseSerializer();
 }
 
-class _$ApiHappeningsGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiHappeningsGetCollection200Response> {
+class _$ApiHappeningGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiHappeningGetCollection200Response> {
   @override
-  final Iterable<Type> types = const [ApiHappeningsGetCollection200Response, _$ApiHappeningsGetCollection200Response];
+  final Iterable<Type> types = const [ApiHappeningGetCollection200Response, _$ApiHappeningGetCollection200Response];
 
   @override
-  final String wireName = r'ApiHappeningsGetCollection200Response';
+  final String wireName = r'ApiHappeningGetCollection200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiHappeningsGetCollection200Response object, {
+    ApiHappeningGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'member';
@@ -87,7 +87,7 @@ class _$ApiHappeningsGetCollection200ResponseSerializer implements PrimitiveSeri
   @override
   Object serialize(
     Serializers serializers,
-    ApiHappeningsGetCollection200Response object, {
+    ApiHappeningGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -98,7 +98,7 @@ class _$ApiHappeningsGetCollection200ResponseSerializer implements PrimitiveSeri
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiHappeningsGetCollection200ResponseBuilder result,
+    required ApiHappeningGetCollection200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -142,12 +142,12 @@ class _$ApiHappeningsGetCollection200ResponseSerializer implements PrimitiveSeri
   }
 
   @override
-  ApiHappeningsGetCollection200Response deserialize(
+  ApiHappeningGetCollection200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiHappeningsGetCollection200ResponseBuilder();
+    final result = ApiHappeningGetCollection200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

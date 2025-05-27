@@ -6,7 +6,7 @@ part of 'serializers.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializers _$serializers = (new Serializers().toBuilder()
+Serializers _$serializers = (Serializers().toBuilder()
       ..add(ApiApidocumentsGetCollection200Response.serializer)
       ..add(ApiApidocumentsGetCollection200ResponseSearch.serializer)
       ..add(
@@ -23,28 +23,28 @@ Serializers _$serializers = (new Serializers().toBuilder()
             const FullType(
                 ApiApidocumentsGetCollection200ResponseSearchMappingInner)
           ]),
-          () => new ListBuilder<
+          () => ListBuilder<
               ApiApidocumentsGetCollection200ResponseSearchMappingInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(DocumentJsonldMediaRead)]),
-          () => new ListBuilder<DocumentJsonldMediaRead>())
+          () => ListBuilder<DocumentJsonldMediaRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ImageJsonldMediaRead)]),
-          () => new ListBuilder<ImageJsonldMediaRead>())
+          () => ListBuilder<ImageJsonldMediaRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>())
+          () => ListBuilder<int>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>())
+          () => ListBuilder<int>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>()))
+          () => ListBuilder<String>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

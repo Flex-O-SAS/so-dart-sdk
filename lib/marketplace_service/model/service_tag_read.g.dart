@@ -13,17 +13,15 @@ class _$ServiceTagRead extends ServiceTagRead {
   final String? label;
 
   factory _$ServiceTagRead([void Function(ServiceTagReadBuilder)? updates]) =>
-      (new ServiceTagReadBuilder()..update(updates))._build();
+      (ServiceTagReadBuilder()..update(updates))._build();
 
   _$ServiceTagRead._({this.id, this.label}) : super._();
-
   @override
   ServiceTagRead rebuild(void Function(ServiceTagReadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ServiceTagReadBuilder toBuilder() =>
-      new ServiceTagReadBuilder()..replace(this);
+  ServiceTagReadBuilder toBuilder() => ServiceTagReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -77,7 +75,6 @@ class ServiceTagReadBuilder
 
   @override
   void replace(ServiceTagRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ServiceTagRead;
   }
 
@@ -91,7 +88,7 @@ class ServiceTagReadBuilder
 
   _$ServiceTagRead _build() {
     final _$result = _$v ??
-        new _$ServiceTagRead._(
+        _$ServiceTagRead._(
           id: id,
           label: label,
         );

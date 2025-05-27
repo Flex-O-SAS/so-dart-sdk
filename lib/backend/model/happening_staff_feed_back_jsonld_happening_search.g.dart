@@ -18,14 +18,12 @@ class _$HappeningStaffFeedBackJsonldHappeningSearch
   factory _$HappeningStaffFeedBackJsonldHappeningSearch(
           [void Function(HappeningStaffFeedBackJsonldHappeningSearchBuilder)?
               updates]) =>
-      (new HappeningStaffFeedBackJsonldHappeningSearchBuilder()
-            ..update(updates))
+      (HappeningStaffFeedBackJsonldHappeningSearchBuilder()..update(updates))
           ._build();
 
   _$HappeningStaffFeedBackJsonldHappeningSearch._(
       {this.atContext, this.atId, this.atType})
       : super._();
-
   @override
   HappeningStaffFeedBackJsonldHappeningSearch rebuild(
           void Function(HappeningStaffFeedBackJsonldHappeningSearchBuilder)
@@ -34,7 +32,7 @@ class _$HappeningStaffFeedBackJsonldHappeningSearch
 
   @override
   HappeningStaffFeedBackJsonldHappeningSearchBuilder toBuilder() =>
-      new HappeningStaffFeedBackJsonldHappeningSearchBuilder()..replace(this);
+      HappeningStaffFeedBackJsonldHappeningSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -74,7 +72,7 @@ class HappeningStaffFeedBackJsonldHappeningSearchBuilder
 
   CenterJsonldHappeningReadContextBuilder? _atContext;
   CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+      _$this._atContext ??= CenterJsonldHappeningReadContextBuilder();
   set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -103,7 +101,6 @@ class HappeningStaffFeedBackJsonldHappeningSearchBuilder
 
   @override
   void replace(HappeningStaffFeedBackJsonldHappeningSearch other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$HappeningStaffFeedBackJsonldHappeningSearch;
   }
 
@@ -121,7 +118,7 @@ class HappeningStaffFeedBackJsonldHappeningSearchBuilder
     _$HappeningStaffFeedBackJsonldHappeningSearch _$result;
     try {
       _$result = _$v ??
-          new _$HappeningStaffFeedBackJsonldHappeningSearch._(
+          _$HappeningStaffFeedBackJsonldHappeningSearch._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -132,7 +129,7 @@ class HappeningStaffFeedBackJsonldHappeningSearchBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'HappeningStaffFeedBackJsonldHappeningSearch',
             _$failedField,
             e.toString());

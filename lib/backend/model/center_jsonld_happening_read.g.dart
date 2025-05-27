@@ -18,12 +18,11 @@ class _$CenterJsonldHappeningRead extends CenterJsonldHappeningRead {
 
   factory _$CenterJsonldHappeningRead(
           [void Function(CenterJsonldHappeningReadBuilder)? updates]) =>
-      (new CenterJsonldHappeningReadBuilder()..update(updates))._build();
+      (CenterJsonldHappeningReadBuilder()..update(updates))._build();
 
   _$CenterJsonldHappeningRead._(
       {this.atContext, this.atId, this.atType, this.name})
       : super._();
-
   @override
   CenterJsonldHappeningRead rebuild(
           void Function(CenterJsonldHappeningReadBuilder) updates) =>
@@ -31,7 +30,7 @@ class _$CenterJsonldHappeningRead extends CenterJsonldHappeningRead {
 
   @override
   CenterJsonldHappeningReadBuilder toBuilder() =>
-      new CenterJsonldHappeningReadBuilder()..replace(this);
+      CenterJsonldHappeningReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -72,7 +71,7 @@ class CenterJsonldHappeningReadBuilder
 
   CenterJsonldHappeningReadContextBuilder? _atContext;
   CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+      _$this._atContext ??= CenterJsonldHappeningReadContextBuilder();
   set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -106,7 +105,6 @@ class CenterJsonldHappeningReadBuilder
 
   @override
   void replace(CenterJsonldHappeningRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CenterJsonldHappeningRead;
   }
 
@@ -122,7 +120,7 @@ class CenterJsonldHappeningReadBuilder
     _$CenterJsonldHappeningRead _$result;
     try {
       _$result = _$v ??
-          new _$CenterJsonldHappeningRead._(
+          _$CenterJsonldHappeningRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -134,7 +132,7 @@ class CenterJsonldHappeningReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'CenterJsonldHappeningRead', _$failedField, e.toString());
       }
       rethrow;

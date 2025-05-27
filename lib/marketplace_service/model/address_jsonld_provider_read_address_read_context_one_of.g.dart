@@ -18,20 +18,20 @@ AddressJsonldProviderReadAddressReadContextOneOfHydraEnum
     case 'httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash':
       return _$addressJsonldProviderReadAddressReadContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<AddressJsonldProviderReadAddressReadContextOneOfHydraEnum>
     _$addressJsonldProviderReadAddressReadContextOneOfHydraEnumValues =
-    new BuiltSet<
+    BuiltSet<
         AddressJsonldProviderReadAddressReadContextOneOfHydraEnum>(const <AddressJsonldProviderReadAddressReadContextOneOfHydraEnum>[
   _$addressJsonldProviderReadAddressReadContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash,
 ]);
 
 Serializer<AddressJsonldProviderReadAddressReadContextOneOfHydraEnum>
     _$addressJsonldProviderReadAddressReadContextOneOfHydraEnumSerializer =
-    new _$AddressJsonldProviderReadAddressReadContextOneOfHydraEnumSerializer();
+    _$AddressJsonldProviderReadAddressReadContextOneOfHydraEnumSerializer();
 
 class _$AddressJsonldProviderReadAddressReadContextOneOfHydraEnumSerializer
     implements
@@ -79,19 +79,13 @@ class _$AddressJsonldProviderReadAddressReadContextOneOf
           [void Function(
                   AddressJsonldProviderReadAddressReadContextOneOfBuilder)?
               updates]) =>
-      (new AddressJsonldProviderReadAddressReadContextOneOfBuilder()
+      (AddressJsonldProviderReadAddressReadContextOneOfBuilder()
             ..update(updates))
           ._build();
 
   _$AddressJsonldProviderReadAddressReadContextOneOf._(
       {required this.atVocab, required this.hydra})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(atVocab,
-        r'AddressJsonldProviderReadAddressReadContextOneOf', 'atVocab');
-    BuiltValueNullFieldError.checkNotNull(
-        hydra, r'AddressJsonldProviderReadAddressReadContextOneOf', 'hydra');
-  }
-
+      : super._();
   @override
   AddressJsonldProviderReadAddressReadContextOneOf rebuild(
           void Function(AddressJsonldProviderReadAddressReadContextOneOfBuilder)
@@ -100,8 +94,7 @@ class _$AddressJsonldProviderReadAddressReadContextOneOf
 
   @override
   AddressJsonldProviderReadAddressReadContextOneOfBuilder toBuilder() =>
-      new AddressJsonldProviderReadAddressReadContextOneOfBuilder()
-        ..replace(this);
+      AddressJsonldProviderReadAddressReadContextOneOfBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -162,7 +155,6 @@ class AddressJsonldProviderReadAddressReadContextOneOfBuilder
 
   @override
   void replace(AddressJsonldProviderReadAddressReadContextOneOf other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AddressJsonldProviderReadAddressReadContextOneOf;
   }
 
@@ -178,7 +170,7 @@ class AddressJsonldProviderReadAddressReadContextOneOfBuilder
 
   _$AddressJsonldProviderReadAddressReadContextOneOf _build() {
     final _$result = _$v ??
-        new _$AddressJsonldProviderReadAddressReadContextOneOf._(
+        _$AddressJsonldProviderReadAddressReadContextOneOf._(
           atVocab: BuiltValueNullFieldError.checkNotNull(atVocab,
               r'AddressJsonldProviderReadAddressReadContextOneOf', 'atVocab'),
           hydra: BuiltValueNullFieldError.checkNotNull(hydra,

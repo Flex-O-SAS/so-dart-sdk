@@ -21,14 +21,12 @@ class _$ApiApicommentsGetCollection200ResponseSearch
   factory _$ApiApicommentsGetCollection200ResponseSearch(
           [void Function(ApiApicommentsGetCollection200ResponseSearchBuilder)?
               updates]) =>
-      (new ApiApicommentsGetCollection200ResponseSearchBuilder()
-            ..update(updates))
+      (ApiApicommentsGetCollection200ResponseSearchBuilder()..update(updates))
           ._build();
 
   _$ApiApicommentsGetCollection200ResponseSearch._(
       {this.atType, this.template, this.variableRepresentation, this.mapping})
       : super._();
-
   @override
   ApiApicommentsGetCollection200ResponseSearch rebuild(
           void Function(ApiApicommentsGetCollection200ResponseSearchBuilder)
@@ -37,7 +35,7 @@ class _$ApiApicommentsGetCollection200ResponseSearch
 
   @override
   ApiApicommentsGetCollection200ResponseSearchBuilder toBuilder() =>
-      new ApiApicommentsGetCollection200ResponseSearchBuilder()..replace(this);
+      ApiApicommentsGetCollection200ResponseSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -94,7 +92,7 @@ class ApiApicommentsGetCollection200ResponseSearchBuilder
   ListBuilder<ApiApicommentsGetCollection200ResponseSearchMappingInner>?
       _mapping;
   ListBuilder<ApiApicommentsGetCollection200ResponseSearchMappingInner>
-      get mapping => _$this._mapping ??= new ListBuilder<
+      get mapping => _$this._mapping ??= ListBuilder<
           ApiApicommentsGetCollection200ResponseSearchMappingInner>();
   set mapping(
           ListBuilder<ApiApicommentsGetCollection200ResponseSearchMappingInner>?
@@ -119,7 +117,6 @@ class ApiApicommentsGetCollection200ResponseSearchBuilder
 
   @override
   void replace(ApiApicommentsGetCollection200ResponseSearch other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiApicommentsGetCollection200ResponseSearch;
   }
 
@@ -137,7 +134,7 @@ class ApiApicommentsGetCollection200ResponseSearchBuilder
     _$ApiApicommentsGetCollection200ResponseSearch _$result;
     try {
       _$result = _$v ??
-          new _$ApiApicommentsGetCollection200ResponseSearch._(
+          _$ApiApicommentsGetCollection200ResponseSearch._(
             atType: atType,
             template: template,
             variableRepresentation: variableRepresentation,
@@ -149,7 +146,7 @@ class ApiApicommentsGetCollection200ResponseSearchBuilder
         _$failedField = 'mapping';
         _mapping?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'ApiApicommentsGetCollection200ResponseSearch',
             _$failedField,
             e.toString());

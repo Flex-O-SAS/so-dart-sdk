@@ -12,17 +12,16 @@ class _$TagJsonldTagWrite extends TagJsonldTagWrite {
 
   factory _$TagJsonldTagWrite(
           [void Function(TagJsonldTagWriteBuilder)? updates]) =>
-      (new TagJsonldTagWriteBuilder()..update(updates))._build();
+      (TagJsonldTagWriteBuilder()..update(updates))._build();
 
   _$TagJsonldTagWrite._({this.name}) : super._();
-
   @override
   TagJsonldTagWrite rebuild(void Function(TagJsonldTagWriteBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   TagJsonldTagWriteBuilder toBuilder() =>
-      new TagJsonldTagWriteBuilder()..replace(this);
+      TagJsonldTagWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -69,7 +68,6 @@ class TagJsonldTagWriteBuilder
 
   @override
   void replace(TagJsonldTagWrite other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagJsonldTagWrite;
   }
 
@@ -83,7 +81,7 @@ class TagJsonldTagWriteBuilder
 
   _$TagJsonldTagWrite _build() {
     final _$result = _$v ??
-        new _$TagJsonldTagWrite._(
+        _$TagJsonldTagWrite._(
           name: name,
         );
     replace(_$result);

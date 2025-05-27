@@ -28,8 +28,7 @@ class _$AddressJsonldProviderReadAddressRead
   factory _$AddressJsonldProviderReadAddressRead(
           [void Function(AddressJsonldProviderReadAddressReadBuilder)?
               updates]) =>
-      (new AddressJsonldProviderReadAddressReadBuilder()..update(updates))
-          ._build();
+      (AddressJsonldProviderReadAddressReadBuilder()..update(updates))._build();
 
   _$AddressJsonldProviderReadAddressRead._(
       {this.atContext,
@@ -40,17 +39,7 @@ class _$AddressJsonldProviderReadAddressRead
       required this.zipcode,
       required this.city,
       required this.country})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        address, r'AddressJsonldProviderReadAddressRead', 'address');
-    BuiltValueNullFieldError.checkNotNull(
-        zipcode, r'AddressJsonldProviderReadAddressRead', 'zipcode');
-    BuiltValueNullFieldError.checkNotNull(
-        city, r'AddressJsonldProviderReadAddressRead', 'city');
-    BuiltValueNullFieldError.checkNotNull(
-        country, r'AddressJsonldProviderReadAddressRead', 'country');
-  }
-
+      : super._();
   @override
   AddressJsonldProviderReadAddressRead rebuild(
           void Function(AddressJsonldProviderReadAddressReadBuilder) updates) =>
@@ -58,7 +47,7 @@ class _$AddressJsonldProviderReadAddressRead
 
   @override
   AddressJsonldProviderReadAddressReadBuilder toBuilder() =>
-      new AddressJsonldProviderReadAddressReadBuilder()..replace(this);
+      AddressJsonldProviderReadAddressReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -113,7 +102,7 @@ class AddressJsonldProviderReadAddressReadBuilder
   AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
   AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
       _$this._atContext ??=
-          new AddressJsonldProviderReadAddressReadContextBuilder();
+          AddressJsonldProviderReadAddressReadContextBuilder();
   set atContext(
           AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
@@ -168,7 +157,6 @@ class AddressJsonldProviderReadAddressReadBuilder
 
   @override
   void replace(AddressJsonldProviderReadAddressRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AddressJsonldProviderReadAddressRead;
   }
 
@@ -185,7 +173,7 @@ class AddressJsonldProviderReadAddressReadBuilder
     _$AddressJsonldProviderReadAddressRead _$result;
     try {
       _$result = _$v ??
-          new _$AddressJsonldProviderReadAddressRead._(
+          _$AddressJsonldProviderReadAddressRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -205,7 +193,7 @@ class AddressJsonldProviderReadAddressReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AddressJsonldProviderReadAddressRead',
             _$failedField,
             e.toString());

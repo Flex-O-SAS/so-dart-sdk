@@ -28,6 +28,9 @@ class EnterpriseApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [nameSoundex] - Phonetic filter (SOUNDEX) on name_soundex
+  /// * [name] - 
+  /// * [nameLeftSquareBracketRightSquareBracket] - 
   /// * [email] - 
   /// * [emailLeftSquareBracketRightSquareBracket] - 
   /// * [reference] - 
@@ -45,6 +48,9 @@ class EnterpriseApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiEnterprisesGetCollection200Response>> apiEnterprisesGetCollection({ 
     int? page = 1,
+    String? nameSoundex,
+    String? name,
+    BuiltList<String>? nameLeftSquareBracketRightSquareBracket,
     String? email,
     BuiltList<String>? emailLeftSquareBracketRightSquareBracket,
     String? reference,
@@ -73,6 +79,9 @@ class EnterpriseApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (nameSoundex != null) r'name_soundex': encodeQueryParameter(_serializers, nameSoundex, const FullType(String)),
+      if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
+      if (nameLeftSquareBracketRightSquareBracket != null) r'name[]': encodeCollectionQueryParameter<String>(_serializers, nameLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
       if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': encodeCollectionQueryParameter<String>(_serializers, emailLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
@@ -135,7 +144,7 @@ class EnterpriseApi {
   ///
   /// Returns a [Future] containing a [Response] with a [EnterpriseJsonldEnterpriseSearchEnterpriseRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<EnterpriseJsonldEnterpriseSearchEnterpriseRead>> apiEnterprisesIdGet({ 
+  Future<Response<EnterpriseJsonldEnterpriseSearchEnterpriseRead>> apiEnterprisesGetItem({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

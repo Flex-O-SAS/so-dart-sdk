@@ -18,10 +18,10 @@ import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search_mapping_inner.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/backend/model/api_centers_public_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
-import 'package:so_dart_sdk/backend/model/api_happenings_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_happening_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_individuals_get_collection200_response.dart';
-import 'package:so_dart_sdk/backend/model/api_publiccenters_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read.dart';
@@ -50,10 +50,10 @@ part 'serializers.g.dart';
   ApiCentersGetCollection200ResponseSearch,
   ApiCentersGetCollection200ResponseSearchMappingInner,
   ApiCentersGetCollection200ResponseView,
+  ApiCentersPublicGetCollection200Response,
   ApiEnterprisesGetCollection200Response,
-  ApiHappeningsGetCollection200Response,
+  ApiHappeningGetCollection200Response,
   ApiIndividualsGetCollection200Response,
-  ApiPubliccentersGetCollection200Response,
   ApiStaffGetCollection200Response,
   CenterJsonldCenterSearch,
   CenterJsonldHappeningRead,
@@ -87,8 +87,8 @@ Serializers serializers = (_$serializers.toBuilder()
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())
-      ..add(Iso8601DateTimeSerializer()))
-    .build();
+      ..add(Iso8601DateTimeSerializer())
+    ).build();
 
 Serializers standardSerializers =
     (serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();

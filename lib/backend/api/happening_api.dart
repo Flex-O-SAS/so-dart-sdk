@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:so_dart_sdk/backend/api_util.dart';
-import 'package:so_dart_sdk/backend/model/api_happenings_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_happening_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/happening_jsonld_happening_read.dart';
@@ -37,9 +37,9 @@ class HappeningApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ApiHappeningsGetCollection200Response] as data
+  /// Returns a [Future] containing a [Response] with a [ApiHappeningGetCollection200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApiHappeningsGetCollection200Response>> apiHappeningsGetCollection({ 
+  Future<Response<ApiHappeningGetCollection200Response>> apiHappeningGetCollection({ 
     int? page = 1,
     int? itemsPerPage = 30,
     String? orderLeftSquareBracketPublicatedAtRightSquareBracket = 'asc',
@@ -80,14 +80,14 @@ class HappeningApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApiHappeningsGetCollection200Response? _responseData;
+    ApiHappeningGetCollection200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(ApiHappeningsGetCollection200Response),
-      ) as ApiHappeningsGetCollection200Response;
+        specifiedType: const FullType(ApiHappeningGetCollection200Response),
+      ) as ApiHappeningGetCollection200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -99,7 +99,7 @@ class HappeningApi {
       );
     }
 
-    return Response<ApiHappeningsGetCollection200Response>(
+    return Response<ApiHappeningGetCollection200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -125,7 +125,7 @@ class HappeningApi {
   ///
   /// Returns a [Future] containing a [Response] with a [HappeningJsonldHappeningRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<HappeningJsonldHappeningRead>> apiHappeningsIdGet({ 
+  Future<Response<HappeningJsonldHappeningRead>> apiHappeningGetItem({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

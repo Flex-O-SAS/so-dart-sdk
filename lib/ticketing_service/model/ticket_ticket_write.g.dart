@@ -26,13 +26,13 @@ TicketTicketWriteStatusEnum _$ticketTicketWriteStatusEnumValueOf(String name) {
     case 'cancelled':
       return _$ticketTicketWriteStatusEnum_cancelled;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<TicketTicketWriteStatusEnum>
-    _$ticketTicketWriteStatusEnumValues = new BuiltSet<
-        TicketTicketWriteStatusEnum>(const <TicketTicketWriteStatusEnum>[
+    _$ticketTicketWriteStatusEnumValues =
+    BuiltSet<TicketTicketWriteStatusEnum>(const <TicketTicketWriteStatusEnum>[
   _$ticketTicketWriteStatusEnum_created,
   _$ticketTicketWriteStatusEnum_inProgress,
   _$ticketTicketWriteStatusEnum_done,
@@ -41,7 +41,7 @@ final BuiltSet<TicketTicketWriteStatusEnum>
 
 Serializer<TicketTicketWriteStatusEnum>
     _$ticketTicketWriteStatusEnumSerializer =
-    new _$TicketTicketWriteStatusEnumSerializer();
+    _$TicketTicketWriteStatusEnumSerializer();
 
 class _$TicketTicketWriteStatusEnumSerializer
     implements PrimitiveSerializer<TicketTicketWriteStatusEnum> {
@@ -104,7 +104,7 @@ class _$TicketTicketWrite extends TicketTicketWrite {
 
   factory _$TicketTicketWrite(
           [void Function(TicketTicketWriteBuilder)? updates]) =>
-      (new TicketTicketWriteBuilder()..update(updates))._build();
+      (TicketTicketWriteBuilder()..update(updates))._build();
 
   _$TicketTicketWrite._(
       {required this.title,
@@ -119,26 +119,14 @@ class _$TicketTicketWrite extends TicketTicketWrite {
       this.metadata,
       this.linkedUsers,
       this.tags})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(title, r'TicketTicketWrite', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        startDate, r'TicketTicketWrite', 'startDate');
-    BuiltValueNullFieldError.checkNotNull(
-        description, r'TicketTicketWrite', 'description');
-    BuiltValueNullFieldError.checkNotNull(
-        author, r'TicketTicketWrite', 'author');
-    BuiltValueNullFieldError.checkNotNull(
-        status, r'TicketTicketWrite', 'status');
-    BuiltValueNullFieldError.checkNotNull(site, r'TicketTicketWrite', 'site');
-  }
-
+      : super._();
   @override
   TicketTicketWrite rebuild(void Function(TicketTicketWriteBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   TicketTicketWriteBuilder toBuilder() =>
-      new TicketTicketWriteBuilder()..replace(this);
+      TicketTicketWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -242,12 +230,12 @@ class TicketTicketWriteBuilder
 
   ListBuilder<LinkedUserTicketWrite>? _linkedUsers;
   ListBuilder<LinkedUserTicketWrite> get linkedUsers =>
-      _$this._linkedUsers ??= new ListBuilder<LinkedUserTicketWrite>();
+      _$this._linkedUsers ??= ListBuilder<LinkedUserTicketWrite>();
   set linkedUsers(ListBuilder<LinkedUserTicketWrite>? linkedUsers) =>
       _$this._linkedUsers = linkedUsers;
 
   ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
+  ListBuilder<String> get tags => _$this._tags ??= ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   TicketTicketWriteBuilder() {
@@ -276,7 +264,6 @@ class TicketTicketWriteBuilder
 
   @override
   void replace(TicketTicketWrite other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TicketTicketWrite;
   }
 
@@ -292,7 +279,7 @@ class TicketTicketWriteBuilder
     _$TicketTicketWrite _$result;
     try {
       _$result = _$v ??
-          new _$TicketTicketWrite._(
+          _$TicketTicketWrite._(
             title: BuiltValueNullFieldError.checkNotNull(
                 title, r'TicketTicketWrite', 'title'),
             startDate: BuiltValueNullFieldError.checkNotNull(
@@ -320,7 +307,7 @@ class TicketTicketWriteBuilder
         _$failedField = 'tags';
         _tags?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'TicketTicketWrite', _$failedField, e.toString());
       }
       rethrow;

@@ -31,13 +31,13 @@ PackagePackageWriteTypeEnum _$packagePackageWriteTypeEnumValueOf(String name) {
     case 'foodPackage':
       return _$packagePackageWriteTypeEnum_foodPackage;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<PackagePackageWriteTypeEnum>
-    _$packagePackageWriteTypeEnumValues = new BuiltSet<
-        PackagePackageWriteTypeEnum>(const <PackagePackageWriteTypeEnum>[
+    _$packagePackageWriteTypeEnumValues =
+    BuiltSet<PackagePackageWriteTypeEnum>(const <PackagePackageWriteTypeEnum>[
   _$packagePackageWriteTypeEnum_standardLetter,
   _$packagePackageWriteTypeEnum_trackedLetter,
   _$packagePackageWriteTypeEnum_registeredLetter,
@@ -58,12 +58,12 @@ PackagePackageWriteStatusEnum _$packagePackageWriteStatusEnumValueOf(
     case 'handedOver':
       return _$packagePackageWriteStatusEnum_handedOver;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<PackagePackageWriteStatusEnum>
-    _$packagePackageWriteStatusEnumValues = new BuiltSet<
+    _$packagePackageWriteStatusEnumValues = BuiltSet<
         PackagePackageWriteStatusEnum>(const <PackagePackageWriteStatusEnum>[
   _$packagePackageWriteStatusEnum_received,
   _$packagePackageWriteStatusEnum_handedOver,
@@ -71,10 +71,10 @@ final BuiltSet<PackagePackageWriteStatusEnum>
 
 Serializer<PackagePackageWriteTypeEnum>
     _$packagePackageWriteTypeEnumSerializer =
-    new _$PackagePackageWriteTypeEnumSerializer();
+    _$PackagePackageWriteTypeEnumSerializer();
 Serializer<PackagePackageWriteStatusEnum>
     _$packagePackageWriteStatusEnumSerializer =
-    new _$PackagePackageWriteStatusEnumSerializer();
+    _$PackagePackageWriteStatusEnumSerializer();
 
 class _$PackagePackageWriteTypeEnumSerializer
     implements PrimitiveSerializer<PackagePackageWriteTypeEnum> {
@@ -165,7 +165,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
 
   factory _$PackagePackageWrite(
           [void Function(PackagePackageWriteBuilder)? updates]) =>
-      (new PackagePackageWriteBuilder()..update(updates))._build();
+      (PackagePackageWriteBuilder()..update(updates))._build();
 
   _$PackagePackageWrite._(
       {required this.recipient,
@@ -178,19 +178,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
       this.handoverDate,
       this.handoverClient,
       this.securityCode})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        recipient, r'PackagePackageWrite', 'recipient');
-    BuiltValueNullFieldError.checkNotNull(
-        staff, r'PackagePackageWrite', 'staff');
-    BuiltValueNullFieldError.checkNotNull(site, r'PackagePackageWrite', 'site');
-    BuiltValueNullFieldError.checkNotNull(type, r'PackagePackageWrite', 'type');
-    BuiltValueNullFieldError.checkNotNull(
-        status, r'PackagePackageWrite', 'status');
-    BuiltValueNullFieldError.checkNotNull(
-        receptionDate, r'PackagePackageWrite', 'receptionDate');
-  }
-
+      : super._();
   @override
   PackagePackageWrite rebuild(
           void Function(PackagePackageWriteBuilder) updates) =>
@@ -198,7 +186,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
 
   @override
   PackagePackageWriteBuilder toBuilder() =>
-      new PackagePackageWriteBuilder()..replace(this);
+      PackagePackageWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -320,7 +308,6 @@ class PackagePackageWriteBuilder
 
   @override
   void replace(PackagePackageWrite other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$PackagePackageWrite;
   }
 
@@ -334,7 +321,7 @@ class PackagePackageWriteBuilder
 
   _$PackagePackageWrite _build() {
     final _$result = _$v ??
-        new _$PackagePackageWrite._(
+        _$PackagePackageWrite._(
           recipient: BuiltValueNullFieldError.checkNotNull(
               recipient, r'PackagePackageWrite', 'recipient'),
           staff: BuiltValueNullFieldError.checkNotNull(

@@ -14,13 +14,9 @@ class _$ProviderItemReadServiceRead extends ProviderItemReadServiceRead {
 
   factory _$ProviderItemReadServiceRead(
           [void Function(ProviderItemReadServiceReadBuilder)? updates]) =>
-      (new ProviderItemReadServiceReadBuilder()..update(updates))._build();
+      (ProviderItemReadServiceReadBuilder()..update(updates))._build();
 
-  _$ProviderItemReadServiceRead._({this.id, required this.name}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        name, r'ProviderItemReadServiceRead', 'name');
-  }
-
+  _$ProviderItemReadServiceRead._({this.id, required this.name}) : super._();
   @override
   ProviderItemReadServiceRead rebuild(
           void Function(ProviderItemReadServiceReadBuilder) updates) =>
@@ -28,7 +24,7 @@ class _$ProviderItemReadServiceRead extends ProviderItemReadServiceRead {
 
   @override
   ProviderItemReadServiceReadBuilder toBuilder() =>
-      new ProviderItemReadServiceReadBuilder()..replace(this);
+      ProviderItemReadServiceReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -86,7 +82,6 @@ class ProviderItemReadServiceReadBuilder
 
   @override
   void replace(ProviderItemReadServiceRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ProviderItemReadServiceRead;
   }
 
@@ -100,7 +95,7 @@ class ProviderItemReadServiceReadBuilder
 
   _$ProviderItemReadServiceRead _build() {
     final _$result = _$v ??
-        new _$ProviderItemReadServiceRead._(
+        _$ProviderItemReadServiceRead._(
           id: id,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'ProviderItemReadServiceRead', 'name'),

@@ -40,7 +40,7 @@ class _$ItemJsonldItemReadServiceRead extends ItemJsonldItemReadServiceRead {
 
   factory _$ItemJsonldItemReadServiceRead(
           [void Function(ItemJsonldItemReadServiceReadBuilder)? updates]) =>
-      (new ItemJsonldItemReadServiceReadBuilder()..update(updates))._build();
+      (ItemJsonldItemReadServiceReadBuilder()..update(updates))._build();
 
   _$ItemJsonldItemReadServiceRead._(
       {this.atContext,
@@ -58,21 +58,7 @@ class _$ItemJsonldItemReadServiceRead extends ItemJsonldItemReadServiceRead {
       this.imageLink,
       required this.beginDate,
       this.endDate})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        provider, r'ItemJsonldItemReadServiceRead', 'provider');
-    BuiltValueNullFieldError.checkNotNull(
-        service, r'ItemJsonldItemReadServiceRead', 'service');
-    BuiltValueNullFieldError.checkNotNull(
-        label, r'ItemJsonldItemReadServiceRead', 'label');
-    BuiltValueNullFieldError.checkNotNull(
-        isBookable, r'ItemJsonldItemReadServiceRead', 'isBookable');
-    BuiltValueNullFieldError.checkNotNull(
-        isOnline, r'ItemJsonldItemReadServiceRead', 'isOnline');
-    BuiltValueNullFieldError.checkNotNull(
-        beginDate, r'ItemJsonldItemReadServiceRead', 'beginDate');
-  }
-
+      : super._();
   @override
   ItemJsonldItemReadServiceRead rebuild(
           void Function(ItemJsonldItemReadServiceReadBuilder) updates) =>
@@ -80,7 +66,7 @@ class _$ItemJsonldItemReadServiceRead extends ItemJsonldItemReadServiceRead {
 
   @override
   ItemJsonldItemReadServiceReadBuilder toBuilder() =>
-      new ItemJsonldItemReadServiceReadBuilder()..replace(this);
+      ItemJsonldItemReadServiceReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -156,7 +142,7 @@ class ItemJsonldItemReadServiceReadBuilder
   AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
   AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
       _$this._atContext ??=
-          new AddressJsonldProviderReadAddressReadContextBuilder();
+          AddressJsonldProviderReadAddressReadContextBuilder();
   set atContext(
           AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
@@ -175,13 +161,13 @@ class ItemJsonldItemReadServiceReadBuilder
 
   ProviderJsonldItemReadServiceReadBuilder? _provider;
   ProviderJsonldItemReadServiceReadBuilder get provider =>
-      _$this._provider ??= new ProviderJsonldItemReadServiceReadBuilder();
+      _$this._provider ??= ProviderJsonldItemReadServiceReadBuilder();
   set provider(ProviderJsonldItemReadServiceReadBuilder? provider) =>
       _$this._provider = provider;
 
   ServiceJsonldItemReadServiceReadBuilder? _service;
   ServiceJsonldItemReadServiceReadBuilder get service =>
-      _$this._service ??= new ServiceJsonldItemReadServiceReadBuilder();
+      _$this._service ??= ServiceJsonldItemReadServiceReadBuilder();
   set service(ServiceJsonldItemReadServiceReadBuilder? service) =>
       _$this._service = service;
 
@@ -250,7 +236,6 @@ class ItemJsonldItemReadServiceReadBuilder
 
   @override
   void replace(ItemJsonldItemReadServiceRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ItemJsonldItemReadServiceRead;
   }
 
@@ -266,7 +251,7 @@ class ItemJsonldItemReadServiceReadBuilder
     _$ItemJsonldItemReadServiceRead _$result;
     try {
       _$result = _$v ??
-          new _$ItemJsonldItemReadServiceRead._(
+          _$ItemJsonldItemReadServiceRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -298,7 +283,7 @@ class ItemJsonldItemReadServiceReadBuilder
         _$failedField = 'service';
         service.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'ItemJsonldItemReadServiceRead', _$failedField, e.toString());
       }
       rethrow;

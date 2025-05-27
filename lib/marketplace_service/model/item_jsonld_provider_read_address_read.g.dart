@@ -19,16 +19,11 @@ class _$ItemJsonldProviderReadAddressRead
 
   factory _$ItemJsonldProviderReadAddressRead(
           [void Function(ItemJsonldProviderReadAddressReadBuilder)? updates]) =>
-      (new ItemJsonldProviderReadAddressReadBuilder()..update(updates))
-          ._build();
+      (ItemJsonldProviderReadAddressReadBuilder()..update(updates))._build();
 
   _$ItemJsonldProviderReadAddressRead._(
       {this.atContext, this.atId, this.atType, required this.isBookable})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        isBookable, r'ItemJsonldProviderReadAddressRead', 'isBookable');
-  }
-
+      : super._();
   @override
   ItemJsonldProviderReadAddressRead rebuild(
           void Function(ItemJsonldProviderReadAddressReadBuilder) updates) =>
@@ -36,7 +31,7 @@ class _$ItemJsonldProviderReadAddressRead
 
   @override
   ItemJsonldProviderReadAddressReadBuilder toBuilder() =>
-      new ItemJsonldProviderReadAddressReadBuilder()..replace(this);
+      ItemJsonldProviderReadAddressReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -79,7 +74,7 @@ class ItemJsonldProviderReadAddressReadBuilder
   AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
   AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
       _$this._atContext ??=
-          new AddressJsonldProviderReadAddressReadContextBuilder();
+          AddressJsonldProviderReadAddressReadContextBuilder();
   set atContext(
           AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
@@ -114,7 +109,6 @@ class ItemJsonldProviderReadAddressReadBuilder
 
   @override
   void replace(ItemJsonldProviderReadAddressRead other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ItemJsonldProviderReadAddressRead;
   }
 
@@ -131,7 +125,7 @@ class ItemJsonldProviderReadAddressReadBuilder
     _$ItemJsonldProviderReadAddressRead _$result;
     try {
       _$result = _$v ??
-          new _$ItemJsonldProviderReadAddressRead._(
+          _$ItemJsonldProviderReadAddressRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -144,7 +138,7 @@ class ItemJsonldProviderReadAddressReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'ItemJsonldProviderReadAddressRead', _$failedField, e.toString());
       }
       rethrow;

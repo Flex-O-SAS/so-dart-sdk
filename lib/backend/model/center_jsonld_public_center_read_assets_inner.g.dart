@@ -20,13 +20,12 @@ class _$CenterJsonldPublicCenterReadAssetsInner
   factory _$CenterJsonldPublicCenterReadAssetsInner(
           [void Function(CenterJsonldPublicCenterReadAssetsInnerBuilder)?
               updates]) =>
-      (new CenterJsonldPublicCenterReadAssetsInnerBuilder()..update(updates))
+      (CenterJsonldPublicCenterReadAssetsInnerBuilder()..update(updates))
           ._build();
 
   _$CenterJsonldPublicCenterReadAssetsInner._(
       {this.id, this.url, this.name, this.tags})
       : super._();
-
   @override
   CenterJsonldPublicCenterReadAssetsInner rebuild(
           void Function(CenterJsonldPublicCenterReadAssetsInnerBuilder)
@@ -35,7 +34,7 @@ class _$CenterJsonldPublicCenterReadAssetsInner
 
   @override
   CenterJsonldPublicCenterReadAssetsInnerBuilder toBuilder() =>
-      new CenterJsonldPublicCenterReadAssetsInnerBuilder()..replace(this);
+      CenterJsonldPublicCenterReadAssetsInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -89,7 +88,7 @@ class CenterJsonldPublicCenterReadAssetsInnerBuilder
   set name(String? name) => _$this._name = name;
 
   ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
+  ListBuilder<String> get tags => _$this._tags ??= ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   CenterJsonldPublicCenterReadAssetsInnerBuilder() {
@@ -110,7 +109,6 @@ class CenterJsonldPublicCenterReadAssetsInnerBuilder
 
   @override
   void replace(CenterJsonldPublicCenterReadAssetsInner other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CenterJsonldPublicCenterReadAssetsInner;
   }
 
@@ -127,7 +125,7 @@ class CenterJsonldPublicCenterReadAssetsInnerBuilder
     _$CenterJsonldPublicCenterReadAssetsInner _$result;
     try {
       _$result = _$v ??
-          new _$CenterJsonldPublicCenterReadAssetsInner._(
+          _$CenterJsonldPublicCenterReadAssetsInner._(
             id: id,
             url: url,
             name: name,
@@ -139,7 +137,7 @@ class CenterJsonldPublicCenterReadAssetsInnerBuilder
         _$failedField = 'tags';
         _tags?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'CenterJsonldPublicCenterReadAssetsInner',
             _$failedField,
             e.toString());

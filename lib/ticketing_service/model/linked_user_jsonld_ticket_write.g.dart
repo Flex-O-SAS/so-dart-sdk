@@ -12,13 +12,9 @@ class _$LinkedUserJsonldTicketWrite extends LinkedUserJsonldTicketWrite {
 
   factory _$LinkedUserJsonldTicketWrite(
           [void Function(LinkedUserJsonldTicketWriteBuilder)? updates]) =>
-      (new LinkedUserJsonldTicketWriteBuilder()..update(updates))._build();
+      (LinkedUserJsonldTicketWriteBuilder()..update(updates))._build();
 
-  _$LinkedUserJsonldTicketWrite._({required this.user}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        user, r'LinkedUserJsonldTicketWrite', 'user');
-  }
-
+  _$LinkedUserJsonldTicketWrite._({required this.user}) : super._();
   @override
   LinkedUserJsonldTicketWrite rebuild(
           void Function(LinkedUserJsonldTicketWriteBuilder) updates) =>
@@ -26,7 +22,7 @@ class _$LinkedUserJsonldTicketWrite extends LinkedUserJsonldTicketWrite {
 
   @override
   LinkedUserJsonldTicketWriteBuilder toBuilder() =>
-      new LinkedUserJsonldTicketWriteBuilder()..replace(this);
+      LinkedUserJsonldTicketWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -75,7 +71,6 @@ class LinkedUserJsonldTicketWriteBuilder
 
   @override
   void replace(LinkedUserJsonldTicketWrite other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LinkedUserJsonldTicketWrite;
   }
 
@@ -89,7 +84,7 @@ class LinkedUserJsonldTicketWriteBuilder
 
   _$LinkedUserJsonldTicketWrite _build() {
     final _$result = _$v ??
-        new _$LinkedUserJsonldTicketWrite._(
+        _$LinkedUserJsonldTicketWrite._(
           user: BuiltValueNullFieldError.checkNotNull(
               user, r'LinkedUserJsonldTicketWrite', 'user'),
         );

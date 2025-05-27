@@ -31,7 +31,7 @@ class _$ItemItemWrite extends ItemItemWrite {
   final String? endDate;
 
   factory _$ItemItemWrite([void Function(ItemItemWriteBuilder)? updates]) =>
-      (new ItemItemWriteBuilder()..update(updates))._build();
+      (ItemItemWriteBuilder()..update(updates))._build();
 
   _$ItemItemWrite._(
       {required this.provider,
@@ -45,25 +45,13 @@ class _$ItemItemWrite extends ItemItemWrite {
       this.imageLink,
       required this.beginDate,
       this.endDate})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        provider, r'ItemItemWrite', 'provider');
-    BuiltValueNullFieldError.checkNotNull(service, r'ItemItemWrite', 'service');
-    BuiltValueNullFieldError.checkNotNull(label, r'ItemItemWrite', 'label');
-    BuiltValueNullFieldError.checkNotNull(
-        isBookable, r'ItemItemWrite', 'isBookable');
-    BuiltValueNullFieldError.checkNotNull(
-        isOnline, r'ItemItemWrite', 'isOnline');
-    BuiltValueNullFieldError.checkNotNull(
-        beginDate, r'ItemItemWrite', 'beginDate');
-  }
-
+      : super._();
   @override
   ItemItemWrite rebuild(void Function(ItemItemWriteBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ItemItemWriteBuilder toBuilder() => new ItemItemWriteBuilder()..replace(this);
+  ItemItemWriteBuilder toBuilder() => ItemItemWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -191,7 +179,6 @@ class ItemItemWriteBuilder
 
   @override
   void replace(ItemItemWrite other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ItemItemWrite;
   }
 
@@ -205,7 +192,7 @@ class ItemItemWriteBuilder
 
   _$ItemItemWrite _build() {
     final _$result = _$v ??
-        new _$ItemItemWrite._(
+        _$ItemItemWrite._(
           provider: BuiltValueNullFieldError.checkNotNull(
               provider, r'ItemItemWrite', 'provider'),
           service: BuiltValueNullFieldError.checkNotNull(

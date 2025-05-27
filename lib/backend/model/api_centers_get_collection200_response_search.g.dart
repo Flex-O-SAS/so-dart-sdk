@@ -21,13 +21,12 @@ class _$ApiCentersGetCollection200ResponseSearch
   factory _$ApiCentersGetCollection200ResponseSearch(
           [void Function(ApiCentersGetCollection200ResponseSearchBuilder)?
               updates]) =>
-      (new ApiCentersGetCollection200ResponseSearchBuilder()..update(updates))
+      (ApiCentersGetCollection200ResponseSearchBuilder()..update(updates))
           ._build();
 
   _$ApiCentersGetCollection200ResponseSearch._(
       {this.atType, this.template, this.variableRepresentation, this.mapping})
       : super._();
-
   @override
   ApiCentersGetCollection200ResponseSearch rebuild(
           void Function(ApiCentersGetCollection200ResponseSearchBuilder)
@@ -36,7 +35,7 @@ class _$ApiCentersGetCollection200ResponseSearch
 
   @override
   ApiCentersGetCollection200ResponseSearchBuilder toBuilder() =>
-      new ApiCentersGetCollection200ResponseSearchBuilder()..replace(this);
+      ApiCentersGetCollection200ResponseSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -92,8 +91,8 @@ class ApiCentersGetCollection200ResponseSearchBuilder
 
   ListBuilder<ApiCentersGetCollection200ResponseSearchMappingInner>? _mapping;
   ListBuilder<ApiCentersGetCollection200ResponseSearchMappingInner>
-      get mapping => _$this._mapping ??= new ListBuilder<
-          ApiCentersGetCollection200ResponseSearchMappingInner>();
+      get mapping => _$this._mapping ??=
+          ListBuilder<ApiCentersGetCollection200ResponseSearchMappingInner>();
   set mapping(
           ListBuilder<ApiCentersGetCollection200ResponseSearchMappingInner>?
               mapping) =>
@@ -117,7 +116,6 @@ class ApiCentersGetCollection200ResponseSearchBuilder
 
   @override
   void replace(ApiCentersGetCollection200ResponseSearch other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiCentersGetCollection200ResponseSearch;
   }
 
@@ -134,7 +132,7 @@ class ApiCentersGetCollection200ResponseSearchBuilder
     _$ApiCentersGetCollection200ResponseSearch _$result;
     try {
       _$result = _$v ??
-          new _$ApiCentersGetCollection200ResponseSearch._(
+          _$ApiCentersGetCollection200ResponseSearch._(
             atType: atType,
             template: template,
             variableRepresentation: variableRepresentation,
@@ -146,7 +144,7 @@ class ApiCentersGetCollection200ResponseSearchBuilder
         _$failedField = 'mapping';
         _mapping?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'ApiCentersGetCollection200ResponseSearch',
             _$failedField,
             e.toString());

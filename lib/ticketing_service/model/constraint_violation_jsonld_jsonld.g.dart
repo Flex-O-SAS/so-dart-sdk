@@ -31,7 +31,7 @@ class _$ConstraintViolationJsonldJsonld
 
   factory _$ConstraintViolationJsonldJsonld(
           [void Function(ConstraintViolationJsonldJsonldBuilder)? updates]) =>
-      (new ConstraintViolationJsonldJsonldBuilder()..update(updates))._build();
+      (ConstraintViolationJsonldJsonldBuilder()..update(updates))._build();
 
   _$ConstraintViolationJsonldJsonld._(
       {this.atContext,
@@ -45,7 +45,6 @@ class _$ConstraintViolationJsonldJsonld
       this.title,
       this.instance})
       : super._();
-
   @override
   ConstraintViolationJsonldJsonld rebuild(
           void Function(ConstraintViolationJsonldJsonldBuilder) updates) =>
@@ -53,7 +52,7 @@ class _$ConstraintViolationJsonldJsonld
 
   @override
   ConstraintViolationJsonldJsonldBuilder toBuilder() =>
-      new ConstraintViolationJsonldJsonldBuilder()..replace(this);
+      ConstraintViolationJsonldJsonldBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -113,7 +112,7 @@ class ConstraintViolationJsonldJsonldBuilder
 
   CommentJsonldCommentReadContextBuilder? _atContext;
   CommentJsonldCommentReadContextBuilder get atContext =>
-      _$this._atContext ??= new CommentJsonldCommentReadContextBuilder();
+      _$this._atContext ??= CommentJsonldCommentReadContextBuilder();
   set atContext(CommentJsonldCommentReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -132,7 +131,7 @@ class ConstraintViolationJsonldJsonldBuilder
   ListBuilder<ConstraintViolationJsonViolationsInner>? _violations;
   ListBuilder<ConstraintViolationJsonViolationsInner> get violations =>
       _$this._violations ??=
-          new ListBuilder<ConstraintViolationJsonViolationsInner>();
+          ListBuilder<ConstraintViolationJsonViolationsInner>();
   set violations(
           ListBuilder<ConstraintViolationJsonViolationsInner>? violations) =>
       _$this._violations = violations;
@@ -181,7 +180,6 @@ class ConstraintViolationJsonldJsonldBuilder
 
   @override
   void replace(ConstraintViolationJsonldJsonld other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ConstraintViolationJsonldJsonld;
   }
 
@@ -197,7 +195,7 @@ class ConstraintViolationJsonldJsonldBuilder
     _$ConstraintViolationJsonldJsonld _$result;
     try {
       _$result = _$v ??
-          new _$ConstraintViolationJsonldJsonld._(
+          _$ConstraintViolationJsonldJsonld._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -218,7 +216,7 @@ class ConstraintViolationJsonldJsonldBuilder
         _$failedField = 'violations';
         _violations?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'ConstraintViolationJsonldJsonld', _$failedField, e.toString());
       }
       rethrow;

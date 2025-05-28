@@ -20,7 +20,7 @@ class _$LinkedUserLinkedUserRead extends LinkedUserLinkedUserRead {
 
   factory _$LinkedUserLinkedUserRead(
           [void Function(LinkedUserLinkedUserReadBuilder)? updates]) =>
-      (LinkedUserLinkedUserReadBuilder()..update(updates))._build();
+      (new LinkedUserLinkedUserReadBuilder()..update(updates))._build();
 
   _$LinkedUserLinkedUserRead._(
       {this.id,
@@ -28,7 +28,13 @@ class _$LinkedUserLinkedUserRead extends LinkedUserLinkedUserRead {
       required this.user,
       this.createdAt,
       this.updatedAt})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        ticket, r'LinkedUserLinkedUserRead', 'ticket');
+    BuiltValueNullFieldError.checkNotNull(
+        user, r'LinkedUserLinkedUserRead', 'user');
+  }
+
   @override
   LinkedUserLinkedUserRead rebuild(
           void Function(LinkedUserLinkedUserReadBuilder) updates) =>
@@ -36,7 +42,7 @@ class _$LinkedUserLinkedUserRead extends LinkedUserLinkedUserRead {
 
   @override
   LinkedUserLinkedUserReadBuilder toBuilder() =>
-      LinkedUserLinkedUserReadBuilder()..replace(this);
+      new LinkedUserLinkedUserReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -117,6 +123,7 @@ class LinkedUserLinkedUserReadBuilder
 
   @override
   void replace(LinkedUserLinkedUserRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LinkedUserLinkedUserRead;
   }
 
@@ -130,7 +137,7 @@ class LinkedUserLinkedUserReadBuilder
 
   _$LinkedUserLinkedUserRead _build() {
     final _$result = _$v ??
-        _$LinkedUserLinkedUserRead._(
+        new _$LinkedUserLinkedUserRead._(
           id: id,
           ticket: BuiltValueNullFieldError.checkNotNull(
               ticket, r'LinkedUserLinkedUserRead', 'ticket'),

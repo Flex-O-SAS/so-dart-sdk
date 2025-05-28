@@ -21,7 +21,7 @@ class _$AddressProviderWriteAddressWrite
 
   factory _$AddressProviderWriteAddressWrite(
           [void Function(AddressProviderWriteAddressWriteBuilder)? updates]) =>
-      (AddressProviderWriteAddressWriteBuilder()..update(updates))._build();
+      (new AddressProviderWriteAddressWriteBuilder()..update(updates))._build();
 
   _$AddressProviderWriteAddressWrite._(
       {this.id,
@@ -29,7 +29,17 @@ class _$AddressProviderWriteAddressWrite
       required this.zipcode,
       required this.city,
       required this.country})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        address, r'AddressProviderWriteAddressWrite', 'address');
+    BuiltValueNullFieldError.checkNotNull(
+        zipcode, r'AddressProviderWriteAddressWrite', 'zipcode');
+    BuiltValueNullFieldError.checkNotNull(
+        city, r'AddressProviderWriteAddressWrite', 'city');
+    BuiltValueNullFieldError.checkNotNull(
+        country, r'AddressProviderWriteAddressWrite', 'country');
+  }
+
   @override
   AddressProviderWriteAddressWrite rebuild(
           void Function(AddressProviderWriteAddressWriteBuilder) updates) =>
@@ -37,7 +47,7 @@ class _$AddressProviderWriteAddressWrite
 
   @override
   AddressProviderWriteAddressWriteBuilder toBuilder() =>
-      AddressProviderWriteAddressWriteBuilder()..replace(this);
+      new AddressProviderWriteAddressWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -119,6 +129,7 @@ class AddressProviderWriteAddressWriteBuilder
 
   @override
   void replace(AddressProviderWriteAddressWrite other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AddressProviderWriteAddressWrite;
   }
 
@@ -132,7 +143,7 @@ class AddressProviderWriteAddressWriteBuilder
 
   _$AddressProviderWriteAddressWrite _build() {
     final _$result = _$v ??
-        _$AddressProviderWriteAddressWrite._(
+        new _$AddressProviderWriteAddressWrite._(
           id: id,
           address: BuiltValueNullFieldError.checkNotNull(
               address, r'AddressProviderWriteAddressWrite', 'address'),

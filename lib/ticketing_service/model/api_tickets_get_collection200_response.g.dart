@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_apitickets_get_collection200_response.dart';
+part of 'api_tickets_get_collection200_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiApiticketsGetCollection200Response
-    extends ApiApiticketsGetCollection200Response {
+class _$ApiTicketsGetCollection200Response
+    extends ApiTicketsGetCollection200Response {
   @override
   final BuiltList<TicketJsonldTicketRead> member;
   @override
@@ -17,29 +17,32 @@ class _$ApiApiticketsGetCollection200Response
   @override
   final ApiApicommentsGetCollection200ResponseSearch? search;
 
-  factory _$ApiApiticketsGetCollection200Response(
-          [void Function(ApiApiticketsGetCollection200ResponseBuilder)?
+  factory _$ApiTicketsGetCollection200Response(
+          [void Function(ApiTicketsGetCollection200ResponseBuilder)?
               updates]) =>
-      (ApiApiticketsGetCollection200ResponseBuilder()..update(updates))
+      (new ApiTicketsGetCollection200ResponseBuilder()..update(updates))
           ._build();
 
-  _$ApiApiticketsGetCollection200Response._(
+  _$ApiTicketsGetCollection200Response._(
       {required this.member, this.totalItems, this.view, this.search})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        member, r'ApiTicketsGetCollection200Response', 'member');
+  }
+
   @override
-  ApiApiticketsGetCollection200Response rebuild(
-          void Function(ApiApiticketsGetCollection200ResponseBuilder)
-              updates) =>
+  ApiTicketsGetCollection200Response rebuild(
+          void Function(ApiTicketsGetCollection200ResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiApiticketsGetCollection200ResponseBuilder toBuilder() =>
-      ApiApiticketsGetCollection200ResponseBuilder()..replace(this);
+  ApiTicketsGetCollection200ResponseBuilder toBuilder() =>
+      new ApiTicketsGetCollection200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiApiticketsGetCollection200Response &&
+    return other is ApiTicketsGetCollection200Response &&
         member == other.member &&
         totalItems == other.totalItems &&
         view == other.view &&
@@ -59,8 +62,7 @@ class _$ApiApiticketsGetCollection200Response
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(
-            r'ApiApiticketsGetCollection200Response')
+    return (newBuiltValueToStringHelper(r'ApiTicketsGetCollection200Response')
           ..add('member', member)
           ..add('totalItems', totalItems)
           ..add('view', view)
@@ -69,15 +71,15 @@ class _$ApiApiticketsGetCollection200Response
   }
 }
 
-class ApiApiticketsGetCollection200ResponseBuilder
+class ApiTicketsGetCollection200ResponseBuilder
     implements
-        Builder<ApiApiticketsGetCollection200Response,
-            ApiApiticketsGetCollection200ResponseBuilder> {
-  _$ApiApiticketsGetCollection200Response? _$v;
+        Builder<ApiTicketsGetCollection200Response,
+            ApiTicketsGetCollection200ResponseBuilder> {
+  _$ApiTicketsGetCollection200Response? _$v;
 
   ListBuilder<TicketJsonldTicketRead>? _member;
   ListBuilder<TicketJsonldTicketRead> get member =>
-      _$this._member ??= ListBuilder<TicketJsonldTicketRead>();
+      _$this._member ??= new ListBuilder<TicketJsonldTicketRead>();
   set member(ListBuilder<TicketJsonldTicketRead>? member) =>
       _$this._member = member;
 
@@ -87,21 +89,22 @@ class ApiApiticketsGetCollection200ResponseBuilder
 
   ApiApicommentsGetCollection200ResponseViewBuilder? _view;
   ApiApicommentsGetCollection200ResponseViewBuilder get view =>
-      _$this._view ??= ApiApicommentsGetCollection200ResponseViewBuilder();
+      _$this._view ??= new ApiApicommentsGetCollection200ResponseViewBuilder();
   set view(ApiApicommentsGetCollection200ResponseViewBuilder? view) =>
       _$this._view = view;
 
   ApiApicommentsGetCollection200ResponseSearchBuilder? _search;
   ApiApicommentsGetCollection200ResponseSearchBuilder get search =>
-      _$this._search ??= ApiApicommentsGetCollection200ResponseSearchBuilder();
+      _$this._search ??=
+          new ApiApicommentsGetCollection200ResponseSearchBuilder();
   set search(ApiApicommentsGetCollection200ResponseSearchBuilder? search) =>
       _$this._search = search;
 
-  ApiApiticketsGetCollection200ResponseBuilder() {
-    ApiApiticketsGetCollection200Response._defaults(this);
+  ApiTicketsGetCollection200ResponseBuilder() {
+    ApiTicketsGetCollection200Response._defaults(this);
   }
 
-  ApiApiticketsGetCollection200ResponseBuilder get _$this {
+  ApiTicketsGetCollection200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _member = $v.member.toBuilder();
@@ -114,24 +117,25 @@ class ApiApiticketsGetCollection200ResponseBuilder
   }
 
   @override
-  void replace(ApiApiticketsGetCollection200Response other) {
-    _$v = other as _$ApiApiticketsGetCollection200Response;
+  void replace(ApiTicketsGetCollection200Response other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$ApiTicketsGetCollection200Response;
   }
 
   @override
   void update(
-      void Function(ApiApiticketsGetCollection200ResponseBuilder)? updates) {
+      void Function(ApiTicketsGetCollection200ResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiApiticketsGetCollection200Response build() => _build();
+  ApiTicketsGetCollection200Response build() => _build();
 
-  _$ApiApiticketsGetCollection200Response _build() {
-    _$ApiApiticketsGetCollection200Response _$result;
+  _$ApiTicketsGetCollection200Response _build() {
+    _$ApiTicketsGetCollection200Response _$result;
     try {
       _$result = _$v ??
-          _$ApiApiticketsGetCollection200Response._(
+          new _$ApiTicketsGetCollection200Response._(
             member: member.build(),
             totalItems: totalItems,
             view: _view?.build(),
@@ -148,10 +152,8 @@ class ApiApiticketsGetCollection200ResponseBuilder
         _$failedField = 'search';
         _search?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'ApiApiticketsGetCollection200Response',
-            _$failedField,
-            e.toString());
+        throw new BuiltValueNestedFieldError(
+            r'ApiTicketsGetCollection200Response', _$failedField, e.toString());
       }
       rethrow;
     }

@@ -21,13 +21,14 @@ class _$ApiApicommentsGetCollection200ResponseSearchMappingInner
           [void Function(
                   ApiApicommentsGetCollection200ResponseSearchMappingInnerBuilder)?
               updates]) =>
-      (ApiApicommentsGetCollection200ResponseSearchMappingInnerBuilder()
+      (new ApiApicommentsGetCollection200ResponseSearchMappingInnerBuilder()
             ..update(updates))
           ._build();
 
   _$ApiApicommentsGetCollection200ResponseSearchMappingInner._(
       {this.atType, this.variable, this.property, this.required_})
       : super._();
+
   @override
   ApiApicommentsGetCollection200ResponseSearchMappingInner rebuild(
           void Function(
@@ -37,7 +38,7 @@ class _$ApiApicommentsGetCollection200ResponseSearchMappingInner
 
   @override
   ApiApicommentsGetCollection200ResponseSearchMappingInnerBuilder toBuilder() =>
-      ApiApicommentsGetCollection200ResponseSearchMappingInnerBuilder()
+      new ApiApicommentsGetCollection200ResponseSearchMappingInnerBuilder()
         ..replace(this);
 
   @override
@@ -113,6 +114,7 @@ class ApiApicommentsGetCollection200ResponseSearchMappingInnerBuilder
 
   @override
   void replace(ApiApicommentsGetCollection200ResponseSearchMappingInner other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiApicommentsGetCollection200ResponseSearchMappingInner;
   }
 
@@ -129,7 +131,7 @@ class ApiApicommentsGetCollection200ResponseSearchMappingInnerBuilder
 
   _$ApiApicommentsGetCollection200ResponseSearchMappingInner _build() {
     final _$result = _$v ??
-        _$ApiApicommentsGetCollection200ResponseSearchMappingInner._(
+        new _$ApiApicommentsGetCollection200ResponseSearchMappingInner._(
           atType: atType,
           variable: variable,
           property: property,

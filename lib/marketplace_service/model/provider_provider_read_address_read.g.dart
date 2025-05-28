@@ -33,7 +33,7 @@ class _$ProviderProviderReadAddressRead
 
   factory _$ProviderProviderReadAddressRead(
           [void Function(ProviderProviderReadAddressReadBuilder)? updates]) =>
-      (ProviderProviderReadAddressReadBuilder()..update(updates))._build();
+      (new ProviderProviderReadAddressReadBuilder()..update(updates))._build();
 
   _$ProviderProviderReadAddressRead._(
       {this.id,
@@ -47,7 +47,15 @@ class _$ProviderProviderReadAddressRead
       required this.address,
       required this.isActive,
       this.tags})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        name, r'ProviderProviderReadAddressRead', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        address, r'ProviderProviderReadAddressRead', 'address');
+    BuiltValueNullFieldError.checkNotNull(
+        isActive, r'ProviderProviderReadAddressRead', 'isActive');
+  }
+
   @override
   ProviderProviderReadAddressRead rebuild(
           void Function(ProviderProviderReadAddressReadBuilder) updates) =>
@@ -55,7 +63,7 @@ class _$ProviderProviderReadAddressRead
 
   @override
   ProviderProviderReadAddressReadBuilder toBuilder() =>
-      ProviderProviderReadAddressReadBuilder()..replace(this);
+      new ProviderProviderReadAddressReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -146,13 +154,13 @@ class ProviderProviderReadAddressReadBuilder
 
   ListBuilder<ItemProviderReadAddressRead>? _items;
   ListBuilder<ItemProviderReadAddressRead> get items =>
-      _$this._items ??= ListBuilder<ItemProviderReadAddressRead>();
+      _$this._items ??= new ListBuilder<ItemProviderReadAddressRead>();
   set items(ListBuilder<ItemProviderReadAddressRead>? items) =>
       _$this._items = items;
 
   AddressProviderReadAddressReadBuilder? _address;
   AddressProviderReadAddressReadBuilder get address =>
-      _$this._address ??= AddressProviderReadAddressReadBuilder();
+      _$this._address ??= new AddressProviderReadAddressReadBuilder();
   set address(AddressProviderReadAddressReadBuilder? address) =>
       _$this._address = address;
 
@@ -162,7 +170,7 @@ class ProviderProviderReadAddressReadBuilder
 
   ListBuilder<TagProviderReadAddressRead>? _tags;
   ListBuilder<TagProviderReadAddressRead> get tags =>
-      _$this._tags ??= ListBuilder<TagProviderReadAddressRead>();
+      _$this._tags ??= new ListBuilder<TagProviderReadAddressRead>();
   set tags(ListBuilder<TagProviderReadAddressRead>? tags) =>
       _$this._tags = tags;
 
@@ -191,6 +199,7 @@ class ProviderProviderReadAddressReadBuilder
 
   @override
   void replace(ProviderProviderReadAddressRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ProviderProviderReadAddressRead;
   }
 
@@ -206,7 +215,7 @@ class ProviderProviderReadAddressReadBuilder
     _$ProviderProviderReadAddressRead _$result;
     try {
       _$result = _$v ??
-          _$ProviderProviderReadAddressRead._(
+          new _$ProviderProviderReadAddressRead._(
             id: id,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'ProviderProviderReadAddressRead', 'name'),
@@ -232,7 +241,7 @@ class ProviderProviderReadAddressReadBuilder
         _$failedField = 'tags';
         _tags?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'ProviderProviderReadAddressRead', _$failedField, e.toString());
       }
       rethrow;

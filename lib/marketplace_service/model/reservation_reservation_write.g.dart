@@ -26,12 +26,12 @@ ReservationReservationWritePaymentMethodEnum
     case 'voucher':
       return _$reservationReservationWritePaymentMethodEnum_voucher;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<ReservationReservationWritePaymentMethodEnum>
-    _$reservationReservationWritePaymentMethodEnumValues = BuiltSet<
+    _$reservationReservationWritePaymentMethodEnumValues = new BuiltSet<
         ReservationReservationWritePaymentMethodEnum>(const <ReservationReservationWritePaymentMethodEnum>[
   _$reservationReservationWritePaymentMethodEnum_cb,
   _$reservationReservationWritePaymentMethodEnum_cash,
@@ -40,7 +40,7 @@ final BuiltSet<ReservationReservationWritePaymentMethodEnum>
 
 Serializer<ReservationReservationWritePaymentMethodEnum>
     _$reservationReservationWritePaymentMethodEnumSerializer =
-    _$ReservationReservationWritePaymentMethodEnumSerializer();
+    new _$ReservationReservationWritePaymentMethodEnumSerializer();
 
 class _$ReservationReservationWritePaymentMethodEnumSerializer
     implements
@@ -93,7 +93,7 @@ class _$ReservationReservationWrite extends ReservationReservationWrite {
 
   factory _$ReservationReservationWrite(
           [void Function(ReservationReservationWriteBuilder)? updates]) =>
-      (ReservationReservationWriteBuilder()..update(updates))._build();
+      (new ReservationReservationWriteBuilder()..update(updates))._build();
 
   _$ReservationReservationWrite._(
       {required this.item,
@@ -102,7 +102,19 @@ class _$ReservationReservationWrite extends ReservationReservationWrite {
       required this.quantity,
       required this.date,
       required this.paymentMethod})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        item, r'ReservationReservationWrite', 'item');
+    BuiltValueNullFieldError.checkNotNull(
+        author, r'ReservationReservationWrite', 'author');
+    BuiltValueNullFieldError.checkNotNull(
+        quantity, r'ReservationReservationWrite', 'quantity');
+    BuiltValueNullFieldError.checkNotNull(
+        date, r'ReservationReservationWrite', 'date');
+    BuiltValueNullFieldError.checkNotNull(
+        paymentMethod, r'ReservationReservationWrite', 'paymentMethod');
+  }
+
   @override
   ReservationReservationWrite rebuild(
           void Function(ReservationReservationWriteBuilder) updates) =>
@@ -110,7 +122,7 @@ class _$ReservationReservationWrite extends ReservationReservationWrite {
 
   @override
   ReservationReservationWriteBuilder toBuilder() =>
-      ReservationReservationWriteBuilder()..replace(this);
+      new ReservationReservationWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -203,6 +215,7 @@ class ReservationReservationWriteBuilder
 
   @override
   void replace(ReservationReservationWrite other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ReservationReservationWrite;
   }
 
@@ -216,7 +229,7 @@ class ReservationReservationWriteBuilder
 
   _$ReservationReservationWrite _build() {
     final _$result = _$v ??
-        _$ReservationReservationWrite._(
+        new _$ReservationReservationWrite._(
           item: BuiltValueNullFieldError.checkNotNull(
               item, r'ReservationReservationWrite', 'item'),
           author: BuiltValueNullFieldError.checkNotNull(

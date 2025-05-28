@@ -20,12 +20,16 @@ class _$ApiEnterprisesGetCollection200Response
   factory _$ApiEnterprisesGetCollection200Response(
           [void Function(ApiEnterprisesGetCollection200ResponseBuilder)?
               updates]) =>
-      (ApiEnterprisesGetCollection200ResponseBuilder()..update(updates))
+      (new ApiEnterprisesGetCollection200ResponseBuilder()..update(updates))
           ._build();
 
   _$ApiEnterprisesGetCollection200Response._(
       {required this.member, this.totalItems, this.view, this.search})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        member, r'ApiEnterprisesGetCollection200Response', 'member');
+  }
+
   @override
   ApiEnterprisesGetCollection200Response rebuild(
           void Function(ApiEnterprisesGetCollection200ResponseBuilder)
@@ -34,7 +38,7 @@ class _$ApiEnterprisesGetCollection200Response
 
   @override
   ApiEnterprisesGetCollection200ResponseBuilder toBuilder() =>
-      ApiEnterprisesGetCollection200ResponseBuilder()..replace(this);
+      new ApiEnterprisesGetCollection200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -78,7 +82,7 @@ class ApiEnterprisesGetCollection200ResponseBuilder
   ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>? _member;
   ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead> get member =>
       _$this._member ??=
-          ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>();
+          new ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>();
   set member(
           ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>?
               member) =>
@@ -90,13 +94,13 @@ class ApiEnterprisesGetCollection200ResponseBuilder
 
   ApiCentersGetCollection200ResponseViewBuilder? _view;
   ApiCentersGetCollection200ResponseViewBuilder get view =>
-      _$this._view ??= ApiCentersGetCollection200ResponseViewBuilder();
+      _$this._view ??= new ApiCentersGetCollection200ResponseViewBuilder();
   set view(ApiCentersGetCollection200ResponseViewBuilder? view) =>
       _$this._view = view;
 
   ApiCentersGetCollection200ResponseSearchBuilder? _search;
   ApiCentersGetCollection200ResponseSearchBuilder get search =>
-      _$this._search ??= ApiCentersGetCollection200ResponseSearchBuilder();
+      _$this._search ??= new ApiCentersGetCollection200ResponseSearchBuilder();
   set search(ApiCentersGetCollection200ResponseSearchBuilder? search) =>
       _$this._search = search;
 
@@ -118,6 +122,7 @@ class ApiEnterprisesGetCollection200ResponseBuilder
 
   @override
   void replace(ApiEnterprisesGetCollection200Response other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiEnterprisesGetCollection200Response;
   }
 
@@ -134,7 +139,7 @@ class ApiEnterprisesGetCollection200ResponseBuilder
     _$ApiEnterprisesGetCollection200Response _$result;
     try {
       _$result = _$v ??
-          _$ApiEnterprisesGetCollection200Response._(
+          new _$ApiEnterprisesGetCollection200Response._(
             member: member.build(),
             totalItems: totalItems,
             view: _view?.build(),
@@ -151,7 +156,7 @@ class ApiEnterprisesGetCollection200ResponseBuilder
         _$failedField = 'search';
         _search?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'ApiEnterprisesGetCollection200Response',
             _$failedField,
             e.toString());

@@ -16,11 +16,12 @@ class _$ConstraintViolationJsonViolationsInner
   factory _$ConstraintViolationJsonViolationsInner(
           [void Function(ConstraintViolationJsonViolationsInnerBuilder)?
               updates]) =>
-      (ConstraintViolationJsonViolationsInnerBuilder()..update(updates))
+      (new ConstraintViolationJsonViolationsInnerBuilder()..update(updates))
           ._build();
 
   _$ConstraintViolationJsonViolationsInner._({this.propertyPath, this.message})
       : super._();
+
   @override
   ConstraintViolationJsonViolationsInner rebuild(
           void Function(ConstraintViolationJsonViolationsInnerBuilder)
@@ -29,7 +30,7 @@ class _$ConstraintViolationJsonViolationsInner
 
   @override
   ConstraintViolationJsonViolationsInnerBuilder toBuilder() =>
-      ConstraintViolationJsonViolationsInnerBuilder()..replace(this);
+      new ConstraintViolationJsonViolationsInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -88,6 +89,7 @@ class ConstraintViolationJsonViolationsInnerBuilder
 
   @override
   void replace(ConstraintViolationJsonViolationsInner other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ConstraintViolationJsonViolationsInner;
   }
 
@@ -102,7 +104,7 @@ class ConstraintViolationJsonViolationsInnerBuilder
 
   _$ConstraintViolationJsonViolationsInner _build() {
     final _$result = _$v ??
-        _$ConstraintViolationJsonViolationsInner._(
+        new _$ConstraintViolationJsonViolationsInner._(
           propertyPath: propertyPath,
           message: message,
         );

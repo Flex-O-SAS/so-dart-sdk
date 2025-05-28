@@ -3,16 +3,16 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_search.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_search.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_apitickets_get_collection200_response.g.dart';
+part 'api_devices_get_collection200_response.g.dart';
 
-/// ApiApiticketsGetCollection200Response
+/// ApiDevicesGetCollection200Response
 ///
 /// Properties:
 /// * [member] 
@@ -20,46 +20,46 @@ part 'api_apitickets_get_collection200_response.g.dart';
 /// * [view] 
 /// * [search] 
 @BuiltValue()
-abstract class ApiApiticketsGetCollection200Response implements Built<ApiApiticketsGetCollection200Response, ApiApiticketsGetCollection200ResponseBuilder> {
+abstract class ApiDevicesGetCollection200Response implements Built<ApiDevicesGetCollection200Response, ApiDevicesGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<TicketJsonldTicketRead> get member;
+  BuiltList<DeviceJsonldDeviceRead> get member;
 
   @BuiltValueField(wireName: r'totalItems')
   int? get totalItems;
 
   @BuiltValueField(wireName: r'view')
-  ApiApicommentsGetCollection200ResponseView? get view;
+  ApiDevicesGetCollection200ResponseView? get view;
 
   @BuiltValueField(wireName: r'search')
-  ApiApicommentsGetCollection200ResponseSearch? get search;
+  ApiDevicesGetCollection200ResponseSearch? get search;
 
-  ApiApiticketsGetCollection200Response._();
+  ApiDevicesGetCollection200Response._();
 
-  factory ApiApiticketsGetCollection200Response([void updates(ApiApiticketsGetCollection200ResponseBuilder b)]) = _$ApiApiticketsGetCollection200Response;
+  factory ApiDevicesGetCollection200Response([void updates(ApiDevicesGetCollection200ResponseBuilder b)]) = _$ApiDevicesGetCollection200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiApiticketsGetCollection200ResponseBuilder b) => b;
+  static void _defaults(ApiDevicesGetCollection200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiApiticketsGetCollection200Response> get serializer => _$ApiApiticketsGetCollection200ResponseSerializer();
+  static Serializer<ApiDevicesGetCollection200Response> get serializer => _$ApiDevicesGetCollection200ResponseSerializer();
 }
 
-class _$ApiApiticketsGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiApiticketsGetCollection200Response> {
+class _$ApiDevicesGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiDevicesGetCollection200Response> {
   @override
-  final Iterable<Type> types = const [ApiApiticketsGetCollection200Response, _$ApiApiticketsGetCollection200Response];
+  final Iterable<Type> types = const [ApiDevicesGetCollection200Response, _$ApiDevicesGetCollection200Response];
 
   @override
-  final String wireName = r'ApiApiticketsGetCollection200Response';
+  final String wireName = r'ApiDevicesGetCollection200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiApiticketsGetCollection200Response object, {
+    ApiDevicesGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(TicketJsonldTicketRead)]),
+      specifiedType: const FullType(BuiltList, [FullType(DeviceJsonldDeviceRead)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -72,14 +72,14 @@ class _$ApiApiticketsGetCollection200ResponseSerializer implements PrimitiveSeri
       yield r'view';
       yield serializers.serialize(
         object.view,
-        specifiedType: const FullType(ApiApicommentsGetCollection200ResponseView),
+        specifiedType: const FullType(ApiDevicesGetCollection200ResponseView),
       );
     }
     if (object.search != null) {
       yield r'search';
       yield serializers.serialize(
         object.search,
-        specifiedType: const FullType(ApiApicommentsGetCollection200ResponseSearch),
+        specifiedType: const FullType(ApiDevicesGetCollection200ResponseSearch),
       );
     }
   }
@@ -87,7 +87,7 @@ class _$ApiApiticketsGetCollection200ResponseSerializer implements PrimitiveSeri
   @override
   Object serialize(
     Serializers serializers,
-    ApiApiticketsGetCollection200Response object, {
+    ApiDevicesGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -98,7 +98,7 @@ class _$ApiApiticketsGetCollection200ResponseSerializer implements PrimitiveSeri
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiApiticketsGetCollection200ResponseBuilder result,
+    required ApiDevicesGetCollection200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -108,8 +108,8 @@ class _$ApiApiticketsGetCollection200ResponseSerializer implements PrimitiveSeri
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(TicketJsonldTicketRead)]),
-          ) as BuiltList<TicketJsonldTicketRead>;
+            specifiedType: const FullType(BuiltList, [FullType(DeviceJsonldDeviceRead)]),
+          ) as BuiltList<DeviceJsonldDeviceRead>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':
@@ -122,15 +122,15 @@ class _$ApiApiticketsGetCollection200ResponseSerializer implements PrimitiveSeri
         case r'view':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ApiApicommentsGetCollection200ResponseView),
-          ) as ApiApicommentsGetCollection200ResponseView;
+            specifiedType: const FullType(ApiDevicesGetCollection200ResponseView),
+          ) as ApiDevicesGetCollection200ResponseView;
           result.view.replace(valueDes);
           break;
         case r'search':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ApiApicommentsGetCollection200ResponseSearch),
-          ) as ApiApicommentsGetCollection200ResponseSearch;
+            specifiedType: const FullType(ApiDevicesGetCollection200ResponseSearch),
+          ) as ApiDevicesGetCollection200ResponseSearch;
           result.search.replace(valueDes);
           break;
         default:
@@ -142,12 +142,12 @@ class _$ApiApiticketsGetCollection200ResponseSerializer implements PrimitiveSeri
   }
 
   @override
-  ApiApiticketsGetCollection200Response deserialize(
+  ApiDevicesGetCollection200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiApiticketsGetCollection200ResponseBuilder();
+    final result = ApiDevicesGetCollection200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

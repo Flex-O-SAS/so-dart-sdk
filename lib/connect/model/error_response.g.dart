@@ -13,15 +13,16 @@ class _$ErrorResponse extends ErrorResponse {
   final JsonObject? errors;
 
   factory _$ErrorResponse([void Function(ErrorResponseBuilder)? updates]) =>
-      (ErrorResponseBuilder()..update(updates))._build();
+      (new ErrorResponseBuilder()..update(updates))._build();
 
   _$ErrorResponse._({this.message, this.errors}) : super._();
+
   @override
   ErrorResponse rebuild(void Function(ErrorResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ErrorResponseBuilder toBuilder() => ErrorResponseBuilder()..replace(this);
+  ErrorResponseBuilder toBuilder() => new ErrorResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -77,6 +78,7 @@ class ErrorResponseBuilder
 
   @override
   void replace(ErrorResponse other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ErrorResponse;
   }
 
@@ -90,7 +92,7 @@ class ErrorResponseBuilder
 
   _$ErrorResponse _build() {
     final _$result = _$v ??
-        _$ErrorResponse._(
+        new _$ErrorResponse._(
           message: message,
           errors: errors,
         );

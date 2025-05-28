@@ -14,9 +14,10 @@ class _$ProviderResponseInner extends ProviderResponseInner {
 
   factory _$ProviderResponseInner(
           [void Function(ProviderResponseInnerBuilder)? updates]) =>
-      (ProviderResponseInnerBuilder()..update(updates))._build();
+      (new ProviderResponseInnerBuilder()..update(updates))._build();
 
   _$ProviderResponseInner._({this.uuid, this.code}) : super._();
+
   @override
   ProviderResponseInner rebuild(
           void Function(ProviderResponseInnerBuilder) updates) =>
@@ -24,7 +25,7 @@ class _$ProviderResponseInner extends ProviderResponseInner {
 
   @override
   ProviderResponseInnerBuilder toBuilder() =>
-      ProviderResponseInnerBuilder()..replace(this);
+      new ProviderResponseInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -80,6 +81,7 @@ class ProviderResponseInnerBuilder
 
   @override
   void replace(ProviderResponseInner other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ProviderResponseInner;
   }
 
@@ -93,7 +95,7 @@ class ProviderResponseInnerBuilder
 
   _$ProviderResponseInner _build() {
     final _$result = _$v ??
-        _$ProviderResponseInner._(
+        new _$ProviderResponseInner._(
           uuid: uuid,
           code: code,
         );

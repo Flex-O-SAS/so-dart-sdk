@@ -17,19 +17,19 @@ DocumentJsonldMediaReadContextHydraEnum
     case 'httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash':
       return _$documentJsonldMediaReadContextHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<DocumentJsonldMediaReadContextHydraEnum>
-    _$documentJsonldMediaReadContextHydraEnumValues = BuiltSet<
+    _$documentJsonldMediaReadContextHydraEnumValues = new BuiltSet<
         DocumentJsonldMediaReadContextHydraEnum>(const <DocumentJsonldMediaReadContextHydraEnum>[
   _$documentJsonldMediaReadContextHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash,
 ]);
 
 Serializer<DocumentJsonldMediaReadContextHydraEnum>
     _$documentJsonldMediaReadContextHydraEnumSerializer =
-    _$DocumentJsonldMediaReadContextHydraEnumSerializer();
+    new _$DocumentJsonldMediaReadContextHydraEnumSerializer();
 
 class _$DocumentJsonldMediaReadContextHydraEnumSerializer
     implements PrimitiveSerializer<DocumentJsonldMediaReadContextHydraEnum> {
@@ -69,9 +69,13 @@ class _$DocumentJsonldMediaReadContext extends DocumentJsonldMediaReadContext {
 
   factory _$DocumentJsonldMediaReadContext(
           [void Function(DocumentJsonldMediaReadContextBuilder)? updates]) =>
-      (DocumentJsonldMediaReadContextBuilder()..update(updates))._build();
+      (new DocumentJsonldMediaReadContextBuilder()..update(updates))._build();
 
-  _$DocumentJsonldMediaReadContext._({required this.oneOf}) : super._();
+  _$DocumentJsonldMediaReadContext._({required this.oneOf}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        oneOf, r'DocumentJsonldMediaReadContext', 'oneOf');
+  }
+
   @override
   DocumentJsonldMediaReadContext rebuild(
           void Function(DocumentJsonldMediaReadContextBuilder) updates) =>
@@ -79,7 +83,7 @@ class _$DocumentJsonldMediaReadContext extends DocumentJsonldMediaReadContext {
 
   @override
   DocumentJsonldMediaReadContextBuilder toBuilder() =>
-      DocumentJsonldMediaReadContextBuilder()..replace(this);
+      new DocumentJsonldMediaReadContextBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -128,6 +132,7 @@ class DocumentJsonldMediaReadContextBuilder
 
   @override
   void replace(DocumentJsonldMediaReadContext other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$DocumentJsonldMediaReadContext;
   }
 
@@ -141,7 +146,7 @@ class DocumentJsonldMediaReadContextBuilder
 
   _$DocumentJsonldMediaReadContext _build() {
     final _$result = _$v ??
-        _$DocumentJsonldMediaReadContext._(
+        new _$DocumentJsonldMediaReadContext._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
               oneOf, r'DocumentJsonldMediaReadContext', 'oneOf'),
         );

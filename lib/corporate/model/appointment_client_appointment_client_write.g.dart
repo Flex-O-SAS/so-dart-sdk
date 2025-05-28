@@ -36,12 +36,12 @@ AppointmentClientAppointmentClientWriteStatusEnum
     case 'absent':
       return _$appointmentClientAppointmentClientWriteStatusEnum_absent;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<AppointmentClientAppointmentClientWriteStatusEnum>
-    _$appointmentClientAppointmentClientWriteStatusEnumValues = BuiltSet<
+    _$appointmentClientAppointmentClientWriteStatusEnumValues = new BuiltSet<
         AppointmentClientAppointmentClientWriteStatusEnum>(const <AppointmentClientAppointmentClientWriteStatusEnum>[
   _$appointmentClientAppointmentClientWriteStatusEnum_pending,
   _$appointmentClientAppointmentClientWriteStatusEnum_accepted,
@@ -52,7 +52,7 @@ final BuiltSet<AppointmentClientAppointmentClientWriteStatusEnum>
 
 Serializer<AppointmentClientAppointmentClientWriteStatusEnum>
     _$appointmentClientAppointmentClientWriteStatusEnumSerializer =
-    _$AppointmentClientAppointmentClientWriteStatusEnumSerializer();
+    new _$AppointmentClientAppointmentClientWriteStatusEnumSerializer();
 
 class _$AppointmentClientAppointmentClientWriteStatusEnumSerializer
     implements
@@ -113,7 +113,7 @@ class _$AppointmentClientAppointmentClientWrite
   factory _$AppointmentClientAppointmentClientWrite(
           [void Function(AppointmentClientAppointmentClientWriteBuilder)?
               updates]) =>
-      (AppointmentClientAppointmentClientWriteBuilder()..update(updates))
+      (new AppointmentClientAppointmentClientWriteBuilder()..update(updates))
           ._build();
 
   _$AppointmentClientAppointmentClientWrite._(
@@ -124,7 +124,13 @@ class _$AppointmentClientAppointmentClientWrite
       this.comment,
       this.responseDate,
       this.lastSentInvitationDate})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        email, r'AppointmentClientAppointmentClientWrite', 'email');
+    BuiltValueNullFieldError.checkNotNull(
+        status, r'AppointmentClientAppointmentClientWrite', 'status');
+  }
+
   @override
   AppointmentClientAppointmentClientWrite rebuild(
           void Function(AppointmentClientAppointmentClientWriteBuilder)
@@ -133,7 +139,7 @@ class _$AppointmentClientAppointmentClientWrite
 
   @override
   AppointmentClientAppointmentClientWriteBuilder toBuilder() =>
-      AppointmentClientAppointmentClientWriteBuilder()..replace(this);
+      new AppointmentClientAppointmentClientWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -235,6 +241,7 @@ class AppointmentClientAppointmentClientWriteBuilder
 
   @override
   void replace(AppointmentClientAppointmentClientWrite other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AppointmentClientAppointmentClientWrite;
   }
 
@@ -249,7 +256,7 @@ class AppointmentClientAppointmentClientWriteBuilder
 
   _$AppointmentClientAppointmentClientWrite _build() {
     final _$result = _$v ??
-        _$AppointmentClientAppointmentClientWrite._(
+        new _$AppointmentClientAppointmentClientWrite._(
           appointment: appointment,
           email: BuiltValueNullFieldError.checkNotNull(
               email, r'AppointmentClientAppointmentClientWrite', 'email'),

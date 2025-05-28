@@ -22,7 +22,7 @@ class _$ServiceJsonldServiceRead extends ServiceJsonldServiceRead {
 
   factory _$ServiceJsonldServiceRead(
           [void Function(ServiceJsonldServiceReadBuilder)? updates]) =>
-      (ServiceJsonldServiceReadBuilder()..update(updates))._build();
+      (new ServiceJsonldServiceReadBuilder()..update(updates))._build();
 
   _$ServiceJsonldServiceRead._(
       {this.atId,
@@ -32,6 +32,7 @@ class _$ServiceJsonldServiceRead extends ServiceJsonldServiceRead {
       this.prioritization,
       this.imageLink})
       : super._();
+
   @override
   ServiceJsonldServiceRead rebuild(
           void Function(ServiceJsonldServiceReadBuilder) updates) =>
@@ -39,7 +40,7 @@ class _$ServiceJsonldServiceRead extends ServiceJsonldServiceRead {
 
   @override
   ServiceJsonldServiceReadBuilder toBuilder() =>
-      ServiceJsonldServiceReadBuilder()..replace(this);
+      new ServiceJsonldServiceReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -129,6 +130,7 @@ class ServiceJsonldServiceReadBuilder
 
   @override
   void replace(ServiceJsonldServiceRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ServiceJsonldServiceRead;
   }
 
@@ -142,7 +144,7 @@ class ServiceJsonldServiceReadBuilder
 
   _$ServiceJsonldServiceRead _build() {
     final _$result = _$v ??
-        _$ServiceJsonldServiceRead._(
+        new _$ServiceJsonldServiceRead._(
           atId: atId,
           atType: atType,
           id: id,

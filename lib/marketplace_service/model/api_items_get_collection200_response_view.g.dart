@@ -24,11 +24,13 @@ class _$ApiItemsGetCollection200ResponseView
   factory _$ApiItemsGetCollection200ResponseView(
           [void Function(ApiItemsGetCollection200ResponseViewBuilder)?
               updates]) =>
-      (ApiItemsGetCollection200ResponseViewBuilder()..update(updates))._build();
+      (new ApiItemsGetCollection200ResponseViewBuilder()..update(updates))
+          ._build();
 
   _$ApiItemsGetCollection200ResponseView._(
       {this.atId, this.atType, this.first, this.last, this.previous, this.next})
       : super._();
+
   @override
   ApiItemsGetCollection200ResponseView rebuild(
           void Function(ApiItemsGetCollection200ResponseViewBuilder) updates) =>
@@ -36,7 +38,7 @@ class _$ApiItemsGetCollection200ResponseView
 
   @override
   ApiItemsGetCollection200ResponseViewBuilder toBuilder() =>
-      ApiItemsGetCollection200ResponseViewBuilder()..replace(this);
+      new ApiItemsGetCollection200ResponseViewBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -126,6 +128,7 @@ class ApiItemsGetCollection200ResponseViewBuilder
 
   @override
   void replace(ApiItemsGetCollection200ResponseView other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiItemsGetCollection200ResponseView;
   }
 
@@ -140,7 +143,7 @@ class ApiItemsGetCollection200ResponseViewBuilder
 
   _$ApiItemsGetCollection200ResponseView _build() {
     final _$result = _$v ??
-        _$ApiItemsGetCollection200ResponseView._(
+        new _$ApiItemsGetCollection200ResponseView._(
           atId: atId,
           atType: atType,
           first: first,

@@ -12,9 +12,13 @@ class _$LinkedUserTicketWrite extends LinkedUserTicketWrite {
 
   factory _$LinkedUserTicketWrite(
           [void Function(LinkedUserTicketWriteBuilder)? updates]) =>
-      (LinkedUserTicketWriteBuilder()..update(updates))._build();
+      (new LinkedUserTicketWriteBuilder()..update(updates))._build();
 
-  _$LinkedUserTicketWrite._({required this.user}) : super._();
+  _$LinkedUserTicketWrite._({required this.user}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        user, r'LinkedUserTicketWrite', 'user');
+  }
+
   @override
   LinkedUserTicketWrite rebuild(
           void Function(LinkedUserTicketWriteBuilder) updates) =>
@@ -22,7 +26,7 @@ class _$LinkedUserTicketWrite extends LinkedUserTicketWrite {
 
   @override
   LinkedUserTicketWriteBuilder toBuilder() =>
-      LinkedUserTicketWriteBuilder()..replace(this);
+      new LinkedUserTicketWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -69,6 +73,7 @@ class LinkedUserTicketWriteBuilder
 
   @override
   void replace(LinkedUserTicketWrite other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LinkedUserTicketWrite;
   }
 
@@ -82,7 +87,7 @@ class LinkedUserTicketWriteBuilder
 
   _$LinkedUserTicketWrite _build() {
     final _$result = _$v ??
-        _$LinkedUserTicketWrite._(
+        new _$LinkedUserTicketWrite._(
           user: BuiltValueNullFieldError.checkNotNull(
               user, r'LinkedUserTicketWrite', 'user'),
         );

@@ -21,11 +21,15 @@ class _$TagJsonldProviderReadAddressRead
 
   factory _$TagJsonldProviderReadAddressRead(
           [void Function(TagJsonldProviderReadAddressReadBuilder)? updates]) =>
-      (TagJsonldProviderReadAddressReadBuilder()..update(updates))._build();
+      (new TagJsonldProviderReadAddressReadBuilder()..update(updates))._build();
 
   _$TagJsonldProviderReadAddressRead._(
       {this.atContext, this.atId, this.atType, this.id, required this.label})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        label, r'TagJsonldProviderReadAddressRead', 'label');
+  }
+
   @override
   TagJsonldProviderReadAddressRead rebuild(
           void Function(TagJsonldProviderReadAddressReadBuilder) updates) =>
@@ -33,7 +37,7 @@ class _$TagJsonldProviderReadAddressRead
 
   @override
   TagJsonldProviderReadAddressReadBuilder toBuilder() =>
-      TagJsonldProviderReadAddressReadBuilder()..replace(this);
+      new TagJsonldProviderReadAddressReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -79,7 +83,7 @@ class TagJsonldProviderReadAddressReadBuilder
   AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
   AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
       _$this._atContext ??=
-          AddressJsonldProviderReadAddressReadContextBuilder();
+          new AddressJsonldProviderReadAddressReadContextBuilder();
   set atContext(
           AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
@@ -119,6 +123,7 @@ class TagJsonldProviderReadAddressReadBuilder
 
   @override
   void replace(TagJsonldProviderReadAddressRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagJsonldProviderReadAddressRead;
   }
 
@@ -134,7 +139,7 @@ class TagJsonldProviderReadAddressReadBuilder
     _$TagJsonldProviderReadAddressRead _$result;
     try {
       _$result = _$v ??
-          _$TagJsonldProviderReadAddressRead._(
+          new _$TagJsonldProviderReadAddressRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -148,7 +153,7 @@ class TagJsonldProviderReadAddressReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'TagJsonldProviderReadAddressRead', _$failedField, e.toString());
       }
       rethrow;

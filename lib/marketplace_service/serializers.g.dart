@@ -6,7 +6,7 @@ part of 'serializers.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializers _$serializers = (Serializers().toBuilder()
+Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AddressJsonldProviderReadAddressRead.serializer)
       ..add(AddressJsonldProviderReadAddressReadContext.serializer)
       ..add(AddressJsonldProviderReadAddressReadContextOneOf.serializer)
@@ -59,56 +59,56 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList, const [
             const FullType(ApiItemsGetCollection200ResponseSearchMappingInner)
           ]),
-          () =>
-              ListBuilder<ApiItemsGetCollection200ResponseSearchMappingInner>())
+          () => new ListBuilder<
+              ApiItemsGetCollection200ResponseSearchMappingInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ItemJsonldItemReadServiceRead)]),
-          () => ListBuilder<ItemJsonldItemReadServiceRead>())
+          () => new ListBuilder<ItemJsonldItemReadServiceRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ItemJsonldProviderReadAddressRead)]),
-          () => ListBuilder<ItemJsonldProviderReadAddressRead>())
+          () => new ListBuilder<ItemJsonldProviderReadAddressRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(TagJsonldProviderReadAddressRead)]),
-          () => ListBuilder<TagJsonldProviderReadAddressRead>())
+          () => new ListBuilder<TagJsonldProviderReadAddressRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ItemProviderReadAddressRead)]),
-          () => ListBuilder<ItemProviderReadAddressRead>())
+          () => new ListBuilder<ItemProviderReadAddressRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(TagProviderReadAddressRead)]),
-          () => ListBuilder<TagProviderReadAddressRead>())
+          () => new ListBuilder<TagProviderReadAddressRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ProviderJsonldProviderReadAddressRead)]),
-          () => ListBuilder<ProviderJsonldProviderReadAddressRead>())
+          () => new ListBuilder<ProviderJsonldProviderReadAddressRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ProviderJsonldTagRead)]),
-          () => ListBuilder<ProviderJsonldTagRead>())
+          () => new ListBuilder<ProviderJsonldTagRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ProviderTagRead)]),
-          () => ListBuilder<ProviderTagRead>())
+          () => new ListBuilder<ProviderTagRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ReservationJsonldReservationRead)]),
-          () => ListBuilder<ReservationJsonldReservationRead>())
+          () => new ListBuilder<ReservationJsonldReservationRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ServiceJsonldServiceRead)]),
-          () => ListBuilder<ServiceJsonldServiceRead>())
+          () => new ListBuilder<ServiceJsonldServiceRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(TagJsonldTagRead)]),
-          () => ListBuilder<TagJsonldTagRead>()))
+          () => new ListBuilder<TagJsonldTagRead>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

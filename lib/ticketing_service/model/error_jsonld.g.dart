@@ -27,7 +27,7 @@ class _$ErrorJsonld extends ErrorJsonld {
   final String? description;
 
   factory _$ErrorJsonld([void Function(ErrorJsonldBuilder)? updates]) =>
-      (ErrorJsonldBuilder()..update(updates))._build();
+      (new ErrorJsonldBuilder()..update(updates))._build();
 
   _$ErrorJsonld._(
       {this.atContext,
@@ -40,12 +40,13 @@ class _$ErrorJsonld extends ErrorJsonld {
       this.type,
       this.description})
       : super._();
+
   @override
   ErrorJsonld rebuild(void Function(ErrorJsonldBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ErrorJsonldBuilder toBuilder() => ErrorJsonldBuilder()..replace(this);
+  ErrorJsonldBuilder toBuilder() => new ErrorJsonldBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -99,7 +100,7 @@ class ErrorJsonldBuilder implements Builder<ErrorJsonld, ErrorJsonldBuilder> {
 
   CommentJsonldCommentReadContextBuilder? _atContext;
   CommentJsonldCommentReadContextBuilder get atContext =>
-      _$this._atContext ??= CommentJsonldCommentReadContextBuilder();
+      _$this._atContext ??= new CommentJsonldCommentReadContextBuilder();
   set atContext(CommentJsonldCommentReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -158,6 +159,7 @@ class ErrorJsonldBuilder implements Builder<ErrorJsonld, ErrorJsonldBuilder> {
 
   @override
   void replace(ErrorJsonld other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ErrorJsonld;
   }
 
@@ -173,7 +175,7 @@ class ErrorJsonldBuilder implements Builder<ErrorJsonld, ErrorJsonldBuilder> {
     _$ErrorJsonld _$result;
     try {
       _$result = _$v ??
-          _$ErrorJsonld._(
+          new _$ErrorJsonld._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -190,7 +192,7 @@ class ErrorJsonldBuilder implements Builder<ErrorJsonld, ErrorJsonldBuilder> {
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'ErrorJsonld', _$failedField, e.toString());
       }
       rethrow;

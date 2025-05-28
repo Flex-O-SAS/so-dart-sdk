@@ -20,7 +20,7 @@ import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collecti
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apilinked_users_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apitags_get_collection200_response.dart';
-import 'package:so_dart_sdk/ticketing_service/model/api_apitickets_get_collection200_response.dart';
+import 'package:so_dart_sdk/ticketing_service/model/api_tickets_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
@@ -56,7 +56,7 @@ part 'serializers.g.dart';
   ApiApicommentsGetCollection200ResponseView,
   ApiApilinkedUsersGetCollection200Response,
   ApiApitagsGetCollection200Response,
-  ApiApiticketsGetCollection200Response,
+  ApiTicketsGetCollection200Response,
   CommentCommentRead,
   CommentCommentWrite,
   CommentJsonldCommentRead,

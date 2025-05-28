@@ -14,10 +14,16 @@ class _$DevicesUnlockPostRequest extends DevicesUnlockPostRequest {
 
   factory _$DevicesUnlockPostRequest(
           [void Function(DevicesUnlockPostRequestBuilder)? updates]) =>
-      (DevicesUnlockPostRequestBuilder()..update(updates))._build();
+      (new DevicesUnlockPostRequestBuilder()..update(updates))._build();
 
   _$DevicesUnlockPostRequest._({required this.code, required this.userId})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        code, r'DevicesUnlockPostRequest', 'code');
+    BuiltValueNullFieldError.checkNotNull(
+        userId, r'DevicesUnlockPostRequest', 'userId');
+  }
+
   @override
   DevicesUnlockPostRequest rebuild(
           void Function(DevicesUnlockPostRequestBuilder) updates) =>
@@ -25,7 +31,7 @@ class _$DevicesUnlockPostRequest extends DevicesUnlockPostRequest {
 
   @override
   DevicesUnlockPostRequestBuilder toBuilder() =>
-      DevicesUnlockPostRequestBuilder()..replace(this);
+      new DevicesUnlockPostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -82,6 +88,7 @@ class DevicesUnlockPostRequestBuilder
 
   @override
   void replace(DevicesUnlockPostRequest other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$DevicesUnlockPostRequest;
   }
 
@@ -95,7 +102,7 @@ class DevicesUnlockPostRequestBuilder
 
   _$DevicesUnlockPostRequest _build() {
     final _$result = _$v ??
-        _$DevicesUnlockPostRequest._(
+        new _$DevicesUnlockPostRequest._(
           code: BuiltValueNullFieldError.checkNotNull(
               code, r'DevicesUnlockPostRequest', 'code'),
           userId: BuiltValueNullFieldError.checkNotNull(

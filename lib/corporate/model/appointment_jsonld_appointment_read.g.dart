@@ -16,12 +16,12 @@ AppointmentJsonldAppointmentReadTypeEnum
     case 'visit':
       return _$appointmentJsonldAppointmentReadTypeEnum_visit;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<AppointmentJsonldAppointmentReadTypeEnum>
-    _$appointmentJsonldAppointmentReadTypeEnumValues = BuiltSet<
+    _$appointmentJsonldAppointmentReadTypeEnumValues = new BuiltSet<
         AppointmentJsonldAppointmentReadTypeEnum>(const <AppointmentJsonldAppointmentReadTypeEnum>[
   _$appointmentJsonldAppointmentReadTypeEnum_visit,
 ]);
@@ -46,12 +46,12 @@ AppointmentJsonldAppointmentReadStatusEnum
     case 'done':
       return _$appointmentJsonldAppointmentReadStatusEnum_done;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<AppointmentJsonldAppointmentReadStatusEnum>
-    _$appointmentJsonldAppointmentReadStatusEnumValues = BuiltSet<
+    _$appointmentJsonldAppointmentReadStatusEnumValues = new BuiltSet<
         AppointmentJsonldAppointmentReadStatusEnum>(const <AppointmentJsonldAppointmentReadStatusEnum>[
   _$appointmentJsonldAppointmentReadStatusEnum_scheduled,
   _$appointmentJsonldAppointmentReadStatusEnum_cancelled,
@@ -60,10 +60,10 @@ final BuiltSet<AppointmentJsonldAppointmentReadStatusEnum>
 
 Serializer<AppointmentJsonldAppointmentReadTypeEnum>
     _$appointmentJsonldAppointmentReadTypeEnumSerializer =
-    _$AppointmentJsonldAppointmentReadTypeEnumSerializer();
+    new _$AppointmentJsonldAppointmentReadTypeEnumSerializer();
 Serializer<AppointmentJsonldAppointmentReadStatusEnum>
     _$appointmentJsonldAppointmentReadStatusEnumSerializer =
-    _$AppointmentJsonldAppointmentReadStatusEnumSerializer();
+    new _$AppointmentJsonldAppointmentReadStatusEnumSerializer();
 
 class _$AppointmentJsonldAppointmentReadTypeEnumSerializer
     implements PrimitiveSerializer<AppointmentJsonldAppointmentReadTypeEnum> {
@@ -168,7 +168,7 @@ class _$AppointmentJsonldAppointmentRead
 
   factory _$AppointmentJsonldAppointmentRead(
           [void Function(AppointmentJsonldAppointmentReadBuilder)? updates]) =>
-      (AppointmentJsonldAppointmentReadBuilder()..update(updates))._build();
+      (new AppointmentJsonldAppointmentReadBuilder()..update(updates))._build();
 
   _$AppointmentJsonldAppointmentRead._(
       {this.atContext,
@@ -188,7 +188,21 @@ class _$AppointmentJsonldAppointmentRead
       this.appointmentClients,
       this.createdAt,
       this.updatedAt})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        organiser, r'AppointmentJsonldAppointmentRead', 'organiser');
+    BuiltValueNullFieldError.checkNotNull(
+        site, r'AppointmentJsonldAppointmentRead', 'site');
+    BuiltValueNullFieldError.checkNotNull(
+        type, r'AppointmentJsonldAppointmentRead', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        status, r'AppointmentJsonldAppointmentRead', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        beginDate, r'AppointmentJsonldAppointmentRead', 'beginDate');
+    BuiltValueNullFieldError.checkNotNull(
+        endDate, r'AppointmentJsonldAppointmentRead', 'endDate');
+  }
+
   @override
   AppointmentJsonldAppointmentRead rebuild(
           void Function(AppointmentJsonldAppointmentReadBuilder) updates) =>
@@ -196,7 +210,7 @@ class _$AppointmentJsonldAppointmentRead
 
   @override
   AppointmentJsonldAppointmentReadBuilder toBuilder() =>
-      AppointmentJsonldAppointmentReadBuilder()..replace(this);
+      new AppointmentJsonldAppointmentReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -277,7 +291,8 @@ class AppointmentJsonldAppointmentReadBuilder
 
   AppointmentJsonldAppointmentReadContextBuilder? _atContext;
   AppointmentJsonldAppointmentReadContextBuilder get atContext =>
-      _$this._atContext ??= AppointmentJsonldAppointmentReadContextBuilder();
+      _$this._atContext ??=
+          new AppointmentJsonldAppointmentReadContextBuilder();
   set atContext(AppointmentJsonldAppointmentReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -340,7 +355,7 @@ class AppointmentJsonldAppointmentReadBuilder
   ListBuilder<AppointmentClientJsonldAppointmentRead>? _appointmentClients;
   ListBuilder<AppointmentClientJsonldAppointmentRead> get appointmentClients =>
       _$this._appointmentClients ??=
-          ListBuilder<AppointmentClientJsonldAppointmentRead>();
+          new ListBuilder<AppointmentClientJsonldAppointmentRead>();
   set appointmentClients(
           ListBuilder<AppointmentClientJsonldAppointmentRead>?
               appointmentClients) =>
@@ -385,6 +400,7 @@ class AppointmentJsonldAppointmentReadBuilder
 
   @override
   void replace(AppointmentJsonldAppointmentRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AppointmentJsonldAppointmentRead;
   }
 
@@ -400,7 +416,7 @@ class AppointmentJsonldAppointmentReadBuilder
     _$AppointmentJsonldAppointmentRead _$result;
     try {
       _$result = _$v ??
-          _$AppointmentJsonldAppointmentRead._(
+          new _$AppointmentJsonldAppointmentRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -434,7 +450,7 @@ class AppointmentJsonldAppointmentReadBuilder
         _$failedField = 'appointmentClients';
         _appointmentClients?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'AppointmentJsonldAppointmentRead', _$failedField, e.toString());
       }
       rethrow;

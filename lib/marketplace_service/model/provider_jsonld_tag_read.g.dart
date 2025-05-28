@@ -20,11 +20,15 @@ class _$ProviderJsonldTagRead extends ProviderJsonldTagRead {
 
   factory _$ProviderJsonldTagRead(
           [void Function(ProviderJsonldTagReadBuilder)? updates]) =>
-      (ProviderJsonldTagReadBuilder()..update(updates))._build();
+      (new ProviderJsonldTagReadBuilder()..update(updates))._build();
 
   _$ProviderJsonldTagRead._(
       {this.atContext, this.atId, this.atType, this.id, required this.name})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        name, r'ProviderJsonldTagRead', 'name');
+  }
+
   @override
   ProviderJsonldTagRead rebuild(
           void Function(ProviderJsonldTagReadBuilder) updates) =>
@@ -32,7 +36,7 @@ class _$ProviderJsonldTagRead extends ProviderJsonldTagRead {
 
   @override
   ProviderJsonldTagReadBuilder toBuilder() =>
-      ProviderJsonldTagReadBuilder()..replace(this);
+      new ProviderJsonldTagReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -76,7 +80,7 @@ class ProviderJsonldTagReadBuilder
   AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
   AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
       _$this._atContext ??=
-          AddressJsonldProviderReadAddressReadContextBuilder();
+          new AddressJsonldProviderReadAddressReadContextBuilder();
   set atContext(
           AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
@@ -116,6 +120,7 @@ class ProviderJsonldTagReadBuilder
 
   @override
   void replace(ProviderJsonldTagRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ProviderJsonldTagRead;
   }
 
@@ -131,7 +136,7 @@ class ProviderJsonldTagReadBuilder
     _$ProviderJsonldTagRead _$result;
     try {
       _$result = _$v ??
-          _$ProviderJsonldTagRead._(
+          new _$ProviderJsonldTagRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -145,7 +150,7 @@ class ProviderJsonldTagReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'ProviderJsonldTagRead', _$failedField, e.toString());
       }
       rethrow;

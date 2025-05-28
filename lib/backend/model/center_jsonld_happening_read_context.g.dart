@@ -17,19 +17,19 @@ CenterJsonldHappeningReadContextHydraEnum
     case 'httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash':
       return _$centerJsonldHappeningReadContextHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<CenterJsonldHappeningReadContextHydraEnum>
-    _$centerJsonldHappeningReadContextHydraEnumValues = BuiltSet<
+    _$centerJsonldHappeningReadContextHydraEnumValues = new BuiltSet<
         CenterJsonldHappeningReadContextHydraEnum>(const <CenterJsonldHappeningReadContextHydraEnum>[
   _$centerJsonldHappeningReadContextHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash,
 ]);
 
 Serializer<CenterJsonldHappeningReadContextHydraEnum>
     _$centerJsonldHappeningReadContextHydraEnumSerializer =
-    _$CenterJsonldHappeningReadContextHydraEnumSerializer();
+    new _$CenterJsonldHappeningReadContextHydraEnumSerializer();
 
 class _$CenterJsonldHappeningReadContextHydraEnumSerializer
     implements PrimitiveSerializer<CenterJsonldHappeningReadContextHydraEnum> {
@@ -70,9 +70,13 @@ class _$CenterJsonldHappeningReadContext
 
   factory _$CenterJsonldHappeningReadContext(
           [void Function(CenterJsonldHappeningReadContextBuilder)? updates]) =>
-      (CenterJsonldHappeningReadContextBuilder()..update(updates))._build();
+      (new CenterJsonldHappeningReadContextBuilder()..update(updates))._build();
 
-  _$CenterJsonldHappeningReadContext._({required this.oneOf}) : super._();
+  _$CenterJsonldHappeningReadContext._({required this.oneOf}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        oneOf, r'CenterJsonldHappeningReadContext', 'oneOf');
+  }
+
   @override
   CenterJsonldHappeningReadContext rebuild(
           void Function(CenterJsonldHappeningReadContextBuilder) updates) =>
@@ -80,7 +84,7 @@ class _$CenterJsonldHappeningReadContext
 
   @override
   CenterJsonldHappeningReadContextBuilder toBuilder() =>
-      CenterJsonldHappeningReadContextBuilder()..replace(this);
+      new CenterJsonldHappeningReadContextBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -129,6 +133,7 @@ class CenterJsonldHappeningReadContextBuilder
 
   @override
   void replace(CenterJsonldHappeningReadContext other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CenterJsonldHappeningReadContext;
   }
 
@@ -142,7 +147,7 @@ class CenterJsonldHappeningReadContextBuilder
 
   _$CenterJsonldHappeningReadContext _build() {
     final _$result = _$v ??
-        _$CenterJsonldHappeningReadContext._(
+        new _$CenterJsonldHappeningReadContext._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
               oneOf, r'CenterJsonldHappeningReadContext', 'oneOf'),
         );

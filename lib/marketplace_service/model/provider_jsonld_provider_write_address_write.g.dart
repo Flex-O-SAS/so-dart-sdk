@@ -32,7 +32,7 @@ class _$ProviderJsonldProviderWriteAddressWrite
   factory _$ProviderJsonldProviderWriteAddressWrite(
           [void Function(ProviderJsonldProviderWriteAddressWriteBuilder)?
               updates]) =>
-      (ProviderJsonldProviderWriteAddressWriteBuilder()..update(updates))
+      (new ProviderJsonldProviderWriteAddressWriteBuilder()..update(updates))
           ._build();
 
   _$ProviderJsonldProviderWriteAddressWrite._(
@@ -46,7 +46,15 @@ class _$ProviderJsonldProviderWriteAddressWrite
       required this.address,
       required this.isActive,
       this.tags})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        name, r'ProviderJsonldProviderWriteAddressWrite', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        address, r'ProviderJsonldProviderWriteAddressWrite', 'address');
+    BuiltValueNullFieldError.checkNotNull(
+        isActive, r'ProviderJsonldProviderWriteAddressWrite', 'isActive');
+  }
+
   @override
   ProviderJsonldProviderWriteAddressWrite rebuild(
           void Function(ProviderJsonldProviderWriteAddressWriteBuilder)
@@ -55,7 +63,7 @@ class _$ProviderJsonldProviderWriteAddressWrite
 
   @override
   ProviderJsonldProviderWriteAddressWriteBuilder toBuilder() =>
-      ProviderJsonldProviderWriteAddressWriteBuilder()..replace(this);
+      new ProviderJsonldProviderWriteAddressWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -144,7 +152,7 @@ class ProviderJsonldProviderWriteAddressWriteBuilder
 
   AddressJsonldProviderWriteAddressWriteBuilder? _address;
   AddressJsonldProviderWriteAddressWriteBuilder get address =>
-      _$this._address ??= AddressJsonldProviderWriteAddressWriteBuilder();
+      _$this._address ??= new AddressJsonldProviderWriteAddressWriteBuilder();
   set address(AddressJsonldProviderWriteAddressWriteBuilder? address) =>
       _$this._address = address;
 
@@ -153,7 +161,7 @@ class ProviderJsonldProviderWriteAddressWriteBuilder
   set isActive(bool? isActive) => _$this._isActive = isActive;
 
   ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= ListBuilder<String>();
+  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   ProviderJsonldProviderWriteAddressWriteBuilder() {
@@ -180,6 +188,7 @@ class ProviderJsonldProviderWriteAddressWriteBuilder
 
   @override
   void replace(ProviderJsonldProviderWriteAddressWrite other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ProviderJsonldProviderWriteAddressWrite;
   }
 
@@ -196,7 +205,7 @@ class ProviderJsonldProviderWriteAddressWriteBuilder
     _$ProviderJsonldProviderWriteAddressWrite _$result;
     try {
       _$result = _$v ??
-          _$ProviderJsonldProviderWriteAddressWrite._(
+          new _$ProviderJsonldProviderWriteAddressWrite._(
             id: id,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'ProviderJsonldProviderWriteAddressWrite', 'name'),
@@ -219,7 +228,7 @@ class ProviderJsonldProviderWriteAddressWriteBuilder
         _$failedField = 'tags';
         _tags?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'ProviderJsonldProviderWriteAddressWrite',
             _$failedField,
             e.toString());

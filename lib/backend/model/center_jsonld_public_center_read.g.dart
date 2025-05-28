@@ -34,7 +34,7 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
 
   factory _$CenterJsonldPublicCenterRead(
           [void Function(CenterJsonldPublicCenterReadBuilder)? updates]) =>
-      (CenterJsonldPublicCenterReadBuilder()..update(updates))._build();
+      (new CenterJsonldPublicCenterReadBuilder()..update(updates))._build();
 
   _$CenterJsonldPublicCenterRead._(
       {this.atId,
@@ -50,6 +50,7 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
       this.country,
       this.id})
       : super._();
+
   @override
   CenterJsonldPublicCenterRead rebuild(
           void Function(CenterJsonldPublicCenterReadBuilder) updates) =>
@@ -57,7 +58,7 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
 
   @override
   CenterJsonldPublicCenterReadBuilder toBuilder() =>
-      CenterJsonldPublicCenterReadBuilder()..replace(this);
+      new CenterJsonldPublicCenterReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -131,7 +132,7 @@ class CenterJsonldPublicCenterReadBuilder
 
   CenterJsonldHappeningReadContextBuilder? _atContext;
   CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= CenterJsonldHappeningReadContextBuilder();
+      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
   set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -149,7 +150,8 @@ class CenterJsonldPublicCenterReadBuilder
 
   ListBuilder<CenterJsonldPublicCenterReadAssetsInner>? _assets;
   ListBuilder<CenterJsonldPublicCenterReadAssetsInner> get assets =>
-      _$this._assets ??= ListBuilder<CenterJsonldPublicCenterReadAssetsInner>();
+      _$this._assets ??=
+          new ListBuilder<CenterJsonldPublicCenterReadAssetsInner>();
   set assets(ListBuilder<CenterJsonldPublicCenterReadAssetsInner>? assets) =>
       _$this._assets = assets;
 
@@ -199,6 +201,7 @@ class CenterJsonldPublicCenterReadBuilder
 
   @override
   void replace(CenterJsonldPublicCenterRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CenterJsonldPublicCenterRead;
   }
 
@@ -214,7 +217,7 @@ class CenterJsonldPublicCenterReadBuilder
     _$CenterJsonldPublicCenterRead _$result;
     try {
       _$result = _$v ??
-          _$CenterJsonldPublicCenterRead._(
+          new _$CenterJsonldPublicCenterRead._(
             atId: atId,
             atType: atType,
             atContext: _atContext?.build(),
@@ -237,7 +240,7 @@ class CenterJsonldPublicCenterReadBuilder
         _$failedField = 'assets';
         _assets?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'CenterJsonldPublicCenterRead', _$failedField, e.toString());
       }
       rethrow;

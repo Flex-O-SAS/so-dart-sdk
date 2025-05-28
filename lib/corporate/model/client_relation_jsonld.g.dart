@@ -16,19 +16,19 @@ ClientRelationJsonldTypeEnum _$clientRelationJsonldTypeEnumValueOf(
     case 'delegationPackageReception':
       return _$clientRelationJsonldTypeEnum_delegationPackageReception;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<ClientRelationJsonldTypeEnum>
-    _$clientRelationJsonldTypeEnumValues =
-    BuiltSet<ClientRelationJsonldTypeEnum>(const <ClientRelationJsonldTypeEnum>[
+    _$clientRelationJsonldTypeEnumValues = new BuiltSet<
+        ClientRelationJsonldTypeEnum>(const <ClientRelationJsonldTypeEnum>[
   _$clientRelationJsonldTypeEnum_delegationPackageReception,
 ]);
 
 Serializer<ClientRelationJsonldTypeEnum>
     _$clientRelationJsonldTypeEnumSerializer =
-    _$ClientRelationJsonldTypeEnumSerializer();
+    new _$ClientRelationJsonldTypeEnumSerializer();
 
 class _$ClientRelationJsonldTypeEnumSerializer
     implements PrimitiveSerializer<ClientRelationJsonldTypeEnum> {
@@ -87,7 +87,7 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
 
   factory _$ClientRelationJsonld(
           [void Function(ClientRelationJsonldBuilder)? updates]) =>
-      (ClientRelationJsonldBuilder()..update(updates))._build();
+      (new ClientRelationJsonldBuilder()..update(updates))._build();
 
   _$ClientRelationJsonld._(
       {this.atContext,
@@ -103,7 +103,17 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
       this.end,
       this.createdAt,
       this.updatedAt})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        client, r'ClientRelationJsonld', 'client');
+    BuiltValueNullFieldError.checkNotNull(
+        clientRelated, r'ClientRelationJsonld', 'clientRelated');
+    BuiltValueNullFieldError.checkNotNull(
+        site, r'ClientRelationJsonld', 'site');
+    BuiltValueNullFieldError.checkNotNull(
+        type, r'ClientRelationJsonld', 'type');
+  }
+
   @override
   ClientRelationJsonld rebuild(
           void Function(ClientRelationJsonldBuilder) updates) =>
@@ -111,7 +121,7 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
 
   @override
   ClientRelationJsonldBuilder toBuilder() =>
-      ClientRelationJsonldBuilder()..replace(this);
+      new ClientRelationJsonldBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -178,7 +188,8 @@ class ClientRelationJsonldBuilder
 
   AppointmentJsonldAppointmentReadContextBuilder? _atContext;
   AppointmentJsonldAppointmentReadContextBuilder get atContext =>
-      _$this._atContext ??= AppointmentJsonldAppointmentReadContextBuilder();
+      _$this._atContext ??=
+          new AppointmentJsonldAppointmentReadContextBuilder();
   set atContext(AppointmentJsonldAppointmentReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -258,6 +269,7 @@ class ClientRelationJsonldBuilder
 
   @override
   void replace(ClientRelationJsonld other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ClientRelationJsonld;
   }
 
@@ -273,7 +285,7 @@ class ClientRelationJsonldBuilder
     _$ClientRelationJsonld _$result;
     try {
       _$result = _$v ??
-          _$ClientRelationJsonld._(
+          new _$ClientRelationJsonld._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -298,7 +310,7 @@ class ClientRelationJsonldBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'ClientRelationJsonld', _$failedField, e.toString());
       }
       rethrow;

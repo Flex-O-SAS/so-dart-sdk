@@ -10,7 +10,7 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/api_util.dart';
-import 'package:so_dart_sdk/ticketing_service/model/api_apitickets_get_collection200_response.dart';
+import 'package:so_dart_sdk/ticketing_service/model/api_tickets_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error.dart';
@@ -27,6 +27,60 @@ class TicketApi {
   final Serializers _serializers;
 
   const TicketApi(this._dio, this._serializers);
+
+  /// Removes the Ticket resource.
+  /// Removes the Ticket resource.
+  ///
+  /// Parameters:
+  /// * [id] - Ticket identifier
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> apiTicketsDeleteItem({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/tickets/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'JWT',
+            'keyName': 'Authorization',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
 
   /// Retrieves the collection of Ticket resources.
   /// Retrieves the collection of Ticket resources.
@@ -73,9 +127,9 @@ class TicketApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ApiApiticketsGetCollection200Response] as data
+  /// Returns a [Future] containing a [Response] with a [ApiTicketsGetCollection200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApiApiticketsGetCollection200Response>> apiApiticketsGetCollection({ 
+  Future<Response<ApiTicketsGetCollection200Response>> apiTicketsGetCollection({ 
     int? page = 1,
     BuiltList<String>? groupsLeftSquareBracketRightSquareBracket,
     String? orderLeftSquareBracketCreatedAtRightSquareBracket = 'asc',
@@ -183,14 +237,14 @@ class TicketApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApiApiticketsGetCollection200Response? _responseData;
+    ApiTicketsGetCollection200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(ApiApiticketsGetCollection200Response),
-      ) as ApiApiticketsGetCollection200Response;
+        specifiedType: const FullType(ApiTicketsGetCollection200Response),
+      ) as ApiTicketsGetCollection200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -202,7 +256,7 @@ class TicketApi {
       );
     }
 
-    return Response<ApiApiticketsGetCollection200Response>(
+    return Response<ApiTicketsGetCollection200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -212,60 +266,6 @@ class TicketApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
-  }
-
-  /// Removes the Ticket resource.
-  /// Removes the Ticket resource.
-  ///
-  /// Parameters:
-  /// * [id] - Ticket identifier
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> apiApiticketsIdDelete({ 
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/tickets/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
-    final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'JWT',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
   }
 
   /// Retrieves a Ticket resource.
@@ -282,7 +282,7 @@ class TicketApi {
   ///
   /// Returns a [Future] containing a [Response] with a [TicketJsonldTicketRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TicketJsonldTicketRead>> apiApiticketsIdGet({ 
+  Future<Response<TicketJsonldTicketRead>> apiTicketsGetItem({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -365,7 +365,7 @@ class TicketApi {
   ///
   /// Returns a [Future] containing a [Response] with a [TicketJsonldTicketRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TicketJsonldTicketRead>> apiApiticketsIdPatch({ 
+  Future<Response<TicketJsonldTicketRead>> apiTicketsPatchItem({ 
     required String id,
     required TicketTicketWrite ticketTicketWrite,
     CancelToken? cancelToken,
@@ -468,7 +468,7 @@ class TicketApi {
   ///
   /// Returns a [Future] containing a [Response] with a [TicketJsonldTicketRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TicketJsonldTicketRead>> apiApiticketsPost({ 
+  Future<Response<TicketJsonldTicketRead>> apiTicketsPostItem({ 
     required TicketJsonldTicketWrite ticketJsonldTicketWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

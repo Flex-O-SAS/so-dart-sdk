@@ -24,7 +24,7 @@ class _$TagJsonldTagRead extends TagJsonldTagRead {
 
   factory _$TagJsonldTagRead(
           [void Function(TagJsonldTagReadBuilder)? updates]) =>
-      (TagJsonldTagReadBuilder()..update(updates))._build();
+      (new TagJsonldTagReadBuilder()..update(updates))._build();
 
   _$TagJsonldTagRead._(
       {this.atContext,
@@ -35,13 +35,14 @@ class _$TagJsonldTagRead extends TagJsonldTagRead {
       this.createdAt,
       this.updatedAt})
       : super._();
+
   @override
   TagJsonldTagRead rebuild(void Function(TagJsonldTagReadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   TagJsonldTagReadBuilder toBuilder() =>
-      TagJsonldTagReadBuilder()..replace(this);
+      new TagJsonldTagReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -90,7 +91,7 @@ class TagJsonldTagReadBuilder
 
   CommentJsonldCommentReadContextBuilder? _atContext;
   CommentJsonldCommentReadContextBuilder get atContext =>
-      _$this._atContext ??= CommentJsonldCommentReadContextBuilder();
+      _$this._atContext ??= new CommentJsonldCommentReadContextBuilder();
   set atContext(CommentJsonldCommentReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -139,6 +140,7 @@ class TagJsonldTagReadBuilder
 
   @override
   void replace(TagJsonldTagRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagJsonldTagRead;
   }
 
@@ -154,7 +156,7 @@ class TagJsonldTagReadBuilder
     _$TagJsonldTagRead _$result;
     try {
       _$result = _$v ??
-          _$TagJsonldTagRead._(
+          new _$TagJsonldTagRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -169,7 +171,7 @@ class TagJsonldTagReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'TagJsonldTagRead', _$failedField, e.toString());
       }
       rethrow;

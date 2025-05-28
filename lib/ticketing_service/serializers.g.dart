@@ -6,14 +6,14 @@ part of 'serializers.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializers _$serializers = (Serializers().toBuilder()
+Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiApicommentsGetCollection200Response.serializer)
       ..add(ApiApicommentsGetCollection200ResponseSearch.serializer)
       ..add(ApiApicommentsGetCollection200ResponseSearchMappingInner.serializer)
       ..add(ApiApicommentsGetCollection200ResponseView.serializer)
       ..add(ApiApilinkedUsersGetCollection200Response.serializer)
       ..add(ApiApitagsGetCollection200Response.serializer)
-      ..add(ApiApiticketsGetCollection200Response.serializer)
+      ..add(ApiTicketsGetCollection200Response.serializer)
       ..add(CommentCommentRead.serializer)
       ..add(CommentCommentWrite.serializer)
       ..add(CommentJsonldCommentRead.serializer)
@@ -49,63 +49,63 @@ Serializers _$serializers = (Serializers().toBuilder()
             const FullType(
                 ApiApicommentsGetCollection200ResponseSearchMappingInner)
           ]),
-          () => ListBuilder<
+          () => new ListBuilder<
               ApiApicommentsGetCollection200ResponseSearchMappingInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(CommentJsonldCommentRead)]),
-          () => ListBuilder<CommentJsonldCommentRead>())
+          () => new ListBuilder<CommentJsonldCommentRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ConstraintViolationJsonViolationsInner)]),
-          () => ListBuilder<ConstraintViolationJsonViolationsInner>())
+          () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ConstraintViolationJsonViolationsInner)]),
-          () => ListBuilder<ConstraintViolationJsonViolationsInner>())
+          () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(LinkedUserJsonldLinkedUserRead)]),
-          () => ListBuilder<LinkedUserJsonldLinkedUserRead>())
+          () => new ListBuilder<LinkedUserJsonldLinkedUserRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(LinkedUserJsonldTicketWrite)]),
-          () => ListBuilder<LinkedUserJsonldTicketWrite>())
+          () => new ListBuilder<LinkedUserJsonldTicketWrite>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(LinkedUserTicketWrite)]),
-          () => ListBuilder<LinkedUserTicketWrite>())
+          () => new ListBuilder<LinkedUserTicketWrite>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(TagJsonldTagRead)]),
-          () => ListBuilder<TagJsonldTagRead>())
+          () => new ListBuilder<TagJsonldTagRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(TicketJsonldTicketRead)]),
-          () => ListBuilder<TicketJsonldTicketRead>()))
+          () => new ListBuilder<TicketJsonldTicketRead>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

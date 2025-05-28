@@ -26,12 +26,12 @@ ReservationJsonldReservationReadPaymentMethodEnum
     case 'voucher':
       return _$reservationJsonldReservationReadPaymentMethodEnum_voucher;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<ReservationJsonldReservationReadPaymentMethodEnum>
-    _$reservationJsonldReservationReadPaymentMethodEnumValues = BuiltSet<
+    _$reservationJsonldReservationReadPaymentMethodEnumValues = new BuiltSet<
         ReservationJsonldReservationReadPaymentMethodEnum>(const <ReservationJsonldReservationReadPaymentMethodEnum>[
   _$reservationJsonldReservationReadPaymentMethodEnum_cb,
   _$reservationJsonldReservationReadPaymentMethodEnum_cash,
@@ -40,7 +40,7 @@ final BuiltSet<ReservationJsonldReservationReadPaymentMethodEnum>
 
 Serializer<ReservationJsonldReservationReadPaymentMethodEnum>
     _$reservationJsonldReservationReadPaymentMethodEnumSerializer =
-    _$ReservationJsonldReservationReadPaymentMethodEnumSerializer();
+    new _$ReservationJsonldReservationReadPaymentMethodEnumSerializer();
 
 class _$ReservationJsonldReservationReadPaymentMethodEnumSerializer
     implements
@@ -108,7 +108,7 @@ class _$ReservationJsonldReservationRead
 
   factory _$ReservationJsonldReservationRead(
           [void Function(ReservationJsonldReservationReadBuilder)? updates]) =>
-      (ReservationJsonldReservationReadBuilder()..update(updates))._build();
+      (new ReservationJsonldReservationReadBuilder()..update(updates))._build();
 
   _$ReservationJsonldReservationRead._(
       {this.atContext,
@@ -124,7 +124,19 @@ class _$ReservationJsonldReservationRead
       this.ticket,
       this.createdAt,
       this.updatedAt})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        item, r'ReservationJsonldReservationRead', 'item');
+    BuiltValueNullFieldError.checkNotNull(
+        author, r'ReservationJsonldReservationRead', 'author');
+    BuiltValueNullFieldError.checkNotNull(
+        quantity, r'ReservationJsonldReservationRead', 'quantity');
+    BuiltValueNullFieldError.checkNotNull(
+        date, r'ReservationJsonldReservationRead', 'date');
+    BuiltValueNullFieldError.checkNotNull(
+        paymentMethod, r'ReservationJsonldReservationRead', 'paymentMethod');
+  }
+
   @override
   ReservationJsonldReservationRead rebuild(
           void Function(ReservationJsonldReservationReadBuilder) updates) =>
@@ -132,7 +144,7 @@ class _$ReservationJsonldReservationRead
 
   @override
   ReservationJsonldReservationReadBuilder toBuilder() =>
-      ReservationJsonldReservationReadBuilder()..replace(this);
+      new ReservationJsonldReservationReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -202,7 +214,7 @@ class ReservationJsonldReservationReadBuilder
   AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
   AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
       _$this._atContext ??=
-          AddressJsonldProviderReadAddressReadContextBuilder();
+          new AddressJsonldProviderReadAddressReadContextBuilder();
   set atContext(
           AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
@@ -285,6 +297,7 @@ class ReservationJsonldReservationReadBuilder
 
   @override
   void replace(ReservationJsonldReservationRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ReservationJsonldReservationRead;
   }
 
@@ -300,7 +313,7 @@ class ReservationJsonldReservationReadBuilder
     _$ReservationJsonldReservationRead _$result;
     try {
       _$result = _$v ??
-          _$ReservationJsonldReservationRead._(
+          new _$ReservationJsonldReservationRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -326,7 +339,7 @@ class ReservationJsonldReservationReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'ReservationJsonldReservationRead', _$failedField, e.toString());
       }
       rethrow;

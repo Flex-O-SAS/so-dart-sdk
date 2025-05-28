@@ -24,12 +24,14 @@ class _$ApiAppointmentsGetCollection200ResponseView
   factory _$ApiAppointmentsGetCollection200ResponseView(
           [void Function(ApiAppointmentsGetCollection200ResponseViewBuilder)?
               updates]) =>
-      (ApiAppointmentsGetCollection200ResponseViewBuilder()..update(updates))
+      (new ApiAppointmentsGetCollection200ResponseViewBuilder()
+            ..update(updates))
           ._build();
 
   _$ApiAppointmentsGetCollection200ResponseView._(
       {this.atId, this.atType, this.first, this.last, this.previous, this.next})
       : super._();
+
   @override
   ApiAppointmentsGetCollection200ResponseView rebuild(
           void Function(ApiAppointmentsGetCollection200ResponseViewBuilder)
@@ -38,7 +40,7 @@ class _$ApiAppointmentsGetCollection200ResponseView
 
   @override
   ApiAppointmentsGetCollection200ResponseViewBuilder toBuilder() =>
-      ApiAppointmentsGetCollection200ResponseViewBuilder()..replace(this);
+      new ApiAppointmentsGetCollection200ResponseViewBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -129,6 +131,7 @@ class ApiAppointmentsGetCollection200ResponseViewBuilder
 
   @override
   void replace(ApiAppointmentsGetCollection200ResponseView other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiAppointmentsGetCollection200ResponseView;
   }
 
@@ -144,7 +147,7 @@ class ApiAppointmentsGetCollection200ResponseViewBuilder
 
   _$ApiAppointmentsGetCollection200ResponseView _build() {
     final _$result = _$v ??
-        _$ApiAppointmentsGetCollection200ResponseView._(
+        new _$ApiAppointmentsGetCollection200ResponseView._(
           atId: atId,
           atType: atType,
           first: first,

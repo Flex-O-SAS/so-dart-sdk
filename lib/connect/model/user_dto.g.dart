@@ -21,7 +21,7 @@ class _$UserDto extends UserDto {
   final String? company;
 
   factory _$UserDto([void Function(UserDtoBuilder)? updates]) =>
-      (UserDtoBuilder()..update(updates))._build();
+      (new UserDtoBuilder()..update(updates))._build();
 
   _$UserDto._(
       {this.email,
@@ -31,12 +31,13 @@ class _$UserDto extends UserDto {
       this.lockers,
       this.company})
       : super._();
+
   @override
   UserDto rebuild(void Function(UserDtoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  UserDtoBuilder toBuilder() => UserDtoBuilder()..replace(this);
+  UserDtoBuilder toBuilder() => new UserDtoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -97,7 +98,7 @@ class UserDtoBuilder implements Builder<UserDto, UserDtoBuilder> {
 
   MapBuilder<String, String>? _lockers;
   MapBuilder<String, String> get lockers =>
-      _$this._lockers ??= MapBuilder<String, String>();
+      _$this._lockers ??= new MapBuilder<String, String>();
   set lockers(MapBuilder<String, String>? lockers) => _$this._lockers = lockers;
 
   String? _company;
@@ -124,6 +125,7 @@ class UserDtoBuilder implements Builder<UserDto, UserDtoBuilder> {
 
   @override
   void replace(UserDto other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$UserDto;
   }
 
@@ -139,7 +141,7 @@ class UserDtoBuilder implements Builder<UserDto, UserDtoBuilder> {
     _$UserDto _$result;
     try {
       _$result = _$v ??
-          _$UserDto._(
+          new _$UserDto._(
             email: email,
             phone: phone,
             firstname: firstname,
@@ -153,7 +155,7 @@ class UserDtoBuilder implements Builder<UserDto, UserDtoBuilder> {
         _$failedField = 'lockers';
         _lockers?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'UserDto', _$failedField, e.toString());
       }
       rethrow;

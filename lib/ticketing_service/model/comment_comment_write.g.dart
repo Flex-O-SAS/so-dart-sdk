@@ -18,14 +18,24 @@ class _$CommentCommentWrite extends CommentCommentWrite {
 
   factory _$CommentCommentWrite(
           [void Function(CommentCommentWriteBuilder)? updates]) =>
-      (CommentCommentWriteBuilder()..update(updates))._build();
+      (new CommentCommentWriteBuilder()..update(updates))._build();
 
   _$CommentCommentWrite._(
       {required this.author,
       required this.description,
       required this.notify,
       required this.ticket})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        author, r'CommentCommentWrite', 'author');
+    BuiltValueNullFieldError.checkNotNull(
+        description, r'CommentCommentWrite', 'description');
+    BuiltValueNullFieldError.checkNotNull(
+        notify, r'CommentCommentWrite', 'notify');
+    BuiltValueNullFieldError.checkNotNull(
+        ticket, r'CommentCommentWrite', 'ticket');
+  }
+
   @override
   CommentCommentWrite rebuild(
           void Function(CommentCommentWriteBuilder) updates) =>
@@ -33,7 +43,7 @@ class _$CommentCommentWrite extends CommentCommentWrite {
 
   @override
   CommentCommentWriteBuilder toBuilder() =>
-      CommentCommentWriteBuilder()..replace(this);
+      new CommentCommentWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -105,6 +115,7 @@ class CommentCommentWriteBuilder
 
   @override
   void replace(CommentCommentWrite other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CommentCommentWrite;
   }
 
@@ -118,7 +129,7 @@ class CommentCommentWriteBuilder
 
   _$CommentCommentWrite _build() {
     final _$result = _$v ??
-        _$CommentCommentWrite._(
+        new _$CommentCommentWrite._(
           author: BuiltValueNullFieldError.checkNotNull(
               author, r'CommentCommentWrite', 'author'),
           description: BuiltValueNullFieldError.checkNotNull(

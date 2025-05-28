@@ -17,19 +17,19 @@ AppointmentJsonldAppointmentReadContextHydraEnum
     case 'httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash':
       return _$appointmentJsonldAppointmentReadContextHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<AppointmentJsonldAppointmentReadContextHydraEnum>
-    _$appointmentJsonldAppointmentReadContextHydraEnumValues = BuiltSet<
+    _$appointmentJsonldAppointmentReadContextHydraEnumValues = new BuiltSet<
         AppointmentJsonldAppointmentReadContextHydraEnum>(const <AppointmentJsonldAppointmentReadContextHydraEnum>[
   _$appointmentJsonldAppointmentReadContextHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash,
 ]);
 
 Serializer<AppointmentJsonldAppointmentReadContextHydraEnum>
     _$appointmentJsonldAppointmentReadContextHydraEnumSerializer =
-    _$AppointmentJsonldAppointmentReadContextHydraEnumSerializer();
+    new _$AppointmentJsonldAppointmentReadContextHydraEnumSerializer();
 
 class _$AppointmentJsonldAppointmentReadContextHydraEnumSerializer
     implements
@@ -72,11 +72,15 @@ class _$AppointmentJsonldAppointmentReadContext
   factory _$AppointmentJsonldAppointmentReadContext(
           [void Function(AppointmentJsonldAppointmentReadContextBuilder)?
               updates]) =>
-      (AppointmentJsonldAppointmentReadContextBuilder()..update(updates))
+      (new AppointmentJsonldAppointmentReadContextBuilder()..update(updates))
           ._build();
 
   _$AppointmentJsonldAppointmentReadContext._({required this.oneOf})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        oneOf, r'AppointmentJsonldAppointmentReadContext', 'oneOf');
+  }
+
   @override
   AppointmentJsonldAppointmentReadContext rebuild(
           void Function(AppointmentJsonldAppointmentReadContextBuilder)
@@ -85,7 +89,7 @@ class _$AppointmentJsonldAppointmentReadContext
 
   @override
   AppointmentJsonldAppointmentReadContextBuilder toBuilder() =>
-      AppointmentJsonldAppointmentReadContextBuilder()..replace(this);
+      new AppointmentJsonldAppointmentReadContextBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -136,6 +140,7 @@ class AppointmentJsonldAppointmentReadContextBuilder
 
   @override
   void replace(AppointmentJsonldAppointmentReadContext other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AppointmentJsonldAppointmentReadContext;
   }
 
@@ -150,7 +155,7 @@ class AppointmentJsonldAppointmentReadContextBuilder
 
   _$AppointmentJsonldAppointmentReadContext _build() {
     final _$result = _$v ??
-        _$AppointmentJsonldAppointmentReadContext._(
+        new _$AppointmentJsonldAppointmentReadContext._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
               oneOf, r'AppointmentJsonldAppointmentReadContext', 'oneOf'),
         );

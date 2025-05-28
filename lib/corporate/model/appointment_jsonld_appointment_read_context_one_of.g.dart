@@ -18,19 +18,20 @@ AppointmentJsonldAppointmentReadContextOneOfHydraEnum
     case 'httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash':
       return _$appointmentJsonldAppointmentReadContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<AppointmentJsonldAppointmentReadContextOneOfHydraEnum>
-    _$appointmentJsonldAppointmentReadContextOneOfHydraEnumValues = BuiltSet<
+    _$appointmentJsonldAppointmentReadContextOneOfHydraEnumValues =
+    new BuiltSet<
         AppointmentJsonldAppointmentReadContextOneOfHydraEnum>(const <AppointmentJsonldAppointmentReadContextOneOfHydraEnum>[
   _$appointmentJsonldAppointmentReadContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash,
 ]);
 
 Serializer<AppointmentJsonldAppointmentReadContextOneOfHydraEnum>
     _$appointmentJsonldAppointmentReadContextOneOfHydraEnumSerializer =
-    _$AppointmentJsonldAppointmentReadContextOneOfHydraEnumSerializer();
+    new _$AppointmentJsonldAppointmentReadContextOneOfHydraEnumSerializer();
 
 class _$AppointmentJsonldAppointmentReadContextOneOfHydraEnumSerializer
     implements
@@ -77,12 +78,19 @@ class _$AppointmentJsonldAppointmentReadContextOneOf
   factory _$AppointmentJsonldAppointmentReadContextOneOf(
           [void Function(AppointmentJsonldAppointmentReadContextOneOfBuilder)?
               updates]) =>
-      (AppointmentJsonldAppointmentReadContextOneOfBuilder()..update(updates))
+      (new AppointmentJsonldAppointmentReadContextOneOfBuilder()
+            ..update(updates))
           ._build();
 
   _$AppointmentJsonldAppointmentReadContextOneOf._(
       {required this.atVocab, required this.hydra})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atVocab, r'AppointmentJsonldAppointmentReadContextOneOf', 'atVocab');
+    BuiltValueNullFieldError.checkNotNull(
+        hydra, r'AppointmentJsonldAppointmentReadContextOneOf', 'hydra');
+  }
+
   @override
   AppointmentJsonldAppointmentReadContextOneOf rebuild(
           void Function(AppointmentJsonldAppointmentReadContextOneOfBuilder)
@@ -91,7 +99,7 @@ class _$AppointmentJsonldAppointmentReadContextOneOf
 
   @override
   AppointmentJsonldAppointmentReadContextOneOfBuilder toBuilder() =>
-      AppointmentJsonldAppointmentReadContextOneOfBuilder()..replace(this);
+      new AppointmentJsonldAppointmentReadContextOneOfBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -152,6 +160,7 @@ class AppointmentJsonldAppointmentReadContextOneOfBuilder
 
   @override
   void replace(AppointmentJsonldAppointmentReadContextOneOf other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AppointmentJsonldAppointmentReadContextOneOf;
   }
 
@@ -167,7 +176,7 @@ class AppointmentJsonldAppointmentReadContextOneOfBuilder
 
   _$AppointmentJsonldAppointmentReadContextOneOf _build() {
     final _$result = _$v ??
-        _$AppointmentJsonldAppointmentReadContextOneOf._(
+        new _$AppointmentJsonldAppointmentReadContextOneOf._(
           atVocab: BuiltValueNullFieldError.checkNotNull(atVocab,
               r'AppointmentJsonldAppointmentReadContextOneOf', 'atVocab'),
           hydra: BuiltValueNullFieldError.checkNotNull(

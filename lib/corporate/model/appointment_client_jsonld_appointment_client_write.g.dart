@@ -37,12 +37,13 @@ AppointmentClientJsonldAppointmentClientWriteStatusEnum
     case 'absent':
       return _$appointmentClientJsonldAppointmentClientWriteStatusEnum_absent;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<AppointmentClientJsonldAppointmentClientWriteStatusEnum>
-    _$appointmentClientJsonldAppointmentClientWriteStatusEnumValues = BuiltSet<
+    _$appointmentClientJsonldAppointmentClientWriteStatusEnumValues =
+    new BuiltSet<
         AppointmentClientJsonldAppointmentClientWriteStatusEnum>(const <AppointmentClientJsonldAppointmentClientWriteStatusEnum>[
   _$appointmentClientJsonldAppointmentClientWriteStatusEnum_pending,
   _$appointmentClientJsonldAppointmentClientWriteStatusEnum_accepted,
@@ -53,7 +54,7 @@ final BuiltSet<AppointmentClientJsonldAppointmentClientWriteStatusEnum>
 
 Serializer<AppointmentClientJsonldAppointmentClientWriteStatusEnum>
     _$appointmentClientJsonldAppointmentClientWriteStatusEnumSerializer =
-    _$AppointmentClientJsonldAppointmentClientWriteStatusEnumSerializer();
+    new _$AppointmentClientJsonldAppointmentClientWriteStatusEnumSerializer();
 
 class _$AppointmentClientJsonldAppointmentClientWriteStatusEnumSerializer
     implements
@@ -116,7 +117,8 @@ class _$AppointmentClientJsonldAppointmentClientWrite
   factory _$AppointmentClientJsonldAppointmentClientWrite(
           [void Function(AppointmentClientJsonldAppointmentClientWriteBuilder)?
               updates]) =>
-      (AppointmentClientJsonldAppointmentClientWriteBuilder()..update(updates))
+      (new AppointmentClientJsonldAppointmentClientWriteBuilder()
+            ..update(updates))
           ._build();
 
   _$AppointmentClientJsonldAppointmentClientWrite._(
@@ -127,7 +129,13 @@ class _$AppointmentClientJsonldAppointmentClientWrite
       this.comment,
       this.responseDate,
       this.lastSentInvitationDate})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        email, r'AppointmentClientJsonldAppointmentClientWrite', 'email');
+    BuiltValueNullFieldError.checkNotNull(
+        status, r'AppointmentClientJsonldAppointmentClientWrite', 'status');
+  }
+
   @override
   AppointmentClientJsonldAppointmentClientWrite rebuild(
           void Function(AppointmentClientJsonldAppointmentClientWriteBuilder)
@@ -136,7 +144,7 @@ class _$AppointmentClientJsonldAppointmentClientWrite
 
   @override
   AppointmentClientJsonldAppointmentClientWriteBuilder toBuilder() =>
-      AppointmentClientJsonldAppointmentClientWriteBuilder()..replace(this);
+      new AppointmentClientJsonldAppointmentClientWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -238,6 +246,7 @@ class AppointmentClientJsonldAppointmentClientWriteBuilder
 
   @override
   void replace(AppointmentClientJsonldAppointmentClientWrite other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AppointmentClientJsonldAppointmentClientWrite;
   }
 
@@ -253,7 +262,7 @@ class AppointmentClientJsonldAppointmentClientWriteBuilder
 
   _$AppointmentClientJsonldAppointmentClientWrite _build() {
     final _$result = _$v ??
-        _$AppointmentClientJsonldAppointmentClientWrite._(
+        new _$AppointmentClientJsonldAppointmentClientWrite._(
           appointment: appointment,
           email: BuiltValueNullFieldError.checkNotNull(
               email, r'AppointmentClientJsonldAppointmentClientWrite', 'email'),

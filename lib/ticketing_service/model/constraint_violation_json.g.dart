@@ -22,7 +22,7 @@ class _$ConstraintViolationJson extends ConstraintViolationJson {
 
   factory _$ConstraintViolationJson(
           [void Function(ConstraintViolationJsonBuilder)? updates]) =>
-      (ConstraintViolationJsonBuilder()..update(updates))._build();
+      (new ConstraintViolationJsonBuilder()..update(updates))._build();
 
   _$ConstraintViolationJson._(
       {this.status,
@@ -32,6 +32,7 @@ class _$ConstraintViolationJson extends ConstraintViolationJson {
       this.title,
       this.instance})
       : super._();
+
   @override
   ConstraintViolationJson rebuild(
           void Function(ConstraintViolationJsonBuilder) updates) =>
@@ -39,7 +40,7 @@ class _$ConstraintViolationJson extends ConstraintViolationJson {
 
   @override
   ConstraintViolationJsonBuilder toBuilder() =>
-      ConstraintViolationJsonBuilder()..replace(this);
+      new ConstraintViolationJsonBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -91,7 +92,7 @@ class ConstraintViolationJsonBuilder
   ListBuilder<ConstraintViolationJsonViolationsInner>? _violations;
   ListBuilder<ConstraintViolationJsonViolationsInner> get violations =>
       _$this._violations ??=
-          ListBuilder<ConstraintViolationJsonViolationsInner>();
+          new ListBuilder<ConstraintViolationJsonViolationsInner>();
   set violations(
           ListBuilder<ConstraintViolationJsonViolationsInner>? violations) =>
       _$this._violations = violations;
@@ -132,6 +133,7 @@ class ConstraintViolationJsonBuilder
 
   @override
   void replace(ConstraintViolationJson other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ConstraintViolationJson;
   }
 
@@ -147,7 +149,7 @@ class ConstraintViolationJsonBuilder
     _$ConstraintViolationJson _$result;
     try {
       _$result = _$v ??
-          _$ConstraintViolationJson._(
+          new _$ConstraintViolationJson._(
             status: status,
             violations: _violations?.build(),
             detail: detail,
@@ -161,7 +163,7 @@ class ConstraintViolationJsonBuilder
         _$failedField = 'violations';
         _violations?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'ConstraintViolationJson', _$failedField, e.toString());
       }
       rethrow;

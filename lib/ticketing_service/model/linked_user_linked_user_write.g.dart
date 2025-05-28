@@ -14,10 +14,16 @@ class _$LinkedUserLinkedUserWrite extends LinkedUserLinkedUserWrite {
 
   factory _$LinkedUserLinkedUserWrite(
           [void Function(LinkedUserLinkedUserWriteBuilder)? updates]) =>
-      (LinkedUserLinkedUserWriteBuilder()..update(updates))._build();
+      (new LinkedUserLinkedUserWriteBuilder()..update(updates))._build();
 
   _$LinkedUserLinkedUserWrite._({required this.ticket, required this.user})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        ticket, r'LinkedUserLinkedUserWrite', 'ticket');
+    BuiltValueNullFieldError.checkNotNull(
+        user, r'LinkedUserLinkedUserWrite', 'user');
+  }
+
   @override
   LinkedUserLinkedUserWrite rebuild(
           void Function(LinkedUserLinkedUserWriteBuilder) updates) =>
@@ -25,7 +31,7 @@ class _$LinkedUserLinkedUserWrite extends LinkedUserLinkedUserWrite {
 
   @override
   LinkedUserLinkedUserWriteBuilder toBuilder() =>
-      LinkedUserLinkedUserWriteBuilder()..replace(this);
+      new LinkedUserLinkedUserWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -82,6 +88,7 @@ class LinkedUserLinkedUserWriteBuilder
 
   @override
   void replace(LinkedUserLinkedUserWrite other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LinkedUserLinkedUserWrite;
   }
 
@@ -95,7 +102,7 @@ class LinkedUserLinkedUserWriteBuilder
 
   _$LinkedUserLinkedUserWrite _build() {
     final _$result = _$v ??
-        _$LinkedUserLinkedUserWrite._(
+        new _$LinkedUserLinkedUserWrite._(
           ticket: BuiltValueNullFieldError.checkNotNull(
               ticket, r'LinkedUserLinkedUserWrite', 'ticket'),
           user: BuiltValueNullFieldError.checkNotNull(

@@ -11,15 +11,16 @@ class _$TagTagWrite extends TagTagWrite {
   final String? name;
 
   factory _$TagTagWrite([void Function(TagTagWriteBuilder)? updates]) =>
-      (TagTagWriteBuilder()..update(updates))._build();
+      (new TagTagWriteBuilder()..update(updates))._build();
 
   _$TagTagWrite._({this.name}) : super._();
+
   @override
   TagTagWrite rebuild(void Function(TagTagWriteBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  TagTagWriteBuilder toBuilder() => TagTagWriteBuilder()..replace(this);
+  TagTagWriteBuilder toBuilder() => new TagTagWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -64,6 +65,7 @@ class TagTagWriteBuilder implements Builder<TagTagWrite, TagTagWriteBuilder> {
 
   @override
   void replace(TagTagWrite other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagTagWrite;
   }
 
@@ -77,7 +79,7 @@ class TagTagWriteBuilder implements Builder<TagTagWrite, TagTagWriteBuilder> {
 
   _$TagTagWrite _build() {
     final _$result = _$v ??
-        _$TagTagWrite._(
+        new _$TagTagWrite._(
           name: name,
         );
     replace(_$result);

@@ -29,7 +29,7 @@ class _$EnterpriseJsonldIndividualSearch
 
   factory _$EnterpriseJsonldIndividualSearch(
           [void Function(EnterpriseJsonldIndividualSearchBuilder)? updates]) =>
-      (EnterpriseJsonldIndividualSearchBuilder()..update(updates))._build();
+      (new EnterpriseJsonldIndividualSearchBuilder()..update(updates))._build();
 
   _$EnterpriseJsonldIndividualSearch._(
       {this.atContext,
@@ -42,6 +42,7 @@ class _$EnterpriseJsonldIndividualSearch
       this.reference,
       this.id})
       : super._();
+
   @override
   EnterpriseJsonldIndividualSearch rebuild(
           void Function(EnterpriseJsonldIndividualSearchBuilder) updates) =>
@@ -49,7 +50,7 @@ class _$EnterpriseJsonldIndividualSearch
 
   @override
   EnterpriseJsonldIndividualSearchBuilder toBuilder() =>
-      EnterpriseJsonldIndividualSearchBuilder()..replace(this);
+      new EnterpriseJsonldIndividualSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -106,7 +107,7 @@ class EnterpriseJsonldIndividualSearchBuilder
 
   CenterJsonldHappeningReadContextBuilder? _atContext;
   CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= CenterJsonldHappeningReadContextBuilder();
+      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
   set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -165,6 +166,7 @@ class EnterpriseJsonldIndividualSearchBuilder
 
   @override
   void replace(EnterpriseJsonldIndividualSearch other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$EnterpriseJsonldIndividualSearch;
   }
 
@@ -180,7 +182,7 @@ class EnterpriseJsonldIndividualSearchBuilder
     _$EnterpriseJsonldIndividualSearch _$result;
     try {
       _$result = _$v ??
-          _$EnterpriseJsonldIndividualSearch._(
+          new _$EnterpriseJsonldIndividualSearch._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -197,7 +199,7 @@ class EnterpriseJsonldIndividualSearchBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'EnterpriseJsonldIndividualSearch', _$failedField, e.toString());
       }
       rethrow;

@@ -22,12 +22,13 @@ class _$MenuListDtoMenusInnerItemsInnerItemsInner
   factory _$MenuListDtoMenusInnerItemsInnerItemsInner(
           [void Function(MenuListDtoMenusInnerItemsInnerItemsInnerBuilder)?
               updates]) =>
-      (MenuListDtoMenusInnerItemsInnerItemsInnerBuilder()..update(updates))
+      (new MenuListDtoMenusInnerItemsInnerItemsInnerBuilder()..update(updates))
           ._build();
 
   _$MenuListDtoMenusInnerItemsInnerItemsInner._(
       {this.id, this.text, this.price, this.comment, this.allergen})
       : super._();
+
   @override
   MenuListDtoMenusInnerItemsInnerItemsInner rebuild(
           void Function(MenuListDtoMenusInnerItemsInnerItemsInnerBuilder)
@@ -36,7 +37,7 @@ class _$MenuListDtoMenusInnerItemsInnerItemsInner
 
   @override
   MenuListDtoMenusInnerItemsInnerItemsInnerBuilder toBuilder() =>
-      MenuListDtoMenusInnerItemsInnerItemsInnerBuilder()..replace(this);
+      new MenuListDtoMenusInnerItemsInnerItemsInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -98,7 +99,7 @@ class MenuListDtoMenusInnerItemsInnerItemsInnerBuilder
 
   ListBuilder<String>? _allergen;
   ListBuilder<String> get allergen =>
-      _$this._allergen ??= ListBuilder<String>();
+      _$this._allergen ??= new ListBuilder<String>();
   set allergen(ListBuilder<String>? allergen) => _$this._allergen = allergen;
 
   MenuListDtoMenusInnerItemsInnerItemsInnerBuilder() {
@@ -120,6 +121,7 @@ class MenuListDtoMenusInnerItemsInnerItemsInnerBuilder
 
   @override
   void replace(MenuListDtoMenusInnerItemsInnerItemsInner other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$MenuListDtoMenusInnerItemsInnerItemsInner;
   }
 
@@ -137,7 +139,7 @@ class MenuListDtoMenusInnerItemsInnerItemsInnerBuilder
     _$MenuListDtoMenusInnerItemsInnerItemsInner _$result;
     try {
       _$result = _$v ??
-          _$MenuListDtoMenusInnerItemsInnerItemsInner._(
+          new _$MenuListDtoMenusInnerItemsInnerItemsInner._(
             id: id,
             text: text,
             price: price,
@@ -150,7 +152,7 @@ class MenuListDtoMenusInnerItemsInnerItemsInnerBuilder
         _$failedField = 'allergen';
         _allergen?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'MenuListDtoMenusInnerItemsInnerItemsInner',
             _$failedField,
             e.toString());

@@ -21,13 +21,14 @@ class _$ApiItemsGetCollection200ResponseSearchMappingInner
           [void Function(
                   ApiItemsGetCollection200ResponseSearchMappingInnerBuilder)?
               updates]) =>
-      (ApiItemsGetCollection200ResponseSearchMappingInnerBuilder()
+      (new ApiItemsGetCollection200ResponseSearchMappingInnerBuilder()
             ..update(updates))
           ._build();
 
   _$ApiItemsGetCollection200ResponseSearchMappingInner._(
       {this.atType, this.variable, this.property, this.required_})
       : super._();
+
   @override
   ApiItemsGetCollection200ResponseSearchMappingInner rebuild(
           void Function(
@@ -37,7 +38,7 @@ class _$ApiItemsGetCollection200ResponseSearchMappingInner
 
   @override
   ApiItemsGetCollection200ResponseSearchMappingInnerBuilder toBuilder() =>
-      ApiItemsGetCollection200ResponseSearchMappingInnerBuilder()
+      new ApiItemsGetCollection200ResponseSearchMappingInnerBuilder()
         ..replace(this);
 
   @override
@@ -113,6 +114,7 @@ class ApiItemsGetCollection200ResponseSearchMappingInnerBuilder
 
   @override
   void replace(ApiItemsGetCollection200ResponseSearchMappingInner other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiItemsGetCollection200ResponseSearchMappingInner;
   }
 
@@ -128,7 +130,7 @@ class ApiItemsGetCollection200ResponseSearchMappingInnerBuilder
 
   _$ApiItemsGetCollection200ResponseSearchMappingInner _build() {
     final _$result = _$v ??
-        _$ApiItemsGetCollection200ResponseSearchMappingInner._(
+        new _$ApiItemsGetCollection200ResponseSearchMappingInner._(
           atType: atType,
           variable: variable,
           property: property,

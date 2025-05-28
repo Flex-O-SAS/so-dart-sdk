@@ -21,12 +21,14 @@ class _$ApiApidocumentsGetCollection200ResponseSearch
   factory _$ApiApidocumentsGetCollection200ResponseSearch(
           [void Function(ApiApidocumentsGetCollection200ResponseSearchBuilder)?
               updates]) =>
-      (ApiApidocumentsGetCollection200ResponseSearchBuilder()..update(updates))
+      (new ApiApidocumentsGetCollection200ResponseSearchBuilder()
+            ..update(updates))
           ._build();
 
   _$ApiApidocumentsGetCollection200ResponseSearch._(
       {this.atType, this.template, this.variableRepresentation, this.mapping})
       : super._();
+
   @override
   ApiApidocumentsGetCollection200ResponseSearch rebuild(
           void Function(ApiApidocumentsGetCollection200ResponseSearchBuilder)
@@ -35,7 +37,7 @@ class _$ApiApidocumentsGetCollection200ResponseSearch
 
   @override
   ApiApidocumentsGetCollection200ResponseSearchBuilder toBuilder() =>
-      ApiApidocumentsGetCollection200ResponseSearchBuilder()..replace(this);
+      new ApiApidocumentsGetCollection200ResponseSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -92,7 +94,7 @@ class ApiApidocumentsGetCollection200ResponseSearchBuilder
   ListBuilder<ApiApidocumentsGetCollection200ResponseSearchMappingInner>?
       _mapping;
   ListBuilder<ApiApidocumentsGetCollection200ResponseSearchMappingInner>
-      get mapping => _$this._mapping ??= ListBuilder<
+      get mapping => _$this._mapping ??= new ListBuilder<
           ApiApidocumentsGetCollection200ResponseSearchMappingInner>();
   set mapping(
           ListBuilder<
@@ -118,6 +120,7 @@ class ApiApidocumentsGetCollection200ResponseSearchBuilder
 
   @override
   void replace(ApiApidocumentsGetCollection200ResponseSearch other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiApidocumentsGetCollection200ResponseSearch;
   }
 
@@ -135,7 +138,7 @@ class ApiApidocumentsGetCollection200ResponseSearchBuilder
     _$ApiApidocumentsGetCollection200ResponseSearch _$result;
     try {
       _$result = _$v ??
-          _$ApiApidocumentsGetCollection200ResponseSearch._(
+          new _$ApiApidocumentsGetCollection200ResponseSearch._(
             atType: atType,
             template: template,
             variableRepresentation: variableRepresentation,
@@ -147,7 +150,7 @@ class ApiApidocumentsGetCollection200ResponseSearchBuilder
         _$failedField = 'mapping';
         _mapping?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'ApiApidocumentsGetCollection200ResponseSearch',
             _$failedField,
             e.toString());

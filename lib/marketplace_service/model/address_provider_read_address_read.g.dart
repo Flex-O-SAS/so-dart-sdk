@@ -20,7 +20,7 @@ class _$AddressProviderReadAddressRead extends AddressProviderReadAddressRead {
 
   factory _$AddressProviderReadAddressRead(
           [void Function(AddressProviderReadAddressReadBuilder)? updates]) =>
-      (AddressProviderReadAddressReadBuilder()..update(updates))._build();
+      (new AddressProviderReadAddressReadBuilder()..update(updates))._build();
 
   _$AddressProviderReadAddressRead._(
       {this.id,
@@ -28,7 +28,17 @@ class _$AddressProviderReadAddressRead extends AddressProviderReadAddressRead {
       required this.zipcode,
       required this.city,
       required this.country})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        address, r'AddressProviderReadAddressRead', 'address');
+    BuiltValueNullFieldError.checkNotNull(
+        zipcode, r'AddressProviderReadAddressRead', 'zipcode');
+    BuiltValueNullFieldError.checkNotNull(
+        city, r'AddressProviderReadAddressRead', 'city');
+    BuiltValueNullFieldError.checkNotNull(
+        country, r'AddressProviderReadAddressRead', 'country');
+  }
+
   @override
   AddressProviderReadAddressRead rebuild(
           void Function(AddressProviderReadAddressReadBuilder) updates) =>
@@ -36,7 +46,7 @@ class _$AddressProviderReadAddressRead extends AddressProviderReadAddressRead {
 
   @override
   AddressProviderReadAddressReadBuilder toBuilder() =>
-      AddressProviderReadAddressReadBuilder()..replace(this);
+      new AddressProviderReadAddressReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -118,6 +128,7 @@ class AddressProviderReadAddressReadBuilder
 
   @override
   void replace(AddressProviderReadAddressRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AddressProviderReadAddressRead;
   }
 
@@ -131,7 +142,7 @@ class AddressProviderReadAddressReadBuilder
 
   _$AddressProviderReadAddressRead _build() {
     final _$result = _$v ??
-        _$AddressProviderReadAddressRead._(
+        new _$AddressProviderReadAddressRead._(
           id: id,
           address: BuiltValueNullFieldError.checkNotNull(
               address, r'AddressProviderReadAddressRead', 'address'),

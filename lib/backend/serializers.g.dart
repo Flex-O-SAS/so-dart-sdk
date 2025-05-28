@@ -6,7 +6,7 @@ part of 'serializers.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializers _$serializers = (Serializers().toBuilder()
+Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiCentersGetCollection200Response.serializer)
       ..add(ApiCentersGetCollection200ResponseSearch.serializer)
       ..add(ApiCentersGetCollection200ResponseSearchMappingInner.serializer)
@@ -40,64 +40,67 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList, const [
             const FullType(ApiCentersGetCollection200ResponseSearchMappingInner)
           ]),
-          () => ListBuilder<
+          () => new ListBuilder<
               ApiCentersGetCollection200ResponseSearchMappingInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(CenterJsonldCenterSearch)]),
-          () => ListBuilder<CenterJsonldCenterSearch>())
+          () => new ListBuilder<CenterJsonldCenterSearch>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(CenterJsonldPublicCenterRead)]),
-          () => ListBuilder<CenterJsonldPublicCenterRead>())
+          () => new ListBuilder<CenterJsonldPublicCenterRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(CenterJsonldPublicCenterReadAssetsInner)]),
-          () => ListBuilder<CenterJsonldPublicCenterReadAssetsInner>())
+          () => new ListBuilder<CenterJsonldPublicCenterReadAssetsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead)
           ]),
-          () => ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>())
+          () =>
+              new ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead)
           ]),
-          () => ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>())
+          () =>
+              new ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(EnterpriseJsonldIndividualSearch)]),
-          () => ListBuilder<EnterpriseJsonldIndividualSearch>())
+          () => new ListBuilder<EnterpriseJsonldIndividualSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(HappeningJsonldHappeningSearch)]),
-          () => ListBuilder<HappeningJsonldHappeningSearch>())
+          () => new ListBuilder<HappeningJsonldHappeningSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(HappeningStaffFeedBackJsonldHappeningRead)
           ]),
-          () => ListBuilder<HappeningStaffFeedBackJsonldHappeningRead>())
+          () => new ListBuilder<HappeningStaffFeedBackJsonldHappeningRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(HappeningStaffFeedBackJsonldHappeningSearch)
           ]),
-          () => ListBuilder<HappeningStaffFeedBackJsonldHappeningSearch>())
+          () => new ListBuilder<HappeningStaffFeedBackJsonldHappeningSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(IndividualJsonldEnterpriseSearchEnterpriseRead)
           ]),
-          () => ListBuilder<IndividualJsonldEnterpriseSearchEnterpriseRead>())
+          () =>
+              new ListBuilder<IndividualJsonldEnterpriseSearchEnterpriseRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(IndividualJsonldIndividualSearch)]),
-          () => ListBuilder<IndividualJsonldIndividualSearch>())
+          () => new ListBuilder<IndividualJsonldIndividualSearch>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(StaffJsonldStaffSearch)]),
-          () => ListBuilder<StaffJsonldStaffSearch>())
+          () => new ListBuilder<StaffJsonldStaffSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>()))
+          () => new ListBuilder<String>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

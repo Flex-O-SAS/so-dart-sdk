@@ -30,12 +30,12 @@ TicketJsonldTicketReadStatusEnum _$ticketJsonldTicketReadStatusEnumValueOf(
     case 'cancelled':
       return _$ticketJsonldTicketReadStatusEnum_cancelled;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<TicketJsonldTicketReadStatusEnum>
-    _$ticketJsonldTicketReadStatusEnumValues = BuiltSet<
+    _$ticketJsonldTicketReadStatusEnumValues = new BuiltSet<
         TicketJsonldTicketReadStatusEnum>(const <TicketJsonldTicketReadStatusEnum>[
   _$ticketJsonldTicketReadStatusEnum_created,
   _$ticketJsonldTicketReadStatusEnum_inProgress,
@@ -45,7 +45,7 @@ final BuiltSet<TicketJsonldTicketReadStatusEnum>
 
 Serializer<TicketJsonldTicketReadStatusEnum>
     _$ticketJsonldTicketReadStatusEnumSerializer =
-    _$TicketJsonldTicketReadStatusEnumSerializer();
+    new _$TicketJsonldTicketReadStatusEnumSerializer();
 
 class _$TicketJsonldTicketReadStatusEnumSerializer
     implements PrimitiveSerializer<TicketJsonldTicketReadStatusEnum> {
@@ -83,11 +83,11 @@ class _$TicketJsonldTicketReadStatusEnumSerializer
 
 class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   @override
-  final CommentJsonldCommentReadContext? atContext;
-  @override
   final String? atId;
   @override
   final String? atType;
+  @override
+  final CommentJsonldCommentReadContext? atContext;
   @override
   final int? id;
   @override
@@ -123,12 +123,12 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
 
   factory _$TicketJsonldTicketRead(
           [void Function(TicketJsonldTicketReadBuilder)? updates]) =>
-      (TicketJsonldTicketReadBuilder()..update(updates))._build();
+      (new TicketJsonldTicketReadBuilder()..update(updates))._build();
 
   _$TicketJsonldTicketRead._(
-      {this.atContext,
-      this.atId,
+      {this.atId,
       this.atType,
+      this.atContext,
       this.id,
       required this.title,
       required this.startDate,
@@ -145,7 +145,21 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
       this.linkedUsers,
       this.tags,
       this.comments})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        title, r'TicketJsonldTicketRead', 'title');
+    BuiltValueNullFieldError.checkNotNull(
+        startDate, r'TicketJsonldTicketRead', 'startDate');
+    BuiltValueNullFieldError.checkNotNull(
+        description, r'TicketJsonldTicketRead', 'description');
+    BuiltValueNullFieldError.checkNotNull(
+        author, r'TicketJsonldTicketRead', 'author');
+    BuiltValueNullFieldError.checkNotNull(
+        status, r'TicketJsonldTicketRead', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        site, r'TicketJsonldTicketRead', 'site');
+  }
+
   @override
   TicketJsonldTicketRead rebuild(
           void Function(TicketJsonldTicketReadBuilder) updates) =>
@@ -153,15 +167,15 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
 
   @override
   TicketJsonldTicketReadBuilder toBuilder() =>
-      TicketJsonldTicketReadBuilder()..replace(this);
+      new TicketJsonldTicketReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TicketJsonldTicketRead &&
-        atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
+        atContext == other.atContext &&
         id == other.id &&
         title == other.title &&
         startDate == other.startDate &&
@@ -183,9 +197,9 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
+    _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jc(_$hash, startDate.hashCode);
@@ -209,9 +223,9 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TicketJsonldTicketRead')
-          ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
+          ..add('atContext', atContext)
           ..add('id', id)
           ..add('title', title)
           ..add('startDate', startDate)
@@ -236,12 +250,6 @@ class TicketJsonldTicketReadBuilder
     implements Builder<TicketJsonldTicketRead, TicketJsonldTicketReadBuilder> {
   _$TicketJsonldTicketRead? _$v;
 
-  CommentJsonldCommentReadContextBuilder? _atContext;
-  CommentJsonldCommentReadContextBuilder get atContext =>
-      _$this._atContext ??= CommentJsonldCommentReadContextBuilder();
-  set atContext(CommentJsonldCommentReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
   String? _atId;
   String? get atId => _$this._atId;
   set atId(String? atId) => _$this._atId = atId;
@@ -249,6 +257,12 @@ class TicketJsonldTicketReadBuilder
   String? _atType;
   String? get atType => _$this._atType;
   set atType(String? atType) => _$this._atType = atType;
+
+  CommentJsonldCommentReadContextBuilder? _atContext;
+  CommentJsonldCommentReadContextBuilder get atContext =>
+      _$this._atContext ??= new CommentJsonldCommentReadContextBuilder();
+  set atContext(CommentJsonldCommentReadContextBuilder? atContext) =>
+      _$this._atContext = atContext;
 
   int? _id;
   int? get id => _$this._id;
@@ -305,17 +319,17 @@ class TicketJsonldTicketReadBuilder
 
   ListBuilder<String>? _linkedUsers;
   ListBuilder<String> get linkedUsers =>
-      _$this._linkedUsers ??= ListBuilder<String>();
+      _$this._linkedUsers ??= new ListBuilder<String>();
   set linkedUsers(ListBuilder<String>? linkedUsers) =>
       _$this._linkedUsers = linkedUsers;
 
   ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= ListBuilder<String>();
+  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   ListBuilder<String>? _comments;
   ListBuilder<String> get comments =>
-      _$this._comments ??= ListBuilder<String>();
+      _$this._comments ??= new ListBuilder<String>();
   set comments(ListBuilder<String>? comments) => _$this._comments = comments;
 
   TicketJsonldTicketReadBuilder() {
@@ -325,9 +339,9 @@ class TicketJsonldTicketReadBuilder
   TicketJsonldTicketReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
+      _atContext = $v.atContext?.toBuilder();
       _id = $v.id;
       _title = $v.title;
       _startDate = $v.startDate;
@@ -351,6 +365,7 @@ class TicketJsonldTicketReadBuilder
 
   @override
   void replace(TicketJsonldTicketRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TicketJsonldTicketRead;
   }
 
@@ -366,10 +381,10 @@ class TicketJsonldTicketReadBuilder
     _$TicketJsonldTicketRead _$result;
     try {
       _$result = _$v ??
-          _$TicketJsonldTicketRead._(
-            atContext: _atContext?.build(),
+          new _$TicketJsonldTicketRead._(
             atId: atId,
             atType: atType,
+            atContext: _atContext?.build(),
             id: id,
             title: BuiltValueNullFieldError.checkNotNull(
                 title, r'TicketJsonldTicketRead', 'title'),
@@ -406,7 +421,7 @@ class TicketJsonldTicketReadBuilder
         _$failedField = 'comments';
         _comments?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'TicketJsonldTicketRead', _$failedField, e.toString());
       }
       rethrow;

@@ -30,12 +30,12 @@ PackagePackageReadTypeEnum _$packagePackageReadTypeEnumValueOf(String name) {
     case 'foodPackage':
       return _$packagePackageReadTypeEnum_foodPackage;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<PackagePackageReadTypeEnum> _$packagePackageReadTypeEnumValues =
-    BuiltSet<PackagePackageReadTypeEnum>(const <PackagePackageReadTypeEnum>[
+    new BuiltSet<PackagePackageReadTypeEnum>(const <PackagePackageReadTypeEnum>[
   _$packagePackageReadTypeEnum_standardLetter,
   _$packagePackageReadTypeEnum_trackedLetter,
   _$packagePackageReadTypeEnum_registeredLetter,
@@ -56,22 +56,22 @@ PackagePackageReadStatusEnum _$packagePackageReadStatusEnumValueOf(
     case 'handedOver':
       return _$packagePackageReadStatusEnum_handedOver;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<PackagePackageReadStatusEnum>
-    _$packagePackageReadStatusEnumValues =
-    BuiltSet<PackagePackageReadStatusEnum>(const <PackagePackageReadStatusEnum>[
+    _$packagePackageReadStatusEnumValues = new BuiltSet<
+        PackagePackageReadStatusEnum>(const <PackagePackageReadStatusEnum>[
   _$packagePackageReadStatusEnum_received,
   _$packagePackageReadStatusEnum_handedOver,
 ]);
 
 Serializer<PackagePackageReadTypeEnum> _$packagePackageReadTypeEnumSerializer =
-    _$PackagePackageReadTypeEnumSerializer();
+    new _$PackagePackageReadTypeEnumSerializer();
 Serializer<PackagePackageReadStatusEnum>
     _$packagePackageReadStatusEnumSerializer =
-    _$PackagePackageReadStatusEnumSerializer();
+    new _$PackagePackageReadStatusEnumSerializer();
 
 class _$PackagePackageReadTypeEnumSerializer
     implements PrimitiveSerializer<PackagePackageReadTypeEnum> {
@@ -163,7 +163,7 @@ class _$PackagePackageRead extends PackagePackageRead {
 
   factory _$PackagePackageRead(
           [void Function(PackagePackageReadBuilder)? updates]) =>
-      (PackagePackageReadBuilder()..update(updates))._build();
+      (new PackagePackageReadBuilder()..update(updates))._build();
 
   _$PackagePackageRead._(
       {this.id,
@@ -177,7 +177,19 @@ class _$PackagePackageRead extends PackagePackageRead {
       this.handoverDate,
       this.handoverClient,
       this.securityCode})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        recipient, r'PackagePackageRead', 'recipient');
+    BuiltValueNullFieldError.checkNotNull(
+        staff, r'PackagePackageRead', 'staff');
+    BuiltValueNullFieldError.checkNotNull(site, r'PackagePackageRead', 'site');
+    BuiltValueNullFieldError.checkNotNull(type, r'PackagePackageRead', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        status, r'PackagePackageRead', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        receptionDate, r'PackagePackageRead', 'receptionDate');
+  }
+
   @override
   PackagePackageRead rebuild(
           void Function(PackagePackageReadBuilder) updates) =>
@@ -185,7 +197,7 @@ class _$PackagePackageRead extends PackagePackageRead {
 
   @override
   PackagePackageReadBuilder toBuilder() =>
-      PackagePackageReadBuilder()..replace(this);
+      new PackagePackageReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -315,6 +327,7 @@ class PackagePackageReadBuilder
 
   @override
   void replace(PackagePackageRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$PackagePackageRead;
   }
 
@@ -328,7 +341,7 @@ class PackagePackageReadBuilder
 
   _$PackagePackageRead _build() {
     final _$result = _$v ??
-        _$PackagePackageRead._(
+        new _$PackagePackageRead._(
           id: id,
           recipient: BuiltValueNullFieldError.checkNotNull(
               recipient, r'PackagePackageRead', 'recipient'),

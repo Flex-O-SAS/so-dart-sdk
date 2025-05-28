@@ -12,9 +12,13 @@ class _$ItemProviderReadAddressRead extends ItemProviderReadAddressRead {
 
   factory _$ItemProviderReadAddressRead(
           [void Function(ItemProviderReadAddressReadBuilder)? updates]) =>
-      (ItemProviderReadAddressReadBuilder()..update(updates))._build();
+      (new ItemProviderReadAddressReadBuilder()..update(updates))._build();
 
-  _$ItemProviderReadAddressRead._({required this.isBookable}) : super._();
+  _$ItemProviderReadAddressRead._({required this.isBookable}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        isBookable, r'ItemProviderReadAddressRead', 'isBookable');
+  }
+
   @override
   ItemProviderReadAddressRead rebuild(
           void Function(ItemProviderReadAddressReadBuilder) updates) =>
@@ -22,7 +26,7 @@ class _$ItemProviderReadAddressRead extends ItemProviderReadAddressRead {
 
   @override
   ItemProviderReadAddressReadBuilder toBuilder() =>
-      ItemProviderReadAddressReadBuilder()..replace(this);
+      new ItemProviderReadAddressReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -72,6 +76,7 @@ class ItemProviderReadAddressReadBuilder
 
   @override
   void replace(ItemProviderReadAddressRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ItemProviderReadAddressRead;
   }
 
@@ -85,7 +90,7 @@ class ItemProviderReadAddressReadBuilder
 
   _$ItemProviderReadAddressRead _build() {
     final _$result = _$v ??
-        _$ItemProviderReadAddressRead._(
+        new _$ItemProviderReadAddressRead._(
           isBookable: BuiltValueNullFieldError.checkNotNull(
               isBookable, r'ItemProviderReadAddressRead', 'isBookable'),
         );

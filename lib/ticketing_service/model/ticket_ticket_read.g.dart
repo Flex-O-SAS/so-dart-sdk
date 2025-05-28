@@ -26,12 +26,12 @@ TicketTicketReadStatusEnum _$ticketTicketReadStatusEnumValueOf(String name) {
     case 'cancelled':
       return _$ticketTicketReadStatusEnum_cancelled;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<TicketTicketReadStatusEnum> _$ticketTicketReadStatusEnumValues =
-    BuiltSet<TicketTicketReadStatusEnum>(const <TicketTicketReadStatusEnum>[
+    new BuiltSet<TicketTicketReadStatusEnum>(const <TicketTicketReadStatusEnum>[
   _$ticketTicketReadStatusEnum_created,
   _$ticketTicketReadStatusEnum_inProgress,
   _$ticketTicketReadStatusEnum_done,
@@ -39,7 +39,7 @@ final BuiltSet<TicketTicketReadStatusEnum> _$ticketTicketReadStatusEnumValues =
 ]);
 
 Serializer<TicketTicketReadStatusEnum> _$ticketTicketReadStatusEnumSerializer =
-    _$TicketTicketReadStatusEnumSerializer();
+    new _$TicketTicketReadStatusEnumSerializer();
 
 class _$TicketTicketReadStatusEnumSerializer
     implements PrimitiveSerializer<TicketTicketReadStatusEnum> {
@@ -110,7 +110,7 @@ class _$TicketTicketRead extends TicketTicketRead {
 
   factory _$TicketTicketRead(
           [void Function(TicketTicketReadBuilder)? updates]) =>
-      (TicketTicketReadBuilder()..update(updates))._build();
+      (new TicketTicketReadBuilder()..update(updates))._build();
 
   _$TicketTicketRead._(
       {this.id,
@@ -129,14 +129,26 @@ class _$TicketTicketRead extends TicketTicketRead {
       this.linkedUsers,
       this.tags,
       this.comments})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(title, r'TicketTicketRead', 'title');
+    BuiltValueNullFieldError.checkNotNull(
+        startDate, r'TicketTicketRead', 'startDate');
+    BuiltValueNullFieldError.checkNotNull(
+        description, r'TicketTicketRead', 'description');
+    BuiltValueNullFieldError.checkNotNull(
+        author, r'TicketTicketRead', 'author');
+    BuiltValueNullFieldError.checkNotNull(
+        status, r'TicketTicketRead', 'status');
+    BuiltValueNullFieldError.checkNotNull(site, r'TicketTicketRead', 'site');
+  }
+
   @override
   TicketTicketRead rebuild(void Function(TicketTicketReadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   TicketTicketReadBuilder toBuilder() =>
-      TicketTicketReadBuilder()..replace(this);
+      new TicketTicketReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -264,17 +276,17 @@ class TicketTicketReadBuilder
 
   ListBuilder<String>? _linkedUsers;
   ListBuilder<String> get linkedUsers =>
-      _$this._linkedUsers ??= ListBuilder<String>();
+      _$this._linkedUsers ??= new ListBuilder<String>();
   set linkedUsers(ListBuilder<String>? linkedUsers) =>
       _$this._linkedUsers = linkedUsers;
 
   ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= ListBuilder<String>();
+  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   ListBuilder<String>? _comments;
   ListBuilder<String> get comments =>
-      _$this._comments ??= ListBuilder<String>();
+      _$this._comments ??= new ListBuilder<String>();
   set comments(ListBuilder<String>? comments) => _$this._comments = comments;
 
   TicketTicketReadBuilder() {
@@ -307,6 +319,7 @@ class TicketTicketReadBuilder
 
   @override
   void replace(TicketTicketRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TicketTicketRead;
   }
 
@@ -322,7 +335,7 @@ class TicketTicketReadBuilder
     _$TicketTicketRead _$result;
     try {
       _$result = _$v ??
-          _$TicketTicketRead._(
+          new _$TicketTicketRead._(
             id: id,
             title: BuiltValueNullFieldError.checkNotNull(
                 title, r'TicketTicketRead', 'title'),
@@ -356,7 +369,7 @@ class TicketTicketReadBuilder
         _$failedField = 'comments';
         _comments?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'TicketTicketRead', _$failedField, e.toString());
       }
       rethrow;

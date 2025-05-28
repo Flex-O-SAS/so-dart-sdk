@@ -11,15 +11,17 @@ class _$UserResponseDto extends UserResponseDto {
   final bool? isActive;
 
   factory _$UserResponseDto([void Function(UserResponseDtoBuilder)? updates]) =>
-      (UserResponseDtoBuilder()..update(updates))._build();
+      (new UserResponseDtoBuilder()..update(updates))._build();
 
   _$UserResponseDto._({this.isActive}) : super._();
+
   @override
   UserResponseDto rebuild(void Function(UserResponseDtoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  UserResponseDtoBuilder toBuilder() => UserResponseDtoBuilder()..replace(this);
+  UserResponseDtoBuilder toBuilder() =>
+      new UserResponseDtoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -66,6 +68,7 @@ class UserResponseDtoBuilder
 
   @override
   void replace(UserResponseDto other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$UserResponseDto;
   }
 
@@ -79,7 +82,7 @@ class UserResponseDtoBuilder
 
   _$UserResponseDto _build() {
     final _$result = _$v ??
-        _$UserResponseDto._(
+        new _$UserResponseDto._(
           isActive: isActive,
         );
     replace(_$result);

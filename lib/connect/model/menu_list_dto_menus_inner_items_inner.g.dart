@@ -15,9 +15,10 @@ class _$MenuListDtoMenusInnerItemsInner
 
   factory _$MenuListDtoMenusInnerItemsInner(
           [void Function(MenuListDtoMenusInnerItemsInnerBuilder)? updates]) =>
-      (MenuListDtoMenusInnerItemsInnerBuilder()..update(updates))._build();
+      (new MenuListDtoMenusInnerItemsInnerBuilder()..update(updates))._build();
 
   _$MenuListDtoMenusInnerItemsInner._({this.category, this.items}) : super._();
+
   @override
   MenuListDtoMenusInnerItemsInner rebuild(
           void Function(MenuListDtoMenusInnerItemsInnerBuilder) updates) =>
@@ -25,7 +26,7 @@ class _$MenuListDtoMenusInnerItemsInner
 
   @override
   MenuListDtoMenusInnerItemsInnerBuilder toBuilder() =>
-      MenuListDtoMenusInnerItemsInnerBuilder()..replace(this);
+      new MenuListDtoMenusInnerItemsInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -66,7 +67,7 @@ class MenuListDtoMenusInnerItemsInnerBuilder
   ListBuilder<MenuListDtoMenusInnerItemsInnerItemsInner>? _items;
   ListBuilder<MenuListDtoMenusInnerItemsInnerItemsInner> get items =>
       _$this._items ??=
-          ListBuilder<MenuListDtoMenusInnerItemsInnerItemsInner>();
+          new ListBuilder<MenuListDtoMenusInnerItemsInnerItemsInner>();
   set items(ListBuilder<MenuListDtoMenusInnerItemsInnerItemsInner>? items) =>
       _$this._items = items;
 
@@ -86,6 +87,7 @@ class MenuListDtoMenusInnerItemsInnerBuilder
 
   @override
   void replace(MenuListDtoMenusInnerItemsInner other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$MenuListDtoMenusInnerItemsInner;
   }
 
@@ -101,7 +103,7 @@ class MenuListDtoMenusInnerItemsInnerBuilder
     _$MenuListDtoMenusInnerItemsInner _$result;
     try {
       _$result = _$v ??
-          _$MenuListDtoMenusInnerItemsInner._(
+          new _$MenuListDtoMenusInnerItemsInner._(
             category: category,
             items: _items?.build(),
           );
@@ -111,7 +113,7 @@ class MenuListDtoMenusInnerItemsInnerBuilder
         _$failedField = 'items';
         _items?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'MenuListDtoMenusInnerItemsInner', _$failedField, e.toString());
       }
       rethrow;

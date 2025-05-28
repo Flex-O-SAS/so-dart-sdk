@@ -15,17 +15,17 @@ ClientRelationTypeEnum _$clientRelationTypeEnumValueOf(String name) {
     case 'delegationPackageReception':
       return _$clientRelationTypeEnum_delegationPackageReception;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<ClientRelationTypeEnum> _$clientRelationTypeEnumValues =
-    BuiltSet<ClientRelationTypeEnum>(const <ClientRelationTypeEnum>[
+    new BuiltSet<ClientRelationTypeEnum>(const <ClientRelationTypeEnum>[
   _$clientRelationTypeEnum_delegationPackageReception,
 ]);
 
 Serializer<ClientRelationTypeEnum> _$clientRelationTypeEnumSerializer =
-    _$ClientRelationTypeEnumSerializer();
+    new _$ClientRelationTypeEnumSerializer();
 
 class _$ClientRelationTypeEnumSerializer
     implements PrimitiveSerializer<ClientRelationTypeEnum> {
@@ -76,7 +76,7 @@ class _$ClientRelation extends ClientRelation {
   final DateTime? updatedAt;
 
   factory _$ClientRelation([void Function(ClientRelationBuilder)? updates]) =>
-      (ClientRelationBuilder()..update(updates))._build();
+      (new ClientRelationBuilder()..update(updates))._build();
 
   _$ClientRelation._(
       {this.id,
@@ -89,13 +89,21 @@ class _$ClientRelation extends ClientRelation {
       this.end,
       this.createdAt,
       this.updatedAt})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(client, r'ClientRelation', 'client');
+    BuiltValueNullFieldError.checkNotNull(
+        clientRelated, r'ClientRelation', 'clientRelated');
+    BuiltValueNullFieldError.checkNotNull(site, r'ClientRelation', 'site');
+    BuiltValueNullFieldError.checkNotNull(type, r'ClientRelation', 'type');
+  }
+
   @override
   ClientRelation rebuild(void Function(ClientRelationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ClientRelationBuilder toBuilder() => ClientRelationBuilder()..replace(this);
+  ClientRelationBuilder toBuilder() =>
+      new ClientRelationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -216,6 +224,7 @@ class ClientRelationBuilder
 
   @override
   void replace(ClientRelation other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ClientRelation;
   }
 
@@ -229,7 +238,7 @@ class ClientRelationBuilder
 
   _$ClientRelation _build() {
     final _$result = _$v ??
-        _$ClientRelation._(
+        new _$ClientRelation._(
           id: id,
           client: BuiltValueNullFieldError.checkNotNull(
               client, r'ClientRelation', 'client'),

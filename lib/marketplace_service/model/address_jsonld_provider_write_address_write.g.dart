@@ -22,7 +22,7 @@ class _$AddressJsonldProviderWriteAddressWrite
   factory _$AddressJsonldProviderWriteAddressWrite(
           [void Function(AddressJsonldProviderWriteAddressWriteBuilder)?
               updates]) =>
-      (AddressJsonldProviderWriteAddressWriteBuilder()..update(updates))
+      (new AddressJsonldProviderWriteAddressWriteBuilder()..update(updates))
           ._build();
 
   _$AddressJsonldProviderWriteAddressWrite._(
@@ -31,7 +31,17 @@ class _$AddressJsonldProviderWriteAddressWrite
       required this.zipcode,
       required this.city,
       required this.country})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        address, r'AddressJsonldProviderWriteAddressWrite', 'address');
+    BuiltValueNullFieldError.checkNotNull(
+        zipcode, r'AddressJsonldProviderWriteAddressWrite', 'zipcode');
+    BuiltValueNullFieldError.checkNotNull(
+        city, r'AddressJsonldProviderWriteAddressWrite', 'city');
+    BuiltValueNullFieldError.checkNotNull(
+        country, r'AddressJsonldProviderWriteAddressWrite', 'country');
+  }
+
   @override
   AddressJsonldProviderWriteAddressWrite rebuild(
           void Function(AddressJsonldProviderWriteAddressWriteBuilder)
@@ -40,7 +50,7 @@ class _$AddressJsonldProviderWriteAddressWrite
 
   @override
   AddressJsonldProviderWriteAddressWriteBuilder toBuilder() =>
-      AddressJsonldProviderWriteAddressWriteBuilder()..replace(this);
+      new AddressJsonldProviderWriteAddressWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -123,6 +133,7 @@ class AddressJsonldProviderWriteAddressWriteBuilder
 
   @override
   void replace(AddressJsonldProviderWriteAddressWrite other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AddressJsonldProviderWriteAddressWrite;
   }
 
@@ -137,7 +148,7 @@ class AddressJsonldProviderWriteAddressWriteBuilder
 
   _$AddressJsonldProviderWriteAddressWrite _build() {
     final _$result = _$v ??
-        _$AddressJsonldProviderWriteAddressWrite._(
+        new _$AddressJsonldProviderWriteAddressWrite._(
           id: id,
           address: BuiltValueNullFieldError.checkNotNull(
               address, r'AddressJsonldProviderWriteAddressWrite', 'address'),

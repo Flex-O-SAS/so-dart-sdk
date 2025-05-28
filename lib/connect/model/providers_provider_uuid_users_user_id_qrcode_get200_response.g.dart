@@ -15,12 +15,13 @@ class _$ProvidersProviderUuidUsersUserIdQrcodeGet200Response
           [void Function(
                   ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder)?
               updates]) =>
-      (ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder()
+      (new ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder()
             ..update(updates))
           ._build();
 
   _$ProvidersProviderUuidUsersUserIdQrcodeGet200Response._({this.qrcode})
       : super._();
+
   @override
   ProvidersProviderUuidUsersUserIdQrcodeGet200Response rebuild(
           void Function(
@@ -30,7 +31,7 @@ class _$ProvidersProviderUuidUsersUserIdQrcodeGet200Response
 
   @override
   ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder toBuilder() =>
-      ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder()
+      new ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder()
         ..replace(this);
 
   @override
@@ -82,6 +83,7 @@ class ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder
 
   @override
   void replace(ProvidersProviderUuidUsersUserIdQrcodeGet200Response other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ProvidersProviderUuidUsersUserIdQrcodeGet200Response;
   }
 
@@ -98,7 +100,7 @@ class ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder
 
   _$ProvidersProviderUuidUsersUserIdQrcodeGet200Response _build() {
     final _$result = _$v ??
-        _$ProvidersProviderUuidUsersUserIdQrcodeGet200Response._(
+        new _$ProvidersProviderUuidUsersUserIdQrcodeGet200Response._(
           qrcode: qrcode,
         );
     replace(_$result);

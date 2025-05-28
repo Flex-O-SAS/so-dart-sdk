@@ -26,7 +26,7 @@ class _$LinkedUserJsonldLinkedUserRead extends LinkedUserJsonldLinkedUserRead {
 
   factory _$LinkedUserJsonldLinkedUserRead(
           [void Function(LinkedUserJsonldLinkedUserReadBuilder)? updates]) =>
-      (LinkedUserJsonldLinkedUserReadBuilder()..update(updates))._build();
+      (new LinkedUserJsonldLinkedUserReadBuilder()..update(updates))._build();
 
   _$LinkedUserJsonldLinkedUserRead._(
       {this.atContext,
@@ -37,7 +37,13 @@ class _$LinkedUserJsonldLinkedUserRead extends LinkedUserJsonldLinkedUserRead {
       required this.user,
       this.createdAt,
       this.updatedAt})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        ticket, r'LinkedUserJsonldLinkedUserRead', 'ticket');
+    BuiltValueNullFieldError.checkNotNull(
+        user, r'LinkedUserJsonldLinkedUserRead', 'user');
+  }
+
   @override
   LinkedUserJsonldLinkedUserRead rebuild(
           void Function(LinkedUserJsonldLinkedUserReadBuilder) updates) =>
@@ -45,7 +51,7 @@ class _$LinkedUserJsonldLinkedUserRead extends LinkedUserJsonldLinkedUserRead {
 
   @override
   LinkedUserJsonldLinkedUserReadBuilder toBuilder() =>
-      LinkedUserJsonldLinkedUserReadBuilder()..replace(this);
+      new LinkedUserJsonldLinkedUserReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -99,7 +105,7 @@ class LinkedUserJsonldLinkedUserReadBuilder
 
   CommentJsonldCommentReadContextBuilder? _atContext;
   CommentJsonldCommentReadContextBuilder get atContext =>
-      _$this._atContext ??= CommentJsonldCommentReadContextBuilder();
+      _$this._atContext ??= new CommentJsonldCommentReadContextBuilder();
   set atContext(CommentJsonldCommentReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -153,6 +159,7 @@ class LinkedUserJsonldLinkedUserReadBuilder
 
   @override
   void replace(LinkedUserJsonldLinkedUserRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LinkedUserJsonldLinkedUserRead;
   }
 
@@ -168,7 +175,7 @@ class LinkedUserJsonldLinkedUserReadBuilder
     _$LinkedUserJsonldLinkedUserRead _$result;
     try {
       _$result = _$v ??
-          _$LinkedUserJsonldLinkedUserRead._(
+          new _$LinkedUserJsonldLinkedUserRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -186,7 +193,7 @@ class LinkedUserJsonldLinkedUserReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'LinkedUserJsonldLinkedUserRead', _$failedField, e.toString());
       }
       rethrow;

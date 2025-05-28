@@ -15,12 +15,13 @@ class _$ProvidersProviderUuidUsersUserIdQrcodeGet404Response
           [void Function(
                   ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder)?
               updates]) =>
-      (ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder()
+      (new ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder()
             ..update(updates))
           ._build();
 
   _$ProvidersProviderUuidUsersUserIdQrcodeGet404Response._({this.error})
       : super._();
+
   @override
   ProvidersProviderUuidUsersUserIdQrcodeGet404Response rebuild(
           void Function(
@@ -30,7 +31,7 @@ class _$ProvidersProviderUuidUsersUserIdQrcodeGet404Response
 
   @override
   ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder toBuilder() =>
-      ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder()
+      new ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder()
         ..replace(this);
 
   @override
@@ -82,6 +83,7 @@ class ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder
 
   @override
   void replace(ProvidersProviderUuidUsersUserIdQrcodeGet404Response other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ProvidersProviderUuidUsersUserIdQrcodeGet404Response;
   }
 
@@ -98,7 +100,7 @@ class ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder
 
   _$ProvidersProviderUuidUsersUserIdQrcodeGet404Response _build() {
     final _$result = _$v ??
-        _$ProvidersProviderUuidUsersUserIdQrcodeGet404Response._(
+        new _$ProvidersProviderUuidUsersUserIdQrcodeGet404Response._(
           error: error,
         );
     replace(_$result);

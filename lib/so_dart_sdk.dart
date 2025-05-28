@@ -129,7 +129,7 @@ export 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collecti
 export 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_view.dart';
 export 'package:so_dart_sdk/ticketing_service/model/api_apilinked_users_get_collection200_response.dart';
 export 'package:so_dart_sdk/ticketing_service/model/api_apitags_get_collection200_response.dart';
-export 'package:so_dart_sdk/ticketing_service/model/api_apitickets_get_collection200_response.dart';
+export 'package:so_dart_sdk/ticketing_service/model/api_tickets_get_collection200_response.dart';
 export 'package:so_dart_sdk/ticketing_service/model/comment_comment_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
 export 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
@@ -265,4 +265,43 @@ export 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_id_
 export 'package:so_dart_sdk/connect/model/unlock_response.dart';
 export 'package:so_dart_sdk/connect/model/user_dto.dart';
 export 'package:so_dart_sdk/connect/model/user_response_dto.dart';
+
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+
+export 'package:so_dart_sdk/core_service/api.dart';
+export 'package:so_dart_sdk/core_service/auth/api_key_auth.dart';
+export 'package:so_dart_sdk/core_service/auth/basic_auth.dart';
+export 'package:so_dart_sdk/core_service/auth/bearer_auth.dart';
+export 'package:so_dart_sdk/core_service/auth/oauth.dart';
+export 'package:so_dart_sdk/core_service/serializers.dart';
+export 'package:so_dart_sdk/core_service/model/date.dart';
+
+export 'package:so_dart_sdk/core_service/api/device_api.dart';
+export 'package:so_dart_sdk/core_service/api/notification_api.dart';
+export 'package:so_dart_sdk/core_service/api/subscriber_api.dart';
+
+export 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
+export 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_search.dart';
+export 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_search_mapping_inner.dart';
+export 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_view.dart';
+export 'package:so_dart_sdk/core_service/model/api_subscribers_get_collection200_response.dart';
+export 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
+export 'package:so_dart_sdk/core_service/model/constraint_violation_json_violations_inner.dart';
+export 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
+export 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context.dart';
+export 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context_one_of.dart';
+export 'package:so_dart_sdk/core_service/model/device_device_read.dart';
+export 'package:so_dart_sdk/core_service/model/device_device_write.dart';
+export 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
+export 'package:so_dart_sdk/core_service/model/device_jsonld_device_write.dart';
+export 'package:so_dart_sdk/core_service/model/error.dart';
+export 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
+export 'package:so_dart_sdk/core_service/model/notification.dart';
+export 'package:so_dart_sdk/core_service/model/notification_jsonld.dart';
+export 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
+export 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_write.dart';
+export 'package:so_dart_sdk/core_service/model/subscriber_subscriber_read.dart';
+export 'package:so_dart_sdk/core_service/model/subscriber_subscriber_write.dart';
 

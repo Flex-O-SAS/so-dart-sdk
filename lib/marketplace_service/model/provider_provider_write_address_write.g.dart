@@ -31,7 +31,8 @@ class _$ProviderProviderWriteAddressWrite
 
   factory _$ProviderProviderWriteAddressWrite(
           [void Function(ProviderProviderWriteAddressWriteBuilder)? updates]) =>
-      (ProviderProviderWriteAddressWriteBuilder()..update(updates))._build();
+      (new ProviderProviderWriteAddressWriteBuilder()..update(updates))
+          ._build();
 
   _$ProviderProviderWriteAddressWrite._(
       {this.id,
@@ -44,7 +45,15 @@ class _$ProviderProviderWriteAddressWrite
       required this.address,
       required this.isActive,
       this.tags})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        name, r'ProviderProviderWriteAddressWrite', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        address, r'ProviderProviderWriteAddressWrite', 'address');
+    BuiltValueNullFieldError.checkNotNull(
+        isActive, r'ProviderProviderWriteAddressWrite', 'isActive');
+  }
+
   @override
   ProviderProviderWriteAddressWrite rebuild(
           void Function(ProviderProviderWriteAddressWriteBuilder) updates) =>
@@ -52,7 +61,7 @@ class _$ProviderProviderWriteAddressWrite
 
   @override
   ProviderProviderWriteAddressWriteBuilder toBuilder() =>
-      ProviderProviderWriteAddressWriteBuilder()..replace(this);
+      new ProviderProviderWriteAddressWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -140,7 +149,7 @@ class ProviderProviderWriteAddressWriteBuilder
 
   AddressProviderWriteAddressWriteBuilder? _address;
   AddressProviderWriteAddressWriteBuilder get address =>
-      _$this._address ??= AddressProviderWriteAddressWriteBuilder();
+      _$this._address ??= new AddressProviderWriteAddressWriteBuilder();
   set address(AddressProviderWriteAddressWriteBuilder? address) =>
       _$this._address = address;
 
@@ -149,7 +158,7 @@ class ProviderProviderWriteAddressWriteBuilder
   set isActive(bool? isActive) => _$this._isActive = isActive;
 
   ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= ListBuilder<String>();
+  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   ProviderProviderWriteAddressWriteBuilder() {
@@ -176,6 +185,7 @@ class ProviderProviderWriteAddressWriteBuilder
 
   @override
   void replace(ProviderProviderWriteAddressWrite other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ProviderProviderWriteAddressWrite;
   }
 
@@ -192,7 +202,7 @@ class ProviderProviderWriteAddressWriteBuilder
     _$ProviderProviderWriteAddressWrite _$result;
     try {
       _$result = _$v ??
-          _$ProviderProviderWriteAddressWrite._(
+          new _$ProviderProviderWriteAddressWrite._(
             id: id,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'ProviderProviderWriteAddressWrite', 'name'),
@@ -215,7 +225,7 @@ class ProviderProviderWriteAddressWriteBuilder
         _$failedField = 'tags';
         _tags?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'ProviderProviderWriteAddressWrite', _$failedField, e.toString());
       }
       rethrow;

@@ -20,11 +20,12 @@ class _$ServiceJsonldTagRead extends ServiceJsonldTagRead {
 
   factory _$ServiceJsonldTagRead(
           [void Function(ServiceJsonldTagReadBuilder)? updates]) =>
-      (ServiceJsonldTagReadBuilder()..update(updates))._build();
+      (new ServiceJsonldTagReadBuilder()..update(updates))._build();
 
   _$ServiceJsonldTagRead._(
       {this.atContext, this.atId, this.atType, this.id, this.label})
       : super._();
+
   @override
   ServiceJsonldTagRead rebuild(
           void Function(ServiceJsonldTagReadBuilder) updates) =>
@@ -32,7 +33,7 @@ class _$ServiceJsonldTagRead extends ServiceJsonldTagRead {
 
   @override
   ServiceJsonldTagReadBuilder toBuilder() =>
-      ServiceJsonldTagReadBuilder()..replace(this);
+      new ServiceJsonldTagReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -76,7 +77,7 @@ class ServiceJsonldTagReadBuilder
   AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
   AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
       _$this._atContext ??=
-          AddressJsonldProviderReadAddressReadContextBuilder();
+          new AddressJsonldProviderReadAddressReadContextBuilder();
   set atContext(
           AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
@@ -116,6 +117,7 @@ class ServiceJsonldTagReadBuilder
 
   @override
   void replace(ServiceJsonldTagRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ServiceJsonldTagRead;
   }
 
@@ -131,7 +133,7 @@ class ServiceJsonldTagReadBuilder
     _$ServiceJsonldTagRead _$result;
     try {
       _$result = _$v ??
-          _$ServiceJsonldTagRead._(
+          new _$ServiceJsonldTagRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -144,7 +146,7 @@ class ServiceJsonldTagReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'ServiceJsonldTagRead', _$failedField, e.toString());
       }
       rethrow;

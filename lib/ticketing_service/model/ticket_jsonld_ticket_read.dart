@@ -14,9 +14,9 @@ part 'ticket_jsonld_ticket_read.g.dart';
 /// 
 ///
 /// Properties:
-/// * [atContext] 
 /// * [atId] 
 /// * [atType] 
+/// * [atContext] 
 /// * [id] 
 /// * [title] 
 /// * [startDate] 
@@ -35,14 +35,14 @@ part 'ticket_jsonld_ticket_read.g.dart';
 /// * [comments] 
 @BuiltValue()
 abstract class TicketJsonldTicketRead implements Built<TicketJsonldTicketRead, TicketJsonldTicketReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CommentJsonldCommentReadContext? get atContext;
-
   @BuiltValueField(wireName: r'@id')
   String? get atId;
 
   @BuiltValueField(wireName: r'@type')
   String? get atType;
+
+  @BuiltValueField(wireName: r'@context')
+  CommentJsonldCommentReadContext? get atContext;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -116,13 +116,6 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
     TicketJsonldTicketRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CommentJsonldCommentReadContext),
-      );
-    }
     if (object.atId != null) {
       yield r'@id';
       yield serializers.serialize(
@@ -135,6 +128,13 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
       yield serializers.serialize(
         object.atType,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(CommentJsonldCommentReadContext),
       );
     }
     if (object.id != null) {
@@ -260,13 +260,6 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CommentJsonldCommentReadContext),
-          ) as CommentJsonldCommentReadContext;
-          result.atContext.replace(valueDes);
-          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
@@ -280,6 +273,13 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
             specifiedType: const FullType(String),
           ) as String;
           result.atType = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CommentJsonldCommentReadContext),
+          ) as CommentJsonldCommentReadContext;
+          result.atContext.replace(valueDes);
           break;
         case r'id':
           final valueDes = serializers.deserialize(

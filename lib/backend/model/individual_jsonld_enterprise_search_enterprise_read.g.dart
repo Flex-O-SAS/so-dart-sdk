@@ -32,7 +32,8 @@ class _$IndividualJsonldEnterpriseSearchEnterpriseRead
   factory _$IndividualJsonldEnterpriseSearchEnterpriseRead(
           [void Function(IndividualJsonldEnterpriseSearchEnterpriseReadBuilder)?
               updates]) =>
-      (IndividualJsonldEnterpriseSearchEnterpriseReadBuilder()..update(updates))
+      (new IndividualJsonldEnterpriseSearchEnterpriseReadBuilder()
+            ..update(updates))
           ._build();
 
   _$IndividualJsonldEnterpriseSearchEnterpriseRead._(
@@ -47,6 +48,7 @@ class _$IndividualJsonldEnterpriseSearchEnterpriseRead
       this.reference,
       this.id})
       : super._();
+
   @override
   IndividualJsonldEnterpriseSearchEnterpriseRead rebuild(
           void Function(IndividualJsonldEnterpriseSearchEnterpriseReadBuilder)
@@ -55,7 +57,8 @@ class _$IndividualJsonldEnterpriseSearchEnterpriseRead
 
   @override
   IndividualJsonldEnterpriseSearchEnterpriseReadBuilder toBuilder() =>
-      IndividualJsonldEnterpriseSearchEnterpriseReadBuilder()..replace(this);
+      new IndividualJsonldEnterpriseSearchEnterpriseReadBuilder()
+        ..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -116,7 +119,7 @@ class IndividualJsonldEnterpriseSearchEnterpriseReadBuilder
 
   CenterJsonldHappeningReadContextBuilder? _atContext;
   CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= CenterJsonldHappeningReadContextBuilder();
+      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
   set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -139,7 +142,7 @@ class IndividualJsonldEnterpriseSearchEnterpriseReadBuilder
   ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>? _enterprises;
   ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead> get enterprises =>
       _$this._enterprises ??=
-          ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>();
+          new ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>();
   set enterprises(
           ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>?
               enterprises) =>
@@ -185,6 +188,7 @@ class IndividualJsonldEnterpriseSearchEnterpriseReadBuilder
 
   @override
   void replace(IndividualJsonldEnterpriseSearchEnterpriseRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$IndividualJsonldEnterpriseSearchEnterpriseRead;
   }
 
@@ -202,7 +206,7 @@ class IndividualJsonldEnterpriseSearchEnterpriseReadBuilder
     _$IndividualJsonldEnterpriseSearchEnterpriseRead _$result;
     try {
       _$result = _$v ??
-          _$IndividualJsonldEnterpriseSearchEnterpriseRead._(
+          new _$IndividualJsonldEnterpriseSearchEnterpriseRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -223,7 +227,7 @@ class IndividualJsonldEnterpriseSearchEnterpriseReadBuilder
         _$failedField = 'enterprises';
         _enterprises?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'IndividualJsonldEnterpriseSearchEnterpriseRead',
             _$failedField,
             e.toString());

@@ -14,9 +14,13 @@ class _$TagProviderReadAddressRead extends TagProviderReadAddressRead {
 
   factory _$TagProviderReadAddressRead(
           [void Function(TagProviderReadAddressReadBuilder)? updates]) =>
-      (TagProviderReadAddressReadBuilder()..update(updates))._build();
+      (new TagProviderReadAddressReadBuilder()..update(updates))._build();
 
-  _$TagProviderReadAddressRead._({this.id, required this.label}) : super._();
+  _$TagProviderReadAddressRead._({this.id, required this.label}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        label, r'TagProviderReadAddressRead', 'label');
+  }
+
   @override
   TagProviderReadAddressRead rebuild(
           void Function(TagProviderReadAddressReadBuilder) updates) =>
@@ -24,7 +28,7 @@ class _$TagProviderReadAddressRead extends TagProviderReadAddressRead {
 
   @override
   TagProviderReadAddressReadBuilder toBuilder() =>
-      TagProviderReadAddressReadBuilder()..replace(this);
+      new TagProviderReadAddressReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -81,6 +85,7 @@ class TagProviderReadAddressReadBuilder
 
   @override
   void replace(TagProviderReadAddressRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagProviderReadAddressRead;
   }
 
@@ -94,7 +99,7 @@ class TagProviderReadAddressReadBuilder
 
   _$TagProviderReadAddressRead _build() {
     final _$result = _$v ??
-        _$TagProviderReadAddressRead._(
+        new _$TagProviderReadAddressRead._(
           id: id,
           label: BuiltValueNullFieldError.checkNotNull(
               label, r'TagProviderReadAddressRead', 'label'),

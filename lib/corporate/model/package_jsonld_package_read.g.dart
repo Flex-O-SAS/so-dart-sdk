@@ -36,12 +36,12 @@ PackageJsonldPackageReadTypeEnum _$packageJsonldPackageReadTypeEnumValueOf(
     case 'foodPackage':
       return _$packageJsonldPackageReadTypeEnum_foodPackage;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<PackageJsonldPackageReadTypeEnum>
-    _$packageJsonldPackageReadTypeEnumValues = BuiltSet<
+    _$packageJsonldPackageReadTypeEnumValues = new BuiltSet<
         PackageJsonldPackageReadTypeEnum>(const <PackageJsonldPackageReadTypeEnum>[
   _$packageJsonldPackageReadTypeEnum_standardLetter,
   _$packageJsonldPackageReadTypeEnum_trackedLetter,
@@ -65,12 +65,12 @@ PackageJsonldPackageReadStatusEnum _$packageJsonldPackageReadStatusEnumValueOf(
     case 'handedOver':
       return _$packageJsonldPackageReadStatusEnum_handedOver;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<PackageJsonldPackageReadStatusEnum>
-    _$packageJsonldPackageReadStatusEnumValues = BuiltSet<
+    _$packageJsonldPackageReadStatusEnumValues = new BuiltSet<
         PackageJsonldPackageReadStatusEnum>(const <PackageJsonldPackageReadStatusEnum>[
   _$packageJsonldPackageReadStatusEnum_received,
   _$packageJsonldPackageReadStatusEnum_handedOver,
@@ -78,10 +78,10 @@ final BuiltSet<PackageJsonldPackageReadStatusEnum>
 
 Serializer<PackageJsonldPackageReadTypeEnum>
     _$packageJsonldPackageReadTypeEnumSerializer =
-    _$PackageJsonldPackageReadTypeEnumSerializer();
+    new _$PackageJsonldPackageReadTypeEnumSerializer();
 Serializer<PackageJsonldPackageReadStatusEnum>
     _$packageJsonldPackageReadStatusEnumSerializer =
-    _$PackageJsonldPackageReadStatusEnumSerializer();
+    new _$PackageJsonldPackageReadStatusEnumSerializer();
 
 class _$PackageJsonldPackageReadTypeEnumSerializer
     implements PrimitiveSerializer<PackageJsonldPackageReadTypeEnum> {
@@ -181,7 +181,7 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
 
   factory _$PackageJsonldPackageRead(
           [void Function(PackageJsonldPackageReadBuilder)? updates]) =>
-      (PackageJsonldPackageReadBuilder()..update(updates))._build();
+      (new PackageJsonldPackageReadBuilder()..update(updates))._build();
 
   _$PackageJsonldPackageRead._(
       {this.atContext,
@@ -198,7 +198,21 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
       this.handoverDate,
       this.handoverClient,
       this.securityCode})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        recipient, r'PackageJsonldPackageRead', 'recipient');
+    BuiltValueNullFieldError.checkNotNull(
+        staff, r'PackageJsonldPackageRead', 'staff');
+    BuiltValueNullFieldError.checkNotNull(
+        site, r'PackageJsonldPackageRead', 'site');
+    BuiltValueNullFieldError.checkNotNull(
+        type, r'PackageJsonldPackageRead', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        status, r'PackageJsonldPackageRead', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        receptionDate, r'PackageJsonldPackageRead', 'receptionDate');
+  }
+
   @override
   PackageJsonldPackageRead rebuild(
           void Function(PackageJsonldPackageReadBuilder) updates) =>
@@ -206,7 +220,7 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
 
   @override
   PackageJsonldPackageReadBuilder toBuilder() =>
-      PackageJsonldPackageReadBuilder()..replace(this);
+      new PackageJsonldPackageReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -277,7 +291,8 @@ class PackageJsonldPackageReadBuilder
 
   AppointmentJsonldAppointmentReadContextBuilder? _atContext;
   AppointmentJsonldAppointmentReadContextBuilder get atContext =>
-      _$this._atContext ??= AppointmentJsonldAppointmentReadContextBuilder();
+      _$this._atContext ??=
+          new AppointmentJsonldAppointmentReadContextBuilder();
   set atContext(AppointmentJsonldAppointmentReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
@@ -364,6 +379,7 @@ class PackageJsonldPackageReadBuilder
 
   @override
   void replace(PackageJsonldPackageRead other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$PackageJsonldPackageRead;
   }
 
@@ -379,7 +395,7 @@ class PackageJsonldPackageReadBuilder
     _$PackageJsonldPackageRead _$result;
     try {
       _$result = _$v ??
-          _$PackageJsonldPackageRead._(
+          new _$PackageJsonldPackageRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -407,7 +423,7 @@ class PackageJsonldPackageReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             r'PackageJsonldPackageRead', _$failedField, e.toString());
       }
       rethrow;

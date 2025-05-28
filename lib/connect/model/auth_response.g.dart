@@ -15,16 +15,17 @@ class _$AuthResponse extends AuthResponse {
   final int? expiresIn;
 
   factory _$AuthResponse([void Function(AuthResponseBuilder)? updates]) =>
-      (AuthResponseBuilder()..update(updates))._build();
+      (new AuthResponseBuilder()..update(updates))._build();
 
   _$AuthResponse._({this.accessToken, this.tokenType, this.expiresIn})
       : super._();
+
   @override
   AuthResponse rebuild(void Function(AuthResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AuthResponseBuilder toBuilder() => AuthResponseBuilder()..replace(this);
+  AuthResponseBuilder toBuilder() => new AuthResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -88,6 +89,7 @@ class AuthResponseBuilder
 
   @override
   void replace(AuthResponse other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AuthResponse;
   }
 
@@ -101,7 +103,7 @@ class AuthResponseBuilder
 
   _$AuthResponse _build() {
     final _$result = _$v ??
-        _$AuthResponse._(
+        new _$AuthResponse._(
           accessToken: accessToken,
           tokenType: tokenType,
           expiresIn: expiresIn,

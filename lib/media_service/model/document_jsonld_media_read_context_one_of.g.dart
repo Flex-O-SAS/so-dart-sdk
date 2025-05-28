@@ -17,19 +17,19 @@ DocumentJsonldMediaReadContextOneOfHydraEnum
     case 'httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash':
       return _$documentJsonldMediaReadContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
     default:
-      throw ArgumentError(name);
+      throw new ArgumentError(name);
   }
 }
 
 final BuiltSet<DocumentJsonldMediaReadContextOneOfHydraEnum>
-    _$documentJsonldMediaReadContextOneOfHydraEnumValues = BuiltSet<
+    _$documentJsonldMediaReadContextOneOfHydraEnumValues = new BuiltSet<
         DocumentJsonldMediaReadContextOneOfHydraEnum>(const <DocumentJsonldMediaReadContextOneOfHydraEnum>[
   _$documentJsonldMediaReadContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash,
 ]);
 
 Serializer<DocumentJsonldMediaReadContextOneOfHydraEnum>
     _$documentJsonldMediaReadContextOneOfHydraEnumSerializer =
-    _$DocumentJsonldMediaReadContextOneOfHydraEnumSerializer();
+    new _$DocumentJsonldMediaReadContextOneOfHydraEnumSerializer();
 
 class _$DocumentJsonldMediaReadContextOneOfHydraEnumSerializer
     implements
@@ -74,11 +74,18 @@ class _$DocumentJsonldMediaReadContextOneOf
   factory _$DocumentJsonldMediaReadContextOneOf(
           [void Function(DocumentJsonldMediaReadContextOneOfBuilder)?
               updates]) =>
-      (DocumentJsonldMediaReadContextOneOfBuilder()..update(updates))._build();
+      (new DocumentJsonldMediaReadContextOneOfBuilder()..update(updates))
+          ._build();
 
   _$DocumentJsonldMediaReadContextOneOf._(
       {required this.atVocab, required this.hydra})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atVocab, r'DocumentJsonldMediaReadContextOneOf', 'atVocab');
+    BuiltValueNullFieldError.checkNotNull(
+        hydra, r'DocumentJsonldMediaReadContextOneOf', 'hydra');
+  }
+
   @override
   DocumentJsonldMediaReadContextOneOf rebuild(
           void Function(DocumentJsonldMediaReadContextOneOfBuilder) updates) =>
@@ -86,7 +93,7 @@ class _$DocumentJsonldMediaReadContextOneOf
 
   @override
   DocumentJsonldMediaReadContextOneOfBuilder toBuilder() =>
-      DocumentJsonldMediaReadContextOneOfBuilder()..replace(this);
+      new DocumentJsonldMediaReadContextOneOfBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -145,6 +152,7 @@ class DocumentJsonldMediaReadContextOneOfBuilder
 
   @override
   void replace(DocumentJsonldMediaReadContextOneOf other) {
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$DocumentJsonldMediaReadContextOneOf;
   }
 
@@ -159,7 +167,7 @@ class DocumentJsonldMediaReadContextOneOfBuilder
 
   _$DocumentJsonldMediaReadContextOneOf _build() {
     final _$result = _$v ??
-        _$DocumentJsonldMediaReadContextOneOf._(
+        new _$DocumentJsonldMediaReadContextOneOf._(
           atVocab: BuiltValueNullFieldError.checkNotNull(
               atVocab, r'DocumentJsonldMediaReadContextOneOf', 'atVocab'),
           hydra: BuiltValueNullFieldError.checkNotNull(

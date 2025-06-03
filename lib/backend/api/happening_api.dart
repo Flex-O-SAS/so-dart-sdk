@@ -29,6 +29,7 @@ class HappeningApi {
   /// * [page] - The collection page number
   /// * [itemsPerPage] - The number of items per page
   /// * [orderLeftSquareBracketPublicatedAtRightSquareBracket] - 
+  /// * [orderLeftSquareBracketArchivedAtRightSquareBracket] - 
   /// * [isActive] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -43,6 +44,7 @@ class HappeningApi {
     int? page = 1,
     int? itemsPerPage = 30,
     String? orderLeftSquareBracketPublicatedAtRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketArchivedAtRightSquareBracket = 'asc',
     bool? isActive,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -68,6 +70,7 @@ class HappeningApi {
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
       if (itemsPerPage != null) r'itemsPerPage': encodeQueryParameter(_serializers, itemsPerPage, const FullType(int)),
       if (orderLeftSquareBracketPublicatedAtRightSquareBracket != null) r'order[publicatedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketPublicatedAtRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketArchivedAtRightSquareBracket != null) r'order[archivedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketArchivedAtRightSquareBracket, const FullType(String)),
       if (isActive != null) r'isActive': encodeQueryParameter(_serializers, isActive, const FullType(bool)),
     };
 

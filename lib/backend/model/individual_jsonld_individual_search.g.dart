@@ -19,6 +19,8 @@ class _$IndividualJsonldIndividualSearch
   @override
   final String? lastname;
   @override
+  final String? tosAcceptedAt;
+  @override
   final BuiltList<EnterpriseJsonldIndividualSearch>? enterprises;
   @override
   final String? email;
@@ -41,6 +43,7 @@ class _$IndividualJsonldIndividualSearch
       this.atType,
       this.firstname,
       this.lastname,
+      this.tosAcceptedAt,
       this.enterprises,
       this.email,
       this.phone,
@@ -67,6 +70,7 @@ class _$IndividualJsonldIndividualSearch
         atType == other.atType &&
         firstname == other.firstname &&
         lastname == other.lastname &&
+        tosAcceptedAt == other.tosAcceptedAt &&
         enterprises == other.enterprises &&
         email == other.email &&
         phone == other.phone &&
@@ -83,6 +87,7 @@ class _$IndividualJsonldIndividualSearch
     _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, firstname.hashCode);
     _$hash = $jc(_$hash, lastname.hashCode);
+    _$hash = $jc(_$hash, tosAcceptedAt.hashCode);
     _$hash = $jc(_$hash, enterprises.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
@@ -101,6 +106,7 @@ class _$IndividualJsonldIndividualSearch
           ..add('atType', atType)
           ..add('firstname', firstname)
           ..add('lastname', lastname)
+          ..add('tosAcceptedAt', tosAcceptedAt)
           ..add('enterprises', enterprises)
           ..add('email', email)
           ..add('phone', phone)
@@ -138,6 +144,11 @@ class IndividualJsonldIndividualSearchBuilder
   String? _lastname;
   String? get lastname => _$this._lastname;
   set lastname(String? lastname) => _$this._lastname = lastname;
+
+  String? _tosAcceptedAt;
+  String? get tosAcceptedAt => _$this._tosAcceptedAt;
+  set tosAcceptedAt(String? tosAcceptedAt) =>
+      _$this._tosAcceptedAt = tosAcceptedAt;
 
   ListBuilder<EnterpriseJsonldIndividualSearch>? _enterprises;
   ListBuilder<EnterpriseJsonldIndividualSearch> get enterprises =>
@@ -178,6 +189,7 @@ class IndividualJsonldIndividualSearchBuilder
       _atType = $v.atType;
       _firstname = $v.firstname;
       _lastname = $v.lastname;
+      _tosAcceptedAt = $v.tosAcceptedAt;
       _enterprises = $v.enterprises?.toBuilder();
       _email = $v.email;
       _phone = $v.phone;
@@ -213,6 +225,7 @@ class IndividualJsonldIndividualSearchBuilder
             atType: atType,
             firstname: firstname,
             lastname: lastname,
+            tosAcceptedAt: tosAcceptedAt,
             enterprises: _enterprises?.build(),
             email: email,
             phone: phone,

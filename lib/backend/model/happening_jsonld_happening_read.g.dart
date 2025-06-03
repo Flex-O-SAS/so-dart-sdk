@@ -26,6 +26,8 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
   @override
   final String? publicatedAt;
   @override
+  final String? archivedAt;
+  @override
   final String? description;
   @override
   final int? nbUsers;
@@ -57,6 +59,7 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
       this.center,
       this.place,
       this.publicatedAt,
+      this.archivedAt,
       this.description,
       this.nbUsers,
       this.maxUsers,
@@ -89,6 +92,7 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
         center == other.center &&
         place == other.place &&
         publicatedAt == other.publicatedAt &&
+        archivedAt == other.archivedAt &&
         description == other.description &&
         nbUsers == other.nbUsers &&
         maxUsers == other.maxUsers &&
@@ -111,6 +115,7 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
     _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, place.hashCode);
     _$hash = $jc(_$hash, publicatedAt.hashCode);
+    _$hash = $jc(_$hash, archivedAt.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, nbUsers.hashCode);
     _$hash = $jc(_$hash, maxUsers.hashCode);
@@ -135,6 +140,7 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
           ..add('center', center)
           ..add('place', place)
           ..add('publicatedAt', publicatedAt)
+          ..add('archivedAt', archivedAt)
           ..add('description', description)
           ..add('nbUsers', nbUsers)
           ..add('maxUsers', maxUsers)
@@ -192,6 +198,10 @@ class HappeningJsonldHappeningReadBuilder
   String? _publicatedAt;
   String? get publicatedAt => _$this._publicatedAt;
   set publicatedAt(String? publicatedAt) => _$this._publicatedAt = publicatedAt;
+
+  String? _archivedAt;
+  String? get archivedAt => _$this._archivedAt;
+  set archivedAt(String? archivedAt) => _$this._archivedAt = archivedAt;
 
   String? _description;
   String? get description => _$this._description;
@@ -252,6 +262,7 @@ class HappeningJsonldHappeningReadBuilder
       _center = $v.center?.toBuilder();
       _place = $v.place;
       _publicatedAt = $v.publicatedAt;
+      _archivedAt = $v.archivedAt;
       _description = $v.description;
       _nbUsers = $v.nbUsers;
       _maxUsers = $v.maxUsers;
@@ -293,6 +304,7 @@ class HappeningJsonldHappeningReadBuilder
             center: _center?.build(),
             place: place,
             publicatedAt: publicatedAt,
+            archivedAt: archivedAt,
             description: description,
             nbUsers: nbUsers,
             maxUsers: maxUsers,

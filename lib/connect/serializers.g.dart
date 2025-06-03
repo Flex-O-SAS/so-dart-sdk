@@ -17,8 +17,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(MenuListDtoMenusInnerItemsInnerItemsInner.serializer)
       ..add(MenuListDtoMenusInnerSite.serializer)
       ..add(ProviderResponseInner.serializer)
-      ..add(ProvidersProviderUuidUsersUserIdQrcodeGet200Response.serializer)
-      ..add(ProvidersProviderUuidUsersUserIdQrcodeGet404Response.serializer)
+      ..add(ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response
+          .serializer)
+      ..add(ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response
+          .serializer)
       ..add(UnlockResponse.serializer)
       ..add(UserDto.serializer)
       ..add(UserResponseDto.serializer)

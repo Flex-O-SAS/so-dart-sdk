@@ -26,7 +26,7 @@ class UsersApi {
   ///
   /// Parameters:
   /// * [providerUuid] - UUID du provider
-  /// * [userId] - Identifiant de l'utilisateur
+  /// * [userReference] - Identifiant de l'utilisateur
   /// * [userDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -37,9 +37,9 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UserResponseDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserResponseDto>> providersProviderUuidUsersUserIdPut({ 
+  Future<Response<UserResponseDto>> providersProviderUuidUsersUserReferencePut({ 
     required String providerUuid,
-    required int userId,
+    required String userReference,
     required UserDto userDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -48,7 +48,7 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/providers/{provider_uuid}/users/{user_id}'.replaceAll('{' r'provider_uuid' '}', encodeQueryParameter(_serializers, providerUuid, const FullType(String)).toString()).replaceAll('{' r'user_id' '}', encodeQueryParameter(_serializers, userId, const FullType(int)).toString());
+    final _path = r'/providers/{provider_uuid}/users/{user_reference}'.replaceAll('{' r'provider_uuid' '}', encodeQueryParameter(_serializers, providerUuid, const FullType(String)).toString()).replaceAll('{' r'user_reference' '}', encodeQueryParameter(_serializers, userReference, const FullType(String)).toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{

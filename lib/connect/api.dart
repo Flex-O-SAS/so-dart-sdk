@@ -16,7 +16,7 @@ import 'package:so_dart_sdk/connect/api/providers_api.dart';
 import 'package:so_dart_sdk/connect/api/users_api.dart';
 
 class SoDartSdk {
-  static const String basePath = r'http://connect/api/v1';
+  static const String basePath = r'https://connect/api/v1';
 
   final Dio dio;
   final Serializers serializers;

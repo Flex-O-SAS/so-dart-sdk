@@ -8,6 +8,8 @@ part of 'staff_jsonld_staff_search.dart';
 
 class _$StaffJsonldStaffSearch extends StaffJsonldStaffSearch {
   @override
+  final CenterJsonldHappeningReadContext? atContext;
+  @override
   final String? atId;
   @override
   final String? atType;
@@ -15,6 +17,8 @@ class _$StaffJsonldStaffSearch extends StaffJsonldStaffSearch {
   final String? firstname;
   @override
   final String? lastname;
+  @override
+  final String? tosAcceptedAt;
   @override
   final String? reference;
   @override
@@ -25,10 +29,12 @@ class _$StaffJsonldStaffSearch extends StaffJsonldStaffSearch {
       (new StaffJsonldStaffSearchBuilder()..update(updates))._build();
 
   _$StaffJsonldStaffSearch._(
-      {this.atId,
+      {this.atContext,
+      this.atId,
       this.atType,
       this.firstname,
       this.lastname,
+      this.tosAcceptedAt,
       this.reference,
       this.id})
       : super._();
@@ -46,10 +52,12 @@ class _$StaffJsonldStaffSearch extends StaffJsonldStaffSearch {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is StaffJsonldStaffSearch &&
+        atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
         firstname == other.firstname &&
         lastname == other.lastname &&
+        tosAcceptedAt == other.tosAcceptedAt &&
         reference == other.reference &&
         id == other.id;
   }
@@ -57,10 +65,12 @@ class _$StaffJsonldStaffSearch extends StaffJsonldStaffSearch {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, firstname.hashCode);
     _$hash = $jc(_$hash, lastname.hashCode);
+    _$hash = $jc(_$hash, tosAcceptedAt.hashCode);
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
@@ -70,10 +80,12 @@ class _$StaffJsonldStaffSearch extends StaffJsonldStaffSearch {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'StaffJsonldStaffSearch')
+          ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
           ..add('firstname', firstname)
           ..add('lastname', lastname)
+          ..add('tosAcceptedAt', tosAcceptedAt)
           ..add('reference', reference)
           ..add('id', id))
         .toString();
@@ -83,6 +95,12 @@ class _$StaffJsonldStaffSearch extends StaffJsonldStaffSearch {
 class StaffJsonldStaffSearchBuilder
     implements Builder<StaffJsonldStaffSearch, StaffJsonldStaffSearchBuilder> {
   _$StaffJsonldStaffSearch? _$v;
+
+  CenterJsonldHappeningReadContextBuilder? _atContext;
+  CenterJsonldHappeningReadContextBuilder get atContext =>
+      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
+      _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
@@ -100,6 +118,11 @@ class StaffJsonldStaffSearchBuilder
   String? get lastname => _$this._lastname;
   set lastname(String? lastname) => _$this._lastname = lastname;
 
+  String? _tosAcceptedAt;
+  String? get tosAcceptedAt => _$this._tosAcceptedAt;
+  set tosAcceptedAt(String? tosAcceptedAt) =>
+      _$this._tosAcceptedAt = tosAcceptedAt;
+
   String? _reference;
   String? get reference => _$this._reference;
   set reference(String? reference) => _$this._reference = reference;
@@ -115,10 +138,12 @@ class StaffJsonldStaffSearchBuilder
   StaffJsonldStaffSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
       _firstname = $v.firstname;
       _lastname = $v.lastname;
+      _tosAcceptedAt = $v.tosAcceptedAt;
       _reference = $v.reference;
       _id = $v.id;
       _$v = null;
@@ -141,15 +166,30 @@ class StaffJsonldStaffSearchBuilder
   StaffJsonldStaffSearch build() => _build();
 
   _$StaffJsonldStaffSearch _build() {
-    final _$result = _$v ??
-        new _$StaffJsonldStaffSearch._(
-          atId: atId,
-          atType: atType,
-          firstname: firstname,
-          lastname: lastname,
-          reference: reference,
-          id: id,
-        );
+    _$StaffJsonldStaffSearch _$result;
+    try {
+      _$result = _$v ??
+          new _$StaffJsonldStaffSearch._(
+            atContext: _atContext?.build(),
+            atId: atId,
+            atType: atType,
+            firstname: firstname,
+            lastname: lastname,
+            tosAcceptedAt: tosAcceptedAt,
+            reference: reference,
+            id: id,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'atContext';
+        _atContext?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'StaffJsonldStaffSearch', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

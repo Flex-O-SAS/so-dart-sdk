@@ -29,6 +29,9 @@ import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.d
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context_one_of.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_assets_inner.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation_json_violations_inner.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
@@ -39,9 +42,11 @@ import 'package:so_dart_sdk/backend/model/happening_partner_link_jsonld_happenin
 import 'package:so_dart_sdk/backend/model/happening_partner_link_jsonld_happening_search.dart';
 import 'package:so_dart_sdk/backend/model/happening_staff_feed_back_jsonld_happening_read.dart';
 import 'package:so_dart_sdk/backend/model/happening_staff_feed_back_jsonld_happening_search.dart';
+import 'package:so_dart_sdk/backend/model/individual_individual_write.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/staff_jsonld_staff_search.dart';
+import 'package:so_dart_sdk/backend/model/staff_staff_write.dart';
 
 part 'serializers.g.dart';
 
@@ -61,6 +66,9 @@ part 'serializers.g.dart';
   CenterJsonldHappeningReadContextOneOf,
   CenterJsonldPublicCenterRead,
   CenterJsonldPublicCenterReadAssetsInner,
+  ConstraintViolationJson,
+  ConstraintViolationJsonViolationsInner,
+  ConstraintViolationJsonldJsonld,
   EnterpriseJsonldEnterpriseSearchEnterpriseRead,
   EnterpriseJsonldIndividualSearch,
   Error,
@@ -71,9 +79,11 @@ part 'serializers.g.dart';
   HappeningPartnerLinkJsonldHappeningSearch,
   HappeningStaffFeedBackJsonldHappeningRead,
   HappeningStaffFeedBackJsonldHappeningSearch,
+  IndividualIndividualWrite,
   IndividualJsonldEnterpriseSearchEnterpriseRead,
   IndividualJsonldIndividualSearch,
   StaffJsonldStaffSearch,
+  StaffStaffWrite,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(

@@ -23,6 +23,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CenterJsonldHappeningReadContextOneOfHydraEnum.serializer)
       ..add(CenterJsonldPublicCenterRead.serializer)
       ..add(CenterJsonldPublicCenterReadAssetsInner.serializer)
+      ..add(ConstraintViolationJson.serializer)
+      ..add(ConstraintViolationJsonViolationsInner.serializer)
+      ..add(ConstraintViolationJsonldJsonld.serializer)
       ..add(EnterpriseJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(EnterpriseJsonldIndividualSearch.serializer)
       ..add(Error.serializer)
@@ -33,9 +36,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(HappeningPartnerLinkJsonldHappeningSearch.serializer)
       ..add(HappeningStaffFeedBackJsonldHappeningRead.serializer)
       ..add(HappeningStaffFeedBackJsonldHappeningSearch.serializer)
+      ..add(IndividualIndividualWrite.serializer)
       ..add(IndividualJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(IndividualJsonldIndividualSearch.serializer)
       ..add(StaffJsonldStaffSearch.serializer)
+      ..add(StaffStaffWrite.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(ApiCentersGetCollection200ResponseSearchMappingInner)
@@ -54,6 +59,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(CenterJsonldPublicCenterReadAssetsInner)]),
           () => new ListBuilder<CenterJsonldPublicCenterReadAssetsInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(ConstraintViolationJsonViolationsInner)]),
+          () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(ConstraintViolationJsonViolationsInner)]),
+          () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead)

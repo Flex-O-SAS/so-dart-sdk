@@ -3,28 +3,31 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation_json_violations_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'error_jsonld.g.dart';
+part 'constraint_violation_jsonld_jsonld.g.dart';
 
-/// A representation of common errors.
+/// Unprocessable entity
 ///
 /// Properties:
 /// * [atContext] 
 /// * [atId] 
 /// * [atType] 
-/// * [title] 
-/// * [detail] 
 /// * [status] 
-/// * [instance] 
-/// * [type] - A URI reference that identifies the problem type
+/// * [violations] 
+/// * [detail] 
 /// * [description] 
+/// * [type] 
+/// * [title] 
+/// * [instance] 
 @BuiltValue()
-abstract class ErrorJsonld implements Built<ErrorJsonld, ErrorJsonldBuilder> {
+abstract class ConstraintViolationJsonldJsonld implements Built<ConstraintViolationJsonldJsonld, ConstraintViolationJsonldJsonldBuilder> {
   @BuiltValueField(wireName: r'@context')
-  ConstraintViolationJsonldJsonldContext? get atContext;
+  CenterJsonldHappeningReadContext? get atContext;
 
   @BuiltValueField(wireName: r'@id')
   String? get atId;
@@ -32,54 +35,56 @@ abstract class ErrorJsonld implements Built<ErrorJsonld, ErrorJsonldBuilder> {
   @BuiltValueField(wireName: r'@type')
   String? get atType;
 
-  @BuiltValueField(wireName: r'title')
-  String? get title;
+  @BuiltValueField(wireName: r'status')
+  int? get status;
+
+  @BuiltValueField(wireName: r'violations')
+  BuiltList<ConstraintViolationJsonViolationsInner>? get violations;
 
   @BuiltValueField(wireName: r'detail')
   String? get detail;
 
-  @BuiltValueField(wireName: r'status')
-  num? get status;
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  @BuiltValueField(wireName: r'type')
+  String? get type;
+
+  @BuiltValueField(wireName: r'title')
+  String? get title;
 
   @BuiltValueField(wireName: r'instance')
   String? get instance;
 
-  /// A URI reference that identifies the problem type
-  @BuiltValueField(wireName: r'type')
-  String? get type;
+  ConstraintViolationJsonldJsonld._();
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  ErrorJsonld._();
-
-  factory ErrorJsonld([void updates(ErrorJsonldBuilder b)]) = _$ErrorJsonld;
+  factory ConstraintViolationJsonldJsonld([void updates(ConstraintViolationJsonldJsonldBuilder b)]) = _$ConstraintViolationJsonldJsonld;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ErrorJsonldBuilder b) => b
-      ..status = 400;
+  static void _defaults(ConstraintViolationJsonldJsonldBuilder b) => b
+      ..status = 422;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ErrorJsonld> get serializer => _$ErrorJsonldSerializer();
+  static Serializer<ConstraintViolationJsonldJsonld> get serializer => _$ConstraintViolationJsonldJsonldSerializer();
 }
 
-class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
+class _$ConstraintViolationJsonldJsonldSerializer implements PrimitiveSerializer<ConstraintViolationJsonldJsonld> {
   @override
-  final Iterable<Type> types = const [ErrorJsonld, _$ErrorJsonld];
+  final Iterable<Type> types = const [ConstraintViolationJsonldJsonld, _$ConstraintViolationJsonldJsonld];
 
   @override
-  final String wireName = r'ErrorJsonld';
+  final String wireName = r'ConstraintViolationJsonldJsonld';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ErrorJsonld object, {
+    ConstraintViolationJsonldJsonld object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atContext != null) {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(ConstraintViolationJsonldJsonldContext),
+        specifiedType: const FullType(CenterJsonldHappeningReadContext),
       );
     }
     if (object.atId != null) {
@@ -96,32 +101,32 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.title != null) {
-      yield r'title';
+    if (object.status != null) {
+      yield r'status';
       yield serializers.serialize(
-        object.title,
-        specifiedType: const FullType.nullable(String),
+        object.status,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.violations != null) {
+      yield r'violations';
+      yield serializers.serialize(
+        object.violations,
+        specifiedType: const FullType(BuiltList, [FullType(ConstraintViolationJsonViolationsInner)]),
       );
     }
     if (object.detail != null) {
       yield r'detail';
       yield serializers.serialize(
         object.detail,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
-    if (object.status != null) {
-      yield r'status';
+    if (object.description != null) {
+      yield r'description';
       yield serializers.serialize(
-        object.status,
-        specifiedType: const FullType(num),
-      );
-    }
-    if (object.instance != null) {
-      yield r'instance';
-      yield serializers.serialize(
-        object.instance,
-        specifiedType: const FullType.nullable(String),
+        object.description,
+        specifiedType: const FullType(String),
       );
     }
     if (object.type != null) {
@@ -131,10 +136,17 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.description != null) {
-      yield r'description';
+    if (object.title != null) {
+      yield r'title';
       yield serializers.serialize(
-        object.description,
+        object.title,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.instance != null) {
+      yield r'instance';
+      yield serializers.serialize(
+        object.instance,
         specifiedType: const FullType.nullable(String),
       );
     }
@@ -143,7 +155,7 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
   @override
   Object serialize(
     Serializers serializers,
-    ErrorJsonld object, {
+    ConstraintViolationJsonldJsonld object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -154,7 +166,7 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ErrorJsonldBuilder result,
+    required ConstraintViolationJsonldJsonldBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -164,8 +176,8 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ConstraintViolationJsonldJsonldContext),
-          ) as ConstraintViolationJsonldJsonldContext;
+            specifiedType: const FullType(CenterJsonldHappeningReadContext),
+          ) as CenterJsonldHappeningReadContext;
           result.atContext.replace(valueDes);
           break;
         case r'@id':
@@ -182,36 +194,33 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
           ) as String;
           result.atType = valueDes;
           break;
-        case r'title':
+        case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.title = valueDes;
+            specifiedType: const FullType(int),
+          ) as int;
+          result.status = valueDes;
+          break;
+        case r'violations':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ConstraintViolationJsonViolationsInner)]),
+          ) as BuiltList<ConstraintViolationJsonViolationsInner>;
+          result.violations.replace(valueDes);
           break;
         case r'detail':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.detail = valueDes;
           break;
-        case r'status':
+        case r'description':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.status = valueDes;
-          break;
-        case r'instance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.instance = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         case r'type':
           final valueDes = serializers.deserialize(
@@ -220,13 +229,21 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
           ) as String;
           result.type = valueDes;
           break;
-        case r'description':
+        case r'title':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType.nullable(String),
           ) as String?;
           if (valueDes == null) continue;
-          result.description = valueDes;
+          result.title = valueDes;
+          break;
+        case r'instance':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.instance = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -237,12 +254,12 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
   }
 
   @override
-  ErrorJsonld deserialize(
+  ConstraintViolationJsonldJsonld deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ErrorJsonldBuilder();
+    final result = ConstraintViolationJsonldJsonldBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

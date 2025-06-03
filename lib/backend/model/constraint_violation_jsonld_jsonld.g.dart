@@ -9,7 +9,7 @@ part of 'constraint_violation_jsonld_jsonld.dart';
 class _$ConstraintViolationJsonldJsonld
     extends ConstraintViolationJsonldJsonld {
   @override
-  final ConstraintViolationJsonldJsonldContext? atContext;
+  final CenterJsonldHappeningReadContext? atContext;
   @override
   final String? atId;
   @override
@@ -111,10 +111,10 @@ class ConstraintViolationJsonldJsonldBuilder
             ConstraintViolationJsonldJsonldBuilder> {
   _$ConstraintViolationJsonldJsonld? _$v;
 
-  ConstraintViolationJsonldJsonldContextBuilder? _atContext;
-  ConstraintViolationJsonldJsonldContextBuilder get atContext =>
-      _$this._atContext ??= new ConstraintViolationJsonldJsonldContextBuilder();
-  set atContext(ConstraintViolationJsonldJsonldContextBuilder? atContext) =>
+  CenterJsonldHappeningReadContextBuilder? _atContext;
+  CenterJsonldHappeningReadContextBuilder get atContext =>
+      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;

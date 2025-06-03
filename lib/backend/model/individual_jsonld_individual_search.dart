@@ -19,6 +19,7 @@ part 'individual_jsonld_individual_search.g.dart';
 /// * [atType] 
 /// * [firstname] 
 /// * [lastname] 
+/// * [tosAcceptedAt] 
 /// * [enterprises] 
 /// * [email] 
 /// * [phone] 
@@ -41,6 +42,9 @@ abstract class IndividualJsonldIndividualSearch implements Built<IndividualJsonl
 
   @BuiltValueField(wireName: r'lastname')
   String? get lastname;
+
+  @BuiltValueField(wireName: r'tosAcceptedAt')
+  String? get tosAcceptedAt;
 
   @BuiltValueField(wireName: r'enterprises')
   BuiltList<EnterpriseJsonldIndividualSearch>? get enterprises;
@@ -116,6 +120,13 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
       yield serializers.serialize(
         object.lastname,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.tosAcceptedAt != null) {
+      yield r'tosAcceptedAt';
+      yield serializers.serialize(
+        object.tosAcceptedAt,
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.enterprises != null) {
@@ -218,6 +229,14 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
             specifiedType: const FullType(String),
           ) as String;
           result.lastname = valueDes;
+          break;
+        case r'tosAcceptedAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.tosAcceptedAt = valueDes;
           break;
         case r'enterprises':
           final valueDes = serializers.deserialize(

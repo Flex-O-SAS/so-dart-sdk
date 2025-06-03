@@ -6,51 +6,53 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'subscriber_jsonld_subscriber_write.g.dart';
+part 'individual_individual_write.g.dart';
 
 /// 
 ///
 /// Properties:
-/// * [userIdentifier] 
+/// * [tosAcceptedAt] 
 @BuiltValue()
-abstract class SubscriberJsonldSubscriberWrite implements Built<SubscriberJsonldSubscriberWrite, SubscriberJsonldSubscriberWriteBuilder> {
-  @BuiltValueField(wireName: r'userIdentifier')
-  String get userIdentifier;
+abstract class IndividualIndividualWrite implements Built<IndividualIndividualWrite, IndividualIndividualWriteBuilder> {
+  @BuiltValueField(wireName: r'tosAcceptedAt')
+  String? get tosAcceptedAt;
 
-  SubscriberJsonldSubscriberWrite._();
+  IndividualIndividualWrite._();
 
-  factory SubscriberJsonldSubscriberWrite([void updates(SubscriberJsonldSubscriberWriteBuilder b)]) = _$SubscriberJsonldSubscriberWrite;
+  factory IndividualIndividualWrite([void updates(IndividualIndividualWriteBuilder b)]) = _$IndividualIndividualWrite;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SubscriberJsonldSubscriberWriteBuilder b) => b;
+  static void _defaults(IndividualIndividualWriteBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SubscriberJsonldSubscriberWrite> get serializer => _$SubscriberJsonldSubscriberWriteSerializer();
+  static Serializer<IndividualIndividualWrite> get serializer => _$IndividualIndividualWriteSerializer();
 }
 
-class _$SubscriberJsonldSubscriberWriteSerializer implements PrimitiveSerializer<SubscriberJsonldSubscriberWrite> {
+class _$IndividualIndividualWriteSerializer implements PrimitiveSerializer<IndividualIndividualWrite> {
   @override
-  final Iterable<Type> types = const [SubscriberJsonldSubscriberWrite, _$SubscriberJsonldSubscriberWrite];
+  final Iterable<Type> types = const [IndividualIndividualWrite, _$IndividualIndividualWrite];
 
   @override
-  final String wireName = r'SubscriberJsonldSubscriberWrite';
+  final String wireName = r'IndividualIndividualWrite';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    SubscriberJsonldSubscriberWrite object, {
+    IndividualIndividualWrite object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'userIdentifier';
-    yield serializers.serialize(
-      object.userIdentifier,
-      specifiedType: const FullType(String),
-    );
+    if (object.tosAcceptedAt != null) {
+      yield r'tosAcceptedAt';
+      yield serializers.serialize(
+        object.tosAcceptedAt,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    SubscriberJsonldSubscriberWrite object, {
+    IndividualIndividualWrite object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -61,19 +63,20 @@ class _$SubscriberJsonldSubscriberWriteSerializer implements PrimitiveSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required SubscriberJsonldSubscriberWriteBuilder result,
+    required IndividualIndividualWriteBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'userIdentifier':
+        case r'tosAcceptedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userIdentifier = valueDes;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.tosAcceptedAt = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -84,12 +87,12 @@ class _$SubscriberJsonldSubscriberWriteSerializer implements PrimitiveSerializer
   }
 
   @override
-  SubscriberJsonldSubscriberWrite deserialize(
+  IndividualIndividualWrite deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = SubscriberJsonldSubscriberWriteBuilder();
+    final result = IndividualIndividualWriteBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

@@ -6,51 +6,53 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'subscriber_subscriber_write.g.dart';
+part 'staff_staff_write.g.dart';
 
 /// 
 ///
 /// Properties:
-/// * [userIdentifier] 
+/// * [tosAcceptedAt] 
 @BuiltValue()
-abstract class SubscriberSubscriberWrite implements Built<SubscriberSubscriberWrite, SubscriberSubscriberWriteBuilder> {
-  @BuiltValueField(wireName: r'userIdentifier')
-  String get userIdentifier;
+abstract class StaffStaffWrite implements Built<StaffStaffWrite, StaffStaffWriteBuilder> {
+  @BuiltValueField(wireName: r'tosAcceptedAt')
+  String? get tosAcceptedAt;
 
-  SubscriberSubscriberWrite._();
+  StaffStaffWrite._();
 
-  factory SubscriberSubscriberWrite([void updates(SubscriberSubscriberWriteBuilder b)]) = _$SubscriberSubscriberWrite;
+  factory StaffStaffWrite([void updates(StaffStaffWriteBuilder b)]) = _$StaffStaffWrite;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SubscriberSubscriberWriteBuilder b) => b;
+  static void _defaults(StaffStaffWriteBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SubscriberSubscriberWrite> get serializer => _$SubscriberSubscriberWriteSerializer();
+  static Serializer<StaffStaffWrite> get serializer => _$StaffStaffWriteSerializer();
 }
 
-class _$SubscriberSubscriberWriteSerializer implements PrimitiveSerializer<SubscriberSubscriberWrite> {
+class _$StaffStaffWriteSerializer implements PrimitiveSerializer<StaffStaffWrite> {
   @override
-  final Iterable<Type> types = const [SubscriberSubscriberWrite, _$SubscriberSubscriberWrite];
+  final Iterable<Type> types = const [StaffStaffWrite, _$StaffStaffWrite];
 
   @override
-  final String wireName = r'SubscriberSubscriberWrite';
+  final String wireName = r'StaffStaffWrite';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    SubscriberSubscriberWrite object, {
+    StaffStaffWrite object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'userIdentifier';
-    yield serializers.serialize(
-      object.userIdentifier,
-      specifiedType: const FullType(String),
-    );
+    if (object.tosAcceptedAt != null) {
+      yield r'tosAcceptedAt';
+      yield serializers.serialize(
+        object.tosAcceptedAt,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    SubscriberSubscriberWrite object, {
+    StaffStaffWrite object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -61,19 +63,20 @@ class _$SubscriberSubscriberWriteSerializer implements PrimitiveSerializer<Subsc
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required SubscriberSubscriberWriteBuilder result,
+    required StaffStaffWriteBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'userIdentifier':
+        case r'tosAcceptedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userIdentifier = valueDes;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.tosAcceptedAt = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -84,12 +87,12 @@ class _$SubscriberSubscriberWriteSerializer implements PrimitiveSerializer<Subsc
   }
 
   @override
-  SubscriberSubscriberWrite deserialize(
+  StaffStaffWrite deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = SubscriberSubscriberWriteBuilder();
+    final result = StaffStaffWriteBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

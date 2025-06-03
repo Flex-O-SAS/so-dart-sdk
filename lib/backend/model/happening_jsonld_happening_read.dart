@@ -25,6 +25,7 @@ part 'happening_jsonld_happening_read.g.dart';
 /// * [center] 
 /// * [place] 
 /// * [publicatedAt] 
+/// * [archivedAt] 
 /// * [description] 
 /// * [nbUsers] 
 /// * [maxUsers] 
@@ -61,6 +62,9 @@ abstract class HappeningJsonldHappeningRead implements Built<HappeningJsonldHapp
 
   @BuiltValueField(wireName: r'publicatedAt')
   String? get publicatedAt;
+
+  @BuiltValueField(wireName: r'archivedAt')
+  String? get archivedAt;
 
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -170,6 +174,13 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
       yield r'publicatedAt';
       yield serializers.serialize(
         object.publicatedAt,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.archivedAt != null) {
+      yield r'archivedAt';
+      yield serializers.serialize(
+        object.archivedAt,
         specifiedType: const FullType.nullable(String),
       );
     }
@@ -318,6 +329,14 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
           ) as String?;
           if (valueDes == null) continue;
           result.publicatedAt = valueDes;
+          break;
+        case r'archivedAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.archivedAt = valueDes;
           break;
         case r'description':
           final valueDes = serializers.deserialize(

@@ -18,7 +18,7 @@ class _$StaffJsonldStaffSearch extends StaffJsonldStaffSearch {
   @override
   final String? lastname;
   @override
-  final String? tosAcceptedAt;
+  final DateTime? tosAcceptedAt;
   @override
   final String? reference;
   @override
@@ -118,9 +118,9 @@ class StaffJsonldStaffSearchBuilder
   String? get lastname => _$this._lastname;
   set lastname(String? lastname) => _$this._lastname = lastname;
 
-  String? _tosAcceptedAt;
-  String? get tosAcceptedAt => _$this._tosAcceptedAt;
-  set tosAcceptedAt(String? tosAcceptedAt) =>
+  DateTime? _tosAcceptedAt;
+  DateTime? get tosAcceptedAt => _$this._tosAcceptedAt;
+  set tosAcceptedAt(DateTime? tosAcceptedAt) =>
       _$this._tosAcceptedAt = tosAcceptedAt;
 
   String? _reference;

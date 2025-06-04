@@ -44,10 +44,10 @@ abstract class ClientRelation implements Built<ClientRelation, ClientRelationBui
   String? get description;
 
   @BuiltValueField(wireName: r'begin')
-  String? get begin;
+  DateTime? get begin;
 
   @BuiltValueField(wireName: r'end')
-  String? get end;
+  DateTime? get end;
 
   @BuiltValueField(wireName: r'createdAt')
   DateTime? get createdAt;
@@ -116,14 +116,14 @@ class _$ClientRelationSerializer implements PrimitiveSerializer<ClientRelation> 
       yield r'begin';
       yield serializers.serialize(
         object.begin,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.end != null) {
       yield r'end';
       yield serializers.serialize(
         object.end,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.createdAt != null) {
@@ -209,16 +209,16 @@ class _$ClientRelationSerializer implements PrimitiveSerializer<ClientRelation> 
         case r'begin':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.begin = valueDes;
           break;
         case r'end':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.end = valueDes;
           break;

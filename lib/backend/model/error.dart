@@ -11,22 +11,25 @@ part 'error.g.dart';
 /// A representation of common errors.
 ///
 /// Properties:
-/// * [title] 
-/// * [detail] 
+/// * [title] - A short, human-readable summary of the problem.
+/// * [detail] - A human-readable explanation specific to this occurrence of the problem.
 /// * [status] 
-/// * [instance] 
+/// * [instance] - A URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if dereferenced.
 /// * [type] - A URI reference that identifies the problem type
 @BuiltValue()
 abstract class Error implements Built<Error, ErrorBuilder> {
+  /// A short, human-readable summary of the problem.
   @BuiltValueField(wireName: r'title')
   String? get title;
 
+  /// A human-readable explanation specific to this occurrence of the problem.
   @BuiltValueField(wireName: r'detail')
   String? get detail;
 
   @BuiltValueField(wireName: r'status')
   num? get status;
 
+  /// A URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if dereferenced.
   @BuiltValueField(wireName: r'instance')
   String? get instance;
 

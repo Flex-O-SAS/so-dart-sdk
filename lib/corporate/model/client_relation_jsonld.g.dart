@@ -77,9 +77,9 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
   @override
   final String? description;
   @override
-  final String? begin;
+  final DateTime? begin;
   @override
-  final String? end;
+  final DateTime? end;
   @override
   final DateTime? createdAt;
   @override
@@ -226,13 +226,13 @@ class ClientRelationJsonldBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  String? _begin;
-  String? get begin => _$this._begin;
-  set begin(String? begin) => _$this._begin = begin;
+  DateTime? _begin;
+  DateTime? get begin => _$this._begin;
+  set begin(DateTime? begin) => _$this._begin = begin;
 
-  String? _end;
-  String? get end => _$this._end;
-  set end(String? end) => _$this._end = end;
+  DateTime? _end;
+  DateTime? get end => _$this._end;
+  set end(DateTime? end) => _$this._end = end;
 
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;

@@ -112,9 +112,9 @@ class _$AppointmentClientJsonldAppointmentRead
   @override
   final String? comment;
   @override
-  final String? responseDate;
+  final DateTime? responseDate;
   @override
-  final String? lastSentInvitationDate;
+  final DateTime? lastSentInvitationDate;
 
   factory _$AppointmentClientJsonldAppointmentRead(
           [void Function(AppointmentClientJsonldAppointmentReadBuilder)?
@@ -244,13 +244,14 @@ class AppointmentClientJsonldAppointmentReadBuilder
   String? get comment => _$this._comment;
   set comment(String? comment) => _$this._comment = comment;
 
-  String? _responseDate;
-  String? get responseDate => _$this._responseDate;
-  set responseDate(String? responseDate) => _$this._responseDate = responseDate;
+  DateTime? _responseDate;
+  DateTime? get responseDate => _$this._responseDate;
+  set responseDate(DateTime? responseDate) =>
+      _$this._responseDate = responseDate;
 
-  String? _lastSentInvitationDate;
-  String? get lastSentInvitationDate => _$this._lastSentInvitationDate;
-  set lastSentInvitationDate(String? lastSentInvitationDate) =>
+  DateTime? _lastSentInvitationDate;
+  DateTime? get lastSentInvitationDate => _$this._lastSentInvitationDate;
+  set lastSentInvitationDate(DateTime? lastSentInvitationDate) =>
       _$this._lastSentInvitationDate = lastSentInvitationDate;
 
   AppointmentClientJsonldAppointmentReadBuilder() {

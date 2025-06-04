@@ -15,7 +15,7 @@ part 'staff_staff_write.g.dart';
 @BuiltValue()
 abstract class StaffStaffWrite implements Built<StaffStaffWrite, StaffStaffWriteBuilder> {
   @BuiltValueField(wireName: r'tosAcceptedAt')
-  String? get tosAcceptedAt;
+  DateTime? get tosAcceptedAt;
 
   StaffStaffWrite._();
 
@@ -44,7 +44,7 @@ class _$StaffStaffWriteSerializer implements PrimitiveSerializer<StaffStaffWrite
       yield r'tosAcceptedAt';
       yield serializers.serialize(
         object.tosAcceptedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
   }
@@ -73,8 +73,8 @@ class _$StaffStaffWriteSerializer implements PrimitiveSerializer<StaffStaffWrite
         case r'tosAcceptedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.tosAcceptedAt = valueDes;
           break;

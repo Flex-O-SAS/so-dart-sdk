@@ -48,7 +48,7 @@ abstract class PackageJsonldPackageWrite implements Built<PackageJsonldPackageWr
   DateTime get receptionDate;
 
   @BuiltValueField(wireName: r'handoverDate')
-  String? get handoverDate;
+  DateTime? get handoverDate;
 
   @BuiltValueField(wireName: r'handoverClient')
   String? get handoverClient;
@@ -120,7 +120,7 @@ class _$PackageJsonldPackageWriteSerializer implements PrimitiveSerializer<Packa
       yield r'handoverDate';
       yield serializers.serialize(
         object.handoverDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.handoverClient != null) {
@@ -211,8 +211,8 @@ class _$PackageJsonldPackageWriteSerializer implements PrimitiveSerializer<Packa
         case r'handoverDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.handoverDate = valueDes;
           break;

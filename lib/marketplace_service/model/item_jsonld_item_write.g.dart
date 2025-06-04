@@ -28,7 +28,7 @@ class _$ItemJsonldItemWrite extends ItemJsonldItemWrite {
   @override
   final DateTime beginDate;
   @override
-  final String? endDate;
+  final DateTime? endDate;
 
   factory _$ItemJsonldItemWrite(
           [void Function(ItemJsonldItemWriteBuilder)? updates]) =>
@@ -167,9 +167,9 @@ class ItemJsonldItemWriteBuilder
   DateTime? get beginDate => _$this._beginDate;
   set beginDate(DateTime? beginDate) => _$this._beginDate = beginDate;
 
-  String? _endDate;
-  String? get endDate => _$this._endDate;
-  set endDate(String? endDate) => _$this._endDate = endDate;
+  DateTime? _endDate;
+  DateTime? get endDate => _$this._endDate;
+  set endDate(DateTime? endDate) => _$this._endDate = endDate;
 
   ItemJsonldItemWriteBuilder() {
     ItemJsonldItemWrite._defaults(this);

@@ -19,7 +19,7 @@ class _$IndividualJsonldIndividualSearch
   @override
   final String? lastname;
   @override
-  final String? tosAcceptedAt;
+  final DateTime? tosAcceptedAt;
   @override
   final BuiltList<EnterpriseJsonldIndividualSearch>? enterprises;
   @override
@@ -145,9 +145,9 @@ class IndividualJsonldIndividualSearchBuilder
   String? get lastname => _$this._lastname;
   set lastname(String? lastname) => _$this._lastname = lastname;
 
-  String? _tosAcceptedAt;
-  String? get tosAcceptedAt => _$this._tosAcceptedAt;
-  set tosAcceptedAt(String? tosAcceptedAt) =>
+  DateTime? _tosAcceptedAt;
+  DateTime? get tosAcceptedAt => _$this._tosAcceptedAt;
+  set tosAcceptedAt(DateTime? tosAcceptedAt) =>
       _$this._tosAcceptedAt = tosAcceptedAt;
 
   ListBuilder<EnterpriseJsonldIndividualSearch>? _enterprises;

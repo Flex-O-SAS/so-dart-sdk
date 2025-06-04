@@ -8,7 +8,7 @@ part of 'staff_staff_write.dart';
 
 class _$StaffStaffWrite extends StaffStaffWrite {
   @override
-  final String? tosAcceptedAt;
+  final DateTime? tosAcceptedAt;
 
   factory _$StaffStaffWrite([void Function(StaffStaffWriteBuilder)? updates]) =>
       (new StaffStaffWriteBuilder()..update(updates))._build();
@@ -49,9 +49,9 @@ class StaffStaffWriteBuilder
     implements Builder<StaffStaffWrite, StaffStaffWriteBuilder> {
   _$StaffStaffWrite? _$v;
 
-  String? _tosAcceptedAt;
-  String? get tosAcceptedAt => _$this._tosAcceptedAt;
-  set tosAcceptedAt(String? tosAcceptedAt) =>
+  DateTime? _tosAcceptedAt;
+  DateTime? get tosAcceptedAt => _$this._tosAcceptedAt;
+  set tosAcceptedAt(DateTime? tosAcceptedAt) =>
       _$this._tosAcceptedAt = tosAcceptedAt;
 
   StaffStaffWriteBuilder() {

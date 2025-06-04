@@ -74,7 +74,7 @@ abstract class ItemJsonldItemReadServiceRead implements Built<ItemJsonldItemRead
   DateTime get beginDate;
 
   @BuiltValueField(wireName: r'endDate')
-  String? get endDate;
+  DateTime? get endDate;
 
   ItemJsonldItemReadServiceRead._();
 
@@ -189,7 +189,7 @@ class _$ItemJsonldItemReadServiceReadSerializer implements PrimitiveSerializer<I
       yield r'endDate';
       yield serializers.serialize(
         object.endDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
   }
@@ -319,8 +319,8 @@ class _$ItemJsonldItemReadServiceReadSerializer implements PrimitiveSerializer<I
         case r'endDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.endDate = valueDes;
           break;

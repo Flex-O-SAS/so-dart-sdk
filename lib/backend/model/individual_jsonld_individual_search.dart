@@ -44,7 +44,7 @@ abstract class IndividualJsonldIndividualSearch implements Built<IndividualJsonl
   String? get lastname;
 
   @BuiltValueField(wireName: r'tosAcceptedAt')
-  String? get tosAcceptedAt;
+  DateTime? get tosAcceptedAt;
 
   @BuiltValueField(wireName: r'enterprises')
   BuiltList<EnterpriseJsonldIndividualSearch>? get enterprises;
@@ -126,7 +126,7 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
       yield r'tosAcceptedAt';
       yield serializers.serialize(
         object.tosAcceptedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.enterprises != null) {
@@ -233,8 +233,8 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
         case r'tosAcceptedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.tosAcceptedAt = valueDes;
           break;

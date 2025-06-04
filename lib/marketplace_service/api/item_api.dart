@@ -29,6 +29,8 @@ class ItemApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [id] - 
+  /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [providerPeriodId] - 
   /// * [providerPeriodIdLeftSquareBracketRightSquareBracket] - 
   /// * [providerPeriodName] - 
@@ -64,6 +66,8 @@ class ItemApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiItemsGetCollection200Response>> apiItemsGetCollection({ 
     int? page = 1,
+    int? id,
+    BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     int? providerPeriodId,
     BuiltList<int>? providerPeriodIdLeftSquareBracketRightSquareBracket,
     String? providerPeriodName,
@@ -118,6 +122,8 @@ class ItemApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
+      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (providerPeriodId != null) r'provider.id': encodeQueryParameter(_serializers, providerPeriodId, const FullType(int)),
       if (providerPeriodIdLeftSquareBracketRightSquareBracket != null) r'provider.id[]': encodeCollectionQueryParameter<int>(_serializers, providerPeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (providerPeriodName != null) r'provider.name': encodeQueryParameter(_serializers, providerPeriodName, const FullType(String)),
@@ -486,6 +492,8 @@ class ItemApi {
   /// Parameters:
   /// * [id] - Item identifier
   /// * [page] - The collection page number
+  /// * [id2] - 
+  /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [providerPeriodId] - 
   /// * [providerPeriodIdLeftSquareBracketRightSquareBracket] - 
   /// * [providerPeriodName] - 
@@ -522,6 +530,8 @@ class ItemApi {
   Future<Response<ApiItemsGetCollection200Response>> apiProvidersItemsGetCollection({ 
     required String id,
     int? page = 1,
+    int? id2,
+    BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     int? providerPeriodId,
     BuiltList<int>? providerPeriodIdLeftSquareBracketRightSquareBracket,
     String? providerPeriodName,
@@ -576,6 +586,8 @@ class ItemApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (id2 != null) r'id': encodeQueryParameter(_serializers, id2, const FullType(int)),
+      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (providerPeriodId != null) r'provider.id': encodeQueryParameter(_serializers, providerPeriodId, const FullType(int)),
       if (providerPeriodIdLeftSquareBracketRightSquareBracket != null) r'provider.id[]': encodeCollectionQueryParameter<int>(_serializers, providerPeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (providerPeriodName != null) r'provider.name': encodeQueryParameter(_serializers, providerPeriodName, const FullType(String)),

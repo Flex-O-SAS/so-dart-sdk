@@ -25,6 +25,7 @@ do
         --additional-properties pubName=so_dart_sdk \
         --additional-properties pubLibrary="${service_dart}" \
         --additional-properties sourceFolder="${service_dart}" \
+        --additional-properties serializationLibrary="json_serializable" \
         --skip-validate-spec \
         -o ./
     cat "${cwd}/lib/so_dart_sdk.dart" >> "${cwd}/lib/all.dart"

@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/connect/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/connect/api_util.dart';
 import 'package:so_dart_sdk/connect/model/error_response.dart';
 import 'package:so_dart_sdk/connect/model/provider_response_inner.dart';
 
@@ -17,9 +16,7 @@ class ProvidersApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const ProvidersApi(this._dio, this._serializers);
+  const ProvidersApi(this._dio);
 
   /// Récupérer les types de fournisseur.
   /// 
@@ -32,9 +29,9 @@ class ProvidersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<String>] as data
+  /// Returns a [Future] containing a [Response] with a [List<String>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<String>>> providerTypesGet({ 
+  Future<Response<List<String>>> providerTypesGet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -69,15 +66,11 @@ class ProvidersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<String>? _responseData;
+    List<String>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      ) as BuiltList<String>;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<List<String>, String>(rawData, 'List<String>', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -88,7 +81,7 @@ class ProvidersApi {
       );
     }
 
-    return Response<BuiltList<String>>(
+    return Response<List<String>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -112,9 +105,9 @@ class ProvidersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<ProviderResponseInner>] as data
+  /// Returns a [Future] containing a [Response] with a [List<ProviderResponseInner>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<ProviderResponseInner>>> providersGet({ 
+  Future<Response<List<ProviderResponseInner>>> providersGet({ 
     required String type,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -143,7 +136,7 @@ class ProvidersApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
+      r'type': type,
     };
 
     final _response = await _dio.request<Object>(
@@ -155,15 +148,11 @@ class ProvidersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<ProviderResponseInner>? _responseData;
+    List<ProviderResponseInner>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(ProviderResponseInner)]),
-      ) as BuiltList<ProviderResponseInner>;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<List<ProviderResponseInner>, ProviderResponseInner>(rawData, 'List<ProviderResponseInner>', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -174,7 +163,7 @@ class ProvidersApi {
       );
     }
 
-    return Response<BuiltList<ProviderResponseInner>>(
+    return Response<List<ProviderResponseInner>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

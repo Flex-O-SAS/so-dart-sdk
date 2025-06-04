@@ -4,311 +4,231 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'individual_jsonld_individual_search.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-/// * [firstname] 
-/// * [lastname] 
-/// * [tosAcceptedAt] 
-/// * [enterprises] 
-/// * [email] 
-/// * [phone] 
-/// * [mobile] 
-/// * [reference] 
-/// * [id] 
-@BuiltValue()
-abstract class IndividualJsonldIndividualSearch implements Built<IndividualJsonldIndividualSearch, IndividualJsonldIndividualSearchBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class IndividualJsonldIndividualSearch {
+  /// Returns a new [IndividualJsonldIndividualSearch] instance.
+  IndividualJsonldIndividualSearch({
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+     this.atContext,
 
-  @BuiltValueField(wireName: r'firstname')
-  String? get firstname;
+     this.atId,
 
-  @BuiltValueField(wireName: r'lastname')
-  String? get lastname;
+     this.atType,
 
-  @BuiltValueField(wireName: r'tosAcceptedAt')
-  DateTime? get tosAcceptedAt;
+     this.firstname,
 
-  @BuiltValueField(wireName: r'enterprises')
-  BuiltList<EnterpriseJsonldIndividualSearch>? get enterprises;
+     this.lastname,
 
-  @BuiltValueField(wireName: r'email')
-  String? get email;
+     this.tosAcceptedAt,
 
-  @BuiltValueField(wireName: r'phone')
-  String? get phone;
+     this.enterprises,
 
-  @BuiltValueField(wireName: r'mobile')
-  String? get mobile;
+     this.email,
 
-  @BuiltValueField(wireName: r'reference')
-  String? get reference;
+     this.phone,
 
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+     this.mobile,
 
-  IndividualJsonldIndividualSearch._();
+     this.reference,
 
-  factory IndividualJsonldIndividualSearch([void updates(IndividualJsonldIndividualSearchBuilder b)]) = _$IndividualJsonldIndividualSearch;
+     this.id,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(IndividualJsonldIndividualSearchBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@context',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<IndividualJsonldIndividualSearch> get serializer => _$IndividualJsonldIndividualSearchSerializer();
-}
 
-class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerializer<IndividualJsonldIndividualSearch> {
-  @override
-  final Iterable<Type> types = const [IndividualJsonldIndividualSearch, _$IndividualJsonldIndividualSearch];
+  final CenterJsonldHappeningReadContext? atContext;
 
-  @override
-  final String wireName = r'IndividualJsonldIndividualSearch';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    IndividualJsonldIndividualSearch object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.firstname != null) {
-      yield r'firstname';
-      yield serializers.serialize(
-        object.firstname,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.lastname != null) {
-      yield r'lastname';
-      yield serializers.serialize(
-        object.lastname,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.tosAcceptedAt != null) {
-      yield r'tosAcceptedAt';
-      yield serializers.serialize(
-        object.tosAcceptedAt,
-        specifiedType: const FullType.nullable(DateTime),
-      );
-    }
-    if (object.enterprises != null) {
-      yield r'enterprises';
-      yield serializers.serialize(
-        object.enterprises,
-        specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldIndividualSearch)]),
-      );
-    }
-    if (object.email != null) {
-      yield r'email';
-      yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.phone != null) {
-      yield r'phone';
-      yield serializers.serialize(
-        object.phone,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.mobile != null) {
-      yield r'mobile';
-      yield serializers.serialize(
-        object.mobile,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.reference != null) {
-      yield r'reference';
-      yield serializers.serialize(
-        object.reference,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    IndividualJsonldIndividualSearch object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'@id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required IndividualJsonldIndividualSearchBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'firstname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.firstname = valueDes;
-          break;
-        case r'lastname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastname = valueDes;
-          break;
-        case r'tosAcceptedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.tosAcceptedAt = valueDes;
-          break;
-        case r'enterprises':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldIndividualSearch)]),
-          ) as BuiltList<EnterpriseJsonldIndividualSearch>;
-          result.enterprises.replace(valueDes);
-          break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.email = valueDes;
-          break;
-        case r'phone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.phone = valueDes;
-          break;
-        case r'mobile':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.mobile = valueDes;
-          break;
-        case r'reference':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.reference = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? atId;
+
+
+
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atType;
+
+
+
+  @JsonKey(
+    
+    name: r'firstname',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? firstname;
+
+
+
+  @JsonKey(
+    
+    name: r'lastname',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? lastname;
+
+
+
+  @JsonKey(
+    
+    name: r'tosAcceptedAt',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? tosAcceptedAt;
+
+
+
+  @JsonKey(
+    
+    name: r'enterprises',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final List<EnterpriseJsonldIndividualSearch>? enterprises;
+
+
+
+  @JsonKey(
+    
+    name: r'email',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? email;
+
+
+
+  @JsonKey(
+    
+    name: r'phone',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? phone;
+
+
+
+  @JsonKey(
+    
+    name: r'mobile',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? mobile;
+
+
+
+  @JsonKey(
+    
+    name: r'reference',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? reference;
+
+
+
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final int? id;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is IndividualJsonldIndividualSearch &&
+      other.atContext == atContext &&
+      other.atId == atId &&
+      other.atType == atType &&
+      other.firstname == firstname &&
+      other.lastname == lastname &&
+      other.tosAcceptedAt == tosAcceptedAt &&
+      other.enterprises == enterprises &&
+      other.email == email &&
+      other.phone == phone &&
+      other.mobile == mobile &&
+      other.reference == reference &&
+      other.id == id;
+
+    @override
+    int get hashCode =>
+        atContext.hashCode +
+        atId.hashCode +
+        atType.hashCode +
+        (firstname == null ? 0 : firstname.hashCode) +
+        lastname.hashCode +
+        (tosAcceptedAt == null ? 0 : tosAcceptedAt.hashCode) +
+        enterprises.hashCode +
+        (email == null ? 0 : email.hashCode) +
+        (phone == null ? 0 : phone.hashCode) +
+        (mobile == null ? 0 : mobile.hashCode) +
+        reference.hashCode +
+        id.hashCode;
+
+  factory IndividualJsonldIndividualSearch.fromJson(Map<String, dynamic> json) => _$IndividualJsonldIndividualSearchFromJson(json);
+
+  Map<String, dynamic> toJson() => _$IndividualJsonldIndividualSearchToJson(this);
 
   @override
-  IndividualJsonldIndividualSearch deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = IndividualJsonldIndividualSearchBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

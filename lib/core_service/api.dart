@@ -3,8 +3,6 @@
 //
 
 import 'package:dio/dio.dart';
-import 'package:built_value/serializer.dart';
-import 'package:so_dart_sdk/core_service/serializers.dart';
 import 'package:so_dart_sdk/core_service/auth/api_key_auth.dart';
 import 'package:so_dart_sdk/core_service/auth/basic_auth.dart';
 import 'package:so_dart_sdk/core_service/auth/bearer_auth.dart';
@@ -17,14 +15,11 @@ class SoDartSdk {
   static const String basePath = r'http://localhost';
 
   final Dio dio;
-  final Serializers serializers;
-
   SoDartSdk({
     Dio? dio,
-    Serializers? serializers,
     String? basePathOverride,
     List<Interceptor>? interceptors,
-  })  : this.serializers = serializers ?? standardSerializers,
+  })  : 
         this.dio = dio ??
             Dio(BaseOptions(
               baseUrl: basePathOverride ?? basePath,
@@ -70,18 +65,18 @@ class SoDartSdk {
   /// Get DeviceApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   DeviceApi getDeviceApi() {
-    return DeviceApi(dio, serializers);
+    return DeviceApi(dio);
   }
 
   /// Get NotificationApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   NotificationApi getNotificationApi() {
-    return NotificationApi(dio, serializers);
+    return NotificationApi(dio);
   }
 
   /// Get SubscriberApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   SubscriberApi getSubscriberApi() {
-    return SubscriberApi(dio, serializers);
+    return SubscriberApi(dio);
   }
 }

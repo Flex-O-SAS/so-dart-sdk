@@ -3,161 +3,102 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'center_jsonld_public_center_read_assets_inner.g.dart';
 
-/// CenterJsonldPublicCenterReadAssetsInner
-///
-/// Properties:
-/// * [id] 
-/// * [url] 
-/// * [name] 
-/// * [tags] 
-@BuiltValue()
-abstract class CenterJsonldPublicCenterReadAssetsInner implements Built<CenterJsonldPublicCenterReadAssetsInner, CenterJsonldPublicCenterReadAssetsInnerBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String? get id;
 
-  @BuiltValueField(wireName: r'url')
-  String? get url;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CenterJsonldPublicCenterReadAssetsInner {
+  /// Returns a new [CenterJsonldPublicCenterReadAssetsInner] instance.
+  CenterJsonldPublicCenterReadAssetsInner({
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+     this.id,
 
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<String>? get tags;
+     this.url,
 
-  CenterJsonldPublicCenterReadAssetsInner._();
+     this.name,
 
-  factory CenterJsonldPublicCenterReadAssetsInner([void updates(CenterJsonldPublicCenterReadAssetsInnerBuilder b)]) = _$CenterJsonldPublicCenterReadAssetsInner;
+     this.tags,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CenterJsonldPublicCenterReadAssetsInnerBuilder b) => b;
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CenterJsonldPublicCenterReadAssetsInner> get serializer => _$CenterJsonldPublicCenterReadAssetsInnerSerializer();
-}
 
-class _$CenterJsonldPublicCenterReadAssetsInnerSerializer implements PrimitiveSerializer<CenterJsonldPublicCenterReadAssetsInner> {
-  @override
-  final Iterable<Type> types = const [CenterJsonldPublicCenterReadAssetsInner, _$CenterJsonldPublicCenterReadAssetsInner];
+  final String? id;
 
-  @override
-  final String wireName = r'CenterJsonldPublicCenterReadAssetsInner';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CenterJsonldPublicCenterReadAssetsInner object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.url != null) {
-      yield r'url';
-      yield serializers.serialize(
-        object.url,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.tags != null) {
-      yield r'tags';
-      yield serializers.serialize(
-        object.tags,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    CenterJsonldPublicCenterReadAssetsInner object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'url',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required CenterJsonldPublicCenterReadAssetsInnerBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.url = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'tags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.tags.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? url;
+
+
+
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? name;
+
+
+
+  @JsonKey(
+    
+    name: r'tags',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final List<String>? tags;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is CenterJsonldPublicCenterReadAssetsInner &&
+      other.id == id &&
+      other.url == url &&
+      other.name == name &&
+      other.tags == tags;
+
+    @override
+    int get hashCode =>
+        id.hashCode +
+        url.hashCode +
+        name.hashCode +
+        tags.hashCode;
+
+  factory CenterJsonldPublicCenterReadAssetsInner.fromJson(Map<String, dynamic> json) => _$CenterJsonldPublicCenterReadAssetsInnerFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CenterJsonldPublicCenterReadAssetsInnerToJson(this);
 
   @override
-  CenterJsonldPublicCenterReadAssetsInner deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = CenterJsonldPublicCenterReadAssetsInnerBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

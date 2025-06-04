@@ -4,209 +4,152 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'device_jsonld_device_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-/// * [token] 
-/// * [subscriber] 
-/// * [source_] 
-@BuiltValue()
-abstract class DeviceJsonldDeviceRead implements Built<DeviceJsonldDeviceRead, DeviceJsonldDeviceReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  ConstraintViolationJsonldJsonldContext? get atContext;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class DeviceJsonldDeviceRead {
+  /// Returns a new [DeviceJsonldDeviceRead] instance.
+  DeviceJsonldDeviceRead({
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+     this.atContext,
 
-  @BuiltValueField(wireName: r'token')
-  String get token;
+     this.atId,
 
-  @BuiltValueField(wireName: r'subscriber')
-  String get subscriber;
+     this.atType,
 
-  @BuiltValueField(wireName: r'source')
-  DeviceJsonldDeviceReadSource_Enum get source_;
-  // enum source_Enum {  web,  ios,  android,  };
+    required  this.token,
 
-  DeviceJsonldDeviceRead._();
+    required  this.subscriber,
 
-  factory DeviceJsonldDeviceRead([void updates(DeviceJsonldDeviceReadBuilder b)]) = _$DeviceJsonldDeviceRead;
+    required  this.source_,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(DeviceJsonldDeviceReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@context',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<DeviceJsonldDeviceRead> get serializer => _$DeviceJsonldDeviceReadSerializer();
+
+  final ConstraintViolationJsonldJsonldContext? atContext;
+
+
+
+  @JsonKey(
+    
+    name: r'@id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atId;
+
+
+
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atType;
+
+
+
+  @JsonKey(
+    
+    name: r'token',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String token;
+
+
+
+  @JsonKey(
+    
+    name: r'subscriber',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String subscriber;
+
+
+
+  @JsonKey(
+    
+    name: r'source',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final DeviceJsonldDeviceReadSource_Enum source_;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is DeviceJsonldDeviceRead &&
+      other.atContext == atContext &&
+      other.atId == atId &&
+      other.atType == atType &&
+      other.token == token &&
+      other.subscriber == subscriber &&
+      other.source_ == source_;
+
+    @override
+    int get hashCode =>
+        atContext.hashCode +
+        atId.hashCode +
+        atType.hashCode +
+        token.hashCode +
+        subscriber.hashCode +
+        source_.hashCode;
+
+  factory DeviceJsonldDeviceRead.fromJson(Map<String, dynamic> json) => _$DeviceJsonldDeviceReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DeviceJsonldDeviceReadToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
+  }
+
 }
 
-class _$DeviceJsonldDeviceReadSerializer implements PrimitiveSerializer<DeviceJsonldDeviceRead> {
-  @override
-  final Iterable<Type> types = const [DeviceJsonldDeviceRead, _$DeviceJsonldDeviceRead];
 
-  @override
-  final String wireName = r'DeviceJsonldDeviceRead';
+enum DeviceJsonldDeviceReadSource_Enum {
+@JsonValue(r'web')
+web(r'web'),
+@JsonValue(r'ios')
+ios(r'ios'),
+@JsonValue(r'android')
+android(r'android');
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    DeviceJsonldDeviceRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(ConstraintViolationJsonldJsonldContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    yield r'token';
-    yield serializers.serialize(
-      object.token,
-      specifiedType: const FullType(String),
-    );
-    yield r'subscriber';
-    yield serializers.serialize(
-      object.subscriber,
-      specifiedType: const FullType(String),
-    );
-    yield r'source';
-    yield serializers.serialize(
-      object.source_,
-      specifiedType: const FullType(DeviceJsonldDeviceReadSource_Enum),
-    );
-  }
+const DeviceJsonldDeviceReadSource_Enum(this.value);
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    DeviceJsonldDeviceRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+final String value;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required DeviceJsonldDeviceReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ConstraintViolationJsonldJsonldContext),
-          ) as ConstraintViolationJsonldJsonldContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'token':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.token = valueDes;
-          break;
-        case r'subscriber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.subscriber = valueDes;
-          break;
-        case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DeviceJsonldDeviceReadSource_Enum),
-          ) as DeviceJsonldDeviceReadSource_Enum;
-          result.source_ = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
-
-  @override
-  DeviceJsonldDeviceRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = DeviceJsonldDeviceReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
-  }
+@override
+String toString() => value;
 }
 
-class DeviceJsonldDeviceReadSource_Enum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'web')
-  static const DeviceJsonldDeviceReadSource_Enum web = _$deviceJsonldDeviceReadSourceEnum_web;
-  @BuiltValueEnumConst(wireName: r'ios')
-  static const DeviceJsonldDeviceReadSource_Enum ios = _$deviceJsonldDeviceReadSourceEnum_ios;
-  @BuiltValueEnumConst(wireName: r'android')
-  static const DeviceJsonldDeviceReadSource_Enum android = _$deviceJsonldDeviceReadSourceEnum_android;
-
-  static Serializer<DeviceJsonldDeviceReadSource_Enum> get serializer => _$deviceJsonldDeviceReadSourceEnumSerializer;
-
-  const DeviceJsonldDeviceReadSource_Enum._(String name): super(name);
-
-  static BuiltSet<DeviceJsonldDeviceReadSource_Enum> get values => _$deviceJsonldDeviceReadSourceEnumValues;
-  static DeviceJsonldDeviceReadSource_Enum valueOf(String name) => _$deviceJsonldDeviceReadSourceEnumValueOf(name);
-}
 

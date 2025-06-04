@@ -4,142 +4,86 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'happening_partner_link_jsonld_happening_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-@BuiltValue()
-abstract class HappeningPartnerLinkJsonldHappeningRead implements Built<HappeningPartnerLinkJsonldHappeningRead, HappeningPartnerLinkJsonldHappeningReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class HappeningPartnerLinkJsonldHappeningRead {
+  /// Returns a new [HappeningPartnerLinkJsonldHappeningRead] instance.
+  HappeningPartnerLinkJsonldHappeningRead({
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+     this.atContext,
 
-  HappeningPartnerLinkJsonldHappeningRead._();
+     this.atId,
 
-  factory HappeningPartnerLinkJsonldHappeningRead([void updates(HappeningPartnerLinkJsonldHappeningReadBuilder b)]) = _$HappeningPartnerLinkJsonldHappeningRead;
+     this.atType,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(HappeningPartnerLinkJsonldHappeningReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@context',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<HappeningPartnerLinkJsonldHappeningRead> get serializer => _$HappeningPartnerLinkJsonldHappeningReadSerializer();
-}
 
-class _$HappeningPartnerLinkJsonldHappeningReadSerializer implements PrimitiveSerializer<HappeningPartnerLinkJsonldHappeningRead> {
-  @override
-  final Iterable<Type> types = const [HappeningPartnerLinkJsonldHappeningRead, _$HappeningPartnerLinkJsonldHappeningRead];
+  final CenterJsonldHappeningReadContext? atContext;
 
-  @override
-  final String wireName = r'HappeningPartnerLinkJsonldHappeningRead';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    HappeningPartnerLinkJsonldHappeningRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    HappeningPartnerLinkJsonldHappeningRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'@id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required HappeningPartnerLinkJsonldHappeningReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? atId;
+
+
+
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atType;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is HappeningPartnerLinkJsonldHappeningRead &&
+      other.atContext == atContext &&
+      other.atId == atId &&
+      other.atType == atType;
+
+    @override
+    int get hashCode =>
+        atContext.hashCode +
+        atId.hashCode +
+        atType.hashCode;
+
+  factory HappeningPartnerLinkJsonldHappeningRead.fromJson(Map<String, dynamic> json) => _$HappeningPartnerLinkJsonldHappeningReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$HappeningPartnerLinkJsonldHappeningReadToJson(this);
 
   @override
-  HappeningPartnerLinkJsonldHappeningRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = HappeningPartnerLinkJsonldHappeningReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

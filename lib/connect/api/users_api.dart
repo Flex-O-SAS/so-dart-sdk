@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/connect/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:so_dart_sdk/connect/api_util.dart';
 import 'package:so_dart_sdk/connect/model/error_response.dart';
 import 'package:so_dart_sdk/connect/model/user_dto.dart';
 import 'package:so_dart_sdk/connect/model/user_response_dto.dart';
@@ -17,9 +17,7 @@ class UsersApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const UsersApi(this._dio, this._serializers);
+  const UsersApi(this._dio);
 
   /// Créer ou mettre à jour un utilisateur
   /// Cette méthode permet de gérer les utilisateurs dans Connect pour un provider spécifique.  ## Comportement général - Création d&#39;un nouvel utilisateur s&#39;il n&#39;existe pas - Mise à jour d&#39;un utilisateur existant - Gestion des informations utilisateur (email, nom, prénom, etc.)  Note : Actuellement, seule l&#39;implémentation Sezaam est disponible. 
@@ -48,7 +46,7 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/providers/{provider_uuid}/users/{user_reference}'.replaceAll('{' r'provider_uuid' '}', encodeQueryParameter(_serializers, providerUuid, const FullType(String)).toString()).replaceAll('{' r'user_reference' '}', encodeQueryParameter(_serializers, userReference, const FullType(String)).toString());
+    final _path = r'/providers/{provider_uuid}/users/{user_reference}'.replaceAll('{' r'provider_uuid' '}', providerUuid.toString()).replaceAll('{' r'user_reference' '}', userReference.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -71,9 +69,7 @@ class UsersApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserDto);
-      _bodyData = _serializers.serialize(userDto, specifiedType: _type);
-
+_bodyData=jsonEncode(userDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -98,12 +94,8 @@ class UsersApi {
     UserResponseDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(UserResponseDto),
-      ) as UserResponseDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<UserResponseDto, UserResponseDto>(rawData, 'UserResponseDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

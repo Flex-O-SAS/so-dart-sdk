@@ -4,215 +4,150 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'service_jsonld_item_read_service_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-/// * [id] 
-/// * [label] 
-/// * [prioritization] 
-/// * [imageLink] 
-@BuiltValue()
-abstract class ServiceJsonldItemReadServiceRead implements Built<ServiceJsonldItemReadServiceRead, ServiceJsonldItemReadServiceReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AddressJsonldProviderReadAddressReadContext? get atContext;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ServiceJsonldItemReadServiceRead {
+  /// Returns a new [ServiceJsonldItemReadServiceRead] instance.
+  ServiceJsonldItemReadServiceRead({
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+     this.atContext,
 
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+     this.atId,
 
-  @BuiltValueField(wireName: r'label')
-  String? get label;
+     this.atType,
 
-  @BuiltValueField(wireName: r'prioritization')
-  int? get prioritization;
+     this.id,
 
-  @BuiltValueField(wireName: r'imageLink')
-  String? get imageLink;
+     this.label,
 
-  ServiceJsonldItemReadServiceRead._();
+     this.prioritization,
 
-  factory ServiceJsonldItemReadServiceRead([void updates(ServiceJsonldItemReadServiceReadBuilder b)]) = _$ServiceJsonldItemReadServiceRead;
+     this.imageLink,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ServiceJsonldItemReadServiceReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@context',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ServiceJsonldItemReadServiceRead> get serializer => _$ServiceJsonldItemReadServiceReadSerializer();
-}
 
-class _$ServiceJsonldItemReadServiceReadSerializer implements PrimitiveSerializer<ServiceJsonldItemReadServiceRead> {
-  @override
-  final Iterable<Type> types = const [ServiceJsonldItemReadServiceRead, _$ServiceJsonldItemReadServiceRead];
+  final AddressJsonldProviderReadAddressReadContext? atContext;
 
-  @override
-  final String wireName = r'ServiceJsonldItemReadServiceRead';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ServiceJsonldItemReadServiceRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.label != null) {
-      yield r'label';
-      yield serializers.serialize(
-        object.label,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.prioritization != null) {
-      yield r'prioritization';
-      yield serializers.serialize(
-        object.prioritization,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.imageLink != null) {
-      yield r'imageLink';
-      yield serializers.serialize(
-        object.imageLink,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ServiceJsonldItemReadServiceRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'@id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ServiceJsonldItemReadServiceReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-          ) as AddressJsonldProviderReadAddressReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.label = valueDes;
-          break;
-        case r'prioritization':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.prioritization = valueDes;
-          break;
-        case r'imageLink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.imageLink = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? atId;
+
+
+
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atType;
+
+
+
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final int? id;
+
+
+
+  @JsonKey(
+    
+    name: r'label',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? label;
+
+
+
+  @JsonKey(
+    
+    name: r'prioritization',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final int? prioritization;
+
+
+
+  @JsonKey(
+    
+    name: r'imageLink',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? imageLink;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ServiceJsonldItemReadServiceRead &&
+      other.atContext == atContext &&
+      other.atId == atId &&
+      other.atType == atType &&
+      other.id == id &&
+      other.label == label &&
+      other.prioritization == prioritization &&
+      other.imageLink == imageLink;
+
+    @override
+    int get hashCode =>
+        atContext.hashCode +
+        atId.hashCode +
+        atType.hashCode +
+        id.hashCode +
+        label.hashCode +
+        prioritization.hashCode +
+        (imageLink == null ? 0 : imageLink.hashCode);
+
+  factory ServiceJsonldItemReadServiceRead.fromJson(Map<String, dynamic> json) => _$ServiceJsonldItemReadServiceReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ServiceJsonldItemReadServiceReadToJson(this);
 
   @override
-  ServiceJsonldItemReadServiceRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ServiceJsonldItemReadServiceReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

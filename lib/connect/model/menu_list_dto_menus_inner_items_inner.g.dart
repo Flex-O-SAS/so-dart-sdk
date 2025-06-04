@@ -3,124 +3,33 @@
 part of 'menu_list_dto_menus_inner_items_inner.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$MenuListDtoMenusInnerItemsInner
-    extends MenuListDtoMenusInnerItemsInner {
-  @override
-  final String? category;
-  @override
-  final BuiltList<MenuListDtoMenusInnerItemsInnerItemsInner>? items;
+MenuListDtoMenusInnerItemsInner _$MenuListDtoMenusInnerItemsInnerFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      'MenuListDtoMenusInnerItemsInner',
+      json,
+      ($checkedConvert) {
+        final val = MenuListDtoMenusInnerItemsInner(
+          category: $checkedConvert('category', (v) => v as String?),
+          items: $checkedConvert(
+              'items',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) =>
+                      MenuListDtoMenusInnerItemsInnerItemsInner.fromJson(
+                          e as Map<String, dynamic>))
+                  .toList()),
+        );
+        return val;
+      },
+    );
 
-  factory _$MenuListDtoMenusInnerItemsInner(
-          [void Function(MenuListDtoMenusInnerItemsInnerBuilder)? updates]) =>
-      (new MenuListDtoMenusInnerItemsInnerBuilder()..update(updates))._build();
-
-  _$MenuListDtoMenusInnerItemsInner._({this.category, this.items}) : super._();
-
-  @override
-  MenuListDtoMenusInnerItemsInner rebuild(
-          void Function(MenuListDtoMenusInnerItemsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  MenuListDtoMenusInnerItemsInnerBuilder toBuilder() =>
-      new MenuListDtoMenusInnerItemsInnerBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is MenuListDtoMenusInnerItemsInner &&
-        category == other.category &&
-        items == other.items;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, category.hashCode);
-    _$hash = $jc(_$hash, items.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'MenuListDtoMenusInnerItemsInner')
-          ..add('category', category)
-          ..add('items', items))
-        .toString();
-  }
-}
-
-class MenuListDtoMenusInnerItemsInnerBuilder
-    implements
-        Builder<MenuListDtoMenusInnerItemsInner,
-            MenuListDtoMenusInnerItemsInnerBuilder> {
-  _$MenuListDtoMenusInnerItemsInner? _$v;
-
-  String? _category;
-  String? get category => _$this._category;
-  set category(String? category) => _$this._category = category;
-
-  ListBuilder<MenuListDtoMenusInnerItemsInnerItemsInner>? _items;
-  ListBuilder<MenuListDtoMenusInnerItemsInnerItemsInner> get items =>
-      _$this._items ??=
-          new ListBuilder<MenuListDtoMenusInnerItemsInnerItemsInner>();
-  set items(ListBuilder<MenuListDtoMenusInnerItemsInnerItemsInner>? items) =>
-      _$this._items = items;
-
-  MenuListDtoMenusInnerItemsInnerBuilder() {
-    MenuListDtoMenusInnerItemsInner._defaults(this);
-  }
-
-  MenuListDtoMenusInnerItemsInnerBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _category = $v.category;
-      _items = $v.items?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(MenuListDtoMenusInnerItemsInner other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$MenuListDtoMenusInnerItemsInner;
-  }
-
-  @override
-  void update(void Function(MenuListDtoMenusInnerItemsInnerBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  MenuListDtoMenusInnerItemsInner build() => _build();
-
-  _$MenuListDtoMenusInnerItemsInner _build() {
-    _$MenuListDtoMenusInnerItemsInner _$result;
-    try {
-      _$result = _$v ??
-          new _$MenuListDtoMenusInnerItemsInner._(
-            category: category,
-            items: _items?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'items';
-        _items?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'MenuListDtoMenusInnerItemsInner', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint
+Map<String, dynamic> _$MenuListDtoMenusInnerItemsInnerToJson(
+        MenuListDtoMenusInnerItemsInner instance) =>
+    <String, dynamic>{
+      if (instance.category case final value?) 'category': value,
+      if (instance.items?.map((e) => e.toJson()).toList() case final value?)
+        'items': value,
+    };

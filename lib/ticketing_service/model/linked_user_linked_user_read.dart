@@ -3,174 +3,118 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'linked_user_linked_user_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [id] 
-/// * [ticket] 
-/// * [user] 
-/// * [createdAt] 
-/// * [updatedAt] 
-@BuiltValue()
-abstract class LinkedUserLinkedUserRead implements Built<LinkedUserLinkedUserRead, LinkedUserLinkedUserReadBuilder> {
-  @BuiltValueField(wireName: r'id')
-  int? get id;
 
-  @BuiltValueField(wireName: r'ticket')
-  String get ticket;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class LinkedUserLinkedUserRead {
+  /// Returns a new [LinkedUserLinkedUserRead] instance.
+  LinkedUserLinkedUserRead({
 
-  @BuiltValueField(wireName: r'user')
-  String get user;
+     this.id,
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+    required  this.ticket,
 
-  @BuiltValueField(wireName: r'updatedAt')
-  DateTime? get updatedAt;
+    required  this.user,
 
-  LinkedUserLinkedUserRead._();
+     this.createdAt,
 
-  factory LinkedUserLinkedUserRead([void updates(LinkedUserLinkedUserReadBuilder b)]) = _$LinkedUserLinkedUserRead;
+     this.updatedAt,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LinkedUserLinkedUserReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<LinkedUserLinkedUserRead> get serializer => _$LinkedUserLinkedUserReadSerializer();
-}
 
-class _$LinkedUserLinkedUserReadSerializer implements PrimitiveSerializer<LinkedUserLinkedUserRead> {
-  @override
-  final Iterable<Type> types = const [LinkedUserLinkedUserRead, _$LinkedUserLinkedUserRead];
+  final int? id;
 
-  @override
-  final String wireName = r'LinkedUserLinkedUserRead';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    LinkedUserLinkedUserRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-    yield r'ticket';
-    yield serializers.serialize(
-      object.ticket,
-      specifiedType: const FullType(String),
-    );
-    yield r'user';
-    yield serializers.serialize(
-      object.user,
-      specifiedType: const FullType(String),
-    );
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.updatedAt != null) {
-      yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    LinkedUserLinkedUserRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'ticket',
+    required: true,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required LinkedUserLinkedUserReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'ticket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.ticket = valueDes;
-          break;
-        case r'user':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.user = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String ticket;
+
+
+
+  @JsonKey(
+    
+    name: r'user',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String user;
+
+
+
+  @JsonKey(
+    
+    name: r'createdAt',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? createdAt;
+
+
+
+  @JsonKey(
+    
+    name: r'updatedAt',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? updatedAt;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is LinkedUserLinkedUserRead &&
+      other.id == id &&
+      other.ticket == ticket &&
+      other.user == user &&
+      other.createdAt == createdAt &&
+      other.updatedAt == updatedAt;
+
+    @override
+    int get hashCode =>
+        id.hashCode +
+        ticket.hashCode +
+        user.hashCode +
+        createdAt.hashCode +
+        updatedAt.hashCode;
+
+  factory LinkedUserLinkedUserRead.fromJson(Map<String, dynamic> json) => _$LinkedUserLinkedUserReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LinkedUserLinkedUserReadToJson(this);
 
   @override
-  LinkedUserLinkedUserRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = LinkedUserLinkedUserReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

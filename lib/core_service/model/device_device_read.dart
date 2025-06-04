@@ -3,155 +3,104 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'device_device_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [token] 
-/// * [subscriber] 
-/// * [source_] 
-@BuiltValue()
-abstract class DeviceDeviceRead implements Built<DeviceDeviceRead, DeviceDeviceReadBuilder> {
-  @BuiltValueField(wireName: r'token')
-  String get token;
 
-  @BuiltValueField(wireName: r'subscriber')
-  String get subscriber;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class DeviceDeviceRead {
+  /// Returns a new [DeviceDeviceRead] instance.
+  DeviceDeviceRead({
 
-  @BuiltValueField(wireName: r'source')
-  DeviceDeviceReadSource_Enum get source_;
-  // enum source_Enum {  web,  ios,  android,  };
+    required  this.token,
 
-  DeviceDeviceRead._();
+    required  this.subscriber,
 
-  factory DeviceDeviceRead([void updates(DeviceDeviceReadBuilder b)]) = _$DeviceDeviceRead;
+    required  this.source_,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(DeviceDeviceReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'token',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<DeviceDeviceRead> get serializer => _$DeviceDeviceReadSerializer();
+
+  final String token;
+
+
+
+  @JsonKey(
+    
+    name: r'subscriber',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String subscriber;
+
+
+
+  @JsonKey(
+    
+    name: r'source',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final DeviceDeviceReadSource_Enum source_;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is DeviceDeviceRead &&
+      other.token == token &&
+      other.subscriber == subscriber &&
+      other.source_ == source_;
+
+    @override
+    int get hashCode =>
+        token.hashCode +
+        subscriber.hashCode +
+        source_.hashCode;
+
+  factory DeviceDeviceRead.fromJson(Map<String, dynamic> json) => _$DeviceDeviceReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DeviceDeviceReadToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
+  }
+
 }
 
-class _$DeviceDeviceReadSerializer implements PrimitiveSerializer<DeviceDeviceRead> {
-  @override
-  final Iterable<Type> types = const [DeviceDeviceRead, _$DeviceDeviceRead];
 
-  @override
-  final String wireName = r'DeviceDeviceRead';
+enum DeviceDeviceReadSource_Enum {
+@JsonValue(r'web')
+web(r'web'),
+@JsonValue(r'ios')
+ios(r'ios'),
+@JsonValue(r'android')
+android(r'android');
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    DeviceDeviceRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'token';
-    yield serializers.serialize(
-      object.token,
-      specifiedType: const FullType(String),
-    );
-    yield r'subscriber';
-    yield serializers.serialize(
-      object.subscriber,
-      specifiedType: const FullType(String),
-    );
-    yield r'source';
-    yield serializers.serialize(
-      object.source_,
-      specifiedType: const FullType(DeviceDeviceReadSource_Enum),
-    );
-  }
+const DeviceDeviceReadSource_Enum(this.value);
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    DeviceDeviceRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+final String value;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required DeviceDeviceReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'token':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.token = valueDes;
-          break;
-        case r'subscriber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.subscriber = valueDes;
-          break;
-        case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DeviceDeviceReadSource_Enum),
-          ) as DeviceDeviceReadSource_Enum;
-          result.source_ = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
-
-  @override
-  DeviceDeviceRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = DeviceDeviceReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
-  }
+@override
+String toString() => value;
 }
 
-class DeviceDeviceReadSource_Enum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'web')
-  static const DeviceDeviceReadSource_Enum web = _$deviceDeviceReadSourceEnum_web;
-  @BuiltValueEnumConst(wireName: r'ios')
-  static const DeviceDeviceReadSource_Enum ios = _$deviceDeviceReadSourceEnum_ios;
-  @BuiltValueEnumConst(wireName: r'android')
-  static const DeviceDeviceReadSource_Enum android = _$deviceDeviceReadSourceEnum_android;
-
-  static Serializer<DeviceDeviceReadSource_Enum> get serializer => _$deviceDeviceReadSourceEnumSerializer;
-
-  const DeviceDeviceReadSource_Enum._(String name): super(name);
-
-  static BuiltSet<DeviceDeviceReadSource_Enum> get values => _$deviceDeviceReadSourceEnumValues;
-  static DeviceDeviceReadSource_Enum valueOf(String name) => _$deviceDeviceReadSourceEnumValueOf(name);
-}
 

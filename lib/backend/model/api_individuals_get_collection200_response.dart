@@ -6,159 +6,103 @@
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'api_individuals_get_collection200_response.g.dart';
 
-/// ApiIndividualsGetCollection200Response
-///
-/// Properties:
-/// * [member] 
-/// * [totalItems] 
-/// * [view] 
-/// * [search] 
-@BuiltValue()
-abstract class ApiIndividualsGetCollection200Response implements Built<ApiIndividualsGetCollection200Response, ApiIndividualsGetCollection200ResponseBuilder> {
-  @BuiltValueField(wireName: r'member')
-  BuiltList<IndividualJsonldIndividualSearch> get member;
 
-  @BuiltValueField(wireName: r'totalItems')
-  int? get totalItems;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ApiIndividualsGetCollection200Response {
+  /// Returns a new [ApiIndividualsGetCollection200Response] instance.
+  ApiIndividualsGetCollection200Response({
 
-  @BuiltValueField(wireName: r'view')
-  ApiCentersGetCollection200ResponseView? get view;
+    required  this.member,
 
-  @BuiltValueField(wireName: r'search')
-  ApiCentersGetCollection200ResponseSearch? get search;
+     this.totalItems,
 
-  ApiIndividualsGetCollection200Response._();
+     this.view,
 
-  factory ApiIndividualsGetCollection200Response([void updates(ApiIndividualsGetCollection200ResponseBuilder b)]) = _$ApiIndividualsGetCollection200Response;
+     this.search,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiIndividualsGetCollection200ResponseBuilder b) => b;
+  @JsonKey(
+    
+    name: r'member',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ApiIndividualsGetCollection200Response> get serializer => _$ApiIndividualsGetCollection200ResponseSerializer();
-}
 
-class _$ApiIndividualsGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiIndividualsGetCollection200Response> {
-  @override
-  final Iterable<Type> types = const [ApiIndividualsGetCollection200Response, _$ApiIndividualsGetCollection200Response];
+  final List<IndividualJsonldIndividualSearch> member;
 
-  @override
-  final String wireName = r'ApiIndividualsGetCollection200Response';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ApiIndividualsGetCollection200Response object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'member';
-    yield serializers.serialize(
-      object.member,
-      specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldIndividualSearch)]),
-    );
-    if (object.totalItems != null) {
-      yield r'totalItems';
-      yield serializers.serialize(
-        object.totalItems,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.view != null) {
-      yield r'view';
-      yield serializers.serialize(
-        object.view,
-        specifiedType: const FullType(ApiCentersGetCollection200ResponseView),
-      );
-    }
-    if (object.search != null) {
-      yield r'search';
-      yield serializers.serialize(
-        object.search,
-        specifiedType: const FullType(ApiCentersGetCollection200ResponseSearch),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ApiIndividualsGetCollection200Response object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+          // minimum: 0
+  @JsonKey(
+    
+    name: r'totalItems',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ApiIndividualsGetCollection200ResponseBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'member':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldIndividualSearch)]),
-          ) as BuiltList<IndividualJsonldIndividualSearch>;
-          result.member.replace(valueDes);
-          break;
-        case r'totalItems':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.totalItems = valueDes;
-          break;
-        case r'view':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiCentersGetCollection200ResponseView),
-          ) as ApiCentersGetCollection200ResponseView;
-          result.view.replace(valueDes);
-          break;
-        case r'search':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiCentersGetCollection200ResponseSearch),
-          ) as ApiCentersGetCollection200ResponseSearch;
-          result.search.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final int? totalItems;
+
+
+
+  @JsonKey(
+    
+    name: r'view',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final ApiCentersGetCollection200ResponseView? view;
+
+
+
+  @JsonKey(
+    
+    name: r'search',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final ApiCentersGetCollection200ResponseSearch? search;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ApiIndividualsGetCollection200Response &&
+      other.member == member &&
+      other.totalItems == totalItems &&
+      other.view == view &&
+      other.search == search;
+
+    @override
+    int get hashCode =>
+        member.hashCode +
+        totalItems.hashCode +
+        view.hashCode +
+        search.hashCode;
+
+  factory ApiIndividualsGetCollection200Response.fromJson(Map<String, dynamic> json) => _$ApiIndividualsGetCollection200ResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ApiIndividualsGetCollection200ResponseToJson(this);
 
   @override
-  ApiIndividualsGetCollection200Response deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ApiIndividualsGetCollection200ResponseBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

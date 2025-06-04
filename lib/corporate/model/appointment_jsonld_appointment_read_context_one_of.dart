@@ -3,136 +3,84 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'appointment_jsonld_appointment_read_context_one_of.g.dart';
 
-/// AppointmentJsonldAppointmentReadContextOneOf
-///
-/// Properties:
-/// * [atVocab] 
-/// * [hydra] 
-@BuiltValue()
-abstract class AppointmentJsonldAppointmentReadContextOneOf implements Built<AppointmentJsonldAppointmentReadContextOneOf, AppointmentJsonldAppointmentReadContextOneOfBuilder> {
-  @BuiltValueField(wireName: r'@vocab')
-  String get atVocab;
 
-  @BuiltValueField(wireName: r'hydra')
-  AppointmentJsonldAppointmentReadContextOneOfHydraEnum get hydra;
-  // enum hydraEnum {  http://www.w3.org/ns/hydra/core#,  };
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class AppointmentJsonldAppointmentReadContextOneOf {
+  /// Returns a new [AppointmentJsonldAppointmentReadContextOneOf] instance.
+  AppointmentJsonldAppointmentReadContextOneOf({
 
-  AppointmentJsonldAppointmentReadContextOneOf._();
+    required  this.atVocab,
 
-  factory AppointmentJsonldAppointmentReadContextOneOf([void updates(AppointmentJsonldAppointmentReadContextOneOfBuilder b)]) = _$AppointmentJsonldAppointmentReadContextOneOf;
+    required  this.hydra,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AppointmentJsonldAppointmentReadContextOneOfBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@vocab',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AppointmentJsonldAppointmentReadContextOneOf> get serializer => _$AppointmentJsonldAppointmentReadContextOneOfSerializer();
+
+  final String atVocab;
+
+
+
+  @JsonKey(
+    
+    name: r'hydra',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final AppointmentJsonldAppointmentReadContextOneOfHydraEnum hydra;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is AppointmentJsonldAppointmentReadContextOneOf &&
+      other.atVocab == atVocab &&
+      other.hydra == hydra;
+
+    @override
+    int get hashCode =>
+        atVocab.hashCode +
+        hydra.hashCode;
+
+  factory AppointmentJsonldAppointmentReadContextOneOf.fromJson(Map<String, dynamic> json) => _$AppointmentJsonldAppointmentReadContextOneOfFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AppointmentJsonldAppointmentReadContextOneOfToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
+  }
+
 }
 
-class _$AppointmentJsonldAppointmentReadContextOneOfSerializer implements PrimitiveSerializer<AppointmentJsonldAppointmentReadContextOneOf> {
-  @override
-  final Iterable<Type> types = const [AppointmentJsonldAppointmentReadContextOneOf, _$AppointmentJsonldAppointmentReadContextOneOf];
 
-  @override
-  final String wireName = r'AppointmentJsonldAppointmentReadContextOneOf';
+enum AppointmentJsonldAppointmentReadContextOneOfHydraEnum {
+@JsonValue(r'http://www.w3.org/ns/hydra/core#')
+httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash(r'http://www.w3.org/ns/hydra/core#');
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    AppointmentJsonldAppointmentReadContextOneOf object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'@vocab';
-    yield serializers.serialize(
-      object.atVocab,
-      specifiedType: const FullType(String),
-    );
-    yield r'hydra';
-    yield serializers.serialize(
-      object.hydra,
-      specifiedType: const FullType(AppointmentJsonldAppointmentReadContextOneOfHydraEnum),
-    );
-  }
+const AppointmentJsonldAppointmentReadContextOneOfHydraEnum(this.value);
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    AppointmentJsonldAppointmentReadContextOneOf object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+final String value;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required AppointmentJsonldAppointmentReadContextOneOfBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@vocab':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atVocab = valueDes;
-          break;
-        case r'hydra':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AppointmentJsonldAppointmentReadContextOneOfHydraEnum),
-          ) as AppointmentJsonldAppointmentReadContextOneOfHydraEnum;
-          result.hydra = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
-
-  @override
-  AppointmentJsonldAppointmentReadContextOneOf deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = AppointmentJsonldAppointmentReadContextOneOfBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
-  }
+@override
+String toString() => value;
 }
 
-class AppointmentJsonldAppointmentReadContextOneOfHydraEnum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'http://www.w3.org/ns/hydra/core#')
-  static const AppointmentJsonldAppointmentReadContextOneOfHydraEnum httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash = _$appointmentJsonldAppointmentReadContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
-
-  static Serializer<AppointmentJsonldAppointmentReadContextOneOfHydraEnum> get serializer => _$appointmentJsonldAppointmentReadContextOneOfHydraEnumSerializer;
-
-  const AppointmentJsonldAppointmentReadContextOneOfHydraEnum._(String name): super(name);
-
-  static BuiltSet<AppointmentJsonldAppointmentReadContextOneOfHydraEnum> get values => _$appointmentJsonldAppointmentReadContextOneOfHydraEnumValues;
-  static AppointmentJsonldAppointmentReadContextOneOfHydraEnum valueOf(String name) => _$appointmentJsonldAppointmentReadContextOneOfHydraEnumValueOf(name);
-}
 

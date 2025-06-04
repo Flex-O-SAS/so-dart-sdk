@@ -4,161 +4,105 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_search.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'api_subscribers_get_collection200_response.g.dart';
 
-/// ApiSubscribersGetCollection200Response
-///
-/// Properties:
-/// * [member] 
-/// * [totalItems] 
-/// * [view] 
-/// * [search] 
-@BuiltValue()
-abstract class ApiSubscribersGetCollection200Response implements Built<ApiSubscribersGetCollection200Response, ApiSubscribersGetCollection200ResponseBuilder> {
-  @BuiltValueField(wireName: r'member')
-  BuiltList<SubscriberJsonldSubscriberRead> get member;
 
-  @BuiltValueField(wireName: r'totalItems')
-  int? get totalItems;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ApiSubscribersGetCollection200Response {
+  /// Returns a new [ApiSubscribersGetCollection200Response] instance.
+  ApiSubscribersGetCollection200Response({
 
-  @BuiltValueField(wireName: r'view')
-  ApiDevicesGetCollection200ResponseView? get view;
+    required  this.member,
 
-  @BuiltValueField(wireName: r'search')
-  ApiDevicesGetCollection200ResponseSearch? get search;
+     this.totalItems,
 
-  ApiSubscribersGetCollection200Response._();
+     this.view,
 
-  factory ApiSubscribersGetCollection200Response([void updates(ApiSubscribersGetCollection200ResponseBuilder b)]) = _$ApiSubscribersGetCollection200Response;
+     this.search,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiSubscribersGetCollection200ResponseBuilder b) => b;
+  @JsonKey(
+    
+    name: r'member',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ApiSubscribersGetCollection200Response> get serializer => _$ApiSubscribersGetCollection200ResponseSerializer();
-}
 
-class _$ApiSubscribersGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiSubscribersGetCollection200Response> {
-  @override
-  final Iterable<Type> types = const [ApiSubscribersGetCollection200Response, _$ApiSubscribersGetCollection200Response];
+  final List<SubscriberJsonldSubscriberRead> member;
 
-  @override
-  final String wireName = r'ApiSubscribersGetCollection200Response';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ApiSubscribersGetCollection200Response object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'member';
-    yield serializers.serialize(
-      object.member,
-      specifiedType: const FullType(BuiltList, [FullType(SubscriberJsonldSubscriberRead)]),
-    );
-    if (object.totalItems != null) {
-      yield r'totalItems';
-      yield serializers.serialize(
-        object.totalItems,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.view != null) {
-      yield r'view';
-      yield serializers.serialize(
-        object.view,
-        specifiedType: const FullType(ApiDevicesGetCollection200ResponseView),
-      );
-    }
-    if (object.search != null) {
-      yield r'search';
-      yield serializers.serialize(
-        object.search,
-        specifiedType: const FullType(ApiDevicesGetCollection200ResponseSearch),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ApiSubscribersGetCollection200Response object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+          // minimum: 0
+  @JsonKey(
+    
+    name: r'totalItems',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ApiSubscribersGetCollection200ResponseBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'member':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(SubscriberJsonldSubscriberRead)]),
-          ) as BuiltList<SubscriberJsonldSubscriberRead>;
-          result.member.replace(valueDes);
-          break;
-        case r'totalItems':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.totalItems = valueDes;
-          break;
-        case r'view':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiDevicesGetCollection200ResponseView),
-          ) as ApiDevicesGetCollection200ResponseView;
-          result.view.replace(valueDes);
-          break;
-        case r'search':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiDevicesGetCollection200ResponseSearch),
-          ) as ApiDevicesGetCollection200ResponseSearch;
-          result.search.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final int? totalItems;
+
+
+
+  @JsonKey(
+    
+    name: r'view',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final ApiDevicesGetCollection200ResponseView? view;
+
+
+
+  @JsonKey(
+    
+    name: r'search',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final ApiDevicesGetCollection200ResponseSearch? search;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ApiSubscribersGetCollection200Response &&
+      other.member == member &&
+      other.totalItems == totalItems &&
+      other.view == view &&
+      other.search == search;
+
+    @override
+    int get hashCode =>
+        member.hashCode +
+        totalItems.hashCode +
+        view.hashCode +
+        search.hashCode;
+
+  factory ApiSubscribersGetCollection200Response.fromJson(Map<String, dynamic> json) => _$ApiSubscribersGetCollection200ResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ApiSubscribersGetCollection200ResponseToJson(this);
 
   @override
-  ApiSubscribersGetCollection200Response deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ApiSubscribersGetCollection200ResponseBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

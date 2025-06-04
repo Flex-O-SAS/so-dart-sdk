@@ -4,8 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/connect/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:so_dart_sdk/connect/model/devices_unlock_post_request.dart';
@@ -16,9 +17,7 @@ class DevicesApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const DevicesApi(this._dio, this._serializers);
+  const DevicesApi(this._dio);
 
   /// Déverrouiller un appareil
   /// Déverrouille un appareil en fonction du provider spécifié dans le code.  ## Protocoles supportés - Osol : &#x60;so-battery-osol://&#x60; - Wattsy : &#x60;HTTPS://QRCODE.WATTSY.SOLUTIONS/V1/OUTLET/&#x60; - Welcomr : &#x60;so-door-welcomr://&#x60;  ## Comportement par provider  ### Osol - URL : https://app-stage.osolbase.com/api/v2/picos/unlock - Utilise un token d&#39;API pour l&#39;authentification  ### Wattsy - URL : https://bo.flex-o.wattsy.solutions/api - Utilise un système d&#39;authentification avec session  ### Welcomr - URL : https://admin.wlcmr.io/device/triggerOpenWithLoginRestrictions - Utilise un système de session avec ksid 
@@ -66,9 +65,7 @@ class DevicesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(DevicesUnlockPostRequest);
-      _bodyData = _serializers.serialize(devicesUnlockPostRequest, specifiedType: _type);
-
+_bodyData=jsonEncode(devicesUnlockPostRequest);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -93,12 +90,8 @@ class DevicesApi {
     UnlockResponse? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(UnlockResponse),
-      ) as UnlockResponse;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<UnlockResponse, UnlockResponse>(rawData, 'UnlockResponse', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

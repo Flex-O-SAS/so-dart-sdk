@@ -3,221 +3,157 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'box_list_dto_inner.g.dart';
 
-/// BoxListDtoInner
-///
-/// Properties:
-/// * [uuid] - Identifiant unique du casier
-/// * [label] - Libellé du casier
-/// * [address] - Adresse du casier
-/// * [postcode] - Code postal
-/// * [city] - Ville
-/// * [status] - Statut du casier
-/// * [isLinked] - Indique si le casier est lié à l'utilisateur
-@BuiltValue()
-abstract class BoxListDtoInner implements Built<BoxListDtoInner, BoxListDtoInnerBuilder> {
-  /// Identifiant unique du casier
-  @BuiltValueField(wireName: r'uuid')
-  String? get uuid;
 
-  /// Libellé du casier
-  @BuiltValueField(wireName: r'label')
-  String? get label;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class BoxListDtoInner {
+  /// Returns a new [BoxListDtoInner] instance.
+  BoxListDtoInner({
 
-  /// Adresse du casier
-  @BuiltValueField(wireName: r'address')
-  String? get address;
+     this.uuid,
 
-  /// Code postal
-  @BuiltValueField(wireName: r'postcode')
-  String? get postcode;
+     this.label,
 
-  /// Ville
-  @BuiltValueField(wireName: r'city')
-  String? get city;
+     this.address,
 
-  /// Statut du casier
-  @BuiltValueField(wireName: r'status')
-  String? get status;
+     this.postcode,
 
-  /// Indique si le casier est lié à l'utilisateur
-  @BuiltValueField(wireName: r'isLinked')
-  bool? get isLinked;
+     this.city,
 
-  BoxListDtoInner._();
+     this.status,
 
-  factory BoxListDtoInner([void updates(BoxListDtoInnerBuilder b)]) = _$BoxListDtoInner;
+     this.isLinked,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(BoxListDtoInnerBuilder b) => b;
+      /// Identifiant unique du casier
+  @JsonKey(
+    
+    name: r'uuid',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<BoxListDtoInner> get serializer => _$BoxListDtoInnerSerializer();
-}
 
-class _$BoxListDtoInnerSerializer implements PrimitiveSerializer<BoxListDtoInner> {
-  @override
-  final Iterable<Type> types = const [BoxListDtoInner, _$BoxListDtoInner];
+  final String? uuid;
 
-  @override
-  final String wireName = r'BoxListDtoInner';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    BoxListDtoInner object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.uuid != null) {
-      yield r'uuid';
-      yield serializers.serialize(
-        object.uuid,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.label != null) {
-      yield r'label';
-      yield serializers.serialize(
-        object.label,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.address != null) {
-      yield r'address';
-      yield serializers.serialize(
-        object.address,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.postcode != null) {
-      yield r'postcode';
-      yield serializers.serialize(
-        object.postcode,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.city != null) {
-      yield r'city';
-      yield serializers.serialize(
-        object.city,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.status != null) {
-      yield r'status';
-      yield serializers.serialize(
-        object.status,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.isLinked != null) {
-      yield r'isLinked';
-      yield serializers.serialize(
-        object.isLinked,
-        specifiedType: const FullType(bool),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    BoxListDtoInner object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+      /// Libellé du casier
+  @JsonKey(
+    
+    name: r'label',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required BoxListDtoInnerBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'uuid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.uuid = valueDes;
-          break;
-        case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.label = valueDes;
-          break;
-        case r'address':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.address = valueDes;
-          break;
-        case r'postcode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.postcode = valueDes;
-          break;
-        case r'city':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.city = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.status = valueDes;
-          break;
-        case r'isLinked':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isLinked = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? label;
+
+
+
+      /// Adresse du casier
+  @JsonKey(
+    
+    name: r'address',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? address;
+
+
+
+      /// Code postal
+  @JsonKey(
+    
+    name: r'postcode',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? postcode;
+
+
+
+      /// Ville
+  @JsonKey(
+    
+    name: r'city',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? city;
+
+
+
+      /// Statut du casier
+  @JsonKey(
+    
+    name: r'status',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? status;
+
+
+
+      /// Indique si le casier est lié à l'utilisateur
+  @JsonKey(
+    
+    name: r'isLinked',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final bool? isLinked;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is BoxListDtoInner &&
+      other.uuid == uuid &&
+      other.label == label &&
+      other.address == address &&
+      other.postcode == postcode &&
+      other.city == city &&
+      other.status == status &&
+      other.isLinked == isLinked;
+
+    @override
+    int get hashCode =>
+        uuid.hashCode +
+        label.hashCode +
+        address.hashCode +
+        postcode.hashCode +
+        city.hashCode +
+        status.hashCode +
+        isLinked.hashCode;
+
+  factory BoxListDtoInner.fromJson(Map<String, dynamic> json) => _$BoxListDtoInnerFromJson(json);
+
+  Map<String, dynamic> toJson() => _$BoxListDtoInnerToJson(this);
 
   @override
-  BoxListDtoInner deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = BoxListDtoInnerBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/corporate/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/corporate/api_util.dart';
 import 'package:so_dart_sdk/corporate/model/api_appointment_client_get_collection200_response.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_write.dart';
@@ -24,9 +23,7 @@ class AppointmentClientApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AppointmentClientApi(this._dio, this._serializers);
+  const AppointmentClientApi(this._dio);
 
   /// Removes the AppointmentClient resource.
   /// Removes the AppointmentClient resource.
@@ -51,7 +48,7 @@ class AppointmentClientApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/appointment_clients/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/appointment_clients/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -115,11 +112,11 @@ class AppointmentClientApi {
   Future<Response<ApiAppointmentClientGetCollection200Response>> apiAppointmentClientGetCollection({ 
     int? page = 1,
     String? appointment,
-    BuiltList<String>? appointmentLeftSquareBracketRightSquareBracket,
+    List<String>? appointmentLeftSquareBracketRightSquareBracket,
     String? email,
-    BuiltList<String>? emailLeftSquareBracketRightSquareBracket,
+    List<String>? emailLeftSquareBracketRightSquareBracket,
     String? phone,
-    BuiltList<String>? phoneLeftSquareBracketRightSquareBracket,
+    List<String>? phoneLeftSquareBracketRightSquareBracket,
     String? status,
     String? orderLeftSquareBracketStatusRightSquareBracket = 'asc',
     String? responseDateLeftSquareBracketBeforeRightSquareBracket,
@@ -158,23 +155,23 @@ class AppointmentClientApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (appointment != null) r'appointment': encodeQueryParameter(_serializers, appointment, const FullType(String)),
-      if (appointmentLeftSquareBracketRightSquareBracket != null) r'appointment[]': encodeCollectionQueryParameter<String>(_serializers, appointmentLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
-      if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': encodeCollectionQueryParameter<String>(_serializers, emailLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (phone != null) r'phone': encodeQueryParameter(_serializers, phone, const FullType(String)),
-      if (phoneLeftSquareBracketRightSquareBracket != null) r'phone[]': encodeCollectionQueryParameter<String>(_serializers, phoneLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
-      if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': encodeQueryParameter(_serializers, orderLeftSquareBracketStatusRightSquareBracket, const FullType(String)),
-      if (responseDateLeftSquareBracketBeforeRightSquareBracket != null) r'responseDate[before]': encodeQueryParameter(_serializers, responseDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (responseDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'responseDate[strictly_before]': encodeQueryParameter(_serializers, responseDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (responseDateLeftSquareBracketAfterRightSquareBracket != null) r'responseDate[after]': encodeQueryParameter(_serializers, responseDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (responseDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'responseDate[strictly_after]': encodeQueryParameter(_serializers, responseDateLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (lastSentInvitationDateLeftSquareBracketBeforeRightSquareBracket != null) r'lastSentInvitationDate[before]': encodeQueryParameter(_serializers, lastSentInvitationDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (lastSentInvitationDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'lastSentInvitationDate[strictly_before]': encodeQueryParameter(_serializers, lastSentInvitationDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (lastSentInvitationDateLeftSquareBracketAfterRightSquareBracket != null) r'lastSentInvitationDate[after]': encodeQueryParameter(_serializers, lastSentInvitationDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (lastSentInvitationDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'lastSentInvitationDate[strictly_after]': encodeQueryParameter(_serializers, lastSentInvitationDateLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (page != null) r'page': page,
+      if (appointment != null) r'appointment': appointment,
+      if (appointmentLeftSquareBracketRightSquareBracket != null) r'appointment[]': appointmentLeftSquareBracketRightSquareBracket,
+      if (email != null) r'email': email,
+      if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': emailLeftSquareBracketRightSquareBracket,
+      if (phone != null) r'phone': phone,
+      if (phoneLeftSquareBracketRightSquareBracket != null) r'phone[]': phoneLeftSquareBracketRightSquareBracket,
+      if (status != null) r'status': status,
+      if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': orderLeftSquareBracketStatusRightSquareBracket,
+      if (responseDateLeftSquareBracketBeforeRightSquareBracket != null) r'responseDate[before]': responseDateLeftSquareBracketBeforeRightSquareBracket,
+      if (responseDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'responseDate[strictly_before]': responseDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (responseDateLeftSquareBracketAfterRightSquareBracket != null) r'responseDate[after]': responseDateLeftSquareBracketAfterRightSquareBracket,
+      if (responseDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'responseDate[strictly_after]': responseDateLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (lastSentInvitationDateLeftSquareBracketBeforeRightSquareBracket != null) r'lastSentInvitationDate[before]': lastSentInvitationDateLeftSquareBracketBeforeRightSquareBracket,
+      if (lastSentInvitationDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'lastSentInvitationDate[strictly_before]': lastSentInvitationDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (lastSentInvitationDateLeftSquareBracketAfterRightSquareBracket != null) r'lastSentInvitationDate[after]': lastSentInvitationDateLeftSquareBracketAfterRightSquareBracket,
+      if (lastSentInvitationDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'lastSentInvitationDate[strictly_after]': lastSentInvitationDateLeftSquareBracketStrictlyAfterRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -189,12 +186,8 @@ class AppointmentClientApi {
     ApiAppointmentClientGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiAppointmentClientGetCollection200Response),
-      ) as ApiAppointmentClientGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiAppointmentClientGetCollection200Response, ApiAppointmentClientGetCollection200Response>(rawData, 'ApiAppointmentClientGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -240,7 +233,7 @@ class AppointmentClientApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/appointment_clients/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/appointment_clients/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -271,12 +264,8 @@ class AppointmentClientApi {
     AppointmentClientJsonldAppointmentClientRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AppointmentClientJsonldAppointmentClientRead),
-      ) as AppointmentClientJsonldAppointmentClientRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AppointmentClientJsonldAppointmentClientRead, AppointmentClientJsonldAppointmentClientRead>(rawData, 'AppointmentClientJsonldAppointmentClientRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -346,9 +335,7 @@ class AppointmentClientApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AppointmentClientJsonldAppointmentClientWrite);
-      _bodyData = _serializers.serialize(appointmentClientJsonldAppointmentClientWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(appointmentClientJsonldAppointmentClientWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -373,12 +360,8 @@ class AppointmentClientApi {
     AppointmentClientJsonldAppointmentClientRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AppointmentClientJsonldAppointmentClientRead),
-      ) as AppointmentClientJsonldAppointmentClientRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AppointmentClientJsonldAppointmentClientRead, AppointmentClientJsonldAppointmentClientRead>(rawData, 'AppointmentClientJsonldAppointmentClientRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -426,7 +409,7 @@ class AppointmentClientApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/appointment_clients/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/appointment_clients/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -450,9 +433,7 @@ class AppointmentClientApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AppointmentClientAppointmentClientWrite);
-      _bodyData = _serializers.serialize(appointmentClientAppointmentClientWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(appointmentClientAppointmentClientWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -477,12 +458,8 @@ class AppointmentClientApi {
     AppointmentClientJsonldAppointmentClientRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AppointmentClientJsonldAppointmentClientRead),
-      ) as AppointmentClientJsonldAppointmentClientRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AppointmentClientJsonldAppointmentClientRead, AppointmentClientJsonldAppointmentClientRead>(rawData, 'AppointmentClientJsonldAppointmentClientRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -3,341 +3,93 @@
 part of 'happening_jsonld_happening_read.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
-  @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final int? id;
-  @override
-  final String? name;
-  @override
-  final String? banner;
-  @override
-  final CenterJsonldHappeningRead? center;
-  @override
-  final String? place;
-  @override
-  final DateTime? publicatedAt;
-  @override
-  final DateTime? archivedAt;
-  @override
-  final String? description;
-  @override
-  final int? nbUsers;
-  @override
-  final int? maxUsers;
-  @override
-  final HappeningPartnerLinkJsonldHappeningRead? happeningPartnerLink;
-  @override
-  final bool? isActive;
-  @override
-  final BuiltList<HappeningStaffFeedBackJsonldHappeningRead>?
-      happeningStaffFeedBacks;
-  @override
-  final DateTime? begin;
-  @override
-  final DateTime? end;
+HappeningJsonldHappeningRead _$HappeningJsonldHappeningReadFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      'HappeningJsonldHappeningRead',
+      json,
+      ($checkedConvert) {
+        final val = HappeningJsonldHappeningRead(
+          atContext: $checkedConvert(
+              '@context',
+              (v) => v == null
+                  ? null
+                  : CenterJsonldHappeningReadContext.fromJson(
+                      v as Map<String, dynamic>)),
+          atId: $checkedConvert('@id', (v) => v as String?),
+          atType: $checkedConvert('@type', (v) => v as String?),
+          id: $checkedConvert('id', (v) => (v as num?)?.toInt()),
+          name: $checkedConvert('name', (v) => v as String?),
+          banner: $checkedConvert('banner', (v) => v as String?),
+          center: $checkedConvert(
+              'center',
+              (v) => v == null
+                  ? null
+                  : CenterJsonldHappeningRead.fromJson(
+                      v as Map<String, dynamic>)),
+          place: $checkedConvert('place', (v) => v as String?),
+          publicatedAt: $checkedConvert('publicatedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          archivedAt: $checkedConvert('archivedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          description: $checkedConvert('description', (v) => v as String?),
+          nbUsers: $checkedConvert('nbUsers', (v) => (v as num?)?.toInt()),
+          maxUsers: $checkedConvert('maxUsers', (v) => (v as num?)?.toInt()),
+          happeningPartnerLink: $checkedConvert(
+              'happeningPartnerLink',
+              (v) => v == null
+                  ? null
+                  : HappeningPartnerLinkJsonldHappeningRead.fromJson(
+                      v as Map<String, dynamic>)),
+          isActive: $checkedConvert('isActive', (v) => v as bool? ?? true),
+          happeningStaffFeedBacks: $checkedConvert(
+              'happeningStaffFeedBacks',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) =>
+                      HappeningStaffFeedBackJsonldHappeningRead.fromJson(
+                          e as Map<String, dynamic>))
+                  .toList()),
+          begin: $checkedConvert(
+              'begin', (v) => v == null ? null : DateTime.parse(v as String)),
+          end: $checkedConvert(
+              'end', (v) => v == null ? null : DateTime.parse(v as String)),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'atContext': '@context',
+        'atId': '@id',
+        'atType': '@type'
+      },
+    );
 
-  factory _$HappeningJsonldHappeningRead(
-          [void Function(HappeningJsonldHappeningReadBuilder)? updates]) =>
-      (new HappeningJsonldHappeningReadBuilder()..update(updates))._build();
-
-  _$HappeningJsonldHappeningRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.id,
-      this.name,
-      this.banner,
-      this.center,
-      this.place,
-      this.publicatedAt,
-      this.archivedAt,
-      this.description,
-      this.nbUsers,
-      this.maxUsers,
-      this.happeningPartnerLink,
-      this.isActive,
-      this.happeningStaffFeedBacks,
-      this.begin,
-      this.end})
-      : super._();
-
-  @override
-  HappeningJsonldHappeningRead rebuild(
-          void Function(HappeningJsonldHappeningReadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  HappeningJsonldHappeningReadBuilder toBuilder() =>
-      new HappeningJsonldHappeningReadBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is HappeningJsonldHappeningRead &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
-        id == other.id &&
-        name == other.name &&
-        banner == other.banner &&
-        center == other.center &&
-        place == other.place &&
-        publicatedAt == other.publicatedAt &&
-        archivedAt == other.archivedAt &&
-        description == other.description &&
-        nbUsers == other.nbUsers &&
-        maxUsers == other.maxUsers &&
-        happeningPartnerLink == other.happeningPartnerLink &&
-        isActive == other.isActive &&
-        happeningStaffFeedBacks == other.happeningStaffFeedBacks &&
-        begin == other.begin &&
-        end == other.end;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, atContext.hashCode);
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, banner.hashCode);
-    _$hash = $jc(_$hash, center.hashCode);
-    _$hash = $jc(_$hash, place.hashCode);
-    _$hash = $jc(_$hash, publicatedAt.hashCode);
-    _$hash = $jc(_$hash, archivedAt.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, nbUsers.hashCode);
-    _$hash = $jc(_$hash, maxUsers.hashCode);
-    _$hash = $jc(_$hash, happeningPartnerLink.hashCode);
-    _$hash = $jc(_$hash, isActive.hashCode);
-    _$hash = $jc(_$hash, happeningStaffFeedBacks.hashCode);
-    _$hash = $jc(_$hash, begin.hashCode);
-    _$hash = $jc(_$hash, end.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'HappeningJsonldHappeningRead')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('id', id)
-          ..add('name', name)
-          ..add('banner', banner)
-          ..add('center', center)
-          ..add('place', place)
-          ..add('publicatedAt', publicatedAt)
-          ..add('archivedAt', archivedAt)
-          ..add('description', description)
-          ..add('nbUsers', nbUsers)
-          ..add('maxUsers', maxUsers)
-          ..add('happeningPartnerLink', happeningPartnerLink)
-          ..add('isActive', isActive)
-          ..add('happeningStaffFeedBacks', happeningStaffFeedBacks)
-          ..add('begin', begin)
-          ..add('end', end))
-        .toString();
-  }
-}
-
-class HappeningJsonldHappeningReadBuilder
-    implements
-        Builder<HappeningJsonldHappeningRead,
-            HappeningJsonldHappeningReadBuilder> {
-  _$HappeningJsonldHappeningRead? _$v;
-
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _banner;
-  String? get banner => _$this._banner;
-  set banner(String? banner) => _$this._banner = banner;
-
-  CenterJsonldHappeningReadBuilder? _center;
-  CenterJsonldHappeningReadBuilder get center =>
-      _$this._center ??= new CenterJsonldHappeningReadBuilder();
-  set center(CenterJsonldHappeningReadBuilder? center) =>
-      _$this._center = center;
-
-  String? _place;
-  String? get place => _$this._place;
-  set place(String? place) => _$this._place = place;
-
-  DateTime? _publicatedAt;
-  DateTime? get publicatedAt => _$this._publicatedAt;
-  set publicatedAt(DateTime? publicatedAt) =>
-      _$this._publicatedAt = publicatedAt;
-
-  DateTime? _archivedAt;
-  DateTime? get archivedAt => _$this._archivedAt;
-  set archivedAt(DateTime? archivedAt) => _$this._archivedAt = archivedAt;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  int? _nbUsers;
-  int? get nbUsers => _$this._nbUsers;
-  set nbUsers(int? nbUsers) => _$this._nbUsers = nbUsers;
-
-  int? _maxUsers;
-  int? get maxUsers => _$this._maxUsers;
-  set maxUsers(int? maxUsers) => _$this._maxUsers = maxUsers;
-
-  HappeningPartnerLinkJsonldHappeningReadBuilder? _happeningPartnerLink;
-  HappeningPartnerLinkJsonldHappeningReadBuilder get happeningPartnerLink =>
-      _$this._happeningPartnerLink ??=
-          new HappeningPartnerLinkJsonldHappeningReadBuilder();
-  set happeningPartnerLink(
-          HappeningPartnerLinkJsonldHappeningReadBuilder?
-              happeningPartnerLink) =>
-      _$this._happeningPartnerLink = happeningPartnerLink;
-
-  bool? _isActive;
-  bool? get isActive => _$this._isActive;
-  set isActive(bool? isActive) => _$this._isActive = isActive;
-
-  ListBuilder<HappeningStaffFeedBackJsonldHappeningRead>?
-      _happeningStaffFeedBacks;
-  ListBuilder<HappeningStaffFeedBackJsonldHappeningRead>
-      get happeningStaffFeedBacks => _$this._happeningStaffFeedBacks ??=
-          new ListBuilder<HappeningStaffFeedBackJsonldHappeningRead>();
-  set happeningStaffFeedBacks(
-          ListBuilder<HappeningStaffFeedBackJsonldHappeningRead>?
-              happeningStaffFeedBacks) =>
-      _$this._happeningStaffFeedBacks = happeningStaffFeedBacks;
-
-  DateTime? _begin;
-  DateTime? get begin => _$this._begin;
-  set begin(DateTime? begin) => _$this._begin = begin;
-
-  DateTime? _end;
-  DateTime? get end => _$this._end;
-  set end(DateTime? end) => _$this._end = end;
-
-  HappeningJsonldHappeningReadBuilder() {
-    HappeningJsonldHappeningRead._defaults(this);
-  }
-
-  HappeningJsonldHappeningReadBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _atContext = $v.atContext?.toBuilder();
-      _atId = $v.atId;
-      _atType = $v.atType;
-      _id = $v.id;
-      _name = $v.name;
-      _banner = $v.banner;
-      _center = $v.center?.toBuilder();
-      _place = $v.place;
-      _publicatedAt = $v.publicatedAt;
-      _archivedAt = $v.archivedAt;
-      _description = $v.description;
-      _nbUsers = $v.nbUsers;
-      _maxUsers = $v.maxUsers;
-      _happeningPartnerLink = $v.happeningPartnerLink?.toBuilder();
-      _isActive = $v.isActive;
-      _happeningStaffFeedBacks = $v.happeningStaffFeedBacks?.toBuilder();
-      _begin = $v.begin;
-      _end = $v.end;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(HappeningJsonldHappeningRead other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$HappeningJsonldHappeningRead;
-  }
-
-  @override
-  void update(void Function(HappeningJsonldHappeningReadBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  HappeningJsonldHappeningRead build() => _build();
-
-  _$HappeningJsonldHappeningRead _build() {
-    _$HappeningJsonldHappeningRead _$result;
-    try {
-      _$result = _$v ??
-          new _$HappeningJsonldHappeningRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            id: id,
-            name: name,
-            banner: banner,
-            center: _center?.build(),
-            place: place,
-            publicatedAt: publicatedAt,
-            archivedAt: archivedAt,
-            description: description,
-            nbUsers: nbUsers,
-            maxUsers: maxUsers,
-            happeningPartnerLink: _happeningPartnerLink?.build(),
-            isActive: isActive,
-            happeningStaffFeedBacks: _happeningStaffFeedBacks?.build(),
-            begin: begin,
-            end: end,
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-
-        _$failedField = 'center';
-        _center?.build();
-
-        _$failedField = 'happeningPartnerLink';
-        _happeningPartnerLink?.build();
-
-        _$failedField = 'happeningStaffFeedBacks';
-        _happeningStaffFeedBacks?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'HappeningJsonldHappeningRead', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint
+Map<String, dynamic> _$HappeningJsonldHappeningReadToJson(
+        HappeningJsonldHappeningRead instance) =>
+    <String, dynamic>{
+      if (instance.atContext?.toJson() case final value?) '@context': value,
+      if (instance.atId case final value?) '@id': value,
+      if (instance.atType case final value?) '@type': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.banner case final value?) 'banner': value,
+      if (instance.center?.toJson() case final value?) 'center': value,
+      if (instance.place case final value?) 'place': value,
+      if (instance.publicatedAt?.toIso8601String() case final value?)
+        'publicatedAt': value,
+      if (instance.archivedAt?.toIso8601String() case final value?)
+        'archivedAt': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.nbUsers case final value?) 'nbUsers': value,
+      if (instance.maxUsers case final value?) 'maxUsers': value,
+      if (instance.happeningPartnerLink?.toJson() case final value?)
+        'happeningPartnerLink': value,
+      if (instance.isActive case final value?) 'isActive': value,
+      if (instance.happeningStaffFeedBacks?.map((e) => e.toJson()).toList()
+          case final value?)
+        'happeningStaffFeedBacks': value,
+      if (instance.begin?.toIso8601String() case final value?) 'begin': value,
+      if (instance.end?.toIso8601String() case final value?) 'end': value,
+    };

@@ -3,152 +3,102 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'comment_jsonld_comment_write.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [author] 
-/// * [description] 
-/// * [notify] 
-/// * [ticket] 
-@BuiltValue()
-abstract class CommentJsonldCommentWrite implements Built<CommentJsonldCommentWrite, CommentJsonldCommentWriteBuilder> {
-  @BuiltValueField(wireName: r'author')
-  String get author;
 
-  @BuiltValueField(wireName: r'description')
-  String get description;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CommentJsonldCommentWrite {
+  /// Returns a new [CommentJsonldCommentWrite] instance.
+  CommentJsonldCommentWrite({
 
-  @BuiltValueField(wireName: r'notify')
-  bool get notify;
+    required  this.author,
 
-  @BuiltValueField(wireName: r'ticket')
-  String get ticket;
+    required  this.description,
 
-  CommentJsonldCommentWrite._();
+    required  this.notify,
 
-  factory CommentJsonldCommentWrite([void updates(CommentJsonldCommentWriteBuilder b)]) = _$CommentJsonldCommentWrite;
+    required  this.ticket,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CommentJsonldCommentWriteBuilder b) => b;
+  @JsonKey(
+    
+    name: r'author',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CommentJsonldCommentWrite> get serializer => _$CommentJsonldCommentWriteSerializer();
-}
 
-class _$CommentJsonldCommentWriteSerializer implements PrimitiveSerializer<CommentJsonldCommentWrite> {
-  @override
-  final Iterable<Type> types = const [CommentJsonldCommentWrite, _$CommentJsonldCommentWrite];
+  final String author;
 
-  @override
-  final String wireName = r'CommentJsonldCommentWrite';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CommentJsonldCommentWrite object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'author';
-    yield serializers.serialize(
-      object.author,
-      specifiedType: const FullType(String),
-    );
-    yield r'description';
-    yield serializers.serialize(
-      object.description,
-      specifiedType: const FullType(String),
-    );
-    yield r'notify';
-    yield serializers.serialize(
-      object.notify,
-      specifiedType: const FullType(bool),
-    );
-    yield r'ticket';
-    yield serializers.serialize(
-      object.ticket,
-      specifiedType: const FullType(String),
-    );
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    CommentJsonldCommentWrite object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'description',
+    required: true,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required CommentJsonldCommentWriteBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'author':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.author = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'notify':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.notify = valueDes;
-          break;
-        case r'ticket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.ticket = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String description;
+
+
+
+  @JsonKey(
+    
+    name: r'notify',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final bool notify;
+
+
+
+  @JsonKey(
+    
+    name: r'ticket',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String ticket;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is CommentJsonldCommentWrite &&
+      other.author == author &&
+      other.description == description &&
+      other.notify == notify &&
+      other.ticket == ticket;
+
+    @override
+    int get hashCode =>
+        author.hashCode +
+        description.hashCode +
+        notify.hashCode +
+        ticket.hashCode;
+
+  factory CommentJsonldCommentWrite.fromJson(Map<String, dynamic> json) => _$CommentJsonldCommentWriteFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CommentJsonldCommentWriteToJson(this);
 
   @override
-  CommentJsonldCommentWrite deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = CommentJsonldCommentWriteBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

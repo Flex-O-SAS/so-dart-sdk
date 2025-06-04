@@ -3,104 +3,54 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'item_provider_read_address_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [isBookable] 
-@BuiltValue()
-abstract class ItemProviderReadAddressRead implements Built<ItemProviderReadAddressRead, ItemProviderReadAddressReadBuilder> {
-  @BuiltValueField(wireName: r'isBookable')
-  bool get isBookable;
 
-  ItemProviderReadAddressRead._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ItemProviderReadAddressRead {
+  /// Returns a new [ItemProviderReadAddressRead] instance.
+  ItemProviderReadAddressRead({
 
-  factory ItemProviderReadAddressRead([void updates(ItemProviderReadAddressReadBuilder b)]) = _$ItemProviderReadAddressRead;
+    required  this.isBookable,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ItemProviderReadAddressReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'isBookable',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ItemProviderReadAddressRead> get serializer => _$ItemProviderReadAddressReadSerializer();
-}
 
-class _$ItemProviderReadAddressReadSerializer implements PrimitiveSerializer<ItemProviderReadAddressRead> {
-  @override
-  final Iterable<Type> types = const [ItemProviderReadAddressRead, _$ItemProviderReadAddressRead];
+  final bool isBookable;
 
-  @override
-  final String wireName = r'ItemProviderReadAddressRead';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ItemProviderReadAddressRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'isBookable';
-    yield serializers.serialize(
-      object.isBookable,
-      specifiedType: const FullType(bool),
-    );
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ItemProviderReadAddressRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ItemProviderReadAddressReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'isBookable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isBookable = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ItemProviderReadAddressRead &&
+      other.isBookable == isBookable;
+
+    @override
+    int get hashCode =>
+        isBookable.hashCode;
+
+  factory ItemProviderReadAddressRead.fromJson(Map<String, dynamic> json) => _$ItemProviderReadAddressReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ItemProviderReadAddressReadToJson(this);
 
   @override
-  ItemProviderReadAddressRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ItemProviderReadAddressReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

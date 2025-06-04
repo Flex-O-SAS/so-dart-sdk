@@ -3,159 +3,50 @@
 part of 'api_items_get_collection200_response.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$ApiItemsGetCollection200Response
-    extends ApiItemsGetCollection200Response {
-  @override
-  final BuiltList<ItemJsonldItemReadServiceRead> member;
-  @override
-  final int? totalItems;
-  @override
-  final ApiItemsGetCollection200ResponseView? view;
-  @override
-  final ApiItemsGetCollection200ResponseSearch? search;
+ApiItemsGetCollection200Response _$ApiItemsGetCollection200ResponseFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      'ApiItemsGetCollection200Response',
+      json,
+      ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const ['member'],
+        );
+        final val = ApiItemsGetCollection200Response(
+          member: $checkedConvert(
+              'member',
+              (v) => (v as List<dynamic>)
+                  .map((e) => ItemJsonldItemReadServiceRead.fromJson(
+                      e as Map<String, dynamic>))
+                  .toList()),
+          totalItems:
+              $checkedConvert('totalItems', (v) => (v as num?)?.toInt()),
+          view: $checkedConvert(
+              'view',
+              (v) => v == null
+                  ? null
+                  : ApiItemsGetCollection200ResponseView.fromJson(
+                      v as Map<String, dynamic>)),
+          search: $checkedConvert(
+              'search',
+              (v) => v == null
+                  ? null
+                  : ApiItemsGetCollection200ResponseSearch.fromJson(
+                      v as Map<String, dynamic>)),
+        );
+        return val;
+      },
+    );
 
-  factory _$ApiItemsGetCollection200Response(
-          [void Function(ApiItemsGetCollection200ResponseBuilder)? updates]) =>
-      (new ApiItemsGetCollection200ResponseBuilder()..update(updates))._build();
-
-  _$ApiItemsGetCollection200Response._(
-      {required this.member, this.totalItems, this.view, this.search})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        member, r'ApiItemsGetCollection200Response', 'member');
-  }
-
-  @override
-  ApiItemsGetCollection200Response rebuild(
-          void Function(ApiItemsGetCollection200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ApiItemsGetCollection200ResponseBuilder toBuilder() =>
-      new ApiItemsGetCollection200ResponseBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ApiItemsGetCollection200Response &&
-        member == other.member &&
-        totalItems == other.totalItems &&
-        view == other.view &&
-        search == other.search;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, member.hashCode);
-    _$hash = $jc(_$hash, totalItems.hashCode);
-    _$hash = $jc(_$hash, view.hashCode);
-    _$hash = $jc(_$hash, search.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ApiItemsGetCollection200Response')
-          ..add('member', member)
-          ..add('totalItems', totalItems)
-          ..add('view', view)
-          ..add('search', search))
-        .toString();
-  }
-}
-
-class ApiItemsGetCollection200ResponseBuilder
-    implements
-        Builder<ApiItemsGetCollection200Response,
-            ApiItemsGetCollection200ResponseBuilder> {
-  _$ApiItemsGetCollection200Response? _$v;
-
-  ListBuilder<ItemJsonldItemReadServiceRead>? _member;
-  ListBuilder<ItemJsonldItemReadServiceRead> get member =>
-      _$this._member ??= new ListBuilder<ItemJsonldItemReadServiceRead>();
-  set member(ListBuilder<ItemJsonldItemReadServiceRead>? member) =>
-      _$this._member = member;
-
-  int? _totalItems;
-  int? get totalItems => _$this._totalItems;
-  set totalItems(int? totalItems) => _$this._totalItems = totalItems;
-
-  ApiItemsGetCollection200ResponseViewBuilder? _view;
-  ApiItemsGetCollection200ResponseViewBuilder get view =>
-      _$this._view ??= new ApiItemsGetCollection200ResponseViewBuilder();
-  set view(ApiItemsGetCollection200ResponseViewBuilder? view) =>
-      _$this._view = view;
-
-  ApiItemsGetCollection200ResponseSearchBuilder? _search;
-  ApiItemsGetCollection200ResponseSearchBuilder get search =>
-      _$this._search ??= new ApiItemsGetCollection200ResponseSearchBuilder();
-  set search(ApiItemsGetCollection200ResponseSearchBuilder? search) =>
-      _$this._search = search;
-
-  ApiItemsGetCollection200ResponseBuilder() {
-    ApiItemsGetCollection200Response._defaults(this);
-  }
-
-  ApiItemsGetCollection200ResponseBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _member = $v.member.toBuilder();
-      _totalItems = $v.totalItems;
-      _view = $v.view?.toBuilder();
-      _search = $v.search?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(ApiItemsGetCollection200Response other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiItemsGetCollection200Response;
-  }
-
-  @override
-  void update(void Function(ApiItemsGetCollection200ResponseBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ApiItemsGetCollection200Response build() => _build();
-
-  _$ApiItemsGetCollection200Response _build() {
-    _$ApiItemsGetCollection200Response _$result;
-    try {
-      _$result = _$v ??
-          new _$ApiItemsGetCollection200Response._(
-            member: member.build(),
-            totalItems: totalItems,
-            view: _view?.build(),
-            search: _search?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'member';
-        member.build();
-
-        _$failedField = 'view';
-        _view?.build();
-        _$failedField = 'search';
-        _search?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'ApiItemsGetCollection200Response', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint
+Map<String, dynamic> _$ApiItemsGetCollection200ResponseToJson(
+        ApiItemsGetCollection200Response instance) =>
+    <String, dynamic>{
+      'member': instance.member.map((e) => e.toJson()).toList(),
+      if (instance.totalItems case final value?) 'totalItems': value,
+      if (instance.view?.toJson() case final value?) 'view': value,
+      if (instance.search?.toJson() case final value?) 'search': value,
+    };

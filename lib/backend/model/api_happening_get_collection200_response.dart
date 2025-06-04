@@ -5,160 +5,104 @@
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_view.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/model/happening_jsonld_happening_search.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'api_happening_get_collection200_response.g.dart';
 
-/// ApiHappeningGetCollection200Response
-///
-/// Properties:
-/// * [member] 
-/// * [totalItems] 
-/// * [view] 
-/// * [search] 
-@BuiltValue()
-abstract class ApiHappeningGetCollection200Response implements Built<ApiHappeningGetCollection200Response, ApiHappeningGetCollection200ResponseBuilder> {
-  @BuiltValueField(wireName: r'member')
-  BuiltList<HappeningJsonldHappeningSearch> get member;
 
-  @BuiltValueField(wireName: r'totalItems')
-  int? get totalItems;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ApiHappeningGetCollection200Response {
+  /// Returns a new [ApiHappeningGetCollection200Response] instance.
+  ApiHappeningGetCollection200Response({
 
-  @BuiltValueField(wireName: r'view')
-  ApiCentersGetCollection200ResponseView? get view;
+    required  this.member,
 
-  @BuiltValueField(wireName: r'search')
-  ApiCentersGetCollection200ResponseSearch? get search;
+     this.totalItems,
 
-  ApiHappeningGetCollection200Response._();
+     this.view,
 
-  factory ApiHappeningGetCollection200Response([void updates(ApiHappeningGetCollection200ResponseBuilder b)]) = _$ApiHappeningGetCollection200Response;
+     this.search,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiHappeningGetCollection200ResponseBuilder b) => b;
+  @JsonKey(
+    
+    name: r'member',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ApiHappeningGetCollection200Response> get serializer => _$ApiHappeningGetCollection200ResponseSerializer();
-}
 
-class _$ApiHappeningGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiHappeningGetCollection200Response> {
-  @override
-  final Iterable<Type> types = const [ApiHappeningGetCollection200Response, _$ApiHappeningGetCollection200Response];
+  final List<HappeningJsonldHappeningSearch> member;
 
-  @override
-  final String wireName = r'ApiHappeningGetCollection200Response';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ApiHappeningGetCollection200Response object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'member';
-    yield serializers.serialize(
-      object.member,
-      specifiedType: const FullType(BuiltList, [FullType(HappeningJsonldHappeningSearch)]),
-    );
-    if (object.totalItems != null) {
-      yield r'totalItems';
-      yield serializers.serialize(
-        object.totalItems,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.view != null) {
-      yield r'view';
-      yield serializers.serialize(
-        object.view,
-        specifiedType: const FullType(ApiCentersGetCollection200ResponseView),
-      );
-    }
-    if (object.search != null) {
-      yield r'search';
-      yield serializers.serialize(
-        object.search,
-        specifiedType: const FullType(ApiCentersGetCollection200ResponseSearch),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ApiHappeningGetCollection200Response object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+          // minimum: 0
+  @JsonKey(
+    
+    name: r'totalItems',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ApiHappeningGetCollection200ResponseBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'member':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(HappeningJsonldHappeningSearch)]),
-          ) as BuiltList<HappeningJsonldHappeningSearch>;
-          result.member.replace(valueDes);
-          break;
-        case r'totalItems':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.totalItems = valueDes;
-          break;
-        case r'view':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiCentersGetCollection200ResponseView),
-          ) as ApiCentersGetCollection200ResponseView;
-          result.view.replace(valueDes);
-          break;
-        case r'search':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiCentersGetCollection200ResponseSearch),
-          ) as ApiCentersGetCollection200ResponseSearch;
-          result.search.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final int? totalItems;
+
+
+
+  @JsonKey(
+    
+    name: r'view',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final ApiCentersGetCollection200ResponseView? view;
+
+
+
+  @JsonKey(
+    
+    name: r'search',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final ApiCentersGetCollection200ResponseSearch? search;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ApiHappeningGetCollection200Response &&
+      other.member == member &&
+      other.totalItems == totalItems &&
+      other.view == view &&
+      other.search == search;
+
+    @override
+    int get hashCode =>
+        member.hashCode +
+        totalItems.hashCode +
+        view.hashCode +
+        search.hashCode;
+
+  factory ApiHappeningGetCollection200Response.fromJson(Map<String, dynamic> json) => _$ApiHappeningGetCollection200ResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ApiHappeningGetCollection200ResponseToJson(this);
 
   @override
-  ApiHappeningGetCollection200Response deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ApiHappeningGetCollection200ResponseBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

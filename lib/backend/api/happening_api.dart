@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/backend/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_happening_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
@@ -18,9 +18,7 @@ class HappeningApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const HappeningApi(this._dio, this._serializers);
+  const HappeningApi(this._dio);
 
   /// Retrieves the collection of Happening resources.
   /// Retrieves the collection of Happening resources.
@@ -67,11 +65,11 @@ class HappeningApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (itemsPerPage != null) r'itemsPerPage': encodeQueryParameter(_serializers, itemsPerPage, const FullType(int)),
-      if (orderLeftSquareBracketPublicatedAtRightSquareBracket != null) r'order[publicatedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketPublicatedAtRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketArchivedAtRightSquareBracket != null) r'order[archivedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketArchivedAtRightSquareBracket, const FullType(String)),
-      if (isActive != null) r'isActive': encodeQueryParameter(_serializers, isActive, const FullType(bool)),
+      if (page != null) r'page': page,
+      if (itemsPerPage != null) r'itemsPerPage': itemsPerPage,
+      if (orderLeftSquareBracketPublicatedAtRightSquareBracket != null) r'order[publicatedAt]': orderLeftSquareBracketPublicatedAtRightSquareBracket,
+      if (orderLeftSquareBracketArchivedAtRightSquareBracket != null) r'order[archivedAt]': orderLeftSquareBracketArchivedAtRightSquareBracket,
+      if (isActive != null) r'isActive': isActive,
     };
 
     final _response = await _dio.request<Object>(
@@ -86,12 +84,8 @@ class HappeningApi {
     ApiHappeningGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiHappeningGetCollection200Response),
-      ) as ApiHappeningGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiHappeningGetCollection200Response, ApiHappeningGetCollection200Response>(rawData, 'ApiHappeningGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -137,7 +131,7 @@ class HappeningApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api-p/happenings/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api-p/happenings/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -161,12 +155,8 @@ class HappeningApi {
     HappeningJsonldHappeningRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(HappeningJsonldHappeningRead),
-      ) as HappeningJsonldHappeningRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<HappeningJsonldHappeningRead, HappeningJsonldHappeningRead>(rawData, 'HappeningJsonldHappeningRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

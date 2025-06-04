@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/ticketing_service/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/ticketing_service/api_util.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apilinked_users_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
@@ -24,9 +23,7 @@ class LinkedUserApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const LinkedUserApi(this._dio, this._serializers);
+  const LinkedUserApi(this._dio);
 
   /// Retrieves the collection of LinkedUser resources.
   /// Retrieves the collection of LinkedUser resources.
@@ -90,16 +87,16 @@ class LinkedUserApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
+      if (page != null) r'page': page,
+      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': createdAtLeftSquareBracketBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': createdAtLeftSquareBracketAfterRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': createdAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': updatedAtLeftSquareBracketBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': updatedAtLeftSquareBracketAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': orderLeftSquareBracketCreatedAtRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -114,12 +111,8 @@ class LinkedUserApi {
     ApiApilinkedUsersGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiApilinkedUsersGetCollection200Response),
-      ) as ApiApilinkedUsersGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiApilinkedUsersGetCollection200Response, ApiApilinkedUsersGetCollection200Response>(rawData, 'ApiApilinkedUsersGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -165,7 +158,7 @@ class LinkedUserApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/linked_users/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/linked_users/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -219,7 +212,7 @@ class LinkedUserApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/linked_users/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/linked_users/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -250,12 +243,8 @@ class LinkedUserApi {
     LinkedUserJsonldLinkedUserRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LinkedUserJsonldLinkedUserRead),
-      ) as LinkedUserJsonldLinkedUserRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<LinkedUserJsonldLinkedUserRead, LinkedUserJsonldLinkedUserRead>(rawData, 'LinkedUserJsonldLinkedUserRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -303,7 +292,7 @@ class LinkedUserApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/linked_users/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/linked_users/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -327,9 +316,7 @@ class LinkedUserApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(LinkedUserLinkedUserWrite);
-      _bodyData = _serializers.serialize(linkedUserLinkedUserWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(linkedUserLinkedUserWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -354,12 +341,8 @@ class LinkedUserApi {
     LinkedUserJsonldLinkedUserRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LinkedUserJsonldLinkedUserRead),
-      ) as LinkedUserJsonldLinkedUserRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<LinkedUserJsonldLinkedUserRead, LinkedUserJsonldLinkedUserRead>(rawData, 'LinkedUserJsonldLinkedUserRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -429,9 +412,7 @@ class LinkedUserApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(LinkedUserJsonldLinkedUserWrite);
-      _bodyData = _serializers.serialize(linkedUserJsonldLinkedUserWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(linkedUserJsonldLinkedUserWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -456,12 +437,8 @@ class LinkedUserApi {
     LinkedUserJsonldLinkedUserRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LinkedUserJsonldLinkedUserRead),
-      ) as LinkedUserJsonldLinkedUserRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<LinkedUserJsonldLinkedUserRead, LinkedUserJsonldLinkedUserRead>(rawData, 'LinkedUserJsonldLinkedUserRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

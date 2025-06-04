@@ -3,104 +3,54 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'subscriber_subscriber_write.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [userIdentifier] 
-@BuiltValue()
-abstract class SubscriberSubscriberWrite implements Built<SubscriberSubscriberWrite, SubscriberSubscriberWriteBuilder> {
-  @BuiltValueField(wireName: r'userIdentifier')
-  String get userIdentifier;
 
-  SubscriberSubscriberWrite._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class SubscriberSubscriberWrite {
+  /// Returns a new [SubscriberSubscriberWrite] instance.
+  SubscriberSubscriberWrite({
 
-  factory SubscriberSubscriberWrite([void updates(SubscriberSubscriberWriteBuilder b)]) = _$SubscriberSubscriberWrite;
+    required  this.userIdentifier,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SubscriberSubscriberWriteBuilder b) => b;
+  @JsonKey(
+    
+    name: r'userIdentifier',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<SubscriberSubscriberWrite> get serializer => _$SubscriberSubscriberWriteSerializer();
-}
 
-class _$SubscriberSubscriberWriteSerializer implements PrimitiveSerializer<SubscriberSubscriberWrite> {
-  @override
-  final Iterable<Type> types = const [SubscriberSubscriberWrite, _$SubscriberSubscriberWrite];
+  final String userIdentifier;
 
-  @override
-  final String wireName = r'SubscriberSubscriberWrite';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    SubscriberSubscriberWrite object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'userIdentifier';
-    yield serializers.serialize(
-      object.userIdentifier,
-      specifiedType: const FullType(String),
-    );
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    SubscriberSubscriberWrite object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required SubscriberSubscriberWriteBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'userIdentifier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userIdentifier = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is SubscriberSubscriberWrite &&
+      other.userIdentifier == userIdentifier;
+
+    @override
+    int get hashCode =>
+        userIdentifier.hashCode;
+
+  factory SubscriberSubscriberWrite.fromJson(Map<String, dynamic> json) => _$SubscriberSubscriberWriteFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SubscriberSubscriberWriteToJson(this);
 
   @override
-  SubscriberSubscriberWrite deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = SubscriberSubscriberWriteBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

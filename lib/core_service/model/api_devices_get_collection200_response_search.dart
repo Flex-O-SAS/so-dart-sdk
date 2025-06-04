@@ -4,161 +4,102 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_search_mapping_inner.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'api_devices_get_collection200_response_search.g.dart';
 
-/// ApiDevicesGetCollection200ResponseSearch
-///
-/// Properties:
-/// * [atType] 
-/// * [template] 
-/// * [variableRepresentation] 
-/// * [mapping] 
-@BuiltValue()
-abstract class ApiDevicesGetCollection200ResponseSearch implements Built<ApiDevicesGetCollection200ResponseSearch, ApiDevicesGetCollection200ResponseSearchBuilder> {
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
 
-  @BuiltValueField(wireName: r'template')
-  String? get template;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ApiDevicesGetCollection200ResponseSearch {
+  /// Returns a new [ApiDevicesGetCollection200ResponseSearch] instance.
+  ApiDevicesGetCollection200ResponseSearch({
 
-  @BuiltValueField(wireName: r'variableRepresentation')
-  String? get variableRepresentation;
+     this.atType,
 
-  @BuiltValueField(wireName: r'mapping')
-  BuiltList<ApiDevicesGetCollection200ResponseSearchMappingInner>? get mapping;
+     this.template,
 
-  ApiDevicesGetCollection200ResponseSearch._();
+     this.variableRepresentation,
 
-  factory ApiDevicesGetCollection200ResponseSearch([void updates(ApiDevicesGetCollection200ResponseSearchBuilder b)]) = _$ApiDevicesGetCollection200ResponseSearch;
+     this.mapping,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiDevicesGetCollection200ResponseSearchBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ApiDevicesGetCollection200ResponseSearch> get serializer => _$ApiDevicesGetCollection200ResponseSearchSerializer();
-}
 
-class _$ApiDevicesGetCollection200ResponseSearchSerializer implements PrimitiveSerializer<ApiDevicesGetCollection200ResponseSearch> {
-  @override
-  final Iterable<Type> types = const [ApiDevicesGetCollection200ResponseSearch, _$ApiDevicesGetCollection200ResponseSearch];
+  final String? atType;
 
-  @override
-  final String wireName = r'ApiDevicesGetCollection200ResponseSearch';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ApiDevicesGetCollection200ResponseSearch object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.template != null) {
-      yield r'template';
-      yield serializers.serialize(
-        object.template,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.variableRepresentation != null) {
-      yield r'variableRepresentation';
-      yield serializers.serialize(
-        object.variableRepresentation,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.mapping != null) {
-      yield r'mapping';
-      yield serializers.serialize(
-        object.mapping,
-        specifiedType: const FullType(BuiltList, [FullType(ApiDevicesGetCollection200ResponseSearchMappingInner)]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ApiDevicesGetCollection200ResponseSearch object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'template',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ApiDevicesGetCollection200ResponseSearchBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'template':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.template = valueDes;
-          break;
-        case r'variableRepresentation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.variableRepresentation = valueDes;
-          break;
-        case r'mapping':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(ApiDevicesGetCollection200ResponseSearchMappingInner)]),
-          ) as BuiltList<ApiDevicesGetCollection200ResponseSearchMappingInner>;
-          result.mapping.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? template;
+
+
+
+  @JsonKey(
+    
+    name: r'variableRepresentation',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? variableRepresentation;
+
+
+
+  @JsonKey(
+    
+    name: r'mapping',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final List<ApiDevicesGetCollection200ResponseSearchMappingInner>? mapping;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ApiDevicesGetCollection200ResponseSearch &&
+      other.atType == atType &&
+      other.template == template &&
+      other.variableRepresentation == variableRepresentation &&
+      other.mapping == mapping;
+
+    @override
+    int get hashCode =>
+        atType.hashCode +
+        template.hashCode +
+        variableRepresentation.hashCode +
+        mapping.hashCode;
+
+  factory ApiDevicesGetCollection200ResponseSearch.fromJson(Map<String, dynamic> json) => _$ApiDevicesGetCollection200ResponseSearchFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ApiDevicesGetCollection200ResponseSearchToJson(this);
 
   @override
-  ApiDevicesGetCollection200ResponseSearch deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ApiDevicesGetCollection200ResponseSearchBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

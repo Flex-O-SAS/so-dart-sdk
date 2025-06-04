@@ -4,158 +4,102 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'subscriber_jsonld_subscriber_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-/// * [userIdentifier] 
-@BuiltValue()
-abstract class SubscriberJsonldSubscriberRead implements Built<SubscriberJsonldSubscriberRead, SubscriberJsonldSubscriberReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  ConstraintViolationJsonldJsonldContext? get atContext;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class SubscriberJsonldSubscriberRead {
+  /// Returns a new [SubscriberJsonldSubscriberRead] instance.
+  SubscriberJsonldSubscriberRead({
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+     this.atContext,
 
-  @BuiltValueField(wireName: r'userIdentifier')
-  String get userIdentifier;
+     this.atId,
 
-  SubscriberJsonldSubscriberRead._();
+     this.atType,
 
-  factory SubscriberJsonldSubscriberRead([void updates(SubscriberJsonldSubscriberReadBuilder b)]) = _$SubscriberJsonldSubscriberRead;
+    required  this.userIdentifier,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SubscriberJsonldSubscriberReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@context',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<SubscriberJsonldSubscriberRead> get serializer => _$SubscriberJsonldSubscriberReadSerializer();
-}
 
-class _$SubscriberJsonldSubscriberReadSerializer implements PrimitiveSerializer<SubscriberJsonldSubscriberRead> {
-  @override
-  final Iterable<Type> types = const [SubscriberJsonldSubscriberRead, _$SubscriberJsonldSubscriberRead];
+  final ConstraintViolationJsonldJsonldContext? atContext;
 
-  @override
-  final String wireName = r'SubscriberJsonldSubscriberRead';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    SubscriberJsonldSubscriberRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(ConstraintViolationJsonldJsonldContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    yield r'userIdentifier';
-    yield serializers.serialize(
-      object.userIdentifier,
-      specifiedType: const FullType(String),
-    );
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    SubscriberJsonldSubscriberRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'@id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required SubscriberJsonldSubscriberReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ConstraintViolationJsonldJsonldContext),
-          ) as ConstraintViolationJsonldJsonldContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'userIdentifier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userIdentifier = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? atId;
+
+
+
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atType;
+
+
+
+  @JsonKey(
+    
+    name: r'userIdentifier',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String userIdentifier;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is SubscriberJsonldSubscriberRead &&
+      other.atContext == atContext &&
+      other.atId == atId &&
+      other.atType == atType &&
+      other.userIdentifier == userIdentifier;
+
+    @override
+    int get hashCode =>
+        atContext.hashCode +
+        atId.hashCode +
+        atType.hashCode +
+        userIdentifier.hashCode;
+
+  factory SubscriberJsonldSubscriberRead.fromJson(Map<String, dynamic> json) => _$SubscriberJsonldSubscriberReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SubscriberJsonldSubscriberReadToJson(this);
 
   @override
-  SubscriberJsonldSubscriberRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = SubscriberJsonldSubscriberReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

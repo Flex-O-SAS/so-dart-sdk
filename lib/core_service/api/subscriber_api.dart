@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/core_service/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/core_service/api_util.dart';
 import 'package:so_dart_sdk/core_service/model/api_subscribers_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
@@ -24,9 +23,7 @@ class SubscriberApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const SubscriberApi(this._dio, this._serializers);
+  const SubscriberApi(this._dio);
 
   /// Removes the Subscriber resource.
   /// Removes the Subscriber resource.
@@ -51,7 +48,7 @@ class SubscriberApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/subscribers/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/subscribers/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -101,7 +98,7 @@ class SubscriberApi {
   Future<Response<ApiSubscribersGetCollection200Response>> apiSubscribersGetCollection({ 
     int? page = 1,
     String? userIdentifier,
-    BuiltList<String>? userIdentifierLeftSquareBracketRightSquareBracket,
+    List<String>? userIdentifierLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -130,9 +127,9 @@ class SubscriberApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (userIdentifier != null) r'userIdentifier': encodeQueryParameter(_serializers, userIdentifier, const FullType(String)),
-      if (userIdentifierLeftSquareBracketRightSquareBracket != null) r'userIdentifier[]': encodeCollectionQueryParameter<String>(_serializers, userIdentifierLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (page != null) r'page': page,
+      if (userIdentifier != null) r'userIdentifier': userIdentifier,
+      if (userIdentifierLeftSquareBracketRightSquareBracket != null) r'userIdentifier[]': userIdentifierLeftSquareBracketRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -147,12 +144,8 @@ class SubscriberApi {
     ApiSubscribersGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiSubscribersGetCollection200Response),
-      ) as ApiSubscribersGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiSubscribersGetCollection200Response, ApiSubscribersGetCollection200Response>(rawData, 'ApiSubscribersGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -198,7 +191,7 @@ class SubscriberApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/subscribers/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/subscribers/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -229,12 +222,8 @@ class SubscriberApi {
     SubscriberJsonldSubscriberRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SubscriberJsonldSubscriberRead),
-      ) as SubscriberJsonldSubscriberRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<SubscriberJsonldSubscriberRead, SubscriberJsonldSubscriberRead>(rawData, 'SubscriberJsonldSubscriberRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -304,9 +293,7 @@ class SubscriberApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(SubscriberJsonldSubscriberWrite);
-      _bodyData = _serializers.serialize(subscriberJsonldSubscriberWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(subscriberJsonldSubscriberWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -331,12 +318,8 @@ class SubscriberApi {
     SubscriberJsonldSubscriberRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SubscriberJsonldSubscriberRead),
-      ) as SubscriberJsonldSubscriberRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<SubscriberJsonldSubscriberRead, SubscriberJsonldSubscriberRead>(rawData, 'SubscriberJsonldSubscriberRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

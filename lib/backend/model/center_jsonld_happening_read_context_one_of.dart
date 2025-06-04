@@ -3,136 +3,84 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'center_jsonld_happening_read_context_one_of.g.dart';
 
-/// CenterJsonldHappeningReadContextOneOf
-///
-/// Properties:
-/// * [atVocab] 
-/// * [hydra] 
-@BuiltValue()
-abstract class CenterJsonldHappeningReadContextOneOf implements Built<CenterJsonldHappeningReadContextOneOf, CenterJsonldHappeningReadContextOneOfBuilder> {
-  @BuiltValueField(wireName: r'@vocab')
-  String get atVocab;
 
-  @BuiltValueField(wireName: r'hydra')
-  CenterJsonldHappeningReadContextOneOfHydraEnum get hydra;
-  // enum hydraEnum {  http://www.w3.org/ns/hydra/core#,  };
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CenterJsonldHappeningReadContextOneOf {
+  /// Returns a new [CenterJsonldHappeningReadContextOneOf] instance.
+  CenterJsonldHappeningReadContextOneOf({
 
-  CenterJsonldHappeningReadContextOneOf._();
+    required  this.atVocab,
 
-  factory CenterJsonldHappeningReadContextOneOf([void updates(CenterJsonldHappeningReadContextOneOfBuilder b)]) = _$CenterJsonldHappeningReadContextOneOf;
+    required  this.hydra,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CenterJsonldHappeningReadContextOneOfBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@vocab',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CenterJsonldHappeningReadContextOneOf> get serializer => _$CenterJsonldHappeningReadContextOneOfSerializer();
+
+  final String atVocab;
+
+
+
+  @JsonKey(
+    
+    name: r'hydra',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final CenterJsonldHappeningReadContextOneOfHydraEnum hydra;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is CenterJsonldHappeningReadContextOneOf &&
+      other.atVocab == atVocab &&
+      other.hydra == hydra;
+
+    @override
+    int get hashCode =>
+        atVocab.hashCode +
+        hydra.hashCode;
+
+  factory CenterJsonldHappeningReadContextOneOf.fromJson(Map<String, dynamic> json) => _$CenterJsonldHappeningReadContextOneOfFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CenterJsonldHappeningReadContextOneOfToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
+  }
+
 }
 
-class _$CenterJsonldHappeningReadContextOneOfSerializer implements PrimitiveSerializer<CenterJsonldHappeningReadContextOneOf> {
-  @override
-  final Iterable<Type> types = const [CenterJsonldHappeningReadContextOneOf, _$CenterJsonldHappeningReadContextOneOf];
 
-  @override
-  final String wireName = r'CenterJsonldHappeningReadContextOneOf';
+enum CenterJsonldHappeningReadContextOneOfHydraEnum {
+@JsonValue(r'http://www.w3.org/ns/hydra/core#')
+httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash(r'http://www.w3.org/ns/hydra/core#');
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CenterJsonldHappeningReadContextOneOf object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'@vocab';
-    yield serializers.serialize(
-      object.atVocab,
-      specifiedType: const FullType(String),
-    );
-    yield r'hydra';
-    yield serializers.serialize(
-      object.hydra,
-      specifiedType: const FullType(CenterJsonldHappeningReadContextOneOfHydraEnum),
-    );
-  }
+const CenterJsonldHappeningReadContextOneOfHydraEnum(this.value);
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    CenterJsonldHappeningReadContextOneOf object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+final String value;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required CenterJsonldHappeningReadContextOneOfBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@vocab':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atVocab = valueDes;
-          break;
-        case r'hydra':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContextOneOfHydraEnum),
-          ) as CenterJsonldHappeningReadContextOneOfHydraEnum;
-          result.hydra = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
-
-  @override
-  CenterJsonldHappeningReadContextOneOf deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = CenterJsonldHappeningReadContextOneOfBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
-  }
+@override
+String toString() => value;
 }
 
-class CenterJsonldHappeningReadContextOneOfHydraEnum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'http://www.w3.org/ns/hydra/core#')
-  static const CenterJsonldHappeningReadContextOneOfHydraEnum httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash = _$centerJsonldHappeningReadContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
-
-  static Serializer<CenterJsonldHappeningReadContextOneOfHydraEnum> get serializer => _$centerJsonldHappeningReadContextOneOfHydraEnumSerializer;
-
-  const CenterJsonldHappeningReadContextOneOfHydraEnum._(String name): super(name);
-
-  static BuiltSet<CenterJsonldHappeningReadContextOneOfHydraEnum> get values => _$centerJsonldHappeningReadContextOneOfHydraEnumValues;
-  static CenterJsonldHappeningReadContextOneOfHydraEnum valueOf(String name) => _$centerJsonldHappeningReadContextOneOfHydraEnumValueOf(name);
-}
 

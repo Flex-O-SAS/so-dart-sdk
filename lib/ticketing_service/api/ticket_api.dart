@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/ticketing_service/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/ticketing_service/api_util.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_tickets_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
@@ -24,9 +23,7 @@ class TicketApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const TicketApi(this._dio, this._serializers);
+  const TicketApi(this._dio);
 
   /// Removes the Ticket resource.
   /// Removes the Ticket resource.
@@ -51,7 +48,7 @@ class TicketApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/tickets/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/tickets/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -131,7 +128,7 @@ class TicketApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiTicketsGetCollection200Response>> apiTicketsGetCollection({ 
     int? page = 1,
-    BuiltList<String>? groupsLeftSquareBracketRightSquareBracket,
+    List<String>? groupsLeftSquareBracketRightSquareBracket,
     String? orderLeftSquareBracketCreatedAtRightSquareBracket = 'asc',
     String? startDateLeftSquareBracketBeforeRightSquareBracket,
     String? startDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
@@ -151,16 +148,16 @@ class TicketApi {
     String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
     String? description,
     String? author,
-    BuiltList<String>? authorLeftSquareBracketRightSquareBracket,
+    List<String>? authorLeftSquareBracketRightSquareBracket,
     String? assignee,
-    BuiltList<String>? assigneeLeftSquareBracketRightSquareBracket,
+    List<String>? assigneeLeftSquareBracketRightSquareBracket,
     String? site,
-    BuiltList<String>? siteLeftSquareBracketRightSquareBracket,
+    List<String>? siteLeftSquareBracketRightSquareBracket,
     String? location,
     String? linkedUsersPeriodUser,
-    BuiltList<String>? linkedUsersPeriodUserLeftSquareBracketRightSquareBracket,
+    List<String>? linkedUsersPeriodUserLeftSquareBracketRightSquareBracket,
     int? tagsPeriodId,
-    BuiltList<int>? tagsPeriodIdLeftSquareBracketRightSquareBracket,
+    List<int>? tagsPeriodIdLeftSquareBracketRightSquareBracket,
     String? tagsPeriodName,
     String? status,
     String? metadataLeftSquareBracketTypeRightSquareBracket,
@@ -192,40 +189,40 @@ class TicketApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (groupsLeftSquareBracketRightSquareBracket != null) r'groups[]': encodeCollectionQueryParameter<String>(_serializers, groupsLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
-      if (startDateLeftSquareBracketBeforeRightSquareBracket != null) r'startDate[before]': encodeQueryParameter(_serializers, startDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (startDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'startDate[strictly_before]': encodeQueryParameter(_serializers, startDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (startDateLeftSquareBracketAfterRightSquareBracket != null) r'startDate[after]': encodeQueryParameter(_serializers, startDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (startDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'startDate[strictly_after]': encodeQueryParameter(_serializers, startDateLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (endDateLeftSquareBracketBeforeRightSquareBracket != null) r'endDate[before]': encodeQueryParameter(_serializers, endDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (endDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'endDate[strictly_before]': encodeQueryParameter(_serializers, endDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (endDateLeftSquareBracketAfterRightSquareBracket != null) r'endDate[after]': encodeQueryParameter(_serializers, endDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (endDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'endDate[strictly_after]': encodeQueryParameter(_serializers, endDateLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (description != null) r'description': encodeQueryParameter(_serializers, description, const FullType(String)),
-      if (author != null) r'author': encodeQueryParameter(_serializers, author, const FullType(String)),
-      if (authorLeftSquareBracketRightSquareBracket != null) r'author[]': encodeCollectionQueryParameter<String>(_serializers, authorLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (assignee != null) r'assignee': encodeQueryParameter(_serializers, assignee, const FullType(String)),
-      if (assigneeLeftSquareBracketRightSquareBracket != null) r'assignee[]': encodeCollectionQueryParameter<String>(_serializers, assigneeLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (site != null) r'site': encodeQueryParameter(_serializers, site, const FullType(String)),
-      if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': encodeCollectionQueryParameter<String>(_serializers, siteLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (location != null) r'location': encodeQueryParameter(_serializers, location, const FullType(String)),
-      if (linkedUsersPeriodUser != null) r'linkedUsers.user': encodeQueryParameter(_serializers, linkedUsersPeriodUser, const FullType(String)),
-      if (linkedUsersPeriodUserLeftSquareBracketRightSquareBracket != null) r'linkedUsers.user[]': encodeCollectionQueryParameter<String>(_serializers, linkedUsersPeriodUserLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (tagsPeriodId != null) r'tags.id': encodeQueryParameter(_serializers, tagsPeriodId, const FullType(int)),
-      if (tagsPeriodIdLeftSquareBracketRightSquareBracket != null) r'tags.id[]': encodeCollectionQueryParameter<int>(_serializers, tagsPeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (tagsPeriodName != null) r'tags.name': encodeQueryParameter(_serializers, tagsPeriodName, const FullType(String)),
-      if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
-      if (metadataLeftSquareBracketTypeRightSquareBracket != null) r'metadata[type]': encodeQueryParameter(_serializers, metadataLeftSquareBracketTypeRightSquareBracket, const FullType(String)),
+      if (page != null) r'page': page,
+      if (groupsLeftSquareBracketRightSquareBracket != null) r'groups[]': groupsLeftSquareBracketRightSquareBracket,
+      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': orderLeftSquareBracketCreatedAtRightSquareBracket,
+      if (startDateLeftSquareBracketBeforeRightSquareBracket != null) r'startDate[before]': startDateLeftSquareBracketBeforeRightSquareBracket,
+      if (startDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'startDate[strictly_before]': startDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (startDateLeftSquareBracketAfterRightSquareBracket != null) r'startDate[after]': startDateLeftSquareBracketAfterRightSquareBracket,
+      if (startDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'startDate[strictly_after]': startDateLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (endDateLeftSquareBracketBeforeRightSquareBracket != null) r'endDate[before]': endDateLeftSquareBracketBeforeRightSquareBracket,
+      if (endDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'endDate[strictly_before]': endDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (endDateLeftSquareBracketAfterRightSquareBracket != null) r'endDate[after]': endDateLeftSquareBracketAfterRightSquareBracket,
+      if (endDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'endDate[strictly_after]': endDateLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': createdAtLeftSquareBracketBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': createdAtLeftSquareBracketAfterRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': createdAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': updatedAtLeftSquareBracketBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': updatedAtLeftSquareBracketAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (description != null) r'description': description,
+      if (author != null) r'author': author,
+      if (authorLeftSquareBracketRightSquareBracket != null) r'author[]': authorLeftSquareBracketRightSquareBracket,
+      if (assignee != null) r'assignee': assignee,
+      if (assigneeLeftSquareBracketRightSquareBracket != null) r'assignee[]': assigneeLeftSquareBracketRightSquareBracket,
+      if (site != null) r'site': site,
+      if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': siteLeftSquareBracketRightSquareBracket,
+      if (location != null) r'location': location,
+      if (linkedUsersPeriodUser != null) r'linkedUsers.user': linkedUsersPeriodUser,
+      if (linkedUsersPeriodUserLeftSquareBracketRightSquareBracket != null) r'linkedUsers.user[]': linkedUsersPeriodUserLeftSquareBracketRightSquareBracket,
+      if (tagsPeriodId != null) r'tags.id': tagsPeriodId,
+      if (tagsPeriodIdLeftSquareBracketRightSquareBracket != null) r'tags.id[]': tagsPeriodIdLeftSquareBracketRightSquareBracket,
+      if (tagsPeriodName != null) r'tags.name': tagsPeriodName,
+      if (status != null) r'status': status,
+      if (metadataLeftSquareBracketTypeRightSquareBracket != null) r'metadata[type]': metadataLeftSquareBracketTypeRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -240,12 +237,8 @@ class TicketApi {
     ApiTicketsGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiTicketsGetCollection200Response),
-      ) as ApiTicketsGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiTicketsGetCollection200Response, ApiTicketsGetCollection200Response>(rawData, 'ApiTicketsGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -291,7 +284,7 @@ class TicketApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/tickets/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/tickets/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -322,12 +315,8 @@ class TicketApi {
     TicketJsonldTicketRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(TicketJsonldTicketRead),
-      ) as TicketJsonldTicketRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<TicketJsonldTicketRead, TicketJsonldTicketRead>(rawData, 'TicketJsonldTicketRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -375,7 +364,7 @@ class TicketApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/tickets/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/tickets/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -399,9 +388,7 @@ class TicketApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TicketTicketWrite);
-      _bodyData = _serializers.serialize(ticketTicketWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(ticketTicketWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -426,12 +413,8 @@ class TicketApi {
     TicketJsonldTicketRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(TicketJsonldTicketRead),
-      ) as TicketJsonldTicketRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<TicketJsonldTicketRead, TicketJsonldTicketRead>(rawData, 'TicketJsonldTicketRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -501,9 +484,7 @@ class TicketApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TicketJsonldTicketWrite);
-      _bodyData = _serializers.serialize(ticketJsonldTicketWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(ticketJsonldTicketWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -528,12 +509,8 @@ class TicketApi {
     TicketJsonldTicketRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(TicketJsonldTicketRead),
-      ) as TicketJsonldTicketRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<TicketJsonldTicketRead, TicketJsonldTicketRead>(rawData, 'TicketJsonldTicketRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

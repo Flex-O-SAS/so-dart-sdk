@@ -3,370 +3,301 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read_context.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'package_jsonld_package_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-/// * [id] 
-/// * [recipient] 
-/// * [staff] 
-/// * [site] 
-/// * [type] 
-/// * [status] 
-/// * [senderName] 
-/// * [receptionDate] 
-/// * [handoverDate] 
-/// * [handoverClient] 
-/// * [securityCode] 
-@BuiltValue()
-abstract class PackageJsonldPackageRead implements Built<PackageJsonldPackageRead, PackageJsonldPackageReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AppointmentJsonldAppointmentReadContext? get atContext;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class PackageJsonldPackageRead {
+  /// Returns a new [PackageJsonldPackageRead] instance.
+  PackageJsonldPackageRead({
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+     this.atContext,
 
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+     this.atId,
 
-  @BuiltValueField(wireName: r'recipient')
-  String get recipient;
+     this.atType,
 
-  @BuiltValueField(wireName: r'staff')
-  String get staff;
+     this.id,
 
-  @BuiltValueField(wireName: r'site')
-  int get site;
+    required  this.recipient,
 
-  @BuiltValueField(wireName: r'type')
-  PackageJsonldPackageReadTypeEnum get type;
-  // enum typeEnum {  standard_letter,  tracked_letter,  registered_letter,  package,  food_package,  };
+    required  this.staff,
 
-  @BuiltValueField(wireName: r'status')
-  PackageJsonldPackageReadStatusEnum get status;
-  // enum statusEnum {  received,  handed_over,  };
+    required  this.site,
 
-  @BuiltValueField(wireName: r'senderName')
-  String? get senderName;
+    required  this.type,
 
-  @BuiltValueField(wireName: r'receptionDate')
-  DateTime get receptionDate;
+    required  this.status,
 
-  @BuiltValueField(wireName: r'handoverDate')
-  DateTime? get handoverDate;
+     this.senderName,
 
-  @BuiltValueField(wireName: r'handoverClient')
-  String? get handoverClient;
+    required  this.receptionDate,
 
-  @BuiltValueField(wireName: r'securityCode')
-  String? get securityCode;
+     this.handoverDate,
 
-  PackageJsonldPackageRead._();
+     this.handoverClient,
 
-  factory PackageJsonldPackageRead([void updates(PackageJsonldPackageReadBuilder b)]) = _$PackageJsonldPackageRead;
+    required  this.securityCode,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PackageJsonldPackageReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@context',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PackageJsonldPackageRead> get serializer => _$PackageJsonldPackageReadSerializer();
-}
 
-class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<PackageJsonldPackageRead> {
-  @override
-  final Iterable<Type> types = const [PackageJsonldPackageRead, _$PackageJsonldPackageRead];
+  final AppointmentJsonldAppointmentReadContext? atContext;
 
-  @override
-  final String wireName = r'PackageJsonldPackageRead';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    PackageJsonldPackageRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(AppointmentJsonldAppointmentReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-    yield r'recipient';
-    yield serializers.serialize(
-      object.recipient,
-      specifiedType: const FullType(String),
-    );
-    yield r'staff';
-    yield serializers.serialize(
-      object.staff,
-      specifiedType: const FullType(String),
-    );
-    yield r'site';
-    yield serializers.serialize(
-      object.site,
-      specifiedType: const FullType(int),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(PackageJsonldPackageReadTypeEnum),
-    );
-    yield r'status';
-    yield serializers.serialize(
-      object.status,
-      specifiedType: const FullType(PackageJsonldPackageReadStatusEnum),
-    );
-    if (object.senderName != null) {
-      yield r'senderName';
-      yield serializers.serialize(
-        object.senderName,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'receptionDate';
-    yield serializers.serialize(
-      object.receptionDate,
-      specifiedType: const FullType(DateTime),
-    );
-    if (object.handoverDate != null) {
-      yield r'handoverDate';
-      yield serializers.serialize(
-        object.handoverDate,
-        specifiedType: const FullType.nullable(DateTime),
-      );
-    }
-    if (object.handoverClient != null) {
-      yield r'handoverClient';
-      yield serializers.serialize(
-        object.handoverClient,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'securityCode';
-    yield object.securityCode == null ? null : serializers.serialize(
-      object.securityCode,
-      specifiedType: const FullType.nullable(String),
-    );
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    PackageJsonldPackageRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'@id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required PackageJsonldPackageReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AppointmentJsonldAppointmentReadContext),
-          ) as AppointmentJsonldAppointmentReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'recipient':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.recipient = valueDes;
-          break;
-        case r'staff':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.staff = valueDes;
-          break;
-        case r'site':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.site = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PackageJsonldPackageReadTypeEnum),
-          ) as PackageJsonldPackageReadTypeEnum;
-          result.type = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PackageJsonldPackageReadStatusEnum),
-          ) as PackageJsonldPackageReadStatusEnum;
-          result.status = valueDes;
-          break;
-        case r'senderName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.senderName = valueDes;
-          break;
-        case r'receptionDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.receptionDate = valueDes;
-          break;
-        case r'handoverDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.handoverDate = valueDes;
-          break;
-        case r'handoverClient':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.handoverClient = valueDes;
-          break;
-        case r'securityCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.securityCode = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? atId;
+
+
+
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atType;
+
+
+
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final int? id;
+
+
+
+  @JsonKey(
+    
+    name: r'recipient',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String recipient;
+
+
+
+  @JsonKey(
+    
+    name: r'staff',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String staff;
+
+
+
+  @JsonKey(
+    
+    name: r'site',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final int site;
+
+
+
+  @JsonKey(
+    
+    name: r'type',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final PackageJsonldPackageReadTypeEnum type;
+
+
+
+  @JsonKey(
+    
+    name: r'status',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final PackageJsonldPackageReadStatusEnum status;
+
+
+
+  @JsonKey(
+    
+    name: r'senderName',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? senderName;
+
+
+
+  @JsonKey(
+    
+    name: r'receptionDate',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final DateTime receptionDate;
+
+
+
+  @JsonKey(
+    
+    name: r'handoverDate',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? handoverDate;
+
+
+
+  @JsonKey(
+    
+    name: r'handoverClient',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? handoverClient;
+
+
+
+  @JsonKey(
+    
+    name: r'securityCode',
+    required: true,
+    includeIfNull: true,
+  )
+
+
+  final String? securityCode;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is PackageJsonldPackageRead &&
+      other.atContext == atContext &&
+      other.atId == atId &&
+      other.atType == atType &&
+      other.id == id &&
+      other.recipient == recipient &&
+      other.staff == staff &&
+      other.site == site &&
+      other.type == type &&
+      other.status == status &&
+      other.senderName == senderName &&
+      other.receptionDate == receptionDate &&
+      other.handoverDate == handoverDate &&
+      other.handoverClient == handoverClient &&
+      other.securityCode == securityCode;
+
+    @override
+    int get hashCode =>
+        atContext.hashCode +
+        atId.hashCode +
+        atType.hashCode +
+        id.hashCode +
+        recipient.hashCode +
+        staff.hashCode +
+        site.hashCode +
+        type.hashCode +
+        status.hashCode +
+        (senderName == null ? 0 : senderName.hashCode) +
+        receptionDate.hashCode +
+        (handoverDate == null ? 0 : handoverDate.hashCode) +
+        (handoverClient == null ? 0 : handoverClient.hashCode) +
+        (securityCode == null ? 0 : securityCode.hashCode);
+
+  factory PackageJsonldPackageRead.fromJson(Map<String, dynamic> json) => _$PackageJsonldPackageReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PackageJsonldPackageReadToJson(this);
 
   @override
-  PackageJsonldPackageRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = PackageJsonldPackageReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 
-class PackageJsonldPackageReadTypeEnum extends EnumClass {
 
-  @BuiltValueEnumConst(wireName: r'standard_letter')
-  static const PackageJsonldPackageReadTypeEnum standardLetter = _$packageJsonldPackageReadTypeEnum_standardLetter;
-  @BuiltValueEnumConst(wireName: r'tracked_letter')
-  static const PackageJsonldPackageReadTypeEnum trackedLetter = _$packageJsonldPackageReadTypeEnum_trackedLetter;
-  @BuiltValueEnumConst(wireName: r'registered_letter')
-  static const PackageJsonldPackageReadTypeEnum registeredLetter = _$packageJsonldPackageReadTypeEnum_registeredLetter;
-  @BuiltValueEnumConst(wireName: r'package')
-  static const PackageJsonldPackageReadTypeEnum package = _$packageJsonldPackageReadTypeEnum_package;
-  @BuiltValueEnumConst(wireName: r'food_package')
-  static const PackageJsonldPackageReadTypeEnum foodPackage = _$packageJsonldPackageReadTypeEnum_foodPackage;
+enum PackageJsonldPackageReadTypeEnum {
+@JsonValue(r'standard_letter')
+standardLetter(r'standard_letter'),
+@JsonValue(r'tracked_letter')
+trackedLetter(r'tracked_letter'),
+@JsonValue(r'registered_letter')
+registeredLetter(r'registered_letter'),
+@JsonValue(r'package')
+package(r'package'),
+@JsonValue(r'food_package')
+foodPackage(r'food_package');
 
-  static Serializer<PackageJsonldPackageReadTypeEnum> get serializer => _$packageJsonldPackageReadTypeEnumSerializer;
+const PackageJsonldPackageReadTypeEnum(this.value);
 
-  const PackageJsonldPackageReadTypeEnum._(String name): super(name);
+final String value;
 
-  static BuiltSet<PackageJsonldPackageReadTypeEnum> get values => _$packageJsonldPackageReadTypeEnumValues;
-  static PackageJsonldPackageReadTypeEnum valueOf(String name) => _$packageJsonldPackageReadTypeEnumValueOf(name);
+@override
+String toString() => value;
 }
 
-class PackageJsonldPackageReadStatusEnum extends EnumClass {
 
-  @BuiltValueEnumConst(wireName: r'received')
-  static const PackageJsonldPackageReadStatusEnum received = _$packageJsonldPackageReadStatusEnum_received;
-  @BuiltValueEnumConst(wireName: r'handed_over')
-  static const PackageJsonldPackageReadStatusEnum handedOver = _$packageJsonldPackageReadStatusEnum_handedOver;
 
-  static Serializer<PackageJsonldPackageReadStatusEnum> get serializer => _$packageJsonldPackageReadStatusEnumSerializer;
+enum PackageJsonldPackageReadStatusEnum {
+@JsonValue(r'received')
+received(r'received'),
+@JsonValue(r'handed_over')
+handedOver(r'handed_over');
 
-  const PackageJsonldPackageReadStatusEnum._(String name): super(name);
+const PackageJsonldPackageReadStatusEnum(this.value);
 
-  static BuiltSet<PackageJsonldPackageReadStatusEnum> get values => _$packageJsonldPackageReadStatusEnumValues;
-  static PackageJsonldPackageReadStatusEnum valueOf(String name) => _$packageJsonldPackageReadStatusEnumValueOf(name);
+final String value;
+
+@override
+String toString() => value;
 }
+
 

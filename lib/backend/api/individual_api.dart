@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/backend/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_individuals_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dart';
@@ -22,9 +21,7 @@ class IndividualApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const IndividualApi(this._dio, this._serializers);
+  const IndividualApi(this._dio);
 
   /// Retrieves the collection of Individual resources.
   /// Retrieves the collection of Individual resources.
@@ -53,17 +50,17 @@ class IndividualApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiIndividualsGetCollection200Response>> apiIndividualsGetCollection({ 
     int? page = 1,
-    BuiltList<String>? groupsLeftSquareBracketRightSquareBracket,
+    List<String>? groupsLeftSquareBracketRightSquareBracket,
     String? firstname,
     String? lastname,
     String? clientLinksPeriodEnterprise,
-    BuiltList<String>? clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket,
+    List<String>? clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket,
     String? email,
-    BuiltList<String>? emailLeftSquareBracketRightSquareBracket,
+    List<String>? emailLeftSquareBracketRightSquareBracket,
     String? reference,
-    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
+    List<String>? referenceLeftSquareBracketRightSquareBracket,
     int? id,
-    BuiltList<int>? idLeftSquareBracketRightSquareBracket,
+    List<int>? idLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -85,18 +82,18 @@ class IndividualApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (groupsLeftSquareBracketRightSquareBracket != null) r'groups[]': encodeCollectionQueryParameter<String>(_serializers, groupsLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (firstname != null) r'firstname': encodeQueryParameter(_serializers, firstname, const FullType(String)),
-      if (lastname != null) r'lastname': encodeQueryParameter(_serializers, lastname, const FullType(String)),
-      if (clientLinksPeriodEnterprise != null) r'clientLinks.enterprise': encodeQueryParameter(_serializers, clientLinksPeriodEnterprise, const FullType(String)),
-      if (clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket != null) r'clientLinks.enterprise[]': encodeCollectionQueryParameter<String>(_serializers, clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
-      if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': encodeCollectionQueryParameter<String>(_serializers, emailLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
-      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
-      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (page != null) r'page': page,
+      if (groupsLeftSquareBracketRightSquareBracket != null) r'groups[]': groupsLeftSquareBracketRightSquareBracket,
+      if (firstname != null) r'firstname': firstname,
+      if (lastname != null) r'lastname': lastname,
+      if (clientLinksPeriodEnterprise != null) r'clientLinks.enterprise': clientLinksPeriodEnterprise,
+      if (clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket != null) r'clientLinks.enterprise[]': clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket,
+      if (email != null) r'email': email,
+      if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': emailLeftSquareBracketRightSquareBracket,
+      if (reference != null) r'reference': reference,
+      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': referenceLeftSquareBracketRightSquareBracket,
+      if (id != null) r'id': id,
+      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': idLeftSquareBracketRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -111,12 +108,8 @@ class IndividualApi {
     ApiIndividualsGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiIndividualsGetCollection200Response),
-      ) as ApiIndividualsGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiIndividualsGetCollection200Response, ApiIndividualsGetCollection200Response>(rawData, 'ApiIndividualsGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -162,7 +155,7 @@ class IndividualApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api-p/individuals/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api-p/individuals/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -186,12 +179,8 @@ class IndividualApi {
     IndividualJsonldIndividualSearch? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(IndividualJsonldIndividualSearch),
-      ) as IndividualJsonldIndividualSearch;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<IndividualJsonldIndividualSearch, IndividualJsonldIndividualSearch>(rawData, 'IndividualJsonldIndividualSearch', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -239,7 +228,7 @@ class IndividualApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api-p/individuals/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api-p/individuals/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -256,9 +245,7 @@ class IndividualApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(IndividualIndividualWrite);
-      _bodyData = _serializers.serialize(individualIndividualWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(individualIndividualWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -283,12 +270,8 @@ class IndividualApi {
     IndividualJsonldIndividualSearch? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(IndividualJsonldIndividualSearch),
-      ) as IndividualJsonldIndividualSearch;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<IndividualJsonldIndividualSearch, IndividualJsonldIndividualSearch>(rawData, 'IndividualJsonldIndividualSearch', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

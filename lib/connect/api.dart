@@ -3,8 +3,6 @@
 //
 
 import 'package:dio/dio.dart';
-import 'package:built_value/serializer.dart';
-import 'package:so_dart_sdk/connect/serializers.dart';
 import 'package:so_dart_sdk/connect/auth/api_key_auth.dart';
 import 'package:so_dart_sdk/connect/auth/basic_auth.dart';
 import 'package:so_dart_sdk/connect/auth/bearer_auth.dart';
@@ -19,14 +17,11 @@ class SoDartSdk {
   static const String basePath = r'https://connect/api/v1';
 
   final Dio dio;
-  final Serializers serializers;
-
   SoDartSdk({
     Dio? dio,
-    Serializers? serializers,
     String? basePathOverride,
     List<Interceptor>? interceptors,
-  })  : this.serializers = serializers ?? standardSerializers,
+  })  : 
         this.dio = dio ??
             Dio(BaseOptions(
               baseUrl: basePathOverride ?? basePath,
@@ -72,30 +67,30 @@ class SoDartSdk {
   /// Get DevicesApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   DevicesApi getDevicesApi() {
-    return DevicesApi(dio, serializers);
+    return DevicesApi(dio);
   }
 
   /// Get LockersApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   LockersApi getLockersApi() {
-    return LockersApi(dio, serializers);
+    return LockersApi(dio);
   }
 
   /// Get MiscApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   MiscApi getMiscApi() {
-    return MiscApi(dio, serializers);
+    return MiscApi(dio);
   }
 
   /// Get ProvidersApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   ProvidersApi getProvidersApi() {
-    return ProvidersApi(dio, serializers);
+    return ProvidersApi(dio);
   }
 
   /// Get UsersApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   UsersApi getUsersApi() {
-    return UsersApi(dio, serializers);
+    return UsersApi(dio);
   }
 }

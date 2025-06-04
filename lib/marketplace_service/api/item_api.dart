@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/marketplace_service/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/marketplace_service/api_util.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_items_get_collection200_response.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_item_read_service_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_item_write.dart';
@@ -20,9 +19,7 @@ class ItemApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const ItemApi(this._dio, this._serializers);
+  const ItemApi(this._dio);
 
   /// Retrieves the collection of Item resources.
   /// Retrieves the collection of Item resources.
@@ -67,15 +64,15 @@ class ItemApi {
   Future<Response<ApiItemsGetCollection200Response>> apiItemsGetCollection({ 
     int? page = 1,
     int? id,
-    BuiltList<int>? idLeftSquareBracketRightSquareBracket,
+    List<int>? idLeftSquareBracketRightSquareBracket,
     int? providerPeriodId,
-    BuiltList<int>? providerPeriodIdLeftSquareBracketRightSquareBracket,
+    List<int>? providerPeriodIdLeftSquareBracketRightSquareBracket,
     String? providerPeriodName,
     int? servicePeriodId,
-    BuiltList<int>? servicePeriodIdLeftSquareBracketRightSquareBracket,
+    List<int>? servicePeriodIdLeftSquareBracketRightSquareBracket,
     String? label,
     int? site,
-    BuiltList<int>? siteLeftSquareBracketRightSquareBracket,
+    List<int>? siteLeftSquareBracketRightSquareBracket,
     String? description,
     String? orderLeftSquareBracketLabelRightSquareBracket = 'asc',
     String? orderLeftSquareBracketPriceRightSquareBracket = 'asc',
@@ -121,32 +118,32 @@ class ItemApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
-      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (providerPeriodId != null) r'provider.id': encodeQueryParameter(_serializers, providerPeriodId, const FullType(int)),
-      if (providerPeriodIdLeftSquareBracketRightSquareBracket != null) r'provider.id[]': encodeCollectionQueryParameter<int>(_serializers, providerPeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (providerPeriodName != null) r'provider.name': encodeQueryParameter(_serializers, providerPeriodName, const FullType(String)),
-      if (servicePeriodId != null) r'service.id': encodeQueryParameter(_serializers, servicePeriodId, const FullType(int)),
-      if (servicePeriodIdLeftSquareBracketRightSquareBracket != null) r'service.id[]': encodeCollectionQueryParameter<int>(_serializers, servicePeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (label != null) r'label': encodeQueryParameter(_serializers, label, const FullType(String)),
-      if (site != null) r'site': encodeQueryParameter(_serializers, site, const FullType(int)),
-      if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': encodeCollectionQueryParameter<int>(_serializers, siteLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (description != null) r'description': encodeQueryParameter(_serializers, description, const FullType(String)),
-      if (orderLeftSquareBracketLabelRightSquareBracket != null) r'order[label]': encodeQueryParameter(_serializers, orderLeftSquareBracketLabelRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketPriceRightSquareBracket != null) r'order[price]': encodeQueryParameter(_serializers, orderLeftSquareBracketPriceRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketBeginDateRightSquareBracket != null) r'order[beginDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketBeginDateRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndDateRightSquareBracket, const FullType(String)),
-      if (isBookable != null) r'isBookable': encodeQueryParameter(_serializers, isBookable, const FullType(bool)),
-      if (isOnline != null) r'isOnline': encodeQueryParameter(_serializers, isOnline, const FullType(bool)),
-      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (page != null) r'page': page,
+      if (id != null) r'id': id,
+      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': idLeftSquareBracketRightSquareBracket,
+      if (providerPeriodId != null) r'provider.id': providerPeriodId,
+      if (providerPeriodIdLeftSquareBracketRightSquareBracket != null) r'provider.id[]': providerPeriodIdLeftSquareBracketRightSquareBracket,
+      if (providerPeriodName != null) r'provider.name': providerPeriodName,
+      if (servicePeriodId != null) r'service.id': servicePeriodId,
+      if (servicePeriodIdLeftSquareBracketRightSquareBracket != null) r'service.id[]': servicePeriodIdLeftSquareBracketRightSquareBracket,
+      if (label != null) r'label': label,
+      if (site != null) r'site': site,
+      if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': siteLeftSquareBracketRightSquareBracket,
+      if (description != null) r'description': description,
+      if (orderLeftSquareBracketLabelRightSquareBracket != null) r'order[label]': orderLeftSquareBracketLabelRightSquareBracket,
+      if (orderLeftSquareBracketPriceRightSquareBracket != null) r'order[price]': orderLeftSquareBracketPriceRightSquareBracket,
+      if (orderLeftSquareBracketBeginDateRightSquareBracket != null) r'order[beginDate]': orderLeftSquareBracketBeginDateRightSquareBracket,
+      if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': orderLeftSquareBracketEndDateRightSquareBracket,
+      if (isBookable != null) r'isBookable': isBookable,
+      if (isOnline != null) r'isOnline': isOnline,
+      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': createdAtLeftSquareBracketBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': createdAtLeftSquareBracketAfterRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': createdAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': updatedAtLeftSquareBracketBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': updatedAtLeftSquareBracketAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -161,12 +158,8 @@ class ItemApi {
     ApiItemsGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiItemsGetCollection200Response),
-      ) as ApiItemsGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiItemsGetCollection200Response, ApiItemsGetCollection200Response>(rawData, 'ApiItemsGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -214,7 +207,7 @@ class ItemApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/items/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/items/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -246,12 +239,8 @@ class ItemApi {
     ItemJsonldItemReadServiceRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ItemJsonldItemReadServiceRead),
-      ) as ItemJsonldItemReadServiceRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ItemJsonldItemReadServiceRead, ItemJsonldItemReadServiceRead>(rawData, 'ItemJsonldItemReadServiceRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -301,7 +290,7 @@ class ItemApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/items/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/items/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -326,9 +315,7 @@ class ItemApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ItemItemWrite);
-      _bodyData = _serializers.serialize(itemItemWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(itemItemWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -353,12 +340,8 @@ class ItemApi {
     ItemJsonldItemReadServiceRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ItemJsonldItemReadServiceRead),
-      ) as ItemJsonldItemReadServiceRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ItemJsonldItemReadServiceRead, ItemJsonldItemReadServiceRead>(rawData, 'ItemJsonldItemReadServiceRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -431,9 +414,7 @@ class ItemApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ItemJsonldItemWrite);
-      _bodyData = _serializers.serialize(itemJsonldItemWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(itemJsonldItemWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -458,12 +439,8 @@ class ItemApi {
     ItemJsonldItemReadServiceRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ItemJsonldItemReadServiceRead),
-      ) as ItemJsonldItemReadServiceRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ItemJsonldItemReadServiceRead, ItemJsonldItemReadServiceRead>(rawData, 'ItemJsonldItemReadServiceRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -531,15 +508,15 @@ class ItemApi {
     required String id,
     int? page = 1,
     int? id2,
-    BuiltList<int>? idLeftSquareBracketRightSquareBracket,
+    List<int>? idLeftSquareBracketRightSquareBracket,
     int? providerPeriodId,
-    BuiltList<int>? providerPeriodIdLeftSquareBracketRightSquareBracket,
+    List<int>? providerPeriodIdLeftSquareBracketRightSquareBracket,
     String? providerPeriodName,
     int? servicePeriodId,
-    BuiltList<int>? servicePeriodIdLeftSquareBracketRightSquareBracket,
+    List<int>? servicePeriodIdLeftSquareBracketRightSquareBracket,
     String? label,
     int? site,
-    BuiltList<int>? siteLeftSquareBracketRightSquareBracket,
+    List<int>? siteLeftSquareBracketRightSquareBracket,
     String? description,
     String? orderLeftSquareBracketLabelRightSquareBracket = 'asc',
     String? orderLeftSquareBracketPriceRightSquareBracket = 'asc',
@@ -563,7 +540,7 @@ class ItemApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/providers/{id}/items'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/providers/{id}/items'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -585,32 +562,32 @@ class ItemApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (id2 != null) r'id': encodeQueryParameter(_serializers, id2, const FullType(int)),
-      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (providerPeriodId != null) r'provider.id': encodeQueryParameter(_serializers, providerPeriodId, const FullType(int)),
-      if (providerPeriodIdLeftSquareBracketRightSquareBracket != null) r'provider.id[]': encodeCollectionQueryParameter<int>(_serializers, providerPeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (providerPeriodName != null) r'provider.name': encodeQueryParameter(_serializers, providerPeriodName, const FullType(String)),
-      if (servicePeriodId != null) r'service.id': encodeQueryParameter(_serializers, servicePeriodId, const FullType(int)),
-      if (servicePeriodIdLeftSquareBracketRightSquareBracket != null) r'service.id[]': encodeCollectionQueryParameter<int>(_serializers, servicePeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (label != null) r'label': encodeQueryParameter(_serializers, label, const FullType(String)),
-      if (site != null) r'site': encodeQueryParameter(_serializers, site, const FullType(int)),
-      if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': encodeCollectionQueryParameter<int>(_serializers, siteLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (description != null) r'description': encodeQueryParameter(_serializers, description, const FullType(String)),
-      if (orderLeftSquareBracketLabelRightSquareBracket != null) r'order[label]': encodeQueryParameter(_serializers, orderLeftSquareBracketLabelRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketPriceRightSquareBracket != null) r'order[price]': encodeQueryParameter(_serializers, orderLeftSquareBracketPriceRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketBeginDateRightSquareBracket != null) r'order[beginDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketBeginDateRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndDateRightSquareBracket, const FullType(String)),
-      if (isBookable != null) r'isBookable': encodeQueryParameter(_serializers, isBookable, const FullType(bool)),
-      if (isOnline != null) r'isOnline': encodeQueryParameter(_serializers, isOnline, const FullType(bool)),
-      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (page != null) r'page': page,
+      if (id2 != null) r'id': id2,
+      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': idLeftSquareBracketRightSquareBracket,
+      if (providerPeriodId != null) r'provider.id': providerPeriodId,
+      if (providerPeriodIdLeftSquareBracketRightSquareBracket != null) r'provider.id[]': providerPeriodIdLeftSquareBracketRightSquareBracket,
+      if (providerPeriodName != null) r'provider.name': providerPeriodName,
+      if (servicePeriodId != null) r'service.id': servicePeriodId,
+      if (servicePeriodIdLeftSquareBracketRightSquareBracket != null) r'service.id[]': servicePeriodIdLeftSquareBracketRightSquareBracket,
+      if (label != null) r'label': label,
+      if (site != null) r'site': site,
+      if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': siteLeftSquareBracketRightSquareBracket,
+      if (description != null) r'description': description,
+      if (orderLeftSquareBracketLabelRightSquareBracket != null) r'order[label]': orderLeftSquareBracketLabelRightSquareBracket,
+      if (orderLeftSquareBracketPriceRightSquareBracket != null) r'order[price]': orderLeftSquareBracketPriceRightSquareBracket,
+      if (orderLeftSquareBracketBeginDateRightSquareBracket != null) r'order[beginDate]': orderLeftSquareBracketBeginDateRightSquareBracket,
+      if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': orderLeftSquareBracketEndDateRightSquareBracket,
+      if (isBookable != null) r'isBookable': isBookable,
+      if (isOnline != null) r'isOnline': isOnline,
+      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': createdAtLeftSquareBracketBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': createdAtLeftSquareBracketAfterRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': createdAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': updatedAtLeftSquareBracketBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': updatedAtLeftSquareBracketAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -625,12 +602,8 @@ class ItemApi {
     ApiItemsGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiItemsGetCollection200Response),
-      ) as ApiItemsGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiItemsGetCollection200Response, ApiItemsGetCollection200Response>(rawData, 'ApiItemsGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

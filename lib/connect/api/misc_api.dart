@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/connect/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:so_dart_sdk/connect/api_util.dart';
 import 'package:so_dart_sdk/connect/model/error_response.dart';
 import 'package:so_dart_sdk/connect/model/menu_list_dto.dart';
 
@@ -16,9 +16,7 @@ class MiscApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const MiscApi(this._dio, this._serializers);
+  const MiscApi(this._dio);
 
   /// Récupérer les informations des menus.
   /// Liste des providers pour les menus :   - serenest 
@@ -43,7 +41,7 @@ class MiscApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/providers/{provider_uuid}/menus'.replaceAll('{' r'provider_uuid' '}', encodeQueryParameter(_serializers, providerUuid, const FullType(String)).toString());
+    final _path = r'/providers/{provider_uuid}/menus'.replaceAll('{' r'provider_uuid' '}', providerUuid.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -73,12 +71,8 @@ class MiscApi {
     MenuListDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(MenuListDto),
-      ) as MenuListDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<MenuListDto, MenuListDto>(rawData, 'MenuListDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

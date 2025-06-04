@@ -3,152 +3,37 @@
 part of 'tag_tag_read.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$TagTagRead extends TagTagRead {
-  @override
-  final int? id;
-  @override
-  final String label;
-  @override
-  final BuiltList<ProviderTagRead> providers;
-  @override
-  final ServiceTagRead service;
+TagTagRead _$TagTagReadFromJson(Map<String, dynamic> json) => $checkedCreate(
+      'TagTagRead',
+      json,
+      ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const ['label', 'providers', 'service'],
+        );
+        final val = TagTagRead(
+          id: $checkedConvert('id', (v) => (v as num?)?.toInt()),
+          label: $checkedConvert('label', (v) => v as String),
+          providers: $checkedConvert(
+              'providers',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      ProviderTagRead.fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          service: $checkedConvert('service',
+              (v) => ServiceTagRead.fromJson(v as Map<String, dynamic>)),
+        );
+        return val;
+      },
+    );
 
-  factory _$TagTagRead([void Function(TagTagReadBuilder)? updates]) =>
-      (new TagTagReadBuilder()..update(updates))._build();
-
-  _$TagTagRead._(
-      {this.id,
-      required this.label,
-      required this.providers,
-      required this.service})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(label, r'TagTagRead', 'label');
-    BuiltValueNullFieldError.checkNotNull(
-        providers, r'TagTagRead', 'providers');
-    BuiltValueNullFieldError.checkNotNull(service, r'TagTagRead', 'service');
-  }
-
-  @override
-  TagTagRead rebuild(void Function(TagTagReadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  TagTagReadBuilder toBuilder() => new TagTagReadBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is TagTagRead &&
-        id == other.id &&
-        label == other.label &&
-        providers == other.providers &&
-        service == other.service;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, label.hashCode);
-    _$hash = $jc(_$hash, providers.hashCode);
-    _$hash = $jc(_$hash, service.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'TagTagRead')
-          ..add('id', id)
-          ..add('label', label)
-          ..add('providers', providers)
-          ..add('service', service))
-        .toString();
-  }
-}
-
-class TagTagReadBuilder implements Builder<TagTagRead, TagTagReadBuilder> {
-  _$TagTagRead? _$v;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _label;
-  String? get label => _$this._label;
-  set label(String? label) => _$this._label = label;
-
-  ListBuilder<ProviderTagRead>? _providers;
-  ListBuilder<ProviderTagRead> get providers =>
-      _$this._providers ??= new ListBuilder<ProviderTagRead>();
-  set providers(ListBuilder<ProviderTagRead>? providers) =>
-      _$this._providers = providers;
-
-  ServiceTagReadBuilder? _service;
-  ServiceTagReadBuilder get service =>
-      _$this._service ??= new ServiceTagReadBuilder();
-  set service(ServiceTagReadBuilder? service) => _$this._service = service;
-
-  TagTagReadBuilder() {
-    TagTagRead._defaults(this);
-  }
-
-  TagTagReadBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _id = $v.id;
-      _label = $v.label;
-      _providers = $v.providers.toBuilder();
-      _service = $v.service.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(TagTagRead other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$TagTagRead;
-  }
-
-  @override
-  void update(void Function(TagTagReadBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  TagTagRead build() => _build();
-
-  _$TagTagRead _build() {
-    _$TagTagRead _$result;
-    try {
-      _$result = _$v ??
-          new _$TagTagRead._(
-            id: id,
-            label: BuiltValueNullFieldError.checkNotNull(
-                label, r'TagTagRead', 'label'),
-            providers: providers.build(),
-            service: service.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'providers';
-        providers.build();
-        _$failedField = 'service';
-        service.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'TagTagRead', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint
+Map<String, dynamic> _$TagTagReadToJson(TagTagRead instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      'label': instance.label,
+      'providers': instance.providers.map((e) => e.toJson()).toList(),
+      'service': instance.service.toJson(),
+    };

@@ -7,8 +7,7 @@ export 'package:so_dart_sdk/backend/auth/api_key_auth.dart';
 export 'package:so_dart_sdk/backend/auth/basic_auth.dart';
 export 'package:so_dart_sdk/backend/auth/bearer_auth.dart';
 export 'package:so_dart_sdk/backend/auth/oauth.dart';
-export 'package:so_dart_sdk/backend/serializers.dart';
-export 'package:so_dart_sdk/backend/model/date.dart';
+
 
 export 'package:so_dart_sdk/backend/api/center_api.dart';
 export 'package:so_dart_sdk/backend/api/enterprise_api.dart';
@@ -59,8 +58,7 @@ export 'package:so_dart_sdk/marketplace_service/auth/api_key_auth.dart';
 export 'package:so_dart_sdk/marketplace_service/auth/basic_auth.dart';
 export 'package:so_dart_sdk/marketplace_service/auth/bearer_auth.dart';
 export 'package:so_dart_sdk/marketplace_service/auth/oauth.dart';
-export 'package:so_dart_sdk/marketplace_service/serializers.dart';
-export 'package:so_dart_sdk/marketplace_service/model/date.dart';
+
 
 export 'package:so_dart_sdk/marketplace_service/api/item_api.dart';
 export 'package:so_dart_sdk/marketplace_service/api/provider_api.dart';
@@ -120,8 +118,7 @@ export 'package:so_dart_sdk/ticketing_service/auth/api_key_auth.dart';
 export 'package:so_dart_sdk/ticketing_service/auth/basic_auth.dart';
 export 'package:so_dart_sdk/ticketing_service/auth/bearer_auth.dart';
 export 'package:so_dart_sdk/ticketing_service/auth/oauth.dart';
-export 'package:so_dart_sdk/ticketing_service/serializers.dart';
-export 'package:so_dart_sdk/ticketing_service/model/date.dart';
+
 
 export 'package:so_dart_sdk/ticketing_service/api/comment_api.dart';
 export 'package:so_dart_sdk/ticketing_service/api/linked_user_api.dart';
@@ -170,8 +167,7 @@ export 'package:so_dart_sdk/corporate/auth/api_key_auth.dart';
 export 'package:so_dart_sdk/corporate/auth/basic_auth.dart';
 export 'package:so_dart_sdk/corporate/auth/bearer_auth.dart';
 export 'package:so_dart_sdk/corporate/auth/oauth.dart';
-export 'package:so_dart_sdk/corporate/serializers.dart';
-export 'package:so_dart_sdk/corporate/model/date.dart';
+
 
 export 'package:so_dart_sdk/corporate/api/appointment_api.dart';
 export 'package:so_dart_sdk/corporate/api/appointment_client_api.dart';
@@ -220,8 +216,7 @@ export 'package:so_dart_sdk/media_service/auth/api_key_auth.dart';
 export 'package:so_dart_sdk/media_service/auth/basic_auth.dart';
 export 'package:so_dart_sdk/media_service/auth/bearer_auth.dart';
 export 'package:so_dart_sdk/media_service/auth/oauth.dart';
-export 'package:so_dart_sdk/media_service/serializers.dart';
-export 'package:so_dart_sdk/media_service/model/date.dart';
+
 
 export 'package:so_dart_sdk/media_service/api/document_api.dart';
 export 'package:so_dart_sdk/media_service/api/image_api.dart';
@@ -246,8 +241,7 @@ export 'package:so_dart_sdk/connect/auth/api_key_auth.dart';
 export 'package:so_dart_sdk/connect/auth/basic_auth.dart';
 export 'package:so_dart_sdk/connect/auth/bearer_auth.dart';
 export 'package:so_dart_sdk/connect/auth/oauth.dart';
-export 'package:so_dart_sdk/connect/serializers.dart';
-export 'package:so_dart_sdk/connect/model/date.dart';
+
 
 export 'package:so_dart_sdk/connect/api/devices_api.dart';
 export 'package:so_dart_sdk/connect/api/lockers_api.dart';
@@ -280,8 +274,7 @@ export 'package:so_dart_sdk/core_service/auth/api_key_auth.dart';
 export 'package:so_dart_sdk/core_service/auth/basic_auth.dart';
 export 'package:so_dart_sdk/core_service/auth/bearer_auth.dart';
 export 'package:so_dart_sdk/core_service/auth/oauth.dart';
-export 'package:so_dart_sdk/core_service/serializers.dart';
-export 'package:so_dart_sdk/core_service/model/date.dart';
+
 
 export 'package:so_dart_sdk/core_service/api/device_api.dart';
 export 'package:so_dart_sdk/core_service/api/notification_api.dart';

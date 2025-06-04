@@ -3,186 +3,122 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'error.g.dart';
 
-/// A representation of common errors.
-///
-/// Properties:
-/// * [title] - A short, human-readable summary of the problem.
-/// * [detail] - A human-readable explanation specific to this occurrence of the problem.
-/// * [status] 
-/// * [instance] - A URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if dereferenced.
-/// * [type] - A URI reference that identifies the problem type
-@BuiltValue()
-abstract class Error implements Built<Error, ErrorBuilder> {
-  /// A short, human-readable summary of the problem.
-  @BuiltValueField(wireName: r'title')
-  String? get title;
 
-  /// A human-readable explanation specific to this occurrence of the problem.
-  @BuiltValueField(wireName: r'detail')
-  String? get detail;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class Error {
+  /// Returns a new [Error] instance.
+  Error({
 
-  @BuiltValueField(wireName: r'status')
-  num? get status;
+     this.title,
 
-  /// A URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if dereferenced.
-  @BuiltValueField(wireName: r'instance')
-  String? get instance;
+     this.detail,
 
-  /// A URI reference that identifies the problem type
-  @BuiltValueField(wireName: r'type')
-  String? get type;
+     this.status = 400,
 
-  Error._();
+     this.instance,
 
-  factory Error([void updates(ErrorBuilder b)]) = _$Error;
+     this.type,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ErrorBuilder b) => b
-      ..status = 400;
+      /// A short, human-readable summary of the problem.
+  @JsonKey(
+    
+    name: r'title',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Error> get serializer => _$ErrorSerializer();
-}
 
-class _$ErrorSerializer implements PrimitiveSerializer<Error> {
-  @override
-  final Iterable<Type> types = const [Error, _$Error];
+  final String? title;
 
-  @override
-  final String wireName = r'Error';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    Error object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.title != null) {
-      yield r'title';
-      yield serializers.serialize(
-        object.title,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.detail != null) {
-      yield r'detail';
-      yield serializers.serialize(
-        object.detail,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.status != null) {
-      yield r'status';
-      yield serializers.serialize(
-        object.status,
-        specifiedType: const FullType(num),
-      );
-    }
-    if (object.instance != null) {
-      yield r'instance';
-      yield serializers.serialize(
-        object.instance,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    Error object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+      /// A human-readable explanation specific to this occurrence of the problem.
+  @JsonKey(
+    
+    name: r'detail',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ErrorBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.title = valueDes;
-          break;
-        case r'detail':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.detail = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.status = valueDes;
-          break;
-        case r'instance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.instance = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? detail;
+
+
+
+  @JsonKey(
+    defaultValue: 400,
+    name: r'status',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final num? status;
+
+
+
+      /// A URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if dereferenced.
+  @JsonKey(
+    
+    name: r'instance',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? instance;
+
+
+
+      /// A URI reference that identifies the problem type
+  @JsonKey(
+    
+    name: r'type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? type;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is Error &&
+      other.title == title &&
+      other.detail == detail &&
+      other.status == status &&
+      other.instance == instance &&
+      other.type == type;
+
+    @override
+    int get hashCode =>
+        (title == null ? 0 : title.hashCode) +
+        (detail == null ? 0 : detail.hashCode) +
+        status.hashCode +
+        (instance == null ? 0 : instance.hashCode) +
+        type.hashCode;
+
+  factory Error.fromJson(Map<String, dynamic> json) => _$ErrorFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ErrorToJson(this);
 
   @override
-  Error deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ErrorBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

@@ -1,15 +1,15 @@
 analysis_options.yaml
+build.yaml
 lib/core_service/api.dart
 lib/core_service/api/device_api.dart
 lib/core_service/api/notification_api.dart
 lib/core_service/api/subscriber_api.dart
-lib/core_service/api_util.dart
 lib/core_service/auth/api_key_auth.dart
 lib/core_service/auth/auth.dart
 lib/core_service/auth/basic_auth.dart
 lib/core_service/auth/bearer_auth.dart
 lib/core_service/auth/oauth.dart
-lib/core_service/date_serializer.dart
+lib/core_service/deserialize.dart
 lib/core_service/model/api_devices_get_collection200_response.dart
 lib/core_service/model/api_devices_get_collection200_response_search.dart
 lib/core_service/model/api_devices_get_collection200_response_search_mapping_inner.dart
@@ -20,7 +20,6 @@ lib/core_service/model/constraint_violation_json_violations_inner.dart
 lib/core_service/model/constraint_violation_jsonld_jsonld.dart
 lib/core_service/model/constraint_violation_jsonld_jsonld_context.dart
 lib/core_service/model/constraint_violation_jsonld_jsonld_context_one_of.dart
-lib/core_service/model/date.dart
 lib/core_service/model/device_device_read.dart
 lib/core_service/model/device_device_write.dart
 lib/core_service/model/device_jsonld_device_read.dart
@@ -33,6 +32,5 @@ lib/core_service/model/subscriber_jsonld_subscriber_read.dart
 lib/core_service/model/subscriber_jsonld_subscriber_write.dart
 lib/core_service/model/subscriber_subscriber_read.dart
 lib/core_service/model/subscriber_subscriber_write.dart
-lib/core_service/serializers.dart
 lib/so_dart_sdk.dart
 pubspec.yaml

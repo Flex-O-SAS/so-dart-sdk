@@ -4,84 +4,84 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context_one_of.dart';
-import 'package:built_collection/built_collection.dart';
-import 'dart:core';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
-import 'package:one_of/one_of.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'address_jsonld_provider_read_address_read_context.g.dart';
 
-/// AddressJsonldProviderReadAddressReadContext
-///
-/// Properties:
-/// * [atVocab] 
-/// * [hydra] 
-@BuiltValue()
-abstract class AddressJsonldProviderReadAddressReadContext implements Built<AddressJsonldProviderReadAddressReadContext, AddressJsonldProviderReadAddressReadContextBuilder> {
-  /// One Of [AddressJsonldProviderReadAddressReadContextOneOf], [String]
-  OneOf get oneOf;
 
-  AddressJsonldProviderReadAddressReadContext._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class AddressJsonldProviderReadAddressReadContext {
+  /// Returns a new [AddressJsonldProviderReadAddressReadContext] instance.
+  AddressJsonldProviderReadAddressReadContext({
 
-  factory AddressJsonldProviderReadAddressReadContext([void updates(AddressJsonldProviderReadAddressReadContextBuilder b)]) = _$AddressJsonldProviderReadAddressReadContext;
+    required  this.atVocab,
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AddressJsonldProviderReadAddressReadContextBuilder b) => b;
+    required  this.hydra,
+  });
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AddressJsonldProviderReadAddressReadContext> get serializer => _$AddressJsonldProviderReadAddressReadContextSerializer();
-}
+  @JsonKey(
+    
+    name: r'@vocab',
+    required: true,
+    includeIfNull: false,
+  )
 
-class _$AddressJsonldProviderReadAddressReadContextSerializer implements PrimitiveSerializer<AddressJsonldProviderReadAddressReadContext> {
+
+  final String atVocab;
+
+
+
+  @JsonKey(
+    
+    name: r'hydra',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final AddressJsonldProviderReadAddressReadContextHydraEnum hydra;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is AddressJsonldProviderReadAddressReadContext &&
+      other.atVocab == atVocab &&
+      other.hydra == hydra;
+
+    @override
+    int get hashCode =>
+        atVocab.hashCode +
+        hydra.hashCode;
+
+  factory AddressJsonldProviderReadAddressReadContext.fromJson(Map<String, dynamic> json) => _$AddressJsonldProviderReadAddressReadContextFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AddressJsonldProviderReadAddressReadContextToJson(this);
+
   @override
-  final Iterable<Type> types = const [AddressJsonldProviderReadAddressReadContext, _$AddressJsonldProviderReadAddressReadContext];
-
-  @override
-  final String wireName = r'AddressJsonldProviderReadAddressReadContext';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    AddressJsonldProviderReadAddressReadContext object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
+  String toString() {
+    return toJson().toString();
   }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    AddressJsonldProviderReadAddressReadContext object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value, specifiedType: FullType(oneOf.valueType))!;
-  }
-
-  @override
-  AddressJsonldProviderReadAddressReadContext deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = AddressJsonldProviderReadAddressReadContextBuilder();
-    Object? oneOfDataSrc;
-    final targetType = const FullType(OneOf, [FullType(String), FullType(AddressJsonldProviderReadAddressReadContextOneOf), ]);
-    oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc, specifiedType: targetType) as OneOf;
-    return result.build();
-  }
 }
 
-class AddressJsonldProviderReadAddressReadContextHydraEnum extends EnumClass {
 
-  @BuiltValueEnumConst(wireName: r'http://www.w3.org/ns/hydra/core#')
-  static const AddressJsonldProviderReadAddressReadContextHydraEnum httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash = _$addressJsonldProviderReadAddressReadContextHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
+enum AddressJsonldProviderReadAddressReadContextHydraEnum {
+@JsonValue(r'http://www.w3.org/ns/hydra/core#')
+httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash(r'http://www.w3.org/ns/hydra/core#');
 
-  static Serializer<AddressJsonldProviderReadAddressReadContextHydraEnum> get serializer => _$addressJsonldProviderReadAddressReadContextHydraEnumSerializer;
+const AddressJsonldProviderReadAddressReadContextHydraEnum(this.value);
 
-  const AddressJsonldProviderReadAddressReadContextHydraEnum._(String name): super(name);
+final String value;
 
-  static BuiltSet<AddressJsonldProviderReadAddressReadContextHydraEnum> get values => _$addressJsonldProviderReadAddressReadContextHydraEnumValues;
-  static AddressJsonldProviderReadAddressReadContextHydraEnum valueOf(String name) => _$addressJsonldProviderReadAddressReadContextHydraEnumValueOf(name);
+@override
+String toString() => value;
 }
+
 

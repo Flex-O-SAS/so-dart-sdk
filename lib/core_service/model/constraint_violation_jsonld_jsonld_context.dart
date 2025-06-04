@@ -3,85 +3,85 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context_one_of.dart';
-import 'dart:core';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
-import 'package:one_of/one_of.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'constraint_violation_jsonld_jsonld_context.g.dart';
 
-/// ConstraintViolationJsonldJsonldContext
-///
-/// Properties:
-/// * [atVocab] 
-/// * [hydra] 
-@BuiltValue()
-abstract class ConstraintViolationJsonldJsonldContext implements Built<ConstraintViolationJsonldJsonldContext, ConstraintViolationJsonldJsonldContextBuilder> {
-  /// One Of [ConstraintViolationJsonldJsonldContextOneOf], [String]
-  OneOf get oneOf;
 
-  ConstraintViolationJsonldJsonldContext._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ConstraintViolationJsonldJsonldContext {
+  /// Returns a new [ConstraintViolationJsonldJsonldContext] instance.
+  ConstraintViolationJsonldJsonldContext({
 
-  factory ConstraintViolationJsonldJsonldContext([void updates(ConstraintViolationJsonldJsonldContextBuilder b)]) = _$ConstraintViolationJsonldJsonldContext;
+    required  this.atVocab,
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ConstraintViolationJsonldJsonldContextBuilder b) => b;
+    required  this.hydra,
+  });
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ConstraintViolationJsonldJsonldContext> get serializer => _$ConstraintViolationJsonldJsonldContextSerializer();
-}
+  @JsonKey(
+    
+    name: r'@vocab',
+    required: true,
+    includeIfNull: false,
+  )
 
-class _$ConstraintViolationJsonldJsonldContextSerializer implements PrimitiveSerializer<ConstraintViolationJsonldJsonldContext> {
+
+  final String atVocab;
+
+
+
+  @JsonKey(
+    
+    name: r'hydra',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final ConstraintViolationJsonldJsonldContextHydraEnum hydra;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ConstraintViolationJsonldJsonldContext &&
+      other.atVocab == atVocab &&
+      other.hydra == hydra;
+
+    @override
+    int get hashCode =>
+        atVocab.hashCode +
+        hydra.hashCode;
+
+  factory ConstraintViolationJsonldJsonldContext.fromJson(Map<String, dynamic> json) => _$ConstraintViolationJsonldJsonldContextFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ConstraintViolationJsonldJsonldContextToJson(this);
+
   @override
-  final Iterable<Type> types = const [ConstraintViolationJsonldJsonldContext, _$ConstraintViolationJsonldJsonldContext];
-
-  @override
-  final String wireName = r'ConstraintViolationJsonldJsonldContext';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ConstraintViolationJsonldJsonldContext object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
+  String toString() {
+    return toJson().toString();
   }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ConstraintViolationJsonldJsonldContext object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value, specifiedType: FullType(oneOf.valueType))!;
-  }
-
-  @override
-  ConstraintViolationJsonldJsonldContext deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ConstraintViolationJsonldJsonldContextBuilder();
-    Object? oneOfDataSrc;
-    final targetType = const FullType(OneOf, [FullType(String), FullType(ConstraintViolationJsonldJsonldContextOneOf), ]);
-    oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc, specifiedType: targetType) as OneOf;
-    return result.build();
-  }
 }
 
-class ConstraintViolationJsonldJsonldContextHydraEnum extends EnumClass {
 
-  @BuiltValueEnumConst(wireName: r'http://www.w3.org/ns/hydra/core#')
-  static const ConstraintViolationJsonldJsonldContextHydraEnum httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash = _$constraintViolationJsonldJsonldContextHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
+enum ConstraintViolationJsonldJsonldContextHydraEnum {
+@JsonValue(r'http://www.w3.org/ns/hydra/core#')
+httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash(r'http://www.w3.org/ns/hydra/core#');
 
-  static Serializer<ConstraintViolationJsonldJsonldContextHydraEnum> get serializer => _$constraintViolationJsonldJsonldContextHydraEnumSerializer;
+const ConstraintViolationJsonldJsonldContextHydraEnum(this.value);
 
-  const ConstraintViolationJsonldJsonldContextHydraEnum._(String name): super(name);
+final String value;
 
-  static BuiltSet<ConstraintViolationJsonldJsonldContextHydraEnum> get values => _$constraintViolationJsonldJsonldContextHydraEnumValues;
-  static ConstraintViolationJsonldJsonldContextHydraEnum valueOf(String name) => _$constraintViolationJsonldJsonldContextHydraEnumValueOf(name);
+@override
+String toString() => value;
 }
+
 

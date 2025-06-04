@@ -3,238 +3,172 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'appointment_client_appointment_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [id] 
-/// * [email] 
-/// * [phone] 
-/// * [status] 
-/// * [comment] 
-/// * [responseDate] 
-/// * [lastSentInvitationDate] 
-@BuiltValue()
-abstract class AppointmentClientAppointmentRead implements Built<AppointmentClientAppointmentRead, AppointmentClientAppointmentReadBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String? get id;
 
-  @BuiltValueField(wireName: r'email')
-  String get email;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class AppointmentClientAppointmentRead {
+  /// Returns a new [AppointmentClientAppointmentRead] instance.
+  AppointmentClientAppointmentRead({
 
-  @BuiltValueField(wireName: r'phone')
-  String? get phone;
+     this.id,
 
-  @BuiltValueField(wireName: r'status')
-  AppointmentClientAppointmentReadStatusEnum get status;
-  // enum statusEnum {  pending,  accepted,  refused,  present,  absent,  };
+    required  this.email,
 
-  @BuiltValueField(wireName: r'comment')
-  String? get comment;
+     this.phone,
 
-  @BuiltValueField(wireName: r'responseDate')
-  DateTime? get responseDate;
+    required  this.status,
 
-  @BuiltValueField(wireName: r'lastSentInvitationDate')
-  DateTime? get lastSentInvitationDate;
+     this.comment,
 
-  AppointmentClientAppointmentRead._();
+     this.responseDate,
 
-  factory AppointmentClientAppointmentRead([void updates(AppointmentClientAppointmentReadBuilder b)]) = _$AppointmentClientAppointmentRead;
+     this.lastSentInvitationDate,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AppointmentClientAppointmentReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AppointmentClientAppointmentRead> get serializer => _$AppointmentClientAppointmentReadSerializer();
+
+  final String? id;
+
+
+
+  @JsonKey(
+    
+    name: r'email',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String email;
+
+
+
+  @JsonKey(
+    
+    name: r'phone',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? phone;
+
+
+
+  @JsonKey(
+    
+    name: r'status',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final AppointmentClientAppointmentReadStatusEnum status;
+
+
+
+  @JsonKey(
+    
+    name: r'comment',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? comment;
+
+
+
+  @JsonKey(
+    
+    name: r'responseDate',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? responseDate;
+
+
+
+  @JsonKey(
+    
+    name: r'lastSentInvitationDate',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? lastSentInvitationDate;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is AppointmentClientAppointmentRead &&
+      other.id == id &&
+      other.email == email &&
+      other.phone == phone &&
+      other.status == status &&
+      other.comment == comment &&
+      other.responseDate == responseDate &&
+      other.lastSentInvitationDate == lastSentInvitationDate;
+
+    @override
+    int get hashCode =>
+        (id == null ? 0 : id.hashCode) +
+        email.hashCode +
+        (phone == null ? 0 : phone.hashCode) +
+        status.hashCode +
+        (comment == null ? 0 : comment.hashCode) +
+        (responseDate == null ? 0 : responseDate.hashCode) +
+        (lastSentInvitationDate == null ? 0 : lastSentInvitationDate.hashCode);
+
+  factory AppointmentClientAppointmentRead.fromJson(Map<String, dynamic> json) => _$AppointmentClientAppointmentReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AppointmentClientAppointmentReadToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
+  }
+
 }
 
-class _$AppointmentClientAppointmentReadSerializer implements PrimitiveSerializer<AppointmentClientAppointmentRead> {
-  @override
-  final Iterable<Type> types = const [AppointmentClientAppointmentRead, _$AppointmentClientAppointmentRead];
 
-  @override
-  final String wireName = r'AppointmentClientAppointmentRead';
+enum AppointmentClientAppointmentReadStatusEnum {
+@JsonValue(r'pending')
+pending(r'pending'),
+@JsonValue(r'accepted')
+accepted(r'accepted'),
+@JsonValue(r'refused')
+refused(r'refused'),
+@JsonValue(r'present')
+present(r'present'),
+@JsonValue(r'absent')
+absent(r'absent');
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    AppointmentClientAppointmentRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'email';
-    yield serializers.serialize(
-      object.email,
-      specifiedType: const FullType(String),
-    );
-    if (object.phone != null) {
-      yield r'phone';
-      yield serializers.serialize(
-        object.phone,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'status';
-    yield serializers.serialize(
-      object.status,
-      specifiedType: const FullType(AppointmentClientAppointmentReadStatusEnum),
-    );
-    if (object.comment != null) {
-      yield r'comment';
-      yield serializers.serialize(
-        object.comment,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.responseDate != null) {
-      yield r'responseDate';
-      yield serializers.serialize(
-        object.responseDate,
-        specifiedType: const FullType.nullable(DateTime),
-      );
-    }
-    if (object.lastSentInvitationDate != null) {
-      yield r'lastSentInvitationDate';
-      yield serializers.serialize(
-        object.lastSentInvitationDate,
-        specifiedType: const FullType.nullable(DateTime),
-      );
-    }
-  }
+const AppointmentClientAppointmentReadStatusEnum(this.value);
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    AppointmentClientAppointmentRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+final String value;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required AppointmentClientAppointmentReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.id = valueDes;
-          break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
-          break;
-        case r'phone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.phone = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AppointmentClientAppointmentReadStatusEnum),
-          ) as AppointmentClientAppointmentReadStatusEnum;
-          result.status = valueDes;
-          break;
-        case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.comment = valueDes;
-          break;
-        case r'responseDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.responseDate = valueDes;
-          break;
-        case r'lastSentInvitationDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.lastSentInvitationDate = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
-
-  @override
-  AppointmentClientAppointmentRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = AppointmentClientAppointmentReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
-  }
+@override
+String toString() => value;
 }
 
-class AppointmentClientAppointmentReadStatusEnum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'pending')
-  static const AppointmentClientAppointmentReadStatusEnum pending = _$appointmentClientAppointmentReadStatusEnum_pending;
-  @BuiltValueEnumConst(wireName: r'accepted')
-  static const AppointmentClientAppointmentReadStatusEnum accepted = _$appointmentClientAppointmentReadStatusEnum_accepted;
-  @BuiltValueEnumConst(wireName: r'refused')
-  static const AppointmentClientAppointmentReadStatusEnum refused = _$appointmentClientAppointmentReadStatusEnum_refused;
-  @BuiltValueEnumConst(wireName: r'present')
-  static const AppointmentClientAppointmentReadStatusEnum present = _$appointmentClientAppointmentReadStatusEnum_present;
-  @BuiltValueEnumConst(wireName: r'absent')
-  static const AppointmentClientAppointmentReadStatusEnum absent = _$appointmentClientAppointmentReadStatusEnum_absent;
-
-  static Serializer<AppointmentClientAppointmentReadStatusEnum> get serializer => _$appointmentClientAppointmentReadStatusEnumSerializer;
-
-  const AppointmentClientAppointmentReadStatusEnum._(String name): super(name);
-
-  static BuiltSet<AppointmentClientAppointmentReadStatusEnum> get values => _$appointmentClientAppointmentReadStatusEnumValues;
-  static AppointmentClientAppointmentReadStatusEnum valueOf(String name) => _$appointmentClientAppointmentReadStatusEnumValueOf(name);
-}
 

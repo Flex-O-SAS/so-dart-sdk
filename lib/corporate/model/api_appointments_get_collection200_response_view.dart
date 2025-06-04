@@ -3,196 +3,134 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'api_appointments_get_collection200_response_view.g.dart';
 
-/// ApiAppointmentsGetCollection200ResponseView
-///
-/// Properties:
-/// * [atId] 
-/// * [atType] 
-/// * [first] 
-/// * [last] 
-/// * [previous] 
-/// * [next] 
-@BuiltValue()
-abstract class ApiAppointmentsGetCollection200ResponseView implements Built<ApiAppointmentsGetCollection200ResponseView, ApiAppointmentsGetCollection200ResponseViewBuilder> {
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ApiAppointmentsGetCollection200ResponseView {
+  /// Returns a new [ApiAppointmentsGetCollection200ResponseView] instance.
+  ApiAppointmentsGetCollection200ResponseView({
 
-  @BuiltValueField(wireName: r'first')
-  String? get first;
+     this.atId,
 
-  @BuiltValueField(wireName: r'last')
-  String? get last;
+     this.atType,
 
-  @BuiltValueField(wireName: r'previous')
-  String? get previous;
+     this.first,
 
-  @BuiltValueField(wireName: r'next')
-  String? get next;
+     this.last,
 
-  ApiAppointmentsGetCollection200ResponseView._();
+     this.previous,
 
-  factory ApiAppointmentsGetCollection200ResponseView([void updates(ApiAppointmentsGetCollection200ResponseViewBuilder b)]) = _$ApiAppointmentsGetCollection200ResponseView;
+     this.next,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiAppointmentsGetCollection200ResponseViewBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ApiAppointmentsGetCollection200ResponseView> get serializer => _$ApiAppointmentsGetCollection200ResponseViewSerializer();
-}
 
-class _$ApiAppointmentsGetCollection200ResponseViewSerializer implements PrimitiveSerializer<ApiAppointmentsGetCollection200ResponseView> {
-  @override
-  final Iterable<Type> types = const [ApiAppointmentsGetCollection200ResponseView, _$ApiAppointmentsGetCollection200ResponseView];
+  final String? atId;
 
-  @override
-  final String wireName = r'ApiAppointmentsGetCollection200ResponseView';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ApiAppointmentsGetCollection200ResponseView object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.first != null) {
-      yield r'first';
-      yield serializers.serialize(
-        object.first,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.last != null) {
-      yield r'last';
-      yield serializers.serialize(
-        object.last,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.previous != null) {
-      yield r'previous';
-      yield serializers.serialize(
-        object.previous,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.next != null) {
-      yield r'next';
-      yield serializers.serialize(
-        object.next,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ApiAppointmentsGetCollection200ResponseView object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ApiAppointmentsGetCollection200ResponseViewBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'first':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.first = valueDes;
-          break;
-        case r'last':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.last = valueDes;
-          break;
-        case r'previous':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.previous = valueDes;
-          break;
-        case r'next':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.next = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? atType;
+
+
+
+  @JsonKey(
+    
+    name: r'first',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? first;
+
+
+
+  @JsonKey(
+    
+    name: r'last',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? last;
+
+
+
+  @JsonKey(
+    
+    name: r'previous',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? previous;
+
+
+
+  @JsonKey(
+    
+    name: r'next',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? next;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ApiAppointmentsGetCollection200ResponseView &&
+      other.atId == atId &&
+      other.atType == atType &&
+      other.first == first &&
+      other.last == last &&
+      other.previous == previous &&
+      other.next == next;
+
+    @override
+    int get hashCode =>
+        atId.hashCode +
+        atType.hashCode +
+        first.hashCode +
+        last.hashCode +
+        previous.hashCode +
+        next.hashCode;
+
+  factory ApiAppointmentsGetCollection200ResponseView.fromJson(Map<String, dynamic> json) => _$ApiAppointmentsGetCollection200ResponseViewFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ApiAppointmentsGetCollection200ResponseViewToJson(this);
 
   @override
-  ApiAppointmentsGetCollection200ResponseView deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ApiAppointmentsGetCollection200ResponseViewBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

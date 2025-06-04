@@ -3,8 +3,6 @@
 //
 
 import 'package:dio/dio.dart';
-import 'package:built_value/serializer.dart';
-import 'package:so_dart_sdk/corporate/serializers.dart';
 import 'package:so_dart_sdk/corporate/auth/api_key_auth.dart';
 import 'package:so_dart_sdk/corporate/auth/basic_auth.dart';
 import 'package:so_dart_sdk/corporate/auth/bearer_auth.dart';
@@ -18,14 +16,11 @@ class SoDartSdk {
   static const String basePath = r'http://localhost';
 
   final Dio dio;
-  final Serializers serializers;
-
   SoDartSdk({
     Dio? dio,
-    Serializers? serializers,
     String? basePathOverride,
     List<Interceptor>? interceptors,
-  })  : this.serializers = serializers ?? standardSerializers,
+  })  : 
         this.dio = dio ??
             Dio(BaseOptions(
               baseUrl: basePathOverride ?? basePath,
@@ -71,24 +66,24 @@ class SoDartSdk {
   /// Get AppointmentApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   AppointmentApi getAppointmentApi() {
-    return AppointmentApi(dio, serializers);
+    return AppointmentApi(dio);
   }
 
   /// Get AppointmentClientApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   AppointmentClientApi getAppointmentClientApi() {
-    return AppointmentClientApi(dio, serializers);
+    return AppointmentClientApi(dio);
   }
 
   /// Get ClientRelationApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   ClientRelationApi getClientRelationApi() {
-    return ClientRelationApi(dio, serializers);
+    return ClientRelationApi(dio);
   }
 
   /// Get PackageApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   PackageApi getPackageApi() {
-    return PackageApi(dio, serializers);
+    return PackageApi(dio);
   }
 }

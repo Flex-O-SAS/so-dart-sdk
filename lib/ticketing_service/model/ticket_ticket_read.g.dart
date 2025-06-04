@@ -3,380 +3,81 @@
 part of 'ticket_ticket_read.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-const TicketTicketReadStatusEnum _$ticketTicketReadStatusEnum_created =
-    const TicketTicketReadStatusEnum._('created');
-const TicketTicketReadStatusEnum _$ticketTicketReadStatusEnum_inProgress =
-    const TicketTicketReadStatusEnum._('inProgress');
-const TicketTicketReadStatusEnum _$ticketTicketReadStatusEnum_done =
-    const TicketTicketReadStatusEnum._('done');
-const TicketTicketReadStatusEnum _$ticketTicketReadStatusEnum_cancelled =
-    const TicketTicketReadStatusEnum._('cancelled');
+TicketTicketRead _$TicketTicketReadFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      'TicketTicketRead',
+      json,
+      ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const [
+            'title',
+            'startDate',
+            'description',
+            'author',
+            'status',
+            'site'
+          ],
+        );
+        final val = TicketTicketRead(
+          id: $checkedConvert('id', (v) => (v as num?)?.toInt()),
+          title: $checkedConvert('title', (v) => v as String),
+          startDate:
+              $checkedConvert('startDate', (v) => DateTime.parse(v as String)),
+          endDate: $checkedConvert(
+              'endDate', (v) => v == null ? null : DateTime.parse(v as String)),
+          description: $checkedConvert('description', (v) => v as String),
+          author: $checkedConvert('author', (v) => v as String),
+          assignee: $checkedConvert('assignee', (v) => v as String?),
+          status: $checkedConvert('status',
+              (v) => $enumDecode(_$TicketTicketReadStatusEnumEnumMap, v)),
+          site: $checkedConvert('site', (v) => v as String),
+          location: $checkedConvert('location', (v) => v as String?),
+          metadata: $checkedConvert('metadata', (v) => v),
+          createdAt: $checkedConvert('createdAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          updatedAt: $checkedConvert('updatedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          linkedUsers: $checkedConvert('linkedUsers',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          tags: $checkedConvert('tags',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          comments: $checkedConvert('comments',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+        );
+        return val;
+      },
+    );
 
-TicketTicketReadStatusEnum _$ticketTicketReadStatusEnumValueOf(String name) {
-  switch (name) {
-    case 'created':
-      return _$ticketTicketReadStatusEnum_created;
-    case 'inProgress':
-      return _$ticketTicketReadStatusEnum_inProgress;
-    case 'done':
-      return _$ticketTicketReadStatusEnum_done;
-    case 'cancelled':
-      return _$ticketTicketReadStatusEnum_cancelled;
-    default:
-      throw new ArgumentError(name);
-  }
-}
+Map<String, dynamic> _$TicketTicketReadToJson(TicketTicketRead instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      'title': instance.title,
+      'startDate': instance.startDate.toIso8601String(),
+      if (instance.endDate?.toIso8601String() case final value?)
+        'endDate': value,
+      'description': instance.description,
+      'author': instance.author,
+      if (instance.assignee case final value?) 'assignee': value,
+      'status': _$TicketTicketReadStatusEnumEnumMap[instance.status]!,
+      'site': instance.site,
+      if (instance.location case final value?) 'location': value,
+      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+      if (instance.linkedUsers case final value?) 'linkedUsers': value,
+      if (instance.tags case final value?) 'tags': value,
+      if (instance.comments case final value?) 'comments': value,
+    };
 
-final BuiltSet<TicketTicketReadStatusEnum> _$ticketTicketReadStatusEnumValues =
-    new BuiltSet<TicketTicketReadStatusEnum>(const <TicketTicketReadStatusEnum>[
-  _$ticketTicketReadStatusEnum_created,
-  _$ticketTicketReadStatusEnum_inProgress,
-  _$ticketTicketReadStatusEnum_done,
-  _$ticketTicketReadStatusEnum_cancelled,
-]);
-
-Serializer<TicketTicketReadStatusEnum> _$ticketTicketReadStatusEnumSerializer =
-    new _$TicketTicketReadStatusEnumSerializer();
-
-class _$TicketTicketReadStatusEnumSerializer
-    implements PrimitiveSerializer<TicketTicketReadStatusEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'created': 'created',
-    'inProgress': 'in_progress',
-    'done': 'done',
-    'cancelled': 'cancelled',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'created': 'created',
-    'in_progress': 'inProgress',
-    'done': 'done',
-    'cancelled': 'cancelled',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[TicketTicketReadStatusEnum];
-  @override
-  final String wireName = 'TicketTicketReadStatusEnum';
-
-  @override
-  Object serialize(Serializers serializers, TicketTicketReadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  TicketTicketReadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TicketTicketReadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
-class _$TicketTicketRead extends TicketTicketRead {
-  @override
-  final int? id;
-  @override
-  final String title;
-  @override
-  final DateTime startDate;
-  @override
-  final DateTime? endDate;
-  @override
-  final String description;
-  @override
-  final String author;
-  @override
-  final String? assignee;
-  @override
-  final TicketTicketReadStatusEnum status;
-  @override
-  final String site;
-  @override
-  final String? location;
-  @override
-  final JsonObject? metadata;
-  @override
-  final DateTime? createdAt;
-  @override
-  final DateTime? updatedAt;
-  @override
-  final BuiltList<String>? linkedUsers;
-  @override
-  final BuiltList<String>? tags;
-  @override
-  final BuiltList<String>? comments;
-
-  factory _$TicketTicketRead(
-          [void Function(TicketTicketReadBuilder)? updates]) =>
-      (new TicketTicketReadBuilder()..update(updates))._build();
-
-  _$TicketTicketRead._(
-      {this.id,
-      required this.title,
-      required this.startDate,
-      this.endDate,
-      required this.description,
-      required this.author,
-      this.assignee,
-      required this.status,
-      required this.site,
-      this.location,
-      this.metadata,
-      this.createdAt,
-      this.updatedAt,
-      this.linkedUsers,
-      this.tags,
-      this.comments})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(title, r'TicketTicketRead', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        startDate, r'TicketTicketRead', 'startDate');
-    BuiltValueNullFieldError.checkNotNull(
-        description, r'TicketTicketRead', 'description');
-    BuiltValueNullFieldError.checkNotNull(
-        author, r'TicketTicketRead', 'author');
-    BuiltValueNullFieldError.checkNotNull(
-        status, r'TicketTicketRead', 'status');
-    BuiltValueNullFieldError.checkNotNull(site, r'TicketTicketRead', 'site');
-  }
-
-  @override
-  TicketTicketRead rebuild(void Function(TicketTicketReadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  TicketTicketReadBuilder toBuilder() =>
-      new TicketTicketReadBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is TicketTicketRead &&
-        id == other.id &&
-        title == other.title &&
-        startDate == other.startDate &&
-        endDate == other.endDate &&
-        description == other.description &&
-        author == other.author &&
-        assignee == other.assignee &&
-        status == other.status &&
-        site == other.site &&
-        location == other.location &&
-        metadata == other.metadata &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt &&
-        linkedUsers == other.linkedUsers &&
-        tags == other.tags &&
-        comments == other.comments;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, title.hashCode);
-    _$hash = $jc(_$hash, startDate.hashCode);
-    _$hash = $jc(_$hash, endDate.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, author.hashCode);
-    _$hash = $jc(_$hash, assignee.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, site.hashCode);
-    _$hash = $jc(_$hash, location.hashCode);
-    _$hash = $jc(_$hash, metadata.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
-    _$hash = $jc(_$hash, linkedUsers.hashCode);
-    _$hash = $jc(_$hash, tags.hashCode);
-    _$hash = $jc(_$hash, comments.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'TicketTicketRead')
-          ..add('id', id)
-          ..add('title', title)
-          ..add('startDate', startDate)
-          ..add('endDate', endDate)
-          ..add('description', description)
-          ..add('author', author)
-          ..add('assignee', assignee)
-          ..add('status', status)
-          ..add('site', site)
-          ..add('location', location)
-          ..add('metadata', metadata)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt)
-          ..add('linkedUsers', linkedUsers)
-          ..add('tags', tags)
-          ..add('comments', comments))
-        .toString();
-  }
-}
-
-class TicketTicketReadBuilder
-    implements Builder<TicketTicketRead, TicketTicketReadBuilder> {
-  _$TicketTicketRead? _$v;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _title;
-  String? get title => _$this._title;
-  set title(String? title) => _$this._title = title;
-
-  DateTime? _startDate;
-  DateTime? get startDate => _$this._startDate;
-  set startDate(DateTime? startDate) => _$this._startDate = startDate;
-
-  DateTime? _endDate;
-  DateTime? get endDate => _$this._endDate;
-  set endDate(DateTime? endDate) => _$this._endDate = endDate;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  String? _author;
-  String? get author => _$this._author;
-  set author(String? author) => _$this._author = author;
-
-  String? _assignee;
-  String? get assignee => _$this._assignee;
-  set assignee(String? assignee) => _$this._assignee = assignee;
-
-  TicketTicketReadStatusEnum? _status;
-  TicketTicketReadStatusEnum? get status => _$this._status;
-  set status(TicketTicketReadStatusEnum? status) => _$this._status = status;
-
-  String? _site;
-  String? get site => _$this._site;
-  set site(String? site) => _$this._site = site;
-
-  String? _location;
-  String? get location => _$this._location;
-  set location(String? location) => _$this._location = location;
-
-  JsonObject? _metadata;
-  JsonObject? get metadata => _$this._metadata;
-  set metadata(JsonObject? metadata) => _$this._metadata = metadata;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
-  ListBuilder<String>? _linkedUsers;
-  ListBuilder<String> get linkedUsers =>
-      _$this._linkedUsers ??= new ListBuilder<String>();
-  set linkedUsers(ListBuilder<String>? linkedUsers) =>
-      _$this._linkedUsers = linkedUsers;
-
-  ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
-  set tags(ListBuilder<String>? tags) => _$this._tags = tags;
-
-  ListBuilder<String>? _comments;
-  ListBuilder<String> get comments =>
-      _$this._comments ??= new ListBuilder<String>();
-  set comments(ListBuilder<String>? comments) => _$this._comments = comments;
-
-  TicketTicketReadBuilder() {
-    TicketTicketRead._defaults(this);
-  }
-
-  TicketTicketReadBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _id = $v.id;
-      _title = $v.title;
-      _startDate = $v.startDate;
-      _endDate = $v.endDate;
-      _description = $v.description;
-      _author = $v.author;
-      _assignee = $v.assignee;
-      _status = $v.status;
-      _site = $v.site;
-      _location = $v.location;
-      _metadata = $v.metadata;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
-      _linkedUsers = $v.linkedUsers?.toBuilder();
-      _tags = $v.tags?.toBuilder();
-      _comments = $v.comments?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(TicketTicketRead other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$TicketTicketRead;
-  }
-
-  @override
-  void update(void Function(TicketTicketReadBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  TicketTicketRead build() => _build();
-
-  _$TicketTicketRead _build() {
-    _$TicketTicketRead _$result;
-    try {
-      _$result = _$v ??
-          new _$TicketTicketRead._(
-            id: id,
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'TicketTicketRead', 'title'),
-            startDate: BuiltValueNullFieldError.checkNotNull(
-                startDate, r'TicketTicketRead', 'startDate'),
-            endDate: endDate,
-            description: BuiltValueNullFieldError.checkNotNull(
-                description, r'TicketTicketRead', 'description'),
-            author: BuiltValueNullFieldError.checkNotNull(
-                author, r'TicketTicketRead', 'author'),
-            assignee: assignee,
-            status: BuiltValueNullFieldError.checkNotNull(
-                status, r'TicketTicketRead', 'status'),
-            site: BuiltValueNullFieldError.checkNotNull(
-                site, r'TicketTicketRead', 'site'),
-            location: location,
-            metadata: metadata,
-            createdAt: createdAt,
-            updatedAt: updatedAt,
-            linkedUsers: _linkedUsers?.build(),
-            tags: _tags?.build(),
-            comments: _comments?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'linkedUsers';
-        _linkedUsers?.build();
-        _$failedField = 'tags';
-        _tags?.build();
-        _$failedField = 'comments';
-        _comments?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'TicketTicketRead', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint
+const _$TicketTicketReadStatusEnumEnumMap = {
+  TicketTicketReadStatusEnum.created: 'created',
+  TicketTicketReadStatusEnum.inProgress: 'in_progress',
+  TicketTicketReadStatusEnum.done: 'done',
+  TicketTicketReadStatusEnum.cancelled: 'cancelled',
+};

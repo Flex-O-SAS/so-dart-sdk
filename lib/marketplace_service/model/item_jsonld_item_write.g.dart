@@ -3,235 +3,57 @@
 part of 'item_jsonld_item_write.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$ItemJsonldItemWrite extends ItemJsonldItemWrite {
-  @override
-  final String provider;
-  @override
-  final String service;
-  @override
-  final String label;
-  @override
-  final int? site;
-  @override
-  final String? description;
-  @override
-  final num? price;
-  @override
-  final bool isBookable;
-  @override
-  final bool isOnline;
-  @override
-  final String? imageLink;
-  @override
-  final DateTime beginDate;
-  @override
-  final DateTime? endDate;
-
-  factory _$ItemJsonldItemWrite(
-          [void Function(ItemJsonldItemWriteBuilder)? updates]) =>
-      (new ItemJsonldItemWriteBuilder()..update(updates))._build();
-
-  _$ItemJsonldItemWrite._(
-      {required this.provider,
-      required this.service,
-      required this.label,
-      this.site,
-      this.description,
-      this.price,
-      required this.isBookable,
-      required this.isOnline,
-      this.imageLink,
-      required this.beginDate,
-      this.endDate})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        provider, r'ItemJsonldItemWrite', 'provider');
-    BuiltValueNullFieldError.checkNotNull(
-        service, r'ItemJsonldItemWrite', 'service');
-    BuiltValueNullFieldError.checkNotNull(
-        label, r'ItemJsonldItemWrite', 'label');
-    BuiltValueNullFieldError.checkNotNull(
-        isBookable, r'ItemJsonldItemWrite', 'isBookable');
-    BuiltValueNullFieldError.checkNotNull(
-        isOnline, r'ItemJsonldItemWrite', 'isOnline');
-    BuiltValueNullFieldError.checkNotNull(
-        beginDate, r'ItemJsonldItemWrite', 'beginDate');
-  }
-
-  @override
-  ItemJsonldItemWrite rebuild(
-          void Function(ItemJsonldItemWriteBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ItemJsonldItemWriteBuilder toBuilder() =>
-      new ItemJsonldItemWriteBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ItemJsonldItemWrite &&
-        provider == other.provider &&
-        service == other.service &&
-        label == other.label &&
-        site == other.site &&
-        description == other.description &&
-        price == other.price &&
-        isBookable == other.isBookable &&
-        isOnline == other.isOnline &&
-        imageLink == other.imageLink &&
-        beginDate == other.beginDate &&
-        endDate == other.endDate;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, provider.hashCode);
-    _$hash = $jc(_$hash, service.hashCode);
-    _$hash = $jc(_$hash, label.hashCode);
-    _$hash = $jc(_$hash, site.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, price.hashCode);
-    _$hash = $jc(_$hash, isBookable.hashCode);
-    _$hash = $jc(_$hash, isOnline.hashCode);
-    _$hash = $jc(_$hash, imageLink.hashCode);
-    _$hash = $jc(_$hash, beginDate.hashCode);
-    _$hash = $jc(_$hash, endDate.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ItemJsonldItemWrite')
-          ..add('provider', provider)
-          ..add('service', service)
-          ..add('label', label)
-          ..add('site', site)
-          ..add('description', description)
-          ..add('price', price)
-          ..add('isBookable', isBookable)
-          ..add('isOnline', isOnline)
-          ..add('imageLink', imageLink)
-          ..add('beginDate', beginDate)
-          ..add('endDate', endDate))
-        .toString();
-  }
-}
-
-class ItemJsonldItemWriteBuilder
-    implements Builder<ItemJsonldItemWrite, ItemJsonldItemWriteBuilder> {
-  _$ItemJsonldItemWrite? _$v;
-
-  String? _provider;
-  String? get provider => _$this._provider;
-  set provider(String? provider) => _$this._provider = provider;
-
-  String? _service;
-  String? get service => _$this._service;
-  set service(String? service) => _$this._service = service;
-
-  String? _label;
-  String? get label => _$this._label;
-  set label(String? label) => _$this._label = label;
-
-  int? _site;
-  int? get site => _$this._site;
-  set site(int? site) => _$this._site = site;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  num? _price;
-  num? get price => _$this._price;
-  set price(num? price) => _$this._price = price;
-
-  bool? _isBookable;
-  bool? get isBookable => _$this._isBookable;
-  set isBookable(bool? isBookable) => _$this._isBookable = isBookable;
-
-  bool? _isOnline;
-  bool? get isOnline => _$this._isOnline;
-  set isOnline(bool? isOnline) => _$this._isOnline = isOnline;
-
-  String? _imageLink;
-  String? get imageLink => _$this._imageLink;
-  set imageLink(String? imageLink) => _$this._imageLink = imageLink;
-
-  DateTime? _beginDate;
-  DateTime? get beginDate => _$this._beginDate;
-  set beginDate(DateTime? beginDate) => _$this._beginDate = beginDate;
-
-  DateTime? _endDate;
-  DateTime? get endDate => _$this._endDate;
-  set endDate(DateTime? endDate) => _$this._endDate = endDate;
-
-  ItemJsonldItemWriteBuilder() {
-    ItemJsonldItemWrite._defaults(this);
-  }
-
-  ItemJsonldItemWriteBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _provider = $v.provider;
-      _service = $v.service;
-      _label = $v.label;
-      _site = $v.site;
-      _description = $v.description;
-      _price = $v.price;
-      _isBookable = $v.isBookable;
-      _isOnline = $v.isOnline;
-      _imageLink = $v.imageLink;
-      _beginDate = $v.beginDate;
-      _endDate = $v.endDate;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(ItemJsonldItemWrite other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ItemJsonldItemWrite;
-  }
-
-  @override
-  void update(void Function(ItemJsonldItemWriteBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ItemJsonldItemWrite build() => _build();
-
-  _$ItemJsonldItemWrite _build() {
-    final _$result = _$v ??
-        new _$ItemJsonldItemWrite._(
-          provider: BuiltValueNullFieldError.checkNotNull(
-              provider, r'ItemJsonldItemWrite', 'provider'),
-          service: BuiltValueNullFieldError.checkNotNull(
-              service, r'ItemJsonldItemWrite', 'service'),
-          label: BuiltValueNullFieldError.checkNotNull(
-              label, r'ItemJsonldItemWrite', 'label'),
-          site: site,
-          description: description,
-          price: price,
-          isBookable: BuiltValueNullFieldError.checkNotNull(
-              isBookable, r'ItemJsonldItemWrite', 'isBookable'),
-          isOnline: BuiltValueNullFieldError.checkNotNull(
-              isOnline, r'ItemJsonldItemWrite', 'isOnline'),
-          imageLink: imageLink,
-          beginDate: BuiltValueNullFieldError.checkNotNull(
-              beginDate, r'ItemJsonldItemWrite', 'beginDate'),
-          endDate: endDate,
+ItemJsonldItemWrite _$ItemJsonldItemWriteFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      'ItemJsonldItemWrite',
+      json,
+      ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const [
+            'provider',
+            'service',
+            'label',
+            'isBookable',
+            'isOnline',
+            'beginDate'
+          ],
         );
-    replace(_$result);
-    return _$result;
-  }
-}
+        final val = ItemJsonldItemWrite(
+          provider: $checkedConvert('provider', (v) => v as String),
+          service: $checkedConvert('service', (v) => v as String),
+          label: $checkedConvert('label', (v) => v as String),
+          site: $checkedConvert('site', (v) => (v as num?)?.toInt()),
+          description: $checkedConvert('description', (v) => v as String?),
+          price: $checkedConvert('price', (v) => v as num?),
+          isBookable: $checkedConvert('isBookable', (v) => v as bool),
+          isOnline: $checkedConvert('isOnline', (v) => v as bool),
+          imageLink: $checkedConvert('imageLink', (v) => v as String?),
+          beginDate:
+              $checkedConvert('beginDate', (v) => DateTime.parse(v as String)),
+          endDate: $checkedConvert(
+              'endDate', (v) => v == null ? null : DateTime.parse(v as String)),
+        );
+        return val;
+      },
+    );
 
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint
+Map<String, dynamic> _$ItemJsonldItemWriteToJson(
+        ItemJsonldItemWrite instance) =>
+    <String, dynamic>{
+      'provider': instance.provider,
+      'service': instance.service,
+      'label': instance.label,
+      if (instance.site case final value?) 'site': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.price case final value?) 'price': value,
+      'isBookable': instance.isBookable,
+      'isOnline': instance.isOnline,
+      if (instance.imageLink case final value?) 'imageLink': value,
+      'beginDate': instance.beginDate.toIso8601String(),
+      if (instance.endDate?.toIso8601String() case final value?)
+        'endDate': value,
+    };

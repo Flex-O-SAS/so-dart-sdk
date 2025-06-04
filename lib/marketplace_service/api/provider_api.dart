@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/marketplace_service/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/marketplace_service/api_util.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_providers_get_collection200_response.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_provider_read_address_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_provider_write_address_write.dart';
@@ -20,9 +19,7 @@ class ProviderApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const ProviderApi(this._dio, this._serializers);
+  const ProviderApi(this._dio);
 
   /// Retrieves the collection of Provider resources.
   /// Retrieves the collection of Provider resources.
@@ -65,7 +62,7 @@ class ProviderApi {
     String? orderLeftSquareBracketAddressPeriodCityRightSquareBracket = 'asc',
     String? orderLeftSquareBracketAddressPeriodCountryRightSquareBracket = 'asc',
     int? itemsPeriodServicePeriodId,
-    BuiltList<int>? itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket,
+    List<int>? itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket,
     bool? isActive,
     String? createdAtLeftSquareBracketBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
@@ -105,24 +102,24 @@ class ProviderApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (search != null) r'search': encodeQueryParameter(_serializers, search, const FullType(String)),
-      if (orderLeftSquareBracketNameRightSquareBracket != null) r'order[name]': encodeQueryParameter(_serializers, orderLeftSquareBracketNameRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketDescriptionRightSquareBracket != null) r'order[description]': encodeQueryParameter(_serializers, orderLeftSquareBracketDescriptionRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketAddressPeriodAddressRightSquareBracket != null) r'order[address.address]': encodeQueryParameter(_serializers, orderLeftSquareBracketAddressPeriodAddressRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketAddressPeriodCityRightSquareBracket != null) r'order[address.city]': encodeQueryParameter(_serializers, orderLeftSquareBracketAddressPeriodCityRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketAddressPeriodCountryRightSquareBracket != null) r'order[address.country]': encodeQueryParameter(_serializers, orderLeftSquareBracketAddressPeriodCountryRightSquareBracket, const FullType(String)),
-      if (itemsPeriodServicePeriodId != null) r'items.service.id': encodeQueryParameter(_serializers, itemsPeriodServicePeriodId, const FullType(int)),
-      if (itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket != null) r'items.service.id[]': encodeCollectionQueryParameter<int>(_serializers, itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (isActive != null) r'isActive': encodeQueryParameter(_serializers, isActive, const FullType(bool)),
-      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (page != null) r'page': page,
+      if (search != null) r'search': search,
+      if (orderLeftSquareBracketNameRightSquareBracket != null) r'order[name]': orderLeftSquareBracketNameRightSquareBracket,
+      if (orderLeftSquareBracketDescriptionRightSquareBracket != null) r'order[description]': orderLeftSquareBracketDescriptionRightSquareBracket,
+      if (orderLeftSquareBracketAddressPeriodAddressRightSquareBracket != null) r'order[address.address]': orderLeftSquareBracketAddressPeriodAddressRightSquareBracket,
+      if (orderLeftSquareBracketAddressPeriodCityRightSquareBracket != null) r'order[address.city]': orderLeftSquareBracketAddressPeriodCityRightSquareBracket,
+      if (orderLeftSquareBracketAddressPeriodCountryRightSquareBracket != null) r'order[address.country]': orderLeftSquareBracketAddressPeriodCountryRightSquareBracket,
+      if (itemsPeriodServicePeriodId != null) r'items.service.id': itemsPeriodServicePeriodId,
+      if (itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket != null) r'items.service.id[]': itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket,
+      if (isActive != null) r'isActive': isActive,
+      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': createdAtLeftSquareBracketBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': createdAtLeftSquareBracketAfterRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': createdAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': updatedAtLeftSquareBracketBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': updatedAtLeftSquareBracketAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -137,12 +134,8 @@ class ProviderApi {
     ApiProvidersGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiProvidersGetCollection200Response),
-      ) as ApiProvidersGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiProvidersGetCollection200Response, ApiProvidersGetCollection200Response>(rawData, 'ApiProvidersGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -190,7 +183,7 @@ class ProviderApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/providers/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/providers/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -222,12 +215,8 @@ class ProviderApi {
     ProviderJsonldProviderReadAddressRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ProviderJsonldProviderReadAddressRead),
-      ) as ProviderJsonldProviderReadAddressRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ProviderJsonldProviderReadAddressRead, ProviderJsonldProviderReadAddressRead>(rawData, 'ProviderJsonldProviderReadAddressRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -277,7 +266,7 @@ class ProviderApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/providers/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/providers/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -302,9 +291,7 @@ class ProviderApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ProviderProviderWriteAddressWrite);
-      _bodyData = _serializers.serialize(providerProviderWriteAddressWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(providerProviderWriteAddressWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -329,12 +316,8 @@ class ProviderApi {
     ProviderJsonldProviderReadAddressRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ProviderJsonldProviderReadAddressRead),
-      ) as ProviderJsonldProviderReadAddressRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ProviderJsonldProviderReadAddressRead, ProviderJsonldProviderReadAddressRead>(rawData, 'ProviderJsonldProviderReadAddressRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -407,9 +390,7 @@ class ProviderApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ProviderJsonldProviderWriteAddressWrite);
-      _bodyData = _serializers.serialize(providerJsonldProviderWriteAddressWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(providerJsonldProviderWriteAddressWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -434,12 +415,8 @@ class ProviderApi {
     ProviderJsonldProviderReadAddressRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ProviderJsonldProviderReadAddressRead),
-      ) as ProviderJsonldProviderReadAddressRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ProviderJsonldProviderReadAddressRead, ProviderJsonldProviderReadAddressRead>(rawData, 'ProviderJsonldProviderReadAddressRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

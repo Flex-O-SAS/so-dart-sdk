@@ -4,8 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/core_service/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
@@ -19,9 +20,7 @@ class NotificationApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const NotificationApi(this._dio, this._serializers);
+  const NotificationApi(this._dio);
 
   /// Creates a Notification resource.
   /// Creates a Notification resource.
@@ -70,9 +69,7 @@ class NotificationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(NotificationJsonld);
-      _bodyData = _serializers.serialize(notificationJsonld, specifiedType: _type);
-
+_bodyData=jsonEncode(notificationJsonld);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -97,12 +94,8 @@ class NotificationApi {
     NotificationJsonld? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(NotificationJsonld),
-      ) as NotificationJsonld;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<NotificationJsonld, NotificationJsonld>(rawData, 'NotificationJsonld', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/backend/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dart';
@@ -22,9 +21,7 @@ class StaffApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const StaffApi(this._dio, this._serializers);
+  const StaffApi(this._dio);
 
   /// Retrieves the collection of Staff resources.
   /// Retrieves the collection of Staff resources.
@@ -47,9 +44,9 @@ class StaffApi {
   Future<Response<ApiStaffGetCollection200Response>> apiStaffGetCollection({ 
     int? page = 1,
     String? reference,
-    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
+    List<String>? referenceLeftSquareBracketRightSquareBracket,
     int? id,
-    BuiltList<int>? idLeftSquareBracketRightSquareBracket,
+    List<int>? idLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -71,11 +68,11 @@ class StaffApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
-      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
-      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (page != null) r'page': page,
+      if (reference != null) r'reference': reference,
+      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': referenceLeftSquareBracketRightSquareBracket,
+      if (id != null) r'id': id,
+      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': idLeftSquareBracketRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -90,12 +87,8 @@ class StaffApi {
     ApiStaffGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiStaffGetCollection200Response),
-      ) as ApiStaffGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiStaffGetCollection200Response, ApiStaffGetCollection200Response>(rawData, 'ApiStaffGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -141,7 +134,7 @@ class StaffApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api-p/staff/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api-p/staff/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -165,12 +158,8 @@ class StaffApi {
     StaffJsonldStaffSearch? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(StaffJsonldStaffSearch),
-      ) as StaffJsonldStaffSearch;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<StaffJsonldStaffSearch, StaffJsonldStaffSearch>(rawData, 'StaffJsonldStaffSearch', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -218,7 +207,7 @@ class StaffApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api-p/staff/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api-p/staff/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -235,9 +224,7 @@ class StaffApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(StaffStaffWrite);
-      _bodyData = _serializers.serialize(staffStaffWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(staffStaffWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -262,12 +249,8 @@ class StaffApi {
     StaffJsonldStaffSearch? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(StaffJsonldStaffSearch),
-      ) as StaffJsonldStaffSearch;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<StaffJsonldStaffSearch, StaffJsonldStaffSearch>(rawData, 'StaffJsonldStaffSearch', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

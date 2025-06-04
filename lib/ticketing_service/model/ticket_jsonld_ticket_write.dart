@@ -3,318 +3,251 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_ticket_write.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'ticket_jsonld_ticket_write.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [title] 
-/// * [startDate] 
-/// * [endDate] 
-/// * [description] 
-/// * [author] 
-/// * [assignee] 
-/// * [status] 
-/// * [site] 
-/// * [location] 
-/// * [metadata] 
-/// * [linkedUsers] 
-/// * [tags] 
-@BuiltValue()
-abstract class TicketJsonldTicketWrite implements Built<TicketJsonldTicketWrite, TicketJsonldTicketWriteBuilder> {
-  @BuiltValueField(wireName: r'title')
-  String get title;
 
-  @BuiltValueField(wireName: r'startDate')
-  DateTime get startDate;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TicketJsonldTicketWrite {
+  /// Returns a new [TicketJsonldTicketWrite] instance.
+  TicketJsonldTicketWrite({
 
-  @BuiltValueField(wireName: r'endDate')
-  DateTime? get endDate;
+    required  this.title,
 
-  @BuiltValueField(wireName: r'description')
-  String get description;
+    required  this.startDate,
 
-  @BuiltValueField(wireName: r'author')
-  String get author;
+     this.endDate,
 
-  @BuiltValueField(wireName: r'assignee')
-  String? get assignee;
+    required  this.description,
 
-  @BuiltValueField(wireName: r'status')
-  TicketJsonldTicketWriteStatusEnum get status;
-  // enum statusEnum {  created,  in_progress,  done,  cancelled,  };
+    required  this.author,
 
-  @BuiltValueField(wireName: r'site')
-  String get site;
+     this.assignee,
 
-  @BuiltValueField(wireName: r'location')
-  String? get location;
+    required  this.status,
 
-  @BuiltValueField(wireName: r'metadata')
-  JsonObject? get metadata;
+    required  this.site,
 
-  @BuiltValueField(wireName: r'linkedUsers')
-  BuiltList<LinkedUserJsonldTicketWrite>? get linkedUsers;
+     this.location,
 
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<String>? get tags;
+     this.metadata,
 
-  TicketJsonldTicketWrite._();
+     this.linkedUsers,
 
-  factory TicketJsonldTicketWrite([void updates(TicketJsonldTicketWriteBuilder b)]) = _$TicketJsonldTicketWrite;
+     this.tags,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TicketJsonldTicketWriteBuilder b) => b;
+  @JsonKey(
+    
+    name: r'title',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TicketJsonldTicketWrite> get serializer => _$TicketJsonldTicketWriteSerializer();
+
+  final String title;
+
+
+
+  @JsonKey(
+    
+    name: r'startDate',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final DateTime startDate;
+
+
+
+  @JsonKey(
+    
+    name: r'endDate',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? endDate;
+
+
+
+  @JsonKey(
+    
+    name: r'description',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String description;
+
+
+
+  @JsonKey(
+    
+    name: r'author',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String author;
+
+
+
+  @JsonKey(
+    
+    name: r'assignee',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? assignee;
+
+
+
+  @JsonKey(
+    
+    name: r'status',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final TicketJsonldTicketWriteStatusEnum status;
+
+
+
+  @JsonKey(
+    
+    name: r'site',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String site;
+
+
+
+  @JsonKey(
+    
+    name: r'location',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? location;
+
+
+
+  @JsonKey(
+    
+    name: r'metadata',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final Object? metadata;
+
+
+
+  @JsonKey(
+    
+    name: r'linkedUsers',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final List<LinkedUserJsonldTicketWrite>? linkedUsers;
+
+
+
+  @JsonKey(
+    
+    name: r'tags',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final List<String>? tags;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is TicketJsonldTicketWrite &&
+      other.title == title &&
+      other.startDate == startDate &&
+      other.endDate == endDate &&
+      other.description == description &&
+      other.author == author &&
+      other.assignee == assignee &&
+      other.status == status &&
+      other.site == site &&
+      other.location == location &&
+      other.metadata == metadata &&
+      other.linkedUsers == linkedUsers &&
+      other.tags == tags;
+
+    @override
+    int get hashCode =>
+        title.hashCode +
+        startDate.hashCode +
+        (endDate == null ? 0 : endDate.hashCode) +
+        description.hashCode +
+        author.hashCode +
+        (assignee == null ? 0 : assignee.hashCode) +
+        status.hashCode +
+        site.hashCode +
+        (location == null ? 0 : location.hashCode) +
+        metadata.hashCode +
+        linkedUsers.hashCode +
+        tags.hashCode;
+
+  factory TicketJsonldTicketWrite.fromJson(Map<String, dynamic> json) => _$TicketJsonldTicketWriteFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TicketJsonldTicketWriteToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
+  }
+
 }
 
-class _$TicketJsonldTicketWriteSerializer implements PrimitiveSerializer<TicketJsonldTicketWrite> {
-  @override
-  final Iterable<Type> types = const [TicketJsonldTicketWrite, _$TicketJsonldTicketWrite];
 
-  @override
-  final String wireName = r'TicketJsonldTicketWrite';
+enum TicketJsonldTicketWriteStatusEnum {
+@JsonValue(r'created')
+created(r'created'),
+@JsonValue(r'in_progress')
+inProgress(r'in_progress'),
+@JsonValue(r'done')
+done(r'done'),
+@JsonValue(r'cancelled')
+cancelled(r'cancelled');
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    TicketJsonldTicketWrite object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'title';
-    yield serializers.serialize(
-      object.title,
-      specifiedType: const FullType(String),
-    );
-    yield r'startDate';
-    yield serializers.serialize(
-      object.startDate,
-      specifiedType: const FullType(DateTime),
-    );
-    if (object.endDate != null) {
-      yield r'endDate';
-      yield serializers.serialize(
-        object.endDate,
-        specifiedType: const FullType.nullable(DateTime),
-      );
-    }
-    yield r'description';
-    yield serializers.serialize(
-      object.description,
-      specifiedType: const FullType(String),
-    );
-    yield r'author';
-    yield serializers.serialize(
-      object.author,
-      specifiedType: const FullType(String),
-    );
-    if (object.assignee != null) {
-      yield r'assignee';
-      yield serializers.serialize(
-        object.assignee,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'status';
-    yield serializers.serialize(
-      object.status,
-      specifiedType: const FullType(TicketJsonldTicketWriteStatusEnum),
-    );
-    yield r'site';
-    yield serializers.serialize(
-      object.site,
-      specifiedType: const FullType(String),
-    );
-    if (object.location != null) {
-      yield r'location';
-      yield serializers.serialize(
-        object.location,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.metadata != null) {
-      yield r'metadata';
-      yield serializers.serialize(
-        object.metadata,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
-    if (object.linkedUsers != null) {
-      yield r'linkedUsers';
-      yield serializers.serialize(
-        object.linkedUsers,
-        specifiedType: const FullType(BuiltList, [FullType(LinkedUserJsonldTicketWrite)]),
-      );
-    }
-    if (object.tags != null) {
-      yield r'tags';
-      yield serializers.serialize(
-        object.tags,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-  }
+const TicketJsonldTicketWriteStatusEnum(this.value);
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    TicketJsonldTicketWrite object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+final String value;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required TicketJsonldTicketWriteBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.title = valueDes;
-          break;
-        case r'startDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.startDate = valueDes;
-          break;
-        case r'endDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.endDate = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'author':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.author = valueDes;
-          break;
-        case r'assignee':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.assignee = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TicketJsonldTicketWriteStatusEnum),
-          ) as TicketJsonldTicketWriteStatusEnum;
-          result.status = valueDes;
-          break;
-        case r'site':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.site = valueDes;
-          break;
-        case r'location':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.location = valueDes;
-          break;
-        case r'metadata':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.metadata = valueDes;
-          break;
-        case r'linkedUsers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(LinkedUserJsonldTicketWrite)]),
-          ) as BuiltList<LinkedUserJsonldTicketWrite>;
-          result.linkedUsers.replace(valueDes);
-          break;
-        case r'tags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.tags.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
-
-  @override
-  TicketJsonldTicketWrite deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = TicketJsonldTicketWriteBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
-  }
+@override
+String toString() => value;
 }
 
-class TicketJsonldTicketWriteStatusEnum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'created')
-  static const TicketJsonldTicketWriteStatusEnum created = _$ticketJsonldTicketWriteStatusEnum_created;
-  @BuiltValueEnumConst(wireName: r'in_progress')
-  static const TicketJsonldTicketWriteStatusEnum inProgress = _$ticketJsonldTicketWriteStatusEnum_inProgress;
-  @BuiltValueEnumConst(wireName: r'done')
-  static const TicketJsonldTicketWriteStatusEnum done = _$ticketJsonldTicketWriteStatusEnum_done;
-  @BuiltValueEnumConst(wireName: r'cancelled')
-  static const TicketJsonldTicketWriteStatusEnum cancelled = _$ticketJsonldTicketWriteStatusEnum_cancelled;
-
-  static Serializer<TicketJsonldTicketWriteStatusEnum> get serializer => _$ticketJsonldTicketWriteStatusEnumSerializer;
-
-  const TicketJsonldTicketWriteStatusEnum._(String name): super(name);
-
-  static BuiltSet<TicketJsonldTicketWriteStatusEnum> get values => _$ticketJsonldTicketWriteStatusEnumValues;
-  static TicketJsonldTicketWriteStatusEnum valueOf(String name) => _$ticketJsonldTicketWriteStatusEnumValueOf(name);
-}
 

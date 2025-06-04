@@ -3,170 +3,118 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'address_jsonld_provider_write_address_write.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [id] 
-/// * [address] 
-/// * [zipcode] 
-/// * [city] 
-/// * [country] 
-@BuiltValue()
-abstract class AddressJsonldProviderWriteAddressWrite implements Built<AddressJsonldProviderWriteAddressWrite, AddressJsonldProviderWriteAddressWriteBuilder> {
-  @BuiltValueField(wireName: r'id')
-  int? get id;
 
-  @BuiltValueField(wireName: r'address')
-  String get address;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class AddressJsonldProviderWriteAddressWrite {
+  /// Returns a new [AddressJsonldProviderWriteAddressWrite] instance.
+  AddressJsonldProviderWriteAddressWrite({
 
-  @BuiltValueField(wireName: r'zipcode')
-  String get zipcode;
+     this.id,
 
-  @BuiltValueField(wireName: r'city')
-  String get city;
+    required  this.address,
 
-  @BuiltValueField(wireName: r'country')
-  String get country;
+    required  this.zipcode,
 
-  AddressJsonldProviderWriteAddressWrite._();
+    required  this.city,
 
-  factory AddressJsonldProviderWriteAddressWrite([void updates(AddressJsonldProviderWriteAddressWriteBuilder b)]) = _$AddressJsonldProviderWriteAddressWrite;
+    required  this.country,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AddressJsonldProviderWriteAddressWriteBuilder b) => b;
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AddressJsonldProviderWriteAddressWrite> get serializer => _$AddressJsonldProviderWriteAddressWriteSerializer();
-}
 
-class _$AddressJsonldProviderWriteAddressWriteSerializer implements PrimitiveSerializer<AddressJsonldProviderWriteAddressWrite> {
-  @override
-  final Iterable<Type> types = const [AddressJsonldProviderWriteAddressWrite, _$AddressJsonldProviderWriteAddressWrite];
+  final int? id;
 
-  @override
-  final String wireName = r'AddressJsonldProviderWriteAddressWrite';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    AddressJsonldProviderWriteAddressWrite object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-    yield r'address';
-    yield serializers.serialize(
-      object.address,
-      specifiedType: const FullType(String),
-    );
-    yield r'zipcode';
-    yield serializers.serialize(
-      object.zipcode,
-      specifiedType: const FullType(String),
-    );
-    yield r'city';
-    yield serializers.serialize(
-      object.city,
-      specifiedType: const FullType(String),
-    );
-    yield r'country';
-    yield serializers.serialize(
-      object.country,
-      specifiedType: const FullType(String),
-    );
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    AddressJsonldProviderWriteAddressWrite object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'address',
+    required: true,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required AddressJsonldProviderWriteAddressWriteBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'address':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.address = valueDes;
-          break;
-        case r'zipcode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.zipcode = valueDes;
-          break;
-        case r'city':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.city = valueDes;
-          break;
-        case r'country':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.country = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String address;
+
+
+
+  @JsonKey(
+    
+    name: r'zipcode',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String zipcode;
+
+
+
+  @JsonKey(
+    
+    name: r'city',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String city;
+
+
+
+  @JsonKey(
+    
+    name: r'country',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String country;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is AddressJsonldProviderWriteAddressWrite &&
+      other.id == id &&
+      other.address == address &&
+      other.zipcode == zipcode &&
+      other.city == city &&
+      other.country == country;
+
+    @override
+    int get hashCode =>
+        id.hashCode +
+        address.hashCode +
+        zipcode.hashCode +
+        city.hashCode +
+        country.hashCode;
+
+  factory AddressJsonldProviderWriteAddressWrite.fromJson(Map<String, dynamic> json) => _$AddressJsonldProviderWriteAddressWriteFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AddressJsonldProviderWriteAddressWriteToJson(this);
 
   @override
-  AddressJsonldProviderWriteAddressWrite deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = AddressJsonldProviderWriteAddressWriteBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

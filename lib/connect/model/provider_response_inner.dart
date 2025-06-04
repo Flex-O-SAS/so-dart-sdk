@@ -3,126 +3,72 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'provider_response_inner.g.dart';
 
-/// ProviderResponseInner
-///
-/// Properties:
-/// * [uuid] - Identifiant du provider
-/// * [code] - Nom du provider
-@BuiltValue()
-abstract class ProviderResponseInner implements Built<ProviderResponseInner, ProviderResponseInnerBuilder> {
-  /// Identifiant du provider
-  @BuiltValueField(wireName: r'uuid')
-  String? get uuid;
 
-  /// Nom du provider
-  @BuiltValueField(wireName: r'code')
-  String? get code;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ProviderResponseInner {
+  /// Returns a new [ProviderResponseInner] instance.
+  ProviderResponseInner({
 
-  ProviderResponseInner._();
+     this.uuid,
 
-  factory ProviderResponseInner([void updates(ProviderResponseInnerBuilder b)]) = _$ProviderResponseInner;
+     this.code,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ProviderResponseInnerBuilder b) => b;
+      /// Identifiant du provider
+  @JsonKey(
+    
+    name: r'uuid',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ProviderResponseInner> get serializer => _$ProviderResponseInnerSerializer();
-}
 
-class _$ProviderResponseInnerSerializer implements PrimitiveSerializer<ProviderResponseInner> {
-  @override
-  final Iterable<Type> types = const [ProviderResponseInner, _$ProviderResponseInner];
+  final String? uuid;
 
-  @override
-  final String wireName = r'ProviderResponseInner';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ProviderResponseInner object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.uuid != null) {
-      yield r'uuid';
-      yield serializers.serialize(
-        object.uuid,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.code != null) {
-      yield r'code';
-      yield serializers.serialize(
-        object.code,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ProviderResponseInner object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+      /// Nom du provider
+  @JsonKey(
+    
+    name: r'code',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ProviderResponseInnerBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'uuid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.uuid = valueDes;
-          break;
-        case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.code = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? code;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ProviderResponseInner &&
+      other.uuid == uuid &&
+      other.code == code;
+
+    @override
+    int get hashCode =>
+        uuid.hashCode +
+        code.hashCode;
+
+  factory ProviderResponseInner.fromJson(Map<String, dynamic> json) => _$ProviderResponseInnerFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ProviderResponseInnerToJson(this);
 
   @override
-  ProviderResponseInner deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ProviderResponseInnerBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

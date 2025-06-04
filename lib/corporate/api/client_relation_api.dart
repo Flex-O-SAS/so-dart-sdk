@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/corporate/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/corporate/api_util.dart';
 import 'package:so_dart_sdk/corporate/model/api_client_relation_get_collection200_response.dart';
 import 'package:so_dart_sdk/corporate/model/client_relation.dart';
 import 'package:so_dart_sdk/corporate/model/client_relation_jsonld.dart';
@@ -22,9 +21,7 @@ class ClientRelationApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const ClientRelationApi(this._dio, this._serializers);
+  const ClientRelationApi(this._dio);
 
   /// Removes the ClientRelation resource.
   /// Removes the ClientRelation resource.
@@ -49,7 +46,7 @@ class ClientRelationApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/client_relations/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/client_relations/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -116,15 +113,15 @@ class ClientRelationApi {
   Future<Response<ApiClientRelationGetCollection200Response>> apiClientRelationGetCollection({ 
     int? page = 1,
     String? client,
-    BuiltList<String>? clientLeftSquareBracketRightSquareBracket,
+    List<String>? clientLeftSquareBracketRightSquareBracket,
     String? clientRelated,
-    BuiltList<String>? clientRelatedLeftSquareBracketRightSquareBracket,
+    List<String>? clientRelatedLeftSquareBracketRightSquareBracket,
     String? orderLeftSquareBracketClientRelatedRightSquareBracket = 'asc',
     String? orderLeftSquareBracketTypeRightSquareBracket = 'asc',
     String? orderLeftSquareBracketBeginRightSquareBracket = 'asc',
     String? orderLeftSquareBracketEndRightSquareBracket = 'asc',
     int? site,
-    BuiltList<int>? siteLeftSquareBracketRightSquareBracket,
+    List<int>? siteLeftSquareBracketRightSquareBracket,
     String? type,
     String? beginLeftSquareBracketBeforeRightSquareBracket,
     String? beginLeftSquareBracketStrictlyBeforeRightSquareBracket,
@@ -162,26 +159,26 @@ class ClientRelationApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (client != null) r'client': encodeQueryParameter(_serializers, client, const FullType(String)),
-      if (clientLeftSquareBracketRightSquareBracket != null) r'client[]': encodeCollectionQueryParameter<String>(_serializers, clientLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (clientRelated != null) r'clientRelated': encodeQueryParameter(_serializers, clientRelated, const FullType(String)),
-      if (clientRelatedLeftSquareBracketRightSquareBracket != null) r'clientRelated[]': encodeCollectionQueryParameter<String>(_serializers, clientRelatedLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (orderLeftSquareBracketClientRelatedRightSquareBracket != null) r'order[clientRelated]': encodeQueryParameter(_serializers, orderLeftSquareBracketClientRelatedRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketTypeRightSquareBracket != null) r'order[type]': encodeQueryParameter(_serializers, orderLeftSquareBracketTypeRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketBeginRightSquareBracket != null) r'order[begin]': encodeQueryParameter(_serializers, orderLeftSquareBracketBeginRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketEndRightSquareBracket != null) r'order[end]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndRightSquareBracket, const FullType(String)),
-      if (site != null) r'site': encodeQueryParameter(_serializers, site, const FullType(int)),
-      if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': encodeCollectionQueryParameter<int>(_serializers, siteLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
-      if (beginLeftSquareBracketBeforeRightSquareBracket != null) r'begin[before]': encodeQueryParameter(_serializers, beginLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (beginLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'begin[strictly_before]': encodeQueryParameter(_serializers, beginLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (beginLeftSquareBracketAfterRightSquareBracket != null) r'begin[after]': encodeQueryParameter(_serializers, beginLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (beginLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'begin[strictly_after]': encodeQueryParameter(_serializers, beginLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (endLeftSquareBracketBeforeRightSquareBracket != null) r'end[before]': encodeQueryParameter(_serializers, endLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (endLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'end[strictly_before]': encodeQueryParameter(_serializers, endLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (endLeftSquareBracketAfterRightSquareBracket != null) r'end[after]': encodeQueryParameter(_serializers, endLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (endLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'end[strictly_after]': encodeQueryParameter(_serializers, endLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (page != null) r'page': page,
+      if (client != null) r'client': client,
+      if (clientLeftSquareBracketRightSquareBracket != null) r'client[]': clientLeftSquareBracketRightSquareBracket,
+      if (clientRelated != null) r'clientRelated': clientRelated,
+      if (clientRelatedLeftSquareBracketRightSquareBracket != null) r'clientRelated[]': clientRelatedLeftSquareBracketRightSquareBracket,
+      if (orderLeftSquareBracketClientRelatedRightSquareBracket != null) r'order[clientRelated]': orderLeftSquareBracketClientRelatedRightSquareBracket,
+      if (orderLeftSquareBracketTypeRightSquareBracket != null) r'order[type]': orderLeftSquareBracketTypeRightSquareBracket,
+      if (orderLeftSquareBracketBeginRightSquareBracket != null) r'order[begin]': orderLeftSquareBracketBeginRightSquareBracket,
+      if (orderLeftSquareBracketEndRightSquareBracket != null) r'order[end]': orderLeftSquareBracketEndRightSquareBracket,
+      if (site != null) r'site': site,
+      if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': siteLeftSquareBracketRightSquareBracket,
+      if (type != null) r'type': type,
+      if (beginLeftSquareBracketBeforeRightSquareBracket != null) r'begin[before]': beginLeftSquareBracketBeforeRightSquareBracket,
+      if (beginLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'begin[strictly_before]': beginLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (beginLeftSquareBracketAfterRightSquareBracket != null) r'begin[after]': beginLeftSquareBracketAfterRightSquareBracket,
+      if (beginLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'begin[strictly_after]': beginLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (endLeftSquareBracketBeforeRightSquareBracket != null) r'end[before]': endLeftSquareBracketBeforeRightSquareBracket,
+      if (endLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'end[strictly_before]': endLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (endLeftSquareBracketAfterRightSquareBracket != null) r'end[after]': endLeftSquareBracketAfterRightSquareBracket,
+      if (endLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'end[strictly_after]': endLeftSquareBracketStrictlyAfterRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -196,12 +193,8 @@ class ClientRelationApi {
     ApiClientRelationGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiClientRelationGetCollection200Response),
-      ) as ApiClientRelationGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiClientRelationGetCollection200Response, ApiClientRelationGetCollection200Response>(rawData, 'ApiClientRelationGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -247,7 +240,7 @@ class ClientRelationApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/client_relations/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/client_relations/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -278,12 +271,8 @@ class ClientRelationApi {
     ClientRelationJsonld? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ClientRelationJsonld),
-      ) as ClientRelationJsonld;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ClientRelationJsonld, ClientRelationJsonld>(rawData, 'ClientRelationJsonld', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -353,9 +342,7 @@ class ClientRelationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ClientRelationJsonld);
-      _bodyData = _serializers.serialize(clientRelationJsonld, specifiedType: _type);
-
+_bodyData=jsonEncode(clientRelationJsonld);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -380,12 +367,8 @@ class ClientRelationApi {
     ClientRelationJsonld? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ClientRelationJsonld),
-      ) as ClientRelationJsonld;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ClientRelationJsonld, ClientRelationJsonld>(rawData, 'ClientRelationJsonld', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -433,7 +416,7 @@ class ClientRelationApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/client_relations/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/client_relations/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -457,9 +440,7 @@ class ClientRelationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ClientRelation);
-      _bodyData = _serializers.serialize(clientRelation, specifiedType: _type);
-
+_bodyData=jsonEncode(clientRelation);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -484,12 +465,8 @@ class ClientRelationApi {
     ClientRelationJsonld? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ClientRelationJsonld),
-      ) as ClientRelationJsonld;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ClientRelationJsonld, ClientRelationJsonld>(rawData, 'ClientRelationJsonld', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

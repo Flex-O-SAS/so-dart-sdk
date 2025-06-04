@@ -3,170 +3,118 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'address_provider_read_address_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [id] 
-/// * [address] 
-/// * [zipcode] 
-/// * [city] 
-/// * [country] 
-@BuiltValue()
-abstract class AddressProviderReadAddressRead implements Built<AddressProviderReadAddressRead, AddressProviderReadAddressReadBuilder> {
-  @BuiltValueField(wireName: r'id')
-  int? get id;
 
-  @BuiltValueField(wireName: r'address')
-  String get address;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class AddressProviderReadAddressRead {
+  /// Returns a new [AddressProviderReadAddressRead] instance.
+  AddressProviderReadAddressRead({
 
-  @BuiltValueField(wireName: r'zipcode')
-  String get zipcode;
+     this.id,
 
-  @BuiltValueField(wireName: r'city')
-  String get city;
+    required  this.address,
 
-  @BuiltValueField(wireName: r'country')
-  String get country;
+    required  this.zipcode,
 
-  AddressProviderReadAddressRead._();
+    required  this.city,
 
-  factory AddressProviderReadAddressRead([void updates(AddressProviderReadAddressReadBuilder b)]) = _$AddressProviderReadAddressRead;
+    required  this.country,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AddressProviderReadAddressReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AddressProviderReadAddressRead> get serializer => _$AddressProviderReadAddressReadSerializer();
-}
 
-class _$AddressProviderReadAddressReadSerializer implements PrimitiveSerializer<AddressProviderReadAddressRead> {
-  @override
-  final Iterable<Type> types = const [AddressProviderReadAddressRead, _$AddressProviderReadAddressRead];
+  final int? id;
 
-  @override
-  final String wireName = r'AddressProviderReadAddressRead';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    AddressProviderReadAddressRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-    yield r'address';
-    yield serializers.serialize(
-      object.address,
-      specifiedType: const FullType(String),
-    );
-    yield r'zipcode';
-    yield serializers.serialize(
-      object.zipcode,
-      specifiedType: const FullType(String),
-    );
-    yield r'city';
-    yield serializers.serialize(
-      object.city,
-      specifiedType: const FullType(String),
-    );
-    yield r'country';
-    yield serializers.serialize(
-      object.country,
-      specifiedType: const FullType(String),
-    );
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    AddressProviderReadAddressRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'address',
+    required: true,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required AddressProviderReadAddressReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'address':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.address = valueDes;
-          break;
-        case r'zipcode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.zipcode = valueDes;
-          break;
-        case r'city':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.city = valueDes;
-          break;
-        case r'country':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.country = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String address;
+
+
+
+  @JsonKey(
+    
+    name: r'zipcode',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String zipcode;
+
+
+
+  @JsonKey(
+    
+    name: r'city',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String city;
+
+
+
+  @JsonKey(
+    
+    name: r'country',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String country;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is AddressProviderReadAddressRead &&
+      other.id == id &&
+      other.address == address &&
+      other.zipcode == zipcode &&
+      other.city == city &&
+      other.country == country;
+
+    @override
+    int get hashCode =>
+        id.hashCode +
+        address.hashCode +
+        zipcode.hashCode +
+        city.hashCode +
+        country.hashCode;
+
+  factory AddressProviderReadAddressRead.fromJson(Map<String, dynamic> json) => _$AddressProviderReadAddressReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AddressProviderReadAddressReadToJson(this);
 
   @override
-  AddressProviderReadAddressRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = AddressProviderReadAddressReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

@@ -4,176 +4,118 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'tag_jsonld_provider_read_address_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-/// * [id] 
-/// * [label] 
-@BuiltValue()
-abstract class TagJsonldProviderReadAddressRead implements Built<TagJsonldProviderReadAddressRead, TagJsonldProviderReadAddressReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AddressJsonldProviderReadAddressReadContext? get atContext;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TagJsonldProviderReadAddressRead {
+  /// Returns a new [TagJsonldProviderReadAddressRead] instance.
+  TagJsonldProviderReadAddressRead({
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+     this.atContext,
 
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+     this.atId,
 
-  @BuiltValueField(wireName: r'label')
-  String get label;
+     this.atType,
 
-  TagJsonldProviderReadAddressRead._();
+     this.id,
 
-  factory TagJsonldProviderReadAddressRead([void updates(TagJsonldProviderReadAddressReadBuilder b)]) = _$TagJsonldProviderReadAddressRead;
+    required  this.label,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TagJsonldProviderReadAddressReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@context',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TagJsonldProviderReadAddressRead> get serializer => _$TagJsonldProviderReadAddressReadSerializer();
-}
 
-class _$TagJsonldProviderReadAddressReadSerializer implements PrimitiveSerializer<TagJsonldProviderReadAddressRead> {
-  @override
-  final Iterable<Type> types = const [TagJsonldProviderReadAddressRead, _$TagJsonldProviderReadAddressRead];
+  final AddressJsonldProviderReadAddressReadContext? atContext;
 
-  @override
-  final String wireName = r'TagJsonldProviderReadAddressRead';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    TagJsonldProviderReadAddressRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-    yield r'label';
-    yield serializers.serialize(
-      object.label,
-      specifiedType: const FullType(String),
-    );
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    TagJsonldProviderReadAddressRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'@id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required TagJsonldProviderReadAddressReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-          ) as AddressJsonldProviderReadAddressReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.label = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? atId;
+
+
+
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atType;
+
+
+
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final int? id;
+
+
+
+  @JsonKey(
+    
+    name: r'label',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String label;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is TagJsonldProviderReadAddressRead &&
+      other.atContext == atContext &&
+      other.atId == atId &&
+      other.atType == atType &&
+      other.id == id &&
+      other.label == label;
+
+    @override
+    int get hashCode =>
+        atContext.hashCode +
+        atId.hashCode +
+        atType.hashCode +
+        id.hashCode +
+        label.hashCode;
+
+  factory TagJsonldProviderReadAddressRead.fromJson(Map<String, dynamic> json) => _$TagJsonldProviderReadAddressReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TagJsonldProviderReadAddressReadToJson(this);
 
   @override
-  TagJsonldProviderReadAddressRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = TagJsonldProviderReadAddressReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

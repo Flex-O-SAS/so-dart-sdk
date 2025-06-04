@@ -3,107 +3,54 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'staff_staff_write.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [tosAcceptedAt] 
-@BuiltValue()
-abstract class StaffStaffWrite implements Built<StaffStaffWrite, StaffStaffWriteBuilder> {
-  @BuiltValueField(wireName: r'tosAcceptedAt')
-  DateTime? get tosAcceptedAt;
 
-  StaffStaffWrite._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class StaffStaffWrite {
+  /// Returns a new [StaffStaffWrite] instance.
+  StaffStaffWrite({
 
-  factory StaffStaffWrite([void updates(StaffStaffWriteBuilder b)]) = _$StaffStaffWrite;
+     this.tosAcceptedAt,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(StaffStaffWriteBuilder b) => b;
+  @JsonKey(
+    
+    name: r'tosAcceptedAt',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<StaffStaffWrite> get serializer => _$StaffStaffWriteSerializer();
-}
 
-class _$StaffStaffWriteSerializer implements PrimitiveSerializer<StaffStaffWrite> {
-  @override
-  final Iterable<Type> types = const [StaffStaffWrite, _$StaffStaffWrite];
+  final DateTime? tosAcceptedAt;
 
-  @override
-  final String wireName = r'StaffStaffWrite';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    StaffStaffWrite object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.tosAcceptedAt != null) {
-      yield r'tosAcceptedAt';
-      yield serializers.serialize(
-        object.tosAcceptedAt,
-        specifiedType: const FullType.nullable(DateTime),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    StaffStaffWrite object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required StaffStaffWriteBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'tosAcceptedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.tosAcceptedAt = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is StaffStaffWrite &&
+      other.tosAcceptedAt == tosAcceptedAt;
+
+    @override
+    int get hashCode =>
+        (tosAcceptedAt == null ? 0 : tosAcceptedAt.hashCode);
+
+  factory StaffStaffWrite.fromJson(Map<String, dynamic> json) => _$StaffStaffWriteFromJson(json);
+
+  Map<String, dynamic> toJson() => _$StaffStaffWriteToJson(this);
 
   @override
-  StaffStaffWrite deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = StaffStaffWriteBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

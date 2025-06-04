@@ -3,8 +3,6 @@
 //
 
 import 'package:dio/dio.dart';
-import 'package:built_value/serializer.dart';
-import 'package:so_dart_sdk/ticketing_service/serializers.dart';
 import 'package:so_dart_sdk/ticketing_service/auth/api_key_auth.dart';
 import 'package:so_dart_sdk/ticketing_service/auth/basic_auth.dart';
 import 'package:so_dart_sdk/ticketing_service/auth/bearer_auth.dart';
@@ -18,14 +16,11 @@ class SoDartSdk {
   static const String basePath = r'http://localhost';
 
   final Dio dio;
-  final Serializers serializers;
-
   SoDartSdk({
     Dio? dio,
-    Serializers? serializers,
     String? basePathOverride,
     List<Interceptor>? interceptors,
-  })  : this.serializers = serializers ?? standardSerializers,
+  })  : 
         this.dio = dio ??
             Dio(BaseOptions(
               baseUrl: basePathOverride ?? basePath,
@@ -71,24 +66,24 @@ class SoDartSdk {
   /// Get CommentApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   CommentApi getCommentApi() {
-    return CommentApi(dio, serializers);
+    return CommentApi(dio);
   }
 
   /// Get LinkedUserApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   LinkedUserApi getLinkedUserApi() {
-    return LinkedUserApi(dio, serializers);
+    return LinkedUserApi(dio);
   }
 
   /// Get TagApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   TagApi getTagApi() {
-    return TagApi(dio, serializers);
+    return TagApi(dio);
   }
 
   /// Get TicketApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   TicketApi getTicketApi() {
-    return TicketApi(dio, serializers);
+    return TicketApi(dio);
   }
 }

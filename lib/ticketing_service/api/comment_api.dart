@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/ticketing_service/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/ticketing_service/api_util.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
@@ -24,9 +23,7 @@ class CommentApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const CommentApi(this._dio, this._serializers);
+  const CommentApi(this._dio);
 
   /// Retrieves the collection of Comment resources.
   /// Retrieves the collection of Comment resources.
@@ -65,7 +62,7 @@ class CommentApi {
     String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
     String? orderLeftSquareBracketCreatedAtRightSquareBracket = 'asc',
     int? ticketPeriodId,
-    BuiltList<int>? ticketPeriodIdLeftSquareBracketRightSquareBracket,
+    List<int>? ticketPeriodIdLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -94,18 +91,18 @@ class CommentApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
-      if (ticketPeriodId != null) r'ticket.id': encodeQueryParameter(_serializers, ticketPeriodId, const FullType(int)),
-      if (ticketPeriodIdLeftSquareBracketRightSquareBracket != null) r'ticket.id[]': encodeCollectionQueryParameter<int>(_serializers, ticketPeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (page != null) r'page': page,
+      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': createdAtLeftSquareBracketBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': createdAtLeftSquareBracketAfterRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': createdAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': updatedAtLeftSquareBracketBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': updatedAtLeftSquareBracketAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': orderLeftSquareBracketCreatedAtRightSquareBracket,
+      if (ticketPeriodId != null) r'ticket.id': ticketPeriodId,
+      if (ticketPeriodIdLeftSquareBracketRightSquareBracket != null) r'ticket.id[]': ticketPeriodIdLeftSquareBracketRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -120,12 +117,8 @@ class CommentApi {
     ApiApicommentsGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiApicommentsGetCollection200Response),
-      ) as ApiApicommentsGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiApicommentsGetCollection200Response, ApiApicommentsGetCollection200Response>(rawData, 'ApiApicommentsGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -171,7 +164,7 @@ class CommentApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/comments/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/comments/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -225,7 +218,7 @@ class CommentApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/comments/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/comments/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -256,12 +249,8 @@ class CommentApi {
     CommentJsonldCommentRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CommentJsonldCommentRead),
-      ) as CommentJsonldCommentRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<CommentJsonldCommentRead, CommentJsonldCommentRead>(rawData, 'CommentJsonldCommentRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -309,7 +298,7 @@ class CommentApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/comments/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/comments/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -333,9 +322,7 @@ class CommentApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CommentCommentWrite);
-      _bodyData = _serializers.serialize(commentCommentWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(commentCommentWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -360,12 +347,8 @@ class CommentApi {
     CommentJsonldCommentRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CommentJsonldCommentRead),
-      ) as CommentJsonldCommentRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<CommentJsonldCommentRead, CommentJsonldCommentRead>(rawData, 'CommentJsonldCommentRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -435,9 +418,7 @@ class CommentApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CommentJsonldCommentWrite);
-      _bodyData = _serializers.serialize(commentJsonldCommentWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(commentJsonldCommentWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -462,12 +443,8 @@ class CommentApi {
     CommentJsonldCommentRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CommentJsonldCommentRead),
-      ) as CommentJsonldCommentRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<CommentJsonldCommentRead, CommentJsonldCommentRead>(rawData, 'CommentJsonldCommentRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -3,314 +3,231 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'image_jsonld_media_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-/// * [id] 
-/// * [temporaryUrl] 
-/// * [filePath] 
-/// * [size] 
-/// * [mimeType] 
-/// * [dimensions] 
-/// * [metadata] 
-/// * [beginDate] 
-/// * [endDate] 
-@BuiltValue()
-abstract class ImageJsonldMediaRead implements Built<ImageJsonldMediaRead, ImageJsonldMediaReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  DocumentJsonldMediaReadContext? get atContext;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ImageJsonldMediaRead {
+  /// Returns a new [ImageJsonldMediaRead] instance.
+  ImageJsonldMediaRead({
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+     this.atContext,
 
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+     this.atId,
 
-  @BuiltValueField(wireName: r'temporaryUrl')
-  String? get temporaryUrl;
+     this.atType,
 
-  @BuiltValueField(wireName: r'filePath')
-  String? get filePath;
+     this.id,
 
-  @BuiltValueField(wireName: r'size')
-  int? get size;
+     this.temporaryUrl,
 
-  @BuiltValueField(wireName: r'mimeType')
-  String? get mimeType;
+     this.filePath,
 
-  @BuiltValueField(wireName: r'dimensions')
-  JsonObject? get dimensions;
+     this.size,
 
-  @BuiltValueField(wireName: r'metadata')
-  BuiltList<String>? get metadata;
+     this.mimeType,
 
-  @BuiltValueField(wireName: r'beginDate')
-  DateTime? get beginDate;
+     this.dimensions,
 
-  @BuiltValueField(wireName: r'endDate')
-  DateTime? get endDate;
+     this.metadata,
 
-  ImageJsonldMediaRead._();
+     this.beginDate,
 
-  factory ImageJsonldMediaRead([void updates(ImageJsonldMediaReadBuilder b)]) = _$ImageJsonldMediaRead;
+     this.endDate,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ImageJsonldMediaReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@context',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ImageJsonldMediaRead> get serializer => _$ImageJsonldMediaReadSerializer();
-}
 
-class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonldMediaRead> {
-  @override
-  final Iterable<Type> types = const [ImageJsonldMediaRead, _$ImageJsonldMediaRead];
+  final DocumentJsonldMediaReadContext? atContext;
 
-  @override
-  final String wireName = r'ImageJsonldMediaRead';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ImageJsonldMediaRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(DocumentJsonldMediaReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.temporaryUrl != null) {
-      yield r'temporaryUrl';
-      yield serializers.serialize(
-        object.temporaryUrl,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.filePath != null) {
-      yield r'filePath';
-      yield serializers.serialize(
-        object.filePath,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.size != null) {
-      yield r'size';
-      yield serializers.serialize(
-        object.size,
-        specifiedType: const FullType.nullable(int),
-      );
-    }
-    if (object.mimeType != null) {
-      yield r'mimeType';
-      yield serializers.serialize(
-        object.mimeType,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.dimensions != null) {
-      yield r'dimensions';
-      yield serializers.serialize(
-        object.dimensions,
-        specifiedType: const FullType.nullable(JsonObject),
-      );
-    }
-    if (object.metadata != null) {
-      yield r'metadata';
-      yield serializers.serialize(
-        object.metadata,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-    if (object.beginDate != null) {
-      yield r'beginDate';
-      yield serializers.serialize(
-        object.beginDate,
-        specifiedType: const FullType.nullable(DateTime),
-      );
-    }
-    if (object.endDate != null) {
-      yield r'endDate';
-      yield serializers.serialize(
-        object.endDate,
-        specifiedType: const FullType.nullable(DateTime),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ImageJsonldMediaRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'@id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ImageJsonldMediaReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DocumentJsonldMediaReadContext),
-          ) as DocumentJsonldMediaReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'temporaryUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.temporaryUrl = valueDes;
-          break;
-        case r'filePath':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.filePath = valueDes;
-          break;
-        case r'size':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
-          result.size = valueDes;
-          break;
-        case r'mimeType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.mimeType = valueDes;
-          break;
-        case r'dimensions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
-          result.dimensions = valueDes;
-          break;
-        case r'metadata':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.metadata.replace(valueDes);
-          break;
-        case r'beginDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.beginDate = valueDes;
-          break;
-        case r'endDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.endDate = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? atId;
+
+
+
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atType;
+
+
+
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final int? id;
+
+
+
+  @JsonKey(
+    
+    name: r'temporaryUrl',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? temporaryUrl;
+
+
+
+  @JsonKey(
+    
+    name: r'filePath',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? filePath;
+
+
+
+  @JsonKey(
+    
+    name: r'size',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final int? size;
+
+
+
+  @JsonKey(
+    
+    name: r'mimeType',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? mimeType;
+
+
+
+  @JsonKey(
+    
+    name: r'dimensions',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final Object? dimensions;
+
+
+
+  @JsonKey(
+    
+    name: r'metadata',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final List<String>? metadata;
+
+
+
+  @JsonKey(
+    
+    name: r'beginDate',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? beginDate;
+
+
+
+  @JsonKey(
+    
+    name: r'endDate',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? endDate;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ImageJsonldMediaRead &&
+      other.atContext == atContext &&
+      other.atId == atId &&
+      other.atType == atType &&
+      other.id == id &&
+      other.temporaryUrl == temporaryUrl &&
+      other.filePath == filePath &&
+      other.size == size &&
+      other.mimeType == mimeType &&
+      other.dimensions == dimensions &&
+      other.metadata == metadata &&
+      other.beginDate == beginDate &&
+      other.endDate == endDate;
+
+    @override
+    int get hashCode =>
+        atContext.hashCode +
+        atId.hashCode +
+        atType.hashCode +
+        id.hashCode +
+        (temporaryUrl == null ? 0 : temporaryUrl.hashCode) +
+        (filePath == null ? 0 : filePath.hashCode) +
+        (size == null ? 0 : size.hashCode) +
+        (mimeType == null ? 0 : mimeType.hashCode) +
+        (dimensions == null ? 0 : dimensions.hashCode) +
+        metadata.hashCode +
+        (beginDate == null ? 0 : beginDate.hashCode) +
+        (endDate == null ? 0 : endDate.hashCode);
+
+  factory ImageJsonldMediaRead.fromJson(Map<String, dynamic> json) => _$ImageJsonldMediaReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ImageJsonldMediaReadToJson(this);
 
   @override
-  ImageJsonldMediaRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ImageJsonldMediaReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

@@ -3,108 +3,55 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'menu_list_dto.g.dart';
 
-/// MenuListDto
-///
-/// Properties:
-/// * [menus] 
-@BuiltValue()
-abstract class MenuListDto implements Built<MenuListDto, MenuListDtoBuilder> {
-  @BuiltValueField(wireName: r'menus')
-  BuiltList<MenuListDtoMenusInner>? get menus;
 
-  MenuListDto._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class MenuListDto {
+  /// Returns a new [MenuListDto] instance.
+  MenuListDto({
 
-  factory MenuListDto([void updates(MenuListDtoBuilder b)]) = _$MenuListDto;
+     this.menus,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(MenuListDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'menus',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<MenuListDto> get serializer => _$MenuListDtoSerializer();
-}
 
-class _$MenuListDtoSerializer implements PrimitiveSerializer<MenuListDto> {
-  @override
-  final Iterable<Type> types = const [MenuListDto, _$MenuListDto];
+  final List<MenuListDtoMenusInner>? menus;
 
-  @override
-  final String wireName = r'MenuListDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    MenuListDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.menus != null) {
-      yield r'menus';
-      yield serializers.serialize(
-        object.menus,
-        specifiedType: const FullType(BuiltList, [FullType(MenuListDtoMenusInner)]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    MenuListDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required MenuListDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'menus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(MenuListDtoMenusInner)]),
-          ) as BuiltList<MenuListDtoMenusInner>;
-          result.menus.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is MenuListDto &&
+      other.menus == menus;
+
+    @override
+    int get hashCode =>
+        menus.hashCode;
+
+  factory MenuListDto.fromJson(Map<String, dynamic> json) => _$MenuListDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MenuListDtoToJson(this);
 
   @override
-  MenuListDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = MenuListDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

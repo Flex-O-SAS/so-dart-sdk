@@ -3,201 +3,135 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation_json_violations_inner.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'constraint_violation_json.g.dart';
 
-/// Unprocessable entity
-///
-/// Properties:
-/// * [status] 
-/// * [violations] 
-/// * [detail] 
-/// * [type] 
-/// * [title] 
-/// * [instance] 
-@BuiltValue()
-abstract class ConstraintViolationJson implements Built<ConstraintViolationJson, ConstraintViolationJsonBuilder> {
-  @BuiltValueField(wireName: r'status')
-  int? get status;
 
-  @BuiltValueField(wireName: r'violations')
-  BuiltList<ConstraintViolationJsonViolationsInner>? get violations;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ConstraintViolationJson {
+  /// Returns a new [ConstraintViolationJson] instance.
+  ConstraintViolationJson({
 
-  @BuiltValueField(wireName: r'detail')
-  String? get detail;
+     this.status = 422,
 
-  @BuiltValueField(wireName: r'type')
-  String? get type;
+     this.violations,
 
-  @BuiltValueField(wireName: r'title')
-  String? get title;
+     this.detail,
 
-  @BuiltValueField(wireName: r'instance')
-  String? get instance;
+     this.type,
 
-  ConstraintViolationJson._();
+     this.title,
 
-  factory ConstraintViolationJson([void updates(ConstraintViolationJsonBuilder b)]) = _$ConstraintViolationJson;
+     this.instance,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ConstraintViolationJsonBuilder b) => b
-      ..status = 422;
+  @JsonKey(
+    defaultValue: 422,
+    name: r'status',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ConstraintViolationJson> get serializer => _$ConstraintViolationJsonSerializer();
-}
 
-class _$ConstraintViolationJsonSerializer implements PrimitiveSerializer<ConstraintViolationJson> {
-  @override
-  final Iterable<Type> types = const [ConstraintViolationJson, _$ConstraintViolationJson];
+  final int? status;
 
-  @override
-  final String wireName = r'ConstraintViolationJson';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ConstraintViolationJson object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.status != null) {
-      yield r'status';
-      yield serializers.serialize(
-        object.status,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.violations != null) {
-      yield r'violations';
-      yield serializers.serialize(
-        object.violations,
-        specifiedType: const FullType(BuiltList, [FullType(ConstraintViolationJsonViolationsInner)]),
-      );
-    }
-    if (object.detail != null) {
-      yield r'detail';
-      yield serializers.serialize(
-        object.detail,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.title != null) {
-      yield r'title';
-      yield serializers.serialize(
-        object.title,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.instance != null) {
-      yield r'instance';
-      yield serializers.serialize(
-        object.instance,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ConstraintViolationJson object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'violations',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ConstraintViolationJsonBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.status = valueDes;
-          break;
-        case r'violations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(ConstraintViolationJsonViolationsInner)]),
-          ) as BuiltList<ConstraintViolationJsonViolationsInner>;
-          result.violations.replace(valueDes);
-          break;
-        case r'detail':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.detail = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
-          break;
-        case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.title = valueDes;
-          break;
-        case r'instance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.instance = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final List<ConstraintViolationJsonViolationsInner>? violations;
+
+
+
+  @JsonKey(
+    
+    name: r'detail',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? detail;
+
+
+
+  @JsonKey(
+    
+    name: r'type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? type;
+
+
+
+  @JsonKey(
+    
+    name: r'title',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? title;
+
+
+
+  @JsonKey(
+    
+    name: r'instance',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? instance;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ConstraintViolationJson &&
+      other.status == status &&
+      other.violations == violations &&
+      other.detail == detail &&
+      other.type == type &&
+      other.title == title &&
+      other.instance == instance;
+
+    @override
+    int get hashCode =>
+        status.hashCode +
+        violations.hashCode +
+        detail.hashCode +
+        type.hashCode +
+        (title == null ? 0 : title.hashCode) +
+        (instance == null ? 0 : instance.hashCode);
+
+  factory ConstraintViolationJson.fromJson(Map<String, dynamic> json) => _$ConstraintViolationJsonFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ConstraintViolationJsonToJson(this);
 
   @override
-  ConstraintViolationJson deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ConstraintViolationJsonBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

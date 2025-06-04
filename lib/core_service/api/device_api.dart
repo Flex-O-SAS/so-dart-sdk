@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/core_service/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/core_service/api_util.dart';
 import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
@@ -24,9 +23,7 @@ class DeviceApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const DeviceApi(this._dio, this._serializers);
+  const DeviceApi(this._dio);
 
   /// Removes the Device resource.
   /// Removes the Device resource.
@@ -51,7 +48,7 @@ class DeviceApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/devices/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/devices/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -101,7 +98,7 @@ class DeviceApi {
   Future<Response<ApiDevicesGetCollection200Response>> apiDevicesGetCollection({ 
     int? page = 1,
     String? token,
-    BuiltList<String>? tokenLeftSquareBracketRightSquareBracket,
+    List<String>? tokenLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -130,9 +127,9 @@ class DeviceApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (token != null) r'token': encodeQueryParameter(_serializers, token, const FullType(String)),
-      if (tokenLeftSquareBracketRightSquareBracket != null) r'token[]': encodeCollectionQueryParameter<String>(_serializers, tokenLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (page != null) r'page': page,
+      if (token != null) r'token': token,
+      if (tokenLeftSquareBracketRightSquareBracket != null) r'token[]': tokenLeftSquareBracketRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -147,12 +144,8 @@ class DeviceApi {
     ApiDevicesGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiDevicesGetCollection200Response),
-      ) as ApiDevicesGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiDevicesGetCollection200Response, ApiDevicesGetCollection200Response>(rawData, 'ApiDevicesGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -198,7 +191,7 @@ class DeviceApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/devices/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/devices/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -229,12 +222,8 @@ class DeviceApi {
     DeviceJsonldDeviceRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DeviceJsonldDeviceRead),
-      ) as DeviceJsonldDeviceRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<DeviceJsonldDeviceRead, DeviceJsonldDeviceRead>(rawData, 'DeviceJsonldDeviceRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -304,9 +293,7 @@ class DeviceApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(DeviceJsonldDeviceWrite);
-      _bodyData = _serializers.serialize(deviceJsonldDeviceWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(deviceJsonldDeviceWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -331,12 +318,8 @@ class DeviceApi {
     DeviceJsonldDeviceRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(DeviceJsonldDeviceRead),
-      ) as DeviceJsonldDeviceRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<DeviceJsonldDeviceRead, DeviceJsonldDeviceRead>(rawData, 'DeviceJsonldDeviceRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

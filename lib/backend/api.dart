@@ -3,8 +3,6 @@
 //
 
 import 'package:dio/dio.dart';
-import 'package:built_value/serializer.dart';
-import 'package:so_dart_sdk/backend/serializers.dart';
 import 'package:so_dart_sdk/backend/auth/api_key_auth.dart';
 import 'package:so_dart_sdk/backend/auth/basic_auth.dart';
 import 'package:so_dart_sdk/backend/auth/bearer_auth.dart';
@@ -19,14 +17,11 @@ class SoDartSdk {
   static const String basePath = r'http://localhost';
 
   final Dio dio;
-  final Serializers serializers;
-
   SoDartSdk({
     Dio? dio,
-    Serializers? serializers,
     String? basePathOverride,
     List<Interceptor>? interceptors,
-  })  : this.serializers = serializers ?? standardSerializers,
+  })  : 
         this.dio = dio ??
             Dio(BaseOptions(
               baseUrl: basePathOverride ?? basePath,
@@ -72,30 +67,30 @@ class SoDartSdk {
   /// Get CenterApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   CenterApi getCenterApi() {
-    return CenterApi(dio, serializers);
+    return CenterApi(dio);
   }
 
   /// Get EnterpriseApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   EnterpriseApi getEnterpriseApi() {
-    return EnterpriseApi(dio, serializers);
+    return EnterpriseApi(dio);
   }
 
   /// Get HappeningApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   HappeningApi getHappeningApi() {
-    return HappeningApi(dio, serializers);
+    return HappeningApi(dio);
   }
 
   /// Get IndividualApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   IndividualApi getIndividualApi() {
-    return IndividualApi(dio, serializers);
+    return IndividualApi(dio);
   }
 
   /// Get StaffApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   StaffApi getStaffApi() {
-    return StaffApi(dio, serializers);
+    return StaffApi(dio);
   }
 }

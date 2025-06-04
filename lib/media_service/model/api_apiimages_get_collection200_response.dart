@@ -4,161 +4,105 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response_search.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/media_service/model/image_jsonld_media_read.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'api_apiimages_get_collection200_response.g.dart';
 
-/// ApiApiimagesGetCollection200Response
-///
-/// Properties:
-/// * [member] 
-/// * [totalItems] 
-/// * [view] 
-/// * [search] 
-@BuiltValue()
-abstract class ApiApiimagesGetCollection200Response implements Built<ApiApiimagesGetCollection200Response, ApiApiimagesGetCollection200ResponseBuilder> {
-  @BuiltValueField(wireName: r'member')
-  BuiltList<ImageJsonldMediaRead> get member;
 
-  @BuiltValueField(wireName: r'totalItems')
-  int? get totalItems;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ApiApiimagesGetCollection200Response {
+  /// Returns a new [ApiApiimagesGetCollection200Response] instance.
+  ApiApiimagesGetCollection200Response({
 
-  @BuiltValueField(wireName: r'view')
-  ApiApidocumentsGetCollection200ResponseView? get view;
+    required  this.member,
 
-  @BuiltValueField(wireName: r'search')
-  ApiApidocumentsGetCollection200ResponseSearch? get search;
+     this.totalItems,
 
-  ApiApiimagesGetCollection200Response._();
+     this.view,
 
-  factory ApiApiimagesGetCollection200Response([void updates(ApiApiimagesGetCollection200ResponseBuilder b)]) = _$ApiApiimagesGetCollection200Response;
+     this.search,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiApiimagesGetCollection200ResponseBuilder b) => b;
+  @JsonKey(
+    
+    name: r'member',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ApiApiimagesGetCollection200Response> get serializer => _$ApiApiimagesGetCollection200ResponseSerializer();
-}
 
-class _$ApiApiimagesGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiApiimagesGetCollection200Response> {
-  @override
-  final Iterable<Type> types = const [ApiApiimagesGetCollection200Response, _$ApiApiimagesGetCollection200Response];
+  final List<ImageJsonldMediaRead> member;
 
-  @override
-  final String wireName = r'ApiApiimagesGetCollection200Response';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ApiApiimagesGetCollection200Response object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'member';
-    yield serializers.serialize(
-      object.member,
-      specifiedType: const FullType(BuiltList, [FullType(ImageJsonldMediaRead)]),
-    );
-    if (object.totalItems != null) {
-      yield r'totalItems';
-      yield serializers.serialize(
-        object.totalItems,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.view != null) {
-      yield r'view';
-      yield serializers.serialize(
-        object.view,
-        specifiedType: const FullType(ApiApidocumentsGetCollection200ResponseView),
-      );
-    }
-    if (object.search != null) {
-      yield r'search';
-      yield serializers.serialize(
-        object.search,
-        specifiedType: const FullType(ApiApidocumentsGetCollection200ResponseSearch),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ApiApiimagesGetCollection200Response object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+          // minimum: 0
+  @JsonKey(
+    
+    name: r'totalItems',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ApiApiimagesGetCollection200ResponseBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'member':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(ImageJsonldMediaRead)]),
-          ) as BuiltList<ImageJsonldMediaRead>;
-          result.member.replace(valueDes);
-          break;
-        case r'totalItems':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.totalItems = valueDes;
-          break;
-        case r'view':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiApidocumentsGetCollection200ResponseView),
-          ) as ApiApidocumentsGetCollection200ResponseView;
-          result.view.replace(valueDes);
-          break;
-        case r'search':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiApidocumentsGetCollection200ResponseSearch),
-          ) as ApiApidocumentsGetCollection200ResponseSearch;
-          result.search.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final int? totalItems;
+
+
+
+  @JsonKey(
+    
+    name: r'view',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final ApiApidocumentsGetCollection200ResponseView? view;
+
+
+
+  @JsonKey(
+    
+    name: r'search',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final ApiApidocumentsGetCollection200ResponseSearch? search;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ApiApiimagesGetCollection200Response &&
+      other.member == member &&
+      other.totalItems == totalItems &&
+      other.view == view &&
+      other.search == search;
+
+    @override
+    int get hashCode =>
+        member.hashCode +
+        totalItems.hashCode +
+        view.hashCode +
+        search.hashCode;
+
+  factory ApiApiimagesGetCollection200Response.fromJson(Map<String, dynamic> json) => _$ApiApiimagesGetCollection200ResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ApiApiimagesGetCollection200ResponseToJson(this);
 
   @override
-  ApiApiimagesGetCollection200Response deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ApiApiimagesGetCollection200ResponseBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

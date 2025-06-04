@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/marketplace_service/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/marketplace_service/api_util.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_reservations_get_collection200_response.dart';
 import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_write.dart';
@@ -20,9 +19,7 @@ class ReservationApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const ReservationApi(this._dio, this._serializers);
+  const ReservationApi(this._dio);
 
   /// Retrieves the collection of Reservation resources.
   /// Retrieves the collection of Reservation resources.
@@ -54,7 +51,7 @@ class ReservationApi {
     int? page = 1,
     String? orderLeftSquareBracketCreatedAtRightSquareBracket = 'asc',
     String? author,
-    BuiltList<String>? authorLeftSquareBracketRightSquareBracket,
+    List<String>? authorLeftSquareBracketRightSquareBracket,
     String? createdAtLeftSquareBracketBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketAfterRightSquareBracket,
@@ -93,18 +90,18 @@ class ReservationApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
-      if (author != null) r'author': encodeQueryParameter(_serializers, author, const FullType(String)),
-      if (authorLeftSquareBracketRightSquareBracket != null) r'author[]': encodeCollectionQueryParameter<String>(_serializers, authorLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (page != null) r'page': page,
+      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': orderLeftSquareBracketCreatedAtRightSquareBracket,
+      if (author != null) r'author': author,
+      if (authorLeftSquareBracketRightSquareBracket != null) r'author[]': authorLeftSquareBracketRightSquareBracket,
+      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': createdAtLeftSquareBracketBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': createdAtLeftSquareBracketAfterRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': createdAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': updatedAtLeftSquareBracketBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': updatedAtLeftSquareBracketAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -119,12 +116,8 @@ class ReservationApi {
     ApiReservationsGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiReservationsGetCollection200Response),
-      ) as ApiReservationsGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiReservationsGetCollection200Response, ApiReservationsGetCollection200Response>(rawData, 'ApiReservationsGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -172,7 +165,7 @@ class ReservationApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/reservations/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/reservations/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -204,12 +197,8 @@ class ReservationApi {
     ReservationJsonldReservationRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ReservationJsonldReservationRead),
-      ) as ReservationJsonldReservationRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ReservationJsonldReservationRead, ReservationJsonldReservationRead>(rawData, 'ReservationJsonldReservationRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -282,9 +271,7 @@ class ReservationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ReservationJsonldReservationWrite);
-      _bodyData = _serializers.serialize(reservationJsonldReservationWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(reservationJsonldReservationWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -309,12 +296,8 @@ class ReservationApi {
     ReservationJsonldReservationRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ReservationJsonldReservationRead),
-      ) as ReservationJsonldReservationRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ReservationJsonldReservationRead, ReservationJsonldReservationRead>(rawData, 'ReservationJsonldReservationRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

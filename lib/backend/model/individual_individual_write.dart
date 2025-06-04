@@ -3,107 +3,54 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'individual_individual_write.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [tosAcceptedAt] 
-@BuiltValue()
-abstract class IndividualIndividualWrite implements Built<IndividualIndividualWrite, IndividualIndividualWriteBuilder> {
-  @BuiltValueField(wireName: r'tosAcceptedAt')
-  DateTime? get tosAcceptedAt;
 
-  IndividualIndividualWrite._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class IndividualIndividualWrite {
+  /// Returns a new [IndividualIndividualWrite] instance.
+  IndividualIndividualWrite({
 
-  factory IndividualIndividualWrite([void updates(IndividualIndividualWriteBuilder b)]) = _$IndividualIndividualWrite;
+     this.tosAcceptedAt,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(IndividualIndividualWriteBuilder b) => b;
+  @JsonKey(
+    
+    name: r'tosAcceptedAt',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<IndividualIndividualWrite> get serializer => _$IndividualIndividualWriteSerializer();
-}
 
-class _$IndividualIndividualWriteSerializer implements PrimitiveSerializer<IndividualIndividualWrite> {
-  @override
-  final Iterable<Type> types = const [IndividualIndividualWrite, _$IndividualIndividualWrite];
+  final DateTime? tosAcceptedAt;
 
-  @override
-  final String wireName = r'IndividualIndividualWrite';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    IndividualIndividualWrite object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.tosAcceptedAt != null) {
-      yield r'tosAcceptedAt';
-      yield serializers.serialize(
-        object.tosAcceptedAt,
-        specifiedType: const FullType.nullable(DateTime),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    IndividualIndividualWrite object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required IndividualIndividualWriteBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'tosAcceptedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.tosAcceptedAt = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is IndividualIndividualWrite &&
+      other.tosAcceptedAt == tosAcceptedAt;
+
+    @override
+    int get hashCode =>
+        (tosAcceptedAt == null ? 0 : tosAcceptedAt.hashCode);
+
+  factory IndividualIndividualWrite.fromJson(Map<String, dynamic> json) => _$IndividualIndividualWriteFromJson(json);
+
+  Map<String, dynamic> toJson() => _$IndividualIndividualWriteToJson(this);
 
   @override
-  IndividualIndividualWrite deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = IndividualIndividualWriteBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

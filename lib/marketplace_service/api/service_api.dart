@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/marketplace_service/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/marketplace_service/api_util.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_services_get_collection200_response.dart';
 import 'package:so_dart_sdk/marketplace_service/model/service_service_read.dart';
 
@@ -17,9 +16,7 @@ class ServiceApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const ServiceApi(this._dio, this._serializers);
+  const ServiceApi(this._dio);
 
   /// Retrieves the collection of Service resources.
   /// Retrieves the collection of Service resources.
@@ -53,7 +50,7 @@ class ServiceApi {
     int? page = 1,
     String? label,
     int? prioritization,
-    BuiltList<int>? prioritizationLeftSquareBracketRightSquareBracket,
+    List<int>? prioritizationLeftSquareBracketRightSquareBracket,
     String? orderLeftSquareBracketLabelRightSquareBracket = 'asc',
     String? orderLeftSquareBracketPrioritizationRightSquareBracket = 'desc',
     String? createdAtLeftSquareBracketBeforeRightSquareBracket,
@@ -94,20 +91,20 @@ class ServiceApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (label != null) r'label': encodeQueryParameter(_serializers, label, const FullType(String)),
-      if (prioritization != null) r'prioritization': encodeQueryParameter(_serializers, prioritization, const FullType(int)),
-      if (prioritizationLeftSquareBracketRightSquareBracket != null) r'prioritization[]': encodeCollectionQueryParameter<int>(_serializers, prioritizationLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (orderLeftSquareBracketLabelRightSquareBracket != null) r'order[label]': encodeQueryParameter(_serializers, orderLeftSquareBracketLabelRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketPrioritizationRightSquareBracket != null) r'order[prioritization]': encodeQueryParameter(_serializers, orderLeftSquareBracketPrioritizationRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (page != null) r'page': page,
+      if (label != null) r'label': label,
+      if (prioritization != null) r'prioritization': prioritization,
+      if (prioritizationLeftSquareBracketRightSquareBracket != null) r'prioritization[]': prioritizationLeftSquareBracketRightSquareBracket,
+      if (orderLeftSquareBracketLabelRightSquareBracket != null) r'order[label]': orderLeftSquareBracketLabelRightSquareBracket,
+      if (orderLeftSquareBracketPrioritizationRightSquareBracket != null) r'order[prioritization]': orderLeftSquareBracketPrioritizationRightSquareBracket,
+      if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': createdAtLeftSquareBracketBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (createdAtLeftSquareBracketAfterRightSquareBracket != null) r'createdAt[after]': createdAtLeftSquareBracketAfterRightSquareBracket,
+      if (createdAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'createdAt[strictly_after]': createdAtLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketBeforeRightSquareBracket != null) r'updatedAt[before]': updatedAtLeftSquareBracketBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'updatedAt[strictly_before]': updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (updatedAtLeftSquareBracketAfterRightSquareBracket != null) r'updatedAt[after]': updatedAtLeftSquareBracketAfterRightSquareBracket,
+      if (updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'updatedAt[strictly_after]': updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -122,12 +119,8 @@ class ServiceApi {
     ApiServicesGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiServicesGetCollection200Response),
-      ) as ApiServicesGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiServicesGetCollection200Response, ApiServicesGetCollection200Response>(rawData, 'ApiServicesGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

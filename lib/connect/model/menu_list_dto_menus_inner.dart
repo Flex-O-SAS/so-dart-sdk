@@ -4,240 +4,173 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_site.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'menu_list_dto_menus_inner.g.dart';
 
-/// MenuListDtoMenusInner
-///
-/// Properties:
-/// * [id] - Identifiant du menu
-/// * [label] - Libellé du menu
-/// * [type] - Type de menu
-/// * [date] - Date du menu
-/// * [content] - Description du menu au format HTML
-/// * [visible] - Est ce que le menu doit être visible
-/// * [site] 
-/// * [items] 
-@BuiltValue()
-abstract class MenuListDtoMenusInner implements Built<MenuListDtoMenusInner, MenuListDtoMenusInnerBuilder> {
-  /// Identifiant du menu
-  @BuiltValueField(wireName: r'id')
-  String? get id;
 
-  /// Libellé du menu
-  @BuiltValueField(wireName: r'label')
-  String? get label;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class MenuListDtoMenusInner {
+  /// Returns a new [MenuListDtoMenusInner] instance.
+  MenuListDtoMenusInner({
 
-  /// Type de menu
-  @BuiltValueField(wireName: r'type')
-  String? get type;
+     this.id,
 
-  /// Date du menu
-  @BuiltValueField(wireName: r'date')
-  String? get date;
+     this.label,
 
-  /// Description du menu au format HTML
-  @BuiltValueField(wireName: r'content')
-  String? get content;
+     this.type,
 
-  /// Est ce que le menu doit être visible
-  @BuiltValueField(wireName: r'visible')
-  bool? get visible;
+     this.date,
 
-  @BuiltValueField(wireName: r'site')
-  MenuListDtoMenusInnerSite? get site;
+     this.content,
 
-  @BuiltValueField(wireName: r'items')
-  BuiltList<MenuListDtoMenusInnerItemsInner>? get items;
+     this.visible,
 
-  MenuListDtoMenusInner._();
+     this.site,
 
-  factory MenuListDtoMenusInner([void updates(MenuListDtoMenusInnerBuilder b)]) = _$MenuListDtoMenusInner;
+     this.items,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(MenuListDtoMenusInnerBuilder b) => b;
+      /// Identifiant du menu
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<MenuListDtoMenusInner> get serializer => _$MenuListDtoMenusInnerSerializer();
-}
 
-class _$MenuListDtoMenusInnerSerializer implements PrimitiveSerializer<MenuListDtoMenusInner> {
-  @override
-  final Iterable<Type> types = const [MenuListDtoMenusInner, _$MenuListDtoMenusInner];
+  final String? id;
 
-  @override
-  final String wireName = r'MenuListDtoMenusInner';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    MenuListDtoMenusInner object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.label != null) {
-      yield r'label';
-      yield serializers.serialize(
-        object.label,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.date != null) {
-      yield r'date';
-      yield serializers.serialize(
-        object.date,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.content != null) {
-      yield r'content';
-      yield serializers.serialize(
-        object.content,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.visible != null) {
-      yield r'visible';
-      yield serializers.serialize(
-        object.visible,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.site != null) {
-      yield r'site';
-      yield serializers.serialize(
-        object.site,
-        specifiedType: const FullType(MenuListDtoMenusInnerSite),
-      );
-    }
-    if (object.items != null) {
-      yield r'items';
-      yield serializers.serialize(
-        object.items,
-        specifiedType: const FullType(BuiltList, [FullType(MenuListDtoMenusInnerItemsInner)]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    MenuListDtoMenusInner object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+      /// Libellé du menu
+  @JsonKey(
+    
+    name: r'label',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required MenuListDtoMenusInnerBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.label = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
-          break;
-        case r'date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.date = valueDes;
-          break;
-        case r'content':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.content = valueDes;
-          break;
-        case r'visible':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.visible = valueDes;
-          break;
-        case r'site':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MenuListDtoMenusInnerSite),
-          ) as MenuListDtoMenusInnerSite;
-          result.site.replace(valueDes);
-          break;
-        case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(MenuListDtoMenusInnerItemsInner)]),
-          ) as BuiltList<MenuListDtoMenusInnerItemsInner>;
-          result.items.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? label;
+
+
+
+      /// Type de menu
+  @JsonKey(
+    
+    name: r'type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? type;
+
+
+
+      /// Date du menu
+  @JsonKey(
+    
+    name: r'date',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? date;
+
+
+
+      /// Description du menu au format HTML
+  @JsonKey(
+    
+    name: r'content',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? content;
+
+
+
+      /// Est ce que le menu doit être visible
+  @JsonKey(
+    
+    name: r'visible',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final bool? visible;
+
+
+
+  @JsonKey(
+    
+    name: r'site',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final MenuListDtoMenusInnerSite? site;
+
+
+
+  @JsonKey(
+    
+    name: r'items',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final List<MenuListDtoMenusInnerItemsInner>? items;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is MenuListDtoMenusInner &&
+      other.id == id &&
+      other.label == label &&
+      other.type == type &&
+      other.date == date &&
+      other.content == content &&
+      other.visible == visible &&
+      other.site == site &&
+      other.items == items;
+
+    @override
+    int get hashCode =>
+        id.hashCode +
+        label.hashCode +
+        type.hashCode +
+        date.hashCode +
+        content.hashCode +
+        visible.hashCode +
+        site.hashCode +
+        items.hashCode;
+
+  factory MenuListDtoMenusInner.fromJson(Map<String, dynamic> json) => _$MenuListDtoMenusInnerFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MenuListDtoMenusInnerToJson(this);
 
   @override
-  MenuListDtoMenusInner deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = MenuListDtoMenusInnerBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

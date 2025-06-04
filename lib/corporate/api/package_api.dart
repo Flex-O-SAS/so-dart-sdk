@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/corporate/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/corporate/api_util.dart';
 import 'package:so_dart_sdk/corporate/model/api_packages_get_collection200_response.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld_jsonld.dart';
@@ -24,9 +23,7 @@ class PackageApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const PackageApi(this._dio, this._serializers);
+  const PackageApi(this._dio);
 
   /// Removes the Package resource.
   /// Removes the Package resource.
@@ -51,7 +48,7 @@ class PackageApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/packages/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/packages/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -128,19 +125,19 @@ class PackageApi {
   Future<Response<ApiPackagesGetCollection200Response>> apiPackagesGetCollection({ 
     int? page = 1,
     int? id,
-    BuiltList<int>? idLeftSquareBracketRightSquareBracket,
+    List<int>? idLeftSquareBracketRightSquareBracket,
     String? recipient,
-    BuiltList<String>? recipientLeftSquareBracketRightSquareBracket,
+    List<String>? recipientLeftSquareBracketRightSquareBracket,
     String? staff,
-    BuiltList<String>? staffLeftSquareBracketRightSquareBracket,
+    List<String>? staffLeftSquareBracketRightSquareBracket,
     String? senderName,
-    BuiltList<String>? senderNameLeftSquareBracketRightSquareBracket,
+    List<String>? senderNameLeftSquareBracketRightSquareBracket,
     String? handoverClient,
-    BuiltList<String>? handoverClientLeftSquareBracketRightSquareBracket,
+    List<String>? handoverClientLeftSquareBracketRightSquareBracket,
     String? securityCode,
-    BuiltList<String>? securityCodeLeftSquareBracketRightSquareBracket,
+    List<String>? securityCodeLeftSquareBracketRightSquareBracket,
     int? site,
-    BuiltList<int>? siteLeftSquareBracketRightSquareBracket,
+    List<int>? siteLeftSquareBracketRightSquareBracket,
     String? type,
     String? status,
     String? orderLeftSquareBracketTypeRightSquareBracket = 'asc',
@@ -184,36 +181,36 @@ class PackageApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
-      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (recipient != null) r'recipient': encodeQueryParameter(_serializers, recipient, const FullType(String)),
-      if (recipientLeftSquareBracketRightSquareBracket != null) r'recipient[]': encodeCollectionQueryParameter<String>(_serializers, recipientLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (staff != null) r'staff': encodeQueryParameter(_serializers, staff, const FullType(String)),
-      if (staffLeftSquareBracketRightSquareBracket != null) r'staff[]': encodeCollectionQueryParameter<String>(_serializers, staffLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (senderName != null) r'senderName': encodeQueryParameter(_serializers, senderName, const FullType(String)),
-      if (senderNameLeftSquareBracketRightSquareBracket != null) r'senderName[]': encodeCollectionQueryParameter<String>(_serializers, senderNameLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (handoverClient != null) r'handoverClient': encodeQueryParameter(_serializers, handoverClient, const FullType(String)),
-      if (handoverClientLeftSquareBracketRightSquareBracket != null) r'handoverClient[]': encodeCollectionQueryParameter<String>(_serializers, handoverClientLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (securityCode != null) r'securityCode': encodeQueryParameter(_serializers, securityCode, const FullType(String)),
-      if (securityCodeLeftSquareBracketRightSquareBracket != null) r'securityCode[]': encodeCollectionQueryParameter<String>(_serializers, securityCodeLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (site != null) r'site': encodeQueryParameter(_serializers, site, const FullType(int)),
-      if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': encodeCollectionQueryParameter<int>(_serializers, siteLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
-      if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
-      if (orderLeftSquareBracketTypeRightSquareBracket != null) r'order[type]': encodeQueryParameter(_serializers, orderLeftSquareBracketTypeRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': encodeQueryParameter(_serializers, orderLeftSquareBracketStatusRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketSenderNameRightSquareBracket != null) r'order[senderName]': encodeQueryParameter(_serializers, orderLeftSquareBracketSenderNameRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketReceptionDateRightSquareBracket != null) r'order[receptionDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketReceptionDateRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketHandoverDateRightSquareBracket != null) r'order[handoverDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketHandoverDateRightSquareBracket, const FullType(String)),
-      if (receptionDateLeftSquareBracketBeforeRightSquareBracket != null) r'receptionDate[before]': encodeQueryParameter(_serializers, receptionDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (receptionDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'receptionDate[strictly_before]': encodeQueryParameter(_serializers, receptionDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (receptionDateLeftSquareBracketAfterRightSquareBracket != null) r'receptionDate[after]': encodeQueryParameter(_serializers, receptionDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (receptionDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'receptionDate[strictly_after]': encodeQueryParameter(_serializers, receptionDateLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (handoverDateLeftSquareBracketBeforeRightSquareBracket != null) r'handoverDate[before]': encodeQueryParameter(_serializers, handoverDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (handoverDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'handoverDate[strictly_before]': encodeQueryParameter(_serializers, handoverDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (handoverDateLeftSquareBracketAfterRightSquareBracket != null) r'handoverDate[after]': encodeQueryParameter(_serializers, handoverDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (handoverDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'handoverDate[strictly_after]': encodeQueryParameter(_serializers, handoverDateLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (page != null) r'page': page,
+      if (id != null) r'id': id,
+      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': idLeftSquareBracketRightSquareBracket,
+      if (recipient != null) r'recipient': recipient,
+      if (recipientLeftSquareBracketRightSquareBracket != null) r'recipient[]': recipientLeftSquareBracketRightSquareBracket,
+      if (staff != null) r'staff': staff,
+      if (staffLeftSquareBracketRightSquareBracket != null) r'staff[]': staffLeftSquareBracketRightSquareBracket,
+      if (senderName != null) r'senderName': senderName,
+      if (senderNameLeftSquareBracketRightSquareBracket != null) r'senderName[]': senderNameLeftSquareBracketRightSquareBracket,
+      if (handoverClient != null) r'handoverClient': handoverClient,
+      if (handoverClientLeftSquareBracketRightSquareBracket != null) r'handoverClient[]': handoverClientLeftSquareBracketRightSquareBracket,
+      if (securityCode != null) r'securityCode': securityCode,
+      if (securityCodeLeftSquareBracketRightSquareBracket != null) r'securityCode[]': securityCodeLeftSquareBracketRightSquareBracket,
+      if (site != null) r'site': site,
+      if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': siteLeftSquareBracketRightSquareBracket,
+      if (type != null) r'type': type,
+      if (status != null) r'status': status,
+      if (orderLeftSquareBracketTypeRightSquareBracket != null) r'order[type]': orderLeftSquareBracketTypeRightSquareBracket,
+      if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': orderLeftSquareBracketStatusRightSquareBracket,
+      if (orderLeftSquareBracketSenderNameRightSquareBracket != null) r'order[senderName]': orderLeftSquareBracketSenderNameRightSquareBracket,
+      if (orderLeftSquareBracketReceptionDateRightSquareBracket != null) r'order[receptionDate]': orderLeftSquareBracketReceptionDateRightSquareBracket,
+      if (orderLeftSquareBracketHandoverDateRightSquareBracket != null) r'order[handoverDate]': orderLeftSquareBracketHandoverDateRightSquareBracket,
+      if (receptionDateLeftSquareBracketBeforeRightSquareBracket != null) r'receptionDate[before]': receptionDateLeftSquareBracketBeforeRightSquareBracket,
+      if (receptionDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'receptionDate[strictly_before]': receptionDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (receptionDateLeftSquareBracketAfterRightSquareBracket != null) r'receptionDate[after]': receptionDateLeftSquareBracketAfterRightSquareBracket,
+      if (receptionDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'receptionDate[strictly_after]': receptionDateLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (handoverDateLeftSquareBracketBeforeRightSquareBracket != null) r'handoverDate[before]': handoverDateLeftSquareBracketBeforeRightSquareBracket,
+      if (handoverDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'handoverDate[strictly_before]': handoverDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (handoverDateLeftSquareBracketAfterRightSquareBracket != null) r'handoverDate[after]': handoverDateLeftSquareBracketAfterRightSquareBracket,
+      if (handoverDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'handoverDate[strictly_after]': handoverDateLeftSquareBracketStrictlyAfterRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -228,12 +225,8 @@ class PackageApi {
     ApiPackagesGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiPackagesGetCollection200Response),
-      ) as ApiPackagesGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiPackagesGetCollection200Response, ApiPackagesGetCollection200Response>(rawData, 'ApiPackagesGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -279,7 +272,7 @@ class PackageApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/packages/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/packages/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -310,12 +303,8 @@ class PackageApi {
     PackageJsonldPackageRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(PackageJsonldPackageRead),
-      ) as PackageJsonldPackageRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<PackageJsonldPackageRead, PackageJsonldPackageRead>(rawData, 'PackageJsonldPackageRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -385,9 +374,7 @@ class PackageApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(PackageJsonldPackageWrite);
-      _bodyData = _serializers.serialize(packageJsonldPackageWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(packageJsonldPackageWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -412,12 +399,8 @@ class PackageApi {
     PackageJsonldPackageRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(PackageJsonldPackageRead),
-      ) as PackageJsonldPackageRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<PackageJsonldPackageRead, PackageJsonldPackageRead>(rawData, 'PackageJsonldPackageRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -465,7 +448,7 @@ class PackageApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/packages/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/packages/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -489,9 +472,7 @@ class PackageApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(PackagePackageWrite);
-      _bodyData = _serializers.serialize(packagePackageWrite, specifiedType: _type);
-
+_bodyData=jsonEncode(packagePackageWrite);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -516,12 +497,8 @@ class PackageApi {
     PackageJsonldPackageRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(PackageJsonldPackageRead),
-      ) as PackageJsonldPackageRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<PackageJsonldPackageRead, PackageJsonldPackageRead>(rawData, 'PackageJsonldPackageRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

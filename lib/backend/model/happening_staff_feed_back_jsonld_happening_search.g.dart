@@ -3,145 +3,39 @@
 part of 'happening_staff_feed_back_jsonld_happening_search.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$HappeningStaffFeedBackJsonldHappeningSearch
-    extends HappeningStaffFeedBackJsonldHappeningSearch {
-  @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
+HappeningStaffFeedBackJsonldHappeningSearch
+    _$HappeningStaffFeedBackJsonldHappeningSearchFromJson(
+            Map<String, dynamic> json) =>
+        $checkedCreate(
+          'HappeningStaffFeedBackJsonldHappeningSearch',
+          json,
+          ($checkedConvert) {
+            final val = HappeningStaffFeedBackJsonldHappeningSearch(
+              atContext: $checkedConvert(
+                  '@context',
+                  (v) => v == null
+                      ? null
+                      : CenterJsonldHappeningReadContext.fromJson(
+                          v as Map<String, dynamic>)),
+              atId: $checkedConvert('@id', (v) => v as String?),
+              atType: $checkedConvert('@type', (v) => v as String?),
+            );
+            return val;
+          },
+          fieldKeyMap: const {
+            'atContext': '@context',
+            'atId': '@id',
+            'atType': '@type'
+          },
+        );
 
-  factory _$HappeningStaffFeedBackJsonldHappeningSearch(
-          [void Function(HappeningStaffFeedBackJsonldHappeningSearchBuilder)?
-              updates]) =>
-      (new HappeningStaffFeedBackJsonldHappeningSearchBuilder()
-            ..update(updates))
-          ._build();
-
-  _$HappeningStaffFeedBackJsonldHappeningSearch._(
-      {this.atContext, this.atId, this.atType})
-      : super._();
-
-  @override
-  HappeningStaffFeedBackJsonldHappeningSearch rebuild(
-          void Function(HappeningStaffFeedBackJsonldHappeningSearchBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  HappeningStaffFeedBackJsonldHappeningSearchBuilder toBuilder() =>
-      new HappeningStaffFeedBackJsonldHappeningSearchBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is HappeningStaffFeedBackJsonldHappeningSearch &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, atContext.hashCode);
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'HappeningStaffFeedBackJsonldHappeningSearch')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType))
-        .toString();
-  }
-}
-
-class HappeningStaffFeedBackJsonldHappeningSearchBuilder
-    implements
-        Builder<HappeningStaffFeedBackJsonldHappeningSearch,
-            HappeningStaffFeedBackJsonldHappeningSearchBuilder> {
-  _$HappeningStaffFeedBackJsonldHappeningSearch? _$v;
-
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  HappeningStaffFeedBackJsonldHappeningSearchBuilder() {
-    HappeningStaffFeedBackJsonldHappeningSearch._defaults(this);
-  }
-
-  HappeningStaffFeedBackJsonldHappeningSearchBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _atContext = $v.atContext?.toBuilder();
-      _atId = $v.atId;
-      _atType = $v.atType;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(HappeningStaffFeedBackJsonldHappeningSearch other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$HappeningStaffFeedBackJsonldHappeningSearch;
-  }
-
-  @override
-  void update(
-      void Function(HappeningStaffFeedBackJsonldHappeningSearchBuilder)?
-          updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  HappeningStaffFeedBackJsonldHappeningSearch build() => _build();
-
-  _$HappeningStaffFeedBackJsonldHappeningSearch _build() {
-    _$HappeningStaffFeedBackJsonldHappeningSearch _$result;
-    try {
-      _$result = _$v ??
-          new _$HappeningStaffFeedBackJsonldHappeningSearch._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'HappeningStaffFeedBackJsonldHappeningSearch',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint
+Map<String, dynamic> _$HappeningStaffFeedBackJsonldHappeningSearchToJson(
+        HappeningStaffFeedBackJsonldHappeningSearch instance) =>
+    <String, dynamic>{
+      if (instance.atContext?.toJson() case final value?) '@context': value,
+      if (instance.atId case final value?) '@id': value,
+      if (instance.atType case final value?) '@type': value,
+    };

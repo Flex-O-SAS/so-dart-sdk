@@ -3,103 +3,24 @@
 part of 'unlock_response.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$UnlockResponse extends UnlockResponse {
-  @override
-  final String? action;
-  @override
-  final String? message;
-
-  factory _$UnlockResponse([void Function(UnlockResponseBuilder)? updates]) =>
-      (new UnlockResponseBuilder()..update(updates))._build();
-
-  _$UnlockResponse._({this.action, this.message}) : super._();
-
-  @override
-  UnlockResponse rebuild(void Function(UnlockResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  UnlockResponseBuilder toBuilder() =>
-      new UnlockResponseBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is UnlockResponse &&
-        action == other.action &&
-        message == other.message;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, action.hashCode);
-    _$hash = $jc(_$hash, message.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'UnlockResponse')
-          ..add('action', action)
-          ..add('message', message))
-        .toString();
-  }
-}
-
-class UnlockResponseBuilder
-    implements Builder<UnlockResponse, UnlockResponseBuilder> {
-  _$UnlockResponse? _$v;
-
-  String? _action;
-  String? get action => _$this._action;
-  set action(String? action) => _$this._action = action;
-
-  String? _message;
-  String? get message => _$this._message;
-  set message(String? message) => _$this._message = message;
-
-  UnlockResponseBuilder() {
-    UnlockResponse._defaults(this);
-  }
-
-  UnlockResponseBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _action = $v.action;
-      _message = $v.message;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(UnlockResponse other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$UnlockResponse;
-  }
-
-  @override
-  void update(void Function(UnlockResponseBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  UnlockResponse build() => _build();
-
-  _$UnlockResponse _build() {
-    final _$result = _$v ??
-        new _$UnlockResponse._(
-          action: action,
-          message: message,
+UnlockResponse _$UnlockResponseFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      'UnlockResponse',
+      json,
+      ($checkedConvert) {
+        final val = UnlockResponse(
+          action: $checkedConvert('action', (v) => v as String?),
+          message: $checkedConvert('message', (v) => v as String?),
         );
-    replace(_$result);
-    return _$result;
-  }
-}
+        return val;
+      },
+    );
 
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint
+Map<String, dynamic> _$UnlockResponseToJson(UnlockResponse instance) =>
+    <String, dynamic>{
+      if (instance.action case final value?) 'action': value,
+      if (instance.message case final value?) 'message': value,
+    };

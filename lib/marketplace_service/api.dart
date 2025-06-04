@@ -3,8 +3,6 @@
 //
 
 import 'package:dio/dio.dart';
-import 'package:built_value/serializer.dart';
-import 'package:so_dart_sdk/marketplace_service/serializers.dart';
 import 'package:so_dart_sdk/marketplace_service/auth/api_key_auth.dart';
 import 'package:so_dart_sdk/marketplace_service/auth/basic_auth.dart';
 import 'package:so_dart_sdk/marketplace_service/auth/bearer_auth.dart';
@@ -19,14 +17,11 @@ class SoDartSdk {
   static const String basePath = r'http://localhost';
 
   final Dio dio;
-  final Serializers serializers;
-
   SoDartSdk({
     Dio? dio,
-    Serializers? serializers,
     String? basePathOverride,
     List<Interceptor>? interceptors,
-  })  : this.serializers = serializers ?? standardSerializers,
+  })  : 
         this.dio = dio ??
             Dio(BaseOptions(
               baseUrl: basePathOverride ?? basePath,
@@ -72,30 +67,30 @@ class SoDartSdk {
   /// Get ItemApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   ItemApi getItemApi() {
-    return ItemApi(dio, serializers);
+    return ItemApi(dio);
   }
 
   /// Get ProviderApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   ProviderApi getProviderApi() {
-    return ProviderApi(dio, serializers);
+    return ProviderApi(dio);
   }
 
   /// Get ReservationApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   ReservationApi getReservationApi() {
-    return ReservationApi(dio, serializers);
+    return ReservationApi(dio);
   }
 
   /// Get ServiceApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   ServiceApi getServiceApi() {
-    return ServiceApi(dio, serializers);
+    return ServiceApi(dio);
   }
 
   /// Get TagApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   TagApi getTagApi() {
-    return TagApi(dio, serializers);
+    return TagApi(dio);
   }
 }

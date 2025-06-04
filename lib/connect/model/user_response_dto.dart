@@ -3,107 +3,55 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'user_response_dto.g.dart';
 
-/// UserResponseDto
-///
-/// Properties:
-/// * [isActive] - Statut d'activation de l'utilisateur
-@BuiltValue()
-abstract class UserResponseDto implements Built<UserResponseDto, UserResponseDtoBuilder> {
-  /// Statut d'activation de l'utilisateur
-  @BuiltValueField(wireName: r'isActive')
-  bool? get isActive;
 
-  UserResponseDto._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class UserResponseDto {
+  /// Returns a new [UserResponseDto] instance.
+  UserResponseDto({
 
-  factory UserResponseDto([void updates(UserResponseDtoBuilder b)]) = _$UserResponseDto;
+     this.isActive,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserResponseDtoBuilder b) => b;
+      /// Statut d'activation de l'utilisateur
+  @JsonKey(
+    
+    name: r'isActive',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<UserResponseDto> get serializer => _$UserResponseDtoSerializer();
-}
 
-class _$UserResponseDtoSerializer implements PrimitiveSerializer<UserResponseDto> {
-  @override
-  final Iterable<Type> types = const [UserResponseDto, _$UserResponseDto];
+  final bool? isActive;
 
-  @override
-  final String wireName = r'UserResponseDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    UserResponseDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.isActive != null) {
-      yield r'isActive';
-      yield serializers.serialize(
-        object.isActive,
-        specifiedType: const FullType(bool),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    UserResponseDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required UserResponseDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'isActive':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isActive = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is UserResponseDto &&
+      other.isActive == isActive;
+
+    @override
+    int get hashCode =>
+        isActive.hashCode;
+
+  factory UserResponseDto.fromJson(Map<String, dynamic> json) => _$UserResponseDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserResponseDtoToJson(this);
 
   @override
-  UserResponseDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = UserResponseDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

@@ -4,22 +4,19 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/media_service/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:so_dart_sdk/media_service/api_util.dart';
 import 'package:so_dart_sdk/media_service/model/api_apiimages_get_collection200_response.dart';
-import 'package:so_dart_sdk/media_service/model/date.dart';
 import 'package:so_dart_sdk/media_service/model/image_jsonld_media_read.dart';
 
 class ImageApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const ImageApi(this._dio, this._serializers);
+  const ImageApi(this._dio);
 
   /// Retrieves the collection of Image resources.
   /// Retrieves the collection of Image resources.
@@ -87,18 +84,18 @@ class ImageApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (metadata != null) r'metadata': encodeQueryParameter(_serializers, metadata, const FullType(String)),
-      if (orderLeftSquareBracketBeginDateRightSquareBracket != null) r'order[beginDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketBeginDateRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndDateRightSquareBracket, const FullType(String)),
-      if (beginDateLeftSquareBracketBeforeRightSquareBracket != null) r'beginDate[before]': encodeQueryParameter(_serializers, beginDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (beginDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'beginDate[strictly_before]': encodeQueryParameter(_serializers, beginDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (beginDateLeftSquareBracketAfterRightSquareBracket != null) r'beginDate[after]': encodeQueryParameter(_serializers, beginDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (beginDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'beginDate[strictly_after]': encodeQueryParameter(_serializers, beginDateLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
-      if (endDateLeftSquareBracketBeforeRightSquareBracket != null) r'endDate[before]': encodeQueryParameter(_serializers, endDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
-      if (endDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'endDate[strictly_before]': encodeQueryParameter(_serializers, endDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
-      if (endDateLeftSquareBracketAfterRightSquareBracket != null) r'endDate[after]': encodeQueryParameter(_serializers, endDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
-      if (endDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'endDate[strictly_after]': encodeQueryParameter(_serializers, endDateLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (page != null) r'page': page,
+      if (metadata != null) r'metadata': metadata,
+      if (orderLeftSquareBracketBeginDateRightSquareBracket != null) r'order[beginDate]': orderLeftSquareBracketBeginDateRightSquareBracket,
+      if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': orderLeftSquareBracketEndDateRightSquareBracket,
+      if (beginDateLeftSquareBracketBeforeRightSquareBracket != null) r'beginDate[before]': beginDateLeftSquareBracketBeforeRightSquareBracket,
+      if (beginDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'beginDate[strictly_before]': beginDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (beginDateLeftSquareBracketAfterRightSquareBracket != null) r'beginDate[after]': beginDateLeftSquareBracketAfterRightSquareBracket,
+      if (beginDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'beginDate[strictly_after]': beginDateLeftSquareBracketStrictlyAfterRightSquareBracket,
+      if (endDateLeftSquareBracketBeforeRightSquareBracket != null) r'endDate[before]': endDateLeftSquareBracketBeforeRightSquareBracket,
+      if (endDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'endDate[strictly_before]': endDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
+      if (endDateLeftSquareBracketAfterRightSquareBracket != null) r'endDate[after]': endDateLeftSquareBracketAfterRightSquareBracket,
+      if (endDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'endDate[strictly_after]': endDateLeftSquareBracketStrictlyAfterRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -113,12 +110,8 @@ class ImageApi {
     ApiApiimagesGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiApiimagesGetCollection200Response),
-      ) as ApiApiimagesGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiApiimagesGetCollection200Response, ApiApiimagesGetCollection200Response>(rawData, 'ApiApiimagesGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -164,7 +157,7 @@ class ImageApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/images/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/images/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -218,7 +211,7 @@ class ImageApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/images/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/images/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -249,12 +242,8 @@ class ImageApi {
     ImageJsonldMediaRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ImageJsonldMediaRead),
-      ) as ImageJsonldMediaRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ImageJsonldMediaRead, ImageJsonldMediaRead>(rawData, 'ImageJsonldMediaRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -296,9 +285,9 @@ class ImageApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ImageJsonldMediaRead>> apiApiimagesPost({ 
     MultipartFile? file,
-    JsonObject? metadata,
-    Date? beginDate,
-    Date? endDate,
+    Object? metadata,
+    DateTime? beginDate,
+    DateTime? endDate,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -330,12 +319,6 @@ class ImageApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap(<String, dynamic>{
-        if (file != null) r'file': file,
-        if (metadata != null) r'metadata': encodeFormParameter(_serializers, metadata, const FullType(JsonObject)),
-        if (beginDate != null) r'beginDate': encodeFormParameter(_serializers, beginDate, const FullType(Date)),
-        if (endDate != null) r'endDate': encodeFormParameter(_serializers, endDate, const FullType(Date)),
-      });
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -361,12 +344,8 @@ class ImageApi {
     ImageJsonldMediaRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ImageJsonldMediaRead),
-      ) as ImageJsonldMediaRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ImageJsonldMediaRead, ImageJsonldMediaRead>(rawData, 'ImageJsonldMediaRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

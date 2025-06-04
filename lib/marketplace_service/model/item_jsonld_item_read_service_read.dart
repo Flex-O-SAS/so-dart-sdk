@@ -6,350 +6,278 @@
 import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_item_read_service_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/service_jsonld_item_read_service_read.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'item_jsonld_item_read_service_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-/// * [id] 
-/// * [provider] 
-/// * [service] 
-/// * [label] 
-/// * [site] 
-/// * [description] 
-/// * [price] 
-/// * [isBookable] 
-/// * [isOnline] 
-/// * [imageLink] 
-/// * [beginDate] 
-/// * [endDate] 
-@BuiltValue()
-abstract class ItemJsonldItemReadServiceRead implements Built<ItemJsonldItemReadServiceRead, ItemJsonldItemReadServiceReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AddressJsonldProviderReadAddressReadContext? get atContext;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ItemJsonldItemReadServiceRead {
+  /// Returns a new [ItemJsonldItemReadServiceRead] instance.
+  ItemJsonldItemReadServiceRead({
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+     this.atContext,
 
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+     this.atId,
 
-  @BuiltValueField(wireName: r'provider')
-  ProviderJsonldItemReadServiceRead get provider;
+     this.atType,
 
-  @BuiltValueField(wireName: r'service')
-  ServiceJsonldItemReadServiceRead get service;
+     this.id,
 
-  @BuiltValueField(wireName: r'label')
-  String get label;
+    required  this.provider,
 
-  @BuiltValueField(wireName: r'site')
-  int? get site;
+    required  this.service,
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
+    required  this.label,
 
-  @BuiltValueField(wireName: r'price')
-  num? get price;
+     this.site,
 
-  @BuiltValueField(wireName: r'isBookable')
-  bool get isBookable;
+     this.description,
 
-  @BuiltValueField(wireName: r'isOnline')
-  bool get isOnline;
+     this.price,
 
-  @BuiltValueField(wireName: r'imageLink')
-  String? get imageLink;
+    required  this.isBookable,
 
-  @BuiltValueField(wireName: r'beginDate')
-  DateTime get beginDate;
+    required  this.isOnline,
 
-  @BuiltValueField(wireName: r'endDate')
-  DateTime? get endDate;
+     this.imageLink,
 
-  ItemJsonldItemReadServiceRead._();
+    required  this.beginDate,
 
-  factory ItemJsonldItemReadServiceRead([void updates(ItemJsonldItemReadServiceReadBuilder b)]) = _$ItemJsonldItemReadServiceRead;
+     this.endDate,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ItemJsonldItemReadServiceReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@context',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ItemJsonldItemReadServiceRead> get serializer => _$ItemJsonldItemReadServiceReadSerializer();
-}
 
-class _$ItemJsonldItemReadServiceReadSerializer implements PrimitiveSerializer<ItemJsonldItemReadServiceRead> {
-  @override
-  final Iterable<Type> types = const [ItemJsonldItemReadServiceRead, _$ItemJsonldItemReadServiceRead];
+  final AddressJsonldProviderReadAddressReadContext? atContext;
 
-  @override
-  final String wireName = r'ItemJsonldItemReadServiceRead';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ItemJsonldItemReadServiceRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-    yield r'provider';
-    yield serializers.serialize(
-      object.provider,
-      specifiedType: const FullType(ProviderJsonldItemReadServiceRead),
-    );
-    yield r'service';
-    yield serializers.serialize(
-      object.service,
-      specifiedType: const FullType(ServiceJsonldItemReadServiceRead),
-    );
-    yield r'label';
-    yield serializers.serialize(
-      object.label,
-      specifiedType: const FullType(String),
-    );
-    if (object.site != null) {
-      yield r'site';
-      yield serializers.serialize(
-        object.site,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.price != null) {
-      yield r'price';
-      yield serializers.serialize(
-        object.price,
-        specifiedType: const FullType.nullable(num),
-      );
-    }
-    yield r'isBookable';
-    yield serializers.serialize(
-      object.isBookable,
-      specifiedType: const FullType(bool),
-    );
-    yield r'isOnline';
-    yield serializers.serialize(
-      object.isOnline,
-      specifiedType: const FullType(bool),
-    );
-    if (object.imageLink != null) {
-      yield r'imageLink';
-      yield serializers.serialize(
-        object.imageLink,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'beginDate';
-    yield serializers.serialize(
-      object.beginDate,
-      specifiedType: const FullType(DateTime),
-    );
-    if (object.endDate != null) {
-      yield r'endDate';
-      yield serializers.serialize(
-        object.endDate,
-        specifiedType: const FullType.nullable(DateTime),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ItemJsonldItemReadServiceRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'@id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ItemJsonldItemReadServiceReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-          ) as AddressJsonldProviderReadAddressReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'provider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ProviderJsonldItemReadServiceRead),
-          ) as ProviderJsonldItemReadServiceRead;
-          result.provider.replace(valueDes);
-          break;
-        case r'service':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ServiceJsonldItemReadServiceRead),
-          ) as ServiceJsonldItemReadServiceRead;
-          result.service.replace(valueDes);
-          break;
-        case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.label = valueDes;
-          break;
-        case r'site':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.site = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.description = valueDes;
-          break;
-        case r'price':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
-          if (valueDes == null) continue;
-          result.price = valueDes;
-          break;
-        case r'isBookable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isBookable = valueDes;
-          break;
-        case r'isOnline':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isOnline = valueDes;
-          break;
-        case r'imageLink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.imageLink = valueDes;
-          break;
-        case r'beginDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.beginDate = valueDes;
-          break;
-        case r'endDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.endDate = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? atId;
+
+
+
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atType;
+
+
+
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final int? id;
+
+
+
+  @JsonKey(
+    
+    name: r'provider',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final ProviderJsonldItemReadServiceRead provider;
+
+
+
+  @JsonKey(
+    
+    name: r'service',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final ServiceJsonldItemReadServiceRead service;
+
+
+
+  @JsonKey(
+    
+    name: r'label',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String label;
+
+
+
+  @JsonKey(
+    
+    name: r'site',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final int? site;
+
+
+
+  @JsonKey(
+    
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? description;
+
+
+
+  @JsonKey(
+    
+    name: r'price',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final num? price;
+
+
+
+  @JsonKey(
+    
+    name: r'isBookable',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final bool isBookable;
+
+
+
+  @JsonKey(
+    
+    name: r'isOnline',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final bool isOnline;
+
+
+
+  @JsonKey(
+    
+    name: r'imageLink',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? imageLink;
+
+
+
+  @JsonKey(
+    
+    name: r'beginDate',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final DateTime beginDate;
+
+
+
+  @JsonKey(
+    
+    name: r'endDate',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? endDate;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ItemJsonldItemReadServiceRead &&
+      other.atContext == atContext &&
+      other.atId == atId &&
+      other.atType == atType &&
+      other.id == id &&
+      other.provider == provider &&
+      other.service == service &&
+      other.label == label &&
+      other.site == site &&
+      other.description == description &&
+      other.price == price &&
+      other.isBookable == isBookable &&
+      other.isOnline == isOnline &&
+      other.imageLink == imageLink &&
+      other.beginDate == beginDate &&
+      other.endDate == endDate;
+
+    @override
+    int get hashCode =>
+        atContext.hashCode +
+        atId.hashCode +
+        atType.hashCode +
+        id.hashCode +
+        provider.hashCode +
+        service.hashCode +
+        label.hashCode +
+        site.hashCode +
+        (description == null ? 0 : description.hashCode) +
+        (price == null ? 0 : price.hashCode) +
+        isBookable.hashCode +
+        isOnline.hashCode +
+        (imageLink == null ? 0 : imageLink.hashCode) +
+        beginDate.hashCode +
+        (endDate == null ? 0 : endDate.hashCode);
+
+  factory ItemJsonldItemReadServiceRead.fromJson(Map<String, dynamic> json) => _$ItemJsonldItemReadServiceReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ItemJsonldItemReadServiceReadToJson(this);
 
   @override
-  ItemJsonldItemReadServiceRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ItemJsonldItemReadServiceReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

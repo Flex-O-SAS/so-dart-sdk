@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/backend/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_public_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read.dart';
@@ -20,9 +19,7 @@ class CenterApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const CenterApi(this._dio, this._serializers);
+  const CenterApi(this._dio);
 
   /// Retrieves the collection of Center resources.
   /// Retrieves the collection of Center resources.
@@ -46,10 +43,10 @@ class CenterApi {
   Future<Response<ApiCentersGetCollection200Response>> apiCentersGetCollection({ 
     int? page = 1,
     String? reference,
-    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
+    List<String>? referenceLeftSquareBracketRightSquareBracket,
     String? name,
     int? id,
-    BuiltList<int>? idLeftSquareBracketRightSquareBracket,
+    List<int>? idLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -71,12 +68,12 @@ class CenterApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
-      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
-      if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
-      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (page != null) r'page': page,
+      if (reference != null) r'reference': reference,
+      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': referenceLeftSquareBracketRightSquareBracket,
+      if (name != null) r'name': name,
+      if (id != null) r'id': id,
+      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': idLeftSquareBracketRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -91,12 +88,8 @@ class CenterApi {
     ApiCentersGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiCentersGetCollection200Response),
-      ) as ApiCentersGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiCentersGetCollection200Response, ApiCentersGetCollection200Response>(rawData, 'ApiCentersGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -141,10 +134,10 @@ class CenterApi {
   Future<Response<ApiCentersPublicGetCollection200Response>> apiCentersPublicGetCollection({ 
     int? page = 1,
     String? reference,
-    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
+    List<String>? referenceLeftSquareBracketRightSquareBracket,
     String? name,
     int? id,
-    BuiltList<int>? idLeftSquareBracketRightSquareBracket,
+    List<int>? idLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -166,12 +159,12 @@ class CenterApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
-      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
-      if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
-      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (page != null) r'page': page,
+      if (reference != null) r'reference': reference,
+      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': referenceLeftSquareBracketRightSquareBracket,
+      if (name != null) r'name': name,
+      if (id != null) r'id': id,
+      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': idLeftSquareBracketRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -186,12 +179,8 @@ class CenterApi {
     ApiCentersPublicGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiCentersPublicGetCollection200Response),
-      ) as ApiCentersPublicGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiCentersPublicGetCollection200Response, ApiCentersPublicGetCollection200Response>(rawData, 'ApiCentersPublicGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -237,7 +226,7 @@ class CenterApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api-p/public/centers/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api-p/public/centers/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -261,12 +250,8 @@ class CenterApi {
     CenterJsonldPublicCenterRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CenterJsonldPublicCenterRead),
-      ) as CenterJsonldPublicCenterRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<CenterJsonldPublicCenterRead, CenterJsonldPublicCenterRead>(rawData, 'CenterJsonldPublicCenterRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

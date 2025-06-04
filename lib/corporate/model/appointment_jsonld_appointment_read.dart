@@ -3,421 +3,344 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read_context.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'appointment_jsonld_appointment_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-/// * [id] 
-/// * [organiser] 
-/// * [staff] 
-/// * [site] 
-/// * [type] 
-/// * [description] 
-/// * [status] 
-/// * [cancellationDate] 
-/// * [cancellationReason] 
-/// * [beginDate] 
-/// * [endDate] 
-/// * [appointmentClients] 
-/// * [createdAt] 
-/// * [updatedAt] 
-@BuiltValue()
-abstract class AppointmentJsonldAppointmentRead implements Built<AppointmentJsonldAppointmentRead, AppointmentJsonldAppointmentReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AppointmentJsonldAppointmentReadContext? get atContext;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class AppointmentJsonldAppointmentRead {
+  /// Returns a new [AppointmentJsonldAppointmentRead] instance.
+  AppointmentJsonldAppointmentRead({
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+     this.atContext,
 
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+     this.atId,
 
-  @BuiltValueField(wireName: r'organiser')
-  String get organiser;
+     this.atType,
 
-  @BuiltValueField(wireName: r'staff')
-  String? get staff;
+     this.id,
 
-  @BuiltValueField(wireName: r'site')
-  int get site;
+    required  this.organiser,
 
-  @BuiltValueField(wireName: r'type')
-  AppointmentJsonldAppointmentReadTypeEnum get type;
-  // enum typeEnum {  visit,  };
+     this.staff,
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
+    required  this.site,
 
-  @BuiltValueField(wireName: r'status')
-  AppointmentJsonldAppointmentReadStatusEnum get status;
-  // enum statusEnum {  scheduled,  cancelled,  done,  };
+    required  this.type,
 
-  @BuiltValueField(wireName: r'cancellationDate')
-  DateTime? get cancellationDate;
+     this.description,
 
-  @BuiltValueField(wireName: r'cancellationReason')
-  String? get cancellationReason;
+    required  this.status,
 
-  @BuiltValueField(wireName: r'beginDate')
-  DateTime get beginDate;
+     this.cancellationDate,
 
-  @BuiltValueField(wireName: r'endDate')
-  DateTime get endDate;
+     this.cancellationReason,
 
-  @BuiltValueField(wireName: r'appointmentClients')
-  BuiltList<AppointmentClientJsonldAppointmentRead>? get appointmentClients;
+    required  this.beginDate,
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+    required  this.endDate,
 
-  @BuiltValueField(wireName: r'updatedAt')
-  DateTime? get updatedAt;
+     this.appointmentClients,
 
-  AppointmentJsonldAppointmentRead._();
+     this.createdAt,
 
-  factory AppointmentJsonldAppointmentRead([void updates(AppointmentJsonldAppointmentReadBuilder b)]) = _$AppointmentJsonldAppointmentRead;
+     this.updatedAt,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AppointmentJsonldAppointmentReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@context',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AppointmentJsonldAppointmentRead> get serializer => _$AppointmentJsonldAppointmentReadSerializer();
-}
 
-class _$AppointmentJsonldAppointmentReadSerializer implements PrimitiveSerializer<AppointmentJsonldAppointmentRead> {
-  @override
-  final Iterable<Type> types = const [AppointmentJsonldAppointmentRead, _$AppointmentJsonldAppointmentRead];
+  final AppointmentJsonldAppointmentReadContext? atContext;
 
-  @override
-  final String wireName = r'AppointmentJsonldAppointmentRead';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    AppointmentJsonldAppointmentRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(AppointmentJsonldAppointmentReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-    yield r'organiser';
-    yield serializers.serialize(
-      object.organiser,
-      specifiedType: const FullType(String),
-    );
-    if (object.staff != null) {
-      yield r'staff';
-      yield serializers.serialize(
-        object.staff,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'site';
-    yield serializers.serialize(
-      object.site,
-      specifiedType: const FullType(int),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(AppointmentJsonldAppointmentReadTypeEnum),
-    );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'status';
-    yield serializers.serialize(
-      object.status,
-      specifiedType: const FullType(AppointmentJsonldAppointmentReadStatusEnum),
-    );
-    if (object.cancellationDate != null) {
-      yield r'cancellationDate';
-      yield serializers.serialize(
-        object.cancellationDate,
-        specifiedType: const FullType.nullable(DateTime),
-      );
-    }
-    if (object.cancellationReason != null) {
-      yield r'cancellationReason';
-      yield serializers.serialize(
-        object.cancellationReason,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'beginDate';
-    yield serializers.serialize(
-      object.beginDate,
-      specifiedType: const FullType(DateTime),
-    );
-    yield r'endDate';
-    yield serializers.serialize(
-      object.endDate,
-      specifiedType: const FullType(DateTime),
-    );
-    if (object.appointmentClients != null) {
-      yield r'appointmentClients';
-      yield serializers.serialize(
-        object.appointmentClients,
-        specifiedType: const FullType(BuiltList, [FullType(AppointmentClientJsonldAppointmentRead)]),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.updatedAt != null) {
-      yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    AppointmentJsonldAppointmentRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'@id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required AppointmentJsonldAppointmentReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AppointmentJsonldAppointmentReadContext),
-          ) as AppointmentJsonldAppointmentReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'organiser':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.organiser = valueDes;
-          break;
-        case r'staff':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.staff = valueDes;
-          break;
-        case r'site':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.site = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AppointmentJsonldAppointmentReadTypeEnum),
-          ) as AppointmentJsonldAppointmentReadTypeEnum;
-          result.type = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.description = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AppointmentJsonldAppointmentReadStatusEnum),
-          ) as AppointmentJsonldAppointmentReadStatusEnum;
-          result.status = valueDes;
-          break;
-        case r'cancellationDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.cancellationDate = valueDes;
-          break;
-        case r'cancellationReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.cancellationReason = valueDes;
-          break;
-        case r'beginDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.beginDate = valueDes;
-          break;
-        case r'endDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.endDate = valueDes;
-          break;
-        case r'appointmentClients':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(AppointmentClientJsonldAppointmentRead)]),
-          ) as BuiltList<AppointmentClientJsonldAppointmentRead>;
-          result.appointmentClients.replace(valueDes);
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? atId;
+
+
+
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atType;
+
+
+
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final int? id;
+
+
+
+  @JsonKey(
+    
+    name: r'organiser',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String organiser;
+
+
+
+  @JsonKey(
+    
+    name: r'staff',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? staff;
+
+
+
+  @JsonKey(
+    
+    name: r'site',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final int site;
+
+
+
+  @JsonKey(
+    
+    name: r'type',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final AppointmentJsonldAppointmentReadTypeEnum type;
+
+
+
+  @JsonKey(
+    
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? description;
+
+
+
+  @JsonKey(
+    
+    name: r'status',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final AppointmentJsonldAppointmentReadStatusEnum status;
+
+
+
+  @JsonKey(
+    
+    name: r'cancellationDate',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? cancellationDate;
+
+
+
+  @JsonKey(
+    
+    name: r'cancellationReason',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? cancellationReason;
+
+
+
+  @JsonKey(
+    
+    name: r'beginDate',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final DateTime beginDate;
+
+
+
+  @JsonKey(
+    
+    name: r'endDate',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final DateTime endDate;
+
+
+
+  @JsonKey(
+    
+    name: r'appointmentClients',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final List<AppointmentClientJsonldAppointmentRead>? appointmentClients;
+
+
+
+  @JsonKey(
+    
+    name: r'createdAt',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? createdAt;
+
+
+
+  @JsonKey(
+    
+    name: r'updatedAt',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? updatedAt;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is AppointmentJsonldAppointmentRead &&
+      other.atContext == atContext &&
+      other.atId == atId &&
+      other.atType == atType &&
+      other.id == id &&
+      other.organiser == organiser &&
+      other.staff == staff &&
+      other.site == site &&
+      other.type == type &&
+      other.description == description &&
+      other.status == status &&
+      other.cancellationDate == cancellationDate &&
+      other.cancellationReason == cancellationReason &&
+      other.beginDate == beginDate &&
+      other.endDate == endDate &&
+      other.appointmentClients == appointmentClients &&
+      other.createdAt == createdAt &&
+      other.updatedAt == updatedAt;
+
+    @override
+    int get hashCode =>
+        atContext.hashCode +
+        atId.hashCode +
+        atType.hashCode +
+        id.hashCode +
+        organiser.hashCode +
+        (staff == null ? 0 : staff.hashCode) +
+        site.hashCode +
+        type.hashCode +
+        (description == null ? 0 : description.hashCode) +
+        status.hashCode +
+        (cancellationDate == null ? 0 : cancellationDate.hashCode) +
+        (cancellationReason == null ? 0 : cancellationReason.hashCode) +
+        beginDate.hashCode +
+        endDate.hashCode +
+        appointmentClients.hashCode +
+        createdAt.hashCode +
+        updatedAt.hashCode;
+
+  factory AppointmentJsonldAppointmentRead.fromJson(Map<String, dynamic> json) => _$AppointmentJsonldAppointmentReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AppointmentJsonldAppointmentReadToJson(this);
 
   @override
-  AppointmentJsonldAppointmentRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = AppointmentJsonldAppointmentReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 
-class AppointmentJsonldAppointmentReadTypeEnum extends EnumClass {
 
-  @BuiltValueEnumConst(wireName: r'visit')
-  static const AppointmentJsonldAppointmentReadTypeEnum visit = _$appointmentJsonldAppointmentReadTypeEnum_visit;
+enum AppointmentJsonldAppointmentReadTypeEnum {
+@JsonValue(r'visit')
+visit(r'visit');
 
-  static Serializer<AppointmentJsonldAppointmentReadTypeEnum> get serializer => _$appointmentJsonldAppointmentReadTypeEnumSerializer;
+const AppointmentJsonldAppointmentReadTypeEnum(this.value);
 
-  const AppointmentJsonldAppointmentReadTypeEnum._(String name): super(name);
+final String value;
 
-  static BuiltSet<AppointmentJsonldAppointmentReadTypeEnum> get values => _$appointmentJsonldAppointmentReadTypeEnumValues;
-  static AppointmentJsonldAppointmentReadTypeEnum valueOf(String name) => _$appointmentJsonldAppointmentReadTypeEnumValueOf(name);
+@override
+String toString() => value;
 }
 
-class AppointmentJsonldAppointmentReadStatusEnum extends EnumClass {
 
-  @BuiltValueEnumConst(wireName: r'scheduled')
-  static const AppointmentJsonldAppointmentReadStatusEnum scheduled = _$appointmentJsonldAppointmentReadStatusEnum_scheduled;
-  @BuiltValueEnumConst(wireName: r'cancelled')
-  static const AppointmentJsonldAppointmentReadStatusEnum cancelled = _$appointmentJsonldAppointmentReadStatusEnum_cancelled;
-  @BuiltValueEnumConst(wireName: r'done')
-  static const AppointmentJsonldAppointmentReadStatusEnum done = _$appointmentJsonldAppointmentReadStatusEnum_done;
 
-  static Serializer<AppointmentJsonldAppointmentReadStatusEnum> get serializer => _$appointmentJsonldAppointmentReadStatusEnumSerializer;
+enum AppointmentJsonldAppointmentReadStatusEnum {
+@JsonValue(r'scheduled')
+scheduled(r'scheduled'),
+@JsonValue(r'cancelled')
+cancelled(r'cancelled'),
+@JsonValue(r'done')
+done(r'done');
 
-  const AppointmentJsonldAppointmentReadStatusEnum._(String name): super(name);
+const AppointmentJsonldAppointmentReadStatusEnum(this.value);
 
-  static BuiltSet<AppointmentJsonldAppointmentReadStatusEnum> get values => _$appointmentJsonldAppointmentReadStatusEnumValues;
-  static AppointmentJsonldAppointmentReadStatusEnum valueOf(String name) => _$appointmentJsonldAppointmentReadStatusEnumValueOf(name);
+final String value;
+
+@override
+String toString() => value;
 }
+
 

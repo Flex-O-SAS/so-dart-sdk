@@ -4,333 +4,264 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'reservation_jsonld_reservation_read.g.dart';
 
-/// 
-///
-/// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-/// * [id] 
-/// * [item] 
-/// * [author] 
-/// * [description] 
-/// * [quantity] 
-/// * [date] 
-/// * [paymentMethod] 
-/// * [ticket] 
-/// * [createdAt] 
-/// * [updatedAt] 
-@BuiltValue()
-abstract class ReservationJsonldReservationRead implements Built<ReservationJsonldReservationRead, ReservationJsonldReservationReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AddressJsonldProviderReadAddressReadContext? get atContext;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ReservationJsonldReservationRead {
+  /// Returns a new [ReservationJsonldReservationRead] instance.
+  ReservationJsonldReservationRead({
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+     this.atContext,
 
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+     this.atId,
 
-  @BuiltValueField(wireName: r'item')
-  String get item;
+     this.atType,
 
-  @BuiltValueField(wireName: r'author')
-  String get author;
+     this.id,
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
+    required  this.item,
 
-  @BuiltValueField(wireName: r'quantity')
-  int get quantity;
+    required  this.author,
 
-  @BuiltValueField(wireName: r'date')
-  DateTime get date;
+     this.description,
 
-  @BuiltValueField(wireName: r'paymentMethod')
-  ReservationJsonldReservationReadPaymentMethodEnum get paymentMethod;
-  // enum paymentMethodEnum {  cb,  cash,  voucher,  };
+    required  this.quantity,
 
-  @BuiltValueField(wireName: r'ticket')
-  String? get ticket;
+    required  this.date,
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+    required  this.paymentMethod,
 
-  @BuiltValueField(wireName: r'updatedAt')
-  DateTime? get updatedAt;
+     this.ticket,
 
-  ReservationJsonldReservationRead._();
+     this.createdAt,
 
-  factory ReservationJsonldReservationRead([void updates(ReservationJsonldReservationReadBuilder b)]) = _$ReservationJsonldReservationRead;
+     this.updatedAt,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ReservationJsonldReservationReadBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@context',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ReservationJsonldReservationRead> get serializer => _$ReservationJsonldReservationReadSerializer();
+
+  final AddressJsonldProviderReadAddressReadContext? atContext;
+
+
+
+  @JsonKey(
+    
+    name: r'@id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atId;
+
+
+
+  @JsonKey(
+    
+    name: r'@type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? atType;
+
+
+
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final int? id;
+
+
+
+  @JsonKey(
+    
+    name: r'item',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String item;
+
+
+
+  @JsonKey(
+    
+    name: r'author',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final String author;
+
+
+
+  @JsonKey(
+    
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? description;
+
+
+
+  @JsonKey(
+    
+    name: r'quantity',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final int quantity;
+
+
+
+  @JsonKey(
+    
+    name: r'date',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final DateTime date;
+
+
+
+  @JsonKey(
+    
+    name: r'paymentMethod',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final ReservationJsonldReservationReadPaymentMethodEnum paymentMethod;
+
+
+
+  @JsonKey(
+    
+    name: r'ticket',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? ticket;
+
+
+
+  @JsonKey(
+    
+    name: r'createdAt',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? createdAt;
+
+
+
+  @JsonKey(
+    
+    name: r'updatedAt',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final DateTime? updatedAt;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ReservationJsonldReservationRead &&
+      other.atContext == atContext &&
+      other.atId == atId &&
+      other.atType == atType &&
+      other.id == id &&
+      other.item == item &&
+      other.author == author &&
+      other.description == description &&
+      other.quantity == quantity &&
+      other.date == date &&
+      other.paymentMethod == paymentMethod &&
+      other.ticket == ticket &&
+      other.createdAt == createdAt &&
+      other.updatedAt == updatedAt;
+
+    @override
+    int get hashCode =>
+        atContext.hashCode +
+        atId.hashCode +
+        atType.hashCode +
+        id.hashCode +
+        item.hashCode +
+        author.hashCode +
+        (description == null ? 0 : description.hashCode) +
+        quantity.hashCode +
+        date.hashCode +
+        paymentMethod.hashCode +
+        (ticket == null ? 0 : ticket.hashCode) +
+        createdAt.hashCode +
+        updatedAt.hashCode;
+
+  factory ReservationJsonldReservationRead.fromJson(Map<String, dynamic> json) => _$ReservationJsonldReservationReadFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ReservationJsonldReservationReadToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
+  }
+
 }
 
-class _$ReservationJsonldReservationReadSerializer implements PrimitiveSerializer<ReservationJsonldReservationRead> {
-  @override
-  final Iterable<Type> types = const [ReservationJsonldReservationRead, _$ReservationJsonldReservationRead];
 
-  @override
-  final String wireName = r'ReservationJsonldReservationRead';
+enum ReservationJsonldReservationReadPaymentMethodEnum {
+@JsonValue(r'cb')
+cb(r'cb'),
+@JsonValue(r'cash')
+cash(r'cash'),
+@JsonValue(r'voucher')
+voucher(r'voucher');
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ReservationJsonldReservationRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-    yield r'item';
-    yield serializers.serialize(
-      object.item,
-      specifiedType: const FullType(String),
-    );
-    yield r'author';
-    yield serializers.serialize(
-      object.author,
-      specifiedType: const FullType(String),
-    );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'quantity';
-    yield serializers.serialize(
-      object.quantity,
-      specifiedType: const FullType(int),
-    );
-    yield r'date';
-    yield serializers.serialize(
-      object.date,
-      specifiedType: const FullType(DateTime),
-    );
-    yield r'paymentMethod';
-    yield serializers.serialize(
-      object.paymentMethod,
-      specifiedType: const FullType(ReservationJsonldReservationReadPaymentMethodEnum),
-    );
-    if (object.ticket != null) {
-      yield r'ticket';
-      yield serializers.serialize(
-        object.ticket,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.updatedAt != null) {
-      yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-  }
+const ReservationJsonldReservationReadPaymentMethodEnum(this.value);
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ReservationJsonldReservationRead object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+final String value;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ReservationJsonldReservationReadBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-          ) as AddressJsonldProviderReadAddressReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'item':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.item = valueDes;
-          break;
-        case r'author':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.author = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.description = valueDes;
-          break;
-        case r'quantity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.quantity = valueDes;
-          break;
-        case r'date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.date = valueDes;
-          break;
-        case r'paymentMethod':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ReservationJsonldReservationReadPaymentMethodEnum),
-          ) as ReservationJsonldReservationReadPaymentMethodEnum;
-          result.paymentMethod = valueDes;
-          break;
-        case r'ticket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.ticket = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
-
-  @override
-  ReservationJsonldReservationRead deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ReservationJsonldReservationReadBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
-  }
+@override
+String toString() => value;
 }
 
-class ReservationJsonldReservationReadPaymentMethodEnum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'cb')
-  static const ReservationJsonldReservationReadPaymentMethodEnum cb = _$reservationJsonldReservationReadPaymentMethodEnum_cb;
-  @BuiltValueEnumConst(wireName: r'cash')
-  static const ReservationJsonldReservationReadPaymentMethodEnum cash = _$reservationJsonldReservationReadPaymentMethodEnum_cash;
-  @BuiltValueEnumConst(wireName: r'voucher')
-  static const ReservationJsonldReservationReadPaymentMethodEnum voucher = _$reservationJsonldReservationReadPaymentMethodEnum_voucher;
-
-  static Serializer<ReservationJsonldReservationReadPaymentMethodEnum> get serializer => _$reservationJsonldReservationReadPaymentMethodEnumSerializer;
-
-  const ReservationJsonldReservationReadPaymentMethodEnum._(String name): super(name);
-
-  static BuiltSet<ReservationJsonldReservationReadPaymentMethodEnum> get values => _$reservationJsonldReservationReadPaymentMethodEnumValues;
-  static ReservationJsonldReservationReadPaymentMethodEnum valueOf(String name) => _$reservationJsonldReservationReadPaymentMethodEnumValueOf(name);
-}
 

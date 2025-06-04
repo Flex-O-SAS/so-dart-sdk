@@ -3,136 +3,84 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'constraint_violation_jsonld_jsonld_context_one_of.g.dart';
 
-/// ConstraintViolationJsonldJsonldContextOneOf
-///
-/// Properties:
-/// * [atVocab] 
-/// * [hydra] 
-@BuiltValue()
-abstract class ConstraintViolationJsonldJsonldContextOneOf implements Built<ConstraintViolationJsonldJsonldContextOneOf, ConstraintViolationJsonldJsonldContextOneOfBuilder> {
-  @BuiltValueField(wireName: r'@vocab')
-  String get atVocab;
 
-  @BuiltValueField(wireName: r'hydra')
-  ConstraintViolationJsonldJsonldContextOneOfHydraEnum get hydra;
-  // enum hydraEnum {  http://www.w3.org/ns/hydra/core#,  };
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ConstraintViolationJsonldJsonldContextOneOf {
+  /// Returns a new [ConstraintViolationJsonldJsonldContextOneOf] instance.
+  ConstraintViolationJsonldJsonldContextOneOf({
 
-  ConstraintViolationJsonldJsonldContextOneOf._();
+    required  this.atVocab,
 
-  factory ConstraintViolationJsonldJsonldContextOneOf([void updates(ConstraintViolationJsonldJsonldContextOneOfBuilder b)]) = _$ConstraintViolationJsonldJsonldContextOneOf;
+    required  this.hydra,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ConstraintViolationJsonldJsonldContextOneOfBuilder b) => b;
+  @JsonKey(
+    
+    name: r'@vocab',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ConstraintViolationJsonldJsonldContextOneOf> get serializer => _$ConstraintViolationJsonldJsonldContextOneOfSerializer();
+
+  final String atVocab;
+
+
+
+  @JsonKey(
+    
+    name: r'hydra',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final ConstraintViolationJsonldJsonldContextOneOfHydraEnum hydra;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ConstraintViolationJsonldJsonldContextOneOf &&
+      other.atVocab == atVocab &&
+      other.hydra == hydra;
+
+    @override
+    int get hashCode =>
+        atVocab.hashCode +
+        hydra.hashCode;
+
+  factory ConstraintViolationJsonldJsonldContextOneOf.fromJson(Map<String, dynamic> json) => _$ConstraintViolationJsonldJsonldContextOneOfFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ConstraintViolationJsonldJsonldContextOneOfToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
+  }
+
 }
 
-class _$ConstraintViolationJsonldJsonldContextOneOfSerializer implements PrimitiveSerializer<ConstraintViolationJsonldJsonldContextOneOf> {
-  @override
-  final Iterable<Type> types = const [ConstraintViolationJsonldJsonldContextOneOf, _$ConstraintViolationJsonldJsonldContextOneOf];
 
-  @override
-  final String wireName = r'ConstraintViolationJsonldJsonldContextOneOf';
+enum ConstraintViolationJsonldJsonldContextOneOfHydraEnum {
+@JsonValue(r'http://www.w3.org/ns/hydra/core#')
+httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash(r'http://www.w3.org/ns/hydra/core#');
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ConstraintViolationJsonldJsonldContextOneOf object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'@vocab';
-    yield serializers.serialize(
-      object.atVocab,
-      specifiedType: const FullType(String),
-    );
-    yield r'hydra';
-    yield serializers.serialize(
-      object.hydra,
-      specifiedType: const FullType(ConstraintViolationJsonldJsonldContextOneOfHydraEnum),
-    );
-  }
+const ConstraintViolationJsonldJsonldContextOneOfHydraEnum(this.value);
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ConstraintViolationJsonldJsonldContextOneOf object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+final String value;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ConstraintViolationJsonldJsonldContextOneOfBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'@vocab':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atVocab = valueDes;
-          break;
-        case r'hydra':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ConstraintViolationJsonldJsonldContextOneOfHydraEnum),
-          ) as ConstraintViolationJsonldJsonldContextOneOfHydraEnum;
-          result.hydra = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
-
-  @override
-  ConstraintViolationJsonldJsonldContextOneOf deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ConstraintViolationJsonldJsonldContextOneOfBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
-  }
+@override
+String toString() => value;
 }
 
-class ConstraintViolationJsonldJsonldContextOneOfHydraEnum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'http://www.w3.org/ns/hydra/core#')
-  static const ConstraintViolationJsonldJsonldContextOneOfHydraEnum httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash = _$constraintViolationJsonldJsonldContextOneOfHydraEnum_httpColonSlashSlashWwwPeriodW3PeriodOrgSlashNsSlashHydraSlashCoreHash;
-
-  static Serializer<ConstraintViolationJsonldJsonldContextOneOfHydraEnum> get serializer => _$constraintViolationJsonldJsonldContextOneOfHydraEnumSerializer;
-
-  const ConstraintViolationJsonldJsonldContextOneOfHydraEnum._(String name): super(name);
-
-  static BuiltSet<ConstraintViolationJsonldJsonldContextOneOfHydraEnum> get values => _$constraintViolationJsonldJsonldContextOneOfHydraEnumValues;
-  static ConstraintViolationJsonldJsonldContextOneOfHydraEnum valueOf(String name) => _$constraintViolationJsonldJsonldContextOneOfHydraEnumValueOf(name);
-}
 

@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:so_dart_sdk/marketplace_service/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/marketplace_service/api_util.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_tags_get_collection200_response.dart';
 import 'package:so_dart_sdk/marketplace_service/model/tag_jsonld_tag_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/tag_tag_read.dart';
@@ -18,9 +17,7 @@ class TagApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const TagApi(this._dio, this._serializers);
+  const TagApi(this._dio);
 
   /// Retrieves the collection of Tag resources.
   /// Retrieves the collection of Tag resources.
@@ -45,7 +42,7 @@ class TagApi {
     String? orderLeftSquareBracketLabelRightSquareBracket = 'asc',
     String? label,
     int? servicePeriodId,
-    BuiltList<int>? servicePeriodIdLeftSquareBracketRightSquareBracket,
+    List<int>? servicePeriodIdLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -74,11 +71,11 @@ class TagApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (orderLeftSquareBracketLabelRightSquareBracket != null) r'order[label]': encodeQueryParameter(_serializers, orderLeftSquareBracketLabelRightSquareBracket, const FullType(String)),
-      if (label != null) r'label': encodeQueryParameter(_serializers, label, const FullType(String)),
-      if (servicePeriodId != null) r'service.id': encodeQueryParameter(_serializers, servicePeriodId, const FullType(int)),
-      if (servicePeriodIdLeftSquareBracketRightSquareBracket != null) r'service.id[]': encodeCollectionQueryParameter<int>(_serializers, servicePeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (page != null) r'page': page,
+      if (orderLeftSquareBracketLabelRightSquareBracket != null) r'order[label]': orderLeftSquareBracketLabelRightSquareBracket,
+      if (label != null) r'label': label,
+      if (servicePeriodId != null) r'service.id': servicePeriodId,
+      if (servicePeriodIdLeftSquareBracketRightSquareBracket != null) r'service.id[]': servicePeriodIdLeftSquareBracketRightSquareBracket,
     };
 
     final _response = await _dio.request<Object>(
@@ -93,12 +90,8 @@ class TagApi {
     ApiTagsGetCollection200Response? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiTagsGetCollection200Response),
-      ) as ApiTagsGetCollection200Response;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiTagsGetCollection200Response, ApiTagsGetCollection200Response>(rawData, 'ApiTagsGetCollection200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -144,7 +137,7 @@ class TagApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/tags/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/tags/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -175,12 +168,8 @@ class TagApi {
     TagJsonldTagRead? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(TagJsonldTagRead),
-      ) as TagJsonldTagRead;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<TagJsonldTagRead, TagJsonldTagRead>(rawData, 'TagJsonldTagRead', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

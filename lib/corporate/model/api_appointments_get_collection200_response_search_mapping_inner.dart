@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -25,7 +24,7 @@ abstract class ApiAppointmentsGetCollection200ResponseSearchMappingInner impleme
   String? get variable;
 
   @BuiltValueField(wireName: r'property')
-  JsonObject? get property;
+  String? get property;
 
   @BuiltValueField(wireName: r'required')
   bool? get required_;
@@ -71,7 +70,7 @@ class _$ApiAppointmentsGetCollection200ResponseSearchMappingInnerSerializer impl
       yield r'property';
       yield serializers.serialize(
         object.property,
-        specifiedType: const FullType.nullable(JsonObject),
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.required_ != null) {
@@ -121,8 +120,8 @@ class _$ApiAppointmentsGetCollection200ResponseSearchMappingInnerSerializer impl
         case r'property':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
           if (valueDes == null) continue;
           result.property = valueDes;
           break;

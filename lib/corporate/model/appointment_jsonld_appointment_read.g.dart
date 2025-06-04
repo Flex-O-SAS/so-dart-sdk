@@ -152,7 +152,7 @@ class _$AppointmentJsonldAppointmentRead
   @override
   final AppointmentJsonldAppointmentReadStatusEnum status;
   @override
-  final String? cancellationDate;
+  final DateTime? cancellationDate;
   @override
   final String? cancellationReason;
   @override
@@ -334,9 +334,9 @@ class AppointmentJsonldAppointmentReadBuilder
   set status(AppointmentJsonldAppointmentReadStatusEnum? status) =>
       _$this._status = status;
 
-  String? _cancellationDate;
-  String? get cancellationDate => _$this._cancellationDate;
-  set cancellationDate(String? cancellationDate) =>
+  DateTime? _cancellationDate;
+  DateTime? get cancellationDate => _$this._cancellationDate;
+  set cancellationDate(DateTime? cancellationDate) =>
       _$this._cancellationDate = cancellationDate;
 
   String? _cancellationReason;

@@ -38,7 +38,7 @@ abstract class StaffJsonldStaffSearch implements Built<StaffJsonldStaffSearch, S
   String? get lastname;
 
   @BuiltValueField(wireName: r'tosAcceptedAt')
-  String? get tosAcceptedAt;
+  DateTime? get tosAcceptedAt;
 
   @BuiltValueField(wireName: r'reference')
   String? get reference;
@@ -108,7 +108,7 @@ class _$StaffJsonldStaffSearchSerializer implements PrimitiveSerializer<StaffJso
       yield r'tosAcceptedAt';
       yield serializers.serialize(
         object.tosAcceptedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.reference != null) {
@@ -186,8 +186,8 @@ class _$StaffJsonldStaffSearchSerializer implements PrimitiveSerializer<StaffJso
         case r'tosAcceptedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.tosAcceptedAt = valueDes;
           break;

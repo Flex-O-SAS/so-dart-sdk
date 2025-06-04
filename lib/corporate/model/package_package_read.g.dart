@@ -155,7 +155,7 @@ class _$PackagePackageRead extends PackagePackageRead {
   @override
   final DateTime receptionDate;
   @override
-  final String? handoverDate;
+  final DateTime? handoverDate;
   @override
   final String? handoverClient;
   @override
@@ -289,9 +289,10 @@ class PackagePackageReadBuilder
   set receptionDate(DateTime? receptionDate) =>
       _$this._receptionDate = receptionDate;
 
-  String? _handoverDate;
-  String? get handoverDate => _$this._handoverDate;
-  set handoverDate(String? handoverDate) => _$this._handoverDate = handoverDate;
+  DateTime? _handoverDate;
+  DateTime? get handoverDate => _$this._handoverDate;
+  set handoverDate(DateTime? handoverDate) =>
+      _$this._handoverDate = handoverDate;
 
   String? _handoverClient;
   String? get handoverClient => _$this._handoverClient;

@@ -15,7 +15,7 @@ part 'individual_individual_write.g.dart';
 @BuiltValue()
 abstract class IndividualIndividualWrite implements Built<IndividualIndividualWrite, IndividualIndividualWriteBuilder> {
   @BuiltValueField(wireName: r'tosAcceptedAt')
-  String? get tosAcceptedAt;
+  DateTime? get tosAcceptedAt;
 
   IndividualIndividualWrite._();
 
@@ -44,7 +44,7 @@ class _$IndividualIndividualWriteSerializer implements PrimitiveSerializer<Indiv
       yield r'tosAcceptedAt';
       yield serializers.serialize(
         object.tosAcceptedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
   }
@@ -73,8 +73,8 @@ class _$IndividualIndividualWriteSerializer implements PrimitiveSerializer<Indiv
         case r'tosAcceptedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.tosAcceptedAt = valueDes;
           break;

@@ -61,10 +61,10 @@ abstract class HappeningJsonldHappeningRead implements Built<HappeningJsonldHapp
   String? get place;
 
   @BuiltValueField(wireName: r'publicatedAt')
-  String? get publicatedAt;
+  DateTime? get publicatedAt;
 
   @BuiltValueField(wireName: r'archivedAt')
-  String? get archivedAt;
+  DateTime? get archivedAt;
 
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -85,10 +85,10 @@ abstract class HappeningJsonldHappeningRead implements Built<HappeningJsonldHapp
   BuiltList<HappeningStaffFeedBackJsonldHappeningRead>? get happeningStaffFeedBacks;
 
   @BuiltValueField(wireName: r'begin')
-  String? get begin;
+  DateTime? get begin;
 
   @BuiltValueField(wireName: r'end')
-  String? get end;
+  DateTime? get end;
 
   HappeningJsonldHappeningRead._();
 
@@ -174,14 +174,14 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
       yield r'publicatedAt';
       yield serializers.serialize(
         object.publicatedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.archivedAt != null) {
       yield r'archivedAt';
       yield serializers.serialize(
         object.archivedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.description != null) {
@@ -230,14 +230,14 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
       yield r'begin';
       yield serializers.serialize(
         object.begin,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.end != null) {
       yield r'end';
       yield serializers.serialize(
         object.end,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
   }
@@ -325,16 +325,16 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
         case r'publicatedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.publicatedAt = valueDes;
           break;
         case r'archivedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.archivedAt = valueDes;
           break;
@@ -387,16 +387,16 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
         case r'begin':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.begin = valueDes;
           break;
         case r'end':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.end = valueDes;
           break;

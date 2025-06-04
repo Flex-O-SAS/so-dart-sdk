@@ -88,7 +88,7 @@ class _$TicketJsonldTicketWrite extends TicketJsonldTicketWrite {
   @override
   final DateTime startDate;
   @override
-  final String? endDate;
+  final DateTime? endDate;
   @override
   final String description;
   @override
@@ -218,9 +218,9 @@ class TicketJsonldTicketWriteBuilder
   DateTime? get startDate => _$this._startDate;
   set startDate(DateTime? startDate) => _$this._startDate = startDate;
 
-  String? _endDate;
-  String? get endDate => _$this._endDate;
-  set endDate(String? endDate) => _$this._endDate = endDate;
+  DateTime? _endDate;
+  DateTime? get endDate => _$this._endDate;
+  set endDate(DateTime? endDate) => _$this._endDate = endDate;
 
   String? _description;
   String? get description => _$this._description;

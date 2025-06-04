@@ -35,7 +35,7 @@ abstract class TicketJsonldTicketWrite implements Built<TicketJsonldTicketWrite,
   DateTime get startDate;
 
   @BuiltValueField(wireName: r'endDate')
-  String? get endDate;
+  DateTime? get endDate;
 
   @BuiltValueField(wireName: r'description')
   String get description;
@@ -102,7 +102,7 @@ class _$TicketJsonldTicketWriteSerializer implements PrimitiveSerializer<TicketJ
       yield r'endDate';
       yield serializers.serialize(
         object.endDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     yield r'description';
@@ -200,8 +200,8 @@ class _$TicketJsonldTicketWriteSerializer implements PrimitiveSerializer<TicketJ
         case r'endDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.endDate = valueDes;
           break;

@@ -24,9 +24,9 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
   @override
   final String? place;
   @override
-  final String? publicatedAt;
+  final DateTime? publicatedAt;
   @override
-  final String? archivedAt;
+  final DateTime? archivedAt;
   @override
   final String? description;
   @override
@@ -41,9 +41,9 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
   final BuiltList<HappeningStaffFeedBackJsonldHappeningRead>?
       happeningStaffFeedBacks;
   @override
-  final String? begin;
+  final DateTime? begin;
   @override
-  final String? end;
+  final DateTime? end;
 
   factory _$HappeningJsonldHappeningRead(
           [void Function(HappeningJsonldHappeningReadBuilder)? updates]) =>
@@ -195,13 +195,14 @@ class HappeningJsonldHappeningReadBuilder
   String? get place => _$this._place;
   set place(String? place) => _$this._place = place;
 
-  String? _publicatedAt;
-  String? get publicatedAt => _$this._publicatedAt;
-  set publicatedAt(String? publicatedAt) => _$this._publicatedAt = publicatedAt;
+  DateTime? _publicatedAt;
+  DateTime? get publicatedAt => _$this._publicatedAt;
+  set publicatedAt(DateTime? publicatedAt) =>
+      _$this._publicatedAt = publicatedAt;
 
-  String? _archivedAt;
-  String? get archivedAt => _$this._archivedAt;
-  set archivedAt(String? archivedAt) => _$this._archivedAt = archivedAt;
+  DateTime? _archivedAt;
+  DateTime? get archivedAt => _$this._archivedAt;
+  set archivedAt(DateTime? archivedAt) => _$this._archivedAt = archivedAt;
 
   String? _description;
   String? get description => _$this._description;
@@ -238,13 +239,13 @@ class HappeningJsonldHappeningReadBuilder
               happeningStaffFeedBacks) =>
       _$this._happeningStaffFeedBacks = happeningStaffFeedBacks;
 
-  String? _begin;
-  String? get begin => _$this._begin;
-  set begin(String? begin) => _$this._begin = begin;
+  DateTime? _begin;
+  DateTime? get begin => _$this._begin;
+  set begin(DateTime? begin) => _$this._begin = begin;
 
-  String? _end;
-  String? get end => _$this._end;
-  set end(String? end) => _$this._end = end;
+  DateTime? _end;
+  DateTime? get end => _$this._end;
+  set end(DateTime? end) => _$this._end = end;
 
   HappeningJsonldHappeningReadBuilder() {
     HappeningJsonldHappeningRead._defaults(this);

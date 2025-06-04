@@ -30,7 +30,7 @@ class _$ItemItemReadServiceRead extends ItemItemReadServiceRead {
   @override
   final DateTime beginDate;
   @override
-  final String? endDate;
+  final DateTime? endDate;
 
   factory _$ItemItemReadServiceRead(
           [void Function(ItemItemReadServiceReadBuilder)? updates]) =>
@@ -182,9 +182,9 @@ class ItemItemReadServiceReadBuilder
   DateTime? get beginDate => _$this._beginDate;
   set beginDate(DateTime? beginDate) => _$this._beginDate = beginDate;
 
-  String? _endDate;
-  String? get endDate => _$this._endDate;
-  set endDate(String? endDate) => _$this._endDate = endDate;
+  DateTime? _endDate;
+  DateTime? get endDate => _$this._endDate;
+  set endDate(DateTime? endDate) => _$this._endDate = endDate;
 
   ItemItemReadServiceReadBuilder() {
     ItemItemReadServiceRead._defaults(this);

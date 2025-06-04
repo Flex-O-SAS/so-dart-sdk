@@ -66,7 +66,7 @@ abstract class AppointmentJsonldAppointmentRead implements Built<AppointmentJson
   // enum statusEnum {  scheduled,  cancelled,  done,  };
 
   @BuiltValueField(wireName: r'cancellationDate')
-  String? get cancellationDate;
+  DateTime? get cancellationDate;
 
   @BuiltValueField(wireName: r'cancellationReason')
   String? get cancellationReason;
@@ -175,7 +175,7 @@ class _$AppointmentJsonldAppointmentReadSerializer implements PrimitiveSerialize
       yield r'cancellationDate';
       yield serializers.serialize(
         object.cancellationDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.cancellationReason != null) {
@@ -314,8 +314,8 @@ class _$AppointmentJsonldAppointmentReadSerializer implements PrimitiveSerialize
         case r'cancellationDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.cancellationDate = valueDes;
           break;

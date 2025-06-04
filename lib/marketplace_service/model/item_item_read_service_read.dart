@@ -61,7 +61,7 @@ abstract class ItemItemReadServiceRead implements Built<ItemItemReadServiceRead,
   DateTime get beginDate;
 
   @BuiltValueField(wireName: r'endDate')
-  String? get endDate;
+  DateTime? get endDate;
 
   ItemItemReadServiceRead._();
 
@@ -155,7 +155,7 @@ class _$ItemItemReadServiceReadSerializer implements PrimitiveSerializer<ItemIte
       yield r'endDate';
       yield serializers.serialize(
         object.endDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
   }
@@ -264,8 +264,8 @@ class _$ItemItemReadServiceReadSerializer implements PrimitiveSerializer<ItemIte
         case r'endDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.endDate = valueDes;
           break;

@@ -8,7 +8,7 @@ part of 'individual_individual_write.dart';
 
 class _$IndividualIndividualWrite extends IndividualIndividualWrite {
   @override
-  final String? tosAcceptedAt;
+  final DateTime? tosAcceptedAt;
 
   factory _$IndividualIndividualWrite(
           [void Function(IndividualIndividualWriteBuilder)? updates]) =>
@@ -53,9 +53,9 @@ class IndividualIndividualWriteBuilder
         Builder<IndividualIndividualWrite, IndividualIndividualWriteBuilder> {
   _$IndividualIndividualWrite? _$v;
 
-  String? _tosAcceptedAt;
-  String? get tosAcceptedAt => _$this._tosAcceptedAt;
-  set tosAcceptedAt(String? tosAcceptedAt) =>
+  DateTime? _tosAcceptedAt;
+  DateTime? get tosAcceptedAt => _$this._tosAcceptedAt;
+  set tosAcceptedAt(DateTime? tosAcceptedAt) =>
       _$this._tosAcceptedAt = tosAcceptedAt;
 
   IndividualIndividualWriteBuilder() {

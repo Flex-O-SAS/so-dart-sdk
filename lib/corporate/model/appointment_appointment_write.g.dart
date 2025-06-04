@@ -143,7 +143,7 @@ class _$AppointmentAppointmentWrite extends AppointmentAppointmentWrite {
   @override
   final AppointmentAppointmentWriteStatusEnum status;
   @override
-  final String? cancellationDate;
+  final DateTime? cancellationDate;
   @override
   final String? cancellationReason;
   @override
@@ -277,9 +277,9 @@ class AppointmentAppointmentWriteBuilder
   set status(AppointmentAppointmentWriteStatusEnum? status) =>
       _$this._status = status;
 
-  String? _cancellationDate;
-  String? get cancellationDate => _$this._cancellationDate;
-  set cancellationDate(String? cancellationDate) =>
+  DateTime? _cancellationDate;
+  DateTime? get cancellationDate => _$this._cancellationDate;
+  set cancellationDate(DateTime? cancellationDate) =>
       _$this._cancellationDate = cancellationDate;
 
   String? _cancellationReason;

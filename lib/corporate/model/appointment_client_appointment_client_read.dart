@@ -42,10 +42,10 @@ abstract class AppointmentClientAppointmentClientRead implements Built<Appointme
   String? get comment;
 
   @BuiltValueField(wireName: r'responseDate')
-  String? get responseDate;
+  DateTime? get responseDate;
 
   @BuiltValueField(wireName: r'lastSentInvitationDate')
-  String? get lastSentInvitationDate;
+  DateTime? get lastSentInvitationDate;
 
   AppointmentClientAppointmentClientRead._();
 
@@ -110,14 +110,14 @@ class _$AppointmentClientAppointmentClientReadSerializer implements PrimitiveSer
       yield r'responseDate';
       yield serializers.serialize(
         object.responseDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.lastSentInvitationDate != null) {
       yield r'lastSentInvitationDate';
       yield serializers.serialize(
         object.lastSentInvitationDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
   }
@@ -192,16 +192,16 @@ class _$AppointmentClientAppointmentClientReadSerializer implements PrimitiveSer
         case r'responseDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.responseDate = valueDes;
           break;
         case r'lastSentInvitationDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.lastSentInvitationDate = valueDes;
           break;

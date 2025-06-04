@@ -24,13 +24,13 @@ class _$DocumentJsonldMediaRead extends DocumentJsonldMediaRead {
   @override
   final String? mimeType;
   @override
-  final BuiltList<int>? dimensions;
+  final JsonObject? dimensions;
   @override
   final BuiltList<String>? metadata;
   @override
-  final String? beginDate;
+  final DateTime? beginDate;
   @override
-  final String? endDate;
+  final DateTime? endDate;
 
   factory _$DocumentJsonldMediaRead(
           [void Function(DocumentJsonldMediaReadBuilder)? updates]) =>
@@ -155,24 +155,22 @@ class DocumentJsonldMediaReadBuilder
   String? get mimeType => _$this._mimeType;
   set mimeType(String? mimeType) => _$this._mimeType = mimeType;
 
-  ListBuilder<int>? _dimensions;
-  ListBuilder<int> get dimensions =>
-      _$this._dimensions ??= new ListBuilder<int>();
-  set dimensions(ListBuilder<int>? dimensions) =>
-      _$this._dimensions = dimensions;
+  JsonObject? _dimensions;
+  JsonObject? get dimensions => _$this._dimensions;
+  set dimensions(JsonObject? dimensions) => _$this._dimensions = dimensions;
 
   ListBuilder<String>? _metadata;
   ListBuilder<String> get metadata =>
       _$this._metadata ??= new ListBuilder<String>();
   set metadata(ListBuilder<String>? metadata) => _$this._metadata = metadata;
 
-  String? _beginDate;
-  String? get beginDate => _$this._beginDate;
-  set beginDate(String? beginDate) => _$this._beginDate = beginDate;
+  DateTime? _beginDate;
+  DateTime? get beginDate => _$this._beginDate;
+  set beginDate(DateTime? beginDate) => _$this._beginDate = beginDate;
 
-  String? _endDate;
-  String? get endDate => _$this._endDate;
-  set endDate(String? endDate) => _$this._endDate = endDate;
+  DateTime? _endDate;
+  DateTime? get endDate => _$this._endDate;
+  set endDate(DateTime? endDate) => _$this._endDate = endDate;
 
   DocumentJsonldMediaReadBuilder() {
     DocumentJsonldMediaRead._defaults(this);
@@ -189,7 +187,7 @@ class DocumentJsonldMediaReadBuilder
       _filePath = $v.filePath;
       _size = $v.size;
       _mimeType = $v.mimeType;
-      _dimensions = $v.dimensions?.toBuilder();
+      _dimensions = $v.dimensions;
       _metadata = $v.metadata?.toBuilder();
       _beginDate = $v.beginDate;
       _endDate = $v.endDate;
@@ -225,7 +223,7 @@ class DocumentJsonldMediaReadBuilder
             filePath: filePath,
             size: size,
             mimeType: mimeType,
-            dimensions: _dimensions?.build(),
+            dimensions: dimensions,
             metadata: _metadata?.build(),
             beginDate: beginDate,
             endDate: endDate,
@@ -236,8 +234,6 @@ class DocumentJsonldMediaReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
 
-        _$failedField = 'dimensions';
-        _dimensions?.build();
         _$failedField = 'metadata';
         _metadata?.build();
       } catch (e) {

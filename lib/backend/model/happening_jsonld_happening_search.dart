@@ -63,10 +63,10 @@ abstract class HappeningJsonldHappeningSearch implements Built<HappeningJsonldHa
   BuiltList<HappeningStaffFeedBackJsonldHappeningSearch>? get happeningStaffFeedBacks;
 
   @BuiltValueField(wireName: r'begin')
-  String? get begin;
+  DateTime? get begin;
 
   @BuiltValueField(wireName: r'end')
-  String? get end;
+  DateTime? get end;
 
   HappeningJsonldHappeningSearch._();
 
@@ -173,14 +173,14 @@ class _$HappeningJsonldHappeningSearchSerializer implements PrimitiveSerializer<
       yield r'begin';
       yield serializers.serialize(
         object.begin,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.end != null) {
       yield r'end';
       yield serializers.serialize(
         object.end,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
   }
@@ -291,16 +291,16 @@ class _$HappeningJsonldHappeningSearchSerializer implements PrimitiveSerializer<
         case r'begin':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.begin = valueDes;
           break;
         case r'end':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.end = valueDes;
           break;

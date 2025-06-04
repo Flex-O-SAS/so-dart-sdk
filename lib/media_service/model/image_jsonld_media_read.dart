@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -52,16 +53,16 @@ abstract class ImageJsonldMediaRead implements Built<ImageJsonldMediaRead, Image
   String? get mimeType;
 
   @BuiltValueField(wireName: r'dimensions')
-  BuiltList<int>? get dimensions;
+  JsonObject? get dimensions;
 
   @BuiltValueField(wireName: r'metadata')
   BuiltList<String>? get metadata;
 
   @BuiltValueField(wireName: r'beginDate')
-  String? get beginDate;
+  DateTime? get beginDate;
 
   @BuiltValueField(wireName: r'endDate')
-  String? get endDate;
+  DateTime? get endDate;
 
   ImageJsonldMediaRead._();
 
@@ -146,7 +147,7 @@ class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonl
       yield r'dimensions';
       yield serializers.serialize(
         object.dimensions,
-        specifiedType: const FullType(BuiltList, [FullType(int)]),
+        specifiedType: const FullType.nullable(JsonObject),
       );
     }
     if (object.metadata != null) {
@@ -160,14 +161,14 @@ class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonl
       yield r'beginDate';
       yield serializers.serialize(
         object.beginDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.endDate != null) {
       yield r'endDate';
       yield serializers.serialize(
         object.endDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
   }
@@ -256,9 +257,10 @@ class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonl
         case r'dimensions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>;
-          result.dimensions.replace(valueDes);
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.dimensions = valueDes;
           break;
         case r'metadata':
           final valueDes = serializers.deserialize(
@@ -270,16 +272,16 @@ class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonl
         case r'beginDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.beginDate = valueDes;
           break;
         case r'endDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.endDate = valueDes;
           break;

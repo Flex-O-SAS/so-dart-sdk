@@ -55,7 +55,7 @@ abstract class ItemItemWrite implements Built<ItemItemWrite, ItemItemWriteBuilde
   DateTime get beginDate;
 
   @BuiltValueField(wireName: r'endDate')
-  String? get endDate;
+  DateTime? get endDate;
 
   ItemItemWrite._();
 
@@ -142,7 +142,7 @@ class _$ItemItemWriteSerializer implements PrimitiveSerializer<ItemItemWrite> {
       yield r'endDate';
       yield serializers.serialize(
         object.endDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
   }
@@ -244,8 +244,8 @@ class _$ItemItemWriteSerializer implements PrimitiveSerializer<ItemItemWrite> {
         case r'endDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.endDate = valueDes;
           break;

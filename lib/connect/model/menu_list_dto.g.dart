@@ -11,16 +11,15 @@ class _$MenuListDto extends MenuListDto {
   final BuiltList<MenuListDtoMenusInner>? menus;
 
   factory _$MenuListDto([void Function(MenuListDtoBuilder)? updates]) =>
-      (new MenuListDtoBuilder()..update(updates))._build();
+      (MenuListDtoBuilder()..update(updates))._build();
 
   _$MenuListDto._({this.menus}) : super._();
-
   @override
   MenuListDto rebuild(void Function(MenuListDtoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  MenuListDtoBuilder toBuilder() => new MenuListDtoBuilder()..replace(this);
+  MenuListDtoBuilder toBuilder() => MenuListDtoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -48,7 +47,7 @@ class MenuListDtoBuilder implements Builder<MenuListDto, MenuListDtoBuilder> {
 
   ListBuilder<MenuListDtoMenusInner>? _menus;
   ListBuilder<MenuListDtoMenusInner> get menus =>
-      _$this._menus ??= new ListBuilder<MenuListDtoMenusInner>();
+      _$this._menus ??= ListBuilder<MenuListDtoMenusInner>();
   set menus(ListBuilder<MenuListDtoMenusInner>? menus) => _$this._menus = menus;
 
   MenuListDtoBuilder() {
@@ -66,7 +65,6 @@ class MenuListDtoBuilder implements Builder<MenuListDto, MenuListDtoBuilder> {
 
   @override
   void replace(MenuListDto other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$MenuListDto;
   }
 
@@ -82,7 +80,7 @@ class MenuListDtoBuilder implements Builder<MenuListDto, MenuListDtoBuilder> {
     _$MenuListDto _$result;
     try {
       _$result = _$v ??
-          new _$MenuListDto._(
+          _$MenuListDto._(
             menus: _menus?.build(),
           );
     } catch (_) {
@@ -91,7 +89,7 @@ class MenuListDtoBuilder implements Builder<MenuListDto, MenuListDtoBuilder> {
         _$failedField = 'menus';
         _menus?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'MenuListDto', _$failedField, e.toString());
       }
       rethrow;

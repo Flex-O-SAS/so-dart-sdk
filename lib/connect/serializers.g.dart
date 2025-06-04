@@ -6,7 +6,7 @@ part of 'serializers.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializers _$serializers = (new Serializers().toBuilder()
+Serializers _$serializers = (Serializers().toBuilder()
       ..add(AuthResponse.serializer)
       ..add(BoxListDtoInner.serializer)
       ..add(DevicesUnlockPostRequest.serializer)
@@ -17,31 +17,33 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(MenuListDtoMenusInnerItemsInnerItemsInner.serializer)
       ..add(MenuListDtoMenusInnerSite.serializer)
       ..add(ProviderResponseInner.serializer)
-      ..add(ProvidersProviderUuidUsersUserIdQrcodeGet200Response.serializer)
-      ..add(ProvidersProviderUuidUsersUserIdQrcodeGet404Response.serializer)
+      ..add(ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response
+          .serializer)
+      ..add(ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response
+          .serializer)
       ..add(UnlockResponse.serializer)
       ..add(UserDto.serializer)
       ..add(UserResponseDto.serializer)
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(MenuListDtoMenusInner)]),
-          () => new ListBuilder<MenuListDtoMenusInner>())
+          () => ListBuilder<MenuListDtoMenusInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(MenuListDtoMenusInnerItemsInner)]),
-          () => new ListBuilder<MenuListDtoMenusInnerItemsInner>())
+          () => ListBuilder<MenuListDtoMenusInnerItemsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(MenuListDtoMenusInnerItemsInnerItemsInner)
           ]),
-          () => new ListBuilder<MenuListDtoMenusInnerItemsInnerItemsInner>())
+          () => ListBuilder<MenuListDtoMenusInnerItemsInnerItemsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(
               BuiltMap, const [const FullType(String), const FullType(String)]),
-          () => new MapBuilder<String, String>()))
+          () => MapBuilder<String, String>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

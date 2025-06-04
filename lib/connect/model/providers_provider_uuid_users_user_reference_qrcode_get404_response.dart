@@ -6,38 +6,38 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'providers_provider_uuid_users_user_id_qrcode_get404_response.g.dart';
+part 'providers_provider_uuid_users_user_reference_qrcode_get404_response.g.dart';
 
-/// ProvidersProviderUuidUsersUserIdQrcodeGet404Response
+/// ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response
 ///
 /// Properties:
 /// * [error] 
 @BuiltValue()
-abstract class ProvidersProviderUuidUsersUserIdQrcodeGet404Response implements Built<ProvidersProviderUuidUsersUserIdQrcodeGet404Response, ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder> {
+abstract class ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response implements Built<ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response, ProvidersProviderUuidUsersUserReferenceQrcodeGet404ResponseBuilder> {
   @BuiltValueField(wireName: r'error')
   String? get error;
 
-  ProvidersProviderUuidUsersUserIdQrcodeGet404Response._();
+  ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response._();
 
-  factory ProvidersProviderUuidUsersUserIdQrcodeGet404Response([void updates(ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder b)]) = _$ProvidersProviderUuidUsersUserIdQrcodeGet404Response;
+  factory ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response([void updates(ProvidersProviderUuidUsersUserReferenceQrcodeGet404ResponseBuilder b)]) = _$ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder b) => b;
+  static void _defaults(ProvidersProviderUuidUsersUserReferenceQrcodeGet404ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ProvidersProviderUuidUsersUserIdQrcodeGet404Response> get serializer => _$ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseSerializer();
+  static Serializer<ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response> get serializer => _$ProvidersProviderUuidUsersUserReferenceQrcodeGet404ResponseSerializer();
 }
 
-class _$ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseSerializer implements PrimitiveSerializer<ProvidersProviderUuidUsersUserIdQrcodeGet404Response> {
+class _$ProvidersProviderUuidUsersUserReferenceQrcodeGet404ResponseSerializer implements PrimitiveSerializer<ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response> {
   @override
-  final Iterable<Type> types = const [ProvidersProviderUuidUsersUserIdQrcodeGet404Response, _$ProvidersProviderUuidUsersUserIdQrcodeGet404Response];
+  final Iterable<Type> types = const [ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response, _$ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response];
 
   @override
-  final String wireName = r'ProvidersProviderUuidUsersUserIdQrcodeGet404Response';
+  final String wireName = r'ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ProvidersProviderUuidUsersUserIdQrcodeGet404Response object, {
+    ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.error != null) {
@@ -52,7 +52,7 @@ class _$ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseSerializer implement
   @override
   Object serialize(
     Serializers serializers,
-    ProvidersProviderUuidUsersUserIdQrcodeGet404Response object, {
+    ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -63,7 +63,7 @@ class _$ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseSerializer implement
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder result,
+    required ProvidersProviderUuidUsersUserReferenceQrcodeGet404ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -86,12 +86,12 @@ class _$ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseSerializer implement
   }
 
   @override
-  ProvidersProviderUuidUsersUserIdQrcodeGet404Response deserialize(
+  ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ProvidersProviderUuidUsersUserIdQrcodeGet404ResponseBuilder();
+    final result = ProvidersProviderUuidUsersUserReferenceQrcodeGet404ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

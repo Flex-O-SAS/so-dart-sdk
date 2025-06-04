@@ -13,17 +13,15 @@ class _$UnlockResponse extends UnlockResponse {
   final String? message;
 
   factory _$UnlockResponse([void Function(UnlockResponseBuilder)? updates]) =>
-      (new UnlockResponseBuilder()..update(updates))._build();
+      (UnlockResponseBuilder()..update(updates))._build();
 
   _$UnlockResponse._({this.action, this.message}) : super._();
-
   @override
   UnlockResponse rebuild(void Function(UnlockResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  UnlockResponseBuilder toBuilder() =>
-      new UnlockResponseBuilder()..replace(this);
+  UnlockResponseBuilder toBuilder() => UnlockResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -79,7 +77,6 @@ class UnlockResponseBuilder
 
   @override
   void replace(UnlockResponse other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$UnlockResponse;
   }
 
@@ -93,7 +90,7 @@ class UnlockResponseBuilder
 
   _$UnlockResponse _build() {
     final _$result = _$v ??
-        new _$UnlockResponse._(
+        _$UnlockResponse._(
           action: action,
           message: message,
         );

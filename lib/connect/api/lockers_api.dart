@@ -13,8 +13,8 @@ import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/connect/api_util.dart';
 import 'package:so_dart_sdk/connect/model/box_list_dto_inner.dart';
 import 'package:so_dart_sdk/connect/model/error_response.dart';
-import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_id_qrcode_get200_response.dart';
-import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_id_qrcode_get404_response.dart';
+import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get200_response.dart';
+import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get404_response.dart';
 
 class LockersApi {
 
@@ -29,7 +29,7 @@ class LockersApi {
   ///
   /// Parameters:
   /// * [providerUuid] - UUID du provider
-  /// * [userId] - Identifiant de l'utilisateur
+  /// * [userReference] - Identifiant de l'utilisateur
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -39,9 +39,9 @@ class LockersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<BoxListDtoInner>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<BoxListDtoInner>>> providersProviderUuidUsersUserIdLockersGet({ 
+  Future<Response<BuiltList<BoxListDtoInner>>> providersProviderUuidUsersUserReferenceLockersGet({ 
     required String providerUuid,
-    required int userId,
+    required String userReference,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -49,7 +49,7 @@ class LockersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/providers/{provider_uuid}/users/{user_id}/lockers'.replaceAll('{' r'provider_uuid' '}', encodeQueryParameter(_serializers, providerUuid, const FullType(String)).toString()).replaceAll('{' r'user_id' '}', encodeQueryParameter(_serializers, userId, const FullType(int)).toString());
+    final _path = r'/providers/{provider_uuid}/users/{user_reference}/lockers'.replaceAll('{' r'provider_uuid' '}', encodeQueryParameter(_serializers, providerUuid, const FullType(String)).toString()).replaceAll('{' r'user_reference' '}', encodeQueryParameter(_serializers, userReference, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -112,7 +112,7 @@ class LockersApi {
   ///
   /// Parameters:
   /// * [providerUuid] - UUID du provider
-  /// * [userId] - Identifiant de l'utilisateur
+  /// * [userReference] - Identifiant de l'utilisateur
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -122,9 +122,9 @@ class LockersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Uint8List] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Uint8List>> providersProviderUuidUsersUserIdQrcodeGet({ 
+  Future<Response<Uint8List>> providersProviderUuidUsersUserReferenceQrcodeGet({ 
     required String providerUuid,
-    required int userId,
+    required String userReference,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -132,7 +132,7 @@ class LockersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/providers/{provider_uuid}/users/{user_id}/qrcode'.replaceAll('{' r'provider_uuid' '}', encodeQueryParameter(_serializers, providerUuid, const FullType(String)).toString()).replaceAll('{' r'user_id' '}', encodeQueryParameter(_serializers, userId, const FullType(int)).toString());
+    final _path = r'/providers/{provider_uuid}/users/{user_reference}/qrcode'.replaceAll('{' r'provider_uuid' '}', encodeQueryParameter(_serializers, providerUuid, const FullType(String)).toString()).replaceAll('{' r'user_reference' '}', encodeQueryParameter(_serializers, userReference, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,

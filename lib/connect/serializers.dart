@@ -24,8 +24,8 @@ import 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner.
 import 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner_items_inner.dart';
 import 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_site.dart';
 import 'package:so_dart_sdk/connect/model/provider_response_inner.dart';
-import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_id_qrcode_get200_response.dart';
-import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_id_qrcode_get404_response.dart';
+import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get200_response.dart';
+import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get404_response.dart';
 import 'package:so_dart_sdk/connect/model/unlock_response.dart';
 import 'package:so_dart_sdk/connect/model/user_dto.dart';
 import 'package:so_dart_sdk/connect/model/user_response_dto.dart';
@@ -43,8 +43,8 @@ part 'serializers.g.dart';
   MenuListDtoMenusInnerItemsInnerItemsInner,
   MenuListDtoMenusInnerSite,
   ProviderResponseInner,
-  ProvidersProviderUuidUsersUserIdQrcodeGet200Response,
-  ProvidersProviderUuidUsersUserIdQrcodeGet404Response,
+  ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response,
+  ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response,
   UnlockResponse,
   UserDto,
   UserResponseDto,

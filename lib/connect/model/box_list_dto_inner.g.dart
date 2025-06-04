@@ -23,7 +23,7 @@ class _$BoxListDtoInner extends BoxListDtoInner {
   final bool? isLinked;
 
   factory _$BoxListDtoInner([void Function(BoxListDtoInnerBuilder)? updates]) =>
-      (new BoxListDtoInnerBuilder()..update(updates))._build();
+      (BoxListDtoInnerBuilder()..update(updates))._build();
 
   _$BoxListDtoInner._(
       {this.uuid,
@@ -34,14 +34,12 @@ class _$BoxListDtoInner extends BoxListDtoInner {
       this.status,
       this.isLinked})
       : super._();
-
   @override
   BoxListDtoInner rebuild(void Function(BoxListDtoInnerBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  BoxListDtoInnerBuilder toBuilder() =>
-      new BoxListDtoInnerBuilder()..replace(this);
+  BoxListDtoInnerBuilder toBuilder() => BoxListDtoInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -137,7 +135,6 @@ class BoxListDtoInnerBuilder
 
   @override
   void replace(BoxListDtoInner other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$BoxListDtoInner;
   }
 
@@ -151,7 +148,7 @@ class BoxListDtoInnerBuilder
 
   _$BoxListDtoInner _build() {
     final _$result = _$v ??
-        new _$BoxListDtoInner._(
+        _$BoxListDtoInner._(
           uuid: uuid,
           label: label,
           address: address,

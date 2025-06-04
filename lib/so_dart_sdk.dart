@@ -260,8 +260,8 @@ export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner.
 export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner_items_inner.dart';
 export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_site.dart';
 export 'package:so_dart_sdk/connect/model/provider_response_inner.dart';
-export 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_id_qrcode_get200_response.dart';
-export 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_id_qrcode_get404_response.dart';
+export 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get200_response.dart';
+export 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get404_response.dart';
 export 'package:so_dart_sdk/connect/model/unlock_response.dart';
 export 'package:so_dart_sdk/connect/model/user_dto.dart';
 export 'package:so_dart_sdk/connect/model/user_response_dto.dart';

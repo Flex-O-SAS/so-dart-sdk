@@ -6,39 +6,39 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'providers_provider_uuid_users_user_id_qrcode_get200_response.g.dart';
+part 'providers_provider_uuid_users_user_reference_qrcode_get200_response.g.dart';
 
-/// ProvidersProviderUuidUsersUserIdQrcodeGet200Response
+/// ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response
 ///
 /// Properties:
 /// * [qrcode] - QR code de l'utilisateur
 @BuiltValue()
-abstract class ProvidersProviderUuidUsersUserIdQrcodeGet200Response implements Built<ProvidersProviderUuidUsersUserIdQrcodeGet200Response, ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder> {
+abstract class ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response implements Built<ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response, ProvidersProviderUuidUsersUserReferenceQrcodeGet200ResponseBuilder> {
   /// QR code de l'utilisateur
   @BuiltValueField(wireName: r'qrcode')
   String? get qrcode;
 
-  ProvidersProviderUuidUsersUserIdQrcodeGet200Response._();
+  ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response._();
 
-  factory ProvidersProviderUuidUsersUserIdQrcodeGet200Response([void updates(ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder b)]) = _$ProvidersProviderUuidUsersUserIdQrcodeGet200Response;
+  factory ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response([void updates(ProvidersProviderUuidUsersUserReferenceQrcodeGet200ResponseBuilder b)]) = _$ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder b) => b;
+  static void _defaults(ProvidersProviderUuidUsersUserReferenceQrcodeGet200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ProvidersProviderUuidUsersUserIdQrcodeGet200Response> get serializer => _$ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseSerializer();
+  static Serializer<ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response> get serializer => _$ProvidersProviderUuidUsersUserReferenceQrcodeGet200ResponseSerializer();
 }
 
-class _$ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseSerializer implements PrimitiveSerializer<ProvidersProviderUuidUsersUserIdQrcodeGet200Response> {
+class _$ProvidersProviderUuidUsersUserReferenceQrcodeGet200ResponseSerializer implements PrimitiveSerializer<ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response> {
   @override
-  final Iterable<Type> types = const [ProvidersProviderUuidUsersUserIdQrcodeGet200Response, _$ProvidersProviderUuidUsersUserIdQrcodeGet200Response];
+  final Iterable<Type> types = const [ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response, _$ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response];
 
   @override
-  final String wireName = r'ProvidersProviderUuidUsersUserIdQrcodeGet200Response';
+  final String wireName = r'ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ProvidersProviderUuidUsersUserIdQrcodeGet200Response object, {
+    ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.qrcode != null) {
@@ -53,7 +53,7 @@ class _$ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseSerializer implement
   @override
   Object serialize(
     Serializers serializers,
-    ProvidersProviderUuidUsersUserIdQrcodeGet200Response object, {
+    ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -64,7 +64,7 @@ class _$ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseSerializer implement
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder result,
+    required ProvidersProviderUuidUsersUserReferenceQrcodeGet200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -87,12 +87,12 @@ class _$ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseSerializer implement
   }
 
   @override
-  ProvidersProviderUuidUsersUserIdQrcodeGet200Response deserialize(
+  ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ProvidersProviderUuidUsersUserIdQrcodeGet200ResponseBuilder();
+    final result = ProvidersProviderUuidUsersUserReferenceQrcodeGet200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

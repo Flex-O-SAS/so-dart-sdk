@@ -14,10 +14,9 @@ class _$MenuListDtoMenusInnerSite extends MenuListDtoMenusInnerSite {
 
   factory _$MenuListDtoMenusInnerSite(
           [void Function(MenuListDtoMenusInnerSiteBuilder)? updates]) =>
-      (new MenuListDtoMenusInnerSiteBuilder()..update(updates))._build();
+      (MenuListDtoMenusInnerSiteBuilder()..update(updates))._build();
 
   _$MenuListDtoMenusInnerSite._({this.id, this.name}) : super._();
-
   @override
   MenuListDtoMenusInnerSite rebuild(
           void Function(MenuListDtoMenusInnerSiteBuilder) updates) =>
@@ -25,7 +24,7 @@ class _$MenuListDtoMenusInnerSite extends MenuListDtoMenusInnerSite {
 
   @override
   MenuListDtoMenusInnerSiteBuilder toBuilder() =>
-      new MenuListDtoMenusInnerSiteBuilder()..replace(this);
+      MenuListDtoMenusInnerSiteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -82,7 +81,6 @@ class MenuListDtoMenusInnerSiteBuilder
 
   @override
   void replace(MenuListDtoMenusInnerSite other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$MenuListDtoMenusInnerSite;
   }
 
@@ -96,7 +94,7 @@ class MenuListDtoMenusInnerSiteBuilder
 
   _$MenuListDtoMenusInnerSite _build() {
     final _$result = _$v ??
-        new _$MenuListDtoMenusInnerSite._(
+        _$MenuListDtoMenusInnerSite._(
           id: id,
           name: name,
         );

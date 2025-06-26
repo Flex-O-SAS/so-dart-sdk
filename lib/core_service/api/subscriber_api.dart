@@ -17,8 +17,6 @@ import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_write.dart';
-import 'package:so_dart_sdk/core_service/model/subscriber_subscriber_read.dart';
-import 'package:so_dart_sdk/core_service/model/subscriber_subscriber_write.dart';
 
 class SubscriberApi {
 
@@ -297,7 +295,7 @@ class SubscriberApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 

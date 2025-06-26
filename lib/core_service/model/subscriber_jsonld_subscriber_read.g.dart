@@ -15,13 +15,22 @@ class _$SubscriberJsonldSubscriberRead extends SubscriberJsonldSubscriberRead {
   final String? atType;
   @override
   final String userIdentifier;
+  @override
+  final DateTime? createdAt;
+  @override
+  final DateTime? updatedAt;
 
   factory _$SubscriberJsonldSubscriberRead(
           [void Function(SubscriberJsonldSubscriberReadBuilder)? updates]) =>
       (new SubscriberJsonldSubscriberReadBuilder()..update(updates))._build();
 
   _$SubscriberJsonldSubscriberRead._(
-      {this.atContext, this.atId, this.atType, required this.userIdentifier})
+      {this.atContext,
+      this.atId,
+      this.atType,
+      required this.userIdentifier,
+      this.createdAt,
+      this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         userIdentifier, r'SubscriberJsonldSubscriberRead', 'userIdentifier');
@@ -43,7 +52,9 @@ class _$SubscriberJsonldSubscriberRead extends SubscriberJsonldSubscriberRead {
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
-        userIdentifier == other.userIdentifier;
+        userIdentifier == other.userIdentifier &&
+        createdAt == other.createdAt &&
+        updatedAt == other.updatedAt;
   }
 
   @override
@@ -53,6 +64,8 @@ class _$SubscriberJsonldSubscriberRead extends SubscriberJsonldSubscriberRead {
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, userIdentifier.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -63,7 +76,9 @@ class _$SubscriberJsonldSubscriberRead extends SubscriberJsonldSubscriberRead {
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
-          ..add('userIdentifier', userIdentifier))
+          ..add('userIdentifier', userIdentifier)
+          ..add('createdAt', createdAt)
+          ..add('updatedAt', updatedAt))
         .toString();
   }
 }
@@ -93,6 +108,14 @@ class SubscriberJsonldSubscriberReadBuilder
   set userIdentifier(String? userIdentifier) =>
       _$this._userIdentifier = userIdentifier;
 
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
   SubscriberJsonldSubscriberReadBuilder() {
     SubscriberJsonldSubscriberRead._defaults(this);
   }
@@ -104,6 +127,8 @@ class SubscriberJsonldSubscriberReadBuilder
       _atId = $v.atId;
       _atType = $v.atType;
       _userIdentifier = $v.userIdentifier;
+      _createdAt = $v.createdAt;
+      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -135,6 +160,8 @@ class SubscriberJsonldSubscriberReadBuilder
                 userIdentifier,
                 r'SubscriberJsonldSubscriberRead',
                 'userIdentifier'),
+            createdAt: createdAt,
+            updatedAt: updatedAt,
           );
     } catch (_) {
       late String _$failedField;

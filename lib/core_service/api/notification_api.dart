@@ -12,8 +12,8 @@ import 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
-import 'package:so_dart_sdk/core_service/model/notification.dart';
-import 'package:so_dart_sdk/core_service/model/notification_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';
+import 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_write.dart';
 
 class NotificationApi {
 
@@ -27,7 +27,7 @@ class NotificationApi {
   /// Creates a Notification resource.
   ///
   /// Parameters:
-  /// * [notificationJsonld] - The new Notification resource
+  /// * [notificationJsonldNotificationWrite] - The new Notification resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,10 +35,10 @@ class NotificationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [NotificationJsonld] as data
+  /// Returns a [Future] containing a [Response] with a [NotificationJsonldNotificationRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<NotificationJsonld>> apiApinotificationsPost({ 
-    required NotificationJsonld notificationJsonld,
+  Future<Response<NotificationJsonldNotificationRead>> apiNotificationsPostItem({ 
+    required NotificationJsonldNotificationWrite notificationJsonldNotificationWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -63,15 +63,15 @@ class NotificationApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(NotificationJsonld);
-      _bodyData = _serializers.serialize(notificationJsonld, specifiedType: _type);
+      const _type = FullType(NotificationJsonldNotificationWrite);
+      _bodyData = _serializers.serialize(notificationJsonldNotificationWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -94,14 +94,14 @@ class NotificationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    NotificationJsonld? _responseData;
+    NotificationJsonldNotificationRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(NotificationJsonld),
-      ) as NotificationJsonld;
+        specifiedType: const FullType(NotificationJsonldNotificationRead),
+      ) as NotificationJsonldNotificationRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -113,7 +113,7 @@ class NotificationApi {
       );
     }
 
-    return Response<NotificationJsonld>(
+    return Response<NotificationJsonldNotificationRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

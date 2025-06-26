@@ -13,8 +13,6 @@ import 'package:so_dart_sdk/core_service/api_util.dart';
 import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
-import 'package:so_dart_sdk/core_service/model/device_device_read.dart';
-import 'package:so_dart_sdk/core_service/model/device_device_write.dart';
 import 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
 import 'package:so_dart_sdk/core_service/model/device_jsonld_device_write.dart';
 import 'package:so_dart_sdk/core_service/model/error.dart';
@@ -297,7 +295,7 @@ class DeviceApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 

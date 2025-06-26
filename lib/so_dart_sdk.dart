@@ -297,16 +297,12 @@ export 'package:so_dart_sdk/core_service/model/constraint_violation_json_violati
 export 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
 export 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context.dart';
 export 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context_one_of.dart';
-export 'package:so_dart_sdk/core_service/model/device_device_read.dart';
-export 'package:so_dart_sdk/core_service/model/device_device_write.dart';
 export 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
 export 'package:so_dart_sdk/core_service/model/device_jsonld_device_write.dart';
 export 'package:so_dart_sdk/core_service/model/error.dart';
 export 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
-export 'package:so_dart_sdk/core_service/model/notification.dart';
-export 'package:so_dart_sdk/core_service/model/notification_jsonld.dart';
+export 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';
+export 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_write.dart';
 export 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
 export 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_write.dart';
-export 'package:so_dart_sdk/core_service/model/subscriber_subscriber_read.dart';
-export 'package:so_dart_sdk/core_service/model/subscriber_subscriber_write.dart';
 

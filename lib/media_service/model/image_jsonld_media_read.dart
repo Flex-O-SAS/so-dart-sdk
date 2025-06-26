@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -55,7 +56,7 @@ abstract class ImageJsonldMediaRead implements Built<ImageJsonldMediaRead, Image
   BuiltList<int>? get dimensions;
 
   @BuiltValueField(wireName: r'metadata')
-  BuiltList<String>? get metadata;
+  JsonObject? get metadata;
 
   @BuiltValueField(wireName: r'beginDate')
   String? get beginDate;
@@ -153,7 +154,7 @@ class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonl
       yield r'metadata';
       yield serializers.serialize(
         object.metadata,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.beginDate != null) {
@@ -263,9 +264,9 @@ class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonl
         case r'metadata':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.metadata.replace(valueDes);
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.metadata = valueDes;
           break;
         case r'beginDate':
           final valueDes = serializers.deserialize(

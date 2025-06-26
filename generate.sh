@@ -4,7 +4,7 @@ service="corporate"
 
 rm -Rf "${cwd}/services"
 rm -Rf "${cwd}/lib"
-services=("backend" "marketplace-service" "ticketing-service" "corporate" "media-service" "connect" "core-service" )
+services=("backend" "marketplace-service" "ticketing-service" "corporate" "media-service" "core-service" "connect")
 
 export DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
 export TRUSTED_HOSTS=""

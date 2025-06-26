@@ -16,6 +16,8 @@ part 'subscriber_jsonld_subscriber_read.g.dart';
 /// * [atId] 
 /// * [atType] 
 /// * [userIdentifier] 
+/// * [createdAt] 
+/// * [updatedAt] 
 @BuiltValue()
 abstract class SubscriberJsonldSubscriberRead implements Built<SubscriberJsonldSubscriberRead, SubscriberJsonldSubscriberReadBuilder> {
   @BuiltValueField(wireName: r'@context')
@@ -29,6 +31,12 @@ abstract class SubscriberJsonldSubscriberRead implements Built<SubscriberJsonldS
 
   @BuiltValueField(wireName: r'userIdentifier')
   String get userIdentifier;
+
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
+
+  @BuiltValueField(wireName: r'updatedAt')
+  DateTime? get updatedAt;
 
   SubscriberJsonldSubscriberRead._();
 
@@ -79,6 +87,20 @@ class _$SubscriberJsonldSubscriberReadSerializer implements PrimitiveSerializer<
       object.userIdentifier,
       specifiedType: const FullType(String),
     );
+    if (object.createdAt != null) {
+      yield r'createdAt';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.updatedAt != null) {
+      yield r'updatedAt';
+      yield serializers.serialize(
+        object.updatedAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
   }
 
   @override
@@ -129,6 +151,20 @@ class _$SubscriberJsonldSubscriberReadSerializer implements PrimitiveSerializer<
             specifiedType: const FullType(String),
           ) as String;
           result.userIdentifier = valueDes;
+          break;
+        case r'createdAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
+          break;
+        case r'updatedAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.updatedAt = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -1,0 +1,26 @@
+name: conventional-commits
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, edited]
+    branches:
+      - main
+
+jobs:
+  conventional-commits:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: get github org token
+        uses: actions/create-github-app-token@v1
+        id: github-org-token
+        with:
+          app-id: ${{ vars.SAAS_NOTIFICATION_BOT_APP_ID }}
+          private-key: ${{ secrets.SAAS_NOTIFICATION_BOT_KEY }}
+          owner: ${{ github.repository_owner }}
+      - name: validate commit message
+        uses: Flex-O-SAS/jira-conventional-commits@v2
+        with:
+          org-token: ${{ steps.github-org-token.outputs.token}}
+          token: ${{ secrets.GITHUB_TOKEN }}

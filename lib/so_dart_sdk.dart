@@ -188,6 +188,7 @@ export 'package:so_dart_sdk/corporate/model/api_packages_get_collection200_respo
 export 'package:so_dart_sdk/corporate/model/appointment_appointment_read.dart';
 export 'package:so_dart_sdk/corporate/model/appointment_appointment_write.dart';
 export 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_read.dart';
+export 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_signed_write.dart';
 export 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_write.dart';
 export 'package:so_dart_sdk/corporate/model/appointment_client_appointment_read.dart';
 export 'package:so_dart_sdk/corporate/model/appointment_client_appointment_write.dart';

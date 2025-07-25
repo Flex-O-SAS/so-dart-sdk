@@ -15,6 +15,8 @@ class _$ItemJsonldProviderReadAddressRead
   @override
   final String? atType;
   @override
+  final String service;
+  @override
   final bool isBookable;
 
   factory _$ItemJsonldProviderReadAddressRead(
@@ -23,8 +25,14 @@ class _$ItemJsonldProviderReadAddressRead
           ._build();
 
   _$ItemJsonldProviderReadAddressRead._(
-      {this.atContext, this.atId, this.atType, required this.isBookable})
+      {this.atContext,
+      this.atId,
+      this.atType,
+      required this.service,
+      required this.isBookable})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        service, r'ItemJsonldProviderReadAddressRead', 'service');
     BuiltValueNullFieldError.checkNotNull(
         isBookable, r'ItemJsonldProviderReadAddressRead', 'isBookable');
   }
@@ -45,6 +53,7 @@ class _$ItemJsonldProviderReadAddressRead
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
+        service == other.service &&
         isBookable == other.isBookable;
   }
 
@@ -54,6 +63,7 @@ class _$ItemJsonldProviderReadAddressRead
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
+    _$hash = $jc(_$hash, service.hashCode);
     _$hash = $jc(_$hash, isBookable.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -65,6 +75,7 @@ class _$ItemJsonldProviderReadAddressRead
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
+          ..add('service', service)
           ..add('isBookable', isBookable))
         .toString();
   }
@@ -92,6 +103,10 @@ class ItemJsonldProviderReadAddressReadBuilder
   String? get atType => _$this._atType;
   set atType(String? atType) => _$this._atType = atType;
 
+  String? _service;
+  String? get service => _$this._service;
+  set service(String? service) => _$this._service = service;
+
   bool? _isBookable;
   bool? get isBookable => _$this._isBookable;
   set isBookable(bool? isBookable) => _$this._isBookable = isBookable;
@@ -106,6 +121,7 @@ class ItemJsonldProviderReadAddressReadBuilder
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
+      _service = $v.service;
       _isBookable = $v.isBookable;
       _$v = null;
     }
@@ -135,6 +151,8 @@ class ItemJsonldProviderReadAddressReadBuilder
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
+            service: BuiltValueNullFieldError.checkNotNull(
+                service, r'ItemJsonldProviderReadAddressRead', 'service'),
             isBookable: BuiltValueNullFieldError.checkNotNull(
                 isBookable, r'ItemJsonldProviderReadAddressRead', 'isBookable'),
           );

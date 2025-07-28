@@ -8,13 +8,19 @@ part of 'item_provider_read_address_read.dart';
 
 class _$ItemProviderReadAddressRead extends ItemProviderReadAddressRead {
   @override
+  final String service;
+  @override
   final bool isBookable;
 
   factory _$ItemProviderReadAddressRead(
           [void Function(ItemProviderReadAddressReadBuilder)? updates]) =>
       (new ItemProviderReadAddressReadBuilder()..update(updates))._build();
 
-  _$ItemProviderReadAddressRead._({required this.isBookable}) : super._() {
+  _$ItemProviderReadAddressRead._(
+      {required this.service, required this.isBookable})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        service, r'ItemProviderReadAddressRead', 'service');
     BuiltValueNullFieldError.checkNotNull(
         isBookable, r'ItemProviderReadAddressRead', 'isBookable');
   }
@@ -32,12 +38,14 @@ class _$ItemProviderReadAddressRead extends ItemProviderReadAddressRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ItemProviderReadAddressRead &&
+        service == other.service &&
         isBookable == other.isBookable;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, service.hashCode);
     _$hash = $jc(_$hash, isBookable.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -46,6 +54,7 @@ class _$ItemProviderReadAddressRead extends ItemProviderReadAddressRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ItemProviderReadAddressRead')
+          ..add('service', service)
           ..add('isBookable', isBookable))
         .toString();
   }
@@ -56,6 +65,10 @@ class ItemProviderReadAddressReadBuilder
         Builder<ItemProviderReadAddressRead,
             ItemProviderReadAddressReadBuilder> {
   _$ItemProviderReadAddressRead? _$v;
+
+  String? _service;
+  String? get service => _$this._service;
+  set service(String? service) => _$this._service = service;
 
   bool? _isBookable;
   bool? get isBookable => _$this._isBookable;
@@ -68,6 +81,7 @@ class ItemProviderReadAddressReadBuilder
   ItemProviderReadAddressReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _service = $v.service;
       _isBookable = $v.isBookable;
       _$v = null;
     }
@@ -91,6 +105,8 @@ class ItemProviderReadAddressReadBuilder
   _$ItemProviderReadAddressRead _build() {
     final _$result = _$v ??
         new _$ItemProviderReadAddressRead._(
+          service: BuiltValueNullFieldError.checkNotNull(
+              service, r'ItemProviderReadAddressRead', 'service'),
           isBookable: BuiltValueNullFieldError.checkNotNull(
               isBookable, r'ItemProviderReadAddressRead', 'isBookable'),
         );

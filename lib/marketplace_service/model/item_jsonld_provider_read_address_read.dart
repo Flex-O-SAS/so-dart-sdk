@@ -15,6 +15,7 @@ part 'item_jsonld_provider_read_address_read.g.dart';
 /// * [atContext] 
 /// * [atId] 
 /// * [atType] 
+/// * [service] 
 /// * [isBookable] 
 @BuiltValue()
 abstract class ItemJsonldProviderReadAddressRead implements Built<ItemJsonldProviderReadAddressRead, ItemJsonldProviderReadAddressReadBuilder> {
@@ -26,6 +27,9 @@ abstract class ItemJsonldProviderReadAddressRead implements Built<ItemJsonldProv
 
   @BuiltValueField(wireName: r'@type')
   String? get atType;
+
+  @BuiltValueField(wireName: r'service')
+  String get service;
 
   @BuiltValueField(wireName: r'isBookable')
   bool get isBookable;
@@ -74,6 +78,11 @@ class _$ItemJsonldProviderReadAddressReadSerializer implements PrimitiveSerializ
         specifiedType: const FullType(String),
       );
     }
+    yield r'service';
+    yield serializers.serialize(
+      object.service,
+      specifiedType: const FullType(String),
+    );
     yield r'isBookable';
     yield serializers.serialize(
       object.isBookable,
@@ -122,6 +131,13 @@ class _$ItemJsonldProviderReadAddressReadSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.atType = valueDes;
+          break;
+        case r'service':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.service = valueDes;
           break;
         case r'isBookable':
           final valueDes = serializers.deserialize(

@@ -11,9 +11,13 @@ part 'item_provider_read_address_read.g.dart';
 /// 
 ///
 /// Properties:
+/// * [service] 
 /// * [isBookable] 
 @BuiltValue()
 abstract class ItemProviderReadAddressRead implements Built<ItemProviderReadAddressRead, ItemProviderReadAddressReadBuilder> {
+  @BuiltValueField(wireName: r'service')
+  String get service;
+
   @BuiltValueField(wireName: r'isBookable')
   bool get isBookable;
 
@@ -40,6 +44,11 @@ class _$ItemProviderReadAddressReadSerializer implements PrimitiveSerializer<Ite
     ItemProviderReadAddressRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'service';
+    yield serializers.serialize(
+      object.service,
+      specifiedType: const FullType(String),
+    );
     yield r'isBookable';
     yield serializers.serialize(
       object.isBookable,
@@ -68,6 +77,13 @@ class _$ItemProviderReadAddressReadSerializer implements PrimitiveSerializer<Ite
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'service':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.service = valueDes;
+          break;
         case r'isBookable':
           final valueDes = serializers.deserialize(
             value,

@@ -24,6 +24,7 @@ import 'package:so_dart_sdk/corporate/model/api_packages_get_collection200_respo
 import 'package:so_dart_sdk/corporate/model/appointment_appointment_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_appointment_write.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_signed_write.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_write.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_write.dart';
@@ -60,6 +61,7 @@ part 'serializers.g.dart';
   AppointmentAppointmentRead,
   AppointmentAppointmentWrite,
   AppointmentClientAppointmentClientRead,
+  AppointmentClientAppointmentClientSignedWrite,
   AppointmentClientAppointmentClientWrite,
   AppointmentClientAppointmentRead,
   AppointmentClientAppointmentWrite,

@@ -35,8 +35,13 @@ class ProviderApi {
   /// * [orderLeftSquareBracketAddressPeriodAddressRightSquareBracket] - 
   /// * [orderLeftSquareBracketAddressPeriodCityRightSquareBracket] - 
   /// * [orderLeftSquareBracketAddressPeriodCountryRightSquareBracket] - 
+  /// * [name] - 
+  /// * [description] - 
   /// * [itemsPeriodServicePeriodId] - 
   /// * [itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket] - 
+  /// * [itemsPeriodLabel] - 
+  /// * [itemsPeriodDescription] - 
+  /// * [tagsPeriodLabel] - 
   /// * [isActive] - 
   /// * [createdAtLeftSquareBracketBeforeRightSquareBracket] - 
   /// * [createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
@@ -64,8 +69,13 @@ class ProviderApi {
     String? orderLeftSquareBracketAddressPeriodAddressRightSquareBracket = 'asc',
     String? orderLeftSquareBracketAddressPeriodCityRightSquareBracket = 'asc',
     String? orderLeftSquareBracketAddressPeriodCountryRightSquareBracket = 'asc',
+    String? name,
+    String? description,
     int? itemsPeriodServicePeriodId,
     BuiltList<int>? itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket,
+    String? itemsPeriodLabel,
+    String? itemsPeriodDescription,
+    String? tagsPeriodLabel,
     bool? isActive,
     String? createdAtLeftSquareBracketBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
@@ -112,8 +122,13 @@ class ProviderApi {
       if (orderLeftSquareBracketAddressPeriodAddressRightSquareBracket != null) r'order[address.address]': encodeQueryParameter(_serializers, orderLeftSquareBracketAddressPeriodAddressRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketAddressPeriodCityRightSquareBracket != null) r'order[address.city]': encodeQueryParameter(_serializers, orderLeftSquareBracketAddressPeriodCityRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketAddressPeriodCountryRightSquareBracket != null) r'order[address.country]': encodeQueryParameter(_serializers, orderLeftSquareBracketAddressPeriodCountryRightSquareBracket, const FullType(String)),
+      if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
+      if (description != null) r'description': encodeQueryParameter(_serializers, description, const FullType(String)),
       if (itemsPeriodServicePeriodId != null) r'items.service.id': encodeQueryParameter(_serializers, itemsPeriodServicePeriodId, const FullType(int)),
       if (itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket != null) r'items.service.id[]': encodeCollectionQueryParameter<int>(_serializers, itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (itemsPeriodLabel != null) r'items.label': encodeQueryParameter(_serializers, itemsPeriodLabel, const FullType(String)),
+      if (itemsPeriodDescription != null) r'items.description': encodeQueryParameter(_serializers, itemsPeriodDescription, const FullType(String)),
+      if (tagsPeriodLabel != null) r'tags.label': encodeQueryParameter(_serializers, tagsPeriodLabel, const FullType(String)),
       if (isActive != null) r'isActive': encodeQueryParameter(_serializers, isActive, const FullType(bool)),
       if (createdAtLeftSquareBracketBeforeRightSquareBracket != null) r'createdAt[before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
       if (createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'createdAt[strictly_before]': encodeQueryParameter(_serializers, createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),

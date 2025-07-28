@@ -277,33 +277,34 @@ export 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_writ
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-export 'package:so_dart_sdk/connect/api.dart';
-export 'package:so_dart_sdk/connect/auth/api_key_auth.dart';
-export 'package:so_dart_sdk/connect/auth/basic_auth.dart';
-export 'package:so_dart_sdk/connect/auth/bearer_auth.dart';
-export 'package:so_dart_sdk/connect/auth/oauth.dart';
-export 'package:so_dart_sdk/connect/serializers.dart';
-export 'package:so_dart_sdk/connect/model/date.dart';
+export 'package:so_dart_sdk/core_service/api.dart';
+export 'package:so_dart_sdk/core_service/auth/api_key_auth.dart';
+export 'package:so_dart_sdk/core_service/auth/basic_auth.dart';
+export 'package:so_dart_sdk/core_service/auth/bearer_auth.dart';
+export 'package:so_dart_sdk/core_service/auth/oauth.dart';
+export 'package:so_dart_sdk/core_service/serializers.dart';
+export 'package:so_dart_sdk/core_service/model/date.dart';
 
-export 'package:so_dart_sdk/connect/api/devices_api.dart';
-export 'package:so_dart_sdk/connect/api/lockers_api.dart';
-export 'package:so_dart_sdk/connect/api/misc_api.dart';
-export 'package:so_dart_sdk/connect/api/providers_api.dart';
-export 'package:so_dart_sdk/connect/api/users_api.dart';
+export 'package:so_dart_sdk/core_service/api/device_api.dart';
+export 'package:so_dart_sdk/core_service/api/notification_api.dart';
+export 'package:so_dart_sdk/core_service/api/subscriber_api.dart';
 
-export 'package:so_dart_sdk/connect/model/auth_response.dart';
-export 'package:so_dart_sdk/connect/model/box_list_dto_inner.dart';
-export 'package:so_dart_sdk/connect/model/devices_unlock_post_request.dart';
-export 'package:so_dart_sdk/connect/model/error_response.dart';
-export 'package:so_dart_sdk/connect/model/menu_list_dto.dart';
-export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner.dart';
-export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner.dart';
-export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner_items_inner.dart';
-export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_site.dart';
-export 'package:so_dart_sdk/connect/model/provider_response_inner.dart';
-export 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get200_response.dart';
-export 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get404_response.dart';
-export 'package:so_dart_sdk/connect/model/unlock_response.dart';
-export 'package:so_dart_sdk/connect/model/user_dto.dart';
-export 'package:so_dart_sdk/connect/model/user_response_dto.dart';
+export 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
+export 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_search.dart';
+export 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_search_mapping_inner.dart';
+export 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_view.dart';
+export 'package:so_dart_sdk/core_service/model/api_subscribers_get_collection200_response.dart';
+export 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
+export 'package:so_dart_sdk/core_service/model/constraint_violation_json_violations_inner.dart';
+export 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
+export 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context.dart';
+export 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context_one_of.dart';
+export 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
+export 'package:so_dart_sdk/core_service/model/device_jsonld_device_write.dart';
+export 'package:so_dart_sdk/core_service/model/error.dart';
+export 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
+export 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';
+export 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_write.dart';
+export 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
+export 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_write.dart';
 

@@ -61,8 +61,6 @@ class _$ClientRelation extends ClientRelation {
   @override
   final String clientRelated;
   @override
-  final int site;
-  @override
   final ClientRelationTypeEnum type;
   @override
   final String? description;
@@ -82,7 +80,6 @@ class _$ClientRelation extends ClientRelation {
       {this.id,
       required this.client,
       required this.clientRelated,
-      required this.site,
       required this.type,
       this.description,
       this.begin,
@@ -93,7 +90,6 @@ class _$ClientRelation extends ClientRelation {
     BuiltValueNullFieldError.checkNotNull(client, r'ClientRelation', 'client');
     BuiltValueNullFieldError.checkNotNull(
         clientRelated, r'ClientRelation', 'clientRelated');
-    BuiltValueNullFieldError.checkNotNull(site, r'ClientRelation', 'site');
     BuiltValueNullFieldError.checkNotNull(type, r'ClientRelation', 'type');
   }
 
@@ -112,7 +108,6 @@ class _$ClientRelation extends ClientRelation {
         id == other.id &&
         client == other.client &&
         clientRelated == other.clientRelated &&
-        site == other.site &&
         type == other.type &&
         description == other.description &&
         begin == other.begin &&
@@ -127,7 +122,6 @@ class _$ClientRelation extends ClientRelation {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, client.hashCode);
     _$hash = $jc(_$hash, clientRelated.hashCode);
-    _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, begin.hashCode);
@@ -144,7 +138,6 @@ class _$ClientRelation extends ClientRelation {
           ..add('id', id)
           ..add('client', client)
           ..add('clientRelated', clientRelated)
-          ..add('site', site)
           ..add('type', type)
           ..add('description', description)
           ..add('begin', begin)
@@ -171,10 +164,6 @@ class ClientRelationBuilder
   String? get clientRelated => _$this._clientRelated;
   set clientRelated(String? clientRelated) =>
       _$this._clientRelated = clientRelated;
-
-  int? _site;
-  int? get site => _$this._site;
-  set site(int? site) => _$this._site = site;
 
   ClientRelationTypeEnum? _type;
   ClientRelationTypeEnum? get type => _$this._type;
@@ -210,7 +199,6 @@ class ClientRelationBuilder
       _id = $v.id;
       _client = $v.client;
       _clientRelated = $v.clientRelated;
-      _site = $v.site;
       _type = $v.type;
       _description = $v.description;
       _begin = $v.begin;
@@ -244,8 +232,6 @@ class ClientRelationBuilder
               client, r'ClientRelation', 'client'),
           clientRelated: BuiltValueNullFieldError.checkNotNull(
               clientRelated, r'ClientRelation', 'clientRelated'),
-          site: BuiltValueNullFieldError.checkNotNull(
-              site, r'ClientRelation', 'site'),
           type: BuiltValueNullFieldError.checkNotNull(
               type, r'ClientRelation', 'type'),
           description: description,

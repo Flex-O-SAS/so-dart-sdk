@@ -12,9 +12,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiCentersGetCollection200ResponseSearchMappingInner.serializer)
       ..add(ApiCentersGetCollection200ResponseView.serializer)
       ..add(ApiCentersPublicGetCollection200Response.serializer)
+      ..add(ApiCompaniesGetCollection200Response.serializer)
+      ..add(ApiContractsGetCollection200Response.serializer)
+      ..add(ApiCreditsGetCollection200Response.serializer)
       ..add(ApiEnterprisesGetCollection200Response.serializer)
       ..add(ApiHappeningGetCollection200Response.serializer)
       ..add(ApiIndividualsGetCollection200Response.serializer)
+      ..add(ApiInvoicesGetCollection200Response.serializer)
+      ..add(ApiOpportunitiesGetCollection200Response.serializer)
       ..add(ApiStaffGetCollection200Response.serializer)
       ..add(CenterJsonldCenterSearch.serializer)
       ..add(CenterJsonldHappeningRead.serializer)
@@ -23,9 +28,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CenterJsonldHappeningReadContextOneOfHydraEnum.serializer)
       ..add(CenterJsonldPublicCenterRead.serializer)
       ..add(CenterJsonldPublicCenterReadAssetsInner.serializer)
+      ..add(CompanyJsonldCompanySearch.serializer)
       ..add(ConstraintViolationJson.serializer)
       ..add(ConstraintViolationJsonViolationsInner.serializer)
       ..add(ConstraintViolationJsonldJsonld.serializer)
+      ..add(ContractJsonldContractSearch.serializer)
+      ..add(CreditJsonldCreditSearch.serializer)
       ..add(EnterpriseJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(EnterpriseJsonldIndividualSearch.serializer)
       ..add(Error.serializer)
@@ -39,6 +47,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(IndividualIndividualWrite.serializer)
       ..add(IndividualJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(IndividualJsonldIndividualSearch.serializer)
+      ..add(InvoiceJsonldInvoiceSearch.serializer)
+      ..add(OpportunityJsonldOpportunitySearch.serializer)
       ..add(StaffJsonldStaffSearch.serializer)
       ..add(StaffStaffWrite.serializer)
       ..addBuilderFactory(
@@ -60,6 +70,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(CenterJsonldPublicCenterReadAssetsInner)]),
           () => new ListBuilder<CenterJsonldPublicCenterReadAssetsInner>())
       ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(CompanyJsonldCompanySearch)]),
+          () => new ListBuilder<CompanyJsonldCompanySearch>())
+      ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ConstraintViolationJsonViolationsInner)]),
           () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
@@ -67,6 +81,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(ConstraintViolationJsonViolationsInner)]),
           () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ContractJsonldContractSearch)]),
+          () => new ListBuilder<ContractJsonldContractSearch>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(CreditJsonldCreditSearch)]),
+          () => new ListBuilder<CreditJsonldCreditSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead)
@@ -107,6 +129,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(IndividualJsonldIndividualSearch)]),
           () => new ListBuilder<IndividualJsonldIndividualSearch>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(InvoiceJsonldInvoiceSearch)]),
+          () => new ListBuilder<InvoiceJsonldInvoiceSearch>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(OpportunityJsonldOpportunitySearch)]),
+          () => new ListBuilder<OpportunityJsonldOpportunitySearch>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(StaffJsonldStaffSearch)]),

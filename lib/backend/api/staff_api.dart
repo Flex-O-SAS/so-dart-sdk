@@ -31,6 +31,8 @@ class StaffApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [firstname] - 
+  /// * [lastname] - 
   /// * [reference] - 
   /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
@@ -46,6 +48,8 @@ class StaffApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiStaffGetCollection200Response>> apiStaffGetCollection({ 
     int? page = 1,
+    String? firstname,
+    String? lastname,
     String? reference,
     BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     int? id,
@@ -72,6 +76,8 @@ class StaffApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (firstname != null) r'firstname': encodeQueryParameter(_serializers, firstname, const FullType(String)),
+      if (lastname != null) r'lastname': encodeQueryParameter(_serializers, lastname, const FullType(String)),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
       if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),

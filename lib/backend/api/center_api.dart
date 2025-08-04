@@ -32,6 +32,8 @@ class CenterApi {
   /// * [reference] - 
   /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [name] - 
+  /// * [email] - 
+  /// * [emailLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -48,6 +50,8 @@ class CenterApi {
     String? reference,
     BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     String? name,
+    String? email,
+    BuiltList<String>? emailLeftSquareBracketRightSquareBracket,
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
@@ -75,6 +79,8 @@ class CenterApi {
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
       if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
+      if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
+      if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': encodeCollectionQueryParameter<String>(_serializers, emailLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
     };
@@ -127,6 +133,8 @@ class CenterApi {
   /// * [reference] - 
   /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [name] - 
+  /// * [email] - 
+  /// * [emailLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -143,6 +151,8 @@ class CenterApi {
     String? reference,
     BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     String? name,
+    String? email,
+    BuiltList<String>? emailLeftSquareBracketRightSquareBracket,
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
@@ -170,6 +180,8 @@ class CenterApi {
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
       if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
+      if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
+      if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': encodeCollectionQueryParameter<String>(_serializers, emailLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
     };

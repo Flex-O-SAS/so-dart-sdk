@@ -15,7 +15,6 @@ part 'client_relation.g.dart';
 /// * [id] 
 /// * [client] 
 /// * [clientRelated] 
-/// * [site] 
 /// * [type] 
 /// * [description] 
 /// * [begin] 
@@ -32,9 +31,6 @@ abstract class ClientRelation implements Built<ClientRelation, ClientRelationBui
 
   @BuiltValueField(wireName: r'clientRelated')
   String get clientRelated;
-
-  @BuiltValueField(wireName: r'site')
-  int get site;
 
   @BuiltValueField(wireName: r'type')
   ClientRelationTypeEnum get type;
@@ -94,11 +90,6 @@ class _$ClientRelationSerializer implements PrimitiveSerializer<ClientRelation> 
     yield serializers.serialize(
       object.clientRelated,
       specifiedType: const FullType(String),
-    );
-    yield r'site';
-    yield serializers.serialize(
-      object.site,
-      specifiedType: const FullType(int),
     );
     yield r'type';
     yield serializers.serialize(
@@ -183,13 +174,6 @@ class _$ClientRelationSerializer implements PrimitiveSerializer<ClientRelation> 
             specifiedType: const FullType(String),
           ) as String;
           result.clientRelated = valueDes;
-          break;
-        case r'site':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.site = valueDes;
           break;
         case r'type':
           final valueDes = serializers.deserialize(

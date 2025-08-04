@@ -71,8 +71,6 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
   @override
   final String clientRelated;
   @override
-  final int site;
-  @override
   final ClientRelationJsonldTypeEnum type;
   @override
   final String? description;
@@ -96,7 +94,6 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
       this.id,
       required this.client,
       required this.clientRelated,
-      required this.site,
       required this.type,
       this.description,
       this.begin,
@@ -108,8 +105,6 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
         client, r'ClientRelationJsonld', 'client');
     BuiltValueNullFieldError.checkNotNull(
         clientRelated, r'ClientRelationJsonld', 'clientRelated');
-    BuiltValueNullFieldError.checkNotNull(
-        site, r'ClientRelationJsonld', 'site');
     BuiltValueNullFieldError.checkNotNull(
         type, r'ClientRelationJsonld', 'type');
   }
@@ -133,7 +128,6 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
         id == other.id &&
         client == other.client &&
         clientRelated == other.clientRelated &&
-        site == other.site &&
         type == other.type &&
         description == other.description &&
         begin == other.begin &&
@@ -151,7 +145,6 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, client.hashCode);
     _$hash = $jc(_$hash, clientRelated.hashCode);
-    _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, begin.hashCode);
@@ -171,7 +164,6 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
           ..add('id', id)
           ..add('client', client)
           ..add('clientRelated', clientRelated)
-          ..add('site', site)
           ..add('type', type)
           ..add('description', description)
           ..add('begin', begin)
@@ -214,10 +206,6 @@ class ClientRelationJsonldBuilder
   set clientRelated(String? clientRelated) =>
       _$this._clientRelated = clientRelated;
 
-  int? _site;
-  int? get site => _$this._site;
-  set site(int? site) => _$this._site = site;
-
   ClientRelationJsonldTypeEnum? _type;
   ClientRelationJsonldTypeEnum? get type => _$this._type;
   set type(ClientRelationJsonldTypeEnum? type) => _$this._type = type;
@@ -255,7 +243,6 @@ class ClientRelationJsonldBuilder
       _id = $v.id;
       _client = $v.client;
       _clientRelated = $v.clientRelated;
-      _site = $v.site;
       _type = $v.type;
       _description = $v.description;
       _begin = $v.begin;
@@ -294,8 +281,6 @@ class ClientRelationJsonldBuilder
                 client, r'ClientRelationJsonld', 'client'),
             clientRelated: BuiltValueNullFieldError.checkNotNull(
                 clientRelated, r'ClientRelationJsonld', 'clientRelated'),
-            site: BuiltValueNullFieldError.checkNotNull(
-                site, r'ClientRelationJsonld', 'site'),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'ClientRelationJsonld', 'type'),
             description: description,

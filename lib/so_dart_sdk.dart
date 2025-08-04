@@ -11,9 +11,14 @@ export 'package:so_dart_sdk/backend/serializers.dart';
 export 'package:so_dart_sdk/backend/model/date.dart';
 
 export 'package:so_dart_sdk/backend/api/center_api.dart';
+export 'package:so_dart_sdk/backend/api/company_api.dart';
+export 'package:so_dart_sdk/backend/api/contract_api.dart';
+export 'package:so_dart_sdk/backend/api/credit_api.dart';
 export 'package:so_dart_sdk/backend/api/enterprise_api.dart';
 export 'package:so_dart_sdk/backend/api/happening_api.dart';
 export 'package:so_dart_sdk/backend/api/individual_api.dart';
+export 'package:so_dart_sdk/backend/api/invoice_api.dart';
+export 'package:so_dart_sdk/backend/api/opportunity_api.dart';
 export 'package:so_dart_sdk/backend/api/staff_api.dart';
 
 export 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response.dart';
@@ -21,9 +26,14 @@ export 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response
 export 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search_mapping_inner.dart';
 export 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_view.dart';
 export 'package:so_dart_sdk/backend/model/api_centers_public_get_collection200_response.dart';
+export 'package:so_dart_sdk/backend/model/api_companies_get_collection200_response.dart';
+export 'package:so_dart_sdk/backend/model/api_contracts_get_collection200_response.dart';
+export 'package:so_dart_sdk/backend/model/api_credits_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_happening_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_individuals_get_collection200_response.dart';
+export 'package:so_dart_sdk/backend/model/api_invoices_get_collection200_response.dart';
+export 'package:so_dart_sdk/backend/model/api_opportunities_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_happening_read.dart';
@@ -31,9 +41,12 @@ export 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.d
 export 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context_one_of.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_assets_inner.dart';
+export 'package:so_dart_sdk/backend/model/company_jsonld_company_search.dart';
 export 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
 export 'package:so_dart_sdk/backend/model/constraint_violation_json_violations_inner.dart';
 export 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dart';
+export 'package:so_dart_sdk/backend/model/contract_jsonld_contract_search.dart';
+export 'package:so_dart_sdk/backend/model/credit_jsonld_credit_search.dart';
 export 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
 export 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
 export 'package:so_dart_sdk/backend/model/error.dart';
@@ -47,6 +60,8 @@ export 'package:so_dart_sdk/backend/model/happening_staff_feed_back_jsonld_happe
 export 'package:so_dart_sdk/backend/model/individual_individual_write.dart';
 export 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_enterprise_read.dart';
 export 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
+export 'package:so_dart_sdk/backend/model/invoice_jsonld_invoice_search.dart';
+export 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_search.dart';
 export 'package:so_dart_sdk/backend/model/staff_jsonld_staff_search.dart';
 export 'package:so_dart_sdk/backend/model/staff_staff_write.dart';
 

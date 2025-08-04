@@ -93,8 +93,6 @@ class ClientRelationApi {
   /// * [orderLeftSquareBracketTypeRightSquareBracket] - 
   /// * [orderLeftSquareBracketBeginRightSquareBracket] - 
   /// * [orderLeftSquareBracketEndRightSquareBracket] - 
-  /// * [site] - 
-  /// * [siteLeftSquareBracketRightSquareBracket] - 
   /// * [type] - 
   /// * [beginLeftSquareBracketBeforeRightSquareBracket] - 
   /// * [beginLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
@@ -123,8 +121,6 @@ class ClientRelationApi {
     String? orderLeftSquareBracketTypeRightSquareBracket = 'asc',
     String? orderLeftSquareBracketBeginRightSquareBracket = 'asc',
     String? orderLeftSquareBracketEndRightSquareBracket = 'asc',
-    int? site,
-    BuiltList<int>? siteLeftSquareBracketRightSquareBracket,
     String? type,
     String? beginLeftSquareBracketBeforeRightSquareBracket,
     String? beginLeftSquareBracketStrictlyBeforeRightSquareBracket,
@@ -171,8 +167,6 @@ class ClientRelationApi {
       if (orderLeftSquareBracketTypeRightSquareBracket != null) r'order[type]': encodeQueryParameter(_serializers, orderLeftSquareBracketTypeRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketBeginRightSquareBracket != null) r'order[begin]': encodeQueryParameter(_serializers, orderLeftSquareBracketBeginRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketEndRightSquareBracket != null) r'order[end]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndRightSquareBracket, const FullType(String)),
-      if (site != null) r'site': encodeQueryParameter(_serializers, site, const FullType(int)),
-      if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': encodeCollectionQueryParameter<int>(_serializers, siteLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
       if (beginLeftSquareBracketBeforeRightSquareBracket != null) r'begin[before]': encodeQueryParameter(_serializers, beginLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
       if (beginLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'begin[strictly_before]': encodeQueryParameter(_serializers, beginLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),

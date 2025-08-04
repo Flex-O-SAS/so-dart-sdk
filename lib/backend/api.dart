@@ -10,9 +10,14 @@ import 'package:so_dart_sdk/backend/auth/basic_auth.dart';
 import 'package:so_dart_sdk/backend/auth/bearer_auth.dart';
 import 'package:so_dart_sdk/backend/auth/oauth.dart';
 import 'package:so_dart_sdk/backend/api/center_api.dart';
+import 'package:so_dart_sdk/backend/api/company_api.dart';
+import 'package:so_dart_sdk/backend/api/contract_api.dart';
+import 'package:so_dart_sdk/backend/api/credit_api.dart';
 import 'package:so_dart_sdk/backend/api/enterprise_api.dart';
 import 'package:so_dart_sdk/backend/api/happening_api.dart';
 import 'package:so_dart_sdk/backend/api/individual_api.dart';
+import 'package:so_dart_sdk/backend/api/invoice_api.dart';
+import 'package:so_dart_sdk/backend/api/opportunity_api.dart';
 import 'package:so_dart_sdk/backend/api/staff_api.dart';
 
 class SoDartSdk {
@@ -75,6 +80,24 @@ class SoDartSdk {
     return CenterApi(dio, serializers);
   }
 
+  /// Get CompanyApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  CompanyApi getCompanyApi() {
+    return CompanyApi(dio, serializers);
+  }
+
+  /// Get ContractApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ContractApi getContractApi() {
+    return ContractApi(dio, serializers);
+  }
+
+  /// Get CreditApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  CreditApi getCreditApi() {
+    return CreditApi(dio, serializers);
+  }
+
   /// Get EnterpriseApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   EnterpriseApi getEnterpriseApi() {
@@ -91,6 +114,18 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   IndividualApi getIndividualApi() {
     return IndividualApi(dio, serializers);
+  }
+
+  /// Get InvoiceApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  InvoiceApi getInvoiceApi() {
+    return InvoiceApi(dio, serializers);
+  }
+
+  /// Get OpportunityApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  OpportunityApi getOpportunityApi() {
+    return OpportunityApi(dio, serializers);
   }
 
   /// Get StaffApi instance, base route and serializer can be overridden by a given but be careful,

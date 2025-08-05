@@ -163,7 +163,7 @@ class _$PackageJsonldPackageWrite extends PackageJsonldPackageWrite {
   @override
   final PackageJsonldPackageWriteStatusEnum status;
   @override
-  final String? senderName;
+  final String trackingNumber;
   @override
   final DateTime receptionDate;
   @override
@@ -183,7 +183,7 @@ class _$PackageJsonldPackageWrite extends PackageJsonldPackageWrite {
       required this.site,
       required this.type,
       required this.status,
-      this.senderName,
+      required this.trackingNumber,
       required this.receptionDate,
       this.handoverDate,
       this.handoverClient,
@@ -199,6 +199,8 @@ class _$PackageJsonldPackageWrite extends PackageJsonldPackageWrite {
         type, r'PackageJsonldPackageWrite', 'type');
     BuiltValueNullFieldError.checkNotNull(
         status, r'PackageJsonldPackageWrite', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        trackingNumber, r'PackageJsonldPackageWrite', 'trackingNumber');
     BuiltValueNullFieldError.checkNotNull(
         receptionDate, r'PackageJsonldPackageWrite', 'receptionDate');
   }
@@ -221,7 +223,7 @@ class _$PackageJsonldPackageWrite extends PackageJsonldPackageWrite {
         site == other.site &&
         type == other.type &&
         status == other.status &&
-        senderName == other.senderName &&
+        trackingNumber == other.trackingNumber &&
         receptionDate == other.receptionDate &&
         handoverDate == other.handoverDate &&
         handoverClient == other.handoverClient &&
@@ -236,7 +238,7 @@ class _$PackageJsonldPackageWrite extends PackageJsonldPackageWrite {
     _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, senderName.hashCode);
+    _$hash = $jc(_$hash, trackingNumber.hashCode);
     _$hash = $jc(_$hash, receptionDate.hashCode);
     _$hash = $jc(_$hash, handoverDate.hashCode);
     _$hash = $jc(_$hash, handoverClient.hashCode);
@@ -253,7 +255,7 @@ class _$PackageJsonldPackageWrite extends PackageJsonldPackageWrite {
           ..add('site', site)
           ..add('type', type)
           ..add('status', status)
-          ..add('senderName', senderName)
+          ..add('trackingNumber', trackingNumber)
           ..add('receptionDate', receptionDate)
           ..add('handoverDate', handoverDate)
           ..add('handoverClient', handoverClient)
@@ -288,9 +290,10 @@ class PackageJsonldPackageWriteBuilder
   set status(PackageJsonldPackageWriteStatusEnum? status) =>
       _$this._status = status;
 
-  String? _senderName;
-  String? get senderName => _$this._senderName;
-  set senderName(String? senderName) => _$this._senderName = senderName;
+  String? _trackingNumber;
+  String? get trackingNumber => _$this._trackingNumber;
+  set trackingNumber(String? trackingNumber) =>
+      _$this._trackingNumber = trackingNumber;
 
   DateTime? _receptionDate;
   DateTime? get receptionDate => _$this._receptionDate;
@@ -322,7 +325,7 @@ class PackageJsonldPackageWriteBuilder
       _site = $v.site;
       _type = $v.type;
       _status = $v.status;
-      _senderName = $v.senderName;
+      _trackingNumber = $v.trackingNumber;
       _receptionDate = $v.receptionDate;
       _handoverDate = $v.handoverDate;
       _handoverClient = $v.handoverClient;
@@ -359,7 +362,8 @@ class PackageJsonldPackageWriteBuilder
               type, r'PackageJsonldPackageWrite', 'type'),
           status: BuiltValueNullFieldError.checkNotNull(
               status, r'PackageJsonldPackageWrite', 'status'),
-          senderName: senderName,
+          trackingNumber: BuiltValueNullFieldError.checkNotNull(
+              trackingNumber, r'PackageJsonldPackageWrite', 'trackingNumber'),
           receptionDate: BuiltValueNullFieldError.checkNotNull(
               receptionDate, r'PackageJsonldPackageWrite', 'receptionDate'),
           handoverDate: handoverDate,

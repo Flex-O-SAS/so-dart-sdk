@@ -93,8 +93,8 @@ class PackageApi {
   /// * [recipientLeftSquareBracketRightSquareBracket] - 
   /// * [staff] - 
   /// * [staffLeftSquareBracketRightSquareBracket] - 
-  /// * [senderName] - 
-  /// * [senderNameLeftSquareBracketRightSquareBracket] - 
+  /// * [trackingNumber] - 
+  /// * [trackingNumberLeftSquareBracketRightSquareBracket] - 
   /// * [handoverClient] - 
   /// * [handoverClientLeftSquareBracketRightSquareBracket] - 
   /// * [securityCode] - 
@@ -105,7 +105,7 @@ class PackageApi {
   /// * [status] - 
   /// * [orderLeftSquareBracketTypeRightSquareBracket] - 
   /// * [orderLeftSquareBracketStatusRightSquareBracket] - 
-  /// * [orderLeftSquareBracketSenderNameRightSquareBracket] - 
+  /// * [orderLeftSquareBracketTrackingNumberRightSquareBracket] - 
   /// * [orderLeftSquareBracketReceptionDateRightSquareBracket] - 
   /// * [orderLeftSquareBracketHandoverDateRightSquareBracket] - 
   /// * [receptionDateLeftSquareBracketBeforeRightSquareBracket] - 
@@ -133,8 +133,8 @@ class PackageApi {
     BuiltList<String>? recipientLeftSquareBracketRightSquareBracket,
     String? staff,
     BuiltList<String>? staffLeftSquareBracketRightSquareBracket,
-    String? senderName,
-    BuiltList<String>? senderNameLeftSquareBracketRightSquareBracket,
+    String? trackingNumber,
+    BuiltList<String>? trackingNumberLeftSquareBracketRightSquareBracket,
     String? handoverClient,
     BuiltList<String>? handoverClientLeftSquareBracketRightSquareBracket,
     String? securityCode,
@@ -145,7 +145,7 @@ class PackageApi {
     String? status,
     String? orderLeftSquareBracketTypeRightSquareBracket = 'asc',
     String? orderLeftSquareBracketStatusRightSquareBracket = 'asc',
-    String? orderLeftSquareBracketSenderNameRightSquareBracket = 'asc',
+    String? orderLeftSquareBracketTrackingNumberRightSquareBracket = 'asc',
     String? orderLeftSquareBracketReceptionDateRightSquareBracket = 'asc',
     String? orderLeftSquareBracketHandoverDateRightSquareBracket = 'asc',
     String? receptionDateLeftSquareBracketBeforeRightSquareBracket,
@@ -191,8 +191,8 @@ class PackageApi {
       if (recipientLeftSquareBracketRightSquareBracket != null) r'recipient[]': encodeCollectionQueryParameter<String>(_serializers, recipientLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (staff != null) r'staff': encodeQueryParameter(_serializers, staff, const FullType(String)),
       if (staffLeftSquareBracketRightSquareBracket != null) r'staff[]': encodeCollectionQueryParameter<String>(_serializers, staffLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (senderName != null) r'senderName': encodeQueryParameter(_serializers, senderName, const FullType(String)),
-      if (senderNameLeftSquareBracketRightSquareBracket != null) r'senderName[]': encodeCollectionQueryParameter<String>(_serializers, senderNameLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (trackingNumber != null) r'trackingNumber': encodeQueryParameter(_serializers, trackingNumber, const FullType(String)),
+      if (trackingNumberLeftSquareBracketRightSquareBracket != null) r'trackingNumber[]': encodeCollectionQueryParameter<String>(_serializers, trackingNumberLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (handoverClient != null) r'handoverClient': encodeQueryParameter(_serializers, handoverClient, const FullType(String)),
       if (handoverClientLeftSquareBracketRightSquareBracket != null) r'handoverClient[]': encodeCollectionQueryParameter<String>(_serializers, handoverClientLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (securityCode != null) r'securityCode': encodeQueryParameter(_serializers, securityCode, const FullType(String)),
@@ -203,7 +203,7 @@ class PackageApi {
       if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
       if (orderLeftSquareBracketTypeRightSquareBracket != null) r'order[type]': encodeQueryParameter(_serializers, orderLeftSquareBracketTypeRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': encodeQueryParameter(_serializers, orderLeftSquareBracketStatusRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketSenderNameRightSquareBracket != null) r'order[senderName]': encodeQueryParameter(_serializers, orderLeftSquareBracketSenderNameRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketTrackingNumberRightSquareBracket != null) r'order[trackingNumber]': encodeQueryParameter(_serializers, orderLeftSquareBracketTrackingNumberRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketReceptionDateRightSquareBracket != null) r'order[receptionDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketReceptionDateRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketHandoverDateRightSquareBracket != null) r'order[handoverDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketHandoverDateRightSquareBracket, const FullType(String)),
       if (receptionDateLeftSquareBracketBeforeRightSquareBracket != null) r'receptionDate[before]': encodeQueryParameter(_serializers, receptionDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),

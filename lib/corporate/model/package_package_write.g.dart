@@ -153,7 +153,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
   @override
   final PackagePackageWriteStatusEnum status;
   @override
-  final String? senderName;
+  final String trackingNumber;
   @override
   final DateTime receptionDate;
   @override
@@ -173,7 +173,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
       required this.site,
       required this.type,
       required this.status,
-      this.senderName,
+      required this.trackingNumber,
       required this.receptionDate,
       this.handoverDate,
       this.handoverClient,
@@ -187,6 +187,8 @@ class _$PackagePackageWrite extends PackagePackageWrite {
     BuiltValueNullFieldError.checkNotNull(type, r'PackagePackageWrite', 'type');
     BuiltValueNullFieldError.checkNotNull(
         status, r'PackagePackageWrite', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        trackingNumber, r'PackagePackageWrite', 'trackingNumber');
     BuiltValueNullFieldError.checkNotNull(
         receptionDate, r'PackagePackageWrite', 'receptionDate');
   }
@@ -209,7 +211,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
         site == other.site &&
         type == other.type &&
         status == other.status &&
-        senderName == other.senderName &&
+        trackingNumber == other.trackingNumber &&
         receptionDate == other.receptionDate &&
         handoverDate == other.handoverDate &&
         handoverClient == other.handoverClient &&
@@ -224,7 +226,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
     _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, senderName.hashCode);
+    _$hash = $jc(_$hash, trackingNumber.hashCode);
     _$hash = $jc(_$hash, receptionDate.hashCode);
     _$hash = $jc(_$hash, handoverDate.hashCode);
     _$hash = $jc(_$hash, handoverClient.hashCode);
@@ -241,7 +243,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
           ..add('site', site)
           ..add('type', type)
           ..add('status', status)
-          ..add('senderName', senderName)
+          ..add('trackingNumber', trackingNumber)
           ..add('receptionDate', receptionDate)
           ..add('handoverDate', handoverDate)
           ..add('handoverClient', handoverClient)
@@ -274,9 +276,10 @@ class PackagePackageWriteBuilder
   PackagePackageWriteStatusEnum? get status => _$this._status;
   set status(PackagePackageWriteStatusEnum? status) => _$this._status = status;
 
-  String? _senderName;
-  String? get senderName => _$this._senderName;
-  set senderName(String? senderName) => _$this._senderName = senderName;
+  String? _trackingNumber;
+  String? get trackingNumber => _$this._trackingNumber;
+  set trackingNumber(String? trackingNumber) =>
+      _$this._trackingNumber = trackingNumber;
 
   DateTime? _receptionDate;
   DateTime? get receptionDate => _$this._receptionDate;
@@ -308,7 +311,7 @@ class PackagePackageWriteBuilder
       _site = $v.site;
       _type = $v.type;
       _status = $v.status;
-      _senderName = $v.senderName;
+      _trackingNumber = $v.trackingNumber;
       _receptionDate = $v.receptionDate;
       _handoverDate = $v.handoverDate;
       _handoverClient = $v.handoverClient;
@@ -345,7 +348,8 @@ class PackagePackageWriteBuilder
               type, r'PackagePackageWrite', 'type'),
           status: BuiltValueNullFieldError.checkNotNull(
               status, r'PackagePackageWrite', 'status'),
-          senderName: senderName,
+          trackingNumber: BuiltValueNullFieldError.checkNotNull(
+              trackingNumber, r'PackagePackageWrite', 'trackingNumber'),
           receptionDate: BuiltValueNullFieldError.checkNotNull(
               receptionDate, r'PackagePackageWrite', 'receptionDate'),
           handoverDate: handoverDate,

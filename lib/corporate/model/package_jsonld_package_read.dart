@@ -22,7 +22,7 @@ part 'package_jsonld_package_read.g.dart';
 /// * [site] 
 /// * [type] 
 /// * [status] 
-/// * [senderName] 
+/// * [trackingNumber] 
 /// * [receptionDate] 
 /// * [handoverDate] 
 /// * [handoverClient] 
@@ -58,8 +58,8 @@ abstract class PackageJsonldPackageRead implements Built<PackageJsonldPackageRea
   PackageJsonldPackageReadStatusEnum get status;
   // enum statusEnum {  received,  handed_over,  };
 
-  @BuiltValueField(wireName: r'senderName')
-  String? get senderName;
+  @BuiltValueField(wireName: r'trackingNumber')
+  String get trackingNumber;
 
   @BuiltValueField(wireName: r'receptionDate')
   DateTime get receptionDate;
@@ -149,13 +149,11 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
       object.status,
       specifiedType: const FullType(PackageJsonldPackageReadStatusEnum),
     );
-    if (object.senderName != null) {
-      yield r'senderName';
-      yield serializers.serialize(
-        object.senderName,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
+    yield r'trackingNumber';
+    yield serializers.serialize(
+      object.trackingNumber,
+      specifiedType: const FullType(String),
+    );
     yield r'receptionDate';
     yield serializers.serialize(
       object.receptionDate,
@@ -266,13 +264,12 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
           ) as PackageJsonldPackageReadStatusEnum;
           result.status = valueDes;
           break;
-        case r'senderName':
+        case r'trackingNumber':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.senderName = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.trackingNumber = valueDes;
           break;
         case r'receptionDate':
           final valueDes = serializers.deserialize(

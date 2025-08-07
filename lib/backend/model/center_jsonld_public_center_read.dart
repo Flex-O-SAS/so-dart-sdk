@@ -20,6 +20,9 @@ part 'center_jsonld_public_center_read.g.dart';
 /// * [name] 
 /// * [email] 
 /// * [phone] 
+/// * [openingHour] 
+/// * [closureHour] 
+/// * [openingDate] 
 /// * [assets] 
 /// * [address] 
 /// * [zipcode] 
@@ -45,6 +48,15 @@ abstract class CenterJsonldPublicCenterRead implements Built<CenterJsonldPublicC
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
+
+  @BuiltValueField(wireName: r'openingHour')
+  String? get openingHour;
+
+  @BuiltValueField(wireName: r'closureHour')
+  String? get closureHour;
+
+  @BuiltValueField(wireName: r'openingDate')
+  String? get openingDate;
 
   @BuiltValueField(wireName: r'assets')
   BuiltList<CenterJsonldPublicCenterReadAssetsInner>? get assets;
@@ -126,6 +138,27 @@ class _$CenterJsonldPublicCenterReadSerializer implements PrimitiveSerializer<Ce
       yield r'phone';
       yield serializers.serialize(
         object.phone,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.openingHour != null) {
+      yield r'openingHour';
+      yield serializers.serialize(
+        object.openingHour,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.closureHour != null) {
+      yield r'closureHour';
+      yield serializers.serialize(
+        object.closureHour,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.openingDate != null) {
+      yield r'openingDate';
+      yield serializers.serialize(
+        object.openingDate,
         specifiedType: const FullType.nullable(String),
       );
     }
@@ -237,6 +270,30 @@ class _$CenterJsonldPublicCenterReadSerializer implements PrimitiveSerializer<Ce
           ) as String?;
           if (valueDes == null) continue;
           result.phone = valueDes;
+          break;
+        case r'openingHour':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.openingHour = valueDes;
+          break;
+        case r'closureHour':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.closureHour = valueDes;
+          break;
+        case r'openingDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.openingDate = valueDes;
           break;
         case r'assets':
           final valueDes = serializers.deserialize(

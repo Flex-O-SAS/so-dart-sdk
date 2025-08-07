@@ -20,6 +20,12 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
   @override
   final String? phone;
   @override
+  final String? openingHour;
+  @override
+  final String? closureHour;
+  @override
+  final String? openingDate;
+  @override
   final BuiltList<CenterJsonldPublicCenterReadAssetsInner>? assets;
   @override
   final String? address;
@@ -43,6 +49,9 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
       this.name,
       this.email,
       this.phone,
+      this.openingHour,
+      this.closureHour,
+      this.openingDate,
       this.assets,
       this.address,
       this.zipcode,
@@ -70,6 +79,9 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
         name == other.name &&
         email == other.email &&
         phone == other.phone &&
+        openingHour == other.openingHour &&
+        closureHour == other.closureHour &&
+        openingDate == other.openingDate &&
         assets == other.assets &&
         address == other.address &&
         zipcode == other.zipcode &&
@@ -87,6 +99,9 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, openingHour.hashCode);
+    _$hash = $jc(_$hash, closureHour.hashCode);
+    _$hash = $jc(_$hash, openingDate.hashCode);
     _$hash = $jc(_$hash, assets.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jc(_$hash, zipcode.hashCode);
@@ -106,6 +121,9 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
           ..add('name', name)
           ..add('email', email)
           ..add('phone', phone)
+          ..add('openingHour', openingHour)
+          ..add('closureHour', closureHour)
+          ..add('openingDate', openingDate)
           ..add('assets', assets)
           ..add('address', address)
           ..add('zipcode', zipcode)
@@ -148,6 +166,18 @@ class CenterJsonldPublicCenterReadBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
+  String? _openingHour;
+  String? get openingHour => _$this._openingHour;
+  set openingHour(String? openingHour) => _$this._openingHour = openingHour;
+
+  String? _closureHour;
+  String? get closureHour => _$this._closureHour;
+  set closureHour(String? closureHour) => _$this._closureHour = closureHour;
+
+  String? _openingDate;
+  String? get openingDate => _$this._openingDate;
+  set openingDate(String? openingDate) => _$this._openingDate = openingDate;
+
   ListBuilder<CenterJsonldPublicCenterReadAssetsInner>? _assets;
   ListBuilder<CenterJsonldPublicCenterReadAssetsInner> get assets =>
       _$this._assets ??=
@@ -188,6 +218,9 @@ class CenterJsonldPublicCenterReadBuilder
       _name = $v.name;
       _email = $v.email;
       _phone = $v.phone;
+      _openingHour = $v.openingHour;
+      _closureHour = $v.closureHour;
+      _openingDate = $v.openingDate;
       _assets = $v.assets?.toBuilder();
       _address = $v.address;
       _zipcode = $v.zipcode;
@@ -224,6 +257,9 @@ class CenterJsonldPublicCenterReadBuilder
             name: name,
             email: email,
             phone: phone,
+            openingHour: openingHour,
+            closureHour: closureHour,
+            openingDate: openingDate,
             assets: _assets?.build(),
             address: address,
             zipcode: zipcode,

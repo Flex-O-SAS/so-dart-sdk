@@ -28,6 +28,7 @@ do
         --skip-validate-spec \
         -o ./
     cat "${cwd}/lib/so_dart_sdk.dart" >> "${cwd}/lib/all.dart"
+    sleep 5
 done
 
 mv "${cwd}/lib/all.dart" "${cwd}/lib/so_dart_sdk.dart"

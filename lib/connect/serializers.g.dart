@@ -7,6 +7,7 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(AccessCardsProviderUuidCardsGet200ResponseInner.serializer)
       ..add(AuthResponse.serializer)
       ..add(BoxListDtoInner.serializer)
       ..add(DevicesUnlockPostRequest.serializer)

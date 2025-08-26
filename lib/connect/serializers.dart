@@ -14,6 +14,7 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:so_dart_sdk/connect/date_serializer.dart';
 import 'package:so_dart_sdk/connect/model/date.dart';
 
+import 'package:so_dart_sdk/connect/model/access_cards_provider_uuid_cards_get200_response_inner.dart';
 import 'package:so_dart_sdk/connect/model/auth_response.dart';
 import 'package:so_dart_sdk/connect/model/box_list_dto_inner.dart';
 import 'package:so_dart_sdk/connect/model/devices_unlock_post_request.dart';
@@ -33,6 +34,7 @@ import 'package:so_dart_sdk/connect/model/user_response_dto.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
+  AccessCardsProviderUuidCardsGet200ResponseInner,
   AuthResponse,
   BoxListDtoInner,
   DevicesUnlockPostRequest,
@@ -53,6 +55,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ProviderResponseInner)]),
         () => ListBuilder<ProviderResponseInner>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(AccessCardsProviderUuidCardsGet200ResponseInner)]),
+        () => ListBuilder<AccessCardsProviderUuidCardsGet200ResponseInner>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(BoxListDtoInner)]),

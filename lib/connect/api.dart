@@ -9,6 +9,7 @@ import 'package:so_dart_sdk/connect/auth/api_key_auth.dart';
 import 'package:so_dart_sdk/connect/auth/basic_auth.dart';
 import 'package:so_dart_sdk/connect/auth/bearer_auth.dart';
 import 'package:so_dart_sdk/connect/auth/oauth.dart';
+import 'package:so_dart_sdk/connect/api/access_cards_api.dart';
 import 'package:so_dart_sdk/connect/api/devices_api.dart';
 import 'package:so_dart_sdk/connect/api/lockers_api.dart';
 import 'package:so_dart_sdk/connect/api/misc_api.dart';
@@ -67,6 +68,12 @@ class SoDartSdk {
     if (this.dio.interceptors.any((i) => i is ApiKeyAuthInterceptor)) {
       (this.dio.interceptors.firstWhere((element) => element is ApiKeyAuthInterceptor) as ApiKeyAuthInterceptor).apiKeys[name] = apiKey;
     }
+  }
+
+  /// Get AccessCardsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AccessCardsApi getAccessCardsApi() {
+    return AccessCardsApi(dio, serializers);
   }
 
   /// Get DevicesApi instance, base route and serializer can be overridden by a given but be careful,

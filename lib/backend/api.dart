@@ -14,10 +14,12 @@ import 'package:so_dart_sdk/backend/api/company_api.dart';
 import 'package:so_dart_sdk/backend/api/contract_api.dart';
 import 'package:so_dart_sdk/backend/api/credit_api.dart';
 import 'package:so_dart_sdk/backend/api/enterprise_api.dart';
+import 'package:so_dart_sdk/backend/api/guarantees_calculation_rules_api.dart';
 import 'package:so_dart_sdk/backend/api/happening_api.dart';
 import 'package:so_dart_sdk/backend/api/individual_api.dart';
 import 'package:so_dart_sdk/backend/api/invoice_api.dart';
 import 'package:so_dart_sdk/backend/api/opportunity_api.dart';
+import 'package:so_dart_sdk/backend/api/service_type_api.dart';
 import 'package:so_dart_sdk/backend/api/staff_api.dart';
 
 class SoDartSdk {
@@ -104,6 +106,12 @@ class SoDartSdk {
     return EnterpriseApi(dio, serializers);
   }
 
+  /// Get GuaranteesCalculationRulesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  GuaranteesCalculationRulesApi getGuaranteesCalculationRulesApi() {
+    return GuaranteesCalculationRulesApi(dio, serializers);
+  }
+
   /// Get HappeningApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   HappeningApi getHappeningApi() {
@@ -126,6 +134,12 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   OpportunityApi getOpportunityApi() {
     return OpportunityApi(dio, serializers);
+  }
+
+  /// Get ServiceTypeApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ServiceTypeApi getServiceTypeApi() {
+    return ServiceTypeApi(dio, serializers);
   }
 
   /// Get StaffApi instance, base route and serializer can be overridden by a given but be careful,

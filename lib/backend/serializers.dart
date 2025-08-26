@@ -23,10 +23,12 @@ import 'package:so_dart_sdk/backend/model/api_companies_get_collection200_respon
 import 'package:so_dart_sdk/backend/model/api_contracts_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_credits_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_guarantees_calculation_rules_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_happening_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_individuals_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_invoices_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_opportunities_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_service_type_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read.dart';
@@ -44,6 +46,9 @@ import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_en
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/guarantees_calculation_rules_guarantees_calculation_rules_write.dart';
+import 'package:so_dart_sdk/backend/model/guarantees_calculation_rules_jsonld_guarantees_calculation_rules_search.dart';
+import 'package:so_dart_sdk/backend/model/guarantees_calculation_rules_jsonld_guarantees_calculation_rules_write.dart';
 import 'package:so_dart_sdk/backend/model/happening_jsonld_happening_read.dart';
 import 'package:so_dart_sdk/backend/model/happening_jsonld_happening_search.dart';
 import 'package:so_dart_sdk/backend/model/happening_partner_link_jsonld_happening_read.dart';
@@ -55,6 +60,10 @@ import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_en
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/invoice_jsonld_invoice_search.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_search.dart';
+import 'package:so_dart_sdk/backend/model/service_type_guarantees_calculation_rules_write.dart';
+import 'package:so_dart_sdk/backend/model/service_type_jsonld_guarantees_calculation_rules_search.dart';
+import 'package:so_dart_sdk/backend/model/service_type_jsonld_guarantees_calculation_rules_write.dart';
+import 'package:so_dart_sdk/backend/model/service_type_jsonld_service_type_search.dart';
 import 'package:so_dart_sdk/backend/model/staff_jsonld_staff_search.dart';
 import 'package:so_dart_sdk/backend/model/staff_staff_write.dart';
 
@@ -70,10 +79,12 @@ part 'serializers.g.dart';
   ApiContractsGetCollection200Response,
   ApiCreditsGetCollection200Response,
   ApiEnterprisesGetCollection200Response,
+  ApiGuaranteesCalculationRulesGetCollection200Response,
   ApiHappeningGetCollection200Response,
   ApiIndividualsGetCollection200Response,
   ApiInvoicesGetCollection200Response,
   ApiOpportunitiesGetCollection200Response,
+  ApiServiceTypeGetCollection200Response,
   ApiStaffGetCollection200Response,
   CenterJsonldCenterSearch,
   CenterJsonldHappeningRead,
@@ -91,6 +102,9 @@ part 'serializers.g.dart';
   EnterpriseJsonldIndividualSearch,
   Error,
   ErrorJsonld,
+  GuaranteesCalculationRulesGuaranteesCalculationRulesWrite,
+  GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesSearch,
+  GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesWrite,
   HappeningJsonldHappeningRead,
   HappeningJsonldHappeningSearch,
   HappeningPartnerLinkJsonldHappeningRead,
@@ -102,6 +116,10 @@ part 'serializers.g.dart';
   IndividualJsonldIndividualSearch,
   InvoiceJsonldInvoiceSearch,
   OpportunityJsonldOpportunitySearch,
+  ServiceTypeGuaranteesCalculationRulesWrite,
+  ServiceTypeJsonldGuaranteesCalculationRulesSearch,
+  ServiceTypeJsonldGuaranteesCalculationRulesWrite,
+  ServiceTypeJsonldServiceTypeSearch,
   StaffJsonldStaffSearch,
   StaffStaffWrite,
 ])

@@ -156,6 +156,8 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
   final DateTime? createdAt;
   @override
   final DateTime? updatedAt;
+  @override
+  final String? title;
 
   factory _$AppointmentAppointmentRead(
           [void Function(AppointmentAppointmentReadBuilder)? updates]) =>
@@ -175,7 +177,8 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
       required this.endDate,
       this.appointmentClients,
       this.createdAt,
-      this.updatedAt})
+      this.updatedAt,
+      this.title})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         organiser, r'AppointmentAppointmentRead', 'organiser');
@@ -217,7 +220,8 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
         endDate == other.endDate &&
         appointmentClients == other.appointmentClients &&
         createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        title == other.title;
   }
 
   @override
@@ -237,6 +241,7 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
     _$hash = $jc(_$hash, appointmentClients.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -257,7 +262,8 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
           ..add('endDate', endDate)
           ..add('appointmentClients', appointmentClients)
           ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('title', title))
         .toString();
   }
 }
@@ -330,6 +336,10 @@ class AppointmentAppointmentReadBuilder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
+
   AppointmentAppointmentReadBuilder() {
     AppointmentAppointmentRead._defaults(this);
   }
@@ -351,6 +361,7 @@ class AppointmentAppointmentReadBuilder
       _appointmentClients = $v.appointmentClients?.toBuilder();
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
+      _title = $v.title;
       _$v = null;
     }
     return this;
@@ -395,6 +406,7 @@ class AppointmentAppointmentReadBuilder
             appointmentClients: _appointmentClients?.build(),
             createdAt: createdAt,
             updatedAt: updatedAt,
+            title: title,
           );
     } catch (_) {
       late String _$failedField;

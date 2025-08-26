@@ -165,6 +165,8 @@ class _$AppointmentJsonldAppointmentRead
   final DateTime? createdAt;
   @override
   final DateTime? updatedAt;
+  @override
+  final String? title;
 
   factory _$AppointmentJsonldAppointmentRead(
           [void Function(AppointmentJsonldAppointmentReadBuilder)? updates]) =>
@@ -187,7 +189,8 @@ class _$AppointmentJsonldAppointmentRead
       required this.endDate,
       this.appointmentClients,
       this.createdAt,
-      this.updatedAt})
+      this.updatedAt,
+      this.title})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         organiser, r'AppointmentJsonldAppointmentRead', 'organiser');
@@ -232,7 +235,8 @@ class _$AppointmentJsonldAppointmentRead
         endDate == other.endDate &&
         appointmentClients == other.appointmentClients &&
         createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        title == other.title;
   }
 
   @override
@@ -255,6 +259,7 @@ class _$AppointmentJsonldAppointmentRead
     _$hash = $jc(_$hash, appointmentClients.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -278,7 +283,8 @@ class _$AppointmentJsonldAppointmentRead
           ..add('endDate', endDate)
           ..add('appointmentClients', appointmentClients)
           ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('title', title))
         .toString();
   }
 }
@@ -369,6 +375,10 @@ class AppointmentJsonldAppointmentReadBuilder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
+
   AppointmentJsonldAppointmentReadBuilder() {
     AppointmentJsonldAppointmentRead._defaults(this);
   }
@@ -393,6 +403,7 @@ class AppointmentJsonldAppointmentReadBuilder
       _appointmentClients = $v.appointmentClients?.toBuilder();
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
+      _title = $v.title;
       _$v = null;
     }
     return this;
@@ -440,6 +451,7 @@ class AppointmentJsonldAppointmentReadBuilder
             appointmentClients: _appointmentClients?.build(),
             createdAt: createdAt,
             updatedAt: updatedAt,
+            title: title,
           );
     } catch (_) {
       late String _$failedField;

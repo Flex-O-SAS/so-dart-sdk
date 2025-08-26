@@ -154,6 +154,8 @@ class _$AppointmentJsonldAppointmentWrite
   final DateTime endDate;
   @override
   final BuiltList<AppointmentClientJsonldAppointmentWrite>? appointmentClients;
+  @override
+  final String? title;
 
   factory _$AppointmentJsonldAppointmentWrite(
           [void Function(AppointmentJsonldAppointmentWriteBuilder)? updates]) =>
@@ -171,7 +173,8 @@ class _$AppointmentJsonldAppointmentWrite
       this.cancellationReason,
       required this.beginDate,
       required this.endDate,
-      this.appointmentClients})
+      this.appointmentClients,
+      this.title})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         organiser, r'AppointmentJsonldAppointmentWrite', 'organiser');
@@ -210,7 +213,8 @@ class _$AppointmentJsonldAppointmentWrite
         cancellationReason == other.cancellationReason &&
         beginDate == other.beginDate &&
         endDate == other.endDate &&
-        appointmentClients == other.appointmentClients;
+        appointmentClients == other.appointmentClients &&
+        title == other.title;
   }
 
   @override
@@ -227,6 +231,7 @@ class _$AppointmentJsonldAppointmentWrite
     _$hash = $jc(_$hash, beginDate.hashCode);
     _$hash = $jc(_$hash, endDate.hashCode);
     _$hash = $jc(_$hash, appointmentClients.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -244,7 +249,8 @@ class _$AppointmentJsonldAppointmentWrite
           ..add('cancellationReason', cancellationReason)
           ..add('beginDate', beginDate)
           ..add('endDate', endDate)
-          ..add('appointmentClients', appointmentClients))
+          ..add('appointmentClients', appointmentClients)
+          ..add('title', title))
         .toString();
   }
 }
@@ -308,6 +314,10 @@ class AppointmentJsonldAppointmentWriteBuilder
               appointmentClients) =>
       _$this._appointmentClients = appointmentClients;
 
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
+
   AppointmentJsonldAppointmentWriteBuilder() {
     AppointmentJsonldAppointmentWrite._defaults(this);
   }
@@ -326,6 +336,7 @@ class AppointmentJsonldAppointmentWriteBuilder
       _beginDate = $v.beginDate;
       _endDate = $v.endDate;
       _appointmentClients = $v.appointmentClients?.toBuilder();
+      _title = $v.title;
       _$v = null;
     }
     return this;
@@ -368,6 +379,7 @@ class AppointmentJsonldAppointmentWriteBuilder
             endDate: BuiltValueNullFieldError.checkNotNull(
                 endDate, r'AppointmentJsonldAppointmentWrite', 'endDate'),
             appointmentClients: _appointmentClients?.build(),
+            title: title,
           );
     } catch (_) {
       late String _$failedField;

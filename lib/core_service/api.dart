@@ -10,6 +10,7 @@ import 'package:so_dart_sdk/core_service/auth/basic_auth.dart';
 import 'package:so_dart_sdk/core_service/auth/bearer_auth.dart';
 import 'package:so_dart_sdk/core_service/auth/oauth.dart';
 import 'package:so_dart_sdk/core_service/api/device_api.dart';
+import 'package:so_dart_sdk/core_service/api/discovery_api.dart';
 import 'package:so_dart_sdk/core_service/api/notification_api.dart';
 import 'package:so_dart_sdk/core_service/api/subscriber_api.dart';
 
@@ -71,6 +72,12 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   DeviceApi getDeviceApi() {
     return DeviceApi(dio, serializers);
+  }
+
+  /// Get DiscoveryApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  DiscoveryApi getDiscoveryApi() {
+    return DiscoveryApi(dio, serializers);
   }
 
   /// Get NotificationApi instance, base route and serializer can be overridden by a given but be careful,

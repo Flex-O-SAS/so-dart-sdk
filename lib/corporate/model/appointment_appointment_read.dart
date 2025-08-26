@@ -27,6 +27,7 @@ part 'appointment_appointment_read.g.dart';
 /// * [appointmentClients] 
 /// * [createdAt] 
 /// * [updatedAt] 
+/// * [title] 
 @BuiltValue()
 abstract class AppointmentAppointmentRead implements Built<AppointmentAppointmentRead, AppointmentAppointmentReadBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -72,6 +73,9 @@ abstract class AppointmentAppointmentRead implements Built<AppointmentAppointmen
 
   @BuiltValueField(wireName: r'updatedAt')
   DateTime? get updatedAt;
+
+  @BuiltValueField(wireName: r'title')
+  String? get title;
 
   AppointmentAppointmentRead._();
 
@@ -180,6 +184,13 @@ class _$AppointmentAppointmentReadSerializer implements PrimitiveSerializer<Appo
       yield serializers.serialize(
         object.updatedAt,
         specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.title != null) {
+      yield r'title';
+      yield serializers.serialize(
+        object.title,
+        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -306,6 +317,14 @@ class _$AppointmentAppointmentReadSerializer implements PrimitiveSerializer<Appo
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.updatedAt = valueDes;
+          break;
+        case r'title':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.title = valueDes;
           break;
         default:
           unhandled.add(key);

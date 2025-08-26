@@ -24,6 +24,7 @@ part 'appointment_jsonld_appointment_write.g.dart';
 /// * [beginDate] 
 /// * [endDate] 
 /// * [appointmentClients] 
+/// * [title] 
 @BuiltValue()
 abstract class AppointmentJsonldAppointmentWrite implements Built<AppointmentJsonldAppointmentWrite, AppointmentJsonldAppointmentWriteBuilder> {
   @BuiltValueField(wireName: r'organiser')
@@ -60,6 +61,9 @@ abstract class AppointmentJsonldAppointmentWrite implements Built<AppointmentJso
 
   @BuiltValueField(wireName: r'appointmentClients')
   BuiltList<AppointmentClientJsonldAppointmentWrite>? get appointmentClients;
+
+  @BuiltValueField(wireName: r'title')
+  String? get title;
 
   AppointmentJsonldAppointmentWrite._();
 
@@ -147,6 +151,13 @@ class _$AppointmentJsonldAppointmentWriteSerializer implements PrimitiveSerializ
       yield serializers.serialize(
         object.appointmentClients,
         specifiedType: const FullType(BuiltList, [FullType(AppointmentClientJsonldAppointmentWrite)]),
+      );
+    }
+    if (object.title != null) {
+      yield r'title';
+      yield serializers.serialize(
+        object.title,
+        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -252,6 +263,14 @@ class _$AppointmentJsonldAppointmentWriteSerializer implements PrimitiveSerializ
             specifiedType: const FullType(BuiltList, [FullType(AppointmentClientJsonldAppointmentWrite)]),
           ) as BuiltList<AppointmentClientJsonldAppointmentWrite>;
           result.appointmentClients.replace(valueDes);
+          break;
+        case r'title':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.title = valueDes;
           break;
         default:
           unhandled.add(key);

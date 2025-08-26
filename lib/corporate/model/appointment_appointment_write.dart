@@ -24,6 +24,7 @@ part 'appointment_appointment_write.g.dart';
 /// * [beginDate] 
 /// * [endDate] 
 /// * [appointmentClients] 
+/// * [title] 
 @BuiltValue()
 abstract class AppointmentAppointmentWrite implements Built<AppointmentAppointmentWrite, AppointmentAppointmentWriteBuilder> {
   @BuiltValueField(wireName: r'organiser')
@@ -60,6 +61,9 @@ abstract class AppointmentAppointmentWrite implements Built<AppointmentAppointme
 
   @BuiltValueField(wireName: r'appointmentClients')
   BuiltList<AppointmentClientAppointmentWrite>? get appointmentClients;
+
+  @BuiltValueField(wireName: r'title')
+  String? get title;
 
   AppointmentAppointmentWrite._();
 
@@ -147,6 +151,13 @@ class _$AppointmentAppointmentWriteSerializer implements PrimitiveSerializer<App
       yield serializers.serialize(
         object.appointmentClients,
         specifiedType: const FullType(BuiltList, [FullType(AppointmentClientAppointmentWrite)]),
+      );
+    }
+    if (object.title != null) {
+      yield r'title';
+      yield serializers.serialize(
+        object.title,
+        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -252,6 +263,14 @@ class _$AppointmentAppointmentWriteSerializer implements PrimitiveSerializer<App
             specifiedType: const FullType(BuiltList, [FullType(AppointmentClientAppointmentWrite)]),
           ) as BuiltList<AppointmentClientAppointmentWrite>;
           result.appointmentClients.replace(valueDes);
+          break;
+        case r'title':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.title = valueDes;
           break;
         default:
           unhandled.add(key);

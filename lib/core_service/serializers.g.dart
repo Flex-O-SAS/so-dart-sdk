@@ -22,6 +22,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(DeviceJsonldDeviceReadSource_Enum.serializer)
       ..add(DeviceJsonldDeviceWrite.serializer)
       ..add(DeviceJsonldDeviceWriteSource_Enum.serializer)
+      ..add(DiscoveryJsonld.serializer)
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
       ..add(NotificationJsonldNotificationRead.serializer)
@@ -46,6 +47,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(DeviceJsonldDeviceRead)]),
           () => new ListBuilder<DeviceJsonldDeviceRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(SubscriberJsonldSubscriberRead)]),

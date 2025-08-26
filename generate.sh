@@ -13,7 +13,7 @@ export TRUSTED_PROXIES=""
 echo "" > "${cwd}/lib/all.dart"
 for service in "${services[@]}"
 do
-    git clone git@github.com:Flex-O-SAS/${service}.git "${cwd}/services/${service}"
+    git clone --depth 1 git@github.com:Flex-O-SAS/${service}.git "${cwd}/services/${service}"
     cd "${cwd}/services/${service}"
     composer install --no-scripts
     php -d memory_limit=-1 bin/console api:openapi:export --spec-version 3.0.0 --output "${cwd}/services/${service}/openapi.json"

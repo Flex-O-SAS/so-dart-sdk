@@ -16,10 +16,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiContractsGetCollection200Response.serializer)
       ..add(ApiCreditsGetCollection200Response.serializer)
       ..add(ApiEnterprisesGetCollection200Response.serializer)
+      ..add(ApiGuaranteesCalculationRulesGetCollection200Response.serializer)
       ..add(ApiHappeningGetCollection200Response.serializer)
       ..add(ApiIndividualsGetCollection200Response.serializer)
       ..add(ApiInvoicesGetCollection200Response.serializer)
       ..add(ApiOpportunitiesGetCollection200Response.serializer)
+      ..add(ApiServiceTypeGetCollection200Response.serializer)
       ..add(ApiStaffGetCollection200Response.serializer)
       ..add(CenterJsonldCenterSearch.serializer)
       ..add(CenterJsonldHappeningRead.serializer)
@@ -38,6 +40,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(EnterpriseJsonldIndividualSearch.serializer)
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
+      ..add(
+          GuaranteesCalculationRulesGuaranteesCalculationRulesWrite.serializer)
+      ..add(GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesSearch
+          .serializer)
+      ..add(GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesWrite
+          .serializer)
       ..add(HappeningJsonldHappeningRead.serializer)
       ..add(HappeningJsonldHappeningSearch.serializer)
       ..add(HappeningPartnerLinkJsonldHappeningRead.serializer)
@@ -49,6 +57,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(IndividualJsonldIndividualSearch.serializer)
       ..add(InvoiceJsonldInvoiceSearch.serializer)
       ..add(OpportunityJsonldOpportunitySearch.serializer)
+      ..add(ServiceTypeGuaranteesCalculationRulesWrite.serializer)
+      ..add(ServiceTypeJsonldGuaranteesCalculationRulesSearch.serializer)
+      ..add(ServiceTypeJsonldGuaranteesCalculationRulesWrite.serializer)
+      ..add(ServiceTypeJsonldServiceTypeSearch.serializer)
       ..add(StaffJsonldStaffSearch.serializer)
       ..add(StaffStaffWrite.serializer)
       ..addBuilderFactory(
@@ -106,6 +118,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(EnterpriseJsonldIndividualSearch)]),
           () => new ListBuilder<EnterpriseJsonldIndividualSearch>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesSearch)
+          ]),
+          () => new ListBuilder<
+              GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesSearch>())
+      ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(HappeningJsonldHappeningSearch)]),
           () => new ListBuilder<HappeningJsonldHappeningSearch>())
@@ -137,6 +156,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(OpportunityJsonldOpportunitySearch)]),
           () => new ListBuilder<OpportunityJsonldOpportunitySearch>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(ServiceTypeJsonldServiceTypeSearch)]),
+          () => new ListBuilder<ServiceTypeJsonldServiceTypeSearch>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(StaffJsonldStaffSearch)]),

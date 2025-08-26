@@ -26,6 +26,7 @@ import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonl
 import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context_one_of.dart';
 import 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
 import 'package:so_dart_sdk/core_service/model/device_jsonld_device_write.dart';
+import 'package:so_dart_sdk/core_service/model/discovery_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';
@@ -48,6 +49,7 @@ part 'serializers.g.dart';
   ConstraintViolationJsonldJsonldContextOneOf,
   DeviceJsonldDeviceRead,
   DeviceJsonldDeviceWrite,
+  DiscoveryJsonld,
   Error,
   ErrorJsonld,
   NotificationJsonldNotificationRead,

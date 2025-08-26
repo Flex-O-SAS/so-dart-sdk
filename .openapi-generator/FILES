@@ -1,5 +1,6 @@
 analysis_options.yaml
 lib/connect/api.dart
+lib/connect/api/access_cards_api.dart
 lib/connect/api/devices_api.dart
 lib/connect/api/lockers_api.dart
 lib/connect/api/misc_api.dart
@@ -12,6 +13,7 @@ lib/connect/auth/basic_auth.dart
 lib/connect/auth/bearer_auth.dart
 lib/connect/auth/oauth.dart
 lib/connect/date_serializer.dart
+lib/connect/model/access_cards_provider_uuid_cards_get200_response_inner.dart
 lib/connect/model/auth_response.dart
 lib/connect/model/box_list_dto_inner.dart
 lib/connect/model/date.dart

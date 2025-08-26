@@ -29,6 +29,7 @@ class CenterApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [groupsLeftSquareBracketRightSquareBracket] - 
   /// * [reference] - 
   /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [name] - 
@@ -47,6 +48,7 @@ class CenterApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiCentersGetCollection200Response>> apiCentersGetCollection({ 
     int? page = 1,
+    BuiltList<String>? groupsLeftSquareBracketRightSquareBracket,
     String? reference,
     BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     String? name,
@@ -76,6 +78,7 @@ class CenterApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (groupsLeftSquareBracketRightSquareBracket != null) r'groups[]': encodeCollectionQueryParameter<String>(_serializers, groupsLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
       if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
@@ -130,6 +133,7 @@ class CenterApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [groupsLeftSquareBracketRightSquareBracket] - 
   /// * [reference] - 
   /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [name] - 
@@ -148,6 +152,7 @@ class CenterApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiCentersPublicGetCollection200Response>> apiCentersPublicGetCollection({ 
     int? page = 1,
+    BuiltList<String>? groupsLeftSquareBracketRightSquareBracket,
     String? reference,
     BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     String? name,
@@ -177,6 +182,7 @@ class CenterApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (groupsLeftSquareBracketRightSquareBracket != null) r'groups[]': encodeCollectionQueryParameter<String>(_serializers, groupsLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
       if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),

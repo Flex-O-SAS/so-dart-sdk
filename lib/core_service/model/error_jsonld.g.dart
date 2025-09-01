@@ -8,7 +8,7 @@ part of 'error_jsonld.dart';
 
 class _$ErrorJsonld extends ErrorJsonld {
   @override
-  final ConstraintViolationJsonldJsonldContext? atContext;
+  final BrandingSettingJsonldContext? atContext;
   @override
   final String? atId;
   @override
@@ -98,10 +98,10 @@ class _$ErrorJsonld extends ErrorJsonld {
 class ErrorJsonldBuilder implements Builder<ErrorJsonld, ErrorJsonldBuilder> {
   _$ErrorJsonld? _$v;
 
-  ConstraintViolationJsonldJsonldContextBuilder? _atContext;
-  ConstraintViolationJsonldJsonldContextBuilder get atContext =>
-      _$this._atContext ??= new ConstraintViolationJsonldJsonldContextBuilder();
-  set atContext(ConstraintViolationJsonldJsonldContextBuilder? atContext) =>
+  BrandingSettingJsonldContextBuilder? _atContext;
+  BrandingSettingJsonldContextBuilder get atContext =>
+      _$this._atContext ??= new BrandingSettingJsonldContextBuilder();
+  set atContext(BrandingSettingJsonldContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;

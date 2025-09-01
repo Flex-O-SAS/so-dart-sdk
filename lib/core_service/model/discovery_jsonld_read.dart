@@ -3,12 +3,13 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_read.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'discovery_jsonld.g.dart';
+part 'discovery_jsonld_read.g.dart';
 
 /// 
 ///
@@ -23,7 +24,6 @@ part 'discovery_jsonld.g.dart';
 /// * [zitadelManagerClientId] 
 /// * [zitadelOrgId] 
 /// * [managerUrl] 
-/// * [customerUrl] 
 /// * [mediaUrl] 
 /// * [ticketingUrl] 
 /// * [marketplaceUrl] 
@@ -36,10 +36,11 @@ part 'discovery_jsonld.g.dart';
 /// * [customer] 
 /// * [product] 
 /// * [availableOnHosts] 
+/// * [brandingSettings] 
 @BuiltValue()
-abstract class DiscoveryJsonld implements Built<DiscoveryJsonld, DiscoveryJsonldBuilder> {
+abstract class DiscoveryJsonldRead implements Built<DiscoveryJsonldRead, DiscoveryJsonldReadBuilder> {
   @BuiltValueField(wireName: r'@context')
-  ConstraintViolationJsonldJsonldContext? get atContext;
+  BrandingSettingJsonldContext? get atContext;
 
   @BuiltValueField(wireName: r'@id')
   String? get atId;
@@ -67,9 +68,6 @@ abstract class DiscoveryJsonld implements Built<DiscoveryJsonld, DiscoveryJsonld
 
   @BuiltValueField(wireName: r'managerUrl')
   String? get managerUrl;
-
-  @BuiltValueField(wireName: r'customerUrl')
-  String? get customerUrl;
 
   @BuiltValueField(wireName: r'mediaUrl')
   String? get mediaUrl;
@@ -107,34 +105,37 @@ abstract class DiscoveryJsonld implements Built<DiscoveryJsonld, DiscoveryJsonld
   @BuiltValueField(wireName: r'availableOnHosts')
   BuiltList<String>? get availableOnHosts;
 
-  DiscoveryJsonld._();
+  @BuiltValueField(wireName: r'brandingSettings')
+  BuiltList<BrandingSettingJsonldRead>? get brandingSettings;
 
-  factory DiscoveryJsonld([void updates(DiscoveryJsonldBuilder b)]) = _$DiscoveryJsonld;
+  DiscoveryJsonldRead._();
+
+  factory DiscoveryJsonldRead([void updates(DiscoveryJsonldReadBuilder b)]) = _$DiscoveryJsonldRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(DiscoveryJsonldBuilder b) => b;
+  static void _defaults(DiscoveryJsonldReadBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DiscoveryJsonld> get serializer => _$DiscoveryJsonldSerializer();
+  static Serializer<DiscoveryJsonldRead> get serializer => _$DiscoveryJsonldReadSerializer();
 }
 
-class _$DiscoveryJsonldSerializer implements PrimitiveSerializer<DiscoveryJsonld> {
+class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJsonldRead> {
   @override
-  final Iterable<Type> types = const [DiscoveryJsonld, _$DiscoveryJsonld];
+  final Iterable<Type> types = const [DiscoveryJsonldRead, _$DiscoveryJsonldRead];
 
   @override
-  final String wireName = r'DiscoveryJsonld';
+  final String wireName = r'DiscoveryJsonldRead';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    DiscoveryJsonld object, {
+    DiscoveryJsonldRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atContext != null) {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(ConstraintViolationJsonldJsonldContext),
+        specifiedType: const FullType(BrandingSettingJsonldContext),
       );
     }
     if (object.atId != null) {
@@ -197,13 +198,6 @@ class _$DiscoveryJsonldSerializer implements PrimitiveSerializer<DiscoveryJsonld
       yield r'managerUrl';
       yield serializers.serialize(
         object.managerUrl,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.customerUrl != null) {
-      yield r'customerUrl';
-      yield serializers.serialize(
-        object.customerUrl,
         specifiedType: const FullType(String),
       );
     }
@@ -291,12 +285,19 @@ class _$DiscoveryJsonldSerializer implements PrimitiveSerializer<DiscoveryJsonld
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
+    if (object.brandingSettings != null) {
+      yield r'brandingSettings';
+      yield serializers.serialize(
+        object.brandingSettings,
+        specifiedType: const FullType(BuiltList, [FullType(BrandingSettingJsonldRead)]),
+      );
+    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    DiscoveryJsonld object, {
+    DiscoveryJsonldRead object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -307,7 +308,7 @@ class _$DiscoveryJsonldSerializer implements PrimitiveSerializer<DiscoveryJsonld
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required DiscoveryJsonldBuilder result,
+    required DiscoveryJsonldReadBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -317,8 +318,8 @@ class _$DiscoveryJsonldSerializer implements PrimitiveSerializer<DiscoveryJsonld
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ConstraintViolationJsonldJsonldContext),
-          ) as ConstraintViolationJsonldJsonldContext;
+            specifiedType: const FullType(BrandingSettingJsonldContext),
+          ) as BrandingSettingJsonldContext;
           result.atContext.replace(valueDes);
           break;
         case r'@id':
@@ -383,13 +384,6 @@ class _$DiscoveryJsonldSerializer implements PrimitiveSerializer<DiscoveryJsonld
             specifiedType: const FullType(String),
           ) as String;
           result.managerUrl = valueDes;
-          break;
-        case r'customerUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.customerUrl = valueDes;
           break;
         case r'mediaUrl':
           final valueDes = serializers.deserialize(
@@ -475,6 +469,13 @@ class _$DiscoveryJsonldSerializer implements PrimitiveSerializer<DiscoveryJsonld
           ) as BuiltList<String>;
           result.availableOnHosts.replace(valueDes);
           break;
+        case r'brandingSettings':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BrandingSettingJsonldRead)]),
+          ) as BuiltList<BrandingSettingJsonldRead>;
+          result.brandingSettings.replace(valueDes);
+          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -484,12 +485,12 @@ class _$DiscoveryJsonldSerializer implements PrimitiveSerializer<DiscoveryJsonld
   }
 
   @override
-  DiscoveryJsonld deserialize(
+  DiscoveryJsonldRead deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = DiscoveryJsonldBuilder();
+    final result = DiscoveryJsonldReadBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

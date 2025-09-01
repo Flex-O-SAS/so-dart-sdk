@@ -4,8 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/core_service/model/constraint_violation_json_violations_inner.dart';
-import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -27,7 +27,7 @@ part 'constraint_violation_jsonld_jsonld.g.dart';
 @BuiltValue()
 abstract class ConstraintViolationJsonldJsonld implements Built<ConstraintViolationJsonldJsonld, ConstraintViolationJsonldJsonldBuilder> {
   @BuiltValueField(wireName: r'@context')
-  ConstraintViolationJsonldJsonldContext? get atContext;
+  BrandingSettingJsonldContext? get atContext;
 
   @BuiltValueField(wireName: r'@id')
   String? get atId;
@@ -84,7 +84,7 @@ class _$ConstraintViolationJsonldJsonldSerializer implements PrimitiveSerializer
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(ConstraintViolationJsonldJsonldContext),
+        specifiedType: const FullType(BrandingSettingJsonldContext),
       );
     }
     if (object.atId != null) {
@@ -176,8 +176,8 @@ class _$ConstraintViolationJsonldJsonldSerializer implements PrimitiveSerializer
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ConstraintViolationJsonldJsonldContext),
-          ) as ConstraintViolationJsonldJsonldContext;
+            specifiedType: const FullType(BrandingSettingJsonldContext),
+          ) as BrandingSettingJsonldContext;
           result.atContext.replace(valueDes);
           break;
         case r'@id':

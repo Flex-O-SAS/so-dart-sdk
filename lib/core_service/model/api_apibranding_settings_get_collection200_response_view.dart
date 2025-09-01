@@ -6,9 +6,9 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_devices_get_collection200_response_view.g.dart';
+part 'api_apibranding_settings_get_collection200_response_view.g.dart';
 
-/// ApiDevicesGetCollection200ResponseView
+/// ApiApibrandingSettingsGetCollection200ResponseView
 ///
 /// Properties:
 /// * [atId] 
@@ -18,7 +18,7 @@ part 'api_devices_get_collection200_response_view.g.dart';
 /// * [previous] 
 /// * [next] 
 @BuiltValue()
-abstract class ApiDevicesGetCollection200ResponseView implements Built<ApiDevicesGetCollection200ResponseView, ApiDevicesGetCollection200ResponseViewBuilder> {
+abstract class ApiApibrandingSettingsGetCollection200ResponseView implements Built<ApiApibrandingSettingsGetCollection200ResponseView, ApiApibrandingSettingsGetCollection200ResponseViewBuilder> {
   @BuiltValueField(wireName: r'@id')
   String? get atId;
 
@@ -37,27 +37,27 @@ abstract class ApiDevicesGetCollection200ResponseView implements Built<ApiDevice
   @BuiltValueField(wireName: r'next')
   String? get next;
 
-  ApiDevicesGetCollection200ResponseView._();
+  ApiApibrandingSettingsGetCollection200ResponseView._();
 
-  factory ApiDevicesGetCollection200ResponseView([void updates(ApiDevicesGetCollection200ResponseViewBuilder b)]) = _$ApiDevicesGetCollection200ResponseView;
+  factory ApiApibrandingSettingsGetCollection200ResponseView([void updates(ApiApibrandingSettingsGetCollection200ResponseViewBuilder b)]) = _$ApiApibrandingSettingsGetCollection200ResponseView;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiDevicesGetCollection200ResponseViewBuilder b) => b;
+  static void _defaults(ApiApibrandingSettingsGetCollection200ResponseViewBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiDevicesGetCollection200ResponseView> get serializer => _$ApiDevicesGetCollection200ResponseViewSerializer();
+  static Serializer<ApiApibrandingSettingsGetCollection200ResponseView> get serializer => _$ApiApibrandingSettingsGetCollection200ResponseViewSerializer();
 }
 
-class _$ApiDevicesGetCollection200ResponseViewSerializer implements PrimitiveSerializer<ApiDevicesGetCollection200ResponseView> {
+class _$ApiApibrandingSettingsGetCollection200ResponseViewSerializer implements PrimitiveSerializer<ApiApibrandingSettingsGetCollection200ResponseView> {
   @override
-  final Iterable<Type> types = const [ApiDevicesGetCollection200ResponseView, _$ApiDevicesGetCollection200ResponseView];
+  final Iterable<Type> types = const [ApiApibrandingSettingsGetCollection200ResponseView, _$ApiApibrandingSettingsGetCollection200ResponseView];
 
   @override
-  final String wireName = r'ApiDevicesGetCollection200ResponseView';
+  final String wireName = r'ApiApibrandingSettingsGetCollection200ResponseView';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiDevicesGetCollection200ResponseView object, {
+    ApiApibrandingSettingsGetCollection200ResponseView object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atId != null) {
@@ -107,7 +107,7 @@ class _$ApiDevicesGetCollection200ResponseViewSerializer implements PrimitiveSer
   @override
   Object serialize(
     Serializers serializers,
-    ApiDevicesGetCollection200ResponseView object, {
+    ApiApibrandingSettingsGetCollection200ResponseView object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -118,7 +118,7 @@ class _$ApiDevicesGetCollection200ResponseViewSerializer implements PrimitiveSer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiDevicesGetCollection200ResponseViewBuilder result,
+    required ApiApibrandingSettingsGetCollection200ResponseViewBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -176,12 +176,12 @@ class _$ApiDevicesGetCollection200ResponseViewSerializer implements PrimitiveSer
   }
 
   @override
-  ApiDevicesGetCollection200ResponseView deserialize(
+  ApiApibrandingSettingsGetCollection200ResponseView deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiDevicesGetCollection200ResponseViewBuilder();
+    final result = ApiApibrandingSettingsGetCollection200ResponseViewBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

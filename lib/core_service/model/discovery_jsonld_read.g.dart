@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'discovery_jsonld.dart';
+part of 'discovery_jsonld_read.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$DiscoveryJsonld extends DiscoveryJsonld {
+class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
   @override
-  final ConstraintViolationJsonldJsonldContext? atContext;
+  final BrandingSettingJsonldContext? atContext;
   @override
   final String? atId;
   @override
@@ -27,8 +27,6 @@ class _$DiscoveryJsonld extends DiscoveryJsonld {
   final String? zitadelOrgId;
   @override
   final String? managerUrl;
-  @override
-  final String? customerUrl;
   @override
   final String? mediaUrl;
   @override
@@ -53,11 +51,14 @@ class _$DiscoveryJsonld extends DiscoveryJsonld {
   final String? product;
   @override
   final BuiltList<String>? availableOnHosts;
+  @override
+  final BuiltList<BrandingSettingJsonldRead>? brandingSettings;
 
-  factory _$DiscoveryJsonld([void Function(DiscoveryJsonldBuilder)? updates]) =>
-      (new DiscoveryJsonldBuilder()..update(updates))._build();
+  factory _$DiscoveryJsonldRead(
+          [void Function(DiscoveryJsonldReadBuilder)? updates]) =>
+      (new DiscoveryJsonldReadBuilder()..update(updates))._build();
 
-  _$DiscoveryJsonld._(
+  _$DiscoveryJsonldRead._(
       {this.atContext,
       this.atId,
       this.atType,
@@ -68,7 +69,6 @@ class _$DiscoveryJsonld extends DiscoveryJsonld {
       this.zitadelManagerClientId,
       this.zitadelOrgId,
       this.managerUrl,
-      this.customerUrl,
       this.mediaUrl,
       this.ticketingUrl,
       this.marketplaceUrl,
@@ -80,21 +80,23 @@ class _$DiscoveryJsonld extends DiscoveryJsonld {
       this.growthbookManagerApiKey,
       this.customer,
       this.product,
-      this.availableOnHosts})
+      this.availableOnHosts,
+      this.brandingSettings})
       : super._();
 
   @override
-  DiscoveryJsonld rebuild(void Function(DiscoveryJsonldBuilder) updates) =>
+  DiscoveryJsonldRead rebuild(
+          void Function(DiscoveryJsonldReadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  DiscoveryJsonldBuilder toBuilder() =>
-      new DiscoveryJsonldBuilder()..replace(this);
+  DiscoveryJsonldReadBuilder toBuilder() =>
+      new DiscoveryJsonldReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is DiscoveryJsonld &&
+    return other is DiscoveryJsonldRead &&
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
@@ -105,7 +107,6 @@ class _$DiscoveryJsonld extends DiscoveryJsonld {
         zitadelManagerClientId == other.zitadelManagerClientId &&
         zitadelOrgId == other.zitadelOrgId &&
         managerUrl == other.managerUrl &&
-        customerUrl == other.customerUrl &&
         mediaUrl == other.mediaUrl &&
         ticketingUrl == other.ticketingUrl &&
         marketplaceUrl == other.marketplaceUrl &&
@@ -117,7 +118,8 @@ class _$DiscoveryJsonld extends DiscoveryJsonld {
         growthbookManagerApiKey == other.growthbookManagerApiKey &&
         customer == other.customer &&
         product == other.product &&
-        availableOnHosts == other.availableOnHosts;
+        availableOnHosts == other.availableOnHosts &&
+        brandingSettings == other.brandingSettings;
   }
 
   @override
@@ -133,7 +135,6 @@ class _$DiscoveryJsonld extends DiscoveryJsonld {
     _$hash = $jc(_$hash, zitadelManagerClientId.hashCode);
     _$hash = $jc(_$hash, zitadelOrgId.hashCode);
     _$hash = $jc(_$hash, managerUrl.hashCode);
-    _$hash = $jc(_$hash, customerUrl.hashCode);
     _$hash = $jc(_$hash, mediaUrl.hashCode);
     _$hash = $jc(_$hash, ticketingUrl.hashCode);
     _$hash = $jc(_$hash, marketplaceUrl.hashCode);
@@ -146,13 +147,14 @@ class _$DiscoveryJsonld extends DiscoveryJsonld {
     _$hash = $jc(_$hash, customer.hashCode);
     _$hash = $jc(_$hash, product.hashCode);
     _$hash = $jc(_$hash, availableOnHosts.hashCode);
+    _$hash = $jc(_$hash, brandingSettings.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'DiscoveryJsonld')
+    return (newBuiltValueToStringHelper(r'DiscoveryJsonldRead')
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
@@ -163,7 +165,6 @@ class _$DiscoveryJsonld extends DiscoveryJsonld {
           ..add('zitadelManagerClientId', zitadelManagerClientId)
           ..add('zitadelOrgId', zitadelOrgId)
           ..add('managerUrl', managerUrl)
-          ..add('customerUrl', customerUrl)
           ..add('mediaUrl', mediaUrl)
           ..add('ticketingUrl', ticketingUrl)
           ..add('marketplaceUrl', marketplaceUrl)
@@ -175,19 +176,20 @@ class _$DiscoveryJsonld extends DiscoveryJsonld {
           ..add('growthbookManagerApiKey', growthbookManagerApiKey)
           ..add('customer', customer)
           ..add('product', product)
-          ..add('availableOnHosts', availableOnHosts))
+          ..add('availableOnHosts', availableOnHosts)
+          ..add('brandingSettings', brandingSettings))
         .toString();
   }
 }
 
-class DiscoveryJsonldBuilder
-    implements Builder<DiscoveryJsonld, DiscoveryJsonldBuilder> {
-  _$DiscoveryJsonld? _$v;
+class DiscoveryJsonldReadBuilder
+    implements Builder<DiscoveryJsonldRead, DiscoveryJsonldReadBuilder> {
+  _$DiscoveryJsonldRead? _$v;
 
-  ConstraintViolationJsonldJsonldContextBuilder? _atContext;
-  ConstraintViolationJsonldJsonldContextBuilder get atContext =>
-      _$this._atContext ??= new ConstraintViolationJsonldJsonldContextBuilder();
-  set atContext(ConstraintViolationJsonldJsonldContextBuilder? atContext) =>
+  BrandingSettingJsonldContextBuilder? _atContext;
+  BrandingSettingJsonldContextBuilder get atContext =>
+      _$this._atContext ??= new BrandingSettingJsonldContextBuilder();
+  set atContext(BrandingSettingJsonldContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
@@ -228,10 +230,6 @@ class DiscoveryJsonldBuilder
   String? _managerUrl;
   String? get managerUrl => _$this._managerUrl;
   set managerUrl(String? managerUrl) => _$this._managerUrl = managerUrl;
-
-  String? _customerUrl;
-  String? get customerUrl => _$this._customerUrl;
-  set customerUrl(String? customerUrl) => _$this._customerUrl = customerUrl;
 
   String? _mediaUrl;
   String? get mediaUrl => _$this._mediaUrl;
@@ -286,11 +284,18 @@ class DiscoveryJsonldBuilder
   set availableOnHosts(ListBuilder<String>? availableOnHosts) =>
       _$this._availableOnHosts = availableOnHosts;
 
-  DiscoveryJsonldBuilder() {
-    DiscoveryJsonld._defaults(this);
+  ListBuilder<BrandingSettingJsonldRead>? _brandingSettings;
+  ListBuilder<BrandingSettingJsonldRead> get brandingSettings =>
+      _$this._brandingSettings ??= new ListBuilder<BrandingSettingJsonldRead>();
+  set brandingSettings(
+          ListBuilder<BrandingSettingJsonldRead>? brandingSettings) =>
+      _$this._brandingSettings = brandingSettings;
+
+  DiscoveryJsonldReadBuilder() {
+    DiscoveryJsonldRead._defaults(this);
   }
 
-  DiscoveryJsonldBuilder get _$this {
+  DiscoveryJsonldReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atContext = $v.atContext?.toBuilder();
@@ -303,7 +308,6 @@ class DiscoveryJsonldBuilder
       _zitadelManagerClientId = $v.zitadelManagerClientId;
       _zitadelOrgId = $v.zitadelOrgId;
       _managerUrl = $v.managerUrl;
-      _customerUrl = $v.customerUrl;
       _mediaUrl = $v.mediaUrl;
       _ticketingUrl = $v.ticketingUrl;
       _marketplaceUrl = $v.marketplaceUrl;
@@ -316,30 +320,31 @@ class DiscoveryJsonldBuilder
       _customer = $v.customer;
       _product = $v.product;
       _availableOnHosts = $v.availableOnHosts?.toBuilder();
+      _brandingSettings = $v.brandingSettings?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(DiscoveryJsonld other) {
+  void replace(DiscoveryJsonldRead other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$DiscoveryJsonld;
+    _$v = other as _$DiscoveryJsonldRead;
   }
 
   @override
-  void update(void Function(DiscoveryJsonldBuilder)? updates) {
+  void update(void Function(DiscoveryJsonldReadBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  DiscoveryJsonld build() => _build();
+  DiscoveryJsonldRead build() => _build();
 
-  _$DiscoveryJsonld _build() {
-    _$DiscoveryJsonld _$result;
+  _$DiscoveryJsonldRead _build() {
+    _$DiscoveryJsonldRead _$result;
     try {
       _$result = _$v ??
-          new _$DiscoveryJsonld._(
+          new _$DiscoveryJsonldRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -350,7 +355,6 @@ class DiscoveryJsonldBuilder
             zitadelManagerClientId: zitadelManagerClientId,
             zitadelOrgId: zitadelOrgId,
             managerUrl: managerUrl,
-            customerUrl: customerUrl,
             mediaUrl: mediaUrl,
             ticketingUrl: ticketingUrl,
             marketplaceUrl: marketplaceUrl,
@@ -363,6 +367,7 @@ class DiscoveryJsonldBuilder
             customer: customer,
             product: product,
             availableOnHosts: _availableOnHosts?.build(),
+            brandingSettings: _brandingSettings?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -372,9 +377,11 @@ class DiscoveryJsonldBuilder
 
         _$failedField = 'availableOnHosts';
         _availableOnHosts?.build();
+        _$failedField = 'brandingSettings';
+        _brandingSettings?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DiscoveryJsonld', _$failedField, e.toString());
+            r'DiscoveryJsonldRead', _$failedField, e.toString());
       }
       rethrow;
     }

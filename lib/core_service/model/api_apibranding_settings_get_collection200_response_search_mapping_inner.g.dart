@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_devices_get_collection200_response_search_mapping_inner.dart';
+part of 'api_apibranding_settings_get_collection200_response_search_mapping_inner.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiDevicesGetCollection200ResponseSearchMappingInner
-    extends ApiDevicesGetCollection200ResponseSearchMappingInner {
+class _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner
+    extends ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner {
   @override
   final String? atType;
   @override
@@ -17,34 +17,36 @@ class _$ApiDevicesGetCollection200ResponseSearchMappingInner
   @override
   final bool? required_;
 
-  factory _$ApiDevicesGetCollection200ResponseSearchMappingInner(
+  factory _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner(
           [void Function(
-                  ApiDevicesGetCollection200ResponseSearchMappingInnerBuilder)?
+                  ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder)?
               updates]) =>
-      (new ApiDevicesGetCollection200ResponseSearchMappingInnerBuilder()
+      (new ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder()
             ..update(updates))
           ._build();
 
-  _$ApiDevicesGetCollection200ResponseSearchMappingInner._(
+  _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner._(
       {this.atType, this.variable, this.property, this.required_})
       : super._();
 
   @override
-  ApiDevicesGetCollection200ResponseSearchMappingInner rebuild(
+  ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner rebuild(
           void Function(
-                  ApiDevicesGetCollection200ResponseSearchMappingInnerBuilder)
+                  ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiDevicesGetCollection200ResponseSearchMappingInnerBuilder toBuilder() =>
-      new ApiDevicesGetCollection200ResponseSearchMappingInnerBuilder()
-        ..replace(this);
+  ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder
+      toBuilder() =>
+          new ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder()
+            ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiDevicesGetCollection200ResponseSearchMappingInner &&
+    return other
+            is ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner &&
         atType == other.atType &&
         variable == other.variable &&
         property == other.property &&
@@ -65,7 +67,7 @@ class _$ApiDevicesGetCollection200ResponseSearchMappingInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ApiDevicesGetCollection200ResponseSearchMappingInner')
+            r'ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner')
           ..add('atType', atType)
           ..add('variable', variable)
           ..add('property', property)
@@ -74,11 +76,12 @@ class _$ApiDevicesGetCollection200ResponseSearchMappingInner
   }
 }
 
-class ApiDevicesGetCollection200ResponseSearchMappingInnerBuilder
+class ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder
     implements
-        Builder<ApiDevicesGetCollection200ResponseSearchMappingInner,
-            ApiDevicesGetCollection200ResponseSearchMappingInnerBuilder> {
-  _$ApiDevicesGetCollection200ResponseSearchMappingInner? _$v;
+        Builder<
+            ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner,
+            ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder> {
+  _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner? _$v;
 
   String? _atType;
   String? get atType => _$this._atType;
@@ -96,11 +99,13 @@ class ApiDevicesGetCollection200ResponseSearchMappingInnerBuilder
   bool? get required_ => _$this._required_;
   set required_(bool? required_) => _$this._required_ = required_;
 
-  ApiDevicesGetCollection200ResponseSearchMappingInnerBuilder() {
-    ApiDevicesGetCollection200ResponseSearchMappingInner._defaults(this);
+  ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder() {
+    ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner._defaults(
+        this);
   }
 
-  ApiDevicesGetCollection200ResponseSearchMappingInnerBuilder get _$this {
+  ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder
+      get _$this {
     final $v = _$v;
     if ($v != null) {
       _atType = $v.atType;
@@ -113,25 +118,29 @@ class ApiDevicesGetCollection200ResponseSearchMappingInnerBuilder
   }
 
   @override
-  void replace(ApiDevicesGetCollection200ResponseSearchMappingInner other) {
+  void replace(
+      ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiDevicesGetCollection200ResponseSearchMappingInner;
+    _$v = other
+        as _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner;
   }
 
   @override
   void update(
       void Function(
-              ApiDevicesGetCollection200ResponseSearchMappingInnerBuilder)?
+              ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiDevicesGetCollection200ResponseSearchMappingInner build() => _build();
+  ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner build() =>
+      _build();
 
-  _$ApiDevicesGetCollection200ResponseSearchMappingInner _build() {
+  _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner _build() {
     final _$result = _$v ??
-        new _$ApiDevicesGetCollection200ResponseSearchMappingInner._(
+        new _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner
+            ._(
           atType: atType,
           variable: variable,
           property: property,

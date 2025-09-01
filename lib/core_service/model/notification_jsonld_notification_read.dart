@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_context.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -24,7 +24,7 @@ part 'notification_jsonld_notification_read.g.dart';
 @BuiltValue()
 abstract class NotificationJsonldNotificationRead implements Built<NotificationJsonldNotificationRead, NotificationJsonldNotificationReadBuilder> {
   @BuiltValueField(wireName: r'@context')
-  ConstraintViolationJsonldJsonldContext? get atContext;
+  BrandingSettingJsonldContext? get atContext;
 
   @BuiltValueField(wireName: r'@id')
   String? get atId;
@@ -74,7 +74,7 @@ class _$NotificationJsonldNotificationReadSerializer implements PrimitiveSeriali
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(ConstraintViolationJsonldJsonldContext),
+        specifiedType: const FullType(BrandingSettingJsonldContext),
       );
     }
     if (object.atId != null) {
@@ -148,8 +148,8 @@ class _$NotificationJsonldNotificationReadSerializer implements PrimitiveSeriali
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ConstraintViolationJsonldJsonldContext),
-          ) as ConstraintViolationJsonldJsonldContext;
+            specifiedType: const FullType(BrandingSettingJsonldContext),
+          ) as BrandingSettingJsonldContext;
           result.atContext.replace(valueDes);
           break;
         case r'@id':

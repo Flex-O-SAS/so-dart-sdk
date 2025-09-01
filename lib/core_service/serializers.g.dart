@@ -7,22 +7,30 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(ApiApibrandingSettingsGetCollection200Response.serializer)
+      ..add(ApiApibrandingSettingsGetCollection200ResponseSearch.serializer)
+      ..add(ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner
+          .serializer)
+      ..add(ApiApibrandingSettingsGetCollection200ResponseView.serializer)
       ..add(ApiDevicesGetCollection200Response.serializer)
-      ..add(ApiDevicesGetCollection200ResponseSearch.serializer)
-      ..add(ApiDevicesGetCollection200ResponseSearchMappingInner.serializer)
-      ..add(ApiDevicesGetCollection200ResponseView.serializer)
       ..add(ApiSubscribersGetCollection200Response.serializer)
+      ..add(BrandingSetting.serializer)
+      ..add(BrandingSettingJsonld.serializer)
+      ..add(BrandingSettingJsonldContext.serializer)
+      ..add(BrandingSettingJsonldContextOneOf.serializer)
+      ..add(BrandingSettingJsonldContextOneOfHydraEnum.serializer)
+      ..add(BrandingSettingJsonldRead.serializer)
+      ..add(BrandingSettingJsonldReadThemeModeEnum.serializer)
+      ..add(BrandingSettingJsonldThemeModeEnum.serializer)
+      ..add(BrandingSettingThemeModeEnum.serializer)
       ..add(ConstraintViolationJson.serializer)
       ..add(ConstraintViolationJsonViolationsInner.serializer)
       ..add(ConstraintViolationJsonldJsonld.serializer)
-      ..add(ConstraintViolationJsonldJsonldContext.serializer)
-      ..add(ConstraintViolationJsonldJsonldContextOneOf.serializer)
-      ..add(ConstraintViolationJsonldJsonldContextOneOfHydraEnum.serializer)
       ..add(DeviceJsonldDeviceRead.serializer)
       ..add(DeviceJsonldDeviceReadSource_Enum.serializer)
       ..add(DeviceJsonldDeviceWrite.serializer)
       ..add(DeviceJsonldDeviceWriteSource_Enum.serializer)
-      ..add(DiscoveryJsonld.serializer)
+      ..add(DiscoveryJsonldRead.serializer)
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
       ..add(NotificationJsonldNotificationRead.serializer)
@@ -31,10 +39,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(SubscriberJsonldSubscriberWrite.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(ApiDevicesGetCollection200ResponseSearchMappingInner)
+            const FullType(
+                ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner)
           ]),
           () => new ListBuilder<
-              ApiDevicesGetCollection200ResponseSearchMappingInner>())
+              ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(BrandingSettingJsonld)]),
+          () => new ListBuilder<BrandingSettingJsonld>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ConstraintViolationJsonViolationsInner)]),
@@ -50,6 +63,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(BrandingSettingJsonldRead)]),
+          () => new ListBuilder<BrandingSettingJsonldRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(SubscriberJsonldSubscriberRead)]),

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_devices_get_collection200_response_search.dart';
+part of 'api_apibranding_settings_get_collection200_response_search.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiDevicesGetCollection200ResponseSearch
-    extends ApiDevicesGetCollection200ResponseSearch {
+class _$ApiApibrandingSettingsGetCollection200ResponseSearch
+    extends ApiApibrandingSettingsGetCollection200ResponseSearch {
   @override
   final String? atType;
   @override
@@ -15,33 +15,38 @@ class _$ApiDevicesGetCollection200ResponseSearch
   @override
   final String? variableRepresentation;
   @override
-  final BuiltList<ApiDevicesGetCollection200ResponseSearchMappingInner>?
+  final BuiltList<
+          ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner>?
       mapping;
 
-  factory _$ApiDevicesGetCollection200ResponseSearch(
-          [void Function(ApiDevicesGetCollection200ResponseSearchBuilder)?
+  factory _$ApiApibrandingSettingsGetCollection200ResponseSearch(
+          [void Function(
+                  ApiApibrandingSettingsGetCollection200ResponseSearchBuilder)?
               updates]) =>
-      (new ApiDevicesGetCollection200ResponseSearchBuilder()..update(updates))
+      (new ApiApibrandingSettingsGetCollection200ResponseSearchBuilder()
+            ..update(updates))
           ._build();
 
-  _$ApiDevicesGetCollection200ResponseSearch._(
+  _$ApiApibrandingSettingsGetCollection200ResponseSearch._(
       {this.atType, this.template, this.variableRepresentation, this.mapping})
       : super._();
 
   @override
-  ApiDevicesGetCollection200ResponseSearch rebuild(
-          void Function(ApiDevicesGetCollection200ResponseSearchBuilder)
+  ApiApibrandingSettingsGetCollection200ResponseSearch rebuild(
+          void Function(
+                  ApiApibrandingSettingsGetCollection200ResponseSearchBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiDevicesGetCollection200ResponseSearchBuilder toBuilder() =>
-      new ApiDevicesGetCollection200ResponseSearchBuilder()..replace(this);
+  ApiApibrandingSettingsGetCollection200ResponseSearchBuilder toBuilder() =>
+      new ApiApibrandingSettingsGetCollection200ResponseSearchBuilder()
+        ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiDevicesGetCollection200ResponseSearch &&
+    return other is ApiApibrandingSettingsGetCollection200ResponseSearch &&
         atType == other.atType &&
         template == other.template &&
         variableRepresentation == other.variableRepresentation &&
@@ -62,7 +67,7 @@ class _$ApiDevicesGetCollection200ResponseSearch
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ApiDevicesGetCollection200ResponseSearch')
+            r'ApiApibrandingSettingsGetCollection200ResponseSearch')
           ..add('atType', atType)
           ..add('template', template)
           ..add('variableRepresentation', variableRepresentation)
@@ -71,11 +76,11 @@ class _$ApiDevicesGetCollection200ResponseSearch
   }
 }
 
-class ApiDevicesGetCollection200ResponseSearchBuilder
+class ApiApibrandingSettingsGetCollection200ResponseSearchBuilder
     implements
-        Builder<ApiDevicesGetCollection200ResponseSearch,
-            ApiDevicesGetCollection200ResponseSearchBuilder> {
-  _$ApiDevicesGetCollection200ResponseSearch? _$v;
+        Builder<ApiApibrandingSettingsGetCollection200ResponseSearch,
+            ApiApibrandingSettingsGetCollection200ResponseSearchBuilder> {
+  _$ApiApibrandingSettingsGetCollection200ResponseSearch? _$v;
 
   String? _atType;
   String? get atType => _$this._atType;
@@ -90,20 +95,22 @@ class ApiDevicesGetCollection200ResponseSearchBuilder
   set variableRepresentation(String? variableRepresentation) =>
       _$this._variableRepresentation = variableRepresentation;
 
-  ListBuilder<ApiDevicesGetCollection200ResponseSearchMappingInner>? _mapping;
-  ListBuilder<ApiDevicesGetCollection200ResponseSearchMappingInner>
+  ListBuilder<ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner>?
+      _mapping;
+  ListBuilder<ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner>
       get mapping => _$this._mapping ??= new ListBuilder<
-          ApiDevicesGetCollection200ResponseSearchMappingInner>();
+          ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner>();
   set mapping(
-          ListBuilder<ApiDevicesGetCollection200ResponseSearchMappingInner>?
+          ListBuilder<
+                  ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner>?
               mapping) =>
       _$this._mapping = mapping;
 
-  ApiDevicesGetCollection200ResponseSearchBuilder() {
-    ApiDevicesGetCollection200ResponseSearch._defaults(this);
+  ApiApibrandingSettingsGetCollection200ResponseSearchBuilder() {
+    ApiApibrandingSettingsGetCollection200ResponseSearch._defaults(this);
   }
 
-  ApiDevicesGetCollection200ResponseSearchBuilder get _$this {
+  ApiApibrandingSettingsGetCollection200ResponseSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atType = $v.atType;
@@ -116,25 +123,27 @@ class ApiDevicesGetCollection200ResponseSearchBuilder
   }
 
   @override
-  void replace(ApiDevicesGetCollection200ResponseSearch other) {
+  void replace(ApiApibrandingSettingsGetCollection200ResponseSearch other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiDevicesGetCollection200ResponseSearch;
+    _$v = other as _$ApiApibrandingSettingsGetCollection200ResponseSearch;
   }
 
   @override
   void update(
-      void Function(ApiDevicesGetCollection200ResponseSearchBuilder)? updates) {
+      void Function(
+              ApiApibrandingSettingsGetCollection200ResponseSearchBuilder)?
+          updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiDevicesGetCollection200ResponseSearch build() => _build();
+  ApiApibrandingSettingsGetCollection200ResponseSearch build() => _build();
 
-  _$ApiDevicesGetCollection200ResponseSearch _build() {
-    _$ApiDevicesGetCollection200ResponseSearch _$result;
+  _$ApiApibrandingSettingsGetCollection200ResponseSearch _build() {
+    _$ApiApibrandingSettingsGetCollection200ResponseSearch _$result;
     try {
       _$result = _$v ??
-          new _$ApiDevicesGetCollection200ResponseSearch._(
+          new _$ApiApibrandingSettingsGetCollection200ResponseSearch._(
             atType: atType,
             template: template,
             variableRepresentation: variableRepresentation,
@@ -147,7 +156,7 @@ class ApiDevicesGetCollection200ResponseSearchBuilder
         _mapping?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'ApiDevicesGetCollection200ResponseSearch',
+            r'ApiApibrandingSettingsGetCollection200ResponseSearch',
             _$failedField,
             e.toString());
       }

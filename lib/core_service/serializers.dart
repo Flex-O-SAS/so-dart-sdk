@@ -14,19 +14,23 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:so_dart_sdk/core_service/date_serializer.dart';
 import 'package:so_dart_sdk/core_service/model/date.dart';
 
+import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response.dart';
+import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_search.dart';
+import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_search_mapping_inner.dart';
+import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
-import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_search.dart';
-import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_search_mapping_inner.dart';
-import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/core_service/model/api_subscribers_get_collection200_response.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_context.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_context_one_of.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_read.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_json_violations_inner.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
-import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context.dart';
-import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld_context_one_of.dart';
 import 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
 import 'package:so_dart_sdk/core_service/model/device_jsonld_device_write.dart';
-import 'package:so_dart_sdk/core_service/model/discovery_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/discovery_jsonld_read.dart';
 import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';
@@ -37,19 +41,23 @@ import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_writ
 part 'serializers.g.dart';
 
 @SerializersFor([
+  ApiApibrandingSettingsGetCollection200Response,
+  ApiApibrandingSettingsGetCollection200ResponseSearch,
+  ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner,
+  ApiApibrandingSettingsGetCollection200ResponseView,
   ApiDevicesGetCollection200Response,
-  ApiDevicesGetCollection200ResponseSearch,
-  ApiDevicesGetCollection200ResponseSearchMappingInner,
-  ApiDevicesGetCollection200ResponseView,
   ApiSubscribersGetCollection200Response,
+  BrandingSetting,
+  BrandingSettingJsonld,
+  BrandingSettingJsonldContext,
+  BrandingSettingJsonldContextOneOf,
+  BrandingSettingJsonldRead,
   ConstraintViolationJson,
   ConstraintViolationJsonViolationsInner,
   ConstraintViolationJsonldJsonld,
-  ConstraintViolationJsonldJsonldContext,
-  ConstraintViolationJsonldJsonldContextOneOf,
   DeviceJsonldDeviceRead,
   DeviceJsonldDeviceWrite,
-  DiscoveryJsonld,
+  DiscoveryJsonldRead,
   Error,
   ErrorJsonld,
   NotificationJsonldNotificationRead,

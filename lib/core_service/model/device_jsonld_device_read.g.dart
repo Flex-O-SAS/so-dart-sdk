@@ -74,7 +74,7 @@ class _$DeviceJsonldDeviceReadSource_EnumSerializer
 
 class _$DeviceJsonldDeviceRead extends DeviceJsonldDeviceRead {
   @override
-  final ConstraintViolationJsonldJsonldContext? atContext;
+  final BrandingSettingJsonldContext? atContext;
   @override
   final String? atId;
   @override
@@ -157,10 +157,10 @@ class DeviceJsonldDeviceReadBuilder
     implements Builder<DeviceJsonldDeviceRead, DeviceJsonldDeviceReadBuilder> {
   _$DeviceJsonldDeviceRead? _$v;
 
-  ConstraintViolationJsonldJsonldContextBuilder? _atContext;
-  ConstraintViolationJsonldJsonldContextBuilder get atContext =>
-      _$this._atContext ??= new ConstraintViolationJsonldJsonldContextBuilder();
-  set atContext(ConstraintViolationJsonldJsonldContextBuilder? atContext) =>
+  BrandingSettingJsonldContextBuilder? _atContext;
+  BrandingSettingJsonldContextBuilder get atContext =>
+      _$this._atContext ??= new BrandingSettingJsonldContextBuilder();
+  set atContext(BrandingSettingJsonldContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;

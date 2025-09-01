@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_devices_get_collection200_response_view.dart';
+part of 'api_apibranding_settings_get_collection200_response_view.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiDevicesGetCollection200ResponseView
-    extends ApiDevicesGetCollection200ResponseView {
+class _$ApiApibrandingSettingsGetCollection200ResponseView
+    extends ApiApibrandingSettingsGetCollection200ResponseView {
   @override
   final String? atId;
   @override
@@ -21,30 +21,34 @@ class _$ApiDevicesGetCollection200ResponseView
   @override
   final String? next;
 
-  factory _$ApiDevicesGetCollection200ResponseView(
-          [void Function(ApiDevicesGetCollection200ResponseViewBuilder)?
+  factory _$ApiApibrandingSettingsGetCollection200ResponseView(
+          [void Function(
+                  ApiApibrandingSettingsGetCollection200ResponseViewBuilder)?
               updates]) =>
-      (new ApiDevicesGetCollection200ResponseViewBuilder()..update(updates))
+      (new ApiApibrandingSettingsGetCollection200ResponseViewBuilder()
+            ..update(updates))
           ._build();
 
-  _$ApiDevicesGetCollection200ResponseView._(
+  _$ApiApibrandingSettingsGetCollection200ResponseView._(
       {this.atId, this.atType, this.first, this.last, this.previous, this.next})
       : super._();
 
   @override
-  ApiDevicesGetCollection200ResponseView rebuild(
-          void Function(ApiDevicesGetCollection200ResponseViewBuilder)
+  ApiApibrandingSettingsGetCollection200ResponseView rebuild(
+          void Function(
+                  ApiApibrandingSettingsGetCollection200ResponseViewBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiDevicesGetCollection200ResponseViewBuilder toBuilder() =>
-      new ApiDevicesGetCollection200ResponseViewBuilder()..replace(this);
+  ApiApibrandingSettingsGetCollection200ResponseViewBuilder toBuilder() =>
+      new ApiApibrandingSettingsGetCollection200ResponseViewBuilder()
+        ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiDevicesGetCollection200ResponseView &&
+    return other is ApiApibrandingSettingsGetCollection200ResponseView &&
         atId == other.atId &&
         atType == other.atType &&
         first == other.first &&
@@ -69,7 +73,7 @@ class _$ApiDevicesGetCollection200ResponseView
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ApiDevicesGetCollection200ResponseView')
+            r'ApiApibrandingSettingsGetCollection200ResponseView')
           ..add('atId', atId)
           ..add('atType', atType)
           ..add('first', first)
@@ -80,11 +84,11 @@ class _$ApiDevicesGetCollection200ResponseView
   }
 }
 
-class ApiDevicesGetCollection200ResponseViewBuilder
+class ApiApibrandingSettingsGetCollection200ResponseViewBuilder
     implements
-        Builder<ApiDevicesGetCollection200ResponseView,
-            ApiDevicesGetCollection200ResponseViewBuilder> {
-  _$ApiDevicesGetCollection200ResponseView? _$v;
+        Builder<ApiApibrandingSettingsGetCollection200ResponseView,
+            ApiApibrandingSettingsGetCollection200ResponseViewBuilder> {
+  _$ApiApibrandingSettingsGetCollection200ResponseView? _$v;
 
   String? _atId;
   String? get atId => _$this._atId;
@@ -110,11 +114,11 @@ class ApiDevicesGetCollection200ResponseViewBuilder
   String? get next => _$this._next;
   set next(String? next) => _$this._next = next;
 
-  ApiDevicesGetCollection200ResponseViewBuilder() {
-    ApiDevicesGetCollection200ResponseView._defaults(this);
+  ApiApibrandingSettingsGetCollection200ResponseViewBuilder() {
+    ApiApibrandingSettingsGetCollection200ResponseView._defaults(this);
   }
 
-  ApiDevicesGetCollection200ResponseViewBuilder get _$this {
+  ApiApibrandingSettingsGetCollection200ResponseViewBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atId = $v.atId;
@@ -129,23 +133,24 @@ class ApiDevicesGetCollection200ResponseViewBuilder
   }
 
   @override
-  void replace(ApiDevicesGetCollection200ResponseView other) {
+  void replace(ApiApibrandingSettingsGetCollection200ResponseView other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiDevicesGetCollection200ResponseView;
+    _$v = other as _$ApiApibrandingSettingsGetCollection200ResponseView;
   }
 
   @override
   void update(
-      void Function(ApiDevicesGetCollection200ResponseViewBuilder)? updates) {
+      void Function(ApiApibrandingSettingsGetCollection200ResponseViewBuilder)?
+          updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiDevicesGetCollection200ResponseView build() => _build();
+  ApiApibrandingSettingsGetCollection200ResponseView build() => _build();
 
-  _$ApiDevicesGetCollection200ResponseView _build() {
+  _$ApiApibrandingSettingsGetCollection200ResponseView _build() {
     final _$result = _$v ??
-        new _$ApiDevicesGetCollection200ResponseView._(
+        new _$ApiApibrandingSettingsGetCollection200ResponseView._(
           atId: atId,
           atType: atType,
           first: first,

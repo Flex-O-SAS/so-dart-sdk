@@ -9,6 +9,7 @@ import 'package:so_dart_sdk/core_service/auth/api_key_auth.dart';
 import 'package:so_dart_sdk/core_service/auth/basic_auth.dart';
 import 'package:so_dart_sdk/core_service/auth/bearer_auth.dart';
 import 'package:so_dart_sdk/core_service/auth/oauth.dart';
+import 'package:so_dart_sdk/core_service/api/branding_setting_api.dart';
 import 'package:so_dart_sdk/core_service/api/device_api.dart';
 import 'package:so_dart_sdk/core_service/api/discovery_api.dart';
 import 'package:so_dart_sdk/core_service/api/notification_api.dart';
@@ -66,6 +67,12 @@ class SoDartSdk {
     if (this.dio.interceptors.any((i) => i is ApiKeyAuthInterceptor)) {
       (this.dio.interceptors.firstWhere((element) => element is ApiKeyAuthInterceptor) as ApiKeyAuthInterceptor).apiKeys[name] = apiKey;
     }
+  }
+
+  /// Get BrandingSettingApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  BrandingSettingApi getBrandingSettingApi() {
+    return BrandingSettingApi(dio, serializers);
   }
 
   /// Get DeviceApi instance, base route and serializer can be overridden by a given but be careful,

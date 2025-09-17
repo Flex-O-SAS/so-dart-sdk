@@ -21,6 +21,8 @@ part 'discovery_jsonld_read.g.dart';
 /// * [reference] 
 /// * [zitadelIssuer] 
 /// * [zitadelCustomerClientId] 
+/// * [zitadelCustomerWebClientId] 
+/// * [zitadelMainClientId] 
 /// * [zitadelManagerClientId] 
 /// * [zitadelOrgId] 
 /// * [managerUrl] 
@@ -35,6 +37,7 @@ part 'discovery_jsonld_read.g.dart';
 /// * [growthbookManagerApiKey] 
 /// * [customer] 
 /// * [product] 
+/// * [company] 
 /// * [availableOnHosts] 
 /// * [brandingSettings] 
 @BuiltValue()
@@ -59,6 +62,12 @@ abstract class DiscoveryJsonldRead implements Built<DiscoveryJsonldRead, Discove
 
   @BuiltValueField(wireName: r'zitadelCustomerClientId')
   String? get zitadelCustomerClientId;
+
+  @BuiltValueField(wireName: r'zitadelCustomerWebClientId')
+  String? get zitadelCustomerWebClientId;
+
+  @BuiltValueField(wireName: r'zitadelMainClientId')
+  String? get zitadelMainClientId;
 
   @BuiltValueField(wireName: r'zitadelManagerClientId')
   String? get zitadelManagerClientId;
@@ -101,6 +110,9 @@ abstract class DiscoveryJsonldRead implements Built<DiscoveryJsonldRead, Discove
 
   @BuiltValueField(wireName: r'product')
   String? get product;
+
+  @BuiltValueField(wireName: r'company')
+  String? get company;
 
   @BuiltValueField(wireName: r'availableOnHosts')
   BuiltList<String>? get availableOnHosts;
@@ -178,6 +190,20 @@ class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJs
       yield serializers.serialize(
         object.zitadelCustomerClientId,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.zitadelCustomerWebClientId != null) {
+      yield r'zitadelCustomerWebClientId';
+      yield serializers.serialize(
+        object.zitadelCustomerWebClientId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.zitadelMainClientId != null) {
+      yield r'zitadelMainClientId';
+      yield serializers.serialize(
+        object.zitadelMainClientId,
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.zitadelManagerClientId != null) {
@@ -278,6 +304,13 @@ class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJs
         specifiedType: const FullType(String),
       );
     }
+    if (object.company != null) {
+      yield r'company';
+      yield serializers.serialize(
+        object.company,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.availableOnHosts != null) {
       yield r'availableOnHosts';
       yield serializers.serialize(
@@ -363,6 +396,21 @@ class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJs
             specifiedType: const FullType(String),
           ) as String;
           result.zitadelCustomerClientId = valueDes;
+          break;
+        case r'zitadelCustomerWebClientId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.zitadelCustomerWebClientId = valueDes;
+          break;
+        case r'zitadelMainClientId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.zitadelMainClientId = valueDes;
           break;
         case r'zitadelManagerClientId':
           final valueDes = serializers.deserialize(
@@ -461,6 +509,13 @@ class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJs
             specifiedType: const FullType(String),
           ) as String;
           result.product = valueDes;
+          break;
+        case r'company':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.company = valueDes;
           break;
         case r'availableOnHosts':
           final valueDes = serializers.deserialize(

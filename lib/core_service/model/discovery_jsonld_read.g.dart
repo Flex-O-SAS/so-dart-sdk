@@ -22,6 +22,10 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
   @override
   final String? zitadelCustomerClientId;
   @override
+  final String? zitadelCustomerWebClientId;
+  @override
+  final String? zitadelMainClientId;
+  @override
   final String? zitadelManagerClientId;
   @override
   final String? zitadelOrgId;
@@ -50,6 +54,8 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
   @override
   final String? product;
   @override
+  final String? company;
+  @override
   final BuiltList<String>? availableOnHosts;
   @override
   final BuiltList<BrandingSettingJsonldRead>? brandingSettings;
@@ -66,6 +72,8 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
       this.reference,
       this.zitadelIssuer,
       this.zitadelCustomerClientId,
+      this.zitadelCustomerWebClientId,
+      this.zitadelMainClientId,
       this.zitadelManagerClientId,
       this.zitadelOrgId,
       this.managerUrl,
@@ -80,6 +88,7 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
       this.growthbookManagerApiKey,
       this.customer,
       this.product,
+      this.company,
       this.availableOnHosts,
       this.brandingSettings})
       : super._();
@@ -104,6 +113,8 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
         reference == other.reference &&
         zitadelIssuer == other.zitadelIssuer &&
         zitadelCustomerClientId == other.zitadelCustomerClientId &&
+        zitadelCustomerWebClientId == other.zitadelCustomerWebClientId &&
+        zitadelMainClientId == other.zitadelMainClientId &&
         zitadelManagerClientId == other.zitadelManagerClientId &&
         zitadelOrgId == other.zitadelOrgId &&
         managerUrl == other.managerUrl &&
@@ -118,6 +129,7 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
         growthbookManagerApiKey == other.growthbookManagerApiKey &&
         customer == other.customer &&
         product == other.product &&
+        company == other.company &&
         availableOnHosts == other.availableOnHosts &&
         brandingSettings == other.brandingSettings;
   }
@@ -132,6 +144,8 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, zitadelIssuer.hashCode);
     _$hash = $jc(_$hash, zitadelCustomerClientId.hashCode);
+    _$hash = $jc(_$hash, zitadelCustomerWebClientId.hashCode);
+    _$hash = $jc(_$hash, zitadelMainClientId.hashCode);
     _$hash = $jc(_$hash, zitadelManagerClientId.hashCode);
     _$hash = $jc(_$hash, zitadelOrgId.hashCode);
     _$hash = $jc(_$hash, managerUrl.hashCode);
@@ -146,6 +160,7 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
     _$hash = $jc(_$hash, growthbookManagerApiKey.hashCode);
     _$hash = $jc(_$hash, customer.hashCode);
     _$hash = $jc(_$hash, product.hashCode);
+    _$hash = $jc(_$hash, company.hashCode);
     _$hash = $jc(_$hash, availableOnHosts.hashCode);
     _$hash = $jc(_$hash, brandingSettings.hashCode);
     _$hash = $jf(_$hash);
@@ -162,6 +177,8 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
           ..add('reference', reference)
           ..add('zitadelIssuer', zitadelIssuer)
           ..add('zitadelCustomerClientId', zitadelCustomerClientId)
+          ..add('zitadelCustomerWebClientId', zitadelCustomerWebClientId)
+          ..add('zitadelMainClientId', zitadelMainClientId)
           ..add('zitadelManagerClientId', zitadelManagerClientId)
           ..add('zitadelOrgId', zitadelOrgId)
           ..add('managerUrl', managerUrl)
@@ -176,6 +193,7 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
           ..add('growthbookManagerApiKey', growthbookManagerApiKey)
           ..add('customer', customer)
           ..add('product', product)
+          ..add('company', company)
           ..add('availableOnHosts', availableOnHosts)
           ..add('brandingSettings', brandingSettings))
         .toString();
@@ -217,6 +235,16 @@ class DiscoveryJsonldReadBuilder
   String? get zitadelCustomerClientId => _$this._zitadelCustomerClientId;
   set zitadelCustomerClientId(String? zitadelCustomerClientId) =>
       _$this._zitadelCustomerClientId = zitadelCustomerClientId;
+
+  String? _zitadelCustomerWebClientId;
+  String? get zitadelCustomerWebClientId => _$this._zitadelCustomerWebClientId;
+  set zitadelCustomerWebClientId(String? zitadelCustomerWebClientId) =>
+      _$this._zitadelCustomerWebClientId = zitadelCustomerWebClientId;
+
+  String? _zitadelMainClientId;
+  String? get zitadelMainClientId => _$this._zitadelMainClientId;
+  set zitadelMainClientId(String? zitadelMainClientId) =>
+      _$this._zitadelMainClientId = zitadelMainClientId;
 
   String? _zitadelManagerClientId;
   String? get zitadelManagerClientId => _$this._zitadelManagerClientId;
@@ -278,6 +306,10 @@ class DiscoveryJsonldReadBuilder
   String? get product => _$this._product;
   set product(String? product) => _$this._product = product;
 
+  String? _company;
+  String? get company => _$this._company;
+  set company(String? company) => _$this._company = company;
+
   ListBuilder<String>? _availableOnHosts;
   ListBuilder<String> get availableOnHosts =>
       _$this._availableOnHosts ??= new ListBuilder<String>();
@@ -305,6 +337,8 @@ class DiscoveryJsonldReadBuilder
       _reference = $v.reference;
       _zitadelIssuer = $v.zitadelIssuer;
       _zitadelCustomerClientId = $v.zitadelCustomerClientId;
+      _zitadelCustomerWebClientId = $v.zitadelCustomerWebClientId;
+      _zitadelMainClientId = $v.zitadelMainClientId;
       _zitadelManagerClientId = $v.zitadelManagerClientId;
       _zitadelOrgId = $v.zitadelOrgId;
       _managerUrl = $v.managerUrl;
@@ -319,6 +353,7 @@ class DiscoveryJsonldReadBuilder
       _growthbookManagerApiKey = $v.growthbookManagerApiKey;
       _customer = $v.customer;
       _product = $v.product;
+      _company = $v.company;
       _availableOnHosts = $v.availableOnHosts?.toBuilder();
       _brandingSettings = $v.brandingSettings?.toBuilder();
       _$v = null;
@@ -352,6 +387,8 @@ class DiscoveryJsonldReadBuilder
             reference: reference,
             zitadelIssuer: zitadelIssuer,
             zitadelCustomerClientId: zitadelCustomerClientId,
+            zitadelCustomerWebClientId: zitadelCustomerWebClientId,
+            zitadelMainClientId: zitadelMainClientId,
             zitadelManagerClientId: zitadelManagerClientId,
             zitadelOrgId: zitadelOrgId,
             managerUrl: managerUrl,
@@ -366,6 +403,7 @@ class DiscoveryJsonldReadBuilder
             growthbookManagerApiKey: growthbookManagerApiKey,
             customer: customer,
             product: product,
+            company: company,
             availableOnHosts: _availableOnHosts?.build(),
             brandingSettings: _brandingSettings?.build(),
           );

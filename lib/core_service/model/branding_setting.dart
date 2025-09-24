@@ -98,7 +98,7 @@ abstract class BrandingSetting implements Built<BrandingSetting, BrandingSetting
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BrandingSettingBuilder b) => b
       ..orgId = 'default'
-      ..themeMode = const BrandingSettingThemeModeEnum._('THEME_MODE_UNSPECIFIED');
+      ..themeMode = 'THEME_MODE_UNSPECIFIED';
 
   @BuiltValueSerializer(custom: true)
   static Serializer<BrandingSetting> get serializer => _$BrandingSettingSerializer();

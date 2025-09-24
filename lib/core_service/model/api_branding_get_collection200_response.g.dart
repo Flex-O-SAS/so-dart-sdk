@@ -1,51 +1,48 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_apibranding_settings_get_collection200_response.dart';
+part of 'api_branding_get_collection200_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiApibrandingSettingsGetCollection200Response
-    extends ApiApibrandingSettingsGetCollection200Response {
+class _$ApiBrandingGetCollection200Response
+    extends ApiBrandingGetCollection200Response {
   @override
   final BuiltList<BrandingSettingJsonld> member;
   @override
   final int? totalItems;
   @override
-  final ApiApibrandingSettingsGetCollection200ResponseView? view;
+  final ApiBrandingGetCollection200ResponseView? view;
   @override
-  final ApiApibrandingSettingsGetCollection200ResponseSearch? search;
+  final ApiBrandingGetCollection200ResponseSearch? search;
 
-  factory _$ApiApibrandingSettingsGetCollection200Response(
-          [void Function(ApiApibrandingSettingsGetCollection200ResponseBuilder)?
+  factory _$ApiBrandingGetCollection200Response(
+          [void Function(ApiBrandingGetCollection200ResponseBuilder)?
               updates]) =>
-      (new ApiApibrandingSettingsGetCollection200ResponseBuilder()
-            ..update(updates))
+      (new ApiBrandingGetCollection200ResponseBuilder()..update(updates))
           ._build();
 
-  _$ApiApibrandingSettingsGetCollection200Response._(
+  _$ApiBrandingGetCollection200Response._(
       {required this.member, this.totalItems, this.view, this.search})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        member, r'ApiApibrandingSettingsGetCollection200Response', 'member');
+        member, r'ApiBrandingGetCollection200Response', 'member');
   }
 
   @override
-  ApiApibrandingSettingsGetCollection200Response rebuild(
-          void Function(ApiApibrandingSettingsGetCollection200ResponseBuilder)
-              updates) =>
+  ApiBrandingGetCollection200Response rebuild(
+          void Function(ApiBrandingGetCollection200ResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiApibrandingSettingsGetCollection200ResponseBuilder toBuilder() =>
-      new ApiApibrandingSettingsGetCollection200ResponseBuilder()
-        ..replace(this);
+  ApiBrandingGetCollection200ResponseBuilder toBuilder() =>
+      new ApiBrandingGetCollection200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiApibrandingSettingsGetCollection200Response &&
+    return other is ApiBrandingGetCollection200Response &&
         member == other.member &&
         totalItems == other.totalItems &&
         view == other.view &&
@@ -65,8 +62,7 @@ class _$ApiApibrandingSettingsGetCollection200Response
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(
-            r'ApiApibrandingSettingsGetCollection200Response')
+    return (newBuiltValueToStringHelper(r'ApiBrandingGetCollection200Response')
           ..add('member', member)
           ..add('totalItems', totalItems)
           ..add('view', view)
@@ -75,11 +71,11 @@ class _$ApiApibrandingSettingsGetCollection200Response
   }
 }
 
-class ApiApibrandingSettingsGetCollection200ResponseBuilder
+class ApiBrandingGetCollection200ResponseBuilder
     implements
-        Builder<ApiApibrandingSettingsGetCollection200Response,
-            ApiApibrandingSettingsGetCollection200ResponseBuilder> {
-  _$ApiApibrandingSettingsGetCollection200Response? _$v;
+        Builder<ApiBrandingGetCollection200Response,
+            ApiBrandingGetCollection200ResponseBuilder> {
+  _$ApiBrandingGetCollection200Response? _$v;
 
   ListBuilder<BrandingSettingJsonld>? _member;
   ListBuilder<BrandingSettingJsonld> get member =>
@@ -91,27 +87,23 @@ class ApiApibrandingSettingsGetCollection200ResponseBuilder
   int? get totalItems => _$this._totalItems;
   set totalItems(int? totalItems) => _$this._totalItems = totalItems;
 
-  ApiApibrandingSettingsGetCollection200ResponseViewBuilder? _view;
-  ApiApibrandingSettingsGetCollection200ResponseViewBuilder get view =>
-      _$this._view ??=
-          new ApiApibrandingSettingsGetCollection200ResponseViewBuilder();
-  set view(ApiApibrandingSettingsGetCollection200ResponseViewBuilder? view) =>
+  ApiBrandingGetCollection200ResponseViewBuilder? _view;
+  ApiBrandingGetCollection200ResponseViewBuilder get view =>
+      _$this._view ??= new ApiBrandingGetCollection200ResponseViewBuilder();
+  set view(ApiBrandingGetCollection200ResponseViewBuilder? view) =>
       _$this._view = view;
 
-  ApiApibrandingSettingsGetCollection200ResponseSearchBuilder? _search;
-  ApiApibrandingSettingsGetCollection200ResponseSearchBuilder get search =>
-      _$this._search ??=
-          new ApiApibrandingSettingsGetCollection200ResponseSearchBuilder();
-  set search(
-          ApiApibrandingSettingsGetCollection200ResponseSearchBuilder?
-              search) =>
+  ApiBrandingGetCollection200ResponseSearchBuilder? _search;
+  ApiBrandingGetCollection200ResponseSearchBuilder get search =>
+      _$this._search ??= new ApiBrandingGetCollection200ResponseSearchBuilder();
+  set search(ApiBrandingGetCollection200ResponseSearchBuilder? search) =>
       _$this._search = search;
 
-  ApiApibrandingSettingsGetCollection200ResponseBuilder() {
-    ApiApibrandingSettingsGetCollection200Response._defaults(this);
+  ApiBrandingGetCollection200ResponseBuilder() {
+    ApiBrandingGetCollection200Response._defaults(this);
   }
 
-  ApiApibrandingSettingsGetCollection200ResponseBuilder get _$this {
+  ApiBrandingGetCollection200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _member = $v.member.toBuilder();
@@ -124,26 +116,25 @@ class ApiApibrandingSettingsGetCollection200ResponseBuilder
   }
 
   @override
-  void replace(ApiApibrandingSettingsGetCollection200Response other) {
+  void replace(ApiBrandingGetCollection200Response other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiApibrandingSettingsGetCollection200Response;
+    _$v = other as _$ApiBrandingGetCollection200Response;
   }
 
   @override
   void update(
-      void Function(ApiApibrandingSettingsGetCollection200ResponseBuilder)?
-          updates) {
+      void Function(ApiBrandingGetCollection200ResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiApibrandingSettingsGetCollection200Response build() => _build();
+  ApiBrandingGetCollection200Response build() => _build();
 
-  _$ApiApibrandingSettingsGetCollection200Response _build() {
-    _$ApiApibrandingSettingsGetCollection200Response _$result;
+  _$ApiBrandingGetCollection200Response _build() {
+    _$ApiBrandingGetCollection200Response _$result;
     try {
       _$result = _$v ??
-          new _$ApiApibrandingSettingsGetCollection200Response._(
+          new _$ApiBrandingGetCollection200Response._(
             member: member.build(),
             totalItems: totalItems,
             view: _view?.build(),
@@ -161,7 +152,7 @@ class ApiApibrandingSettingsGetCollection200ResponseBuilder
         _search?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'ApiApibrandingSettingsGetCollection200Response',
+            r'ApiBrandingGetCollection200Response',
             _$failedField,
             e.toString());
       }

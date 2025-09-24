@@ -26,6 +26,7 @@ part 'discovery_jsonld_read.g.dart';
 /// * [zitadelManagerClientId] 
 /// * [zitadelOrgId] 
 /// * [managerUrl] 
+/// * [customerUrl] 
 /// * [mediaUrl] 
 /// * [ticketingUrl] 
 /// * [marketplaceUrl] 
@@ -77,6 +78,9 @@ abstract class DiscoveryJsonldRead implements Built<DiscoveryJsonldRead, Discove
 
   @BuiltValueField(wireName: r'managerUrl')
   String? get managerUrl;
+
+  @BuiltValueField(wireName: r'customerUrl')
+  String? get customerUrl;
 
   @BuiltValueField(wireName: r'mediaUrl')
   String? get mediaUrl;
@@ -224,6 +228,13 @@ class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJs
       yield r'managerUrl';
       yield serializers.serialize(
         object.managerUrl,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.customerUrl != null) {
+      yield r'customerUrl';
+      yield serializers.serialize(
+        object.customerUrl,
         specifiedType: const FullType(String),
       );
     }
@@ -432,6 +443,13 @@ class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJs
             specifiedType: const FullType(String),
           ) as String;
           result.managerUrl = valueDes;
+          break;
+        case r'customerUrl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.customerUrl = valueDes;
           break;
         case r'mediaUrl':
           final valueDes = serializers.deserialize(

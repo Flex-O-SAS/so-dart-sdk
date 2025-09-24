@@ -13,9 +13,9 @@ class _$ApiDevicesGetCollection200Response
   @override
   final int? totalItems;
   @override
-  final ApiApibrandingSettingsGetCollection200ResponseView? view;
+  final ApiBrandingGetCollection200ResponseView? view;
   @override
-  final ApiApibrandingSettingsGetCollection200ResponseSearch? search;
+  final ApiBrandingGetCollection200ResponseSearch? search;
 
   factory _$ApiDevicesGetCollection200Response(
           [void Function(ApiDevicesGetCollection200ResponseBuilder)?
@@ -87,20 +87,16 @@ class ApiDevicesGetCollection200ResponseBuilder
   int? get totalItems => _$this._totalItems;
   set totalItems(int? totalItems) => _$this._totalItems = totalItems;
 
-  ApiApibrandingSettingsGetCollection200ResponseViewBuilder? _view;
-  ApiApibrandingSettingsGetCollection200ResponseViewBuilder get view =>
-      _$this._view ??=
-          new ApiApibrandingSettingsGetCollection200ResponseViewBuilder();
-  set view(ApiApibrandingSettingsGetCollection200ResponseViewBuilder? view) =>
+  ApiBrandingGetCollection200ResponseViewBuilder? _view;
+  ApiBrandingGetCollection200ResponseViewBuilder get view =>
+      _$this._view ??= new ApiBrandingGetCollection200ResponseViewBuilder();
+  set view(ApiBrandingGetCollection200ResponseViewBuilder? view) =>
       _$this._view = view;
 
-  ApiApibrandingSettingsGetCollection200ResponseSearchBuilder? _search;
-  ApiApibrandingSettingsGetCollection200ResponseSearchBuilder get search =>
-      _$this._search ??=
-          new ApiApibrandingSettingsGetCollection200ResponseSearchBuilder();
-  set search(
-          ApiApibrandingSettingsGetCollection200ResponseSearchBuilder?
-              search) =>
+  ApiBrandingGetCollection200ResponseSearchBuilder? _search;
+  ApiBrandingGetCollection200ResponseSearchBuilder get search =>
+      _$this._search ??= new ApiBrandingGetCollection200ResponseSearchBuilder();
+  set search(ApiBrandingGetCollection200ResponseSearchBuilder? search) =>
       _$this._search = search;
 
   ApiDevicesGetCollection200ResponseBuilder() {

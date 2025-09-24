@@ -14,10 +14,10 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:so_dart_sdk/core_service/date_serializer.dart';
 import 'package:so_dart_sdk/core_service/model/date.dart';
 
-import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response.dart';
-import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_search.dart';
-import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_search_mapping_inner.dart';
-import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response.dart';
+import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_search.dart';
+import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_search_mapping_inner.dart';
+import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/api_subscribers_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/branding_setting.dart';
@@ -41,10 +41,10 @@ import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_writ
 part 'serializers.g.dart';
 
 @SerializersFor([
-  ApiApibrandingSettingsGetCollection200Response,
-  ApiApibrandingSettingsGetCollection200ResponseSearch,
-  ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner,
-  ApiApibrandingSettingsGetCollection200ResponseView,
+  ApiBrandingGetCollection200Response,
+  ApiBrandingGetCollection200ResponseSearch,
+  ApiBrandingGetCollection200ResponseSearchMappingInner,
+  ApiBrandingGetCollection200ResponseView,
   ApiDevicesGetCollection200Response,
   ApiSubscribersGetCollection200Response,
   BrandingSetting,

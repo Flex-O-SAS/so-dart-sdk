@@ -98,8 +98,7 @@ abstract class BrandingSettingJsonldRead implements Built<BrandingSettingJsonldR
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BrandingSettingJsonldReadBuilder b) => b
-      ..orgId = 'default'
-      ..themeMode = 'THEME_MODE_UNSPECIFIED';
+      ..orgId = 'default';
 
   @BuiltValueSerializer(custom: true)
   static Serializer<BrandingSettingJsonldRead> get serializer => _$BrandingSettingJsonldReadSerializer();

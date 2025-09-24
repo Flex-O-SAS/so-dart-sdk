@@ -6,9 +6,9 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_apibranding_settings_get_collection200_response_view.g.dart';
+part 'api_branding_get_collection200_response_view.g.dart';
 
-/// ApiApibrandingSettingsGetCollection200ResponseView
+/// ApiBrandingGetCollection200ResponseView
 ///
 /// Properties:
 /// * [atId] 
@@ -18,7 +18,7 @@ part 'api_apibranding_settings_get_collection200_response_view.g.dart';
 /// * [previous] 
 /// * [next] 
 @BuiltValue()
-abstract class ApiApibrandingSettingsGetCollection200ResponseView implements Built<ApiApibrandingSettingsGetCollection200ResponseView, ApiApibrandingSettingsGetCollection200ResponseViewBuilder> {
+abstract class ApiBrandingGetCollection200ResponseView implements Built<ApiBrandingGetCollection200ResponseView, ApiBrandingGetCollection200ResponseViewBuilder> {
   @BuiltValueField(wireName: r'@id')
   String? get atId;
 
@@ -37,27 +37,27 @@ abstract class ApiApibrandingSettingsGetCollection200ResponseView implements Bui
   @BuiltValueField(wireName: r'next')
   String? get next;
 
-  ApiApibrandingSettingsGetCollection200ResponseView._();
+  ApiBrandingGetCollection200ResponseView._();
 
-  factory ApiApibrandingSettingsGetCollection200ResponseView([void updates(ApiApibrandingSettingsGetCollection200ResponseViewBuilder b)]) = _$ApiApibrandingSettingsGetCollection200ResponseView;
+  factory ApiBrandingGetCollection200ResponseView([void updates(ApiBrandingGetCollection200ResponseViewBuilder b)]) = _$ApiBrandingGetCollection200ResponseView;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiApibrandingSettingsGetCollection200ResponseViewBuilder b) => b;
+  static void _defaults(ApiBrandingGetCollection200ResponseViewBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiApibrandingSettingsGetCollection200ResponseView> get serializer => _$ApiApibrandingSettingsGetCollection200ResponseViewSerializer();
+  static Serializer<ApiBrandingGetCollection200ResponseView> get serializer => _$ApiBrandingGetCollection200ResponseViewSerializer();
 }
 
-class _$ApiApibrandingSettingsGetCollection200ResponseViewSerializer implements PrimitiveSerializer<ApiApibrandingSettingsGetCollection200ResponseView> {
+class _$ApiBrandingGetCollection200ResponseViewSerializer implements PrimitiveSerializer<ApiBrandingGetCollection200ResponseView> {
   @override
-  final Iterable<Type> types = const [ApiApibrandingSettingsGetCollection200ResponseView, _$ApiApibrandingSettingsGetCollection200ResponseView];
+  final Iterable<Type> types = const [ApiBrandingGetCollection200ResponseView, _$ApiBrandingGetCollection200ResponseView];
 
   @override
-  final String wireName = r'ApiApibrandingSettingsGetCollection200ResponseView';
+  final String wireName = r'ApiBrandingGetCollection200ResponseView';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiApibrandingSettingsGetCollection200ResponseView object, {
+    ApiBrandingGetCollection200ResponseView object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atId != null) {
@@ -107,7 +107,7 @@ class _$ApiApibrandingSettingsGetCollection200ResponseViewSerializer implements 
   @override
   Object serialize(
     Serializers serializers,
-    ApiApibrandingSettingsGetCollection200ResponseView object, {
+    ApiBrandingGetCollection200ResponseView object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -118,7 +118,7 @@ class _$ApiApibrandingSettingsGetCollection200ResponseViewSerializer implements 
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiApibrandingSettingsGetCollection200ResponseViewBuilder result,
+    required ApiBrandingGetCollection200ResponseViewBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -176,12 +176,12 @@ class _$ApiApibrandingSettingsGetCollection200ResponseViewSerializer implements 
   }
 
   @override
-  ApiApibrandingSettingsGetCollection200ResponseView deserialize(
+  ApiBrandingGetCollection200ResponseView deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiApibrandingSettingsGetCollection200ResponseViewBuilder();
+    final result = ApiBrandingGetCollection200ResponseViewBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

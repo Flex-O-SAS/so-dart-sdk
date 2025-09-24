@@ -7,11 +7,10 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
-      ..add(ApiApibrandingSettingsGetCollection200Response.serializer)
-      ..add(ApiApibrandingSettingsGetCollection200ResponseSearch.serializer)
-      ..add(ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner
-          .serializer)
-      ..add(ApiApibrandingSettingsGetCollection200ResponseView.serializer)
+      ..add(ApiBrandingGetCollection200Response.serializer)
+      ..add(ApiBrandingGetCollection200ResponseSearch.serializer)
+      ..add(ApiBrandingGetCollection200ResponseSearchMappingInner.serializer)
+      ..add(ApiBrandingGetCollection200ResponseView.serializer)
       ..add(ApiDevicesGetCollection200Response.serializer)
       ..add(ApiSubscribersGetCollection200Response.serializer)
       ..add(BrandingSetting.serializer)
@@ -40,10 +39,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
-                ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner)
+                ApiBrandingGetCollection200ResponseSearchMappingInner)
           ]),
           () => new ListBuilder<
-              ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner>())
+              ApiBrandingGetCollection200ResponseSearchMappingInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(BrandingSettingJsonld)]),

@@ -7,9 +7,9 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_apibranding_settings_get_collection200_response_search_mapping_inner.g.dart';
+part 'api_branding_get_collection200_response_search_mapping_inner.g.dart';
 
-/// ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner
+/// ApiBrandingGetCollection200ResponseSearchMappingInner
 ///
 /// Properties:
 /// * [atType] 
@@ -17,7 +17,7 @@ part 'api_apibranding_settings_get_collection200_response_search_mapping_inner.g
 /// * [property] 
 /// * [required_] 
 @BuiltValue()
-abstract class ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner implements Built<ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner, ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder> {
+abstract class ApiBrandingGetCollection200ResponseSearchMappingInner implements Built<ApiBrandingGetCollection200ResponseSearchMappingInner, ApiBrandingGetCollection200ResponseSearchMappingInnerBuilder> {
   @BuiltValueField(wireName: r'@type')
   String? get atType;
 
@@ -30,27 +30,27 @@ abstract class ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner 
   @BuiltValueField(wireName: r'required')
   bool? get required_;
 
-  ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner._();
+  ApiBrandingGetCollection200ResponseSearchMappingInner._();
 
-  factory ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner([void updates(ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder b)]) = _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner;
+  factory ApiBrandingGetCollection200ResponseSearchMappingInner([void updates(ApiBrandingGetCollection200ResponseSearchMappingInnerBuilder b)]) = _$ApiBrandingGetCollection200ResponseSearchMappingInner;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder b) => b;
+  static void _defaults(ApiBrandingGetCollection200ResponseSearchMappingInnerBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner> get serializer => _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerSerializer();
+  static Serializer<ApiBrandingGetCollection200ResponseSearchMappingInner> get serializer => _$ApiBrandingGetCollection200ResponseSearchMappingInnerSerializer();
 }
 
-class _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerSerializer implements PrimitiveSerializer<ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner> {
+class _$ApiBrandingGetCollection200ResponseSearchMappingInnerSerializer implements PrimitiveSerializer<ApiBrandingGetCollection200ResponseSearchMappingInner> {
   @override
-  final Iterable<Type> types = const [ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner, _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner];
+  final Iterable<Type> types = const [ApiBrandingGetCollection200ResponseSearchMappingInner, _$ApiBrandingGetCollection200ResponseSearchMappingInner];
 
   @override
-  final String wireName = r'ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner';
+  final String wireName = r'ApiBrandingGetCollection200ResponseSearchMappingInner';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner object, {
+    ApiBrandingGetCollection200ResponseSearchMappingInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atType != null) {
@@ -86,7 +86,7 @@ class _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerSerializ
   @override
   Object serialize(
     Serializers serializers,
-    ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner object, {
+    ApiBrandingGetCollection200ResponseSearchMappingInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -97,7 +97,7 @@ class _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerSerializ
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder result,
+    required ApiBrandingGetCollection200ResponseSearchMappingInnerBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -142,12 +142,12 @@ class _$ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerSerializ
   }
 
   @override
-  ApiApibrandingSettingsGetCollection200ResponseSearchMappingInner deserialize(
+  ApiBrandingGetCollection200ResponseSearchMappingInner deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiApibrandingSettingsGetCollection200ResponseSearchMappingInnerBuilder();
+    final result = ApiBrandingGetCollection200ResponseSearchMappingInnerBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

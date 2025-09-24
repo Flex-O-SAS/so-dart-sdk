@@ -32,6 +32,8 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
   @override
   final String? managerUrl;
   @override
+  final String? customerUrl;
+  @override
   final String? mediaUrl;
   @override
   final String? ticketingUrl;
@@ -77,6 +79,7 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
       this.zitadelManagerClientId,
       this.zitadelOrgId,
       this.managerUrl,
+      this.customerUrl,
       this.mediaUrl,
       this.ticketingUrl,
       this.marketplaceUrl,
@@ -118,6 +121,7 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
         zitadelManagerClientId == other.zitadelManagerClientId &&
         zitadelOrgId == other.zitadelOrgId &&
         managerUrl == other.managerUrl &&
+        customerUrl == other.customerUrl &&
         mediaUrl == other.mediaUrl &&
         ticketingUrl == other.ticketingUrl &&
         marketplaceUrl == other.marketplaceUrl &&
@@ -149,6 +153,7 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
     _$hash = $jc(_$hash, zitadelManagerClientId.hashCode);
     _$hash = $jc(_$hash, zitadelOrgId.hashCode);
     _$hash = $jc(_$hash, managerUrl.hashCode);
+    _$hash = $jc(_$hash, customerUrl.hashCode);
     _$hash = $jc(_$hash, mediaUrl.hashCode);
     _$hash = $jc(_$hash, ticketingUrl.hashCode);
     _$hash = $jc(_$hash, marketplaceUrl.hashCode);
@@ -182,6 +187,7 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
           ..add('zitadelManagerClientId', zitadelManagerClientId)
           ..add('zitadelOrgId', zitadelOrgId)
           ..add('managerUrl', managerUrl)
+          ..add('customerUrl', customerUrl)
           ..add('mediaUrl', mediaUrl)
           ..add('ticketingUrl', ticketingUrl)
           ..add('marketplaceUrl', marketplaceUrl)
@@ -258,6 +264,10 @@ class DiscoveryJsonldReadBuilder
   String? _managerUrl;
   String? get managerUrl => _$this._managerUrl;
   set managerUrl(String? managerUrl) => _$this._managerUrl = managerUrl;
+
+  String? _customerUrl;
+  String? get customerUrl => _$this._customerUrl;
+  set customerUrl(String? customerUrl) => _$this._customerUrl = customerUrl;
 
   String? _mediaUrl;
   String? get mediaUrl => _$this._mediaUrl;
@@ -342,6 +352,7 @@ class DiscoveryJsonldReadBuilder
       _zitadelManagerClientId = $v.zitadelManagerClientId;
       _zitadelOrgId = $v.zitadelOrgId;
       _managerUrl = $v.managerUrl;
+      _customerUrl = $v.customerUrl;
       _mediaUrl = $v.mediaUrl;
       _ticketingUrl = $v.ticketingUrl;
       _marketplaceUrl = $v.marketplaceUrl;
@@ -392,6 +403,7 @@ class DiscoveryJsonldReadBuilder
             zitadelManagerClientId: zitadelManagerClientId,
             zitadelOrgId: zitadelOrgId,
             managerUrl: managerUrl,
+            customerUrl: customerUrl,
             mediaUrl: mediaUrl,
             ticketingUrl: ticketingUrl,
             marketplaceUrl: marketplaceUrl,

@@ -99,7 +99,7 @@ abstract class BrandingSettingJsonldRead implements Built<BrandingSettingJsonldR
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BrandingSettingJsonldReadBuilder b) => b
       ..orgId = 'default'
-      ..themeMode = const BrandingSettingJsonldReadThemeModeEnum._('THEME_MODE_UNSPECIFIED');
+      ..themeMode = 'THEME_MODE_UNSPECIFIED';
 
   @BuiltValueSerializer(custom: true)
   static Serializer<BrandingSettingJsonldRead> get serializer => _$BrandingSettingJsonldReadSerializer();

@@ -19,6 +19,7 @@ part 'happening_jsonld_happening_search.g.dart';
 /// * [id] 
 /// * [name] 
 /// * [banner] 
+/// * [center] 
 /// * [place] 
 /// * [nbUsers] 
 /// * [maxUsers] 
@@ -43,6 +44,9 @@ abstract class HappeningJsonldHappeningSearch implements Built<HappeningJsonldHa
 
   @BuiltValueField(wireName: r'banner')
   String? get banner;
+
+  @BuiltValueField(wireName: r'center')
+  String? get center;
 
   @BuiltValueField(wireName: r'place')
   String? get place;
@@ -124,6 +128,13 @@ class _$HappeningJsonldHappeningSearchSerializer implements PrimitiveSerializer<
       yield r'banner';
       yield serializers.serialize(
         object.banner,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.center != null) {
+      yield r'center';
+      yield serializers.serialize(
+        object.center,
         specifiedType: const FullType.nullable(String),
       );
     }
@@ -241,6 +252,14 @@ class _$HappeningJsonldHappeningSearchSerializer implements PrimitiveSerializer<
           ) as String?;
           if (valueDes == null) continue;
           result.banner = valueDes;
+          break;
+        case r'center':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.center = valueDes;
           break;
         case r'place':
           final valueDes = serializers.deserialize(

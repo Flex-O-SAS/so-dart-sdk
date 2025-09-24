@@ -282,10 +282,10 @@ export 'package:so_dart_sdk/core_service/api/discovery_api.dart';
 export 'package:so_dart_sdk/core_service/api/notification_api.dart';
 export 'package:so_dart_sdk/core_service/api/subscriber_api.dart';
 
-export 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response.dart';
-export 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_search.dart';
-export 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_search_mapping_inner.dart';
-export 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_view.dart';
+export 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response.dart';
+export 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_search.dart';
+export 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_search_mapping_inner.dart';
+export 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_view.dart';
 export 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
 export 'package:so_dart_sdk/core_service/model/api_subscribers_get_collection200_response.dart';
 export 'package:so_dart_sdk/core_service/model/branding_setting.dart';

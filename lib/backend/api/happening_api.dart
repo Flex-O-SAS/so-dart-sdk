@@ -8,6 +8,7 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_happening_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
@@ -28,6 +29,8 @@ class HappeningApi {
   /// Parameters:
   /// * [page] - The collection page number
   /// * [itemsPerPage] - The number of items per page
+  /// * [center] - 
+  /// * [centerLeftSquareBracketRightSquareBracket] - 
   /// * [orderLeftSquareBracketPublicatedAtRightSquareBracket] - 
   /// * [orderLeftSquareBracketArchivedAtRightSquareBracket] - 
   /// * [isActive] - 
@@ -43,6 +46,8 @@ class HappeningApi {
   Future<Response<ApiHappeningGetCollection200Response>> apiHappeningGetCollection({ 
     int? page = 1,
     int? itemsPerPage = 30,
+    String? center,
+    BuiltList<String>? centerLeftSquareBracketRightSquareBracket,
     String? orderLeftSquareBracketPublicatedAtRightSquareBracket = 'asc',
     String? orderLeftSquareBracketArchivedAtRightSquareBracket = 'asc',
     bool? isActive,
@@ -69,6 +74,8 @@ class HappeningApi {
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
       if (itemsPerPage != null) r'itemsPerPage': encodeQueryParameter(_serializers, itemsPerPage, const FullType(int)),
+      if (center != null) r'center': encodeQueryParameter(_serializers, center, const FullType(String)),
+      if (centerLeftSquareBracketRightSquareBracket != null) r'center[]': encodeCollectionQueryParameter<String>(_serializers, centerLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (orderLeftSquareBracketPublicatedAtRightSquareBracket != null) r'order[publicatedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketPublicatedAtRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketArchivedAtRightSquareBracket != null) r'order[archivedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketArchivedAtRightSquareBracket, const FullType(String)),
       if (isActive != null) r'isActive': encodeQueryParameter(_serializers, isActive, const FullType(bool)),

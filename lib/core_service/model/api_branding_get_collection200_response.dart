@@ -3,16 +3,16 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_search.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_search.dart';
 import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_apibranding_settings_get_collection200_response.g.dart';
+part 'api_branding_get_collection200_response.g.dart';
 
-/// ApiApibrandingSettingsGetCollection200Response
+/// ApiBrandingGetCollection200Response
 ///
 /// Properties:
 /// * [member] 
@@ -20,7 +20,7 @@ part 'api_apibranding_settings_get_collection200_response.g.dart';
 /// * [view] 
 /// * [search] 
 @BuiltValue()
-abstract class ApiApibrandingSettingsGetCollection200Response implements Built<ApiApibrandingSettingsGetCollection200Response, ApiApibrandingSettingsGetCollection200ResponseBuilder> {
+abstract class ApiBrandingGetCollection200Response implements Built<ApiBrandingGetCollection200Response, ApiBrandingGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
   BuiltList<BrandingSettingJsonld> get member;
 
@@ -28,32 +28,32 @@ abstract class ApiApibrandingSettingsGetCollection200Response implements Built<A
   int? get totalItems;
 
   @BuiltValueField(wireName: r'view')
-  ApiApibrandingSettingsGetCollection200ResponseView? get view;
+  ApiBrandingGetCollection200ResponseView? get view;
 
   @BuiltValueField(wireName: r'search')
-  ApiApibrandingSettingsGetCollection200ResponseSearch? get search;
+  ApiBrandingGetCollection200ResponseSearch? get search;
 
-  ApiApibrandingSettingsGetCollection200Response._();
+  ApiBrandingGetCollection200Response._();
 
-  factory ApiApibrandingSettingsGetCollection200Response([void updates(ApiApibrandingSettingsGetCollection200ResponseBuilder b)]) = _$ApiApibrandingSettingsGetCollection200Response;
+  factory ApiBrandingGetCollection200Response([void updates(ApiBrandingGetCollection200ResponseBuilder b)]) = _$ApiBrandingGetCollection200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiApibrandingSettingsGetCollection200ResponseBuilder b) => b;
+  static void _defaults(ApiBrandingGetCollection200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiApibrandingSettingsGetCollection200Response> get serializer => _$ApiApibrandingSettingsGetCollection200ResponseSerializer();
+  static Serializer<ApiBrandingGetCollection200Response> get serializer => _$ApiBrandingGetCollection200ResponseSerializer();
 }
 
-class _$ApiApibrandingSettingsGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiApibrandingSettingsGetCollection200Response> {
+class _$ApiBrandingGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiBrandingGetCollection200Response> {
   @override
-  final Iterable<Type> types = const [ApiApibrandingSettingsGetCollection200Response, _$ApiApibrandingSettingsGetCollection200Response];
+  final Iterable<Type> types = const [ApiBrandingGetCollection200Response, _$ApiBrandingGetCollection200Response];
 
   @override
-  final String wireName = r'ApiApibrandingSettingsGetCollection200Response';
+  final String wireName = r'ApiBrandingGetCollection200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiApibrandingSettingsGetCollection200Response object, {
+    ApiBrandingGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'member';
@@ -72,14 +72,14 @@ class _$ApiApibrandingSettingsGetCollection200ResponseSerializer implements Prim
       yield r'view';
       yield serializers.serialize(
         object.view,
-        specifiedType: const FullType(ApiApibrandingSettingsGetCollection200ResponseView),
+        specifiedType: const FullType(ApiBrandingGetCollection200ResponseView),
       );
     }
     if (object.search != null) {
       yield r'search';
       yield serializers.serialize(
         object.search,
-        specifiedType: const FullType(ApiApibrandingSettingsGetCollection200ResponseSearch),
+        specifiedType: const FullType(ApiBrandingGetCollection200ResponseSearch),
       );
     }
   }
@@ -87,7 +87,7 @@ class _$ApiApibrandingSettingsGetCollection200ResponseSerializer implements Prim
   @override
   Object serialize(
     Serializers serializers,
-    ApiApibrandingSettingsGetCollection200Response object, {
+    ApiBrandingGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -98,7 +98,7 @@ class _$ApiApibrandingSettingsGetCollection200ResponseSerializer implements Prim
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiApibrandingSettingsGetCollection200ResponseBuilder result,
+    required ApiBrandingGetCollection200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -122,15 +122,15 @@ class _$ApiApibrandingSettingsGetCollection200ResponseSerializer implements Prim
         case r'view':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ApiApibrandingSettingsGetCollection200ResponseView),
-          ) as ApiApibrandingSettingsGetCollection200ResponseView;
+            specifiedType: const FullType(ApiBrandingGetCollection200ResponseView),
+          ) as ApiBrandingGetCollection200ResponseView;
           result.view.replace(valueDes);
           break;
         case r'search':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ApiApibrandingSettingsGetCollection200ResponseSearch),
-          ) as ApiApibrandingSettingsGetCollection200ResponseSearch;
+            specifiedType: const FullType(ApiBrandingGetCollection200ResponseSearch),
+          ) as ApiBrandingGetCollection200ResponseSearch;
           result.search.replace(valueDes);
           break;
         default:
@@ -142,12 +142,12 @@ class _$ApiApibrandingSettingsGetCollection200ResponseSerializer implements Prim
   }
 
   @override
-  ApiApibrandingSettingsGetCollection200Response deserialize(
+  ApiBrandingGetCollection200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiApibrandingSettingsGetCollection200ResponseBuilder();
+    final result = ApiBrandingGetCollection200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

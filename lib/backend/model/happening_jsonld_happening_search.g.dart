@@ -18,6 +18,8 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
   @override
   final String? banner;
   @override
+  final String? center;
+  @override
   final String? place;
   @override
   final int? nbUsers;
@@ -45,6 +47,7 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
       this.id,
       this.name,
       this.banner,
+      this.center,
       this.place,
       this.nbUsers,
       this.maxUsers,
@@ -73,6 +76,7 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
         id == other.id &&
         name == other.name &&
         banner == other.banner &&
+        center == other.center &&
         place == other.place &&
         nbUsers == other.nbUsers &&
         maxUsers == other.maxUsers &&
@@ -91,6 +95,7 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, banner.hashCode);
+    _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, place.hashCode);
     _$hash = $jc(_$hash, nbUsers.hashCode);
     _$hash = $jc(_$hash, maxUsers.hashCode);
@@ -111,6 +116,7 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
           ..add('id', id)
           ..add('name', name)
           ..add('banner', banner)
+          ..add('center', center)
           ..add('place', place)
           ..add('nbUsers', nbUsers)
           ..add('maxUsers', maxUsers)
@@ -148,6 +154,10 @@ class HappeningJsonldHappeningSearchBuilder
   String? _banner;
   String? get banner => _$this._banner;
   set banner(String? banner) => _$this._banner = banner;
+
+  String? _center;
+  String? get center => _$this._center;
+  set center(String? center) => _$this._center = center;
 
   String? _place;
   String? get place => _$this._place;
@@ -204,6 +214,7 @@ class HappeningJsonldHappeningSearchBuilder
       _id = $v.id;
       _name = $v.name;
       _banner = $v.banner;
+      _center = $v.center;
       _place = $v.place;
       _nbUsers = $v.nbUsers;
       _maxUsers = $v.maxUsers;
@@ -241,6 +252,7 @@ class HappeningJsonldHappeningSearchBuilder
             id: id,
             name: name,
             banner: banner,
+            center: center,
             place: place,
             nbUsers: nbUsers,
             maxUsers: maxUsers,

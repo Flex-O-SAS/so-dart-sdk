@@ -10,7 +10,7 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/core_service/api_util.dart';
-import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response.dart';
+import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/branding_setting.dart';
 import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
@@ -26,6 +26,60 @@ class BrandingSettingApi {
 
   const BrandingSettingApi(this._dio, this._serializers);
 
+  /// Removes the BrandingSetting resource.
+  /// Removes the BrandingSetting resource.
+  ///
+  /// Parameters:
+  /// * [orgId] - BrandingSetting identifier
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> apiBrandingDeleteItem({ 
+    required String orgId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/branding_settings/{orgId}'.replaceAll('{' r'orgId' '}', encodeQueryParameter(_serializers, orgId, const FullType(String)).toString());
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'JWT',
+            'keyName': 'Authorization',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
   /// Retrieves the collection of BrandingSetting resources.
   /// Retrieves the collection of BrandingSetting resources.
   ///
@@ -40,9 +94,9 @@ class BrandingSettingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ApiApibrandingSettingsGetCollection200Response] as data
+  /// Returns a [Future] containing a [Response] with a [ApiBrandingGetCollection200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApiApibrandingSettingsGetCollection200Response>> apiApibrandingSettingsGetCollection({ 
+  Future<Response<ApiBrandingGetCollection200Response>> apiBrandingGetCollection({ 
     int? page = 1,
     String? orgId,
     BuiltList<String>? orgIdLeftSquareBracketRightSquareBracket,
@@ -88,14 +142,14 @@ class BrandingSettingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApiApibrandingSettingsGetCollection200Response? _responseData;
+    ApiBrandingGetCollection200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(ApiApibrandingSettingsGetCollection200Response),
-      ) as ApiApibrandingSettingsGetCollection200Response;
+        specifiedType: const FullType(ApiBrandingGetCollection200Response),
+      ) as ApiBrandingGetCollection200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -107,7 +161,7 @@ class BrandingSettingApi {
       );
     }
 
-    return Response<ApiApibrandingSettingsGetCollection200Response>(
+    return Response<ApiBrandingGetCollection200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -117,60 +171,6 @@ class BrandingSettingApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
-  }
-
-  /// Removes the BrandingSetting resource.
-  /// Removes the BrandingSetting resource.
-  ///
-  /// Parameters:
-  /// * [orgId] - BrandingSetting identifier
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> apiApibrandingSettingsOrgIdDelete({ 
-    required String orgId,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/branding_settings/{orgId}'.replaceAll('{' r'orgId' '}', encodeQueryParameter(_serializers, orgId, const FullType(String)).toString());
-    final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'JWT',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
   }
 
   /// Retrieves a BrandingSetting resource.
@@ -187,7 +187,7 @@ class BrandingSettingApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BrandingSettingJsonld] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandingSettingJsonld>> apiApibrandingSettingsOrgIdGet({ 
+  Future<Response<BrandingSettingJsonld>> apiBrandingGetItem({ 
     required String orgId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -270,7 +270,7 @@ class BrandingSettingApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BrandingSettingJsonld] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandingSettingJsonld>> apiApibrandingSettingsOrgIdPatch({ 
+  Future<Response<BrandingSettingJsonld>> apiBrandingPatchItem({ 
     required String orgId,
     required BrandingSetting brandingSetting,
     CancelToken? cancelToken,
@@ -373,7 +373,7 @@ class BrandingSettingApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BrandingSettingJsonld] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandingSettingJsonld>> apiApibrandingSettingsPost({ 
+  Future<Response<BrandingSettingJsonld>> apiBrandingPostItem({ 
     required BrandingSettingJsonld brandingSettingJsonld,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

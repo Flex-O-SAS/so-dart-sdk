@@ -4,9 +4,9 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
-import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_search.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/core_service/model/api_apibranding_settings_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_search.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -28,10 +28,10 @@ abstract class ApiDevicesGetCollection200Response implements Built<ApiDevicesGet
   int? get totalItems;
 
   @BuiltValueField(wireName: r'view')
-  ApiApibrandingSettingsGetCollection200ResponseView? get view;
+  ApiBrandingGetCollection200ResponseView? get view;
 
   @BuiltValueField(wireName: r'search')
-  ApiApibrandingSettingsGetCollection200ResponseSearch? get search;
+  ApiBrandingGetCollection200ResponseSearch? get search;
 
   ApiDevicesGetCollection200Response._();
 
@@ -72,14 +72,14 @@ class _$ApiDevicesGetCollection200ResponseSerializer implements PrimitiveSeriali
       yield r'view';
       yield serializers.serialize(
         object.view,
-        specifiedType: const FullType(ApiApibrandingSettingsGetCollection200ResponseView),
+        specifiedType: const FullType(ApiBrandingGetCollection200ResponseView),
       );
     }
     if (object.search != null) {
       yield r'search';
       yield serializers.serialize(
         object.search,
-        specifiedType: const FullType(ApiApibrandingSettingsGetCollection200ResponseSearch),
+        specifiedType: const FullType(ApiBrandingGetCollection200ResponseSearch),
       );
     }
   }
@@ -122,15 +122,15 @@ class _$ApiDevicesGetCollection200ResponseSerializer implements PrimitiveSeriali
         case r'view':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ApiApibrandingSettingsGetCollection200ResponseView),
-          ) as ApiApibrandingSettingsGetCollection200ResponseView;
+            specifiedType: const FullType(ApiBrandingGetCollection200ResponseView),
+          ) as ApiBrandingGetCollection200ResponseView;
           result.view.replace(valueDes);
           break;
         case r'search':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ApiApibrandingSettingsGetCollection200ResponseSearch),
-          ) as ApiApibrandingSettingsGetCollection200ResponseSearch;
+            specifiedType: const FullType(ApiBrandingGetCollection200ResponseSearch),
+          ) as ApiBrandingGetCollection200ResponseSearch;
           result.search.replace(valueDes);
           break;
         default:

@@ -12,9 +12,11 @@ import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/corporate/api_util.dart';
 import 'package:so_dart_sdk/corporate/model/api_appointment_client_get_collection200_response.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_signed_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_signed_write.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_write.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_client_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_client_signed_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_client_write.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld_jsonld.dart';
@@ -312,9 +314,9 @@ class AppointmentClientApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AppointmentClientJsonldAppointmentClientRead] as data
+  /// Returns a [Future] containing a [Response] with a [AppointmentClientJsonldAppointmentClientSignedRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AppointmentClientJsonldAppointmentClientRead>> apiAppointmentClientGetSignedItem({ 
+  Future<Response<AppointmentClientJsonldAppointmentClientSignedRead>> apiAppointmentClientGetSignedItem({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -351,14 +353,14 @@ class AppointmentClientApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AppointmentClientJsonldAppointmentClientRead? _responseData;
+    AppointmentClientJsonldAppointmentClientSignedRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(AppointmentClientJsonldAppointmentClientRead),
-      ) as AppointmentClientJsonldAppointmentClientRead;
+        specifiedType: const FullType(AppointmentClientJsonldAppointmentClientSignedRead),
+      ) as AppointmentClientJsonldAppointmentClientSignedRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -370,7 +372,7 @@ class AppointmentClientApi {
       );
     }
 
-    return Response<AppointmentClientJsonldAppointmentClientRead>(
+    return Response<AppointmentClientJsonldAppointmentClientSignedRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -601,9 +603,9 @@ class AppointmentClientApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AppointmentClientJsonldAppointmentClientRead] as data
+  /// Returns a [Future] containing a [Response] with a [AppointmentClientJsonldAppointmentClientSignedRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AppointmentClientJsonldAppointmentClientRead>> apiAppointmentClientPutSignedItem({ 
+  Future<Response<AppointmentClientJsonldAppointmentClientSignedRead>> apiAppointmentClientPutSignedItem({ 
     required String id,
     required AppointmentClientAppointmentClientSignedWrite appointmentClientAppointmentClientSignedWrite,
     CancelToken? cancelToken,
@@ -661,14 +663,14 @@ class AppointmentClientApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AppointmentClientJsonldAppointmentClientRead? _responseData;
+    AppointmentClientJsonldAppointmentClientSignedRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(AppointmentClientJsonldAppointmentClientRead),
-      ) as AppointmentClientJsonldAppointmentClientRead;
+        specifiedType: const FullType(AppointmentClientJsonldAppointmentClientSignedRead),
+      ) as AppointmentClientJsonldAppointmentClientSignedRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -680,7 +682,7 @@ class AppointmentClientApi {
       );
     }
 
-    return Response<AppointmentClientJsonldAppointmentClientRead>(
+    return Response<AppointmentClientJsonldAppointmentClientSignedRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

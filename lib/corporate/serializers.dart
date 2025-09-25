@@ -21,17 +21,21 @@ import 'package:so_dart_sdk/corporate/model/api_appointments_get_collection200_r
 import 'package:so_dart_sdk/corporate/model/api_appointments_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/corporate/model/api_client_relation_get_collection200_response.dart';
 import 'package:so_dart_sdk/corporate/model/api_packages_get_collection200_response.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_appointment_client_signed_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_appointment_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_appointment_write.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_signed_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_signed_write.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_write.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_write.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_client_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_client_signed_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_client_write.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_write.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_client_signed_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read_context.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read_context_one_of.dart';
@@ -58,17 +62,21 @@ part 'serializers.g.dart';
   ApiAppointmentsGetCollection200ResponseView,
   ApiClientRelationGetCollection200Response,
   ApiPackagesGetCollection200Response,
+  AppointmentAppointmentClientSignedRead,
   AppointmentAppointmentRead,
   AppointmentAppointmentWrite,
   AppointmentClientAppointmentClientRead,
+  AppointmentClientAppointmentClientSignedRead,
   AppointmentClientAppointmentClientSignedWrite,
   AppointmentClientAppointmentClientWrite,
   AppointmentClientAppointmentRead,
   AppointmentClientAppointmentWrite,
   AppointmentClientJsonldAppointmentClientRead,
+  AppointmentClientJsonldAppointmentClientSignedRead,
   AppointmentClientJsonldAppointmentClientWrite,
   AppointmentClientJsonldAppointmentRead,
   AppointmentClientJsonldAppointmentWrite,
+  AppointmentJsonldAppointmentClientSignedRead,
   AppointmentJsonldAppointmentRead,
   AppointmentJsonldAppointmentReadContext,
   AppointmentJsonldAppointmentReadContextOneOf,

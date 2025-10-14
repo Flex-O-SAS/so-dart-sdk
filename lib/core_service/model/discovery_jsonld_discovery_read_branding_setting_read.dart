@@ -4,12 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_read.dart';
-import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_context.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_read_context.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_discovery_read_branding_setting_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'discovery_jsonld_read.g.dart';
+part 'discovery_jsonld_discovery_read_branding_setting_read.g.dart';
 
 /// 
 ///
@@ -42,9 +42,9 @@ part 'discovery_jsonld_read.g.dart';
 /// * [availableOnHosts] 
 /// * [brandingSettings] 
 @BuiltValue()
-abstract class DiscoveryJsonldRead implements Built<DiscoveryJsonldRead, DiscoveryJsonldReadBuilder> {
+abstract class DiscoveryJsonldDiscoveryReadBrandingSettingRead implements Built<DiscoveryJsonldDiscoveryReadBrandingSettingRead, DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder> {
   @BuiltValueField(wireName: r'@context')
-  BrandingSettingJsonldContext? get atContext;
+  BrandingSettingJsonldBrandingSettingReadContext? get atContext;
 
   @BuiltValueField(wireName: r'@id')
   String? get atId;
@@ -122,36 +122,36 @@ abstract class DiscoveryJsonldRead implements Built<DiscoveryJsonldRead, Discove
   BuiltList<String>? get availableOnHosts;
 
   @BuiltValueField(wireName: r'brandingSettings')
-  BuiltList<BrandingSettingJsonldRead>? get brandingSettings;
+  BuiltList<BrandingSettingJsonldDiscoveryReadBrandingSettingRead>? get brandingSettings;
 
-  DiscoveryJsonldRead._();
+  DiscoveryJsonldDiscoveryReadBrandingSettingRead._();
 
-  factory DiscoveryJsonldRead([void updates(DiscoveryJsonldReadBuilder b)]) = _$DiscoveryJsonldRead;
+  factory DiscoveryJsonldDiscoveryReadBrandingSettingRead([void updates(DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder b)]) = _$DiscoveryJsonldDiscoveryReadBrandingSettingRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(DiscoveryJsonldReadBuilder b) => b;
+  static void _defaults(DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<DiscoveryJsonldRead> get serializer => _$DiscoveryJsonldReadSerializer();
+  static Serializer<DiscoveryJsonldDiscoveryReadBrandingSettingRead> get serializer => _$DiscoveryJsonldDiscoveryReadBrandingSettingReadSerializer();
 }
 
-class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJsonldRead> {
+class _$DiscoveryJsonldDiscoveryReadBrandingSettingReadSerializer implements PrimitiveSerializer<DiscoveryJsonldDiscoveryReadBrandingSettingRead> {
   @override
-  final Iterable<Type> types = const [DiscoveryJsonldRead, _$DiscoveryJsonldRead];
+  final Iterable<Type> types = const [DiscoveryJsonldDiscoveryReadBrandingSettingRead, _$DiscoveryJsonldDiscoveryReadBrandingSettingRead];
 
   @override
-  final String wireName = r'DiscoveryJsonldRead';
+  final String wireName = r'DiscoveryJsonldDiscoveryReadBrandingSettingRead';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    DiscoveryJsonldRead object, {
+    DiscoveryJsonldDiscoveryReadBrandingSettingRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atContext != null) {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(BrandingSettingJsonldContext),
+        specifiedType: const FullType(BrandingSettingJsonldBrandingSettingReadContext),
       );
     }
     if (object.atId != null) {
@@ -333,7 +333,7 @@ class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJs
       yield r'brandingSettings';
       yield serializers.serialize(
         object.brandingSettings,
-        specifiedType: const FullType(BuiltList, [FullType(BrandingSettingJsonldRead)]),
+        specifiedType: const FullType(BuiltList, [FullType(BrandingSettingJsonldDiscoveryReadBrandingSettingRead)]),
       );
     }
   }
@@ -341,7 +341,7 @@ class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJs
   @override
   Object serialize(
     Serializers serializers,
-    DiscoveryJsonldRead object, {
+    DiscoveryJsonldDiscoveryReadBrandingSettingRead object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -352,7 +352,7 @@ class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJs
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required DiscoveryJsonldReadBuilder result,
+    required DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -362,8 +362,8 @@ class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJs
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BrandingSettingJsonldContext),
-          ) as BrandingSettingJsonldContext;
+            specifiedType: const FullType(BrandingSettingJsonldBrandingSettingReadContext),
+          ) as BrandingSettingJsonldBrandingSettingReadContext;
           result.atContext.replace(valueDes);
           break;
         case r'@id':
@@ -545,8 +545,8 @@ class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJs
         case r'brandingSettings':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BrandingSettingJsonldRead)]),
-          ) as BuiltList<BrandingSettingJsonldRead>;
+            specifiedType: const FullType(BuiltList, [FullType(BrandingSettingJsonldDiscoveryReadBrandingSettingRead)]),
+          ) as BuiltList<BrandingSettingJsonldDiscoveryReadBrandingSettingRead>;
           result.brandingSettings.replace(valueDes);
           break;
         default:
@@ -558,12 +558,12 @@ class _$DiscoveryJsonldReadSerializer implements PrimitiveSerializer<DiscoveryJs
   }
 
   @override
-  DiscoveryJsonldRead deserialize(
+  DiscoveryJsonldDiscoveryReadBrandingSettingRead deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = DiscoveryJsonldReadBuilder();
+    final result = DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

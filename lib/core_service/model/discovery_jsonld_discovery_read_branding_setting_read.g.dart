@@ -1,14 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'discovery_jsonld_read.dart';
+part of 'discovery_jsonld_discovery_read_branding_setting_read.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
+class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
+    extends DiscoveryJsonldDiscoveryReadBrandingSettingRead {
   @override
-  final BrandingSettingJsonldContext? atContext;
+  final BrandingSettingJsonldBrandingSettingReadContext? atContext;
   @override
   final String? atId;
   @override
@@ -60,13 +61,18 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
   @override
   final BuiltList<String>? availableOnHosts;
   @override
-  final BuiltList<BrandingSettingJsonldRead>? brandingSettings;
+  final BuiltList<BrandingSettingJsonldDiscoveryReadBrandingSettingRead>?
+      brandingSettings;
 
-  factory _$DiscoveryJsonldRead(
-          [void Function(DiscoveryJsonldReadBuilder)? updates]) =>
-      (new DiscoveryJsonldReadBuilder()..update(updates))._build();
+  factory _$DiscoveryJsonldDiscoveryReadBrandingSettingRead(
+          [void Function(
+                  DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder)?
+              updates]) =>
+      (new DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder()
+            ..update(updates))
+          ._build();
 
-  _$DiscoveryJsonldRead._(
+  _$DiscoveryJsonldDiscoveryReadBrandingSettingRead._(
       {this.atContext,
       this.atId,
       this.atType,
@@ -97,18 +103,20 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
       : super._();
 
   @override
-  DiscoveryJsonldRead rebuild(
-          void Function(DiscoveryJsonldReadBuilder) updates) =>
+  DiscoveryJsonldDiscoveryReadBrandingSettingRead rebuild(
+          void Function(DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder)
+              updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  DiscoveryJsonldReadBuilder toBuilder() =>
-      new DiscoveryJsonldReadBuilder()..replace(this);
+  DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder toBuilder() =>
+      new DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder()
+        ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is DiscoveryJsonldRead &&
+    return other is DiscoveryJsonldDiscoveryReadBrandingSettingRead &&
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
@@ -174,7 +182,8 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'DiscoveryJsonldRead')
+    return (newBuiltValueToStringHelper(
+            r'DiscoveryJsonldDiscoveryReadBrandingSettingRead')
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
@@ -206,14 +215,18 @@ class _$DiscoveryJsonldRead extends DiscoveryJsonldRead {
   }
 }
 
-class DiscoveryJsonldReadBuilder
-    implements Builder<DiscoveryJsonldRead, DiscoveryJsonldReadBuilder> {
-  _$DiscoveryJsonldRead? _$v;
+class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
+    implements
+        Builder<DiscoveryJsonldDiscoveryReadBrandingSettingRead,
+            DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder> {
+  _$DiscoveryJsonldDiscoveryReadBrandingSettingRead? _$v;
 
-  BrandingSettingJsonldContextBuilder? _atContext;
-  BrandingSettingJsonldContextBuilder get atContext =>
-      _$this._atContext ??= new BrandingSettingJsonldContextBuilder();
-  set atContext(BrandingSettingJsonldContextBuilder? atContext) =>
+  BrandingSettingJsonldBrandingSettingReadContextBuilder? _atContext;
+  BrandingSettingJsonldBrandingSettingReadContextBuilder get atContext =>
+      _$this._atContext ??=
+          new BrandingSettingJsonldBrandingSettingReadContextBuilder();
+  set atContext(
+          BrandingSettingJsonldBrandingSettingReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
@@ -326,18 +339,21 @@ class DiscoveryJsonldReadBuilder
   set availableOnHosts(ListBuilder<String>? availableOnHosts) =>
       _$this._availableOnHosts = availableOnHosts;
 
-  ListBuilder<BrandingSettingJsonldRead>? _brandingSettings;
-  ListBuilder<BrandingSettingJsonldRead> get brandingSettings =>
-      _$this._brandingSettings ??= new ListBuilder<BrandingSettingJsonldRead>();
+  ListBuilder<BrandingSettingJsonldDiscoveryReadBrandingSettingRead>?
+      _brandingSettings;
+  ListBuilder<BrandingSettingJsonldDiscoveryReadBrandingSettingRead>
+      get brandingSettings => _$this._brandingSettings ??= new ListBuilder<
+          BrandingSettingJsonldDiscoveryReadBrandingSettingRead>();
   set brandingSettings(
-          ListBuilder<BrandingSettingJsonldRead>? brandingSettings) =>
+          ListBuilder<BrandingSettingJsonldDiscoveryReadBrandingSettingRead>?
+              brandingSettings) =>
       _$this._brandingSettings = brandingSettings;
 
-  DiscoveryJsonldReadBuilder() {
-    DiscoveryJsonldRead._defaults(this);
+  DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder() {
+    DiscoveryJsonldDiscoveryReadBrandingSettingRead._defaults(this);
   }
 
-  DiscoveryJsonldReadBuilder get _$this {
+  DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atContext = $v.atContext?.toBuilder();
@@ -373,24 +389,26 @@ class DiscoveryJsonldReadBuilder
   }
 
   @override
-  void replace(DiscoveryJsonldRead other) {
+  void replace(DiscoveryJsonldDiscoveryReadBrandingSettingRead other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$DiscoveryJsonldRead;
+    _$v = other as _$DiscoveryJsonldDiscoveryReadBrandingSettingRead;
   }
 
   @override
-  void update(void Function(DiscoveryJsonldReadBuilder)? updates) {
+  void update(
+      void Function(DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder)?
+          updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  DiscoveryJsonldRead build() => _build();
+  DiscoveryJsonldDiscoveryReadBrandingSettingRead build() => _build();
 
-  _$DiscoveryJsonldRead _build() {
-    _$DiscoveryJsonldRead _$result;
+  _$DiscoveryJsonldDiscoveryReadBrandingSettingRead _build() {
+    _$DiscoveryJsonldDiscoveryReadBrandingSettingRead _$result;
     try {
       _$result = _$v ??
-          new _$DiscoveryJsonldRead._(
+          new _$DiscoveryJsonldDiscoveryReadBrandingSettingRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -431,7 +449,9 @@ class DiscoveryJsonldReadBuilder
         _brandingSettings?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DiscoveryJsonldRead', _$failedField, e.toString());
+            r'DiscoveryJsonldDiscoveryReadBrandingSettingRead',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }

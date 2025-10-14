@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -15,10 +16,12 @@ part 'notification_jsonld_notification_write.g.dart';
 /// * [subscriber] 
 /// * [payload] 
 /// * [metadata] 
+/// * [channels] 
+/// * [subscribers] 
 @BuiltValue()
 abstract class NotificationJsonldNotificationWrite implements Built<NotificationJsonldNotificationWrite, NotificationJsonldNotificationWriteBuilder> {
   @BuiltValueField(wireName: r'subscriber')
-  String get subscriber;
+  String? get subscriber;
 
   @BuiltValueField(wireName: r'payload')
   JsonObject get payload;
@@ -26,12 +29,19 @@ abstract class NotificationJsonldNotificationWrite implements Built<Notification
   @BuiltValueField(wireName: r'metadata')
   JsonObject? get metadata;
 
+  @BuiltValueField(wireName: r'channels')
+  BuiltSet<String>? get channels;
+
+  @BuiltValueField(wireName: r'subscribers')
+  BuiltList<String>? get subscribers;
+
   NotificationJsonldNotificationWrite._();
 
   factory NotificationJsonldNotificationWrite([void updates(NotificationJsonldNotificationWriteBuilder b)]) = _$NotificationJsonldNotificationWrite;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(NotificationJsonldNotificationWriteBuilder b) => b;
+  static void _defaults(NotificationJsonldNotificationWriteBuilder b) => b
+      ..channels = SetBuilder();
 
   @BuiltValueSerializer(custom: true)
   static Serializer<NotificationJsonldNotificationWrite> get serializer => _$NotificationJsonldNotificationWriteSerializer();
@@ -49,11 +59,13 @@ class _$NotificationJsonldNotificationWriteSerializer implements PrimitiveSerial
     NotificationJsonldNotificationWrite object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'subscriber';
-    yield serializers.serialize(
-      object.subscriber,
-      specifiedType: const FullType(String),
-    );
+    if (object.subscriber != null) {
+      yield r'subscriber';
+      yield serializers.serialize(
+        object.subscriber,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
     yield r'payload';
     yield serializers.serialize(
       object.payload,
@@ -64,6 +76,20 @@ class _$NotificationJsonldNotificationWriteSerializer implements PrimitiveSerial
       yield serializers.serialize(
         object.metadata,
         specifiedType: const FullType(JsonObject),
+      );
+    }
+    if (object.channels != null) {
+      yield r'channels';
+      yield serializers.serialize(
+        object.channels,
+        specifiedType: const FullType(BuiltSet, [FullType(String)]),
+      );
+    }
+    if (object.subscribers != null) {
+      yield r'subscribers';
+      yield serializers.serialize(
+        object.subscribers,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
   }
@@ -92,8 +118,9 @@ class _$NotificationJsonldNotificationWriteSerializer implements PrimitiveSerial
         case r'subscriber':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.subscriber = valueDes;
           break;
         case r'payload':
@@ -109,6 +136,20 @@ class _$NotificationJsonldNotificationWriteSerializer implements PrimitiveSerial
             specifiedType: const FullType(JsonObject),
           ) as JsonObject;
           result.metadata = valueDes;
+          break;
+        case r'channels':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltSet, [FullType(String)]),
+          ) as BuiltSet<String>;
+          result.channels.replace(valueDes);
+          break;
+        case r'subscribers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.subscribers.replace(valueDes);
           break;
         default:
           unhandled.add(key);

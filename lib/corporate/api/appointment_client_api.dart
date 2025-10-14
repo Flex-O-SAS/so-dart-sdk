@@ -96,6 +96,10 @@ class AppointmentClientApi {
   /// * [emailLeftSquareBracketRightSquareBracket] - 
   /// * [phone] - 
   /// * [phoneLeftSquareBracketRightSquareBracket] - 
+  /// * [firstname] - 
+  /// * [firstnameLeftSquareBracketRightSquareBracket] - 
+  /// * [lastname] - 
+  /// * [lastnameLeftSquareBracketRightSquareBracket] - 
   /// * [status] - 
   /// * [orderLeftSquareBracketStatusRightSquareBracket] - 
   /// * [responseDateLeftSquareBracketBeforeRightSquareBracket] - 
@@ -123,6 +127,10 @@ class AppointmentClientApi {
     BuiltList<String>? emailLeftSquareBracketRightSquareBracket,
     String? phone,
     BuiltList<String>? phoneLeftSquareBracketRightSquareBracket,
+    String? firstname,
+    BuiltList<String>? firstnameLeftSquareBracketRightSquareBracket,
+    String? lastname,
+    BuiltList<String>? lastnameLeftSquareBracketRightSquareBracket,
     String? status,
     String? orderLeftSquareBracketStatusRightSquareBracket = 'asc',
     String? responseDateLeftSquareBracketBeforeRightSquareBracket,
@@ -168,6 +176,10 @@ class AppointmentClientApi {
       if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': encodeCollectionQueryParameter<String>(_serializers, emailLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (phone != null) r'phone': encodeQueryParameter(_serializers, phone, const FullType(String)),
       if (phoneLeftSquareBracketRightSquareBracket != null) r'phone[]': encodeCollectionQueryParameter<String>(_serializers, phoneLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (firstname != null) r'firstname': encodeQueryParameter(_serializers, firstname, const FullType(String)),
+      if (firstnameLeftSquareBracketRightSquareBracket != null) r'firstname[]': encodeCollectionQueryParameter<String>(_serializers, firstnameLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (lastname != null) r'lastname': encodeQueryParameter(_serializers, lastname, const FullType(String)),
+      if (lastnameLeftSquareBracketRightSquareBracket != null) r'lastname[]': encodeCollectionQueryParameter<String>(_serializers, lastnameLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
       if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': encodeQueryParameter(_serializers, orderLeftSquareBracketStatusRightSquareBracket, const FullType(String)),
       if (responseDateLeftSquareBracketBeforeRightSquareBracket != null) r'responseDate[before]': encodeQueryParameter(_serializers, responseDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),

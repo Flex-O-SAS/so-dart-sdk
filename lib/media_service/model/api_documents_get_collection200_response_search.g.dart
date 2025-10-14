@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_apidocuments_get_collection200_response_search.dart';
+part of 'api_documents_get_collection200_response_search.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiApidocumentsGetCollection200ResponseSearch
-    extends ApiApidocumentsGetCollection200ResponseSearch {
+class _$ApiDocumentsGetCollection200ResponseSearch
+    extends ApiDocumentsGetCollection200ResponseSearch {
   @override
   final String? atType;
   @override
@@ -15,34 +15,33 @@ class _$ApiApidocumentsGetCollection200ResponseSearch
   @override
   final String? variableRepresentation;
   @override
-  final BuiltList<ApiApidocumentsGetCollection200ResponseSearchMappingInner>?
+  final BuiltList<ApiDocumentsGetCollection200ResponseSearchMappingInner>?
       mapping;
 
-  factory _$ApiApidocumentsGetCollection200ResponseSearch(
-          [void Function(ApiApidocumentsGetCollection200ResponseSearchBuilder)?
+  factory _$ApiDocumentsGetCollection200ResponseSearch(
+          [void Function(ApiDocumentsGetCollection200ResponseSearchBuilder)?
               updates]) =>
-      (new ApiApidocumentsGetCollection200ResponseSearchBuilder()
-            ..update(updates))
+      (new ApiDocumentsGetCollection200ResponseSearchBuilder()..update(updates))
           ._build();
 
-  _$ApiApidocumentsGetCollection200ResponseSearch._(
+  _$ApiDocumentsGetCollection200ResponseSearch._(
       {this.atType, this.template, this.variableRepresentation, this.mapping})
       : super._();
 
   @override
-  ApiApidocumentsGetCollection200ResponseSearch rebuild(
-          void Function(ApiApidocumentsGetCollection200ResponseSearchBuilder)
+  ApiDocumentsGetCollection200ResponseSearch rebuild(
+          void Function(ApiDocumentsGetCollection200ResponseSearchBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiApidocumentsGetCollection200ResponseSearchBuilder toBuilder() =>
-      new ApiApidocumentsGetCollection200ResponseSearchBuilder()..replace(this);
+  ApiDocumentsGetCollection200ResponseSearchBuilder toBuilder() =>
+      new ApiDocumentsGetCollection200ResponseSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiApidocumentsGetCollection200ResponseSearch &&
+    return other is ApiDocumentsGetCollection200ResponseSearch &&
         atType == other.atType &&
         template == other.template &&
         variableRepresentation == other.variableRepresentation &&
@@ -63,7 +62,7 @@ class _$ApiApidocumentsGetCollection200ResponseSearch
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ApiApidocumentsGetCollection200ResponseSearch')
+            r'ApiDocumentsGetCollection200ResponseSearch')
           ..add('atType', atType)
           ..add('template', template)
           ..add('variableRepresentation', variableRepresentation)
@@ -72,11 +71,11 @@ class _$ApiApidocumentsGetCollection200ResponseSearch
   }
 }
 
-class ApiApidocumentsGetCollection200ResponseSearchBuilder
+class ApiDocumentsGetCollection200ResponseSearchBuilder
     implements
-        Builder<ApiApidocumentsGetCollection200ResponseSearch,
-            ApiApidocumentsGetCollection200ResponseSearchBuilder> {
-  _$ApiApidocumentsGetCollection200ResponseSearch? _$v;
+        Builder<ApiDocumentsGetCollection200ResponseSearch,
+            ApiDocumentsGetCollection200ResponseSearchBuilder> {
+  _$ApiDocumentsGetCollection200ResponseSearch? _$v;
 
   String? _atType;
   String? get atType => _$this._atType;
@@ -91,22 +90,20 @@ class ApiApidocumentsGetCollection200ResponseSearchBuilder
   set variableRepresentation(String? variableRepresentation) =>
       _$this._variableRepresentation = variableRepresentation;
 
-  ListBuilder<ApiApidocumentsGetCollection200ResponseSearchMappingInner>?
-      _mapping;
-  ListBuilder<ApiApidocumentsGetCollection200ResponseSearchMappingInner>
+  ListBuilder<ApiDocumentsGetCollection200ResponseSearchMappingInner>? _mapping;
+  ListBuilder<ApiDocumentsGetCollection200ResponseSearchMappingInner>
       get mapping => _$this._mapping ??= new ListBuilder<
-          ApiApidocumentsGetCollection200ResponseSearchMappingInner>();
+          ApiDocumentsGetCollection200ResponseSearchMappingInner>();
   set mapping(
-          ListBuilder<
-                  ApiApidocumentsGetCollection200ResponseSearchMappingInner>?
+          ListBuilder<ApiDocumentsGetCollection200ResponseSearchMappingInner>?
               mapping) =>
       _$this._mapping = mapping;
 
-  ApiApidocumentsGetCollection200ResponseSearchBuilder() {
-    ApiApidocumentsGetCollection200ResponseSearch._defaults(this);
+  ApiDocumentsGetCollection200ResponseSearchBuilder() {
+    ApiDocumentsGetCollection200ResponseSearch._defaults(this);
   }
 
-  ApiApidocumentsGetCollection200ResponseSearchBuilder get _$this {
+  ApiDocumentsGetCollection200ResponseSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atType = $v.atType;
@@ -119,26 +116,26 @@ class ApiApidocumentsGetCollection200ResponseSearchBuilder
   }
 
   @override
-  void replace(ApiApidocumentsGetCollection200ResponseSearch other) {
+  void replace(ApiDocumentsGetCollection200ResponseSearch other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiApidocumentsGetCollection200ResponseSearch;
+    _$v = other as _$ApiDocumentsGetCollection200ResponseSearch;
   }
 
   @override
   void update(
-      void Function(ApiApidocumentsGetCollection200ResponseSearchBuilder)?
+      void Function(ApiDocumentsGetCollection200ResponseSearchBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiApidocumentsGetCollection200ResponseSearch build() => _build();
+  ApiDocumentsGetCollection200ResponseSearch build() => _build();
 
-  _$ApiApidocumentsGetCollection200ResponseSearch _build() {
-    _$ApiApidocumentsGetCollection200ResponseSearch _$result;
+  _$ApiDocumentsGetCollection200ResponseSearch _build() {
+    _$ApiDocumentsGetCollection200ResponseSearch _$result;
     try {
       _$result = _$v ??
-          new _$ApiApidocumentsGetCollection200ResponseSearch._(
+          new _$ApiDocumentsGetCollection200ResponseSearch._(
             atType: atType,
             template: template,
             variableRepresentation: variableRepresentation,
@@ -151,7 +148,7 @@ class ApiApidocumentsGetCollection200ResponseSearchBuilder
         _mapping?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'ApiApidocumentsGetCollection200ResponseSearch',
+            r'ApiDocumentsGetCollection200ResponseSearch',
             _$failedField,
             e.toString());
       }

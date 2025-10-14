@@ -9,7 +9,7 @@ part of 'api_branding_get_collection200_response.dart';
 class _$ApiBrandingGetCollection200Response
     extends ApiBrandingGetCollection200Response {
   @override
-  final BuiltList<BrandingSettingJsonld> member;
+  final BuiltList<BrandingSettingJsonldBrandingSettingRead> member;
   @override
   final int? totalItems;
   @override
@@ -77,10 +77,11 @@ class ApiBrandingGetCollection200ResponseBuilder
             ApiBrandingGetCollection200ResponseBuilder> {
   _$ApiBrandingGetCollection200Response? _$v;
 
-  ListBuilder<BrandingSettingJsonld>? _member;
-  ListBuilder<BrandingSettingJsonld> get member =>
-      _$this._member ??= new ListBuilder<BrandingSettingJsonld>();
-  set member(ListBuilder<BrandingSettingJsonld>? member) =>
+  ListBuilder<BrandingSettingJsonldBrandingSettingRead>? _member;
+  ListBuilder<BrandingSettingJsonldBrandingSettingRead> get member =>
+      _$this._member ??=
+          new ListBuilder<BrandingSettingJsonldBrandingSettingRead>();
+  set member(ListBuilder<BrandingSettingJsonldBrandingSettingRead>? member) =>
       _$this._member = member;
 
   int? _totalItems;

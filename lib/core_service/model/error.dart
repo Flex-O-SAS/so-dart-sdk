@@ -11,16 +11,18 @@ part 'error.g.dart';
 /// A representation of common errors.
 ///
 /// Properties:
-/// * [title] 
-/// * [detail] 
+/// * [title] - A short, human-readable summary of the problem.
+/// * [detail] - A human-readable explanation specific to this occurrence of the problem.
 /// * [status] 
 /// * [instance] 
 /// * [type] - A URI reference that identifies the problem type
 @BuiltValue()
 abstract class Error implements Built<Error, ErrorBuilder> {
+  /// A short, human-readable summary of the problem.
   @BuiltValueField(wireName: r'title')
   String? get title;
 
+  /// A human-readable explanation specific to this occurrence of the problem.
   @BuiltValueField(wireName: r'detail')
   String? get detail;
 
@@ -62,14 +64,14 @@ class _$ErrorSerializer implements PrimitiveSerializer<Error> {
       yield r'title';
       yield serializers.serialize(
         object.title,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.detail != null) {
       yield r'detail';
       yield serializers.serialize(
         object.detail,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.status != null) {
@@ -119,17 +121,15 @@ class _$ErrorSerializer implements PrimitiveSerializer<Error> {
         case r'title':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.title = valueDes;
           break;
         case r'detail':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.detail = valueDes;
           break;
         case r'status':

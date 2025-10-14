@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_apidocuments_get_collection200_response_view.dart';
+part of 'api_documents_get_collection200_response_view.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiApidocumentsGetCollection200ResponseView
-    extends ApiApidocumentsGetCollection200ResponseView {
+class _$ApiDocumentsGetCollection200ResponseView
+    extends ApiDocumentsGetCollection200ResponseView {
   @override
   final String? atId;
   @override
@@ -21,31 +21,30 @@ class _$ApiApidocumentsGetCollection200ResponseView
   @override
   final String? next;
 
-  factory _$ApiApidocumentsGetCollection200ResponseView(
-          [void Function(ApiApidocumentsGetCollection200ResponseViewBuilder)?
+  factory _$ApiDocumentsGetCollection200ResponseView(
+          [void Function(ApiDocumentsGetCollection200ResponseViewBuilder)?
               updates]) =>
-      (new ApiApidocumentsGetCollection200ResponseViewBuilder()
-            ..update(updates))
+      (new ApiDocumentsGetCollection200ResponseViewBuilder()..update(updates))
           ._build();
 
-  _$ApiApidocumentsGetCollection200ResponseView._(
+  _$ApiDocumentsGetCollection200ResponseView._(
       {this.atId, this.atType, this.first, this.last, this.previous, this.next})
       : super._();
 
   @override
-  ApiApidocumentsGetCollection200ResponseView rebuild(
-          void Function(ApiApidocumentsGetCollection200ResponseViewBuilder)
+  ApiDocumentsGetCollection200ResponseView rebuild(
+          void Function(ApiDocumentsGetCollection200ResponseViewBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiApidocumentsGetCollection200ResponseViewBuilder toBuilder() =>
-      new ApiApidocumentsGetCollection200ResponseViewBuilder()..replace(this);
+  ApiDocumentsGetCollection200ResponseViewBuilder toBuilder() =>
+      new ApiDocumentsGetCollection200ResponseViewBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiApidocumentsGetCollection200ResponseView &&
+    return other is ApiDocumentsGetCollection200ResponseView &&
         atId == other.atId &&
         atType == other.atType &&
         first == other.first &&
@@ -70,7 +69,7 @@ class _$ApiApidocumentsGetCollection200ResponseView
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ApiApidocumentsGetCollection200ResponseView')
+            r'ApiDocumentsGetCollection200ResponseView')
           ..add('atId', atId)
           ..add('atType', atType)
           ..add('first', first)
@@ -81,11 +80,11 @@ class _$ApiApidocumentsGetCollection200ResponseView
   }
 }
 
-class ApiApidocumentsGetCollection200ResponseViewBuilder
+class ApiDocumentsGetCollection200ResponseViewBuilder
     implements
-        Builder<ApiApidocumentsGetCollection200ResponseView,
-            ApiApidocumentsGetCollection200ResponseViewBuilder> {
-  _$ApiApidocumentsGetCollection200ResponseView? _$v;
+        Builder<ApiDocumentsGetCollection200ResponseView,
+            ApiDocumentsGetCollection200ResponseViewBuilder> {
+  _$ApiDocumentsGetCollection200ResponseView? _$v;
 
   String? _atId;
   String? get atId => _$this._atId;
@@ -111,11 +110,11 @@ class ApiApidocumentsGetCollection200ResponseViewBuilder
   String? get next => _$this._next;
   set next(String? next) => _$this._next = next;
 
-  ApiApidocumentsGetCollection200ResponseViewBuilder() {
-    ApiApidocumentsGetCollection200ResponseView._defaults(this);
+  ApiDocumentsGetCollection200ResponseViewBuilder() {
+    ApiDocumentsGetCollection200ResponseView._defaults(this);
   }
 
-  ApiApidocumentsGetCollection200ResponseViewBuilder get _$this {
+  ApiDocumentsGetCollection200ResponseViewBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atId = $v.atId;
@@ -130,24 +129,23 @@ class ApiApidocumentsGetCollection200ResponseViewBuilder
   }
 
   @override
-  void replace(ApiApidocumentsGetCollection200ResponseView other) {
+  void replace(ApiDocumentsGetCollection200ResponseView other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiApidocumentsGetCollection200ResponseView;
+    _$v = other as _$ApiDocumentsGetCollection200ResponseView;
   }
 
   @override
   void update(
-      void Function(ApiApidocumentsGetCollection200ResponseViewBuilder)?
-          updates) {
+      void Function(ApiDocumentsGetCollection200ResponseViewBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiApidocumentsGetCollection200ResponseView build() => _build();
+  ApiDocumentsGetCollection200ResponseView build() => _build();
 
-  _$ApiApidocumentsGetCollection200ResponseView _build() {
+  _$ApiDocumentsGetCollection200ResponseView _build() {
     final _$result = _$v ??
-        new _$ApiApidocumentsGetCollection200ResponseView._(
+        new _$ApiDocumentsGetCollection200ResponseView._(
           atId: atId,
           atType: atType,
           first: first,

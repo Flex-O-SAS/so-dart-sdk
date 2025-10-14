@@ -3,16 +3,16 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response_search.dart';
+import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_search.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/media_service/model/image_jsonld_media_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_apiimages_get_collection200_response.g.dart';
+part 'api_images_get_collection200_response.g.dart';
 
-/// ApiApiimagesGetCollection200Response
+/// ApiImagesGetCollection200Response
 ///
 /// Properties:
 /// * [member] 
@@ -20,7 +20,7 @@ part 'api_apiimages_get_collection200_response.g.dart';
 /// * [view] 
 /// * [search] 
 @BuiltValue()
-abstract class ApiApiimagesGetCollection200Response implements Built<ApiApiimagesGetCollection200Response, ApiApiimagesGetCollection200ResponseBuilder> {
+abstract class ApiImagesGetCollection200Response implements Built<ApiImagesGetCollection200Response, ApiImagesGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
   BuiltList<ImageJsonldMediaRead> get member;
 
@@ -28,32 +28,32 @@ abstract class ApiApiimagesGetCollection200Response implements Built<ApiApiimage
   int? get totalItems;
 
   @BuiltValueField(wireName: r'view')
-  ApiApidocumentsGetCollection200ResponseView? get view;
+  ApiDocumentsGetCollection200ResponseView? get view;
 
   @BuiltValueField(wireName: r'search')
-  ApiApidocumentsGetCollection200ResponseSearch? get search;
+  ApiDocumentsGetCollection200ResponseSearch? get search;
 
-  ApiApiimagesGetCollection200Response._();
+  ApiImagesGetCollection200Response._();
 
-  factory ApiApiimagesGetCollection200Response([void updates(ApiApiimagesGetCollection200ResponseBuilder b)]) = _$ApiApiimagesGetCollection200Response;
+  factory ApiImagesGetCollection200Response([void updates(ApiImagesGetCollection200ResponseBuilder b)]) = _$ApiImagesGetCollection200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiApiimagesGetCollection200ResponseBuilder b) => b;
+  static void _defaults(ApiImagesGetCollection200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiApiimagesGetCollection200Response> get serializer => _$ApiApiimagesGetCollection200ResponseSerializer();
+  static Serializer<ApiImagesGetCollection200Response> get serializer => _$ApiImagesGetCollection200ResponseSerializer();
 }
 
-class _$ApiApiimagesGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiApiimagesGetCollection200Response> {
+class _$ApiImagesGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiImagesGetCollection200Response> {
   @override
-  final Iterable<Type> types = const [ApiApiimagesGetCollection200Response, _$ApiApiimagesGetCollection200Response];
+  final Iterable<Type> types = const [ApiImagesGetCollection200Response, _$ApiImagesGetCollection200Response];
 
   @override
-  final String wireName = r'ApiApiimagesGetCollection200Response';
+  final String wireName = r'ApiImagesGetCollection200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiApiimagesGetCollection200Response object, {
+    ApiImagesGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'member';
@@ -72,14 +72,14 @@ class _$ApiApiimagesGetCollection200ResponseSerializer implements PrimitiveSeria
       yield r'view';
       yield serializers.serialize(
         object.view,
-        specifiedType: const FullType(ApiApidocumentsGetCollection200ResponseView),
+        specifiedType: const FullType(ApiDocumentsGetCollection200ResponseView),
       );
     }
     if (object.search != null) {
       yield r'search';
       yield serializers.serialize(
         object.search,
-        specifiedType: const FullType(ApiApidocumentsGetCollection200ResponseSearch),
+        specifiedType: const FullType(ApiDocumentsGetCollection200ResponseSearch),
       );
     }
   }
@@ -87,7 +87,7 @@ class _$ApiApiimagesGetCollection200ResponseSerializer implements PrimitiveSeria
   @override
   Object serialize(
     Serializers serializers,
-    ApiApiimagesGetCollection200Response object, {
+    ApiImagesGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -98,7 +98,7 @@ class _$ApiApiimagesGetCollection200ResponseSerializer implements PrimitiveSeria
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiApiimagesGetCollection200ResponseBuilder result,
+    required ApiImagesGetCollection200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -122,15 +122,15 @@ class _$ApiApiimagesGetCollection200ResponseSerializer implements PrimitiveSeria
         case r'view':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ApiApidocumentsGetCollection200ResponseView),
-          ) as ApiApidocumentsGetCollection200ResponseView;
+            specifiedType: const FullType(ApiDocumentsGetCollection200ResponseView),
+          ) as ApiDocumentsGetCollection200ResponseView;
           result.view.replace(valueDes);
           break;
         case r'search':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ApiApidocumentsGetCollection200ResponseSearch),
-          ) as ApiApidocumentsGetCollection200ResponseSearch;
+            specifiedType: const FullType(ApiDocumentsGetCollection200ResponseSearch),
+          ) as ApiDocumentsGetCollection200ResponseSearch;
           result.search.replace(valueDes);
           break;
         default:
@@ -142,12 +142,12 @@ class _$ApiApiimagesGetCollection200ResponseSerializer implements PrimitiveSeria
   }
 
   @override
-  ApiApiimagesGetCollection200Response deserialize(
+  ApiImagesGetCollection200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiApiimagesGetCollection200ResponseBuilder();
+    final result = ApiImagesGetCollection200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

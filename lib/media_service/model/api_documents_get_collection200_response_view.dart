@@ -6,9 +6,9 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_apidocuments_get_collection200_response_view.g.dart';
+part 'api_documents_get_collection200_response_view.g.dart';
 
-/// ApiApidocumentsGetCollection200ResponseView
+/// ApiDocumentsGetCollection200ResponseView
 ///
 /// Properties:
 /// * [atId] 
@@ -18,7 +18,7 @@ part 'api_apidocuments_get_collection200_response_view.g.dart';
 /// * [previous] 
 /// * [next] 
 @BuiltValue()
-abstract class ApiApidocumentsGetCollection200ResponseView implements Built<ApiApidocumentsGetCollection200ResponseView, ApiApidocumentsGetCollection200ResponseViewBuilder> {
+abstract class ApiDocumentsGetCollection200ResponseView implements Built<ApiDocumentsGetCollection200ResponseView, ApiDocumentsGetCollection200ResponseViewBuilder> {
   @BuiltValueField(wireName: r'@id')
   String? get atId;
 
@@ -37,27 +37,27 @@ abstract class ApiApidocumentsGetCollection200ResponseView implements Built<ApiA
   @BuiltValueField(wireName: r'next')
   String? get next;
 
-  ApiApidocumentsGetCollection200ResponseView._();
+  ApiDocumentsGetCollection200ResponseView._();
 
-  factory ApiApidocumentsGetCollection200ResponseView([void updates(ApiApidocumentsGetCollection200ResponseViewBuilder b)]) = _$ApiApidocumentsGetCollection200ResponseView;
+  factory ApiDocumentsGetCollection200ResponseView([void updates(ApiDocumentsGetCollection200ResponseViewBuilder b)]) = _$ApiDocumentsGetCollection200ResponseView;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiApidocumentsGetCollection200ResponseViewBuilder b) => b;
+  static void _defaults(ApiDocumentsGetCollection200ResponseViewBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiApidocumentsGetCollection200ResponseView> get serializer => _$ApiApidocumentsGetCollection200ResponseViewSerializer();
+  static Serializer<ApiDocumentsGetCollection200ResponseView> get serializer => _$ApiDocumentsGetCollection200ResponseViewSerializer();
 }
 
-class _$ApiApidocumentsGetCollection200ResponseViewSerializer implements PrimitiveSerializer<ApiApidocumentsGetCollection200ResponseView> {
+class _$ApiDocumentsGetCollection200ResponseViewSerializer implements PrimitiveSerializer<ApiDocumentsGetCollection200ResponseView> {
   @override
-  final Iterable<Type> types = const [ApiApidocumentsGetCollection200ResponseView, _$ApiApidocumentsGetCollection200ResponseView];
+  final Iterable<Type> types = const [ApiDocumentsGetCollection200ResponseView, _$ApiDocumentsGetCollection200ResponseView];
 
   @override
-  final String wireName = r'ApiApidocumentsGetCollection200ResponseView';
+  final String wireName = r'ApiDocumentsGetCollection200ResponseView';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiApidocumentsGetCollection200ResponseView object, {
+    ApiDocumentsGetCollection200ResponseView object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atId != null) {
@@ -107,7 +107,7 @@ class _$ApiApidocumentsGetCollection200ResponseViewSerializer implements Primiti
   @override
   Object serialize(
     Serializers serializers,
-    ApiApidocumentsGetCollection200ResponseView object, {
+    ApiDocumentsGetCollection200ResponseView object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -118,7 +118,7 @@ class _$ApiApidocumentsGetCollection200ResponseViewSerializer implements Primiti
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiApidocumentsGetCollection200ResponseViewBuilder result,
+    required ApiDocumentsGetCollection200ResponseViewBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -176,12 +176,12 @@ class _$ApiApidocumentsGetCollection200ResponseViewSerializer implements Primiti
   }
 
   @override
-  ApiApidocumentsGetCollection200ResponseView deserialize(
+  ApiDocumentsGetCollection200ResponseView deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiApidocumentsGetCollection200ResponseViewBuilder();
+    final result = ApiDocumentsGetCollection200ResponseViewBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

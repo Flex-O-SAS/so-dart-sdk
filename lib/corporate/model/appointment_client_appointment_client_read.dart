@@ -16,6 +16,8 @@ part 'appointment_client_appointment_client_read.g.dart';
 /// * [appointment] 
 /// * [email] 
 /// * [phone] 
+/// * [firstname] 
+/// * [lastname] 
 /// * [status] 
 /// * [comment] 
 /// * [responseDate] 
@@ -33,6 +35,12 @@ abstract class AppointmentClientAppointmentClientRead implements Built<Appointme
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
+
+  @BuiltValueField(wireName: r'firstname')
+  String? get firstname;
+
+  @BuiltValueField(wireName: r'lastname')
+  String? get lastname;
 
   @BuiltValueField(wireName: r'status')
   AppointmentClientAppointmentClientReadStatusEnum get status;
@@ -91,6 +99,20 @@ class _$AppointmentClientAppointmentClientReadSerializer implements PrimitiveSer
       yield r'phone';
       yield serializers.serialize(
         object.phone,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.firstname != null) {
+      yield r'firstname';
+      yield serializers.serialize(
+        object.firstname,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.lastname != null) {
+      yield r'lastname';
+      yield serializers.serialize(
+        object.lastname,
         specifiedType: const FullType.nullable(String),
       );
     }
@@ -173,6 +195,22 @@ class _$AppointmentClientAppointmentClientReadSerializer implements PrimitiveSer
           ) as String?;
           if (valueDes == null) continue;
           result.phone = valueDes;
+          break;
+        case r'firstname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.firstname = valueDes;
+          break;
+        case r'lastname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.lastname = valueDes;
           break;
         case r'status':
           final valueDes = serializers.deserialize(

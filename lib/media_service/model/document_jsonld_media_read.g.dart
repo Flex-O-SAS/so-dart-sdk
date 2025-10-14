@@ -26,7 +26,7 @@ class _$DocumentJsonldMediaRead extends DocumentJsonldMediaRead {
   @override
   final BuiltList<int>? dimensions;
   @override
-  final JsonObject? metadata;
+  final DocumentJsonldMediaReadMetadata? metadata;
   @override
   final String? beginDate;
   @override
@@ -161,9 +161,11 @@ class DocumentJsonldMediaReadBuilder
   set dimensions(ListBuilder<int>? dimensions) =>
       _$this._dimensions = dimensions;
 
-  JsonObject? _metadata;
-  JsonObject? get metadata => _$this._metadata;
-  set metadata(JsonObject? metadata) => _$this._metadata = metadata;
+  DocumentJsonldMediaReadMetadataBuilder? _metadata;
+  DocumentJsonldMediaReadMetadataBuilder get metadata =>
+      _$this._metadata ??= new DocumentJsonldMediaReadMetadataBuilder();
+  set metadata(DocumentJsonldMediaReadMetadataBuilder? metadata) =>
+      _$this._metadata = metadata;
 
   String? _beginDate;
   String? get beginDate => _$this._beginDate;
@@ -189,7 +191,7 @@ class DocumentJsonldMediaReadBuilder
       _size = $v.size;
       _mimeType = $v.mimeType;
       _dimensions = $v.dimensions?.toBuilder();
-      _metadata = $v.metadata;
+      _metadata = $v.metadata?.toBuilder();
       _beginDate = $v.beginDate;
       _endDate = $v.endDate;
       _$v = null;
@@ -225,7 +227,7 @@ class DocumentJsonldMediaReadBuilder
             size: size,
             mimeType: mimeType,
             dimensions: _dimensions?.build(),
-            metadata: metadata,
+            metadata: _metadata?.build(),
             beginDate: beginDate,
             endDate: endDate,
           );
@@ -237,6 +239,8 @@ class DocumentJsonldMediaReadBuilder
 
         _$failedField = 'dimensions';
         _dimensions?.build();
+        _$failedField = 'metadata';
+        _metadata?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'DocumentJsonldMediaRead', _$failedField, e.toString());

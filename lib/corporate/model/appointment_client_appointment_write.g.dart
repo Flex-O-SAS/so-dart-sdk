@@ -100,6 +100,10 @@ class _$AppointmentClientAppointmentWrite
   @override
   final String? phone;
   @override
+  final String? firstname;
+  @override
+  final String? lastname;
+  @override
   final AppointmentClientAppointmentWriteStatusEnum status;
 
   factory _$AppointmentClientAppointmentWrite(
@@ -108,7 +112,11 @@ class _$AppointmentClientAppointmentWrite
           ._build();
 
   _$AppointmentClientAppointmentWrite._(
-      {required this.email, this.phone, required this.status})
+      {required this.email,
+      this.phone,
+      this.firstname,
+      this.lastname,
+      required this.status})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         email, r'AppointmentClientAppointmentWrite', 'email');
@@ -131,6 +139,8 @@ class _$AppointmentClientAppointmentWrite
     return other is AppointmentClientAppointmentWrite &&
         email == other.email &&
         phone == other.phone &&
+        firstname == other.firstname &&
+        lastname == other.lastname &&
         status == other.status;
   }
 
@@ -139,6 +149,8 @@ class _$AppointmentClientAppointmentWrite
     var _$hash = 0;
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, firstname.hashCode);
+    _$hash = $jc(_$hash, lastname.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -149,6 +161,8 @@ class _$AppointmentClientAppointmentWrite
     return (newBuiltValueToStringHelper(r'AppointmentClientAppointmentWrite')
           ..add('email', email)
           ..add('phone', phone)
+          ..add('firstname', firstname)
+          ..add('lastname', lastname)
           ..add('status', status))
         .toString();
   }
@@ -168,6 +182,14 @@ class AppointmentClientAppointmentWriteBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
+  String? _firstname;
+  String? get firstname => _$this._firstname;
+  set firstname(String? firstname) => _$this._firstname = firstname;
+
+  String? _lastname;
+  String? get lastname => _$this._lastname;
+  set lastname(String? lastname) => _$this._lastname = lastname;
+
   AppointmentClientAppointmentWriteStatusEnum? _status;
   AppointmentClientAppointmentWriteStatusEnum? get status => _$this._status;
   set status(AppointmentClientAppointmentWriteStatusEnum? status) =>
@@ -182,6 +204,8 @@ class AppointmentClientAppointmentWriteBuilder
     if ($v != null) {
       _email = $v.email;
       _phone = $v.phone;
+      _firstname = $v.firstname;
+      _lastname = $v.lastname;
       _status = $v.status;
       _$v = null;
     }
@@ -209,6 +233,8 @@ class AppointmentClientAppointmentWriteBuilder
           email: BuiltValueNullFieldError.checkNotNull(
               email, r'AppointmentClientAppointmentWrite', 'email'),
           phone: phone,
+          firstname: firstname,
+          lastname: lastname,
           status: BuiltValueNullFieldError.checkNotNull(
               status, r'AppointmentClientAppointmentWrite', 'status'),
         );

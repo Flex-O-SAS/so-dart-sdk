@@ -108,6 +108,10 @@ class _$AppointmentClientJsonldAppointmentRead
   @override
   final String? phone;
   @override
+  final String? firstname;
+  @override
+  final String? lastname;
+  @override
   final AppointmentClientJsonldAppointmentReadStatusEnum status;
   @override
   final String? comment;
@@ -129,6 +133,8 @@ class _$AppointmentClientJsonldAppointmentRead
       this.id,
       required this.email,
       this.phone,
+      this.firstname,
+      this.lastname,
       required this.status,
       this.comment,
       this.responseDate,
@@ -160,6 +166,8 @@ class _$AppointmentClientJsonldAppointmentRead
         id == other.id &&
         email == other.email &&
         phone == other.phone &&
+        firstname == other.firstname &&
+        lastname == other.lastname &&
         status == other.status &&
         comment == other.comment &&
         responseDate == other.responseDate &&
@@ -175,6 +183,8 @@ class _$AppointmentClientJsonldAppointmentRead
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, firstname.hashCode);
+    _$hash = $jc(_$hash, lastname.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, responseDate.hashCode);
@@ -193,6 +203,8 @@ class _$AppointmentClientJsonldAppointmentRead
           ..add('id', id)
           ..add('email', email)
           ..add('phone', phone)
+          ..add('firstname', firstname)
+          ..add('lastname', lastname)
           ..add('status', status)
           ..add('comment', comment)
           ..add('responseDate', responseDate)
@@ -234,6 +246,14 @@ class AppointmentClientJsonldAppointmentReadBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
+  String? _firstname;
+  String? get firstname => _$this._firstname;
+  set firstname(String? firstname) => _$this._firstname = firstname;
+
+  String? _lastname;
+  String? get lastname => _$this._lastname;
+  set lastname(String? lastname) => _$this._lastname = lastname;
+
   AppointmentClientJsonldAppointmentReadStatusEnum? _status;
   AppointmentClientJsonldAppointmentReadStatusEnum? get status =>
       _$this._status;
@@ -266,6 +286,8 @@ class AppointmentClientJsonldAppointmentReadBuilder
       _id = $v.id;
       _email = $v.email;
       _phone = $v.phone;
+      _firstname = $v.firstname;
+      _lastname = $v.lastname;
       _status = $v.status;
       _comment = $v.comment;
       _responseDate = $v.responseDate;
@@ -302,6 +324,8 @@ class AppointmentClientJsonldAppointmentReadBuilder
             email: BuiltValueNullFieldError.checkNotNull(
                 email, r'AppointmentClientJsonldAppointmentRead', 'email'),
             phone: phone,
+            firstname: firstname,
+            lastname: lastname,
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'AppointmentClientJsonldAppointmentRead', 'status'),
             comment: comment,

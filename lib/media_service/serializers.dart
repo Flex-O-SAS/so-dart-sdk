@@ -14,30 +14,36 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:so_dart_sdk/media_service/date_serializer.dart';
 import 'package:so_dart_sdk/media_service/model/date.dart';
 
-import 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response.dart';
-import 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response_search.dart';
-import 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response_search_mapping_inner.dart';
-import 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response_view.dart';
-import 'package:so_dart_sdk/media_service/model/api_apiimages_get_collection200_response.dart';
+import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response.dart';
+import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_search.dart';
+import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_search_mapping_inner.dart';
+import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/media_service/model/api_images_get_collection200_response.dart';
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read.dart';
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context.dart';
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context_one_of.dart';
+import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_metadata.dart';
 import 'package:so_dart_sdk/media_service/model/image_jsonld_media_read.dart';
 
 part 'serializers.g.dart';
 
 @SerializersFor([
-  ApiApidocumentsGetCollection200Response,
-  ApiApidocumentsGetCollection200ResponseSearch,
-  ApiApidocumentsGetCollection200ResponseSearchMappingInner,
-  ApiApidocumentsGetCollection200ResponseView,
-  ApiApiimagesGetCollection200Response,
+  ApiDocumentsGetCollection200Response,
+  ApiDocumentsGetCollection200ResponseSearch,
+  ApiDocumentsGetCollection200ResponseSearchMappingInner,
+  ApiDocumentsGetCollection200ResponseView,
+  ApiImagesGetCollection200Response,
   DocumentJsonldMediaRead,
   DocumentJsonldMediaReadContext,
   DocumentJsonldMediaReadContextOneOf,
+  DocumentJsonldMediaReadMetadata,
   ImageJsonldMediaRead,
 ])
 Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(int)]),
+        () => ListBuilder<int>(),
+      )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())

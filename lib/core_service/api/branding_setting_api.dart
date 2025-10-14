@@ -11,8 +11,9 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/core_service/api_util.dart';
 import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response.dart';
-import 'package:so_dart_sdk/core_service/model/branding_setting.dart';
-import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_branding_setting_write.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_read.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_write.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/error.dart';
@@ -185,9 +186,9 @@ class BrandingSettingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BrandingSettingJsonld] as data
+  /// Returns a [Future] containing a [Response] with a [BrandingSettingJsonldBrandingSettingRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandingSettingJsonld>> apiBrandingGetItem({ 
+  Future<Response<BrandingSettingJsonldBrandingSettingRead>> apiBrandingGetItem({ 
     required String orgId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -224,14 +225,14 @@ class BrandingSettingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BrandingSettingJsonld? _responseData;
+    BrandingSettingJsonldBrandingSettingRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BrandingSettingJsonld),
-      ) as BrandingSettingJsonld;
+        specifiedType: const FullType(BrandingSettingJsonldBrandingSettingRead),
+      ) as BrandingSettingJsonldBrandingSettingRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -243,7 +244,7 @@ class BrandingSettingApi {
       );
     }
 
-    return Response<BrandingSettingJsonld>(
+    return Response<BrandingSettingJsonldBrandingSettingRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -260,7 +261,7 @@ class BrandingSettingApi {
   ///
   /// Parameters:
   /// * [orgId] - BrandingSetting identifier
-  /// * [brandingSetting] - The updated BrandingSetting resource
+  /// * [brandingSettingBrandingSettingWrite] - The updated BrandingSetting resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -268,11 +269,11 @@ class BrandingSettingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BrandingSettingJsonld] as data
+  /// Returns a [Future] containing a [Response] with a [BrandingSettingJsonldBrandingSettingRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandingSettingJsonld>> apiBrandingPatchItem({ 
+  Future<Response<BrandingSettingJsonldBrandingSettingRead>> apiBrandingPatchItem({ 
     required String orgId,
-    required BrandingSetting brandingSetting,
+    required BrandingSettingBrandingSettingWrite brandingSettingBrandingSettingWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -304,8 +305,8 @@ class BrandingSettingApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(BrandingSetting);
-      _bodyData = _serializers.serialize(brandingSetting, specifiedType: _type);
+      const _type = FullType(BrandingSettingBrandingSettingWrite);
+      _bodyData = _serializers.serialize(brandingSettingBrandingSettingWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -328,14 +329,14 @@ class BrandingSettingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BrandingSettingJsonld? _responseData;
+    BrandingSettingJsonldBrandingSettingRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BrandingSettingJsonld),
-      ) as BrandingSettingJsonld;
+        specifiedType: const FullType(BrandingSettingJsonldBrandingSettingRead),
+      ) as BrandingSettingJsonldBrandingSettingRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -347,7 +348,7 @@ class BrandingSettingApi {
       );
     }
 
-    return Response<BrandingSettingJsonld>(
+    return Response<BrandingSettingJsonldBrandingSettingRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -363,7 +364,7 @@ class BrandingSettingApi {
   /// Creates a BrandingSetting resource.
   ///
   /// Parameters:
-  /// * [brandingSettingJsonld] - The new BrandingSetting resource
+  /// * [brandingSettingJsonldBrandingSettingWrite] - The new BrandingSetting resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -371,10 +372,10 @@ class BrandingSettingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BrandingSettingJsonld] as data
+  /// Returns a [Future] containing a [Response] with a [BrandingSettingJsonldBrandingSettingRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BrandingSettingJsonld>> apiBrandingPostItem({ 
-    required BrandingSettingJsonld brandingSettingJsonld,
+  Future<Response<BrandingSettingJsonldBrandingSettingRead>> apiBrandingPostItem({ 
+    required BrandingSettingJsonldBrandingSettingWrite brandingSettingJsonldBrandingSettingWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -406,8 +407,8 @@ class BrandingSettingApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(BrandingSettingJsonld);
-      _bodyData = _serializers.serialize(brandingSettingJsonld, specifiedType: _type);
+      const _type = FullType(BrandingSettingJsonldBrandingSettingWrite);
+      _bodyData = _serializers.serialize(brandingSettingJsonldBrandingSettingWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -430,14 +431,14 @@ class BrandingSettingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BrandingSettingJsonld? _responseData;
+    BrandingSettingJsonldBrandingSettingRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BrandingSettingJsonld),
-      ) as BrandingSettingJsonld;
+        specifiedType: const FullType(BrandingSettingJsonldBrandingSettingRead),
+      ) as BrandingSettingJsonldBrandingSettingRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -449,7 +450,7 @@ class BrandingSettingApi {
       );
     }
 
-    return Response<BrandingSettingJsonld>(
+    return Response<BrandingSettingJsonldBrandingSettingRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

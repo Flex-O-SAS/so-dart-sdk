@@ -63,7 +63,6 @@ abstract class NotificationJsonldNotificationRead implements Built<NotificationJ
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NotificationJsonldNotificationReadBuilder b) => b
-      ..status = 'pending'
       ..channels = SetBuilder();
 
   @BuiltValueSerializer(custom: true)

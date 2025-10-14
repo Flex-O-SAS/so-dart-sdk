@@ -8,8 +8,9 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/media_service/api_util.dart';
-import 'package:so_dart_sdk/media_service/model/api_apiimages_get_collection200_response.dart';
+import 'package:so_dart_sdk/media_service/model/api_images_get_collection200_response.dart';
 import 'package:so_dart_sdk/media_service/model/date.dart';
 import 'package:so_dart_sdk/media_service/model/image_jsonld_media_read.dart';
 
@@ -21,11 +22,67 @@ class ImageApi {
 
   const ImageApi(this._dio, this._serializers);
 
+  /// Removes the Image resource.
+  /// Removes the Image resource.
+  ///
+  /// Parameters:
+  /// * [id] - Image identifier
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> apiImagesDeleteItem({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/images/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'JWT',
+            'keyName': 'Authorization',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
   /// Retrieves the collection of Image resources.
   /// Retrieves the collection of Image resources.
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [id] - 
+  /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [metadata] - JSON metadata partial search
   /// * [orderLeftSquareBracketBeginDateRightSquareBracket] - 
   /// * [orderLeftSquareBracketEndDateRightSquareBracket] - 
@@ -44,10 +101,12 @@ class ImageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ApiApiimagesGetCollection200Response] as data
+  /// Returns a [Future] containing a [Response] with a [ApiImagesGetCollection200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApiApiimagesGetCollection200Response>> apiApiimagesGetCollection({ 
+  Future<Response<ApiImagesGetCollection200Response>> apiImagesGetCollection({ 
     int? page = 1,
+    int? id,
+    BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     String? metadata,
     String? orderLeftSquareBracketBeginDateRightSquareBracket = 'asc',
     String? orderLeftSquareBracketEndDateRightSquareBracket = 'asc',
@@ -88,6 +147,8 @@ class ImageApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
+      if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (metadata != null) r'metadata': encodeQueryParameter(_serializers, metadata, const FullType(String)),
       if (orderLeftSquareBracketBeginDateRightSquareBracket != null) r'order[beginDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketBeginDateRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndDateRightSquareBracket, const FullType(String)),
@@ -110,14 +171,14 @@ class ImageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApiApiimagesGetCollection200Response? _responseData;
+    ApiImagesGetCollection200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(ApiApiimagesGetCollection200Response),
-      ) as ApiApiimagesGetCollection200Response;
+        specifiedType: const FullType(ApiImagesGetCollection200Response),
+      ) as ApiImagesGetCollection200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -129,7 +190,7 @@ class ImageApi {
       );
     }
 
-    return Response<ApiApiimagesGetCollection200Response>(
+    return Response<ApiImagesGetCollection200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -139,60 +200,6 @@ class ImageApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
-  }
-
-  /// Removes the Image resource.
-  /// Removes the Image resource.
-  ///
-  /// Parameters:
-  /// * [id] - Image identifier
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> apiApiimagesIdDelete({ 
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/images/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
-    final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'JWT',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
   }
 
   /// Retrieves a Image resource.
@@ -209,7 +216,7 @@ class ImageApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ImageJsonldMediaRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ImageJsonldMediaRead>> apiApiimagesIdGet({ 
+  Future<Response<ImageJsonldMediaRead>> apiImagesGetItem({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -294,7 +301,7 @@ class ImageApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ImageJsonldMediaRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ImageJsonldMediaRead>> apiApiimagesPost({ 
+  Future<Response<ImageJsonldMediaRead>> apiImagesPostItem({ 
     MultipartFile? file,
     JsonObject? metadata,
     Date? beginDate,

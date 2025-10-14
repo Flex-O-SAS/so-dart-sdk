@@ -258,14 +258,15 @@ export 'package:so_dart_sdk/media_service/api/document_api.dart';
 export 'package:so_dart_sdk/media_service/api/image_api.dart';
 export 'package:so_dart_sdk/media_service/api/media_api.dart';
 
-export 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response.dart';
-export 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response_search.dart';
-export 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response_search_mapping_inner.dart';
-export 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response_view.dart';
-export 'package:so_dart_sdk/media_service/model/api_apiimages_get_collection200_response.dart';
+export 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response.dart';
+export 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_search.dart';
+export 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_search_mapping_inner.dart';
+export 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_view.dart';
+export 'package:so_dart_sdk/media_service/model/api_images_get_collection200_response.dart';
 export 'package:so_dart_sdk/media_service/model/document_jsonld_media_read.dart';
 export 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context.dart';
 export 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context_one_of.dart';
+export 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_metadata.dart';
 export 'package:so_dart_sdk/media_service/model/image_jsonld_media_read.dart';
 
 //
@@ -292,17 +293,18 @@ export 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_re
 export 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_view.dart';
 export 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
 export 'package:so_dart_sdk/core_service/model/api_subscribers_get_collection200_response.dart';
-export 'package:so_dart_sdk/core_service/model/branding_setting.dart';
-export 'package:so_dart_sdk/core_service/model/branding_setting_jsonld.dart';
-export 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_context.dart';
-export 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_context_one_of.dart';
-export 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_read.dart';
+export 'package:so_dart_sdk/core_service/model/branding_setting_branding_setting_write.dart';
+export 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_read.dart';
+export 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_read_context.dart';
+export 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_read_context_one_of.dart';
+export 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_write.dart';
+export 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_discovery_read_branding_setting_read.dart';
 export 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
 export 'package:so_dart_sdk/core_service/model/constraint_violation_json_violations_inner.dart';
 export 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
 export 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
 export 'package:so_dart_sdk/core_service/model/device_jsonld_device_write.dart';
-export 'package:so_dart_sdk/core_service/model/discovery_jsonld_read.dart';
+export 'package:so_dart_sdk/core_service/model/discovery_jsonld_discovery_read_branding_setting_read.dart';
 export 'package:so_dart_sdk/core_service/model/error.dart';
 export 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
 export 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';

@@ -3,7 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_context.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_read_context.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -16,24 +17,23 @@ part 'notification_jsonld_notification_read.g.dart';
 /// * [atContext] 
 /// * [atId] 
 /// * [atType] 
-/// * [subscriber] 
 /// * [payload] 
 /// * [metadata] 
 /// * [sentAt] 
 /// * [createdAt] 
+/// * [status] 
+/// * [channels] 
+/// * [subscribers] 
 @BuiltValue()
 abstract class NotificationJsonldNotificationRead implements Built<NotificationJsonldNotificationRead, NotificationJsonldNotificationReadBuilder> {
   @BuiltValueField(wireName: r'@context')
-  BrandingSettingJsonldContext? get atContext;
+  BrandingSettingJsonldBrandingSettingReadContext? get atContext;
 
   @BuiltValueField(wireName: r'@id')
   String? get atId;
 
   @BuiltValueField(wireName: r'@type')
   String? get atType;
-
-  @BuiltValueField(wireName: r'subscriber')
-  String get subscriber;
 
   @BuiltValueField(wireName: r'payload')
   JsonObject get payload;
@@ -47,12 +47,24 @@ abstract class NotificationJsonldNotificationRead implements Built<NotificationJ
   @BuiltValueField(wireName: r'createdAt')
   DateTime? get createdAt;
 
+  @BuiltValueField(wireName: r'status')
+  NotificationJsonldNotificationReadStatusEnum? get status;
+  // enum statusEnum {  pending,  processing,  done,  failed,  };
+
+  @BuiltValueField(wireName: r'channels')
+  BuiltSet<String>? get channels;
+
+  @BuiltValueField(wireName: r'subscribers')
+  BuiltList<String>? get subscribers;
+
   NotificationJsonldNotificationRead._();
 
   factory NotificationJsonldNotificationRead([void updates(NotificationJsonldNotificationReadBuilder b)]) = _$NotificationJsonldNotificationRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(NotificationJsonldNotificationReadBuilder b) => b;
+  static void _defaults(NotificationJsonldNotificationReadBuilder b) => b
+      ..status = 'pending'
+      ..channels = SetBuilder();
 
   @BuiltValueSerializer(custom: true)
   static Serializer<NotificationJsonldNotificationRead> get serializer => _$NotificationJsonldNotificationReadSerializer();
@@ -74,7 +86,7 @@ class _$NotificationJsonldNotificationReadSerializer implements PrimitiveSeriali
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(BrandingSettingJsonldContext),
+        specifiedType: const FullType(BrandingSettingJsonldBrandingSettingReadContext),
       );
     }
     if (object.atId != null) {
@@ -91,11 +103,6 @@ class _$NotificationJsonldNotificationReadSerializer implements PrimitiveSeriali
         specifiedType: const FullType(String),
       );
     }
-    yield r'subscriber';
-    yield serializers.serialize(
-      object.subscriber,
-      specifiedType: const FullType(String),
-    );
     yield r'payload';
     yield serializers.serialize(
       object.payload,
@@ -120,6 +127,27 @@ class _$NotificationJsonldNotificationReadSerializer implements PrimitiveSeriali
       yield serializers.serialize(
         object.createdAt,
         specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.status != null) {
+      yield r'status';
+      yield serializers.serialize(
+        object.status,
+        specifiedType: const FullType(NotificationJsonldNotificationReadStatusEnum),
+      );
+    }
+    if (object.channels != null) {
+      yield r'channels';
+      yield serializers.serialize(
+        object.channels,
+        specifiedType: const FullType(BuiltSet, [FullType(String)]),
+      );
+    }
+    if (object.subscribers != null) {
+      yield r'subscribers';
+      yield serializers.serialize(
+        object.subscribers,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
   }
@@ -148,8 +176,8 @@ class _$NotificationJsonldNotificationReadSerializer implements PrimitiveSeriali
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BrandingSettingJsonldContext),
-          ) as BrandingSettingJsonldContext;
+            specifiedType: const FullType(BrandingSettingJsonldBrandingSettingReadContext),
+          ) as BrandingSettingJsonldBrandingSettingReadContext;
           result.atContext.replace(valueDes);
           break;
         case r'@id':
@@ -165,13 +193,6 @@ class _$NotificationJsonldNotificationReadSerializer implements PrimitiveSeriali
             specifiedType: const FullType(String),
           ) as String;
           result.atType = valueDes;
-          break;
-        case r'subscriber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.subscriber = valueDes;
           break;
         case r'payload':
           final valueDes = serializers.deserialize(
@@ -202,6 +223,27 @@ class _$NotificationJsonldNotificationReadSerializer implements PrimitiveSeriali
           ) as DateTime;
           result.createdAt = valueDes;
           break;
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(NotificationJsonldNotificationReadStatusEnum),
+          ) as NotificationJsonldNotificationReadStatusEnum;
+          result.status = valueDes;
+          break;
+        case r'channels':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltSet, [FullType(String)]),
+          ) as BuiltSet<String>;
+          result.channels.replace(valueDes);
+          break;
+        case r'subscribers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.subscribers.replace(valueDes);
+          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -229,5 +271,24 @@ class _$NotificationJsonldNotificationReadSerializer implements PrimitiveSeriali
     );
     return result.build();
   }
+}
+
+class NotificationJsonldNotificationReadStatusEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'pending')
+  static const NotificationJsonldNotificationReadStatusEnum pending = _$notificationJsonldNotificationReadStatusEnum_pending;
+  @BuiltValueEnumConst(wireName: r'processing')
+  static const NotificationJsonldNotificationReadStatusEnum processing = _$notificationJsonldNotificationReadStatusEnum_processing;
+  @BuiltValueEnumConst(wireName: r'done')
+  static const NotificationJsonldNotificationReadStatusEnum done = _$notificationJsonldNotificationReadStatusEnum_done;
+  @BuiltValueEnumConst(wireName: r'failed')
+  static const NotificationJsonldNotificationReadStatusEnum failed = _$notificationJsonldNotificationReadStatusEnum_failed;
+
+  static Serializer<NotificationJsonldNotificationReadStatusEnum> get serializer => _$notificationJsonldNotificationReadStatusEnumSerializer;
+
+  const NotificationJsonldNotificationReadStatusEnum._(String name): super(name);
+
+  static BuiltSet<NotificationJsonldNotificationReadStatusEnum> get values => _$notificationJsonldNotificationReadStatusEnumValues;
+  static NotificationJsonldNotificationReadStatusEnum valueOf(String name) => _$notificationJsonldNotificationReadStatusEnumValueOf(name);
 }
 

@@ -1,55 +1,63 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'branding_setting_jsonld.dart';
+part of 'branding_setting_jsonld_branding_setting_read.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-const BrandingSettingJsonldThemeModeEnum
-    _$brandingSettingJsonldThemeModeEnum_THEME_MODE_UNSPECIFIED =
-    const BrandingSettingJsonldThemeModeEnum._('THEME_MODE_UNSPECIFIED');
-const BrandingSettingJsonldThemeModeEnum
-    _$brandingSettingJsonldThemeModeEnum_THEME_MODE_AUTO =
-    const BrandingSettingJsonldThemeModeEnum._('THEME_MODE_AUTO');
-const BrandingSettingJsonldThemeModeEnum
-    _$brandingSettingJsonldThemeModeEnum_THEME_MODE_DARK =
-    const BrandingSettingJsonldThemeModeEnum._('THEME_MODE_DARK');
-const BrandingSettingJsonldThemeModeEnum
-    _$brandingSettingJsonldThemeModeEnum_THEME_MODE_LIGHT =
-    const BrandingSettingJsonldThemeModeEnum._('THEME_MODE_LIGHT');
+const BrandingSettingJsonldBrandingSettingReadThemeModeEnum
+    _$brandingSettingJsonldBrandingSettingReadThemeModeEnum_THEME_MODE_UNSPECIFIED =
+    const BrandingSettingJsonldBrandingSettingReadThemeModeEnum._(
+        'THEME_MODE_UNSPECIFIED');
+const BrandingSettingJsonldBrandingSettingReadThemeModeEnum
+    _$brandingSettingJsonldBrandingSettingReadThemeModeEnum_THEME_MODE_AUTO =
+    const BrandingSettingJsonldBrandingSettingReadThemeModeEnum._(
+        'THEME_MODE_AUTO');
+const BrandingSettingJsonldBrandingSettingReadThemeModeEnum
+    _$brandingSettingJsonldBrandingSettingReadThemeModeEnum_THEME_MODE_DARK =
+    const BrandingSettingJsonldBrandingSettingReadThemeModeEnum._(
+        'THEME_MODE_DARK');
+const BrandingSettingJsonldBrandingSettingReadThemeModeEnum
+    _$brandingSettingJsonldBrandingSettingReadThemeModeEnum_THEME_MODE_LIGHT =
+    const BrandingSettingJsonldBrandingSettingReadThemeModeEnum._(
+        'THEME_MODE_LIGHT');
 
-BrandingSettingJsonldThemeModeEnum _$brandingSettingJsonldThemeModeEnumValueOf(
-    String name) {
+BrandingSettingJsonldBrandingSettingReadThemeModeEnum
+    _$brandingSettingJsonldBrandingSettingReadThemeModeEnumValueOf(
+        String name) {
   switch (name) {
     case 'THEME_MODE_UNSPECIFIED':
-      return _$brandingSettingJsonldThemeModeEnum_THEME_MODE_UNSPECIFIED;
+      return _$brandingSettingJsonldBrandingSettingReadThemeModeEnum_THEME_MODE_UNSPECIFIED;
     case 'THEME_MODE_AUTO':
-      return _$brandingSettingJsonldThemeModeEnum_THEME_MODE_AUTO;
+      return _$brandingSettingJsonldBrandingSettingReadThemeModeEnum_THEME_MODE_AUTO;
     case 'THEME_MODE_DARK':
-      return _$brandingSettingJsonldThemeModeEnum_THEME_MODE_DARK;
+      return _$brandingSettingJsonldBrandingSettingReadThemeModeEnum_THEME_MODE_DARK;
     case 'THEME_MODE_LIGHT':
-      return _$brandingSettingJsonldThemeModeEnum_THEME_MODE_LIGHT;
+      return _$brandingSettingJsonldBrandingSettingReadThemeModeEnum_THEME_MODE_LIGHT;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<BrandingSettingJsonldThemeModeEnum>
-    _$brandingSettingJsonldThemeModeEnumValues = new BuiltSet<
-        BrandingSettingJsonldThemeModeEnum>(const <BrandingSettingJsonldThemeModeEnum>[
-  _$brandingSettingJsonldThemeModeEnum_THEME_MODE_UNSPECIFIED,
-  _$brandingSettingJsonldThemeModeEnum_THEME_MODE_AUTO,
-  _$brandingSettingJsonldThemeModeEnum_THEME_MODE_DARK,
-  _$brandingSettingJsonldThemeModeEnum_THEME_MODE_LIGHT,
+final BuiltSet<BrandingSettingJsonldBrandingSettingReadThemeModeEnum>
+    _$brandingSettingJsonldBrandingSettingReadThemeModeEnumValues =
+    new BuiltSet<
+        BrandingSettingJsonldBrandingSettingReadThemeModeEnum>(const <BrandingSettingJsonldBrandingSettingReadThemeModeEnum>[
+  _$brandingSettingJsonldBrandingSettingReadThemeModeEnum_THEME_MODE_UNSPECIFIED,
+  _$brandingSettingJsonldBrandingSettingReadThemeModeEnum_THEME_MODE_AUTO,
+  _$brandingSettingJsonldBrandingSettingReadThemeModeEnum_THEME_MODE_DARK,
+  _$brandingSettingJsonldBrandingSettingReadThemeModeEnum_THEME_MODE_LIGHT,
 ]);
 
-Serializer<BrandingSettingJsonldThemeModeEnum>
-    _$brandingSettingJsonldThemeModeEnumSerializer =
-    new _$BrandingSettingJsonldThemeModeEnumSerializer();
+Serializer<BrandingSettingJsonldBrandingSettingReadThemeModeEnum>
+    _$brandingSettingJsonldBrandingSettingReadThemeModeEnumSerializer =
+    new _$BrandingSettingJsonldBrandingSettingReadThemeModeEnumSerializer();
 
-class _$BrandingSettingJsonldThemeModeEnumSerializer
-    implements PrimitiveSerializer<BrandingSettingJsonldThemeModeEnum> {
+class _$BrandingSettingJsonldBrandingSettingReadThemeModeEnumSerializer
+    implements
+        PrimitiveSerializer<
+            BrandingSettingJsonldBrandingSettingReadThemeModeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'THEME_MODE_UNSPECIFIED': 'THEME_MODE_UNSPECIFIED',
     'THEME_MODE_AUTO': 'THEME_MODE_AUTO',
@@ -64,33 +72,35 @@ class _$BrandingSettingJsonldThemeModeEnumSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[BrandingSettingJsonldThemeModeEnum];
+  final Iterable<Type> types = const <Type>[
+    BrandingSettingJsonldBrandingSettingReadThemeModeEnum
+  ];
   @override
-  final String wireName = 'BrandingSettingJsonldThemeModeEnum';
+  final String wireName =
+      'BrandingSettingJsonldBrandingSettingReadThemeModeEnum';
 
   @override
-  Object serialize(
-          Serializers serializers, BrandingSettingJsonldThemeModeEnum object,
+  Object serialize(Serializers serializers,
+          BrandingSettingJsonldBrandingSettingReadThemeModeEnum object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  BrandingSettingJsonldThemeModeEnum deserialize(
+  BrandingSettingJsonldBrandingSettingReadThemeModeEnum deserialize(
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      BrandingSettingJsonldThemeModeEnum.valueOf(
+      BrandingSettingJsonldBrandingSettingReadThemeModeEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$BrandingSettingJsonld extends BrandingSettingJsonld {
+class _$BrandingSettingJsonldBrandingSettingRead
+    extends BrandingSettingJsonldBrandingSettingRead {
   @override
-  final BrandingSettingJsonldContext? atContext;
+  final BrandingSettingJsonldBrandingSettingReadContext? atContext;
   @override
   final String? atId;
   @override
   final String? atType;
-  @override
-  final int? id;
   @override
   final String orgId;
   @override
@@ -122,21 +132,18 @@ class _$BrandingSettingJsonld extends BrandingSettingJsonld {
   @override
   final bool disableWatermark;
   @override
-  final BrandingSettingJsonldThemeModeEnum? themeMode;
-  @override
-  final DateTime? createdAt;
-  @override
-  final DateTime? updatedAt;
+  final BrandingSettingJsonldBrandingSettingReadThemeModeEnum? themeMode;
 
-  factory _$BrandingSettingJsonld(
-          [void Function(BrandingSettingJsonldBuilder)? updates]) =>
-      (new BrandingSettingJsonldBuilder()..update(updates))._build();
+  factory _$BrandingSettingJsonldBrandingSettingRead(
+          [void Function(BrandingSettingJsonldBrandingSettingReadBuilder)?
+              updates]) =>
+      (new BrandingSettingJsonldBrandingSettingReadBuilder()..update(updates))
+          ._build();
 
-  _$BrandingSettingJsonld._(
+  _$BrandingSettingJsonldBrandingSettingRead._(
       {this.atContext,
       this.atId,
       this.atType,
-      this.id,
       required this.orgId,
       required this.primaryColor,
       required this.hideLoginNameSuffix,
@@ -152,51 +159,49 @@ class _$BrandingSettingJsonld extends BrandingSettingJsonld {
       this.iconUrl,
       this.iconDarkUrl,
       required this.disableWatermark,
-      this.themeMode,
-      this.createdAt,
-      this.updatedAt})
+      this.themeMode})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        orgId, r'BrandingSettingJsonld', 'orgId');
+        orgId, r'BrandingSettingJsonldBrandingSettingRead', 'orgId');
+    BuiltValueNullFieldError.checkNotNull(primaryColor,
+        r'BrandingSettingJsonldBrandingSettingRead', 'primaryColor');
+    BuiltValueNullFieldError.checkNotNull(hideLoginNameSuffix,
+        r'BrandingSettingJsonldBrandingSettingRead', 'hideLoginNameSuffix');
     BuiltValueNullFieldError.checkNotNull(
-        primaryColor, r'BrandingSettingJsonld', 'primaryColor');
+        warnColor, r'BrandingSettingJsonldBrandingSettingRead', 'warnColor');
+    BuiltValueNullFieldError.checkNotNull(backgroundColor,
+        r'BrandingSettingJsonldBrandingSettingRead', 'backgroundColor');
     BuiltValueNullFieldError.checkNotNull(
-        hideLoginNameSuffix, r'BrandingSettingJsonld', 'hideLoginNameSuffix');
-    BuiltValueNullFieldError.checkNotNull(
-        warnColor, r'BrandingSettingJsonld', 'warnColor');
-    BuiltValueNullFieldError.checkNotNull(
-        backgroundColor, r'BrandingSettingJsonld', 'backgroundColor');
-    BuiltValueNullFieldError.checkNotNull(
-        fontColor, r'BrandingSettingJsonld', 'fontColor');
-    BuiltValueNullFieldError.checkNotNull(
-        primaryColorDark, r'BrandingSettingJsonld', 'primaryColorDark');
-    BuiltValueNullFieldError.checkNotNull(
-        backgroundColorDark, r'BrandingSettingJsonld', 'backgroundColorDark');
-    BuiltValueNullFieldError.checkNotNull(
-        warnColorDark, r'BrandingSettingJsonld', 'warnColorDark');
-    BuiltValueNullFieldError.checkNotNull(
-        fontColorDark, r'BrandingSettingJsonld', 'fontColorDark');
-    BuiltValueNullFieldError.checkNotNull(
-        disableWatermark, r'BrandingSettingJsonld', 'disableWatermark');
+        fontColor, r'BrandingSettingJsonldBrandingSettingRead', 'fontColor');
+    BuiltValueNullFieldError.checkNotNull(primaryColorDark,
+        r'BrandingSettingJsonldBrandingSettingRead', 'primaryColorDark');
+    BuiltValueNullFieldError.checkNotNull(backgroundColorDark,
+        r'BrandingSettingJsonldBrandingSettingRead', 'backgroundColorDark');
+    BuiltValueNullFieldError.checkNotNull(warnColorDark,
+        r'BrandingSettingJsonldBrandingSettingRead', 'warnColorDark');
+    BuiltValueNullFieldError.checkNotNull(fontColorDark,
+        r'BrandingSettingJsonldBrandingSettingRead', 'fontColorDark');
+    BuiltValueNullFieldError.checkNotNull(disableWatermark,
+        r'BrandingSettingJsonldBrandingSettingRead', 'disableWatermark');
   }
 
   @override
-  BrandingSettingJsonld rebuild(
-          void Function(BrandingSettingJsonldBuilder) updates) =>
+  BrandingSettingJsonldBrandingSettingRead rebuild(
+          void Function(BrandingSettingJsonldBrandingSettingReadBuilder)
+              updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  BrandingSettingJsonldBuilder toBuilder() =>
-      new BrandingSettingJsonldBuilder()..replace(this);
+  BrandingSettingJsonldBrandingSettingReadBuilder toBuilder() =>
+      new BrandingSettingJsonldBrandingSettingReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is BrandingSettingJsonld &&
+    return other is BrandingSettingJsonldBrandingSettingRead &&
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
-        id == other.id &&
         orgId == other.orgId &&
         primaryColor == other.primaryColor &&
         hideLoginNameSuffix == other.hideLoginNameSuffix &&
@@ -212,9 +217,7 @@ class _$BrandingSettingJsonld extends BrandingSettingJsonld {
         iconUrl == other.iconUrl &&
         iconDarkUrl == other.iconDarkUrl &&
         disableWatermark == other.disableWatermark &&
-        themeMode == other.themeMode &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        themeMode == other.themeMode;
   }
 
   @override
@@ -223,7 +226,6 @@ class _$BrandingSettingJsonld extends BrandingSettingJsonld {
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, orgId.hashCode);
     _$hash = $jc(_$hash, primaryColor.hashCode);
     _$hash = $jc(_$hash, hideLoginNameSuffix.hashCode);
@@ -240,19 +242,17 @@ class _$BrandingSettingJsonld extends BrandingSettingJsonld {
     _$hash = $jc(_$hash, iconDarkUrl.hashCode);
     _$hash = $jc(_$hash, disableWatermark.hashCode);
     _$hash = $jc(_$hash, themeMode.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'BrandingSettingJsonld')
+    return (newBuiltValueToStringHelper(
+            r'BrandingSettingJsonldBrandingSettingRead')
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
-          ..add('id', id)
           ..add('orgId', orgId)
           ..add('primaryColor', primaryColor)
           ..add('hideLoginNameSuffix', hideLoginNameSuffix)
@@ -268,21 +268,23 @@ class _$BrandingSettingJsonld extends BrandingSettingJsonld {
           ..add('iconUrl', iconUrl)
           ..add('iconDarkUrl', iconDarkUrl)
           ..add('disableWatermark', disableWatermark)
-          ..add('themeMode', themeMode)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('themeMode', themeMode))
         .toString();
   }
 }
 
-class BrandingSettingJsonldBuilder
-    implements Builder<BrandingSettingJsonld, BrandingSettingJsonldBuilder> {
-  _$BrandingSettingJsonld? _$v;
+class BrandingSettingJsonldBrandingSettingReadBuilder
+    implements
+        Builder<BrandingSettingJsonldBrandingSettingRead,
+            BrandingSettingJsonldBrandingSettingReadBuilder> {
+  _$BrandingSettingJsonldBrandingSettingRead? _$v;
 
-  BrandingSettingJsonldContextBuilder? _atContext;
-  BrandingSettingJsonldContextBuilder get atContext =>
-      _$this._atContext ??= new BrandingSettingJsonldContextBuilder();
-  set atContext(BrandingSettingJsonldContextBuilder? atContext) =>
+  BrandingSettingJsonldBrandingSettingReadContextBuilder? _atContext;
+  BrandingSettingJsonldBrandingSettingReadContextBuilder get atContext =>
+      _$this._atContext ??=
+          new BrandingSettingJsonldBrandingSettingReadContextBuilder();
+  set atContext(
+          BrandingSettingJsonldBrandingSettingReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
@@ -292,10 +294,6 @@ class BrandingSettingJsonldBuilder
   String? _atType;
   String? get atType => _$this._atType;
   set atType(String? atType) => _$this._atType = atType;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
 
   String? _orgId;
   String? get orgId => _$this._orgId;
@@ -364,30 +362,23 @@ class BrandingSettingJsonldBuilder
   set disableWatermark(bool? disableWatermark) =>
       _$this._disableWatermark = disableWatermark;
 
-  BrandingSettingJsonldThemeModeEnum? _themeMode;
-  BrandingSettingJsonldThemeModeEnum? get themeMode => _$this._themeMode;
-  set themeMode(BrandingSettingJsonldThemeModeEnum? themeMode) =>
+  BrandingSettingJsonldBrandingSettingReadThemeModeEnum? _themeMode;
+  BrandingSettingJsonldBrandingSettingReadThemeModeEnum? get themeMode =>
+      _$this._themeMode;
+  set themeMode(
+          BrandingSettingJsonldBrandingSettingReadThemeModeEnum? themeMode) =>
       _$this._themeMode = themeMode;
 
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
-  BrandingSettingJsonldBuilder() {
-    BrandingSettingJsonld._defaults(this);
+  BrandingSettingJsonldBrandingSettingReadBuilder() {
+    BrandingSettingJsonldBrandingSettingRead._defaults(this);
   }
 
-  BrandingSettingJsonldBuilder get _$this {
+  BrandingSettingJsonldBrandingSettingReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _id = $v.id;
       _orgId = $v.orgId;
       _primaryColor = $v.primaryColor;
       _hideLoginNameSuffix = $v.hideLoginNameSuffix;
@@ -404,69 +395,71 @@ class BrandingSettingJsonldBuilder
       _iconDarkUrl = $v.iconDarkUrl;
       _disableWatermark = $v.disableWatermark;
       _themeMode = $v.themeMode;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(BrandingSettingJsonld other) {
+  void replace(BrandingSettingJsonldBrandingSettingRead other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$BrandingSettingJsonld;
+    _$v = other as _$BrandingSettingJsonldBrandingSettingRead;
   }
 
   @override
-  void update(void Function(BrandingSettingJsonldBuilder)? updates) {
+  void update(
+      void Function(BrandingSettingJsonldBrandingSettingReadBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  BrandingSettingJsonld build() => _build();
+  BrandingSettingJsonldBrandingSettingRead build() => _build();
 
-  _$BrandingSettingJsonld _build() {
-    _$BrandingSettingJsonld _$result;
+  _$BrandingSettingJsonldBrandingSettingRead _build() {
+    _$BrandingSettingJsonldBrandingSettingRead _$result;
     try {
       _$result = _$v ??
-          new _$BrandingSettingJsonld._(
+          new _$BrandingSettingJsonldBrandingSettingRead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
-            id: id,
             orgId: BuiltValueNullFieldError.checkNotNull(
-                orgId, r'BrandingSettingJsonld', 'orgId'),
-            primaryColor: BuiltValueNullFieldError.checkNotNull(
-                primaryColor, r'BrandingSettingJsonld', 'primaryColor'),
+                orgId, r'BrandingSettingJsonldBrandingSettingRead', 'orgId'),
+            primaryColor: BuiltValueNullFieldError.checkNotNull(primaryColor,
+                r'BrandingSettingJsonldBrandingSettingRead', 'primaryColor'),
             hideLoginNameSuffix: BuiltValueNullFieldError.checkNotNull(
                 hideLoginNameSuffix,
-                r'BrandingSettingJsonld',
+                r'BrandingSettingJsonldBrandingSettingRead',
                 'hideLoginNameSuffix'),
-            warnColor: BuiltValueNullFieldError.checkNotNull(
-                warnColor, r'BrandingSettingJsonld', 'warnColor'),
+            warnColor: BuiltValueNullFieldError.checkNotNull(warnColor,
+                r'BrandingSettingJsonldBrandingSettingRead', 'warnColor'),
             backgroundColor: BuiltValueNullFieldError.checkNotNull(
-                backgroundColor, r'BrandingSettingJsonld', 'backgroundColor'),
-            fontColor: BuiltValueNullFieldError.checkNotNull(
-                fontColor, r'BrandingSettingJsonld', 'fontColor'),
+                backgroundColor,
+                r'BrandingSettingJsonldBrandingSettingRead',
+                'backgroundColor'),
+            fontColor: BuiltValueNullFieldError.checkNotNull(fontColor,
+                r'BrandingSettingJsonldBrandingSettingRead', 'fontColor'),
             primaryColorDark: BuiltValueNullFieldError.checkNotNull(
-                primaryColorDark, r'BrandingSettingJsonld', 'primaryColorDark'),
+                primaryColorDark,
+                r'BrandingSettingJsonldBrandingSettingRead',
+                'primaryColorDark'),
             backgroundColorDark: BuiltValueNullFieldError.checkNotNull(
                 backgroundColorDark,
-                r'BrandingSettingJsonld',
+                r'BrandingSettingJsonldBrandingSettingRead',
                 'backgroundColorDark'),
-            warnColorDark: BuiltValueNullFieldError.checkNotNull(
-                warnColorDark, r'BrandingSettingJsonld', 'warnColorDark'),
-            fontColorDark: BuiltValueNullFieldError.checkNotNull(
-                fontColorDark, r'BrandingSettingJsonld', 'fontColorDark'),
+            warnColorDark: BuiltValueNullFieldError.checkNotNull(warnColorDark,
+                r'BrandingSettingJsonldBrandingSettingRead', 'warnColorDark'),
+            fontColorDark: BuiltValueNullFieldError.checkNotNull(fontColorDark,
+                r'BrandingSettingJsonldBrandingSettingRead', 'fontColorDark'),
             logoUrl: logoUrl,
             logoDarkUrl: logoDarkUrl,
             iconUrl: iconUrl,
             iconDarkUrl: iconDarkUrl,
             disableWatermark: BuiltValueNullFieldError.checkNotNull(
-                disableWatermark, r'BrandingSettingJsonld', 'disableWatermark'),
+                disableWatermark,
+                r'BrandingSettingJsonldBrandingSettingRead',
+                'disableWatermark'),
             themeMode: themeMode,
-            createdAt: createdAt,
-            updatedAt: updatedAt,
           );
     } catch (_) {
       late String _$failedField;
@@ -475,7 +468,9 @@ class BrandingSettingJsonldBuilder
         _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'BrandingSettingJsonld', _$failedField, e.toString());
+            r'BrandingSettingJsonldBrandingSettingRead',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }

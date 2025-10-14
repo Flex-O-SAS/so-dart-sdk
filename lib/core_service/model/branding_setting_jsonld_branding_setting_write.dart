@@ -4,19 +4,14 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'branding_setting_jsonld.g.dart';
+part 'branding_setting_jsonld_branding_setting_write.g.dart';
 
 /// 
 ///
 /// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-/// * [id] 
 /// * [orgId] 
 /// * [primaryColor] 
 /// * [hideLoginNameSuffix] 
@@ -33,22 +28,8 @@ part 'branding_setting_jsonld.g.dart';
 /// * [iconDarkUrl] 
 /// * [disableWatermark] 
 /// * [themeMode] 
-/// * [createdAt] 
-/// * [updatedAt] 
 @BuiltValue()
-abstract class BrandingSettingJsonld implements Built<BrandingSettingJsonld, BrandingSettingJsonldBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  BrandingSettingJsonldContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
-
+abstract class BrandingSettingJsonldBrandingSettingWrite implements Built<BrandingSettingJsonldBrandingSettingWrite, BrandingSettingJsonldBrandingSettingWriteBuilder> {
   @BuiltValueField(wireName: r'orgId')
   String get orgId;
 
@@ -95,67 +76,33 @@ abstract class BrandingSettingJsonld implements Built<BrandingSettingJsonld, Bra
   bool get disableWatermark;
 
   @BuiltValueField(wireName: r'themeMode')
-  BrandingSettingJsonldThemeModeEnum? get themeMode;
+  BrandingSettingJsonldBrandingSettingWriteThemeModeEnum? get themeMode;
   // enum themeModeEnum {  THEME_MODE_UNSPECIFIED,  THEME_MODE_AUTO,  THEME_MODE_DARK,  THEME_MODE_LIGHT,  };
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+  BrandingSettingJsonldBrandingSettingWrite._();
 
-  @BuiltValueField(wireName: r'updatedAt')
-  DateTime? get updatedAt;
-
-  BrandingSettingJsonld._();
-
-  factory BrandingSettingJsonld([void updates(BrandingSettingJsonldBuilder b)]) = _$BrandingSettingJsonld;
+  factory BrandingSettingJsonldBrandingSettingWrite([void updates(BrandingSettingJsonldBrandingSettingWriteBuilder b)]) = _$BrandingSettingJsonldBrandingSettingWrite;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(BrandingSettingJsonldBuilder b) => b
+  static void _defaults(BrandingSettingJsonldBrandingSettingWriteBuilder b) => b
       ..orgId = 'default';
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<BrandingSettingJsonld> get serializer => _$BrandingSettingJsonldSerializer();
+  static Serializer<BrandingSettingJsonldBrandingSettingWrite> get serializer => _$BrandingSettingJsonldBrandingSettingWriteSerializer();
 }
 
-class _$BrandingSettingJsonldSerializer implements PrimitiveSerializer<BrandingSettingJsonld> {
+class _$BrandingSettingJsonldBrandingSettingWriteSerializer implements PrimitiveSerializer<BrandingSettingJsonldBrandingSettingWrite> {
   @override
-  final Iterable<Type> types = const [BrandingSettingJsonld, _$BrandingSettingJsonld];
+  final Iterable<Type> types = const [BrandingSettingJsonldBrandingSettingWrite, _$BrandingSettingJsonldBrandingSettingWrite];
 
   @override
-  final String wireName = r'BrandingSettingJsonld';
+  final String wireName = r'BrandingSettingJsonldBrandingSettingWrite';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    BrandingSettingJsonld object, {
+    BrandingSettingJsonldBrandingSettingWrite object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(BrandingSettingJsonldContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
     yield r'orgId';
     yield serializers.serialize(
       object.orgId,
@@ -243,21 +190,7 @@ class _$BrandingSettingJsonldSerializer implements PrimitiveSerializer<BrandingS
       yield r'themeMode';
       yield serializers.serialize(
         object.themeMode,
-        specifiedType: const FullType(BrandingSettingJsonldThemeModeEnum),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.updatedAt != null) {
-      yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(DateTime),
+        specifiedType: const FullType(BrandingSettingJsonldBrandingSettingWriteThemeModeEnum),
       );
     }
   }
@@ -265,7 +198,7 @@ class _$BrandingSettingJsonldSerializer implements PrimitiveSerializer<BrandingS
   @override
   Object serialize(
     Serializers serializers,
-    BrandingSettingJsonld object, {
+    BrandingSettingJsonldBrandingSettingWrite object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -276,41 +209,13 @@ class _$BrandingSettingJsonldSerializer implements PrimitiveSerializer<BrandingS
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required BrandingSettingJsonldBuilder result,
+    required BrandingSettingJsonldBrandingSettingWriteBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BrandingSettingJsonldContext),
-          ) as BrandingSettingJsonldContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
         case r'orgId':
           final valueDes = serializers.deserialize(
             value,
@@ -423,23 +328,9 @@ class _$BrandingSettingJsonldSerializer implements PrimitiveSerializer<BrandingS
         case r'themeMode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BrandingSettingJsonldThemeModeEnum),
-          ) as BrandingSettingJsonldThemeModeEnum;
+            specifiedType: const FullType(BrandingSettingJsonldBrandingSettingWriteThemeModeEnum),
+          ) as BrandingSettingJsonldBrandingSettingWriteThemeModeEnum;
           result.themeMode = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -450,12 +341,12 @@ class _$BrandingSettingJsonldSerializer implements PrimitiveSerializer<BrandingS
   }
 
   @override
-  BrandingSettingJsonld deserialize(
+  BrandingSettingJsonldBrandingSettingWrite deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = BrandingSettingJsonldBuilder();
+    final result = BrandingSettingJsonldBrandingSettingWriteBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
@@ -470,22 +361,22 @@ class _$BrandingSettingJsonldSerializer implements PrimitiveSerializer<BrandingS
   }
 }
 
-class BrandingSettingJsonldThemeModeEnum extends EnumClass {
+class BrandingSettingJsonldBrandingSettingWriteThemeModeEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'THEME_MODE_UNSPECIFIED')
-  static const BrandingSettingJsonldThemeModeEnum THEME_MODE_UNSPECIFIED = _$brandingSettingJsonldThemeModeEnum_THEME_MODE_UNSPECIFIED;
+  static const BrandingSettingJsonldBrandingSettingWriteThemeModeEnum THEME_MODE_UNSPECIFIED = _$brandingSettingJsonldBrandingSettingWriteThemeModeEnum_THEME_MODE_UNSPECIFIED;
   @BuiltValueEnumConst(wireName: r'THEME_MODE_AUTO')
-  static const BrandingSettingJsonldThemeModeEnum THEME_MODE_AUTO = _$brandingSettingJsonldThemeModeEnum_THEME_MODE_AUTO;
+  static const BrandingSettingJsonldBrandingSettingWriteThemeModeEnum THEME_MODE_AUTO = _$brandingSettingJsonldBrandingSettingWriteThemeModeEnum_THEME_MODE_AUTO;
   @BuiltValueEnumConst(wireName: r'THEME_MODE_DARK')
-  static const BrandingSettingJsonldThemeModeEnum THEME_MODE_DARK = _$brandingSettingJsonldThemeModeEnum_THEME_MODE_DARK;
+  static const BrandingSettingJsonldBrandingSettingWriteThemeModeEnum THEME_MODE_DARK = _$brandingSettingJsonldBrandingSettingWriteThemeModeEnum_THEME_MODE_DARK;
   @BuiltValueEnumConst(wireName: r'THEME_MODE_LIGHT')
-  static const BrandingSettingJsonldThemeModeEnum THEME_MODE_LIGHT = _$brandingSettingJsonldThemeModeEnum_THEME_MODE_LIGHT;
+  static const BrandingSettingJsonldBrandingSettingWriteThemeModeEnum THEME_MODE_LIGHT = _$brandingSettingJsonldBrandingSettingWriteThemeModeEnum_THEME_MODE_LIGHT;
 
-  static Serializer<BrandingSettingJsonldThemeModeEnum> get serializer => _$brandingSettingJsonldThemeModeEnumSerializer;
+  static Serializer<BrandingSettingJsonldBrandingSettingWriteThemeModeEnum> get serializer => _$brandingSettingJsonldBrandingSettingWriteThemeModeEnumSerializer;
 
-  const BrandingSettingJsonldThemeModeEnum._(String name): super(name);
+  const BrandingSettingJsonldBrandingSettingWriteThemeModeEnum._(String name): super(name);
 
-  static BuiltSet<BrandingSettingJsonldThemeModeEnum> get values => _$brandingSettingJsonldThemeModeEnumValues;
-  static BrandingSettingJsonldThemeModeEnum valueOf(String name) => _$brandingSettingJsonldThemeModeEnumValueOf(name);
+  static BuiltSet<BrandingSettingJsonldBrandingSettingWriteThemeModeEnum> get values => _$brandingSettingJsonldBrandingSettingWriteThemeModeEnumValues;
+  static BrandingSettingJsonldBrandingSettingWriteThemeModeEnum valueOf(String name) => _$brandingSettingJsonldBrandingSettingWriteThemeModeEnumValueOf(name);
 }
 

@@ -5,8 +5,8 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_read.dart';
 import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response_search.dart';
-import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +22,7 @@ part 'api_branding_get_collection200_response.g.dart';
 @BuiltValue()
 abstract class ApiBrandingGetCollection200Response implements Built<ApiBrandingGetCollection200Response, ApiBrandingGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<BrandingSettingJsonld> get member;
+  BuiltList<BrandingSettingJsonldBrandingSettingRead> get member;
 
   @BuiltValueField(wireName: r'totalItems')
   int? get totalItems;
@@ -59,7 +59,7 @@ class _$ApiBrandingGetCollection200ResponseSerializer implements PrimitiveSerial
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(BrandingSettingJsonld)]),
+      specifiedType: const FullType(BuiltList, [FullType(BrandingSettingJsonldBrandingSettingRead)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -108,8 +108,8 @@ class _$ApiBrandingGetCollection200ResponseSerializer implements PrimitiveSerial
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BrandingSettingJsonld)]),
-          ) as BuiltList<BrandingSettingJsonld>;
+            specifiedType: const FullType(BuiltList, [FullType(BrandingSettingJsonldBrandingSettingRead)]),
+          ) as BuiltList<BrandingSettingJsonldBrandingSettingRead>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':

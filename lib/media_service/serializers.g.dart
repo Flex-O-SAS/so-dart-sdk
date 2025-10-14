@@ -7,24 +7,24 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
-      ..add(ApiApidocumentsGetCollection200Response.serializer)
-      ..add(ApiApidocumentsGetCollection200ResponseSearch.serializer)
-      ..add(
-          ApiApidocumentsGetCollection200ResponseSearchMappingInner.serializer)
-      ..add(ApiApidocumentsGetCollection200ResponseView.serializer)
-      ..add(ApiApiimagesGetCollection200Response.serializer)
+      ..add(ApiDocumentsGetCollection200Response.serializer)
+      ..add(ApiDocumentsGetCollection200ResponseSearch.serializer)
+      ..add(ApiDocumentsGetCollection200ResponseSearchMappingInner.serializer)
+      ..add(ApiDocumentsGetCollection200ResponseView.serializer)
+      ..add(ApiImagesGetCollection200Response.serializer)
       ..add(DocumentJsonldMediaRead.serializer)
       ..add(DocumentJsonldMediaReadContext.serializer)
       ..add(DocumentJsonldMediaReadContextOneOf.serializer)
       ..add(DocumentJsonldMediaReadContextOneOfHydraEnum.serializer)
+      ..add(DocumentJsonldMediaReadMetadata.serializer)
       ..add(ImageJsonldMediaRead.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
-                ApiApidocumentsGetCollection200ResponseSearchMappingInner)
+                ApiDocumentsGetCollection200ResponseSearchMappingInner)
           ]),
           () => new ListBuilder<
-              ApiApidocumentsGetCollection200ResponseSearchMappingInner>())
+              ApiDocumentsGetCollection200ResponseSearchMappingInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(DocumentJsonldMediaRead)]),

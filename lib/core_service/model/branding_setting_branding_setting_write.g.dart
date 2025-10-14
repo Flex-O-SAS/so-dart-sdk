@@ -1,55 +1,58 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'branding_setting.dart';
+part of 'branding_setting_branding_setting_write.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-const BrandingSettingThemeModeEnum
-    _$brandingSettingThemeModeEnum_THEME_MODE_UNSPECIFIED =
-    const BrandingSettingThemeModeEnum._('THEME_MODE_UNSPECIFIED');
-const BrandingSettingThemeModeEnum
-    _$brandingSettingThemeModeEnum_THEME_MODE_AUTO =
-    const BrandingSettingThemeModeEnum._('THEME_MODE_AUTO');
-const BrandingSettingThemeModeEnum
-    _$brandingSettingThemeModeEnum_THEME_MODE_DARK =
-    const BrandingSettingThemeModeEnum._('THEME_MODE_DARK');
-const BrandingSettingThemeModeEnum
-    _$brandingSettingThemeModeEnum_THEME_MODE_LIGHT =
-    const BrandingSettingThemeModeEnum._('THEME_MODE_LIGHT');
+const BrandingSettingBrandingSettingWriteThemeModeEnum
+    _$brandingSettingBrandingSettingWriteThemeModeEnum_THEME_MODE_UNSPECIFIED =
+    const BrandingSettingBrandingSettingWriteThemeModeEnum._(
+        'THEME_MODE_UNSPECIFIED');
+const BrandingSettingBrandingSettingWriteThemeModeEnum
+    _$brandingSettingBrandingSettingWriteThemeModeEnum_THEME_MODE_AUTO =
+    const BrandingSettingBrandingSettingWriteThemeModeEnum._('THEME_MODE_AUTO');
+const BrandingSettingBrandingSettingWriteThemeModeEnum
+    _$brandingSettingBrandingSettingWriteThemeModeEnum_THEME_MODE_DARK =
+    const BrandingSettingBrandingSettingWriteThemeModeEnum._('THEME_MODE_DARK');
+const BrandingSettingBrandingSettingWriteThemeModeEnum
+    _$brandingSettingBrandingSettingWriteThemeModeEnum_THEME_MODE_LIGHT =
+    const BrandingSettingBrandingSettingWriteThemeModeEnum._(
+        'THEME_MODE_LIGHT');
 
-BrandingSettingThemeModeEnum _$brandingSettingThemeModeEnumValueOf(
-    String name) {
+BrandingSettingBrandingSettingWriteThemeModeEnum
+    _$brandingSettingBrandingSettingWriteThemeModeEnumValueOf(String name) {
   switch (name) {
     case 'THEME_MODE_UNSPECIFIED':
-      return _$brandingSettingThemeModeEnum_THEME_MODE_UNSPECIFIED;
+      return _$brandingSettingBrandingSettingWriteThemeModeEnum_THEME_MODE_UNSPECIFIED;
     case 'THEME_MODE_AUTO':
-      return _$brandingSettingThemeModeEnum_THEME_MODE_AUTO;
+      return _$brandingSettingBrandingSettingWriteThemeModeEnum_THEME_MODE_AUTO;
     case 'THEME_MODE_DARK':
-      return _$brandingSettingThemeModeEnum_THEME_MODE_DARK;
+      return _$brandingSettingBrandingSettingWriteThemeModeEnum_THEME_MODE_DARK;
     case 'THEME_MODE_LIGHT':
-      return _$brandingSettingThemeModeEnum_THEME_MODE_LIGHT;
+      return _$brandingSettingBrandingSettingWriteThemeModeEnum_THEME_MODE_LIGHT;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<BrandingSettingThemeModeEnum>
-    _$brandingSettingThemeModeEnumValues = new BuiltSet<
-        BrandingSettingThemeModeEnum>(const <BrandingSettingThemeModeEnum>[
-  _$brandingSettingThemeModeEnum_THEME_MODE_UNSPECIFIED,
-  _$brandingSettingThemeModeEnum_THEME_MODE_AUTO,
-  _$brandingSettingThemeModeEnum_THEME_MODE_DARK,
-  _$brandingSettingThemeModeEnum_THEME_MODE_LIGHT,
+final BuiltSet<BrandingSettingBrandingSettingWriteThemeModeEnum>
+    _$brandingSettingBrandingSettingWriteThemeModeEnumValues = new BuiltSet<
+        BrandingSettingBrandingSettingWriteThemeModeEnum>(const <BrandingSettingBrandingSettingWriteThemeModeEnum>[
+  _$brandingSettingBrandingSettingWriteThemeModeEnum_THEME_MODE_UNSPECIFIED,
+  _$brandingSettingBrandingSettingWriteThemeModeEnum_THEME_MODE_AUTO,
+  _$brandingSettingBrandingSettingWriteThemeModeEnum_THEME_MODE_DARK,
+  _$brandingSettingBrandingSettingWriteThemeModeEnum_THEME_MODE_LIGHT,
 ]);
 
-Serializer<BrandingSettingThemeModeEnum>
-    _$brandingSettingThemeModeEnumSerializer =
-    new _$BrandingSettingThemeModeEnumSerializer();
+Serializer<BrandingSettingBrandingSettingWriteThemeModeEnum>
+    _$brandingSettingBrandingSettingWriteThemeModeEnumSerializer =
+    new _$BrandingSettingBrandingSettingWriteThemeModeEnumSerializer();
 
-class _$BrandingSettingThemeModeEnumSerializer
-    implements PrimitiveSerializer<BrandingSettingThemeModeEnum> {
+class _$BrandingSettingBrandingSettingWriteThemeModeEnumSerializer
+    implements
+        PrimitiveSerializer<BrandingSettingBrandingSettingWriteThemeModeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'THEME_MODE_UNSPECIFIED': 'THEME_MODE_UNSPECIFIED',
     'THEME_MODE_AUTO': 'THEME_MODE_AUTO',
@@ -64,26 +67,28 @@ class _$BrandingSettingThemeModeEnumSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[BrandingSettingThemeModeEnum];
+  final Iterable<Type> types = const <Type>[
+    BrandingSettingBrandingSettingWriteThemeModeEnum
+  ];
   @override
-  final String wireName = 'BrandingSettingThemeModeEnum';
+  final String wireName = 'BrandingSettingBrandingSettingWriteThemeModeEnum';
 
   @override
-  Object serialize(Serializers serializers, BrandingSettingThemeModeEnum object,
+  Object serialize(Serializers serializers,
+          BrandingSettingBrandingSettingWriteThemeModeEnum object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  BrandingSettingThemeModeEnum deserialize(
+  BrandingSettingBrandingSettingWriteThemeModeEnum deserialize(
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      BrandingSettingThemeModeEnum.valueOf(
+      BrandingSettingBrandingSettingWriteThemeModeEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$BrandingSetting extends BrandingSetting {
-  @override
-  final int? id;
+class _$BrandingSettingBrandingSettingWrite
+    extends BrandingSettingBrandingSettingWrite {
   @override
   final String orgId;
   @override
@@ -115,18 +120,16 @@ class _$BrandingSetting extends BrandingSetting {
   @override
   final bool disableWatermark;
   @override
-  final BrandingSettingThemeModeEnum? themeMode;
-  @override
-  final DateTime? createdAt;
-  @override
-  final DateTime? updatedAt;
+  final BrandingSettingBrandingSettingWriteThemeModeEnum? themeMode;
 
-  factory _$BrandingSetting([void Function(BrandingSettingBuilder)? updates]) =>
-      (new BrandingSettingBuilder()..update(updates))._build();
+  factory _$BrandingSettingBrandingSettingWrite(
+          [void Function(BrandingSettingBrandingSettingWriteBuilder)?
+              updates]) =>
+      (new BrandingSettingBrandingSettingWriteBuilder()..update(updates))
+          ._build();
 
-  _$BrandingSetting._(
-      {this.id,
-      required this.orgId,
+  _$BrandingSettingBrandingSettingWrite._(
+      {required this.orgId,
       required this.primaryColor,
       required this.hideLoginNameSuffix,
       required this.warnColor,
@@ -141,46 +144,45 @@ class _$BrandingSetting extends BrandingSetting {
       this.iconUrl,
       this.iconDarkUrl,
       required this.disableWatermark,
-      this.themeMode,
-      this.createdAt,
-      this.updatedAt})
+      this.themeMode})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(orgId, r'BrandingSetting', 'orgId');
     BuiltValueNullFieldError.checkNotNull(
-        primaryColor, r'BrandingSetting', 'primaryColor');
+        orgId, r'BrandingSettingBrandingSettingWrite', 'orgId');
     BuiltValueNullFieldError.checkNotNull(
-        hideLoginNameSuffix, r'BrandingSetting', 'hideLoginNameSuffix');
+        primaryColor, r'BrandingSettingBrandingSettingWrite', 'primaryColor');
+    BuiltValueNullFieldError.checkNotNull(hideLoginNameSuffix,
+        r'BrandingSettingBrandingSettingWrite', 'hideLoginNameSuffix');
     BuiltValueNullFieldError.checkNotNull(
-        warnColor, r'BrandingSetting', 'warnColor');
+        warnColor, r'BrandingSettingBrandingSettingWrite', 'warnColor');
+    BuiltValueNullFieldError.checkNotNull(backgroundColor,
+        r'BrandingSettingBrandingSettingWrite', 'backgroundColor');
     BuiltValueNullFieldError.checkNotNull(
-        backgroundColor, r'BrandingSetting', 'backgroundColor');
+        fontColor, r'BrandingSettingBrandingSettingWrite', 'fontColor');
+    BuiltValueNullFieldError.checkNotNull(primaryColorDark,
+        r'BrandingSettingBrandingSettingWrite', 'primaryColorDark');
+    BuiltValueNullFieldError.checkNotNull(backgroundColorDark,
+        r'BrandingSettingBrandingSettingWrite', 'backgroundColorDark');
     BuiltValueNullFieldError.checkNotNull(
-        fontColor, r'BrandingSetting', 'fontColor');
+        warnColorDark, r'BrandingSettingBrandingSettingWrite', 'warnColorDark');
     BuiltValueNullFieldError.checkNotNull(
-        primaryColorDark, r'BrandingSetting', 'primaryColorDark');
-    BuiltValueNullFieldError.checkNotNull(
-        backgroundColorDark, r'BrandingSetting', 'backgroundColorDark');
-    BuiltValueNullFieldError.checkNotNull(
-        warnColorDark, r'BrandingSetting', 'warnColorDark');
-    BuiltValueNullFieldError.checkNotNull(
-        fontColorDark, r'BrandingSetting', 'fontColorDark');
-    BuiltValueNullFieldError.checkNotNull(
-        disableWatermark, r'BrandingSetting', 'disableWatermark');
+        fontColorDark, r'BrandingSettingBrandingSettingWrite', 'fontColorDark');
+    BuiltValueNullFieldError.checkNotNull(disableWatermark,
+        r'BrandingSettingBrandingSettingWrite', 'disableWatermark');
   }
 
   @override
-  BrandingSetting rebuild(void Function(BrandingSettingBuilder) updates) =>
+  BrandingSettingBrandingSettingWrite rebuild(
+          void Function(BrandingSettingBrandingSettingWriteBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  BrandingSettingBuilder toBuilder() =>
-      new BrandingSettingBuilder()..replace(this);
+  BrandingSettingBrandingSettingWriteBuilder toBuilder() =>
+      new BrandingSettingBrandingSettingWriteBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is BrandingSetting &&
-        id == other.id &&
+    return other is BrandingSettingBrandingSettingWrite &&
         orgId == other.orgId &&
         primaryColor == other.primaryColor &&
         hideLoginNameSuffix == other.hideLoginNameSuffix &&
@@ -196,15 +198,12 @@ class _$BrandingSetting extends BrandingSetting {
         iconUrl == other.iconUrl &&
         iconDarkUrl == other.iconDarkUrl &&
         disableWatermark == other.disableWatermark &&
-        themeMode == other.themeMode &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        themeMode == other.themeMode;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, orgId.hashCode);
     _$hash = $jc(_$hash, primaryColor.hashCode);
     _$hash = $jc(_$hash, hideLoginNameSuffix.hashCode);
@@ -221,16 +220,13 @@ class _$BrandingSetting extends BrandingSetting {
     _$hash = $jc(_$hash, iconDarkUrl.hashCode);
     _$hash = $jc(_$hash, disableWatermark.hashCode);
     _$hash = $jc(_$hash, themeMode.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'BrandingSetting')
-          ..add('id', id)
+    return (newBuiltValueToStringHelper(r'BrandingSettingBrandingSettingWrite')
           ..add('orgId', orgId)
           ..add('primaryColor', primaryColor)
           ..add('hideLoginNameSuffix', hideLoginNameSuffix)
@@ -246,20 +242,16 @@ class _$BrandingSetting extends BrandingSetting {
           ..add('iconUrl', iconUrl)
           ..add('iconDarkUrl', iconDarkUrl)
           ..add('disableWatermark', disableWatermark)
-          ..add('themeMode', themeMode)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('themeMode', themeMode))
         .toString();
   }
 }
 
-class BrandingSettingBuilder
-    implements Builder<BrandingSetting, BrandingSettingBuilder> {
-  _$BrandingSetting? _$v;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+class BrandingSettingBrandingSettingWriteBuilder
+    implements
+        Builder<BrandingSettingBrandingSettingWrite,
+            BrandingSettingBrandingSettingWriteBuilder> {
+  _$BrandingSettingBrandingSettingWrite? _$v;
 
   String? _orgId;
   String? get orgId => _$this._orgId;
@@ -328,27 +320,19 @@ class BrandingSettingBuilder
   set disableWatermark(bool? disableWatermark) =>
       _$this._disableWatermark = disableWatermark;
 
-  BrandingSettingThemeModeEnum? _themeMode;
-  BrandingSettingThemeModeEnum? get themeMode => _$this._themeMode;
-  set themeMode(BrandingSettingThemeModeEnum? themeMode) =>
+  BrandingSettingBrandingSettingWriteThemeModeEnum? _themeMode;
+  BrandingSettingBrandingSettingWriteThemeModeEnum? get themeMode =>
+      _$this._themeMode;
+  set themeMode(BrandingSettingBrandingSettingWriteThemeModeEnum? themeMode) =>
       _$this._themeMode = themeMode;
 
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
-  BrandingSettingBuilder() {
-    BrandingSetting._defaults(this);
+  BrandingSettingBrandingSettingWriteBuilder() {
+    BrandingSettingBrandingSettingWrite._defaults(this);
   }
 
-  BrandingSettingBuilder get _$this {
+  BrandingSettingBrandingSettingWriteBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
       _orgId = $v.orgId;
       _primaryColor = $v.primaryColor;
       _hideLoginNameSuffix = $v.hideLoginNameSuffix;
@@ -365,60 +349,66 @@ class BrandingSettingBuilder
       _iconDarkUrl = $v.iconDarkUrl;
       _disableWatermark = $v.disableWatermark;
       _themeMode = $v.themeMode;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(BrandingSetting other) {
+  void replace(BrandingSettingBrandingSettingWrite other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$BrandingSetting;
+    _$v = other as _$BrandingSettingBrandingSettingWrite;
   }
 
   @override
-  void update(void Function(BrandingSettingBuilder)? updates) {
+  void update(
+      void Function(BrandingSettingBrandingSettingWriteBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  BrandingSetting build() => _build();
+  BrandingSettingBrandingSettingWrite build() => _build();
 
-  _$BrandingSetting _build() {
+  _$BrandingSettingBrandingSettingWrite _build() {
     final _$result = _$v ??
-        new _$BrandingSetting._(
-          id: id,
+        new _$BrandingSettingBrandingSettingWrite._(
           orgId: BuiltValueNullFieldError.checkNotNull(
-              orgId, r'BrandingSetting', 'orgId'),
-          primaryColor: BuiltValueNullFieldError.checkNotNull(
-              primaryColor, r'BrandingSetting', 'primaryColor'),
+              orgId, r'BrandingSettingBrandingSettingWrite', 'orgId'),
+          primaryColor: BuiltValueNullFieldError.checkNotNull(primaryColor,
+              r'BrandingSettingBrandingSettingWrite', 'primaryColor'),
           hideLoginNameSuffix: BuiltValueNullFieldError.checkNotNull(
-              hideLoginNameSuffix, r'BrandingSetting', 'hideLoginNameSuffix'),
+              hideLoginNameSuffix,
+              r'BrandingSettingBrandingSettingWrite',
+              'hideLoginNameSuffix'),
           warnColor: BuiltValueNullFieldError.checkNotNull(
-              warnColor, r'BrandingSetting', 'warnColor'),
+              warnColor, r'BrandingSettingBrandingSettingWrite', 'warnColor'),
           backgroundColor: BuiltValueNullFieldError.checkNotNull(
-              backgroundColor, r'BrandingSetting', 'backgroundColor'),
+              backgroundColor,
+              r'BrandingSettingBrandingSettingWrite',
+              'backgroundColor'),
           fontColor: BuiltValueNullFieldError.checkNotNull(
-              fontColor, r'BrandingSetting', 'fontColor'),
+              fontColor, r'BrandingSettingBrandingSettingWrite', 'fontColor'),
           primaryColorDark: BuiltValueNullFieldError.checkNotNull(
-              primaryColorDark, r'BrandingSetting', 'primaryColorDark'),
+              primaryColorDark,
+              r'BrandingSettingBrandingSettingWrite',
+              'primaryColorDark'),
           backgroundColorDark: BuiltValueNullFieldError.checkNotNull(
-              backgroundColorDark, r'BrandingSetting', 'backgroundColorDark'),
-          warnColorDark: BuiltValueNullFieldError.checkNotNull(
-              warnColorDark, r'BrandingSetting', 'warnColorDark'),
-          fontColorDark: BuiltValueNullFieldError.checkNotNull(
-              fontColorDark, r'BrandingSetting', 'fontColorDark'),
+              backgroundColorDark,
+              r'BrandingSettingBrandingSettingWrite',
+              'backgroundColorDark'),
+          warnColorDark: BuiltValueNullFieldError.checkNotNull(warnColorDark,
+              r'BrandingSettingBrandingSettingWrite', 'warnColorDark'),
+          fontColorDark: BuiltValueNullFieldError.checkNotNull(fontColorDark,
+              r'BrandingSettingBrandingSettingWrite', 'fontColorDark'),
           logoUrl: logoUrl,
           logoDarkUrl: logoDarkUrl,
           iconUrl: iconUrl,
           iconDarkUrl: iconDarkUrl,
           disableWatermark: BuiltValueNullFieldError.checkNotNull(
-              disableWatermark, r'BrandingSetting', 'disableWatermark'),
+              disableWatermark,
+              r'BrandingSettingBrandingSettingWrite',
+              'disableWatermark'),
           themeMode: themeMode,
-          createdAt: createdAt,
-          updatedAt: updatedAt,
         );
     replace(_$result);
     return _$result;

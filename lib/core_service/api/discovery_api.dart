@@ -8,7 +8,7 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:so_dart_sdk/core_service/model/discovery_jsonld_read.dart';
+import 'package:so_dart_sdk/core_service/model/discovery_jsonld_discovery_read_branding_setting_read.dart';
 import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
 
@@ -31,9 +31,9 @@ class DiscoveryApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [DiscoveryJsonldRead] as data
+  /// Returns a [Future] containing a [Response] with a [DiscoveryJsonldDiscoveryReadBrandingSettingRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DiscoveryJsonldRead>> apiApidiscoveriesGet({ 
+  Future<Response<DiscoveryJsonldDiscoveryReadBrandingSettingRead>> apiDiscoveriesGetCollection({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -69,14 +69,14 @@ class DiscoveryApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    DiscoveryJsonldRead? _responseData;
+    DiscoveryJsonldDiscoveryReadBrandingSettingRead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(DiscoveryJsonldRead),
-      ) as DiscoveryJsonldRead;
+        specifiedType: const FullType(DiscoveryJsonldDiscoveryReadBrandingSettingRead),
+      ) as DiscoveryJsonldDiscoveryReadBrandingSettingRead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -88,7 +88,7 @@ class DiscoveryApi {
       );
     }
 
-    return Response<DiscoveryJsonldRead>(
+    return Response<DiscoveryJsonldDiscoveryReadBrandingSettingRead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

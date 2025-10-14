@@ -4,8 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_metadata.dart';
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -56,7 +56,7 @@ abstract class DocumentJsonldMediaRead implements Built<DocumentJsonldMediaRead,
   BuiltList<int>? get dimensions;
 
   @BuiltValueField(wireName: r'metadata')
-  JsonObject? get metadata;
+  DocumentJsonldMediaReadMetadata? get metadata;
 
   @BuiltValueField(wireName: r'beginDate')
   String? get beginDate;
@@ -154,7 +154,7 @@ class _$DocumentJsonldMediaReadSerializer implements PrimitiveSerializer<Documen
       yield r'metadata';
       yield serializers.serialize(
         object.metadata,
-        specifiedType: const FullType(JsonObject),
+        specifiedType: const FullType(DocumentJsonldMediaReadMetadata),
       );
     }
     if (object.beginDate != null) {
@@ -264,9 +264,9 @@ class _$DocumentJsonldMediaReadSerializer implements PrimitiveSerializer<Documen
         case r'metadata':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.metadata = valueDes;
+            specifiedType: const FullType(DocumentJsonldMediaReadMetadata),
+          ) as DocumentJsonldMediaReadMetadata;
+          result.metadata.replace(valueDes);
           break;
         case r'beginDate':
           final valueDes = serializers.deserialize(

@@ -1,48 +1,47 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_apiimages_get_collection200_response.dart';
+part of 'api_images_get_collection200_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiApiimagesGetCollection200Response
-    extends ApiApiimagesGetCollection200Response {
+class _$ApiImagesGetCollection200Response
+    extends ApiImagesGetCollection200Response {
   @override
   final BuiltList<ImageJsonldMediaRead> member;
   @override
   final int? totalItems;
   @override
-  final ApiApidocumentsGetCollection200ResponseView? view;
+  final ApiDocumentsGetCollection200ResponseView? view;
   @override
-  final ApiApidocumentsGetCollection200ResponseSearch? search;
+  final ApiDocumentsGetCollection200ResponseSearch? search;
 
-  factory _$ApiApiimagesGetCollection200Response(
-          [void Function(ApiApiimagesGetCollection200ResponseBuilder)?
-              updates]) =>
-      (new ApiApiimagesGetCollection200ResponseBuilder()..update(updates))
+  factory _$ApiImagesGetCollection200Response(
+          [void Function(ApiImagesGetCollection200ResponseBuilder)? updates]) =>
+      (new ApiImagesGetCollection200ResponseBuilder()..update(updates))
           ._build();
 
-  _$ApiApiimagesGetCollection200Response._(
+  _$ApiImagesGetCollection200Response._(
       {required this.member, this.totalItems, this.view, this.search})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        member, r'ApiApiimagesGetCollection200Response', 'member');
+        member, r'ApiImagesGetCollection200Response', 'member');
   }
 
   @override
-  ApiApiimagesGetCollection200Response rebuild(
-          void Function(ApiApiimagesGetCollection200ResponseBuilder) updates) =>
+  ApiImagesGetCollection200Response rebuild(
+          void Function(ApiImagesGetCollection200ResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiApiimagesGetCollection200ResponseBuilder toBuilder() =>
-      new ApiApiimagesGetCollection200ResponseBuilder()..replace(this);
+  ApiImagesGetCollection200ResponseBuilder toBuilder() =>
+      new ApiImagesGetCollection200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiApiimagesGetCollection200Response &&
+    return other is ApiImagesGetCollection200Response &&
         member == other.member &&
         totalItems == other.totalItems &&
         view == other.view &&
@@ -62,7 +61,7 @@ class _$ApiApiimagesGetCollection200Response
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ApiApiimagesGetCollection200Response')
+    return (newBuiltValueToStringHelper(r'ApiImagesGetCollection200Response')
           ..add('member', member)
           ..add('totalItems', totalItems)
           ..add('view', view)
@@ -71,11 +70,11 @@ class _$ApiApiimagesGetCollection200Response
   }
 }
 
-class ApiApiimagesGetCollection200ResponseBuilder
+class ApiImagesGetCollection200ResponseBuilder
     implements
-        Builder<ApiApiimagesGetCollection200Response,
-            ApiApiimagesGetCollection200ResponseBuilder> {
-  _$ApiApiimagesGetCollection200Response? _$v;
+        Builder<ApiImagesGetCollection200Response,
+            ApiImagesGetCollection200ResponseBuilder> {
+  _$ApiImagesGetCollection200Response? _$v;
 
   ListBuilder<ImageJsonldMediaRead>? _member;
   ListBuilder<ImageJsonldMediaRead> get member =>
@@ -87,24 +86,24 @@ class ApiApiimagesGetCollection200ResponseBuilder
   int? get totalItems => _$this._totalItems;
   set totalItems(int? totalItems) => _$this._totalItems = totalItems;
 
-  ApiApidocumentsGetCollection200ResponseViewBuilder? _view;
-  ApiApidocumentsGetCollection200ResponseViewBuilder get view =>
-      _$this._view ??= new ApiApidocumentsGetCollection200ResponseViewBuilder();
-  set view(ApiApidocumentsGetCollection200ResponseViewBuilder? view) =>
+  ApiDocumentsGetCollection200ResponseViewBuilder? _view;
+  ApiDocumentsGetCollection200ResponseViewBuilder get view =>
+      _$this._view ??= new ApiDocumentsGetCollection200ResponseViewBuilder();
+  set view(ApiDocumentsGetCollection200ResponseViewBuilder? view) =>
       _$this._view = view;
 
-  ApiApidocumentsGetCollection200ResponseSearchBuilder? _search;
-  ApiApidocumentsGetCollection200ResponseSearchBuilder get search =>
+  ApiDocumentsGetCollection200ResponseSearchBuilder? _search;
+  ApiDocumentsGetCollection200ResponseSearchBuilder get search =>
       _$this._search ??=
-          new ApiApidocumentsGetCollection200ResponseSearchBuilder();
-  set search(ApiApidocumentsGetCollection200ResponseSearchBuilder? search) =>
+          new ApiDocumentsGetCollection200ResponseSearchBuilder();
+  set search(ApiDocumentsGetCollection200ResponseSearchBuilder? search) =>
       _$this._search = search;
 
-  ApiApiimagesGetCollection200ResponseBuilder() {
-    ApiApiimagesGetCollection200Response._defaults(this);
+  ApiImagesGetCollection200ResponseBuilder() {
+    ApiImagesGetCollection200Response._defaults(this);
   }
 
-  ApiApiimagesGetCollection200ResponseBuilder get _$this {
+  ApiImagesGetCollection200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _member = $v.member.toBuilder();
@@ -117,25 +116,25 @@ class ApiApiimagesGetCollection200ResponseBuilder
   }
 
   @override
-  void replace(ApiApiimagesGetCollection200Response other) {
+  void replace(ApiImagesGetCollection200Response other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiApiimagesGetCollection200Response;
+    _$v = other as _$ApiImagesGetCollection200Response;
   }
 
   @override
   void update(
-      void Function(ApiApiimagesGetCollection200ResponseBuilder)? updates) {
+      void Function(ApiImagesGetCollection200ResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiApiimagesGetCollection200Response build() => _build();
+  ApiImagesGetCollection200Response build() => _build();
 
-  _$ApiApiimagesGetCollection200Response _build() {
-    _$ApiApiimagesGetCollection200Response _$result;
+  _$ApiImagesGetCollection200Response _build() {
+    _$ApiImagesGetCollection200Response _$result;
     try {
       _$result = _$v ??
-          new _$ApiApiimagesGetCollection200Response._(
+          new _$ApiImagesGetCollection200Response._(
             member: member.build(),
             totalItems: totalItems,
             view: _view?.build(),
@@ -153,9 +152,7 @@ class ApiApiimagesGetCollection200ResponseBuilder
         _search?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'ApiApiimagesGetCollection200Response',
-            _$failedField,
-            e.toString());
+            r'ApiImagesGetCollection200Response', _$failedField, e.toString());
       }
       rethrow;
     }

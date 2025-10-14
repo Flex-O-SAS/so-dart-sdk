@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_context.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -15,8 +15,8 @@ part 'error_jsonld.g.dart';
 /// * [atContext] 
 /// * [atId] 
 /// * [atType] 
-/// * [title] 
-/// * [detail] 
+/// * [title] - A short, human-readable summary of the problem.
+/// * [detail] - A human-readable explanation specific to this occurrence of the problem.
 /// * [status] 
 /// * [instance] 
 /// * [type] - A URI reference that identifies the problem type
@@ -24,7 +24,7 @@ part 'error_jsonld.g.dart';
 @BuiltValue()
 abstract class ErrorJsonld implements Built<ErrorJsonld, ErrorJsonldBuilder> {
   @BuiltValueField(wireName: r'@context')
-  BrandingSettingJsonldContext? get atContext;
+  BrandingSettingJsonldBrandingSettingReadContext? get atContext;
 
   @BuiltValueField(wireName: r'@id')
   String? get atId;
@@ -32,9 +32,11 @@ abstract class ErrorJsonld implements Built<ErrorJsonld, ErrorJsonldBuilder> {
   @BuiltValueField(wireName: r'@type')
   String? get atType;
 
+  /// A short, human-readable summary of the problem.
   @BuiltValueField(wireName: r'title')
   String? get title;
 
+  /// A human-readable explanation specific to this occurrence of the problem.
   @BuiltValueField(wireName: r'detail')
   String? get detail;
 
@@ -79,7 +81,7 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(BrandingSettingJsonldContext),
+        specifiedType: const FullType(BrandingSettingJsonldBrandingSettingReadContext),
       );
     }
     if (object.atId != null) {
@@ -100,14 +102,14 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
       yield r'title';
       yield serializers.serialize(
         object.title,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.detail != null) {
       yield r'detail';
       yield serializers.serialize(
         object.detail,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.status != null) {
@@ -164,8 +166,8 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BrandingSettingJsonldContext),
-          ) as BrandingSettingJsonldContext;
+            specifiedType: const FullType(BrandingSettingJsonldBrandingSettingReadContext),
+          ) as BrandingSettingJsonldBrandingSettingReadContext;
           result.atContext.replace(valueDes);
           break;
         case r'@id':
@@ -185,17 +187,15 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
         case r'title':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.title = valueDes;
           break;
         case r'detail':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.detail = valueDes;
           break;
         case r'status':

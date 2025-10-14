@@ -3,14 +3,14 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_search_mapping_inner.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/media_service/model/api_apidocuments_get_collection200_response_search_mapping_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_apidocuments_get_collection200_response_search.g.dart';
+part 'api_documents_get_collection200_response_search.g.dart';
 
-/// ApiApidocumentsGetCollection200ResponseSearch
+/// ApiDocumentsGetCollection200ResponseSearch
 ///
 /// Properties:
 /// * [atType] 
@@ -18,7 +18,7 @@ part 'api_apidocuments_get_collection200_response_search.g.dart';
 /// * [variableRepresentation] 
 /// * [mapping] 
 @BuiltValue()
-abstract class ApiApidocumentsGetCollection200ResponseSearch implements Built<ApiApidocumentsGetCollection200ResponseSearch, ApiApidocumentsGetCollection200ResponseSearchBuilder> {
+abstract class ApiDocumentsGetCollection200ResponseSearch implements Built<ApiDocumentsGetCollection200ResponseSearch, ApiDocumentsGetCollection200ResponseSearchBuilder> {
   @BuiltValueField(wireName: r'@type')
   String? get atType;
 
@@ -29,29 +29,29 @@ abstract class ApiApidocumentsGetCollection200ResponseSearch implements Built<Ap
   String? get variableRepresentation;
 
   @BuiltValueField(wireName: r'mapping')
-  BuiltList<ApiApidocumentsGetCollection200ResponseSearchMappingInner>? get mapping;
+  BuiltList<ApiDocumentsGetCollection200ResponseSearchMappingInner>? get mapping;
 
-  ApiApidocumentsGetCollection200ResponseSearch._();
+  ApiDocumentsGetCollection200ResponseSearch._();
 
-  factory ApiApidocumentsGetCollection200ResponseSearch([void updates(ApiApidocumentsGetCollection200ResponseSearchBuilder b)]) = _$ApiApidocumentsGetCollection200ResponseSearch;
+  factory ApiDocumentsGetCollection200ResponseSearch([void updates(ApiDocumentsGetCollection200ResponseSearchBuilder b)]) = _$ApiDocumentsGetCollection200ResponseSearch;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiApidocumentsGetCollection200ResponseSearchBuilder b) => b;
+  static void _defaults(ApiDocumentsGetCollection200ResponseSearchBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiApidocumentsGetCollection200ResponseSearch> get serializer => _$ApiApidocumentsGetCollection200ResponseSearchSerializer();
+  static Serializer<ApiDocumentsGetCollection200ResponseSearch> get serializer => _$ApiDocumentsGetCollection200ResponseSearchSerializer();
 }
 
-class _$ApiApidocumentsGetCollection200ResponseSearchSerializer implements PrimitiveSerializer<ApiApidocumentsGetCollection200ResponseSearch> {
+class _$ApiDocumentsGetCollection200ResponseSearchSerializer implements PrimitiveSerializer<ApiDocumentsGetCollection200ResponseSearch> {
   @override
-  final Iterable<Type> types = const [ApiApidocumentsGetCollection200ResponseSearch, _$ApiApidocumentsGetCollection200ResponseSearch];
+  final Iterable<Type> types = const [ApiDocumentsGetCollection200ResponseSearch, _$ApiDocumentsGetCollection200ResponseSearch];
 
   @override
-  final String wireName = r'ApiApidocumentsGetCollection200ResponseSearch';
+  final String wireName = r'ApiDocumentsGetCollection200ResponseSearch';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiApidocumentsGetCollection200ResponseSearch object, {
+    ApiDocumentsGetCollection200ResponseSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atType != null) {
@@ -79,7 +79,7 @@ class _$ApiApidocumentsGetCollection200ResponseSearchSerializer implements Primi
       yield r'mapping';
       yield serializers.serialize(
         object.mapping,
-        specifiedType: const FullType(BuiltList, [FullType(ApiApidocumentsGetCollection200ResponseSearchMappingInner)]),
+        specifiedType: const FullType(BuiltList, [FullType(ApiDocumentsGetCollection200ResponseSearchMappingInner)]),
       );
     }
   }
@@ -87,7 +87,7 @@ class _$ApiApidocumentsGetCollection200ResponseSearchSerializer implements Primi
   @override
   Object serialize(
     Serializers serializers,
-    ApiApidocumentsGetCollection200ResponseSearch object, {
+    ApiDocumentsGetCollection200ResponseSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -98,7 +98,7 @@ class _$ApiApidocumentsGetCollection200ResponseSearchSerializer implements Primi
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiApidocumentsGetCollection200ResponseSearchBuilder result,
+    required ApiDocumentsGetCollection200ResponseSearchBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -129,8 +129,8 @@ class _$ApiApidocumentsGetCollection200ResponseSearchSerializer implements Primi
         case r'mapping':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(ApiApidocumentsGetCollection200ResponseSearchMappingInner)]),
-          ) as BuiltList<ApiApidocumentsGetCollection200ResponseSearchMappingInner>;
+            specifiedType: const FullType(BuiltList, [FullType(ApiDocumentsGetCollection200ResponseSearchMappingInner)]),
+          ) as BuiltList<ApiDocumentsGetCollection200ResponseSearchMappingInner>;
           result.mapping.replace(valueDes);
           break;
         default:
@@ -142,12 +142,12 @@ class _$ApiApidocumentsGetCollection200ResponseSearchSerializer implements Primi
   }
 
   @override
-  ApiApidocumentsGetCollection200ResponseSearch deserialize(
+  ApiDocumentsGetCollection200ResponseSearch deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiApidocumentsGetCollection200ResponseSearchBuilder();
+    final result = ApiDocumentsGetCollection200ResponseSearchBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

@@ -6,16 +6,93 @@ part of 'notification_jsonld_notification_read.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const NotificationJsonldNotificationReadStatusEnum
+    _$notificationJsonldNotificationReadStatusEnum_pending =
+    const NotificationJsonldNotificationReadStatusEnum._('pending');
+const NotificationJsonldNotificationReadStatusEnum
+    _$notificationJsonldNotificationReadStatusEnum_processing =
+    const NotificationJsonldNotificationReadStatusEnum._('processing');
+const NotificationJsonldNotificationReadStatusEnum
+    _$notificationJsonldNotificationReadStatusEnum_done =
+    const NotificationJsonldNotificationReadStatusEnum._('done');
+const NotificationJsonldNotificationReadStatusEnum
+    _$notificationJsonldNotificationReadStatusEnum_failed =
+    const NotificationJsonldNotificationReadStatusEnum._('failed');
+
+NotificationJsonldNotificationReadStatusEnum
+    _$notificationJsonldNotificationReadStatusEnumValueOf(String name) {
+  switch (name) {
+    case 'pending':
+      return _$notificationJsonldNotificationReadStatusEnum_pending;
+    case 'processing':
+      return _$notificationJsonldNotificationReadStatusEnum_processing;
+    case 'done':
+      return _$notificationJsonldNotificationReadStatusEnum_done;
+    case 'failed':
+      return _$notificationJsonldNotificationReadStatusEnum_failed;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<NotificationJsonldNotificationReadStatusEnum>
+    _$notificationJsonldNotificationReadStatusEnumValues = new BuiltSet<
+        NotificationJsonldNotificationReadStatusEnum>(const <NotificationJsonldNotificationReadStatusEnum>[
+  _$notificationJsonldNotificationReadStatusEnum_pending,
+  _$notificationJsonldNotificationReadStatusEnum_processing,
+  _$notificationJsonldNotificationReadStatusEnum_done,
+  _$notificationJsonldNotificationReadStatusEnum_failed,
+]);
+
+Serializer<NotificationJsonldNotificationReadStatusEnum>
+    _$notificationJsonldNotificationReadStatusEnumSerializer =
+    new _$NotificationJsonldNotificationReadStatusEnumSerializer();
+
+class _$NotificationJsonldNotificationReadStatusEnumSerializer
+    implements
+        PrimitiveSerializer<NotificationJsonldNotificationReadStatusEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'pending': 'pending',
+    'processing': 'processing',
+    'done': 'done',
+    'failed': 'failed',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'pending': 'pending',
+    'processing': 'processing',
+    'done': 'done',
+    'failed': 'failed',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    NotificationJsonldNotificationReadStatusEnum
+  ];
+  @override
+  final String wireName = 'NotificationJsonldNotificationReadStatusEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          NotificationJsonldNotificationReadStatusEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  NotificationJsonldNotificationReadStatusEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      NotificationJsonldNotificationReadStatusEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$NotificationJsonldNotificationRead
     extends NotificationJsonldNotificationRead {
   @override
-  final BrandingSettingJsonldContext? atContext;
+  final BrandingSettingJsonldBrandingSettingReadContext? atContext;
   @override
   final String? atId;
   @override
   final String? atType;
-  @override
-  final String subscriber;
   @override
   final JsonObject payload;
   @override
@@ -24,6 +101,12 @@ class _$NotificationJsonldNotificationRead
   final String? sentAt;
   @override
   final DateTime? createdAt;
+  @override
+  final NotificationJsonldNotificationReadStatusEnum? status;
+  @override
+  final BuiltSet<String>? channels;
+  @override
+  final BuiltList<String>? subscribers;
 
   factory _$NotificationJsonldNotificationRead(
           [void Function(NotificationJsonldNotificationReadBuilder)?
@@ -35,14 +118,14 @@ class _$NotificationJsonldNotificationRead
       {this.atContext,
       this.atId,
       this.atType,
-      required this.subscriber,
       required this.payload,
       this.metadata,
       this.sentAt,
-      this.createdAt})
+      this.createdAt,
+      this.status,
+      this.channels,
+      this.subscribers})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        subscriber, r'NotificationJsonldNotificationRead', 'subscriber');
     BuiltValueNullFieldError.checkNotNull(
         payload, r'NotificationJsonldNotificationRead', 'payload');
   }
@@ -63,11 +146,13 @@ class _$NotificationJsonldNotificationRead
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
-        subscriber == other.subscriber &&
         payload == other.payload &&
         metadata == other.metadata &&
         sentAt == other.sentAt &&
-        createdAt == other.createdAt;
+        createdAt == other.createdAt &&
+        status == other.status &&
+        channels == other.channels &&
+        subscribers == other.subscribers;
   }
 
   @override
@@ -76,11 +161,13 @@ class _$NotificationJsonldNotificationRead
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, subscriber.hashCode);
     _$hash = $jc(_$hash, payload.hashCode);
     _$hash = $jc(_$hash, metadata.hashCode);
     _$hash = $jc(_$hash, sentAt.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, channels.hashCode);
+    _$hash = $jc(_$hash, subscribers.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -91,11 +178,13 @@ class _$NotificationJsonldNotificationRead
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
-          ..add('subscriber', subscriber)
           ..add('payload', payload)
           ..add('metadata', metadata)
           ..add('sentAt', sentAt)
-          ..add('createdAt', createdAt))
+          ..add('createdAt', createdAt)
+          ..add('status', status)
+          ..add('channels', channels)
+          ..add('subscribers', subscribers))
         .toString();
   }
 }
@@ -106,10 +195,12 @@ class NotificationJsonldNotificationReadBuilder
             NotificationJsonldNotificationReadBuilder> {
   _$NotificationJsonldNotificationRead? _$v;
 
-  BrandingSettingJsonldContextBuilder? _atContext;
-  BrandingSettingJsonldContextBuilder get atContext =>
-      _$this._atContext ??= new BrandingSettingJsonldContextBuilder();
-  set atContext(BrandingSettingJsonldContextBuilder? atContext) =>
+  BrandingSettingJsonldBrandingSettingReadContextBuilder? _atContext;
+  BrandingSettingJsonldBrandingSettingReadContextBuilder get atContext =>
+      _$this._atContext ??=
+          new BrandingSettingJsonldBrandingSettingReadContextBuilder();
+  set atContext(
+          BrandingSettingJsonldBrandingSettingReadContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
@@ -119,10 +210,6 @@ class NotificationJsonldNotificationReadBuilder
   String? _atType;
   String? get atType => _$this._atType;
   set atType(String? atType) => _$this._atType = atType;
-
-  String? _subscriber;
-  String? get subscriber => _$this._subscriber;
-  set subscriber(String? subscriber) => _$this._subscriber = subscriber;
 
   JsonObject? _payload;
   JsonObject? get payload => _$this._payload;
@@ -140,6 +227,22 @@ class NotificationJsonldNotificationReadBuilder
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
+  NotificationJsonldNotificationReadStatusEnum? _status;
+  NotificationJsonldNotificationReadStatusEnum? get status => _$this._status;
+  set status(NotificationJsonldNotificationReadStatusEnum? status) =>
+      _$this._status = status;
+
+  SetBuilder<String>? _channels;
+  SetBuilder<String> get channels =>
+      _$this._channels ??= new SetBuilder<String>();
+  set channels(SetBuilder<String>? channels) => _$this._channels = channels;
+
+  ListBuilder<String>? _subscribers;
+  ListBuilder<String> get subscribers =>
+      _$this._subscribers ??= new ListBuilder<String>();
+  set subscribers(ListBuilder<String>? subscribers) =>
+      _$this._subscribers = subscribers;
+
   NotificationJsonldNotificationReadBuilder() {
     NotificationJsonldNotificationRead._defaults(this);
   }
@@ -150,11 +253,13 @@ class NotificationJsonldNotificationReadBuilder
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _subscriber = $v.subscriber;
       _payload = $v.payload;
       _metadata = $v.metadata;
       _sentAt = $v.sentAt;
       _createdAt = $v.createdAt;
+      _status = $v.status;
+      _channels = $v.channels?.toBuilder();
+      _subscribers = $v.subscribers?.toBuilder();
       _$v = null;
     }
     return this;
@@ -183,19 +288,25 @@ class NotificationJsonldNotificationReadBuilder
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
-            subscriber: BuiltValueNullFieldError.checkNotNull(subscriber,
-                r'NotificationJsonldNotificationRead', 'subscriber'),
             payload: BuiltValueNullFieldError.checkNotNull(
                 payload, r'NotificationJsonldNotificationRead', 'payload'),
             metadata: metadata,
             sentAt: sentAt,
             createdAt: createdAt,
+            status: status,
+            channels: _channels?.build(),
+            subscribers: _subscribers?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'atContext';
         _atContext?.build();
+
+        _$failedField = 'channels';
+        _channels?.build();
+        _$failedField = 'subscribers';
+        _subscribers?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'NotificationJsonldNotificationRead', _$failedField, e.toString());

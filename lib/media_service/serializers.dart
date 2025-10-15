@@ -22,7 +22,6 @@ import 'package:so_dart_sdk/media_service/model/api_images_get_collection200_res
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read.dart';
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context.dart';
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context_one_of.dart';
-import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_metadata.dart';
 import 'package:so_dart_sdk/media_service/model/image_jsonld_media_read.dart';
 
 part 'serializers.g.dart';
@@ -36,7 +35,6 @@ part 'serializers.g.dart';
   DocumentJsonldMediaRead,
   DocumentJsonldMediaReadContext,
   DocumentJsonldMediaReadContextOneOf,
-  DocumentJsonldMediaReadMetadata,
   ImageJsonldMediaRead,
 ])
 Serializers serializers = (_$serializers.toBuilder()

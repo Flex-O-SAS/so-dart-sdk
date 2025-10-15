@@ -16,7 +16,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(DocumentJsonldMediaReadContext.serializer)
       ..add(DocumentJsonldMediaReadContextOneOf.serializer)
       ..add(DocumentJsonldMediaReadContextOneOfHydraEnum.serializer)
-      ..add(DocumentJsonldMediaReadMetadata.serializer)
       ..add(ImageJsonldMediaRead.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [

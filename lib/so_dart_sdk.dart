@@ -266,7 +266,6 @@ export 'package:so_dart_sdk/media_service/model/api_images_get_collection200_res
 export 'package:so_dart_sdk/media_service/model/document_jsonld_media_read.dart';
 export 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context.dart';
 export 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context_one_of.dart';
-export 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_metadata.dart';
 export 'package:so_dart_sdk/media_service/model/image_jsonld_media_read.dart';
 
 //

@@ -21,6 +21,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiIndividualsGetCollection200Response.serializer)
       ..add(ApiInvoicesGetCollection200Response.serializer)
       ..add(ApiOpportunitiesGetCollection200Response.serializer)
+      ..add(ApiServiceReservationGetCollection200Response.serializer)
       ..add(ApiServiceTypeGetCollection200Response.serializer)
       ..add(ApiStaffGetCollection200Response.serializer)
       ..add(CenterJsonldCenterSearch.serializer)
@@ -57,6 +58,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(IndividualJsonldIndividualSearch.serializer)
       ..add(InvoiceJsonldInvoiceSearch.serializer)
       ..add(OpportunityJsonldOpportunitySearch.serializer)
+      ..add(SavedLabelJsonldReservationRead.serializer)
+      ..add(ServiceCenterJsonldReservationRead.serializer)
+      ..add(ServiceJsonldReservationRead.serializer)
       ..add(ServiceTypeGuaranteesCalculationRulesWrite.serializer)
       ..add(ServiceTypeJsonldGuaranteesCalculationRulesSearch.serializer)
       ..add(ServiceTypeJsonldGuaranteesCalculationRulesWrite.serializer)
@@ -156,6 +160,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(OpportunityJsonldOpportunitySearch)]),
           () => new ListBuilder<OpportunityJsonldOpportunitySearch>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(SavedLabelJsonldReservationRead)]),
+          () => new ListBuilder<SavedLabelJsonldReservationRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(ServiceCenterJsonldReservationRead)]),
+          () => new ListBuilder<ServiceCenterJsonldReservationRead>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ServiceJsonldReservationRead)]),
+          () => new ListBuilder<ServiceJsonldReservationRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ServiceTypeJsonldServiceTypeSearch)]),

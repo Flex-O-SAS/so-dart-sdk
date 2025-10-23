@@ -19,6 +19,7 @@ import 'package:so_dart_sdk/backend/api/happening_api.dart';
 import 'package:so_dart_sdk/backend/api/individual_api.dart';
 import 'package:so_dart_sdk/backend/api/invoice_api.dart';
 import 'package:so_dart_sdk/backend/api/opportunity_api.dart';
+import 'package:so_dart_sdk/backend/api/service_api.dart';
 import 'package:so_dart_sdk/backend/api/service_type_api.dart';
 import 'package:so_dart_sdk/backend/api/staff_api.dart';
 
@@ -134,6 +135,12 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   OpportunityApi getOpportunityApi() {
     return OpportunityApi(dio, serializers);
+  }
+
+  /// Get ServiceApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ServiceApi getServiceApi() {
+    return ServiceApi(dio, serializers);
   }
 
   /// Get ServiceTypeApi instance, base route and serializer can be overridden by a given but be careful,

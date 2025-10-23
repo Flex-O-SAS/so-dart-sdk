@@ -20,6 +20,7 @@ export 'package:so_dart_sdk/backend/api/happening_api.dart';
 export 'package:so_dart_sdk/backend/api/individual_api.dart';
 export 'package:so_dart_sdk/backend/api/invoice_api.dart';
 export 'package:so_dart_sdk/backend/api/opportunity_api.dart';
+export 'package:so_dart_sdk/backend/api/service_api.dart';
 export 'package:so_dart_sdk/backend/api/service_type_api.dart';
 export 'package:so_dart_sdk/backend/api/staff_api.dart';
 
@@ -37,6 +38,7 @@ export 'package:so_dart_sdk/backend/model/api_happening_get_collection200_respon
 export 'package:so_dart_sdk/backend/model/api_individuals_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_invoices_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_opportunities_get_collection200_response.dart';
+export 'package:so_dart_sdk/backend/model/api_service_reservation_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_service_type_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
@@ -69,6 +71,9 @@ export 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_en
 export 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
 export 'package:so_dart_sdk/backend/model/invoice_jsonld_invoice_search.dart';
 export 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_search.dart';
+export 'package:so_dart_sdk/backend/model/saved_label_jsonld_reservation_read.dart';
+export 'package:so_dart_sdk/backend/model/service_center_jsonld_reservation_read.dart';
+export 'package:so_dart_sdk/backend/model/service_jsonld_reservation_read.dart';
 export 'package:so_dart_sdk/backend/model/service_type_guarantees_calculation_rules_write.dart';
 export 'package:so_dart_sdk/backend/model/service_type_jsonld_guarantees_calculation_rules_search.dart';
 export 'package:so_dart_sdk/backend/model/service_type_jsonld_guarantees_calculation_rules_write.dart';

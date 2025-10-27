@@ -10,15 +10,20 @@ import 'package:so_dart_sdk/backend/auth/basic_auth.dart';
 import 'package:so_dart_sdk/backend/auth/bearer_auth.dart';
 import 'package:so_dart_sdk/backend/auth/oauth.dart';
 import 'package:so_dart_sdk/backend/api/center_api.dart';
+import 'package:so_dart_sdk/backend/api/commitment_api.dart';
 import 'package:so_dart_sdk/backend/api/company_api.dart';
 import 'package:so_dart_sdk/backend/api/contract_api.dart';
 import 'package:so_dart_sdk/backend/api/credit_api.dart';
 import 'package:so_dart_sdk/backend/api/enterprise_api.dart';
+import 'package:so_dart_sdk/backend/api/expression_api.dart';
 import 'package:so_dart_sdk/backend/api/guarantees_calculation_rules_api.dart';
 import 'package:so_dart_sdk/backend/api/happening_api.dart';
 import 'package:so_dart_sdk/backend/api/individual_api.dart';
 import 'package:so_dart_sdk/backend/api/invoice_api.dart';
+import 'package:so_dart_sdk/backend/api/language_api.dart';
 import 'package:so_dart_sdk/backend/api/opportunity_api.dart';
+import 'package:so_dart_sdk/backend/api/rule_api.dart';
+import 'package:so_dart_sdk/backend/api/rule_variable_api.dart';
 import 'package:so_dart_sdk/backend/api/service_api.dart';
 import 'package:so_dart_sdk/backend/api/service_type_api.dart';
 import 'package:so_dart_sdk/backend/api/staff_api.dart';
@@ -83,6 +88,12 @@ class SoDartSdk {
     return CenterApi(dio, serializers);
   }
 
+  /// Get CommitmentApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  CommitmentApi getCommitmentApi() {
+    return CommitmentApi(dio, serializers);
+  }
+
   /// Get CompanyApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   CompanyApi getCompanyApi() {
@@ -105,6 +116,12 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   EnterpriseApi getEnterpriseApi() {
     return EnterpriseApi(dio, serializers);
+  }
+
+  /// Get ExpressionApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ExpressionApi getExpressionApi() {
+    return ExpressionApi(dio, serializers);
   }
 
   /// Get GuaranteesCalculationRulesApi instance, base route and serializer can be overridden by a given but be careful,
@@ -131,10 +148,28 @@ class SoDartSdk {
     return InvoiceApi(dio, serializers);
   }
 
+  /// Get LanguageApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  LanguageApi getLanguageApi() {
+    return LanguageApi(dio, serializers);
+  }
+
   /// Get OpportunityApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   OpportunityApi getOpportunityApi() {
     return OpportunityApi(dio, serializers);
+  }
+
+  /// Get RuleApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  RuleApi getRuleApi() {
+    return RuleApi(dio, serializers);
+  }
+
+  /// Get RuleVariableApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  RuleVariableApi getRuleVariableApi() {
+    return RuleVariableApi(dio, serializers);
   }
 
   /// Get ServiceApi instance, base route and serializer can be overridden by a given but be careful,

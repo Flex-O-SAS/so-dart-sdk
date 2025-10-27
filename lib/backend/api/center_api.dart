@@ -12,7 +12,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_public_get_collection200_response.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_read_lead.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
 
@@ -256,9 +256,9 @@ class CenterApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CenterJsonldPublicCenterRead] as data
+  /// Returns a [Future] containing a [Response] with a [CenterJsonldPublicCenterReadOpportunityReadLead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CenterJsonldPublicCenterRead>> apiCentersPublicGetItem({ 
+  Future<Response<CenterJsonldPublicCenterReadOpportunityReadLead>> apiCentersPublicGetItem({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -288,14 +288,14 @@ class CenterApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CenterJsonldPublicCenterRead? _responseData;
+    CenterJsonldPublicCenterReadOpportunityReadLead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(CenterJsonldPublicCenterRead),
-      ) as CenterJsonldPublicCenterRead;
+        specifiedType: const FullType(CenterJsonldPublicCenterReadOpportunityReadLead),
+      ) as CenterJsonldPublicCenterReadOpportunityReadLead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -307,7 +307,7 @@ class CenterApi {
       );
     }
 
-    return Response<CenterJsonldPublicCenterRead>(
+    return Response<CenterJsonldPublicCenterReadOpportunityReadLead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -3,63 +3,43 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_assets_inner.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'center_jsonld_public_center_read.g.dart';
+part 'enterprise_jsonld_opportunity_create_lead.g.dart';
 
 /// 
 ///
 /// Properties:
-/// * [atId] 
-/// * [atType] 
-/// * [atContext] 
 /// * [name] 
+/// * [type] 
 /// * [email] 
-/// * [phone] 
-/// * [openingHour] 
-/// * [closureHour] 
-/// * [openingDate] 
-/// * [assets] 
+/// * [mobile] 
+/// * [mainCenter] 
+/// * [language] 
 /// * [address] 
 /// * [zipcode] 
 /// * [city] 
 /// * [country] 
-/// * [id] 
 @BuiltValue()
-abstract class CenterJsonldPublicCenterRead implements Built<CenterJsonldPublicCenterRead, CenterJsonldPublicCenterReadBuilder> {
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
-
+abstract class EnterpriseJsonldOpportunityCreateLead implements Built<EnterpriseJsonldOpportunityCreateLead, EnterpriseJsonldOpportunityCreateLeadBuilder> {
   @BuiltValueField(wireName: r'name')
   String? get name;
+
+  @BuiltValueField(wireName: r'type')
+  String? get type;
 
   @BuiltValueField(wireName: r'email')
   String? get email;
 
-  @BuiltValueField(wireName: r'phone')
-  String? get phone;
+  @BuiltValueField(wireName: r'mobile')
+  String? get mobile;
 
-  @BuiltValueField(wireName: r'openingHour')
-  String? get openingHour;
+  @BuiltValueField(wireName: r'mainCenter')
+  String? get mainCenter;
 
-  @BuiltValueField(wireName: r'closureHour')
-  String? get closureHour;
-
-  @BuiltValueField(wireName: r'openingDate')
-  String? get openingDate;
-
-  @BuiltValueField(wireName: r'assets')
-  BuiltList<CenterJsonldPublicCenterReadAssetsInner>? get assets;
+  @BuiltValueField(wireName: r'language')
+  String? get language;
 
   @BuiltValueField(wireName: r'address')
   String? get address;
@@ -73,58 +53,41 @@ abstract class CenterJsonldPublicCenterRead implements Built<CenterJsonldPublicC
   @BuiltValueField(wireName: r'country')
   String? get country;
 
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+  EnterpriseJsonldOpportunityCreateLead._();
 
-  CenterJsonldPublicCenterRead._();
-
-  factory CenterJsonldPublicCenterRead([void updates(CenterJsonldPublicCenterReadBuilder b)]) = _$CenterJsonldPublicCenterRead;
+  factory EnterpriseJsonldOpportunityCreateLead([void updates(EnterpriseJsonldOpportunityCreateLeadBuilder b)]) = _$EnterpriseJsonldOpportunityCreateLead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CenterJsonldPublicCenterReadBuilder b) => b;
+  static void _defaults(EnterpriseJsonldOpportunityCreateLeadBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CenterJsonldPublicCenterRead> get serializer => _$CenterJsonldPublicCenterReadSerializer();
+  static Serializer<EnterpriseJsonldOpportunityCreateLead> get serializer => _$EnterpriseJsonldOpportunityCreateLeadSerializer();
 }
 
-class _$CenterJsonldPublicCenterReadSerializer implements PrimitiveSerializer<CenterJsonldPublicCenterRead> {
+class _$EnterpriseJsonldOpportunityCreateLeadSerializer implements PrimitiveSerializer<EnterpriseJsonldOpportunityCreateLead> {
   @override
-  final Iterable<Type> types = const [CenterJsonldPublicCenterRead, _$CenterJsonldPublicCenterRead];
+  final Iterable<Type> types = const [EnterpriseJsonldOpportunityCreateLead, _$EnterpriseJsonldOpportunityCreateLead];
 
   @override
-  final String wireName = r'CenterJsonldPublicCenterRead';
+  final String wireName = r'EnterpriseJsonldOpportunityCreateLead';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    CenterJsonldPublicCenterRead object, {
+    EnterpriseJsonldOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
         object.name,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.type != null) {
+      yield r'type';
+      yield serializers.serialize(
+        object.type,
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.email != null) {
@@ -134,39 +97,25 @@ class _$CenterJsonldPublicCenterReadSerializer implements PrimitiveSerializer<Ce
         specifiedType: const FullType.nullable(String),
       );
     }
-    if (object.phone != null) {
-      yield r'phone';
+    if (object.mobile != null) {
+      yield r'mobile';
       yield serializers.serialize(
-        object.phone,
+        object.mobile,
         specifiedType: const FullType.nullable(String),
       );
     }
-    if (object.openingHour != null) {
-      yield r'openingHour';
+    if (object.mainCenter != null) {
+      yield r'mainCenter';
       yield serializers.serialize(
-        object.openingHour,
+        object.mainCenter,
         specifiedType: const FullType.nullable(String),
       );
     }
-    if (object.closureHour != null) {
-      yield r'closureHour';
+    if (object.language != null) {
+      yield r'language';
       yield serializers.serialize(
-        object.closureHour,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.openingDate != null) {
-      yield r'openingDate';
-      yield serializers.serialize(
-        object.openingDate,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.assets != null) {
-      yield r'assets';
-      yield serializers.serialize(
-        object.assets,
-        specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadAssetsInner)]),
+        object.language,
+        specifiedType: const FullType(String),
       );
     }
     if (object.address != null) {
@@ -197,19 +146,12 @@ class _$CenterJsonldPublicCenterReadSerializer implements PrimitiveSerializer<Ce
         specifiedType: const FullType.nullable(String),
       );
     }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    CenterJsonldPublicCenterRead object, {
+    EnterpriseJsonldOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -220,40 +162,27 @@ class _$CenterJsonldPublicCenterReadSerializer implements PrimitiveSerializer<Ce
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required CenterJsonldPublicCenterReadBuilder result,
+    required EnterpriseJsonldOpportunityCreateLeadBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.type = valueDes;
           break;
         case r'email':
           final valueDes = serializers.deserialize(
@@ -263,44 +192,28 @@ class _$CenterJsonldPublicCenterReadSerializer implements PrimitiveSerializer<Ce
           if (valueDes == null) continue;
           result.email = valueDes;
           break;
-        case r'phone':
+        case r'mobile':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType.nullable(String),
           ) as String?;
           if (valueDes == null) continue;
-          result.phone = valueDes;
+          result.mobile = valueDes;
           break;
-        case r'openingHour':
+        case r'mainCenter':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType.nullable(String),
           ) as String?;
           if (valueDes == null) continue;
-          result.openingHour = valueDes;
+          result.mainCenter = valueDes;
           break;
-        case r'closureHour':
+        case r'language':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.closureHour = valueDes;
-          break;
-        case r'openingDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.openingDate = valueDes;
-          break;
-        case r'assets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadAssetsInner)]),
-          ) as BuiltList<CenterJsonldPublicCenterReadAssetsInner>;
-          result.assets.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.language = valueDes;
           break;
         case r'address':
           final valueDes = serializers.deserialize(
@@ -334,13 +247,6 @@ class _$CenterJsonldPublicCenterReadSerializer implements PrimitiveSerializer<Ce
           if (valueDes == null) continue;
           result.country = valueDes;
           break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -350,12 +256,12 @@ class _$CenterJsonldPublicCenterReadSerializer implements PrimitiveSerializer<Ce
   }
 
   @override
-  CenterJsonldPublicCenterRead deserialize(
+  EnterpriseJsonldOpportunityCreateLead deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = CenterJsonldPublicCenterReadBuilder();
+    final result = EnterpriseJsonldOpportunityCreateLeadBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

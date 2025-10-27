@@ -23,11 +23,14 @@ import 'package:so_dart_sdk/backend/model/api_companies_get_collection200_respon
 import 'package:so_dart_sdk/backend/model/api_contracts_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_credits_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_expressions_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_guarantees_calculation_rules_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_happening_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_individuals_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_invoices_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_opportunities_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_rule_variables_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_rules_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_service_reservation_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_service_type_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
@@ -35,8 +38,9 @@ import 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context_one_of.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_assets_inner.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_read_lead.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_read_lead_assets_inner.dart';
+import 'package:so_dart_sdk/backend/model/commitment_jsonld_public_commitment_read_opportunity_read_lead.dart';
 import 'package:so_dart_sdk/backend/model/company_jsonld_company_search.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_json_violations_inner.dart';
@@ -45,8 +49,16 @@ import 'package:so_dart_sdk/backend/model/contract_jsonld_contract_search.dart';
 import 'package:so_dart_sdk/backend/model/credit_jsonld_credit_search.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
+import 'package:so_dart_sdk/backend/model/enterprise_jsonld_opportunity_create_lead.dart';
+import 'package:so_dart_sdk/backend/model/enterprise_jsonld_opportunity_read_lead.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/expression_expression_write.dart';
+import 'package:so_dart_sdk/backend/model/expression_jsonld_expression_read.dart';
+import 'package:so_dart_sdk/backend/model/expression_jsonld_expression_write.dart';
+import 'package:so_dart_sdk/backend/model/expression_jsonld_rule_read.dart';
+import 'package:so_dart_sdk/backend/model/expression_jsonld_rule_write.dart';
+import 'package:so_dart_sdk/backend/model/expression_rule_write.dart';
 import 'package:so_dart_sdk/backend/model/guarantees_calculation_rules_guarantees_calculation_rules_write.dart';
 import 'package:so_dart_sdk/backend/model/guarantees_calculation_rules_jsonld_guarantees_calculation_rules_search.dart';
 import 'package:so_dart_sdk/backend/model/guarantees_calculation_rules_jsonld_guarantees_calculation_rules_write.dart';
@@ -59,8 +71,24 @@ import 'package:so_dart_sdk/backend/model/happening_staff_feed_back_jsonld_happe
 import 'package:so_dart_sdk/backend/model/individual_individual_write.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
+import 'package:so_dart_sdk/backend/model/individual_jsonld_opportunity_create_lead.dart';
+import 'package:so_dart_sdk/backend/model/individual_jsonld_opportunity_read_lead.dart';
 import 'package:so_dart_sdk/backend/model/invoice_jsonld_invoice_search.dart';
+import 'package:so_dart_sdk/backend/model/language_jsonld_public_language_read_opportunity_read_lead.dart';
+import 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_create_lead.dart';
+import 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_read_lead.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_search.dart';
+import 'package:so_dart_sdk/backend/model/rule_execute_booking_dto_jsonld_rule_execute_booking.dart';
+import 'package:so_dart_sdk/backend/model/rule_execute_booking_response_dto_jsonld_rule_execute_booking.dart';
+import 'package:so_dart_sdk/backend/model/rule_execute_booking_response_dto_jsonld_rule_execute_cancel_booking.dart';
+import 'package:so_dart_sdk/backend/model/rule_execute_cancel_booking_dto_jsonld_rule_execute_cancel_booking.dart';
+import 'package:so_dart_sdk/backend/model/rule_expression_write.dart';
+import 'package:so_dart_sdk/backend/model/rule_jsonld_expression_read.dart';
+import 'package:so_dart_sdk/backend/model/rule_jsonld_expression_write.dart';
+import 'package:so_dart_sdk/backend/model/rule_jsonld_rule_read.dart';
+import 'package:so_dart_sdk/backend/model/rule_jsonld_rule_write.dart';
+import 'package:so_dart_sdk/backend/model/rule_rule_write.dart';
+import 'package:so_dart_sdk/backend/model/rule_variable_jsonld_rule_variables_read.dart';
 import 'package:so_dart_sdk/backend/model/saved_label_jsonld_reservation_read.dart';
 import 'package:so_dart_sdk/backend/model/service_center_jsonld_reservation_read.dart';
 import 'package:so_dart_sdk/backend/model/service_jsonld_reservation_read.dart';
@@ -83,11 +111,14 @@ part 'serializers.g.dart';
   ApiContractsGetCollection200Response,
   ApiCreditsGetCollection200Response,
   ApiEnterprisesGetCollection200Response,
+  ApiExpressionsGetCollection200Response,
   ApiGuaranteesCalculationRulesGetCollection200Response,
   ApiHappeningGetCollection200Response,
   ApiIndividualsGetCollection200Response,
   ApiInvoicesGetCollection200Response,
   ApiOpportunitiesGetCollection200Response,
+  ApiRuleVariablesGetCollection200Response,
+  ApiRulesGetCollection200Response,
   ApiServiceReservationGetCollection200Response,
   ApiServiceTypeGetCollection200Response,
   ApiStaffGetCollection200Response,
@@ -95,8 +126,9 @@ part 'serializers.g.dart';
   CenterJsonldHappeningRead,
   CenterJsonldHappeningReadContext,
   CenterJsonldHappeningReadContextOneOf,
-  CenterJsonldPublicCenterRead,
-  CenterJsonldPublicCenterReadAssetsInner,
+  CenterJsonldPublicCenterReadOpportunityReadLead,
+  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner,
+  CommitmentJsonldPublicCommitmentReadOpportunityReadLead,
   CompanyJsonldCompanySearch,
   ConstraintViolationJson,
   ConstraintViolationJsonViolationsInner,
@@ -105,8 +137,16 @@ part 'serializers.g.dart';
   CreditJsonldCreditSearch,
   EnterpriseJsonldEnterpriseSearchEnterpriseRead,
   EnterpriseJsonldIndividualSearch,
+  EnterpriseJsonldOpportunityCreateLead,
+  EnterpriseJsonldOpportunityReadLead,
   Error,
   ErrorJsonld,
+  ExpressionExpressionWrite,
+  ExpressionJsonldExpressionRead,
+  ExpressionJsonldExpressionWrite,
+  ExpressionJsonldRuleRead,
+  ExpressionJsonldRuleWrite,
+  ExpressionRuleWrite,
   GuaranteesCalculationRulesGuaranteesCalculationRulesWrite,
   GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesSearch,
   GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesWrite,
@@ -119,8 +159,24 @@ part 'serializers.g.dart';
   IndividualIndividualWrite,
   IndividualJsonldEnterpriseSearchEnterpriseRead,
   IndividualJsonldIndividualSearch,
+  IndividualJsonldOpportunityCreateLead,
+  IndividualJsonldOpportunityReadLead,
   InvoiceJsonldInvoiceSearch,
+  LanguageJsonldPublicLanguageReadOpportunityReadLead,
+  OpportunityJsonldOpportunityCreateLead,
+  OpportunityJsonldOpportunityReadLead,
   OpportunityJsonldOpportunitySearch,
+  RuleExecuteBookingDtoJsonldRuleExecuteBooking,
+  RuleExecuteBookingResponseDtoJsonldRuleExecuteBooking,
+  RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking,
+  RuleExecuteCancelBookingDtoJsonldRuleExecuteCancelBooking,
+  RuleExpressionWrite,
+  RuleJsonldExpressionRead,
+  RuleJsonldExpressionWrite,
+  RuleJsonldRuleRead,
+  RuleJsonldRuleWrite,
+  RuleRuleWrite,
+  RuleVariableJsonldRuleVariablesRead,
   SavedLabelJsonldReservationRead,
   ServiceCenterJsonldReservationRead,
   ServiceJsonldReservationRead,

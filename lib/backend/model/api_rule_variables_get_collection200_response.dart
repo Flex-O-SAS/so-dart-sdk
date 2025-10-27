@@ -6,13 +6,13 @@
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_view.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_read_lead.dart';
+import 'package:so_dart_sdk/backend/model/rule_variable_jsonld_rule_variables_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_centers_public_get_collection200_response.g.dart';
+part 'api_rule_variables_get_collection200_response.g.dart';
 
-/// ApiCentersPublicGetCollection200Response
+/// ApiRuleVariablesGetCollection200Response
 ///
 /// Properties:
 /// * [member] 
@@ -20,9 +20,9 @@ part 'api_centers_public_get_collection200_response.g.dart';
 /// * [view] 
 /// * [search] 
 @BuiltValue()
-abstract class ApiCentersPublicGetCollection200Response implements Built<ApiCentersPublicGetCollection200Response, ApiCentersPublicGetCollection200ResponseBuilder> {
+abstract class ApiRuleVariablesGetCollection200Response implements Built<ApiRuleVariablesGetCollection200Response, ApiRuleVariablesGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<CenterJsonldPublicCenterReadOpportunityReadLead> get member;
+  BuiltList<RuleVariableJsonldRuleVariablesRead> get member;
 
   @BuiltValueField(wireName: r'totalItems')
   int? get totalItems;
@@ -33,33 +33,33 @@ abstract class ApiCentersPublicGetCollection200Response implements Built<ApiCent
   @BuiltValueField(wireName: r'search')
   ApiCentersGetCollection200ResponseSearch? get search;
 
-  ApiCentersPublicGetCollection200Response._();
+  ApiRuleVariablesGetCollection200Response._();
 
-  factory ApiCentersPublicGetCollection200Response([void updates(ApiCentersPublicGetCollection200ResponseBuilder b)]) = _$ApiCentersPublicGetCollection200Response;
+  factory ApiRuleVariablesGetCollection200Response([void updates(ApiRuleVariablesGetCollection200ResponseBuilder b)]) = _$ApiRuleVariablesGetCollection200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiCentersPublicGetCollection200ResponseBuilder b) => b;
+  static void _defaults(ApiRuleVariablesGetCollection200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiCentersPublicGetCollection200Response> get serializer => _$ApiCentersPublicGetCollection200ResponseSerializer();
+  static Serializer<ApiRuleVariablesGetCollection200Response> get serializer => _$ApiRuleVariablesGetCollection200ResponseSerializer();
 }
 
-class _$ApiCentersPublicGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiCentersPublicGetCollection200Response> {
+class _$ApiRuleVariablesGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiRuleVariablesGetCollection200Response> {
   @override
-  final Iterable<Type> types = const [ApiCentersPublicGetCollection200Response, _$ApiCentersPublicGetCollection200Response];
+  final Iterable<Type> types = const [ApiRuleVariablesGetCollection200Response, _$ApiRuleVariablesGetCollection200Response];
 
   @override
-  final String wireName = r'ApiCentersPublicGetCollection200Response';
+  final String wireName = r'ApiRuleVariablesGetCollection200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiCentersPublicGetCollection200Response object, {
+    ApiRuleVariablesGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadOpportunityReadLead)]),
+      specifiedType: const FullType(BuiltList, [FullType(RuleVariableJsonldRuleVariablesRead)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -87,7 +87,7 @@ class _$ApiCentersPublicGetCollection200ResponseSerializer implements PrimitiveS
   @override
   Object serialize(
     Serializers serializers,
-    ApiCentersPublicGetCollection200Response object, {
+    ApiRuleVariablesGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -98,7 +98,7 @@ class _$ApiCentersPublicGetCollection200ResponseSerializer implements PrimitiveS
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiCentersPublicGetCollection200ResponseBuilder result,
+    required ApiRuleVariablesGetCollection200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -108,8 +108,8 @@ class _$ApiCentersPublicGetCollection200ResponseSerializer implements PrimitiveS
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadOpportunityReadLead)]),
-          ) as BuiltList<CenterJsonldPublicCenterReadOpportunityReadLead>;
+            specifiedType: const FullType(BuiltList, [FullType(RuleVariableJsonldRuleVariablesRead)]),
+          ) as BuiltList<RuleVariableJsonldRuleVariablesRead>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':
@@ -142,12 +142,12 @@ class _$ApiCentersPublicGetCollection200ResponseSerializer implements PrimitiveS
   }
 
   @override
-  ApiCentersPublicGetCollection200Response deserialize(
+  ApiRuleVariablesGetCollection200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiCentersPublicGetCollection200ResponseBuilder();
+    final result = ApiRuleVariablesGetCollection200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

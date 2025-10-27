@@ -16,11 +16,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiContractsGetCollection200Response.serializer)
       ..add(ApiCreditsGetCollection200Response.serializer)
       ..add(ApiEnterprisesGetCollection200Response.serializer)
+      ..add(ApiExpressionsGetCollection200Response.serializer)
       ..add(ApiGuaranteesCalculationRulesGetCollection200Response.serializer)
       ..add(ApiHappeningGetCollection200Response.serializer)
       ..add(ApiIndividualsGetCollection200Response.serializer)
       ..add(ApiInvoicesGetCollection200Response.serializer)
       ..add(ApiOpportunitiesGetCollection200Response.serializer)
+      ..add(ApiRuleVariablesGetCollection200Response.serializer)
+      ..add(ApiRulesGetCollection200Response.serializer)
       ..add(ApiServiceReservationGetCollection200Response.serializer)
       ..add(ApiServiceTypeGetCollection200Response.serializer)
       ..add(ApiStaffGetCollection200Response.serializer)
@@ -29,8 +32,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CenterJsonldHappeningReadContext.serializer)
       ..add(CenterJsonldHappeningReadContextOneOf.serializer)
       ..add(CenterJsonldHappeningReadContextOneOfHydraEnum.serializer)
-      ..add(CenterJsonldPublicCenterRead.serializer)
-      ..add(CenterJsonldPublicCenterReadAssetsInner.serializer)
+      ..add(CenterJsonldPublicCenterReadOpportunityReadLead.serializer)
+      ..add(
+          CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner.serializer)
+      ..add(CommitmentJsonldPublicCommitmentReadOpportunityReadLead.serializer)
       ..add(CompanyJsonldCompanySearch.serializer)
       ..add(ConstraintViolationJson.serializer)
       ..add(ConstraintViolationJsonViolationsInner.serializer)
@@ -39,8 +44,26 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CreditJsonldCreditSearch.serializer)
       ..add(EnterpriseJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(EnterpriseJsonldIndividualSearch.serializer)
+      ..add(EnterpriseJsonldOpportunityCreateLead.serializer)
+      ..add(EnterpriseJsonldOpportunityReadLead.serializer)
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
+      ..add(ExpressionExpressionWrite.serializer)
+      ..add(ExpressionExpressionWriteComparatorEnum.serializer)
+      ..add(ExpressionExpressionWriteLeftSideEnum.serializer)
+      ..add(ExpressionJsonldExpressionRead.serializer)
+      ..add(ExpressionJsonldExpressionReadComparatorEnum.serializer)
+      ..add(ExpressionJsonldExpressionReadLeftSideEnum.serializer)
+      ..add(ExpressionJsonldExpressionWrite.serializer)
+      ..add(ExpressionJsonldExpressionWriteComparatorEnum.serializer)
+      ..add(ExpressionJsonldExpressionWriteLeftSideEnum.serializer)
+      ..add(ExpressionJsonldRuleRead.serializer)
+      ..add(ExpressionJsonldRuleWrite.serializer)
+      ..add(ExpressionJsonldRuleWriteComparatorEnum.serializer)
+      ..add(ExpressionJsonldRuleWriteLeftSideEnum.serializer)
+      ..add(ExpressionRuleWrite.serializer)
+      ..add(ExpressionRuleWriteComparatorEnum.serializer)
+      ..add(ExpressionRuleWriteLeftSideEnum.serializer)
       ..add(
           GuaranteesCalculationRulesGuaranteesCalculationRulesWrite.serializer)
       ..add(GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesSearch
@@ -56,8 +79,33 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(IndividualIndividualWrite.serializer)
       ..add(IndividualJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(IndividualJsonldIndividualSearch.serializer)
+      ..add(IndividualJsonldOpportunityCreateLead.serializer)
+      ..add(IndividualJsonldOpportunityReadLead.serializer)
       ..add(InvoiceJsonldInvoiceSearch.serializer)
+      ..add(LanguageJsonldPublicLanguageReadOpportunityReadLead.serializer)
+      ..add(OpportunityJsonldOpportunityCreateLead.serializer)
+      ..add(OpportunityJsonldOpportunityCreateLeadTypeEnum.serializer)
+      ..add(OpportunityJsonldOpportunityReadLead.serializer)
       ..add(OpportunityJsonldOpportunitySearch.serializer)
+      ..add(RuleExecuteBookingDtoJsonldRuleExecuteBooking.serializer)
+      ..add(RuleExecuteBookingResponseDtoJsonldRuleExecuteBooking.serializer)
+      ..add(RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking
+          .serializer)
+      ..add(
+          RuleExecuteCancelBookingDtoJsonldRuleExecuteCancelBooking.serializer)
+      ..add(RuleExpressionWrite.serializer)
+      ..add(RuleJsonldExpressionRead.serializer)
+      ..add(RuleJsonldExpressionWrite.serializer)
+      ..add(RuleJsonldRuleRead.serializer)
+      ..add(RuleJsonldRuleReadRuleActionEnum.serializer)
+      ..add(RuleJsonldRuleReadRuleTypeEnum.serializer)
+      ..add(RuleJsonldRuleWrite.serializer)
+      ..add(RuleJsonldRuleWriteRuleActionEnum.serializer)
+      ..add(RuleJsonldRuleWriteRuleTypeEnum.serializer)
+      ..add(RuleRuleWrite.serializer)
+      ..add(RuleRuleWriteRuleActionEnum.serializer)
+      ..add(RuleRuleWriteRuleTypeEnum.serializer)
+      ..add(RuleVariableJsonldRuleVariablesRead.serializer)
       ..add(SavedLabelJsonldReservationRead.serializer)
       ..add(ServiceCenterJsonldReservationRead.serializer)
       ..add(ServiceJsonldReservationRead.serializer)
@@ -78,13 +126,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(CenterJsonldCenterSearch)]),
           () => new ListBuilder<CenterJsonldCenterSearch>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(CenterJsonldPublicCenterRead)]),
-          () => new ListBuilder<CenterJsonldPublicCenterRead>())
+          const FullType(BuiltList, const [
+            const FullType(CenterJsonldPublicCenterReadOpportunityReadLead)
+          ]),
+          () => new ListBuilder<
+              CenterJsonldPublicCenterReadOpportunityReadLead>())
       ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(CenterJsonldPublicCenterReadAssetsInner)]),
-          () => new ListBuilder<CenterJsonldPublicCenterReadAssetsInner>())
+          const FullType(BuiltList, const [
+            const FullType(
+                CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner)
+          ]),
+          () => new ListBuilder<
+              CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(CompanyJsonldCompanySearch)]),
@@ -121,6 +174,22 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(EnterpriseJsonldIndividualSearch)]),
           () => new ListBuilder<EnterpriseJsonldIndividualSearch>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(ExpressionJsonldExpressionRead)]),
+          () => new ListBuilder<ExpressionJsonldExpressionRead>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ExpressionJsonldRuleRead)]),
+          () => new ListBuilder<ExpressionJsonldRuleRead>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ExpressionJsonldRuleWrite)]),
+          () => new ListBuilder<ExpressionJsonldRuleWrite>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ExpressionRuleWrite)]),
+          () => new ListBuilder<ExpressionRuleWrite>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
@@ -161,6 +230,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(OpportunityJsonldOpportunitySearch)]),
           () => new ListBuilder<OpportunityJsonldOpportunitySearch>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(RuleJsonldRuleRead)]),
+          () => new ListBuilder<RuleJsonldRuleRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(RuleVariableJsonldRuleVariablesRead)]),
+          () => new ListBuilder<RuleVariableJsonldRuleVariablesRead>())
+      ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(SavedLabelJsonldReservationRead)]),
           () => new ListBuilder<SavedLabelJsonldReservationRead>())
@@ -180,6 +256,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(StaffJsonldStaffSearch)]),
           () => new ListBuilder<StaffJsonldStaffSearch>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>()))

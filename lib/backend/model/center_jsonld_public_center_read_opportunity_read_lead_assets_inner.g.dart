@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'center_jsonld_public_center_read_assets_inner.dart';
+part of 'center_jsonld_public_center_read_opportunity_read_lead_assets_inner.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$CenterJsonldPublicCenterReadAssetsInner
-    extends CenterJsonldPublicCenterReadAssetsInner {
+class _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner
+    extends CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner {
   @override
   final String? id;
   @override
@@ -17,30 +17,36 @@ class _$CenterJsonldPublicCenterReadAssetsInner
   @override
   final BuiltList<String>? tags;
 
-  factory _$CenterJsonldPublicCenterReadAssetsInner(
-          [void Function(CenterJsonldPublicCenterReadAssetsInnerBuilder)?
+  factory _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner(
+          [void Function(
+                  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder)?
               updates]) =>
-      (new CenterJsonldPublicCenterReadAssetsInnerBuilder()..update(updates))
+      (new CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder()
+            ..update(updates))
           ._build();
 
-  _$CenterJsonldPublicCenterReadAssetsInner._(
+  _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner._(
       {this.id, this.url, this.name, this.tags})
       : super._();
 
   @override
-  CenterJsonldPublicCenterReadAssetsInner rebuild(
-          void Function(CenterJsonldPublicCenterReadAssetsInnerBuilder)
+  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner rebuild(
+          void Function(
+                  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CenterJsonldPublicCenterReadAssetsInnerBuilder toBuilder() =>
-      new CenterJsonldPublicCenterReadAssetsInnerBuilder()..replace(this);
+  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder
+      toBuilder() =>
+          new CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder()
+            ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CenterJsonldPublicCenterReadAssetsInner &&
+    return other
+            is CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner &&
         id == other.id &&
         url == other.url &&
         name == other.name &&
@@ -61,7 +67,7 @@ class _$CenterJsonldPublicCenterReadAssetsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'CenterJsonldPublicCenterReadAssetsInner')
+            r'CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner')
           ..add('id', id)
           ..add('url', url)
           ..add('name', name)
@@ -70,11 +76,11 @@ class _$CenterJsonldPublicCenterReadAssetsInner
   }
 }
 
-class CenterJsonldPublicCenterReadAssetsInnerBuilder
+class CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder
     implements
-        Builder<CenterJsonldPublicCenterReadAssetsInner,
-            CenterJsonldPublicCenterReadAssetsInnerBuilder> {
-  _$CenterJsonldPublicCenterReadAssetsInner? _$v;
+        Builder<CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner,
+            CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder> {
+  _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner? _$v;
 
   String? _id;
   String? get id => _$this._id;
@@ -92,11 +98,11 @@ class CenterJsonldPublicCenterReadAssetsInnerBuilder
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
-  CenterJsonldPublicCenterReadAssetsInnerBuilder() {
-    CenterJsonldPublicCenterReadAssetsInner._defaults(this);
+  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder() {
+    CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner._defaults(this);
   }
 
-  CenterJsonldPublicCenterReadAssetsInnerBuilder get _$this {
+  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -109,25 +115,29 @@ class CenterJsonldPublicCenterReadAssetsInnerBuilder
   }
 
   @override
-  void replace(CenterJsonldPublicCenterReadAssetsInner other) {
+  void replace(
+      CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CenterJsonldPublicCenterReadAssetsInner;
+    _$v = other as _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner;
   }
 
   @override
   void update(
-      void Function(CenterJsonldPublicCenterReadAssetsInnerBuilder)? updates) {
+      void Function(
+              CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder)?
+          updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  CenterJsonldPublicCenterReadAssetsInner build() => _build();
+  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner build() =>
+      _build();
 
-  _$CenterJsonldPublicCenterReadAssetsInner _build() {
-    _$CenterJsonldPublicCenterReadAssetsInner _$result;
+  _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner _build() {
+    _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner _$result;
     try {
       _$result = _$v ??
-          new _$CenterJsonldPublicCenterReadAssetsInner._(
+          new _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner._(
             id: id,
             url: url,
             name: name,
@@ -140,7 +150,7 @@ class CenterJsonldPublicCenterReadAssetsInnerBuilder
         _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'CenterJsonldPublicCenterReadAssetsInner',
+            r'CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner',
             _$failedField,
             e.toString());
       }

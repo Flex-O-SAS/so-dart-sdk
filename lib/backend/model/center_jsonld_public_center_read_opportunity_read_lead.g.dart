@@ -1,12 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'center_jsonld_public_center_read.dart';
+part of 'center_jsonld_public_center_read_opportunity_read_lead.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
+class _$CenterJsonldPublicCenterReadOpportunityReadLead
+    extends CenterJsonldPublicCenterReadOpportunityReadLead {
   @override
   final String? atId;
   @override
@@ -26,7 +27,8 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
   @override
   final String? openingDate;
   @override
-  final BuiltList<CenterJsonldPublicCenterReadAssetsInner>? assets;
+  final BuiltList<CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner>?
+      assets;
   @override
   final String? address;
   @override
@@ -38,11 +40,15 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
   @override
   final int? id;
 
-  factory _$CenterJsonldPublicCenterRead(
-          [void Function(CenterJsonldPublicCenterReadBuilder)? updates]) =>
-      (new CenterJsonldPublicCenterReadBuilder()..update(updates))._build();
+  factory _$CenterJsonldPublicCenterReadOpportunityReadLead(
+          [void Function(
+                  CenterJsonldPublicCenterReadOpportunityReadLeadBuilder)?
+              updates]) =>
+      (new CenterJsonldPublicCenterReadOpportunityReadLeadBuilder()
+            ..update(updates))
+          ._build();
 
-  _$CenterJsonldPublicCenterRead._(
+  _$CenterJsonldPublicCenterReadOpportunityReadLead._(
       {this.atId,
       this.atType,
       this.atContext,
@@ -61,18 +67,20 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
       : super._();
 
   @override
-  CenterJsonldPublicCenterRead rebuild(
-          void Function(CenterJsonldPublicCenterReadBuilder) updates) =>
+  CenterJsonldPublicCenterReadOpportunityReadLead rebuild(
+          void Function(CenterJsonldPublicCenterReadOpportunityReadLeadBuilder)
+              updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CenterJsonldPublicCenterReadBuilder toBuilder() =>
-      new CenterJsonldPublicCenterReadBuilder()..replace(this);
+  CenterJsonldPublicCenterReadOpportunityReadLeadBuilder toBuilder() =>
+      new CenterJsonldPublicCenterReadOpportunityReadLeadBuilder()
+        ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CenterJsonldPublicCenterRead &&
+    return other is CenterJsonldPublicCenterReadOpportunityReadLead &&
         atId == other.atId &&
         atType == other.atType &&
         atContext == other.atContext &&
@@ -114,7 +122,8 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'CenterJsonldPublicCenterRead')
+    return (newBuiltValueToStringHelper(
+            r'CenterJsonldPublicCenterReadOpportunityReadLead')
           ..add('atId', atId)
           ..add('atType', atType)
           ..add('atContext', atContext)
@@ -134,11 +143,11 @@ class _$CenterJsonldPublicCenterRead extends CenterJsonldPublicCenterRead {
   }
 }
 
-class CenterJsonldPublicCenterReadBuilder
+class CenterJsonldPublicCenterReadOpportunityReadLeadBuilder
     implements
-        Builder<CenterJsonldPublicCenterRead,
-            CenterJsonldPublicCenterReadBuilder> {
-  _$CenterJsonldPublicCenterRead? _$v;
+        Builder<CenterJsonldPublicCenterReadOpportunityReadLead,
+            CenterJsonldPublicCenterReadOpportunityReadLeadBuilder> {
+  _$CenterJsonldPublicCenterReadOpportunityReadLead? _$v;
 
   String? _atId;
   String? get atId => _$this._atId;
@@ -178,11 +187,15 @@ class CenterJsonldPublicCenterReadBuilder
   String? get openingDate => _$this._openingDate;
   set openingDate(String? openingDate) => _$this._openingDate = openingDate;
 
-  ListBuilder<CenterJsonldPublicCenterReadAssetsInner>? _assets;
-  ListBuilder<CenterJsonldPublicCenterReadAssetsInner> get assets =>
-      _$this._assets ??=
-          new ListBuilder<CenterJsonldPublicCenterReadAssetsInner>();
-  set assets(ListBuilder<CenterJsonldPublicCenterReadAssetsInner>? assets) =>
+  ListBuilder<CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner>?
+      _assets;
+  ListBuilder<CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner>
+      get assets => _$this._assets ??= new ListBuilder<
+          CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner>();
+  set assets(
+          ListBuilder<
+                  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner>?
+              assets) =>
       _$this._assets = assets;
 
   String? _address;
@@ -205,11 +218,11 @@ class CenterJsonldPublicCenterReadBuilder
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
 
-  CenterJsonldPublicCenterReadBuilder() {
-    CenterJsonldPublicCenterRead._defaults(this);
+  CenterJsonldPublicCenterReadOpportunityReadLeadBuilder() {
+    CenterJsonldPublicCenterReadOpportunityReadLead._defaults(this);
   }
 
-  CenterJsonldPublicCenterReadBuilder get _$this {
+  CenterJsonldPublicCenterReadOpportunityReadLeadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atId = $v.atId;
@@ -233,24 +246,26 @@ class CenterJsonldPublicCenterReadBuilder
   }
 
   @override
-  void replace(CenterJsonldPublicCenterRead other) {
+  void replace(CenterJsonldPublicCenterReadOpportunityReadLead other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CenterJsonldPublicCenterRead;
+    _$v = other as _$CenterJsonldPublicCenterReadOpportunityReadLead;
   }
 
   @override
-  void update(void Function(CenterJsonldPublicCenterReadBuilder)? updates) {
+  void update(
+      void Function(CenterJsonldPublicCenterReadOpportunityReadLeadBuilder)?
+          updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  CenterJsonldPublicCenterRead build() => _build();
+  CenterJsonldPublicCenterReadOpportunityReadLead build() => _build();
 
-  _$CenterJsonldPublicCenterRead _build() {
-    _$CenterJsonldPublicCenterRead _$result;
+  _$CenterJsonldPublicCenterReadOpportunityReadLead _build() {
+    _$CenterJsonldPublicCenterReadOpportunityReadLead _$result;
     try {
       _$result = _$v ??
-          new _$CenterJsonldPublicCenterRead._(
+          new _$CenterJsonldPublicCenterReadOpportunityReadLead._(
             atId: atId,
             atType: atType,
             atContext: _atContext?.build(),
@@ -277,7 +292,9 @@ class CenterJsonldPublicCenterReadBuilder
         _assets?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'CenterJsonldPublicCenterRead', _$failedField, e.toString());
+            r'CenterJsonldPublicCenterReadOpportunityReadLead',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }

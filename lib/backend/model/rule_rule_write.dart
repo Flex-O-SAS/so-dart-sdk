@@ -60,8 +60,8 @@ abstract class RuleRuleWrite implements Built<RuleRuleWrite, RuleRuleWriteBuilde
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleRuleWriteBuilder b) => b
       ..priority = 1
-      ..ruleType = 'Booking'
-      ..ruleAction = 'DenyBooking';
+      ..ruleType = const RuleRuleWriteRuleTypeEnum._('Booking')
+      ..ruleAction = const RuleRuleWriteRuleActionEnum._('DenyBooking');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RuleRuleWrite> get serializer => _$RuleRuleWriteSerializer();

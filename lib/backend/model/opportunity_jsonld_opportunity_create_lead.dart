@@ -52,7 +52,7 @@ abstract class OpportunityJsonldOpportunityCreateLead implements Built<Opportuni
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OpportunityJsonldOpportunityCreateLeadBuilder b) => b
-      ..type = 'FULL_DESKTOP';
+      ..type = const OpportunityJsonldOpportunityCreateLeadTypeEnum._('FULL_DESKTOP');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<OpportunityJsonldOpportunityCreateLead> get serializer => _$OpportunityJsonldOpportunityCreateLeadSerializer();

@@ -60,8 +60,8 @@ abstract class RuleJsonldRuleWrite implements Built<RuleJsonldRuleWrite, RuleJso
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleJsonldRuleWriteBuilder b) => b
       ..priority = 1
-      ..ruleType = 'Booking'
-      ..ruleAction = 'DenyBooking';
+      ..ruleType = const RuleJsonldRuleWriteRuleTypeEnum._('Booking')
+      ..ruleAction = const RuleJsonldRuleWriteRuleActionEnum._('DenyBooking');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RuleJsonldRuleWrite> get serializer => _$RuleJsonldRuleWriteSerializer();

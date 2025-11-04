@@ -9,6 +9,7 @@ services=("backend" "marketplace-service" "ticketing-service" "corporate" "media
 export DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
 export TRUSTED_HOSTS=""
 export TRUSTED_PROXIES=""
+export COMPOSER_AUTH='{"http-basic": {"saas-office.repo.repman.io": {"username": "token", "password": "d1ef7195e1ffc32b1a9fd55f9c6f014269a6b9f603f66ba6d2a5bd7a9abe0231"}}}'
 
 echo "" > "${cwd}/lib/all.dart"
 for service in "${services[@]}"

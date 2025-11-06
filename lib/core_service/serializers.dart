@@ -29,13 +29,16 @@ import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_discovery
 import 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_json_violations_inner.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/data_part_dto_jsonld_notification_write.dart';
 import 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
 import 'package:so_dart_sdk/core_service/model/device_jsonld_device_write.dart';
 import 'package:so_dart_sdk/core_service/model/discovery_jsonld_discovery_read_branding_setting_read.dart';
 import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/identity_dto_jsonld_notification_read.dart';
+import 'package:so_dart_sdk/core_service/model/identity_dto_jsonld_notification_write.dart';
 import 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';
-import 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_write.dart';
+import 'package:so_dart_sdk/core_service/model/notification_notification_dto_jsonld_notification_write.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_write.dart';
 
@@ -57,13 +60,16 @@ part 'serializers.g.dart';
   ConstraintViolationJson,
   ConstraintViolationJsonViolationsInner,
   ConstraintViolationJsonldJsonld,
+  DataPartDtoJsonldNotificationWrite,
   DeviceJsonldDeviceRead,
   DeviceJsonldDeviceWrite,
   DiscoveryJsonldDiscoveryReadBrandingSettingRead,
   Error,
   ErrorJsonld,
+  IdentityDtoJsonldNotificationRead,
+  IdentityDtoJsonldNotificationWrite,
   NotificationJsonldNotificationRead,
-  NotificationJsonldNotificationWrite,
+  NotificationNotificationDtoJsonldNotificationWrite,
   SubscriberJsonldSubscriberRead,
   SubscriberJsonldSubscriberWrite,
 ])

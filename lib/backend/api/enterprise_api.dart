@@ -28,13 +28,11 @@ class EnterpriseApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [itemsPerPage] - The number of items per page
   /// * [nameSoundex] - Phonetic filter (SOUNDEX) on name_soundex
   /// * [name] - 
-  /// * [nameLeftSquareBracketRightSquareBracket] - 
   /// * [email] - 
-  /// * [emailLeftSquareBracketRightSquareBracket] - 
   /// * [reference] - 
-  /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -48,13 +46,11 @@ class EnterpriseApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiEnterprisesGetCollection200Response>> apiEnterprisesGetCollection({ 
     int? page = 1,
+    int? itemsPerPage = 30,
     String? nameSoundex,
     String? name,
-    BuiltList<String>? nameLeftSquareBracketRightSquareBracket,
     String? email,
-    BuiltList<String>? emailLeftSquareBracketRightSquareBracket,
     String? reference,
-    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
@@ -79,13 +75,11 @@ class EnterpriseApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (itemsPerPage != null) r'itemsPerPage': encodeQueryParameter(_serializers, itemsPerPage, const FullType(int)),
       if (nameSoundex != null) r'name_soundex': encodeQueryParameter(_serializers, nameSoundex, const FullType(String)),
       if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
-      if (nameLeftSquareBracketRightSquareBracket != null) r'name[]': encodeCollectionQueryParameter<String>(_serializers, nameLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
-      if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': encodeCollectionQueryParameter<String>(_serializers, emailLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
-      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
     };

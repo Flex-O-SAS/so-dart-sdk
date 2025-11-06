@@ -14,6 +14,7 @@ import 'package:so_dart_sdk/backend/api/commitment_api.dart';
 import 'package:so_dart_sdk/backend/api/company_api.dart';
 import 'package:so_dart_sdk/backend/api/contract_api.dart';
 import 'package:so_dart_sdk/backend/api/credit_api.dart';
+import 'package:so_dart_sdk/backend/api/domain_automapper_api.dart';
 import 'package:so_dart_sdk/backend/api/enterprise_api.dart';
 import 'package:so_dart_sdk/backend/api/expression_api.dart';
 import 'package:so_dart_sdk/backend/api/guarantees_calculation_rules_api.dart';
@@ -110,6 +111,12 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   CreditApi getCreditApi() {
     return CreditApi(dio, serializers);
+  }
+
+  /// Get DomainAutomapperApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  DomainAutomapperApi getDomainAutomapperApi() {
+    return DomainAutomapperApi(dio, serializers);
   }
 
   /// Get EnterpriseApi instance, base route and serializer can be overridden by a given but be careful,

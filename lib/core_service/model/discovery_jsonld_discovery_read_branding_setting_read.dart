@@ -22,7 +22,6 @@ part 'discovery_jsonld_discovery_read_branding_setting_read.g.dart';
 /// * [zitadelIssuer] 
 /// * [zitadelCustomerClientId] 
 /// * [zitadelCustomerWebClientId] 
-/// * [zitadelMainClientId] 
 /// * [zitadelManagerClientId] 
 /// * [zitadelOrgId] 
 /// * [managerUrl] 
@@ -66,9 +65,6 @@ abstract class DiscoveryJsonldDiscoveryReadBrandingSettingRead implements Built<
 
   @BuiltValueField(wireName: r'zitadelCustomerWebClientId')
   String? get zitadelCustomerWebClientId;
-
-  @BuiltValueField(wireName: r'zitadelMainClientId')
-  String? get zitadelMainClientId;
 
   @BuiltValueField(wireName: r'zitadelManagerClientId')
   String? get zitadelManagerClientId;
@@ -201,13 +197,6 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingReadSerializer implements Pri
       yield serializers.serialize(
         object.zitadelCustomerWebClientId,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.zitadelMainClientId != null) {
-      yield r'zitadelMainClientId';
-      yield serializers.serialize(
-        object.zitadelMainClientId,
-        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.zitadelManagerClientId != null) {
@@ -414,14 +403,6 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingReadSerializer implements Pri
             specifiedType: const FullType(String),
           ) as String;
           result.zitadelCustomerWebClientId = valueDes;
-          break;
-        case r'zitadelMainClientId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.zitadelMainClientId = valueDes;
           break;
         case r'zitadelManagerClientId':
           final valueDes = serializers.deserialize(

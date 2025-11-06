@@ -6,6 +6,38 @@ part of 'notification_jsonld_notification_read.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const NotificationJsonldNotificationReadTypeEnum
+    _$notificationJsonldNotificationReadTypeEnum_push =
+    const NotificationJsonldNotificationReadTypeEnum._('push');
+const NotificationJsonldNotificationReadTypeEnum
+    _$notificationJsonldNotificationReadTypeEnum_email =
+    const NotificationJsonldNotificationReadTypeEnum._('email');
+const NotificationJsonldNotificationReadTypeEnum
+    _$notificationJsonldNotificationReadTypeEnum_sms =
+    const NotificationJsonldNotificationReadTypeEnum._('sms');
+
+NotificationJsonldNotificationReadTypeEnum
+    _$notificationJsonldNotificationReadTypeEnumValueOf(String name) {
+  switch (name) {
+    case 'push':
+      return _$notificationJsonldNotificationReadTypeEnum_push;
+    case 'email':
+      return _$notificationJsonldNotificationReadTypeEnum_email;
+    case 'sms':
+      return _$notificationJsonldNotificationReadTypeEnum_sms;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<NotificationJsonldNotificationReadTypeEnum>
+    _$notificationJsonldNotificationReadTypeEnumValues = new BuiltSet<
+        NotificationJsonldNotificationReadTypeEnum>(const <NotificationJsonldNotificationReadTypeEnum>[
+  _$notificationJsonldNotificationReadTypeEnum_push,
+  _$notificationJsonldNotificationReadTypeEnum_email,
+  _$notificationJsonldNotificationReadTypeEnum_sms,
+]);
+
 const NotificationJsonldNotificationReadStatusEnum
     _$notificationJsonldNotificationReadStatusEnum_pending =
     const NotificationJsonldNotificationReadStatusEnum._('pending');
@@ -44,9 +76,46 @@ final BuiltSet<NotificationJsonldNotificationReadStatusEnum>
   _$notificationJsonldNotificationReadStatusEnum_failed,
 ]);
 
+Serializer<NotificationJsonldNotificationReadTypeEnum>
+    _$notificationJsonldNotificationReadTypeEnumSerializer =
+    new _$NotificationJsonldNotificationReadTypeEnumSerializer();
 Serializer<NotificationJsonldNotificationReadStatusEnum>
     _$notificationJsonldNotificationReadStatusEnumSerializer =
     new _$NotificationJsonldNotificationReadStatusEnumSerializer();
+
+class _$NotificationJsonldNotificationReadTypeEnumSerializer
+    implements PrimitiveSerializer<NotificationJsonldNotificationReadTypeEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'push': 'push',
+    'email': 'email',
+    'sms': 'sms',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'push': 'push',
+    'email': 'email',
+    'sms': 'sms',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    NotificationJsonldNotificationReadTypeEnum
+  ];
+  @override
+  final String wireName = 'NotificationJsonldNotificationReadTypeEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          NotificationJsonldNotificationReadTypeEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  NotificationJsonldNotificationReadTypeEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      NotificationJsonldNotificationReadTypeEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
 
 class _$NotificationJsonldNotificationReadStatusEnumSerializer
     implements
@@ -94,9 +163,23 @@ class _$NotificationJsonldNotificationRead
   @override
   final String? atType;
   @override
-  final JsonObject payload;
+  final String? subject;
+  @override
+  final NotificationJsonldNotificationReadTypeEnum? type;
+  @override
+  final String? message;
   @override
   final JsonObject? metadata;
+  @override
+  final BuiltList<IdentityDtoJsonldNotificationRead>? recipients;
+  @override
+  final String? template;
+  @override
+  final IdentityDtoJsonldNotificationRead? sender;
+  @override
+  final bool? isMarkdown;
+  @override
+  final bool? directMail;
   @override
   final String? sentAt;
   @override
@@ -104,9 +187,7 @@ class _$NotificationJsonldNotificationRead
   @override
   final NotificationJsonldNotificationReadStatusEnum? status;
   @override
-  final BuiltSet<String>? channels;
-  @override
-  final BuiltList<String>? subscribers;
+  final String? internalMessage;
 
   factory _$NotificationJsonldNotificationRead(
           [void Function(NotificationJsonldNotificationReadBuilder)?
@@ -118,17 +199,20 @@ class _$NotificationJsonldNotificationRead
       {this.atContext,
       this.atId,
       this.atType,
-      required this.payload,
+      this.subject,
+      this.type,
+      this.message,
       this.metadata,
+      this.recipients,
+      this.template,
+      this.sender,
+      this.isMarkdown,
+      this.directMail,
       this.sentAt,
       this.createdAt,
       this.status,
-      this.channels,
-      this.subscribers})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        payload, r'NotificationJsonldNotificationRead', 'payload');
-  }
+      this.internalMessage})
+      : super._();
 
   @override
   NotificationJsonldNotificationRead rebuild(
@@ -146,13 +230,19 @@ class _$NotificationJsonldNotificationRead
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
-        payload == other.payload &&
+        subject == other.subject &&
+        type == other.type &&
+        message == other.message &&
         metadata == other.metadata &&
+        recipients == other.recipients &&
+        template == other.template &&
+        sender == other.sender &&
+        isMarkdown == other.isMarkdown &&
+        directMail == other.directMail &&
         sentAt == other.sentAt &&
         createdAt == other.createdAt &&
         status == other.status &&
-        channels == other.channels &&
-        subscribers == other.subscribers;
+        internalMessage == other.internalMessage;
   }
 
   @override
@@ -161,13 +251,19 @@ class _$NotificationJsonldNotificationRead
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, payload.hashCode);
+    _$hash = $jc(_$hash, subject.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jc(_$hash, metadata.hashCode);
+    _$hash = $jc(_$hash, recipients.hashCode);
+    _$hash = $jc(_$hash, template.hashCode);
+    _$hash = $jc(_$hash, sender.hashCode);
+    _$hash = $jc(_$hash, isMarkdown.hashCode);
+    _$hash = $jc(_$hash, directMail.hashCode);
     _$hash = $jc(_$hash, sentAt.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, channels.hashCode);
-    _$hash = $jc(_$hash, subscribers.hashCode);
+    _$hash = $jc(_$hash, internalMessage.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -178,13 +274,19 @@ class _$NotificationJsonldNotificationRead
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
-          ..add('payload', payload)
+          ..add('subject', subject)
+          ..add('type', type)
+          ..add('message', message)
           ..add('metadata', metadata)
+          ..add('recipients', recipients)
+          ..add('template', template)
+          ..add('sender', sender)
+          ..add('isMarkdown', isMarkdown)
+          ..add('directMail', directMail)
           ..add('sentAt', sentAt)
           ..add('createdAt', createdAt)
           ..add('status', status)
-          ..add('channels', channels)
-          ..add('subscribers', subscribers))
+          ..add('internalMessage', internalMessage))
         .toString();
   }
 }
@@ -211,13 +313,47 @@ class NotificationJsonldNotificationReadBuilder
   String? get atType => _$this._atType;
   set atType(String? atType) => _$this._atType = atType;
 
-  JsonObject? _payload;
-  JsonObject? get payload => _$this._payload;
-  set payload(JsonObject? payload) => _$this._payload = payload;
+  String? _subject;
+  String? get subject => _$this._subject;
+  set subject(String? subject) => _$this._subject = subject;
+
+  NotificationJsonldNotificationReadTypeEnum? _type;
+  NotificationJsonldNotificationReadTypeEnum? get type => _$this._type;
+  set type(NotificationJsonldNotificationReadTypeEnum? type) =>
+      _$this._type = type;
+
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
   JsonObject? _metadata;
   JsonObject? get metadata => _$this._metadata;
   set metadata(JsonObject? metadata) => _$this._metadata = metadata;
+
+  ListBuilder<IdentityDtoJsonldNotificationRead>? _recipients;
+  ListBuilder<IdentityDtoJsonldNotificationRead> get recipients =>
+      _$this._recipients ??=
+          new ListBuilder<IdentityDtoJsonldNotificationRead>();
+  set recipients(ListBuilder<IdentityDtoJsonldNotificationRead>? recipients) =>
+      _$this._recipients = recipients;
+
+  String? _template;
+  String? get template => _$this._template;
+  set template(String? template) => _$this._template = template;
+
+  IdentityDtoJsonldNotificationReadBuilder? _sender;
+  IdentityDtoJsonldNotificationReadBuilder get sender =>
+      _$this._sender ??= new IdentityDtoJsonldNotificationReadBuilder();
+  set sender(IdentityDtoJsonldNotificationReadBuilder? sender) =>
+      _$this._sender = sender;
+
+  bool? _isMarkdown;
+  bool? get isMarkdown => _$this._isMarkdown;
+  set isMarkdown(bool? isMarkdown) => _$this._isMarkdown = isMarkdown;
+
+  bool? _directMail;
+  bool? get directMail => _$this._directMail;
+  set directMail(bool? directMail) => _$this._directMail = directMail;
 
   String? _sentAt;
   String? get sentAt => _$this._sentAt;
@@ -232,16 +368,10 @@ class NotificationJsonldNotificationReadBuilder
   set status(NotificationJsonldNotificationReadStatusEnum? status) =>
       _$this._status = status;
 
-  SetBuilder<String>? _channels;
-  SetBuilder<String> get channels =>
-      _$this._channels ??= new SetBuilder<String>();
-  set channels(SetBuilder<String>? channels) => _$this._channels = channels;
-
-  ListBuilder<String>? _subscribers;
-  ListBuilder<String> get subscribers =>
-      _$this._subscribers ??= new ListBuilder<String>();
-  set subscribers(ListBuilder<String>? subscribers) =>
-      _$this._subscribers = subscribers;
+  String? _internalMessage;
+  String? get internalMessage => _$this._internalMessage;
+  set internalMessage(String? internalMessage) =>
+      _$this._internalMessage = internalMessage;
 
   NotificationJsonldNotificationReadBuilder() {
     NotificationJsonldNotificationRead._defaults(this);
@@ -253,13 +383,19 @@ class NotificationJsonldNotificationReadBuilder
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _payload = $v.payload;
+      _subject = $v.subject;
+      _type = $v.type;
+      _message = $v.message;
       _metadata = $v.metadata;
+      _recipients = $v.recipients?.toBuilder();
+      _template = $v.template;
+      _sender = $v.sender?.toBuilder();
+      _isMarkdown = $v.isMarkdown;
+      _directMail = $v.directMail;
       _sentAt = $v.sentAt;
       _createdAt = $v.createdAt;
       _status = $v.status;
-      _channels = $v.channels?.toBuilder();
-      _subscribers = $v.subscribers?.toBuilder();
+      _internalMessage = $v.internalMessage;
       _$v = null;
     }
     return this;
@@ -288,14 +424,19 @@ class NotificationJsonldNotificationReadBuilder
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
-            payload: BuiltValueNullFieldError.checkNotNull(
-                payload, r'NotificationJsonldNotificationRead', 'payload'),
+            subject: subject,
+            type: type,
+            message: message,
             metadata: metadata,
+            recipients: _recipients?.build(),
+            template: template,
+            sender: _sender?.build(),
+            isMarkdown: isMarkdown,
+            directMail: directMail,
             sentAt: sentAt,
             createdAt: createdAt,
             status: status,
-            channels: _channels?.build(),
-            subscribers: _subscribers?.build(),
+            internalMessage: internalMessage,
           );
     } catch (_) {
       late String _$failedField;
@@ -303,10 +444,11 @@ class NotificationJsonldNotificationReadBuilder
         _$failedField = 'atContext';
         _atContext?.build();
 
-        _$failedField = 'channels';
-        _channels?.build();
-        _$failedField = 'subscribers';
-        _subscribers?.build();
+        _$failedField = 'recipients';
+        _recipients?.build();
+
+        _$failedField = 'sender';
+        _sender?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'NotificationJsonldNotificationRead', _$failedField, e.toString());

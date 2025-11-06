@@ -9,11 +9,11 @@ part of 'language_jsonld_public_language_read_opportunity_read_lead.dart';
 class _$LanguageJsonldPublicLanguageReadOpportunityReadLead
     extends LanguageJsonldPublicLanguageReadOpportunityReadLead {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
   final String? atId;
   @override
   final String? atType;
+  @override
+  final CenterJsonldHappeningReadContext? atContext;
   @override
   final String? code;
   @override
@@ -28,7 +28,7 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLead
           ._build();
 
   _$LanguageJsonldPublicLanguageReadOpportunityReadLead._(
-      {this.atContext, this.atId, this.atType, this.code, this.label})
+      {this.atId, this.atType, this.atContext, this.code, this.label})
       : super._();
 
   @override
@@ -47,9 +47,9 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is LanguageJsonldPublicLanguageReadOpportunityReadLead &&
-        atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
+        atContext == other.atContext &&
         code == other.code &&
         label == other.label;
   }
@@ -57,9 +57,9 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLead
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
+    _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jc(_$hash, label.hashCode);
     _$hash = $jf(_$hash);
@@ -70,9 +70,9 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLead
   String toString() {
     return (newBuiltValueToStringHelper(
             r'LanguageJsonldPublicLanguageReadOpportunityReadLead')
-          ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
+          ..add('atContext', atContext)
           ..add('code', code)
           ..add('label', label))
         .toString();
@@ -85,12 +85,6 @@ class LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder
             LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder> {
   _$LanguageJsonldPublicLanguageReadOpportunityReadLead? _$v;
 
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
   String? _atId;
   String? get atId => _$this._atId;
   set atId(String? atId) => _$this._atId = atId;
@@ -98,6 +92,12 @@ class LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder
   String? _atType;
   String? get atType => _$this._atType;
   set atType(String? atType) => _$this._atType = atType;
+
+  CenterJsonldHappeningReadContextBuilder? _atContext;
+  CenterJsonldHappeningReadContextBuilder get atContext =>
+      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
+      _$this._atContext = atContext;
 
   String? _code;
   String? get code => _$this._code;
@@ -114,9 +114,9 @@ class LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder
   LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
+      _atContext = $v.atContext?.toBuilder();
       _code = $v.code;
       _label = $v.label;
       _$v = null;
@@ -145,9 +145,9 @@ class LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder
     try {
       _$result = _$v ??
           new _$LanguageJsonldPublicLanguageReadOpportunityReadLead._(
-            atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
+            atContext: _atContext?.build(),
             code: code,
             label: label,
           );

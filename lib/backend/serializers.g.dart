@@ -15,15 +15,19 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiCompaniesGetCollection200Response.serializer)
       ..add(ApiContractsGetCollection200Response.serializer)
       ..add(ApiCreditsGetCollection200Response.serializer)
+      ..add(ApiDomainAutomapperGetCollection200Response.serializer)
       ..add(ApiEnterprisesGetCollection200Response.serializer)
       ..add(ApiExpressionsGetCollection200Response.serializer)
       ..add(ApiGuaranteesCalculationRulesGetCollection200Response.serializer)
       ..add(ApiHappeningGetCollection200Response.serializer)
+      ..add(ApiIndividualsCheckEmailCollection200Response.serializer)
       ..add(ApiIndividualsGetCollection200Response.serializer)
       ..add(ApiInvoicesGetCollection200Response.serializer)
+      ..add(ApiLanguagePublicGetCollection200Response.serializer)
       ..add(ApiOpportunitiesGetCollection200Response.serializer)
       ..add(ApiRuleVariablesGetCollection200Response.serializer)
       ..add(ApiRulesGetCollection200Response.serializer)
+      ..add(ApiServiceInternalGetCollection200Response.serializer)
       ..add(ApiServiceReservationGetCollection200Response.serializer)
       ..add(ApiServiceTypeGetCollection200Response.serializer)
       ..add(ApiStaffGetCollection200Response.serializer)
@@ -42,6 +46,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ConstraintViolationJsonldJsonld.serializer)
       ..add(ContractJsonldContractSearch.serializer)
       ..add(CreditJsonldCreditSearch.serializer)
+      ..add(DomainAutomapperJsonldDomainAutomapperSearch.serializer)
+      ..add(DomainAutomapperJsonldDomainAutomapperSearchTypeEnum.serializer)
+      ..add(DomainAutomapperJsonldDomainAutomapperWrite.serializer)
+      ..add(DomainAutomapperJsonldDomainAutomapperWriteTypeEnum.serializer)
       ..add(EnterpriseJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(EnterpriseJsonldIndividualSearch.serializer)
       ..add(EnterpriseJsonldOpportunityCreateLead.serializer)
@@ -78,6 +86,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(HappeningStaffFeedBackJsonldHappeningSearch.serializer)
       ..add(IndividualIndividualWrite.serializer)
       ..add(IndividualJsonldEnterpriseSearchEnterpriseRead.serializer)
+      ..add(IndividualJsonldIndividualCheckEmail.serializer)
       ..add(IndividualJsonldIndividualSearch.serializer)
       ..add(IndividualJsonldOpportunityCreateLead.serializer)
       ..add(IndividualJsonldOpportunityReadLead.serializer)
@@ -107,8 +116,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(RuleRuleWriteRuleTypeEnum.serializer)
       ..add(RuleVariableJsonldRuleVariablesRead.serializer)
       ..add(SavedLabelJsonldReservationRead.serializer)
+      ..add(SavedLabelJsonldServiceSearch.serializer)
       ..add(ServiceCenterJsonldReservationRead.serializer)
+      ..add(ServiceCenterJsonldServiceSearch.serializer)
       ..add(ServiceJsonldReservationRead.serializer)
+      ..add(ServiceJsonldServiceSearch.serializer)
       ..add(ServiceTypeGuaranteesCalculationRulesWrite.serializer)
       ..add(ServiceTypeJsonldGuaranteesCalculationRulesSearch.serializer)
       ..add(ServiceTypeJsonldGuaranteesCalculationRulesWrite.serializer)
@@ -158,6 +170,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(CreditJsonldCreditSearch)]),
           () => new ListBuilder<CreditJsonldCreditSearch>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(DomainAutomapperJsonldDomainAutomapperSearch)
+          ]),
+          () => new ListBuilder<DomainAutomapperJsonldDomainAutomapperSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead)
@@ -219,12 +236,22 @@ Serializers _$serializers = (new Serializers().toBuilder()
               new ListBuilder<IndividualJsonldEnterpriseSearchEnterpriseRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
+              const [const FullType(IndividualJsonldIndividualCheckEmail)]),
+          () => new ListBuilder<IndividualJsonldIndividualCheckEmail>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
               const [const FullType(IndividualJsonldIndividualSearch)]),
           () => new ListBuilder<IndividualJsonldIndividualSearch>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(InvoiceJsonldInvoiceSearch)]),
           () => new ListBuilder<InvoiceJsonldInvoiceSearch>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(LanguageJsonldPublicLanguageReadOpportunityReadLead)
+          ]),
+          () => new ListBuilder<
+              LanguageJsonldPublicLanguageReadOpportunityReadLead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(OpportunityJsonldOpportunitySearch)]),
@@ -246,8 +273,20 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<ServiceCenterJsonldReservationRead>())
       ..addBuilderFactory(
           const FullType(
+              BuiltList, const [const FullType(SavedLabelJsonldServiceSearch)]),
+          () => new ListBuilder<SavedLabelJsonldServiceSearch>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(ServiceCenterJsonldServiceSearch)]),
+          () => new ListBuilder<ServiceCenterJsonldServiceSearch>())
+      ..addBuilderFactory(
+          const FullType(
               BuiltList, const [const FullType(ServiceJsonldReservationRead)]),
           () => new ListBuilder<ServiceJsonldReservationRead>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ServiceJsonldServiceSearch)]),
+          () => new ListBuilder<ServiceJsonldServiceSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ServiceTypeJsonldServiceTypeSearch)]),

@@ -7,56 +7,63 @@ import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.d
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'language_jsonld_public_language_read_opportunity_read_lead.g.dart';
+part 'service_center_jsonld_service_search.g.dart';
 
 /// 
 ///
 /// Properties:
+/// * [atContext] 
 /// * [atId] 
 /// * [atType] 
-/// * [atContext] 
-/// * [code] 
-/// * [label] 
+/// * [price] 
+/// * [id] 
 @BuiltValue()
-abstract class LanguageJsonldPublicLanguageReadOpportunityReadLead implements Built<LanguageJsonldPublicLanguageReadOpportunityReadLead, LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder> {
+abstract class ServiceCenterJsonldServiceSearch implements Built<ServiceCenterJsonldServiceSearch, ServiceCenterJsonldServiceSearchBuilder> {
+  @BuiltValueField(wireName: r'@context')
+  CenterJsonldHappeningReadContext? get atContext;
+
   @BuiltValueField(wireName: r'@id')
   String? get atId;
 
   @BuiltValueField(wireName: r'@type')
   String? get atType;
 
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
+  @BuiltValueField(wireName: r'price')
+  num? get price;
 
-  @BuiltValueField(wireName: r'code')
-  String? get code;
+  @BuiltValueField(wireName: r'id')
+  int? get id;
 
-  @BuiltValueField(wireName: r'label')
-  String? get label;
+  ServiceCenterJsonldServiceSearch._();
 
-  LanguageJsonldPublicLanguageReadOpportunityReadLead._();
-
-  factory LanguageJsonldPublicLanguageReadOpportunityReadLead([void updates(LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder b)]) = _$LanguageJsonldPublicLanguageReadOpportunityReadLead;
+  factory ServiceCenterJsonldServiceSearch([void updates(ServiceCenterJsonldServiceSearchBuilder b)]) = _$ServiceCenterJsonldServiceSearch;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder b) => b;
+  static void _defaults(ServiceCenterJsonldServiceSearchBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LanguageJsonldPublicLanguageReadOpportunityReadLead> get serializer => _$LanguageJsonldPublicLanguageReadOpportunityReadLeadSerializer();
+  static Serializer<ServiceCenterJsonldServiceSearch> get serializer => _$ServiceCenterJsonldServiceSearchSerializer();
 }
 
-class _$LanguageJsonldPublicLanguageReadOpportunityReadLeadSerializer implements PrimitiveSerializer<LanguageJsonldPublicLanguageReadOpportunityReadLead> {
+class _$ServiceCenterJsonldServiceSearchSerializer implements PrimitiveSerializer<ServiceCenterJsonldServiceSearch> {
   @override
-  final Iterable<Type> types = const [LanguageJsonldPublicLanguageReadOpportunityReadLead, _$LanguageJsonldPublicLanguageReadOpportunityReadLead];
+  final Iterable<Type> types = const [ServiceCenterJsonldServiceSearch, _$ServiceCenterJsonldServiceSearch];
 
   @override
-  final String wireName = r'LanguageJsonldPublicLanguageReadOpportunityReadLead';
+  final String wireName = r'ServiceCenterJsonldServiceSearch';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    LanguageJsonldPublicLanguageReadOpportunityReadLead object, {
+    ServiceCenterJsonldServiceSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(CenterJsonldHappeningReadContext),
+      );
+    }
     if (object.atId != null) {
       yield r'@id';
       yield serializers.serialize(
@@ -71,25 +78,18 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLeadSerializer implements
         specifiedType: const FullType(String),
       );
     }
-    if (object.atContext != null) {
-      yield r'@context';
+    if (object.price != null) {
+      yield r'price';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
+        object.price,
+        specifiedType: const FullType.nullable(num),
       );
     }
-    if (object.code != null) {
-      yield r'code';
+    if (object.id != null) {
+      yield r'id';
       yield serializers.serialize(
-        object.code,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.label != null) {
-      yield r'label';
-      yield serializers.serialize(
-        object.label,
-        specifiedType: const FullType(String),
+        object.id,
+        specifiedType: const FullType(int),
       );
     }
   }
@@ -97,7 +97,7 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLeadSerializer implements
   @override
   Object serialize(
     Serializers serializers,
-    LanguageJsonldPublicLanguageReadOpportunityReadLead object, {
+    ServiceCenterJsonldServiceSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -108,13 +108,20 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLeadSerializer implements
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder result,
+    required ServiceCenterJsonldServiceSearchBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CenterJsonldHappeningReadContext),
+          ) as CenterJsonldHappeningReadContext;
+          result.atContext.replace(valueDes);
+          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
@@ -129,26 +136,20 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLeadSerializer implements
           ) as String;
           result.atType = valueDes;
           break;
-        case r'@context':
+        case r'price':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
+            specifiedType: const FullType.nullable(num),
+          ) as num?;
+          if (valueDes == null) continue;
+          result.price = valueDes;
           break;
-        case r'code':
+        case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.code = valueDes;
-          break;
-        case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.label = valueDes;
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -159,12 +160,12 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLeadSerializer implements
   }
 
   @override
-  LanguageJsonldPublicLanguageReadOpportunityReadLead deserialize(
+  ServiceCenterJsonldServiceSearch deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder();
+    final result = ServiceCenterJsonldServiceSearchBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

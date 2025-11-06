@@ -25,6 +25,7 @@ class CompanyApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [itemsPerPage] - The number of items per page
   /// * [reference] - 
   /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [companyName] - 
@@ -41,6 +42,7 @@ class CompanyApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiCompaniesGetCollection200Response>> apiCompaniesGetCollection({ 
     int? page = 1,
+    int? itemsPerPage = 30,
     String? reference,
     BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     String? companyName,
@@ -68,6 +70,7 @@ class CompanyApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (itemsPerPage != null) r'itemsPerPage': encodeQueryParameter(_serializers, itemsPerPage, const FullType(int)),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
       if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (companyName != null) r'companyName': encodeQueryParameter(_serializers, companyName, const FullType(String)),

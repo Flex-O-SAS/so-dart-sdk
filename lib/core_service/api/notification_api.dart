@@ -13,7 +13,7 @@ import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonl
 import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';
-import 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_write.dart';
+import 'package:so_dart_sdk/core_service/model/notification_notification_dto_jsonld_notification_write.dart';
 
 class NotificationApi {
 
@@ -27,7 +27,7 @@ class NotificationApi {
   /// Creates a Notification resource.
   ///
   /// Parameters:
-  /// * [notificationJsonldNotificationWrite] - The new Notification resource
+  /// * [notificationNotificationDtoJsonldNotificationWrite] - The new Notification resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -38,7 +38,7 @@ class NotificationApi {
   /// Returns a [Future] containing a [Response] with a [NotificationJsonldNotificationRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<NotificationJsonldNotificationRead>> apiNotificationsPostItem({ 
-    required NotificationJsonldNotificationWrite notificationJsonldNotificationWrite,
+    required NotificationNotificationDtoJsonldNotificationWrite notificationNotificationDtoJsonldNotificationWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -70,8 +70,8 @@ class NotificationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(NotificationJsonldNotificationWrite);
-      _bodyData = _serializers.serialize(notificationJsonldNotificationWrite, specifiedType: _type);
+      const _type = FullType(NotificationNotificationDtoJsonldNotificationWrite);
+      _bodyData = _serializers.serialize(notificationNotificationDtoJsonldNotificationWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

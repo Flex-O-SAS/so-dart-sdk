@@ -22,15 +22,19 @@ import 'package:so_dart_sdk/backend/model/api_centers_public_get_collection200_r
 import 'package:so_dart_sdk/backend/model/api_companies_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_contracts_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_credits_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_domain_automapper_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_expressions_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_guarantees_calculation_rules_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_happening_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_individuals_check_email_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_individuals_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_invoices_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_language_public_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_opportunities_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_rule_variables_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_rules_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_service_internal_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_service_reservation_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_service_type_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
@@ -47,6 +51,8 @@ import 'package:so_dart_sdk/backend/model/constraint_violation_json_violations_i
 import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/contract_jsonld_contract_search.dart';
 import 'package:so_dart_sdk/backend/model/credit_jsonld_credit_search.dart';
+import 'package:so_dart_sdk/backend/model/domain_automapper_jsonld_domain_automapper_search.dart';
+import 'package:so_dart_sdk/backend/model/domain_automapper_jsonld_domain_automapper_write.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_opportunity_create_lead.dart';
@@ -70,6 +76,7 @@ import 'package:so_dart_sdk/backend/model/happening_staff_feed_back_jsonld_happe
 import 'package:so_dart_sdk/backend/model/happening_staff_feed_back_jsonld_happening_search.dart';
 import 'package:so_dart_sdk/backend/model/individual_individual_write.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_enterprise_read.dart';
+import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_check_email.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_opportunity_read_lead.dart';
@@ -90,8 +97,11 @@ import 'package:so_dart_sdk/backend/model/rule_jsonld_rule_write.dart';
 import 'package:so_dart_sdk/backend/model/rule_rule_write.dart';
 import 'package:so_dart_sdk/backend/model/rule_variable_jsonld_rule_variables_read.dart';
 import 'package:so_dart_sdk/backend/model/saved_label_jsonld_reservation_read.dart';
+import 'package:so_dart_sdk/backend/model/saved_label_jsonld_service_search.dart';
 import 'package:so_dart_sdk/backend/model/service_center_jsonld_reservation_read.dart';
+import 'package:so_dart_sdk/backend/model/service_center_jsonld_service_search.dart';
 import 'package:so_dart_sdk/backend/model/service_jsonld_reservation_read.dart';
+import 'package:so_dart_sdk/backend/model/service_jsonld_service_search.dart';
 import 'package:so_dart_sdk/backend/model/service_type_guarantees_calculation_rules_write.dart';
 import 'package:so_dart_sdk/backend/model/service_type_jsonld_guarantees_calculation_rules_search.dart';
 import 'package:so_dart_sdk/backend/model/service_type_jsonld_guarantees_calculation_rules_write.dart';
@@ -110,15 +120,19 @@ part 'serializers.g.dart';
   ApiCompaniesGetCollection200Response,
   ApiContractsGetCollection200Response,
   ApiCreditsGetCollection200Response,
+  ApiDomainAutomapperGetCollection200Response,
   ApiEnterprisesGetCollection200Response,
   ApiExpressionsGetCollection200Response,
   ApiGuaranteesCalculationRulesGetCollection200Response,
   ApiHappeningGetCollection200Response,
+  ApiIndividualsCheckEmailCollection200Response,
   ApiIndividualsGetCollection200Response,
   ApiInvoicesGetCollection200Response,
+  ApiLanguagePublicGetCollection200Response,
   ApiOpportunitiesGetCollection200Response,
   ApiRuleVariablesGetCollection200Response,
   ApiRulesGetCollection200Response,
+  ApiServiceInternalGetCollection200Response,
   ApiServiceReservationGetCollection200Response,
   ApiServiceTypeGetCollection200Response,
   ApiStaffGetCollection200Response,
@@ -135,6 +149,8 @@ part 'serializers.g.dart';
   ConstraintViolationJsonldJsonld,
   ContractJsonldContractSearch,
   CreditJsonldCreditSearch,
+  DomainAutomapperJsonldDomainAutomapperSearch,
+  DomainAutomapperJsonldDomainAutomapperWrite,
   EnterpriseJsonldEnterpriseSearchEnterpriseRead,
   EnterpriseJsonldIndividualSearch,
   EnterpriseJsonldOpportunityCreateLead,
@@ -158,6 +174,7 @@ part 'serializers.g.dart';
   HappeningStaffFeedBackJsonldHappeningSearch,
   IndividualIndividualWrite,
   IndividualJsonldEnterpriseSearchEnterpriseRead,
+  IndividualJsonldIndividualCheckEmail,
   IndividualJsonldIndividualSearch,
   IndividualJsonldOpportunityCreateLead,
   IndividualJsonldOpportunityReadLead,
@@ -178,8 +195,11 @@ part 'serializers.g.dart';
   RuleRuleWrite,
   RuleVariableJsonldRuleVariablesRead,
   SavedLabelJsonldReservationRead,
+  SavedLabelJsonldServiceSearch,
   ServiceCenterJsonldReservationRead,
+  ServiceCenterJsonldServiceSearch,
   ServiceJsonldReservationRead,
+  ServiceJsonldServiceSearch,
   ServiceTypeGuaranteesCalculationRulesWrite,
   ServiceTypeJsonldGuaranteesCalculationRulesSearch,
   ServiceTypeJsonldGuaranteesCalculationRulesWrite,
@@ -191,6 +211,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(int)]),
         () => ListBuilder<int>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(bool)]),
+        () => ListBuilder<bool>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(String)]),

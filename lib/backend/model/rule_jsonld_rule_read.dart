@@ -73,8 +73,8 @@ abstract class RuleJsonldRuleRead implements Built<RuleJsonldRuleRead, RuleJsonl
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleJsonldRuleReadBuilder b) => b
       ..priority = 1
-      ..ruleType = const RuleJsonldRuleReadRuleTypeEnum._('Booking')
-      ..ruleAction = const RuleJsonldRuleReadRuleActionEnum._('DenyBooking');
+      ..ruleType = RuleJsonldRuleReadRuleTypeEnum.valueOf('Booking')
+      ..ruleAction = RuleJsonldRuleReadRuleActionEnum.valueOf('DenyBooking');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RuleJsonldRuleRead> get serializer => _$RuleJsonldRuleReadSerializer();

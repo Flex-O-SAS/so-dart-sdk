@@ -29,6 +29,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ConstraintViolationJson.serializer)
       ..add(ConstraintViolationJsonViolationsInner.serializer)
       ..add(ConstraintViolationJsonldJsonld.serializer)
+      ..add(DataPartDtoJsonldNotificationWrite.serializer)
       ..add(DeviceJsonldDeviceRead.serializer)
       ..add(DeviceJsonldDeviceReadSource_Enum.serializer)
       ..add(DeviceJsonldDeviceWrite.serializer)
@@ -36,9 +37,16 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(DiscoveryJsonldDiscoveryReadBrandingSettingRead.serializer)
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
+      ..add(IdentityDtoJsonldNotificationRead.serializer)
+      ..add(IdentityDtoJsonldNotificationReadTypeEnum.serializer)
+      ..add(IdentityDtoJsonldNotificationWrite.serializer)
+      ..add(IdentityDtoJsonldNotificationWriteTypeEnum.serializer)
       ..add(NotificationJsonldNotificationRead.serializer)
       ..add(NotificationJsonldNotificationReadStatusEnum.serializer)
-      ..add(NotificationJsonldNotificationWrite.serializer)
+      ..add(NotificationJsonldNotificationReadTypeEnum.serializer)
+      ..add(NotificationNotificationDtoJsonldNotificationWrite.serializer)
+      ..add(
+          NotificationNotificationDtoJsonldNotificationWriteTypeEnum.serializer)
       ..add(SubscriberJsonldSubscriberRead.serializer)
       ..add(SubscriberJsonldSubscriberWrite.serializer)
       ..addBuilderFactory(
@@ -65,6 +73,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(DeviceJsonldDeviceRead)]),
           () => new ListBuilder<DeviceJsonldDeviceRead>())
       ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(IdentityDtoJsonldNotificationRead)]),
+          () => new ListBuilder<IdentityDtoJsonldNotificationRead>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
@@ -79,17 +91,17 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(SubscriberJsonldSubscriberRead)]),
           () => new ListBuilder<SubscriberJsonldSubscriberRead>())
       ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(String)]),
-          () => new SetBuilder<String>())
+          const FullType(
+              BuiltMap, const [const FullType(String), const FullType(String)]),
+          () => new MapBuilder<String, String>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+          const FullType(BuiltList,
+              const [const FullType(IdentityDtoJsonldNotificationWrite)]),
+          () => new ListBuilder<IdentityDtoJsonldNotificationWrite>())
       ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(String)]),
-          () => new SetBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>()))
+          const FullType(BuiltList,
+              const [const FullType(DataPartDtoJsonldNotificationWrite)]),
+          () => new ListBuilder<DataPartDtoJsonldNotificationWrite>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

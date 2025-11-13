@@ -5,11 +5,11 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_read_lead_assets_inner.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_create_lead_assets_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'center_jsonld_public_center_read_opportunity_read_lead.g.dart';
+part 'center_jsonld_public_center_read_opportunity_create_lead.g.dart';
 
 /// 
 ///
@@ -30,7 +30,7 @@ part 'center_jsonld_public_center_read_opportunity_read_lead.g.dart';
 /// * [country] 
 /// * [id] 
 @BuiltValue()
-abstract class CenterJsonldPublicCenterReadOpportunityReadLead implements Built<CenterJsonldPublicCenterReadOpportunityReadLead, CenterJsonldPublicCenterReadOpportunityReadLeadBuilder> {
+abstract class CenterJsonldPublicCenterReadOpportunityCreateLead implements Built<CenterJsonldPublicCenterReadOpportunityCreateLead, CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder> {
   @BuiltValueField(wireName: r'@id')
   String? get atId;
 
@@ -59,7 +59,7 @@ abstract class CenterJsonldPublicCenterReadOpportunityReadLead implements Built<
   String? get openingDate;
 
   @BuiltValueField(wireName: r'assets')
-  BuiltList<CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner>? get assets;
+  BuiltList<CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner>? get assets;
 
   @BuiltValueField(wireName: r'address')
   String? get address;
@@ -76,27 +76,27 @@ abstract class CenterJsonldPublicCenterReadOpportunityReadLead implements Built<
   @BuiltValueField(wireName: r'id')
   int? get id;
 
-  CenterJsonldPublicCenterReadOpportunityReadLead._();
+  CenterJsonldPublicCenterReadOpportunityCreateLead._();
 
-  factory CenterJsonldPublicCenterReadOpportunityReadLead([void updates(CenterJsonldPublicCenterReadOpportunityReadLeadBuilder b)]) = _$CenterJsonldPublicCenterReadOpportunityReadLead;
+  factory CenterJsonldPublicCenterReadOpportunityCreateLead([void updates(CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder b)]) = _$CenterJsonldPublicCenterReadOpportunityCreateLead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CenterJsonldPublicCenterReadOpportunityReadLeadBuilder b) => b;
+  static void _defaults(CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CenterJsonldPublicCenterReadOpportunityReadLead> get serializer => _$CenterJsonldPublicCenterReadOpportunityReadLeadSerializer();
+  static Serializer<CenterJsonldPublicCenterReadOpportunityCreateLead> get serializer => _$CenterJsonldPublicCenterReadOpportunityCreateLeadSerializer();
 }
 
-class _$CenterJsonldPublicCenterReadOpportunityReadLeadSerializer implements PrimitiveSerializer<CenterJsonldPublicCenterReadOpportunityReadLead> {
+class _$CenterJsonldPublicCenterReadOpportunityCreateLeadSerializer implements PrimitiveSerializer<CenterJsonldPublicCenterReadOpportunityCreateLead> {
   @override
-  final Iterable<Type> types = const [CenterJsonldPublicCenterReadOpportunityReadLead, _$CenterJsonldPublicCenterReadOpportunityReadLead];
+  final Iterable<Type> types = const [CenterJsonldPublicCenterReadOpportunityCreateLead, _$CenterJsonldPublicCenterReadOpportunityCreateLead];
 
   @override
-  final String wireName = r'CenterJsonldPublicCenterReadOpportunityReadLead';
+  final String wireName = r'CenterJsonldPublicCenterReadOpportunityCreateLead';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    CenterJsonldPublicCenterReadOpportunityReadLead object, {
+    CenterJsonldPublicCenterReadOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atId != null) {
@@ -166,7 +166,7 @@ class _$CenterJsonldPublicCenterReadOpportunityReadLeadSerializer implements Pri
       yield r'assets';
       yield serializers.serialize(
         object.assets,
-        specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner)]),
+        specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner)]),
       );
     }
     if (object.address != null) {
@@ -209,7 +209,7 @@ class _$CenterJsonldPublicCenterReadOpportunityReadLeadSerializer implements Pri
   @override
   Object serialize(
     Serializers serializers,
-    CenterJsonldPublicCenterReadOpportunityReadLead object, {
+    CenterJsonldPublicCenterReadOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -220,7 +220,7 @@ class _$CenterJsonldPublicCenterReadOpportunityReadLeadSerializer implements Pri
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required CenterJsonldPublicCenterReadOpportunityReadLeadBuilder result,
+    required CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -298,8 +298,8 @@ class _$CenterJsonldPublicCenterReadOpportunityReadLeadSerializer implements Pri
         case r'assets':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner)]),
-          ) as BuiltList<CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner>;
+            specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner)]),
+          ) as BuiltList<CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner>;
           result.assets.replace(valueDes);
           break;
         case r'address':
@@ -350,12 +350,12 @@ class _$CenterJsonldPublicCenterReadOpportunityReadLeadSerializer implements Pri
   }
 
   @override
-  CenterJsonldPublicCenterReadOpportunityReadLead deserialize(
+  CenterJsonldPublicCenterReadOpportunityCreateLead deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = CenterJsonldPublicCenterReadOpportunityReadLeadBuilder();
+    final result = CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

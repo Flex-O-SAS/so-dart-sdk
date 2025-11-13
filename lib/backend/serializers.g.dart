@@ -36,10 +36,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CenterJsonldHappeningReadContext.serializer)
       ..add(CenterJsonldHappeningReadContextOneOf.serializer)
       ..add(CenterJsonldHappeningReadContextOneOfHydraEnum.serializer)
-      ..add(CenterJsonldPublicCenterReadOpportunityReadLead.serializer)
+      ..add(CenterJsonldPublicCenterReadOpportunityCreateLead.serializer)
+      ..add(CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner
+          .serializer)
       ..add(
-          CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner.serializer)
-      ..add(CommitmentJsonldPublicCommitmentReadOpportunityReadLead.serializer)
+          CommitmentJsonldPublicCommitmentReadOpportunityCreateLead.serializer)
       ..add(CompanyJsonldCompanySearch.serializer)
       ..add(ConstraintViolationJson.serializer)
       ..add(ConstraintViolationJsonViolationsInner.serializer)
@@ -53,7 +54,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(EnterpriseJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(EnterpriseJsonldIndividualSearch.serializer)
       ..add(EnterpriseJsonldOpportunityCreateLead.serializer)
-      ..add(EnterpriseJsonldOpportunityReadLead.serializer)
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
       ..add(ExpressionExpressionWrite.serializer)
@@ -89,12 +89,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(IndividualJsonldIndividualCheckEmail.serializer)
       ..add(IndividualJsonldIndividualSearch.serializer)
       ..add(IndividualJsonldOpportunityCreateLead.serializer)
-      ..add(IndividualJsonldOpportunityReadLead.serializer)
       ..add(InvoiceJsonldInvoiceSearch.serializer)
-      ..add(LanguageJsonldPublicLanguageReadOpportunityReadLead.serializer)
+      ..add(LanguageJsonldPublicLanguageReadOpportunityCreateLead.serializer)
       ..add(OpportunityJsonldOpportunityCreateLead.serializer)
       ..add(OpportunityJsonldOpportunityCreateLeadTypeEnum.serializer)
-      ..add(OpportunityJsonldOpportunityReadLead.serializer)
       ..add(OpportunityJsonldOpportunitySearch.serializer)
       ..add(RuleExecuteBookingDtoJsonldRuleExecuteBooking.serializer)
       ..add(RuleExecuteBookingResponseDtoJsonldRuleExecuteBooking.serializer)
@@ -139,17 +137,17 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<CenterJsonldCenterSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(CenterJsonldPublicCenterReadOpportunityReadLead)
+            const FullType(CenterJsonldPublicCenterReadOpportunityCreateLead)
           ]),
           () => new ListBuilder<
-              CenterJsonldPublicCenterReadOpportunityReadLead>())
+              CenterJsonldPublicCenterReadOpportunityCreateLead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
-                CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner)
+                CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner)
           ]),
           () => new ListBuilder<
-              CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner>())
+              CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(CompanyJsonldCompanySearch)]),
@@ -248,10 +246,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<InvoiceJsonldInvoiceSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(LanguageJsonldPublicLanguageReadOpportunityReadLead)
+            const FullType(
+                LanguageJsonldPublicLanguageReadOpportunityCreateLead)
           ]),
           () => new ListBuilder<
-              LanguageJsonldPublicLanguageReadOpportunityReadLead>())
+              LanguageJsonldPublicLanguageReadOpportunityCreateLead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(OpportunityJsonldOpportunitySearch)]),

@@ -9,6 +9,12 @@ part of 'enterprise_jsonld_opportunity_create_lead.dart';
 class _$EnterpriseJsonldOpportunityCreateLead
     extends EnterpriseJsonldOpportunityCreateLead {
   @override
+  final CenterJsonldHappeningReadContext? atContext;
+  @override
+  final String? atId;
+  @override
+  final String? atType;
+  @override
   final String? name;
   @override
   final String? type;
@@ -36,7 +42,10 @@ class _$EnterpriseJsonldOpportunityCreateLead
           ._build();
 
   _$EnterpriseJsonldOpportunityCreateLead._(
-      {this.name,
+      {this.atContext,
+      this.atId,
+      this.atType,
+      this.name,
       this.type,
       this.email,
       this.mobile,
@@ -62,6 +71,9 @@ class _$EnterpriseJsonldOpportunityCreateLead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is EnterpriseJsonldOpportunityCreateLead &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType &&
         name == other.name &&
         type == other.type &&
         email == other.email &&
@@ -77,6 +89,9 @@ class _$EnterpriseJsonldOpportunityCreateLead
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, atContext.hashCode);
+    _$hash = $jc(_$hash, atId.hashCode);
+    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
@@ -95,6 +110,9 @@ class _$EnterpriseJsonldOpportunityCreateLead
   String toString() {
     return (newBuiltValueToStringHelper(
             r'EnterpriseJsonldOpportunityCreateLead')
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType)
           ..add('name', name)
           ..add('type', type)
           ..add('email', email)
@@ -114,6 +132,20 @@ class EnterpriseJsonldOpportunityCreateLeadBuilder
         Builder<EnterpriseJsonldOpportunityCreateLead,
             EnterpriseJsonldOpportunityCreateLeadBuilder> {
   _$EnterpriseJsonldOpportunityCreateLead? _$v;
+
+  CenterJsonldHappeningReadContextBuilder? _atContext;
+  CenterJsonldHappeningReadContextBuilder get atContext =>
+      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(String? atType) => _$this._atType = atType;
 
   String? _name;
   String? get name => _$this._name;
@@ -162,6 +194,9 @@ class EnterpriseJsonldOpportunityCreateLeadBuilder
   EnterpriseJsonldOpportunityCreateLeadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _atContext = $v.atContext?.toBuilder();
+      _atId = $v.atId;
+      _atType = $v.atType;
       _name = $v.name;
       _type = $v.type;
       _email = $v.email;
@@ -193,19 +228,37 @@ class EnterpriseJsonldOpportunityCreateLeadBuilder
   EnterpriseJsonldOpportunityCreateLead build() => _build();
 
   _$EnterpriseJsonldOpportunityCreateLead _build() {
-    final _$result = _$v ??
-        new _$EnterpriseJsonldOpportunityCreateLead._(
-          name: name,
-          type: type,
-          email: email,
-          mobile: mobile,
-          mainCenter: mainCenter,
-          language: language,
-          address: address,
-          zipcode: zipcode,
-          city: city,
-          country: country,
-        );
+    _$EnterpriseJsonldOpportunityCreateLead _$result;
+    try {
+      _$result = _$v ??
+          new _$EnterpriseJsonldOpportunityCreateLead._(
+            atContext: _atContext?.build(),
+            atId: atId,
+            atType: atType,
+            name: name,
+            type: type,
+            email: email,
+            mobile: mobile,
+            mainCenter: mainCenter,
+            language: language,
+            address: address,
+            zipcode: zipcode,
+            city: city,
+            country: country,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'atContext';
+        _atContext?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'EnterpriseJsonldOpportunityCreateLead',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

@@ -13,7 +13,7 @@ import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_language_public_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
-import 'package:so_dart_sdk/backend/model/language_jsonld_public_language_read_opportunity_read_lead.dart';
+import 'package:so_dart_sdk/backend/model/language_jsonld_public_language_read_opportunity_create_lead.dart';
 
 class LanguageApi {
 
@@ -127,9 +127,9 @@ class LanguageApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [LanguageJsonldPublicLanguageReadOpportunityReadLead] as data
+  /// Returns a [Future] containing a [Response] with a [LanguageJsonldPublicLanguageReadOpportunityCreateLead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LanguageJsonldPublicLanguageReadOpportunityReadLead>> apiLanguagePublicGetItem({ 
+  Future<Response<LanguageJsonldPublicLanguageReadOpportunityCreateLead>> apiLanguagePublicGetItem({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -159,14 +159,14 @@ class LanguageApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    LanguageJsonldPublicLanguageReadOpportunityReadLead? _responseData;
+    LanguageJsonldPublicLanguageReadOpportunityCreateLead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(LanguageJsonldPublicLanguageReadOpportunityReadLead),
-      ) as LanguageJsonldPublicLanguageReadOpportunityReadLead;
+        specifiedType: const FullType(LanguageJsonldPublicLanguageReadOpportunityCreateLead),
+      ) as LanguageJsonldPublicLanguageReadOpportunityCreateLead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -178,7 +178,7 @@ class LanguageApi {
       );
     }
 
-    return Response<LanguageJsonldPublicLanguageReadOpportunityReadLead>(
+    return Response<LanguageJsonldPublicLanguageReadOpportunityCreateLead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

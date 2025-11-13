@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/individual_jsonld_opportunity_create_lead.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_opportunity_create_lead.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -14,6 +15,9 @@ part 'opportunity_jsonld_opportunity_create_lead.g.dart';
 /// 
 ///
 /// Properties:
+/// * [atContext] 
+/// * [atId] 
+/// * [atType] 
 /// * [origin] 
 /// * [commitment] 
 /// * [center] 
@@ -23,6 +27,15 @@ part 'opportunity_jsonld_opportunity_create_lead.g.dart';
 /// * [begin] 
 @BuiltValue()
 abstract class OpportunityJsonldOpportunityCreateLead implements Built<OpportunityJsonldOpportunityCreateLead, OpportunityJsonldOpportunityCreateLeadBuilder> {
+  @BuiltValueField(wireName: r'@context')
+  CenterJsonldHappeningReadContext? get atContext;
+
+  @BuiltValueField(wireName: r'@id')
+  String? get atId;
+
+  @BuiltValueField(wireName: r'@type')
+  String? get atType;
+
   @BuiltValueField(wireName: r'origin')
   int? get origin;
 
@@ -33,14 +46,14 @@ abstract class OpportunityJsonldOpportunityCreateLead implements Built<Opportuni
   String? get center;
 
   @BuiltValueField(wireName: r'client')
-  EnterpriseJsonldOpportunityCreateLead? get client;
+  EnterpriseJsonldOpportunityCreateLead get client;
 
   @BuiltValueField(wireName: r'owner')
   IndividualJsonldOpportunityCreateLead? get owner;
 
   /// Type de l'opportunité
   @BuiltValueField(wireName: r'type')
-  OpportunityJsonldOpportunityCreateLeadTypeEnum? get type;
+  OpportunityJsonldOpportunityCreateLeadTypeEnum get type;
   // enum typeEnum {  FULL_DESKTOP,  FULL_COWORKING,  MEETING,  COWORKING,  OPEN_DESKTOP,  DOMICILIATION,  };
 
   @BuiltValueField(wireName: r'begin')
@@ -70,13 +83,32 @@ class _$OpportunityJsonldOpportunityCreateLeadSerializer implements PrimitiveSer
     OpportunityJsonldOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.origin != null) {
-      yield r'origin';
+    if (object.atContext != null) {
+      yield r'@context';
       yield serializers.serialize(
-        object.origin,
-        specifiedType: const FullType.nullable(int),
+        object.atContext,
+        specifiedType: const FullType(CenterJsonldHappeningReadContext),
       );
     }
+    if (object.atId != null) {
+      yield r'@id';
+      yield serializers.serialize(
+        object.atId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.atType != null) {
+      yield r'@type';
+      yield serializers.serialize(
+        object.atType,
+        specifiedType: const FullType(String),
+      );
+    }
+    yield r'origin';
+    yield object.origin == null ? null : serializers.serialize(
+      object.origin,
+      specifiedType: const FullType.nullable(int),
+    );
     if (object.commitment != null) {
       yield r'commitment';
       yield serializers.serialize(
@@ -91,27 +123,21 @@ class _$OpportunityJsonldOpportunityCreateLeadSerializer implements PrimitiveSer
         specifiedType: const FullType.nullable(String),
       );
     }
-    if (object.client != null) {
-      yield r'client';
-      yield serializers.serialize(
-        object.client,
-        specifiedType: const FullType(EnterpriseJsonldOpportunityCreateLead),
-      );
-    }
-    if (object.owner != null) {
-      yield r'owner';
-      yield serializers.serialize(
-        object.owner,
-        specifiedType: const FullType.nullable(IndividualJsonldOpportunityCreateLead),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(OpportunityJsonldOpportunityCreateLeadTypeEnum),
-      );
-    }
+    yield r'client';
+    yield serializers.serialize(
+      object.client,
+      specifiedType: const FullType(EnterpriseJsonldOpportunityCreateLead),
+    );
+    yield r'owner';
+    yield object.owner == null ? null : serializers.serialize(
+      object.owner,
+      specifiedType: const FullType.nullable(IndividualJsonldOpportunityCreateLead),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(OpportunityJsonldOpportunityCreateLeadTypeEnum),
+    );
     if (object.begin != null) {
       yield r'begin';
       yield serializers.serialize(
@@ -142,6 +168,27 @@ class _$OpportunityJsonldOpportunityCreateLeadSerializer implements PrimitiveSer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CenterJsonldHappeningReadContext),
+          ) as CenterJsonldHappeningReadContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'@id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atId = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
+          break;
         case r'origin':
           final valueDes = serializers.deserialize(
             value,

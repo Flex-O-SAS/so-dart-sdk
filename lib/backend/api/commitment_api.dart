@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:so_dart_sdk/backend/api_util.dart';
-import 'package:so_dart_sdk/backend/model/commitment_jsonld_public_commitment_read_opportunity_read_lead.dart';
+import 'package:so_dart_sdk/backend/model/commitment_jsonld_public_commitment_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
 
@@ -33,9 +33,9 @@ class CommitmentApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CommitmentJsonldPublicCommitmentReadOpportunityReadLead] as data
+  /// Returns a [Future] containing a [Response] with a [CommitmentJsonldPublicCommitmentReadOpportunityCreateLead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CommitmentJsonldPublicCommitmentReadOpportunityReadLead>> apiCommitmentPublicGetItem({ 
+  Future<Response<CommitmentJsonldPublicCommitmentReadOpportunityCreateLead>> apiCommitmentPublicGetItem({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -65,14 +65,14 @@ class CommitmentApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CommitmentJsonldPublicCommitmentReadOpportunityReadLead? _responseData;
+    CommitmentJsonldPublicCommitmentReadOpportunityCreateLead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(CommitmentJsonldPublicCommitmentReadOpportunityReadLead),
-      ) as CommitmentJsonldPublicCommitmentReadOpportunityReadLead;
+        specifiedType: const FullType(CommitmentJsonldPublicCommitmentReadOpportunityCreateLead),
+      ) as CommitmentJsonldPublicCommitmentReadOpportunityCreateLead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -84,7 +84,7 @@ class CommitmentApi {
       );
     }
 
-    return Response<CommitmentJsonldPublicCommitmentReadOpportunityReadLead>(
+    return Response<CommitmentJsonldPublicCommitmentReadOpportunityCreateLead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

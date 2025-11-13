@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'language_jsonld_public_language_read_opportunity_read_lead.dart';
+part of 'language_jsonld_public_language_read_opportunity_create_lead.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$LanguageJsonldPublicLanguageReadOpportunityReadLead
-    extends LanguageJsonldPublicLanguageReadOpportunityReadLead {
+class _$LanguageJsonldPublicLanguageReadOpportunityCreateLead
+    extends LanguageJsonldPublicLanguageReadOpportunityCreateLead {
   @override
   final String? atId;
   @override
@@ -19,34 +19,34 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLead
   @override
   final String? label;
 
-  factory _$LanguageJsonldPublicLanguageReadOpportunityReadLead(
+  factory _$LanguageJsonldPublicLanguageReadOpportunityCreateLead(
           [void Function(
-                  LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder)?
+                  LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder)?
               updates]) =>
-      (new LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder()
+      (new LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder()
             ..update(updates))
           ._build();
 
-  _$LanguageJsonldPublicLanguageReadOpportunityReadLead._(
+  _$LanguageJsonldPublicLanguageReadOpportunityCreateLead._(
       {this.atId, this.atType, this.atContext, this.code, this.label})
       : super._();
 
   @override
-  LanguageJsonldPublicLanguageReadOpportunityReadLead rebuild(
+  LanguageJsonldPublicLanguageReadOpportunityCreateLead rebuild(
           void Function(
-                  LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder)
+                  LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder toBuilder() =>
-      new LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder()
+  LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder toBuilder() =>
+      new LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder()
         ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LanguageJsonldPublicLanguageReadOpportunityReadLead &&
+    return other is LanguageJsonldPublicLanguageReadOpportunityCreateLead &&
         atId == other.atId &&
         atType == other.atType &&
         atContext == other.atContext &&
@@ -69,7 +69,7 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLead
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'LanguageJsonldPublicLanguageReadOpportunityReadLead')
+            r'LanguageJsonldPublicLanguageReadOpportunityCreateLead')
           ..add('atId', atId)
           ..add('atType', atType)
           ..add('atContext', atContext)
@@ -79,11 +79,11 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLead
   }
 }
 
-class LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder
+class LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder
     implements
-        Builder<LanguageJsonldPublicLanguageReadOpportunityReadLead,
-            LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder> {
-  _$LanguageJsonldPublicLanguageReadOpportunityReadLead? _$v;
+        Builder<LanguageJsonldPublicLanguageReadOpportunityCreateLead,
+            LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder> {
+  _$LanguageJsonldPublicLanguageReadOpportunityCreateLead? _$v;
 
   String? _atId;
   String? get atId => _$this._atId;
@@ -107,11 +107,11 @@ class LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder
   String? get label => _$this._label;
   set label(String? label) => _$this._label = label;
 
-  LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder() {
-    LanguageJsonldPublicLanguageReadOpportunityReadLead._defaults(this);
+  LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder() {
+    LanguageJsonldPublicLanguageReadOpportunityCreateLead._defaults(this);
   }
 
-  LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder get _$this {
+  LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atId = $v.atId;
@@ -125,26 +125,27 @@ class LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder
   }
 
   @override
-  void replace(LanguageJsonldPublicLanguageReadOpportunityReadLead other) {
+  void replace(LanguageJsonldPublicLanguageReadOpportunityCreateLead other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$LanguageJsonldPublicLanguageReadOpportunityReadLead;
+    _$v = other as _$LanguageJsonldPublicLanguageReadOpportunityCreateLead;
   }
 
   @override
   void update(
-      void Function(LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder)?
+      void Function(
+              LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  LanguageJsonldPublicLanguageReadOpportunityReadLead build() => _build();
+  LanguageJsonldPublicLanguageReadOpportunityCreateLead build() => _build();
 
-  _$LanguageJsonldPublicLanguageReadOpportunityReadLead _build() {
-    _$LanguageJsonldPublicLanguageReadOpportunityReadLead _$result;
+  _$LanguageJsonldPublicLanguageReadOpportunityCreateLead _build() {
+    _$LanguageJsonldPublicLanguageReadOpportunityCreateLead _$result;
     try {
       _$result = _$v ??
-          new _$LanguageJsonldPublicLanguageReadOpportunityReadLead._(
+          new _$LanguageJsonldPublicLanguageReadOpportunityCreateLead._(
             atId: atId,
             atType: atType,
             atContext: _atContext?.build(),
@@ -158,7 +159,7 @@ class LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder
         _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'LanguageJsonldPublicLanguageReadOpportunityReadLead',
+            r'LanguageJsonldPublicLanguageReadOpportunityCreateLead',
             _$failedField,
             e.toString());
       }

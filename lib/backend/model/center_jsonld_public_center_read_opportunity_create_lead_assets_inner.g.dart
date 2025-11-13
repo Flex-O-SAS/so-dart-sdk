@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'center_jsonld_public_center_read_opportunity_read_lead_assets_inner.dart';
+part of 'center_jsonld_public_center_read_opportunity_create_lead_assets_inner.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner
-    extends CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner {
+class _$CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner
+    extends CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner {
   @override
   final String? id;
   @override
@@ -17,36 +17,36 @@ class _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner
   @override
   final BuiltList<String>? tags;
 
-  factory _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner(
+  factory _$CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner(
           [void Function(
-                  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder)?
+                  CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder)?
               updates]) =>
-      (new CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder()
+      (new CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder()
             ..update(updates))
           ._build();
 
-  _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner._(
+  _$CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner._(
       {this.id, this.url, this.name, this.tags})
       : super._();
 
   @override
-  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner rebuild(
+  CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner rebuild(
           void Function(
-                  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder)
+                  CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder
+  CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder
       toBuilder() =>
-          new CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder()
+          new CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder()
             ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other
-            is CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner &&
+            is CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner &&
         id == other.id &&
         url == other.url &&
         name == other.name &&
@@ -67,7 +67,7 @@ class _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner')
+            r'CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner')
           ..add('id', id)
           ..add('url', url)
           ..add('name', name)
@@ -76,11 +76,11 @@ class _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner
   }
 }
 
-class CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder
+class CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder
     implements
-        Builder<CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner,
-            CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder> {
-  _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner? _$v;
+        Builder<CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner,
+            CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder> {
+  _$CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner? _$v;
 
   String? _id;
   String? get id => _$this._id;
@@ -98,11 +98,13 @@ class CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
-  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder() {
-    CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner._defaults(this);
+  CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder() {
+    CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner._defaults(
+        this);
   }
 
-  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder get _$this {
+  CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder
+      get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -116,28 +118,29 @@ class CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder
 
   @override
   void replace(
-      CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner other) {
+      CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner;
+    _$v =
+        other as _$CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner;
   }
 
   @override
   void update(
       void Function(
-              CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder)?
+              CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner build() =>
+  CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner build() =>
       _build();
 
-  _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner _build() {
-    _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner _$result;
+  _$CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner _build() {
+    _$CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner _$result;
     try {
       _$result = _$v ??
-          new _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner._(
+          new _$CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner._(
             id: id,
             url: url,
             name: name,
@@ -150,7 +153,7 @@ class CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder
         _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner',
+            r'CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner',
             _$failedField,
             e.toString());
       }

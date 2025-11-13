@@ -7,9 +7,9 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'center_jsonld_public_center_read_opportunity_read_lead_assets_inner.g.dart';
+part 'center_jsonld_public_center_read_opportunity_create_lead_assets_inner.g.dart';
 
-/// CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner
+/// CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner
 ///
 /// Properties:
 /// * [id] 
@@ -17,7 +17,7 @@ part 'center_jsonld_public_center_read_opportunity_read_lead_assets_inner.g.dart
 /// * [name] 
 /// * [tags] 
 @BuiltValue()
-abstract class CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner implements Built<CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner, CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder> {
+abstract class CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner implements Built<CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner, CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder> {
   @BuiltValueField(wireName: r'id')
   String? get id;
 
@@ -30,27 +30,27 @@ abstract class CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner implem
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
 
-  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner._();
+  CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner._();
 
-  factory CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner([void updates(CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder b)]) = _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner;
+  factory CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner([void updates(CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder b)]) = _$CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder b) => b;
+  static void _defaults(CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner> get serializer => _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerSerializer();
+  static Serializer<CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner> get serializer => _$CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerSerializer();
 }
 
-class _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerSerializer implements PrimitiveSerializer<CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner> {
+class _$CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerSerializer implements PrimitiveSerializer<CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner> {
   @override
-  final Iterable<Type> types = const [CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner, _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner];
+  final Iterable<Type> types = const [CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner, _$CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner];
 
   @override
-  final String wireName = r'CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner';
+  final String wireName = r'CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner object, {
+    CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.id != null) {
@@ -86,7 +86,7 @@ class _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerSerializer imp
   @override
   Object serialize(
     Serializers serializers,
-    CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner object, {
+    CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -97,7 +97,7 @@ class _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerSerializer imp
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder result,
+    required CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -141,12 +141,12 @@ class _$CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerSerializer imp
   }
 
   @override
-  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner deserialize(
+  CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInnerBuilder();
+    final result = CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInnerBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

@@ -7,7 +7,7 @@ import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.d
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'commitment_jsonld_public_commitment_read_opportunity_read_lead.g.dart';
+part 'commitment_jsonld_public_commitment_read_opportunity_create_lead.g.dart';
 
 /// 
 ///
@@ -18,7 +18,7 @@ part 'commitment_jsonld_public_commitment_read_opportunity_read_lead.g.dart';
 /// * [label] 
 /// * [reference] 
 @BuiltValue()
-abstract class CommitmentJsonldPublicCommitmentReadOpportunityReadLead implements Built<CommitmentJsonldPublicCommitmentReadOpportunityReadLead, CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder> {
+abstract class CommitmentJsonldPublicCommitmentReadOpportunityCreateLead implements Built<CommitmentJsonldPublicCommitmentReadOpportunityCreateLead, CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder> {
   @BuiltValueField(wireName: r'@context')
   CenterJsonldHappeningReadContext? get atContext;
 
@@ -34,27 +34,27 @@ abstract class CommitmentJsonldPublicCommitmentReadOpportunityReadLead implement
   @BuiltValueField(wireName: r'reference')
   String? get reference;
 
-  CommitmentJsonldPublicCommitmentReadOpportunityReadLead._();
+  CommitmentJsonldPublicCommitmentReadOpportunityCreateLead._();
 
-  factory CommitmentJsonldPublicCommitmentReadOpportunityReadLead([void updates(CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder b)]) = _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead;
+  factory CommitmentJsonldPublicCommitmentReadOpportunityCreateLead([void updates(CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder b)]) = _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder b) => b;
+  static void _defaults(CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CommitmentJsonldPublicCommitmentReadOpportunityReadLead> get serializer => _$CommitmentJsonldPublicCommitmentReadOpportunityReadLeadSerializer();
+  static Serializer<CommitmentJsonldPublicCommitmentReadOpportunityCreateLead> get serializer => _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadSerializer();
 }
 
-class _$CommitmentJsonldPublicCommitmentReadOpportunityReadLeadSerializer implements PrimitiveSerializer<CommitmentJsonldPublicCommitmentReadOpportunityReadLead> {
+class _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadSerializer implements PrimitiveSerializer<CommitmentJsonldPublicCommitmentReadOpportunityCreateLead> {
   @override
-  final Iterable<Type> types = const [CommitmentJsonldPublicCommitmentReadOpportunityReadLead, _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead];
+  final Iterable<Type> types = const [CommitmentJsonldPublicCommitmentReadOpportunityCreateLead, _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLead];
 
   @override
-  final String wireName = r'CommitmentJsonldPublicCommitmentReadOpportunityReadLead';
+  final String wireName = r'CommitmentJsonldPublicCommitmentReadOpportunityCreateLead';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    CommitmentJsonldPublicCommitmentReadOpportunityReadLead object, {
+    CommitmentJsonldPublicCommitmentReadOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atContext != null) {
@@ -97,7 +97,7 @@ class _$CommitmentJsonldPublicCommitmentReadOpportunityReadLeadSerializer implem
   @override
   Object serialize(
     Serializers serializers,
-    CommitmentJsonldPublicCommitmentReadOpportunityReadLead object, {
+    CommitmentJsonldPublicCommitmentReadOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -108,7 +108,7 @@ class _$CommitmentJsonldPublicCommitmentReadOpportunityReadLeadSerializer implem
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder result,
+    required CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -159,12 +159,12 @@ class _$CommitmentJsonldPublicCommitmentReadOpportunityReadLeadSerializer implem
   }
 
   @override
-  CommitmentJsonldPublicCommitmentReadOpportunityReadLead deserialize(
+  CommitmentJsonldPublicCommitmentReadOpportunityCreateLead deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder();
+    final result = CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

@@ -5,8 +5,8 @@
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_create_lead.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_read_lead.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +22,7 @@ part 'api_centers_public_get_collection200_response.g.dart';
 @BuiltValue()
 abstract class ApiCentersPublicGetCollection200Response implements Built<ApiCentersPublicGetCollection200Response, ApiCentersPublicGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<CenterJsonldPublicCenterReadOpportunityReadLead> get member;
+  BuiltList<CenterJsonldPublicCenterReadOpportunityCreateLead> get member;
 
   @BuiltValueField(wireName: r'totalItems')
   int? get totalItems;
@@ -59,7 +59,7 @@ class _$ApiCentersPublicGetCollection200ResponseSerializer implements PrimitiveS
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadOpportunityReadLead)]),
+      specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadOpportunityCreateLead)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -108,8 +108,8 @@ class _$ApiCentersPublicGetCollection200ResponseSerializer implements PrimitiveS
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadOpportunityReadLead)]),
-          ) as BuiltList<CenterJsonldPublicCenterReadOpportunityReadLead>;
+            specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadOpportunityCreateLead)]),
+          ) as BuiltList<CenterJsonldPublicCenterReadOpportunityCreateLead>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':

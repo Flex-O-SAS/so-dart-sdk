@@ -42,9 +42,9 @@ import 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context_one_of.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_read_lead.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_read_lead_assets_inner.dart';
-import 'package:so_dart_sdk/backend/model/commitment_jsonld_public_commitment_read_opportunity_read_lead.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_create_lead.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_create_lead_assets_inner.dart';
+import 'package:so_dart_sdk/backend/model/commitment_jsonld_public_commitment_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/company_jsonld_company_search.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_json_violations_inner.dart';
@@ -56,7 +56,6 @@ import 'package:so_dart_sdk/backend/model/domain_automapper_jsonld_domain_automa
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_opportunity_create_lead.dart';
-import 'package:so_dart_sdk/backend/model/enterprise_jsonld_opportunity_read_lead.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/expression_expression_write.dart';
@@ -79,11 +78,9 @@ import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_en
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_check_email.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_opportunity_create_lead.dart';
-import 'package:so_dart_sdk/backend/model/individual_jsonld_opportunity_read_lead.dart';
 import 'package:so_dart_sdk/backend/model/invoice_jsonld_invoice_search.dart';
-import 'package:so_dart_sdk/backend/model/language_jsonld_public_language_read_opportunity_read_lead.dart';
+import 'package:so_dart_sdk/backend/model/language_jsonld_public_language_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_create_lead.dart';
-import 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_read_lead.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_search.dart';
 import 'package:so_dart_sdk/backend/model/rule_execute_booking_dto_jsonld_rule_execute_booking.dart';
 import 'package:so_dart_sdk/backend/model/rule_execute_booking_response_dto_jsonld_rule_execute_booking.dart';
@@ -140,9 +137,9 @@ part 'serializers.g.dart';
   CenterJsonldHappeningRead,
   CenterJsonldHappeningReadContext,
   CenterJsonldHappeningReadContextOneOf,
-  CenterJsonldPublicCenterReadOpportunityReadLead,
-  CenterJsonldPublicCenterReadOpportunityReadLeadAssetsInner,
-  CommitmentJsonldPublicCommitmentReadOpportunityReadLead,
+  CenterJsonldPublicCenterReadOpportunityCreateLead,
+  CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner,
+  CommitmentJsonldPublicCommitmentReadOpportunityCreateLead,
   CompanyJsonldCompanySearch,
   ConstraintViolationJson,
   ConstraintViolationJsonViolationsInner,
@@ -154,7 +151,6 @@ part 'serializers.g.dart';
   EnterpriseJsonldEnterpriseSearchEnterpriseRead,
   EnterpriseJsonldIndividualSearch,
   EnterpriseJsonldOpportunityCreateLead,
-  EnterpriseJsonldOpportunityReadLead,
   Error,
   ErrorJsonld,
   ExpressionExpressionWrite,
@@ -177,11 +173,9 @@ part 'serializers.g.dart';
   IndividualJsonldIndividualCheckEmail,
   IndividualJsonldIndividualSearch,
   IndividualJsonldOpportunityCreateLead,
-  IndividualJsonldOpportunityReadLead,
   InvoiceJsonldInvoiceSearch,
-  LanguageJsonldPublicLanguageReadOpportunityReadLead,
+  LanguageJsonldPublicLanguageReadOpportunityCreateLead,
   OpportunityJsonldOpportunityCreateLead,
-  OpportunityJsonldOpportunityReadLead,
   OpportunityJsonldOpportunitySearch,
   RuleExecuteBookingDtoJsonldRuleExecuteBooking,
   RuleExecuteBookingResponseDtoJsonldRuleExecuteBooking,

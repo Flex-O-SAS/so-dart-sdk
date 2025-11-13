@@ -9,7 +9,7 @@ part of 'api_language_public_get_collection200_response.dart';
 class _$ApiLanguagePublicGetCollection200Response
     extends ApiLanguagePublicGetCollection200Response {
   @override
-  final BuiltList<LanguageJsonldPublicLanguageReadOpportunityReadLead> member;
+  final BuiltList<LanguageJsonldPublicLanguageReadOpportunityCreateLead> member;
   @override
   final int? totalItems;
   @override
@@ -79,13 +79,12 @@ class ApiLanguagePublicGetCollection200ResponseBuilder
             ApiLanguagePublicGetCollection200ResponseBuilder> {
   _$ApiLanguagePublicGetCollection200Response? _$v;
 
-  ListBuilder<LanguageJsonldPublicLanguageReadOpportunityReadLead>? _member;
-  ListBuilder<
-      LanguageJsonldPublicLanguageReadOpportunityReadLead> get member => _$this
-          ._member ??=
-      new ListBuilder<LanguageJsonldPublicLanguageReadOpportunityReadLead>();
+  ListBuilder<LanguageJsonldPublicLanguageReadOpportunityCreateLead>? _member;
+  ListBuilder<LanguageJsonldPublicLanguageReadOpportunityCreateLead>
+      get member => _$this._member ??= new ListBuilder<
+          LanguageJsonldPublicLanguageReadOpportunityCreateLead>();
   set member(
-          ListBuilder<LanguageJsonldPublicLanguageReadOpportunityReadLead>?
+          ListBuilder<LanguageJsonldPublicLanguageReadOpportunityCreateLead>?
               member) =>
       _$this._member = member;
 

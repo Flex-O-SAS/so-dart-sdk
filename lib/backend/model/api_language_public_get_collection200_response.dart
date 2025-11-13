@@ -5,8 +5,8 @@
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_search.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/backend/model/language_jsonld_public_language_read_opportunity_create_lead.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/language_jsonld_public_language_read_opportunity_read_lead.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +22,7 @@ part 'api_language_public_get_collection200_response.g.dart';
 @BuiltValue()
 abstract class ApiLanguagePublicGetCollection200Response implements Built<ApiLanguagePublicGetCollection200Response, ApiLanguagePublicGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<LanguageJsonldPublicLanguageReadOpportunityReadLead> get member;
+  BuiltList<LanguageJsonldPublicLanguageReadOpportunityCreateLead> get member;
 
   @BuiltValueField(wireName: r'totalItems')
   int? get totalItems;
@@ -59,7 +59,7 @@ class _$ApiLanguagePublicGetCollection200ResponseSerializer implements Primitive
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(LanguageJsonldPublicLanguageReadOpportunityReadLead)]),
+      specifiedType: const FullType(BuiltList, [FullType(LanguageJsonldPublicLanguageReadOpportunityCreateLead)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -108,8 +108,8 @@ class _$ApiLanguagePublicGetCollection200ResponseSerializer implements Primitive
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(LanguageJsonldPublicLanguageReadOpportunityReadLead)]),
-          ) as BuiltList<LanguageJsonldPublicLanguageReadOpportunityReadLead>;
+            specifiedType: const FullType(BuiltList, [FullType(LanguageJsonldPublicLanguageReadOpportunityCreateLead)]),
+          ) as BuiltList<LanguageJsonldPublicLanguageReadOpportunityCreateLead>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':

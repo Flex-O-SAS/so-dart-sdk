@@ -9,7 +9,7 @@ part of 'api_centers_public_get_collection200_response.dart';
 class _$ApiCentersPublicGetCollection200Response
     extends ApiCentersPublicGetCollection200Response {
   @override
-  final BuiltList<CenterJsonldPublicCenterReadOpportunityReadLead> member;
+  final BuiltList<CenterJsonldPublicCenterReadOpportunityCreateLead> member;
   @override
   final int? totalItems;
   @override
@@ -79,12 +79,12 @@ class ApiCentersPublicGetCollection200ResponseBuilder
             ApiCentersPublicGetCollection200ResponseBuilder> {
   _$ApiCentersPublicGetCollection200Response? _$v;
 
-  ListBuilder<CenterJsonldPublicCenterReadOpportunityReadLead>? _member;
-  ListBuilder<CenterJsonldPublicCenterReadOpportunityReadLead> get member =>
+  ListBuilder<CenterJsonldPublicCenterReadOpportunityCreateLead>? _member;
+  ListBuilder<CenterJsonldPublicCenterReadOpportunityCreateLead> get member =>
       _$this._member ??=
-          new ListBuilder<CenterJsonldPublicCenterReadOpportunityReadLead>();
+          new ListBuilder<CenterJsonldPublicCenterReadOpportunityCreateLead>();
   set member(
-          ListBuilder<CenterJsonldPublicCenterReadOpportunityReadLead>?
+          ListBuilder<CenterJsonldPublicCenterReadOpportunityCreateLead>?
               member) =>
       _$this._member = member;
 

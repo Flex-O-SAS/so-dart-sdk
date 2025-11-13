@@ -9,6 +9,12 @@ part of 'individual_jsonld_opportunity_create_lead.dart';
 class _$IndividualJsonldOpportunityCreateLead
     extends IndividualJsonldOpportunityCreateLead {
   @override
+  final CenterJsonldHappeningReadContext? atContext;
+  @override
+  final String? atId;
+  @override
+  final String? atType;
+  @override
   final String? firstname;
   @override
   final String? lastname;
@@ -36,7 +42,10 @@ class _$IndividualJsonldOpportunityCreateLead
           ._build();
 
   _$IndividualJsonldOpportunityCreateLead._(
-      {this.firstname,
+      {this.atContext,
+      this.atId,
+      this.atType,
+      this.firstname,
       this.lastname,
       this.email,
       this.mobile,
@@ -62,6 +71,9 @@ class _$IndividualJsonldOpportunityCreateLead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is IndividualJsonldOpportunityCreateLead &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType &&
         firstname == other.firstname &&
         lastname == other.lastname &&
         email == other.email &&
@@ -77,6 +89,9 @@ class _$IndividualJsonldOpportunityCreateLead
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, atContext.hashCode);
+    _$hash = $jc(_$hash, atId.hashCode);
+    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, firstname.hashCode);
     _$hash = $jc(_$hash, lastname.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
@@ -95,6 +110,9 @@ class _$IndividualJsonldOpportunityCreateLead
   String toString() {
     return (newBuiltValueToStringHelper(
             r'IndividualJsonldOpportunityCreateLead')
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType)
           ..add('firstname', firstname)
           ..add('lastname', lastname)
           ..add('email', email)
@@ -114,6 +132,20 @@ class IndividualJsonldOpportunityCreateLeadBuilder
         Builder<IndividualJsonldOpportunityCreateLead,
             IndividualJsonldOpportunityCreateLeadBuilder> {
   _$IndividualJsonldOpportunityCreateLead? _$v;
+
+  CenterJsonldHappeningReadContextBuilder? _atContext;
+  CenterJsonldHappeningReadContextBuilder get atContext =>
+      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(String? atType) => _$this._atType = atType;
 
   String? _firstname;
   String? get firstname => _$this._firstname;
@@ -162,6 +194,9 @@ class IndividualJsonldOpportunityCreateLeadBuilder
   IndividualJsonldOpportunityCreateLeadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _atContext = $v.atContext?.toBuilder();
+      _atId = $v.atId;
+      _atType = $v.atType;
       _firstname = $v.firstname;
       _lastname = $v.lastname;
       _email = $v.email;
@@ -193,19 +228,37 @@ class IndividualJsonldOpportunityCreateLeadBuilder
   IndividualJsonldOpportunityCreateLead build() => _build();
 
   _$IndividualJsonldOpportunityCreateLead _build() {
-    final _$result = _$v ??
-        new _$IndividualJsonldOpportunityCreateLead._(
-          firstname: firstname,
-          lastname: lastname,
-          email: email,
-          mobile: mobile,
-          mainCenter: mainCenter,
-          language: language,
-          address: address,
-          zipcode: zipcode,
-          city: city,
-          country: country,
-        );
+    _$IndividualJsonldOpportunityCreateLead _$result;
+    try {
+      _$result = _$v ??
+          new _$IndividualJsonldOpportunityCreateLead._(
+            atContext: _atContext?.build(),
+            atId: atId,
+            atType: atType,
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
+            mobile: mobile,
+            mainCenter: mainCenter,
+            language: language,
+            address: address,
+            zipcode: zipcode,
+            city: city,
+            country: country,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'atContext';
+        _atContext?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'IndividualJsonldOpportunityCreateLead',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

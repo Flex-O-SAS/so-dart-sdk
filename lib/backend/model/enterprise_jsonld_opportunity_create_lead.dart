@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,6 +12,9 @@ part 'enterprise_jsonld_opportunity_create_lead.g.dart';
 /// 
 ///
 /// Properties:
+/// * [atContext] 
+/// * [atId] 
+/// * [atType] 
 /// * [name] 
 /// * [type] 
 /// * [email] 
@@ -23,6 +27,15 @@ part 'enterprise_jsonld_opportunity_create_lead.g.dart';
 /// * [country] 
 @BuiltValue()
 abstract class EnterpriseJsonldOpportunityCreateLead implements Built<EnterpriseJsonldOpportunityCreateLead, EnterpriseJsonldOpportunityCreateLeadBuilder> {
+  @BuiltValueField(wireName: r'@context')
+  CenterJsonldHappeningReadContext? get atContext;
+
+  @BuiltValueField(wireName: r'@id')
+  String? get atId;
+
+  @BuiltValueField(wireName: r'@type')
+  String? get atType;
+
   @BuiltValueField(wireName: r'name')
   String? get name;
 
@@ -76,6 +89,27 @@ class _$EnterpriseJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
     EnterpriseJsonldOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(CenterJsonldHappeningReadContext),
+      );
+    }
+    if (object.atId != null) {
+      yield r'@id';
+      yield serializers.serialize(
+        object.atId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.atType != null) {
+      yield r'@type';
+      yield serializers.serialize(
+        object.atType,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
@@ -169,6 +203,27 @@ class _$EnterpriseJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CenterJsonldHappeningReadContext),
+          ) as CenterJsonldHappeningReadContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'@id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atId = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
+          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,

@@ -104,17 +104,23 @@ class _$OpportunityJsonldOpportunityCreateLeadTypeEnumSerializer
 class _$OpportunityJsonldOpportunityCreateLead
     extends OpportunityJsonldOpportunityCreateLead {
   @override
+  final CenterJsonldHappeningReadContext? atContext;
+  @override
+  final String? atId;
+  @override
+  final String? atType;
+  @override
   final int? origin;
   @override
   final String? commitment;
   @override
   final String? center;
   @override
-  final EnterpriseJsonldOpportunityCreateLead? client;
+  final EnterpriseJsonldOpportunityCreateLead client;
   @override
   final IndividualJsonldOpportunityCreateLead? owner;
   @override
-  final OpportunityJsonldOpportunityCreateLeadTypeEnum? type;
+  final OpportunityJsonldOpportunityCreateLeadTypeEnum type;
   @override
   final String? begin;
 
@@ -125,14 +131,22 @@ class _$OpportunityJsonldOpportunityCreateLead
           ._build();
 
   _$OpportunityJsonldOpportunityCreateLead._(
-      {this.origin,
+      {this.atContext,
+      this.atId,
+      this.atType,
+      this.origin,
       this.commitment,
       this.center,
-      this.client,
+      required this.client,
       this.owner,
-      this.type,
+      required this.type,
       this.begin})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        client, r'OpportunityJsonldOpportunityCreateLead', 'client');
+    BuiltValueNullFieldError.checkNotNull(
+        type, r'OpportunityJsonldOpportunityCreateLead', 'type');
+  }
 
   @override
   OpportunityJsonldOpportunityCreateLead rebuild(
@@ -148,6 +162,9 @@ class _$OpportunityJsonldOpportunityCreateLead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is OpportunityJsonldOpportunityCreateLead &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType &&
         origin == other.origin &&
         commitment == other.commitment &&
         center == other.center &&
@@ -160,6 +177,9 @@ class _$OpportunityJsonldOpportunityCreateLead
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, atContext.hashCode);
+    _$hash = $jc(_$hash, atId.hashCode);
+    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, origin.hashCode);
     _$hash = $jc(_$hash, commitment.hashCode);
     _$hash = $jc(_$hash, center.hashCode);
@@ -175,6 +195,9 @@ class _$OpportunityJsonldOpportunityCreateLead
   String toString() {
     return (newBuiltValueToStringHelper(
             r'OpportunityJsonldOpportunityCreateLead')
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType)
           ..add('origin', origin)
           ..add('commitment', commitment)
           ..add('center', center)
@@ -191,6 +214,20 @@ class OpportunityJsonldOpportunityCreateLeadBuilder
         Builder<OpportunityJsonldOpportunityCreateLead,
             OpportunityJsonldOpportunityCreateLeadBuilder> {
   _$OpportunityJsonldOpportunityCreateLead? _$v;
+
+  CenterJsonldHappeningReadContextBuilder? _atContext;
+  CenterJsonldHappeningReadContextBuilder get atContext =>
+      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
+  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(String? atType) => _$this._atType = atType;
 
   int? _origin;
   int? get origin => _$this._origin;
@@ -232,10 +269,13 @@ class OpportunityJsonldOpportunityCreateLeadBuilder
   OpportunityJsonldOpportunityCreateLeadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _atContext = $v.atContext?.toBuilder();
+      _atId = $v.atId;
+      _atType = $v.atType;
       _origin = $v.origin;
       _commitment = $v.commitment;
       _center = $v.center;
-      _client = $v.client?.toBuilder();
+      _client = $v.client.toBuilder();
       _owner = $v.owner?.toBuilder();
       _type = $v.type;
       _begin = $v.begin;
@@ -264,19 +304,26 @@ class OpportunityJsonldOpportunityCreateLeadBuilder
     try {
       _$result = _$v ??
           new _$OpportunityJsonldOpportunityCreateLead._(
+            atContext: _atContext?.build(),
+            atId: atId,
+            atType: atType,
             origin: origin,
             commitment: commitment,
             center: center,
-            client: _client?.build(),
+            client: client.build(),
             owner: _owner?.build(),
-            type: type,
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'OpportunityJsonldOpportunityCreateLead', 'type'),
             begin: begin,
           );
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'atContext';
+        _atContext?.build();
+
         _$failedField = 'client';
-        _client?.build();
+        client.build();
         _$failedField = 'owner';
         _owner?.build();
       } catch (e) {

@@ -7,7 +7,7 @@ import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.d
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'language_jsonld_public_language_read_opportunity_read_lead.g.dart';
+part 'language_jsonld_public_language_read_opportunity_create_lead.g.dart';
 
 /// 
 ///
@@ -18,7 +18,7 @@ part 'language_jsonld_public_language_read_opportunity_read_lead.g.dart';
 /// * [code] 
 /// * [label] 
 @BuiltValue()
-abstract class LanguageJsonldPublicLanguageReadOpportunityReadLead implements Built<LanguageJsonldPublicLanguageReadOpportunityReadLead, LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder> {
+abstract class LanguageJsonldPublicLanguageReadOpportunityCreateLead implements Built<LanguageJsonldPublicLanguageReadOpportunityCreateLead, LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder> {
   @BuiltValueField(wireName: r'@id')
   String? get atId;
 
@@ -34,27 +34,27 @@ abstract class LanguageJsonldPublicLanguageReadOpportunityReadLead implements Bu
   @BuiltValueField(wireName: r'label')
   String? get label;
 
-  LanguageJsonldPublicLanguageReadOpportunityReadLead._();
+  LanguageJsonldPublicLanguageReadOpportunityCreateLead._();
 
-  factory LanguageJsonldPublicLanguageReadOpportunityReadLead([void updates(LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder b)]) = _$LanguageJsonldPublicLanguageReadOpportunityReadLead;
+  factory LanguageJsonldPublicLanguageReadOpportunityCreateLead([void updates(LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder b)]) = _$LanguageJsonldPublicLanguageReadOpportunityCreateLead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder b) => b;
+  static void _defaults(LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LanguageJsonldPublicLanguageReadOpportunityReadLead> get serializer => _$LanguageJsonldPublicLanguageReadOpportunityReadLeadSerializer();
+  static Serializer<LanguageJsonldPublicLanguageReadOpportunityCreateLead> get serializer => _$LanguageJsonldPublicLanguageReadOpportunityCreateLeadSerializer();
 }
 
-class _$LanguageJsonldPublicLanguageReadOpportunityReadLeadSerializer implements PrimitiveSerializer<LanguageJsonldPublicLanguageReadOpportunityReadLead> {
+class _$LanguageJsonldPublicLanguageReadOpportunityCreateLeadSerializer implements PrimitiveSerializer<LanguageJsonldPublicLanguageReadOpportunityCreateLead> {
   @override
-  final Iterable<Type> types = const [LanguageJsonldPublicLanguageReadOpportunityReadLead, _$LanguageJsonldPublicLanguageReadOpportunityReadLead];
+  final Iterable<Type> types = const [LanguageJsonldPublicLanguageReadOpportunityCreateLead, _$LanguageJsonldPublicLanguageReadOpportunityCreateLead];
 
   @override
-  final String wireName = r'LanguageJsonldPublicLanguageReadOpportunityReadLead';
+  final String wireName = r'LanguageJsonldPublicLanguageReadOpportunityCreateLead';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    LanguageJsonldPublicLanguageReadOpportunityReadLead object, {
+    LanguageJsonldPublicLanguageReadOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atId != null) {
@@ -97,7 +97,7 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLeadSerializer implements
   @override
   Object serialize(
     Serializers serializers,
-    LanguageJsonldPublicLanguageReadOpportunityReadLead object, {
+    LanguageJsonldPublicLanguageReadOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -108,7 +108,7 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLeadSerializer implements
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder result,
+    required LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -159,12 +159,12 @@ class _$LanguageJsonldPublicLanguageReadOpportunityReadLeadSerializer implements
   }
 
   @override
-  LanguageJsonldPublicLanguageReadOpportunityReadLead deserialize(
+  LanguageJsonldPublicLanguageReadOpportunityCreateLead deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LanguageJsonldPublicLanguageReadOpportunityReadLeadBuilder();
+    final result = LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

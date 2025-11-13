@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'commitment_jsonld_public_commitment_read_opportunity_read_lead.dart';
+part of 'commitment_jsonld_public_commitment_read_opportunity_create_lead.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead
-    extends CommitmentJsonldPublicCommitmentReadOpportunityReadLead {
+class _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLead
+    extends CommitmentJsonldPublicCommitmentReadOpportunityCreateLead {
   @override
   final CenterJsonldHappeningReadContext? atContext;
   @override
@@ -19,34 +19,35 @@ class _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead
   @override
   final String? reference;
 
-  factory _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead(
+  factory _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLead(
           [void Function(
-                  CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder)?
+                  CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder)?
               updates]) =>
-      (new CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder()
+      (new CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder()
             ..update(updates))
           ._build();
 
-  _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead._(
+  _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLead._(
       {this.atContext, this.atId, this.atType, this.label, this.reference})
       : super._();
 
   @override
-  CommitmentJsonldPublicCommitmentReadOpportunityReadLead rebuild(
+  CommitmentJsonldPublicCommitmentReadOpportunityCreateLead rebuild(
           void Function(
-                  CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder)
+                  CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder toBuilder() =>
-      new CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder()
-        ..replace(this);
+  CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder
+      toBuilder() =>
+          new CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder()
+            ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CommitmentJsonldPublicCommitmentReadOpportunityReadLead &&
+    return other is CommitmentJsonldPublicCommitmentReadOpportunityCreateLead &&
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
@@ -69,7 +70,7 @@ class _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'CommitmentJsonldPublicCommitmentReadOpportunityReadLead')
+            r'CommitmentJsonldPublicCommitmentReadOpportunityCreateLead')
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
@@ -79,11 +80,11 @@ class _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead
   }
 }
 
-class CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder
+class CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder
     implements
-        Builder<CommitmentJsonldPublicCommitmentReadOpportunityReadLead,
-            CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder> {
-  _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead? _$v;
+        Builder<CommitmentJsonldPublicCommitmentReadOpportunityCreateLead,
+            CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder> {
+  _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLead? _$v;
 
   CenterJsonldHappeningReadContextBuilder? _atContext;
   CenterJsonldHappeningReadContextBuilder get atContext =>
@@ -107,11 +108,11 @@ class CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder
   String? get reference => _$this._reference;
   set reference(String? reference) => _$this._reference = reference;
 
-  CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder() {
-    CommitmentJsonldPublicCommitmentReadOpportunityReadLead._defaults(this);
+  CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder() {
+    CommitmentJsonldPublicCommitmentReadOpportunityCreateLead._defaults(this);
   }
 
-  CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder get _$this {
+  CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atContext = $v.atContext?.toBuilder();
@@ -125,27 +126,28 @@ class CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder
   }
 
   @override
-  void replace(CommitmentJsonldPublicCommitmentReadOpportunityReadLead other) {
+  void replace(
+      CommitmentJsonldPublicCommitmentReadOpportunityCreateLead other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead;
+    _$v = other as _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLead;
   }
 
   @override
   void update(
       void Function(
-              CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder)?
+              CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  CommitmentJsonldPublicCommitmentReadOpportunityReadLead build() => _build();
+  CommitmentJsonldPublicCommitmentReadOpportunityCreateLead build() => _build();
 
-  _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead _build() {
-    _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead _$result;
+  _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLead _build() {
+    _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLead _$result;
     try {
       _$result = _$v ??
-          new _$CommitmentJsonldPublicCommitmentReadOpportunityReadLead._(
+          new _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLead._(
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
@@ -159,7 +161,7 @@ class CommitmentJsonldPublicCommitmentReadOpportunityReadLeadBuilder
         _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'CommitmentJsonldPublicCommitmentReadOpportunityReadLead',
+            r'CommitmentJsonldPublicCommitmentReadOpportunityCreateLead',
             _$failedField,
             e.toString());
       }

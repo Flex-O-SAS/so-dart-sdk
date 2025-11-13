@@ -16,7 +16,6 @@ import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dar
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_create_lead.dart';
-import 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_read_lead.dart';
 
 class OpportunityApi {
 
@@ -127,9 +126,9 @@ class OpportunityApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OpportunityJsonldOpportunityReadLead] as data
+  /// Returns a [Future] containing a [Response] with a [OpportunityJsonldOpportunityCreateLead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OpportunityJsonldOpportunityReadLead>> apiOpportunityCreateLead({ 
+  Future<Response<OpportunityJsonldOpportunityCreateLead>> apiOpportunityCreateLead({ 
     required OpportunityJsonldOpportunityCreateLead opportunityJsonldOpportunityCreateLead,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -179,14 +178,14 @@ class OpportunityApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OpportunityJsonldOpportunityReadLead? _responseData;
+    OpportunityJsonldOpportunityCreateLead? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OpportunityJsonldOpportunityReadLead),
-      ) as OpportunityJsonldOpportunityReadLead;
+        specifiedType: const FullType(OpportunityJsonldOpportunityCreateLead),
+      ) as OpportunityJsonldOpportunityCreateLead;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -198,7 +197,7 @@ class OpportunityApi {
       );
     }
 
-    return Response<OpportunityJsonldOpportunityReadLead>(
+    return Response<OpportunityJsonldOpportunityCreateLead>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

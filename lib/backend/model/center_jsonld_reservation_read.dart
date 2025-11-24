@@ -3,12 +3,11 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/center_jsonld_reservation_read.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'service_center_jsonld_reservation_read.g.dart';
+part 'center_jsonld_reservation_read.g.dart';
 
 /// 
 ///
@@ -16,11 +15,9 @@ part 'service_center_jsonld_reservation_read.g.dart';
 /// * [atContext] 
 /// * [atId] 
 /// * [atType] 
-/// * [center] 
-/// * [price] 
 /// * [id] 
 @BuiltValue()
-abstract class ServiceCenterJsonldReservationRead implements Built<ServiceCenterJsonldReservationRead, ServiceCenterJsonldReservationReadBuilder> {
+abstract class CenterJsonldReservationRead implements Built<CenterJsonldReservationRead, CenterJsonldReservationReadBuilder> {
   @BuiltValueField(wireName: r'@context')
   CenterJsonldHappeningReadContext? get atContext;
 
@@ -30,36 +27,30 @@ abstract class ServiceCenterJsonldReservationRead implements Built<ServiceCenter
   @BuiltValueField(wireName: r'@type')
   String? get atType;
 
-  @BuiltValueField(wireName: r'center')
-  CenterJsonldReservationRead? get center;
-
-  @BuiltValueField(wireName: r'price')
-  num? get price;
-
   @BuiltValueField(wireName: r'id')
   int? get id;
 
-  ServiceCenterJsonldReservationRead._();
+  CenterJsonldReservationRead._();
 
-  factory ServiceCenterJsonldReservationRead([void updates(ServiceCenterJsonldReservationReadBuilder b)]) = _$ServiceCenterJsonldReservationRead;
+  factory CenterJsonldReservationRead([void updates(CenterJsonldReservationReadBuilder b)]) = _$CenterJsonldReservationRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ServiceCenterJsonldReservationReadBuilder b) => b;
+  static void _defaults(CenterJsonldReservationReadBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ServiceCenterJsonldReservationRead> get serializer => _$ServiceCenterJsonldReservationReadSerializer();
+  static Serializer<CenterJsonldReservationRead> get serializer => _$CenterJsonldReservationReadSerializer();
 }
 
-class _$ServiceCenterJsonldReservationReadSerializer implements PrimitiveSerializer<ServiceCenterJsonldReservationRead> {
+class _$CenterJsonldReservationReadSerializer implements PrimitiveSerializer<CenterJsonldReservationRead> {
   @override
-  final Iterable<Type> types = const [ServiceCenterJsonldReservationRead, _$ServiceCenterJsonldReservationRead];
+  final Iterable<Type> types = const [CenterJsonldReservationRead, _$CenterJsonldReservationRead];
 
   @override
-  final String wireName = r'ServiceCenterJsonldReservationRead';
+  final String wireName = r'CenterJsonldReservationRead';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ServiceCenterJsonldReservationRead object, {
+    CenterJsonldReservationRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atContext != null) {
@@ -83,20 +74,6 @@ class _$ServiceCenterJsonldReservationReadSerializer implements PrimitiveSeriali
         specifiedType: const FullType(String),
       );
     }
-    if (object.center != null) {
-      yield r'center';
-      yield serializers.serialize(
-        object.center,
-        specifiedType: const FullType.nullable(CenterJsonldReservationRead),
-      );
-    }
-    if (object.price != null) {
-      yield r'price';
-      yield serializers.serialize(
-        object.price,
-        specifiedType: const FullType.nullable(num),
-      );
-    }
     if (object.id != null) {
       yield r'id';
       yield serializers.serialize(
@@ -109,7 +86,7 @@ class _$ServiceCenterJsonldReservationReadSerializer implements PrimitiveSeriali
   @override
   Object serialize(
     Serializers serializers,
-    ServiceCenterJsonldReservationRead object, {
+    CenterJsonldReservationRead object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -120,7 +97,7 @@ class _$ServiceCenterJsonldReservationReadSerializer implements PrimitiveSeriali
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ServiceCenterJsonldReservationReadBuilder result,
+    required CenterJsonldReservationReadBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -148,22 +125,6 @@ class _$ServiceCenterJsonldReservationReadSerializer implements PrimitiveSeriali
           ) as String;
           result.atType = valueDes;
           break;
-        case r'center':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CenterJsonldReservationRead),
-          ) as CenterJsonldReservationRead?;
-          if (valueDes == null) continue;
-          result.center.replace(valueDes);
-          break;
-        case r'price':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
-          if (valueDes == null) continue;
-          result.price = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -180,12 +141,12 @@ class _$ServiceCenterJsonldReservationReadSerializer implements PrimitiveSeriali
   }
 
   @override
-  ServiceCenterJsonldReservationRead deserialize(
+  CenterJsonldReservationRead deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ServiceCenterJsonldReservationReadBuilder();
+    final result = CenterJsonldReservationReadBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

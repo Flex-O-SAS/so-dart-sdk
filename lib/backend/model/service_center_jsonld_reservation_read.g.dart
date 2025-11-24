@@ -15,6 +15,8 @@ class _$ServiceCenterJsonldReservationRead
   @override
   final String? atType;
   @override
+  final CenterJsonldReservationRead? center;
+  @override
   final num? price;
   @override
   final int? id;
@@ -26,7 +28,12 @@ class _$ServiceCenterJsonldReservationRead
           ._build();
 
   _$ServiceCenterJsonldReservationRead._(
-      {this.atContext, this.atId, this.atType, this.price, this.id})
+      {this.atContext,
+      this.atId,
+      this.atType,
+      this.center,
+      this.price,
+      this.id})
       : super._();
 
   @override
@@ -45,6 +52,7 @@ class _$ServiceCenterJsonldReservationRead
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType &&
+        center == other.center &&
         price == other.price &&
         id == other.id;
   }
@@ -55,6 +63,7 @@ class _$ServiceCenterJsonldReservationRead
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
+    _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
@@ -67,6 +76,7 @@ class _$ServiceCenterJsonldReservationRead
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType)
+          ..add('center', center)
           ..add('price', price)
           ..add('id', id))
         .toString();
@@ -93,6 +103,12 @@ class ServiceCenterJsonldReservationReadBuilder
   String? get atType => _$this._atType;
   set atType(String? atType) => _$this._atType = atType;
 
+  CenterJsonldReservationReadBuilder? _center;
+  CenterJsonldReservationReadBuilder get center =>
+      _$this._center ??= new CenterJsonldReservationReadBuilder();
+  set center(CenterJsonldReservationReadBuilder? center) =>
+      _$this._center = center;
+
   num? _price;
   num? get price => _$this._price;
   set price(num? price) => _$this._price = price;
@@ -111,6 +127,7 @@ class ServiceCenterJsonldReservationReadBuilder
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
+      _center = $v.center?.toBuilder();
       _price = $v.price;
       _id = $v.id;
       _$v = null;
@@ -141,6 +158,7 @@ class ServiceCenterJsonldReservationReadBuilder
             atContext: _atContext?.build(),
             atId: atId,
             atType: atType,
+            center: _center?.build(),
             price: price,
             id: id,
           );
@@ -149,6 +167,9 @@ class ServiceCenterJsonldReservationReadBuilder
       try {
         _$failedField = 'atContext';
         _atContext?.build();
+
+        _$failedField = 'center';
+        _center?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'ServiceCenterJsonldReservationRead', _$failedField, e.toString());

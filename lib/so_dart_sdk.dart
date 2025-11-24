@@ -60,6 +60,7 @@ export 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.d
 export 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context_one_of.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_create_lead.dart';
 export 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_create_lead_assets_inner.dart';
+export 'package:so_dart_sdk/backend/model/center_jsonld_reservation_read.dart';
 export 'package:so_dart_sdk/backend/model/commitment_jsonld_public_commitment_read_opportunity_create_lead.dart';
 export 'package:so_dart_sdk/backend/model/company_jsonld_company_search.dart';
 export 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';

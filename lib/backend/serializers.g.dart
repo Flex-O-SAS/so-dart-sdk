@@ -39,6 +39,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CenterJsonldPublicCenterReadOpportunityCreateLead.serializer)
       ..add(CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner
           .serializer)
+      ..add(CenterJsonldReservationRead.serializer)
       ..add(
           CommitmentJsonldPublicCommitmentReadOpportunityCreateLead.serializer)
       ..add(CompanyJsonldCompanySearch.serializer)

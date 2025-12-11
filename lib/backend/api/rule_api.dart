@@ -11,17 +11,17 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_rules_get_collection200_response.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
-import 'package:so_dart_sdk/backend/model/rule_execute_booking_dto_jsonld_rule_execute_booking.dart';
+import 'package:so_dart_sdk/backend/model/rule_execute_booking_dto_rule_execute_booking.dart';
 import 'package:so_dart_sdk/backend/model/rule_execute_booking_response_dto_jsonld_rule_execute_booking.dart';
 import 'package:so_dart_sdk/backend/model/rule_execute_booking_response_dto_jsonld_rule_execute_cancel_booking.dart';
-import 'package:so_dart_sdk/backend/model/rule_execute_cancel_booking_dto_jsonld_rule_execute_cancel_booking.dart';
+import 'package:so_dart_sdk/backend/model/rule_execute_cancel_booking_dto_rule_execute_cancel_booking.dart';
 import 'package:so_dart_sdk/backend/model/rule_jsonld_rule_read.dart';
-import 'package:so_dart_sdk/backend/model/rule_jsonld_rule_write.dart';
 import 'package:so_dart_sdk/backend/model/rule_rule_write.dart';
+import 'package:so_dart_sdk/backend/model/rule_rule_write_json_merge_patch.dart';
 
 class RuleApi {
 
@@ -82,7 +82,7 @@ class RuleApi {
   /// Creates a Rule resource.
   ///
   /// Parameters:
-  /// * [ruleExecuteBookingDtoJsonldRuleExecuteBooking] - The new Rule resource
+  /// * [ruleExecuteBookingDtoRuleExecuteBooking] - The new Rule resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -93,7 +93,7 @@ class RuleApi {
   /// Returns a [Future] containing a [Response] with a [RuleExecuteBookingResponseDtoJsonldRuleExecuteBooking] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<RuleExecuteBookingResponseDtoJsonldRuleExecuteBooking>> apiRulesExecuteBooking({ 
-    required RuleExecuteBookingDtoJsonldRuleExecuteBooking ruleExecuteBookingDtoJsonldRuleExecuteBooking,
+    required RuleExecuteBookingDtoRuleExecuteBooking ruleExecuteBookingDtoRuleExecuteBooking,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -118,8 +118,8 @@ class RuleApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(RuleExecuteBookingDtoJsonldRuleExecuteBooking);
-      _bodyData = _serializers.serialize(ruleExecuteBookingDtoJsonldRuleExecuteBooking, specifiedType: _type);
+      const _type = FullType(RuleExecuteBookingDtoRuleExecuteBooking);
+      _bodyData = _serializers.serialize(ruleExecuteBookingDtoRuleExecuteBooking, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -177,7 +177,7 @@ class RuleApi {
   /// Creates a Rule resource.
   ///
   /// Parameters:
-  /// * [ruleExecuteCancelBookingDtoJsonldRuleExecuteCancelBooking] - The new Rule resource
+  /// * [ruleExecuteCancelBookingDtoRuleExecuteCancelBooking] - The new Rule resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -188,7 +188,7 @@ class RuleApi {
   /// Returns a [Future] containing a [Response] with a [RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking>> apiRulesExecuteCancelBooking({ 
-    required RuleExecuteCancelBookingDtoJsonldRuleExecuteCancelBooking ruleExecuteCancelBookingDtoJsonldRuleExecuteCancelBooking,
+    required RuleExecuteCancelBookingDtoRuleExecuteCancelBooking ruleExecuteCancelBookingDtoRuleExecuteCancelBooking,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -213,8 +213,8 @@ class RuleApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(RuleExecuteCancelBookingDtoJsonldRuleExecuteCancelBooking);
-      _bodyData = _serializers.serialize(ruleExecuteCancelBookingDtoJsonldRuleExecuteCancelBooking, specifiedType: _type);
+      const _type = FullType(RuleExecuteCancelBookingDtoRuleExecuteCancelBooking);
+      _bodyData = _serializers.serialize(ruleExecuteCancelBookingDtoRuleExecuteCancelBooking, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -452,7 +452,7 @@ class RuleApi {
   ///
   /// Parameters:
   /// * [id] - Rule identifier
-  /// * [ruleRuleWrite] - The updated Rule resource
+  /// * [ruleRuleWriteJsonMergePatch] - The updated Rule resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -464,7 +464,7 @@ class RuleApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<RuleJsonldRuleRead>> apiRulesPatchItem({ 
     required String id,
-    required RuleRuleWrite ruleRuleWrite,
+    required RuleRuleWriteJsonMergePatch ruleRuleWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -489,8 +489,8 @@ class RuleApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(RuleRuleWrite);
-      _bodyData = _serializers.serialize(ruleRuleWrite, specifiedType: _type);
+      const _type = FullType(RuleRuleWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(ruleRuleWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -548,7 +548,7 @@ class RuleApi {
   /// Creates a Rule resource.
   ///
   /// Parameters:
-  /// * [ruleJsonldRuleWrite] - The new Rule resource
+  /// * [ruleRuleWrite] - The new Rule resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -559,7 +559,7 @@ class RuleApi {
   /// Returns a [Future] containing a [Response] with a [RuleJsonldRuleRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<RuleJsonldRuleRead>> apiRulesPostItem({ 
-    required RuleJsonldRuleWrite ruleJsonldRuleWrite,
+    required RuleRuleWrite ruleRuleWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -584,8 +584,8 @@ class RuleApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(RuleJsonldRuleWrite);
-      _bodyData = _serializers.serialize(ruleJsonldRuleWrite, specifiedType: _type);
+      const _type = FullType(RuleRuleWrite);
+      _bodyData = _serializers.serialize(ruleRuleWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

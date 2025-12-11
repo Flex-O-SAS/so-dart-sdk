@@ -4,32 +4,19 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/center_jsonld_reservation_read.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'service_center_jsonld_reservation_read.g.dart';
 
-/// 
+/// ServiceCenterJsonldReservationRead
 ///
 /// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
 /// * [center] 
 /// * [price] 
 /// * [id] 
 @BuiltValue()
 abstract class ServiceCenterJsonldReservationRead implements Built<ServiceCenterJsonldReservationRead, ServiceCenterJsonldReservationReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
   @BuiltValueField(wireName: r'center')
   CenterJsonldReservationRead? get center;
 
@@ -62,27 +49,6 @@ class _$ServiceCenterJsonldReservationReadSerializer implements PrimitiveSeriali
     ServiceCenterJsonldReservationRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.center != null) {
       yield r'center';
       yield serializers.serialize(
@@ -127,27 +93,6 @@ class _$ServiceCenterJsonldReservationReadSerializer implements PrimitiveSeriali
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
         case r'center':
           final valueDes = serializers.deserialize(
             value,

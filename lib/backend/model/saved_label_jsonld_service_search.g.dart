@@ -8,12 +8,6 @@ part of 'saved_label_jsonld_service_search.dart';
 
 class _$SavedLabelJsonldServiceSearch extends SavedLabelJsonldServiceSearch {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final String? label;
   @override
   final int? id;
@@ -22,9 +16,7 @@ class _$SavedLabelJsonldServiceSearch extends SavedLabelJsonldServiceSearch {
           [void Function(SavedLabelJsonldServiceSearchBuilder)? updates]) =>
       (new SavedLabelJsonldServiceSearchBuilder()..update(updates))._build();
 
-  _$SavedLabelJsonldServiceSearch._(
-      {this.atContext, this.atId, this.atType, this.label, this.id})
-      : super._();
+  _$SavedLabelJsonldServiceSearch._({this.label, this.id}) : super._();
 
   @override
   SavedLabelJsonldServiceSearch rebuild(
@@ -39,9 +31,6 @@ class _$SavedLabelJsonldServiceSearch extends SavedLabelJsonldServiceSearch {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is SavedLabelJsonldServiceSearch &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
         label == other.label &&
         id == other.id;
   }
@@ -49,9 +38,6 @@ class _$SavedLabelJsonldServiceSearch extends SavedLabelJsonldServiceSearch {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atContext.hashCode);
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, label.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
@@ -61,9 +47,6 @@ class _$SavedLabelJsonldServiceSearch extends SavedLabelJsonldServiceSearch {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'SavedLabelJsonldServiceSearch')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
           ..add('label', label)
           ..add('id', id))
         .toString();
@@ -75,20 +58,6 @@ class SavedLabelJsonldServiceSearchBuilder
         Builder<SavedLabelJsonldServiceSearch,
             SavedLabelJsonldServiceSearchBuilder> {
   _$SavedLabelJsonldServiceSearch? _$v;
-
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
 
   String? _label;
   String? get label => _$this._label;
@@ -105,9 +74,6 @@ class SavedLabelJsonldServiceSearchBuilder
   SavedLabelJsonldServiceSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atContext = $v.atContext?.toBuilder();
-      _atId = $v.atId;
-      _atType = $v.atType;
       _label = $v.label;
       _id = $v.id;
       _$v = null;
@@ -130,27 +96,11 @@ class SavedLabelJsonldServiceSearchBuilder
   SavedLabelJsonldServiceSearch build() => _build();
 
   _$SavedLabelJsonldServiceSearch _build() {
-    _$SavedLabelJsonldServiceSearch _$result;
-    try {
-      _$result = _$v ??
-          new _$SavedLabelJsonldServiceSearch._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            label: label,
-            id: id,
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'SavedLabelJsonldServiceSearch', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$SavedLabelJsonldServiceSearch._(
+          label: label,
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }

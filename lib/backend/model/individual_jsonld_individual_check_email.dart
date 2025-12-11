@@ -3,25 +3,22 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'individual_jsonld_individual_check_email.g.dart';
 
-/// 
+/// IndividualJsonldIndividualCheckEmail
 ///
 /// Properties:
+/// * [atContext] 
 /// * [atId] 
 /// * [atType] 
 /// * [email] 
 @BuiltValue()
-abstract class IndividualJsonldIndividualCheckEmail implements Built<IndividualJsonldIndividualCheckEmail, IndividualJsonldIndividualCheckEmailBuilder> {
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
+abstract class IndividualJsonldIndividualCheckEmail implements HydraItemBaseSchema, Built<IndividualJsonldIndividualCheckEmail, IndividualJsonldIndividualCheckEmailBuilder> {
   @BuiltValueField(wireName: r'email')
   String? get email;
 
@@ -48,25 +45,28 @@ class _$IndividualJsonldIndividualCheckEmailSerializer implements PrimitiveSeria
     IndividualJsonldIndividualCheckEmail object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atId != null) {
-      yield r'@id';
+    if (object.atContext != null) {
+      yield r'@context';
       yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
     if (object.email != null) {
       yield r'email';
       yield serializers.serialize(
         object.email,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -92,6 +92,13 @@ class _$IndividualJsonldIndividualCheckEmailSerializer implements PrimitiveSeria
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
+          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
@@ -109,9 +116,8 @@ class _$IndividualJsonldIndividualCheckEmailSerializer implements PrimitiveSeria
         case r'email':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.email = valueDes;
           break;
         default:

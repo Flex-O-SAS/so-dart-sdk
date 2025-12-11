@@ -3,13 +3,14 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'individual_jsonld_opportunity_create_lead.g.dart';
 
-/// 
+/// IndividualJsonldOpportunityCreateLead
 ///
 /// Properties:
 /// * [atContext] 
@@ -26,45 +27,36 @@ part 'individual_jsonld_opportunity_create_lead.g.dart';
 /// * [city] 
 /// * [country] 
 @BuiltValue()
-abstract class IndividualJsonldOpportunityCreateLead implements Built<IndividualJsonldOpportunityCreateLead, IndividualJsonldOpportunityCreateLeadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
+abstract class IndividualJsonldOpportunityCreateLead implements HydraItemBaseSchema, Built<IndividualJsonldOpportunityCreateLead, IndividualJsonldOpportunityCreateLeadBuilder> {
+  @BuiltValueField(wireName: r'zipcode')
+  String? get zipcode;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+  @BuiltValueField(wireName: r'country')
+  String? get country;
 
   @BuiltValueField(wireName: r'firstname')
   String? get firstname;
 
-  @BuiltValueField(wireName: r'lastname')
-  String? get lastname;
-
-  @BuiltValueField(wireName: r'email')
-  String? get email;
-
-  @BuiltValueField(wireName: r'mobile')
-  String? get mobile;
-
-  @BuiltValueField(wireName: r'mainCenter')
-  String? get mainCenter;
-
-  @BuiltValueField(wireName: r'language')
-  String? get language;
-
   @BuiltValueField(wireName: r'address')
   String? get address;
-
-  @BuiltValueField(wireName: r'zipcode')
-  String? get zipcode;
 
   @BuiltValueField(wireName: r'city')
   String? get city;
 
-  @BuiltValueField(wireName: r'country')
-  String? get country;
+  @BuiltValueField(wireName: r'mobile')
+  String? get mobile;
+
+  @BuiltValueField(wireName: r'language')
+  String? get language;
+
+  @BuiltValueField(wireName: r'mainCenter')
+  String? get mainCenter;
+
+  @BuiltValueField(wireName: r'email')
+  String? get email;
+
+  @BuiltValueField(wireName: r'lastname')
+  String? get lastname;
 
   IndividualJsonldOpportunityCreateLead._();
 
@@ -89,24 +81,10 @@ class _$IndividualJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
     IndividualJsonldOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
+    if (object.country != null) {
+      yield r'country';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
+        object.country,
         specifiedType: const FullType(String),
       );
     }
@@ -114,35 +92,33 @@ class _$IndividualJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
       yield r'firstname';
       yield serializers.serialize(
         object.firstname,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.lastname != null) {
-      yield r'lastname';
-      yield serializers.serialize(
-        object.lastname,
         specifiedType: const FullType(String),
       );
     }
-    if (object.email != null) {
-      yield r'email';
+    if (object.address != null) {
+      yield r'address';
       yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType.nullable(String),
+        object.address,
+        specifiedType: const FullType(String),
+      );
+    }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.city != null) {
+      yield r'city';
+      yield serializers.serialize(
+        object.city,
+        specifiedType: const FullType(String),
       );
     }
     if (object.mobile != null) {
       yield r'mobile';
       yield serializers.serialize(
         object.mobile,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.mainCenter != null) {
-      yield r'mainCenter';
-      yield serializers.serialize(
-        object.mainCenter,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.language != null) {
@@ -152,32 +128,44 @@ class _$IndividualJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
         specifiedType: const FullType(String),
       );
     }
-    if (object.address != null) {
-      yield r'address';
+    if (object.lastname != null) {
+      yield r'lastname';
       yield serializers.serialize(
-        object.address,
-        specifiedType: const FullType.nullable(String),
+        object.lastname,
+        specifiedType: const FullType(String),
       );
     }
     if (object.zipcode != null) {
       yield r'zipcode';
       yield serializers.serialize(
         object.zipcode,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
-    if (object.city != null) {
-      yield r'city';
+    if (object.atContext != null) {
+      yield r'@context';
       yield serializers.serialize(
-        object.city,
-        specifiedType: const FullType.nullable(String),
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
-    if (object.country != null) {
-      yield r'country';
+    if (object.mainCenter != null) {
+      yield r'mainCenter';
       yield serializers.serialize(
-        object.country,
-        specifiedType: const FullType.nullable(String),
+        object.mainCenter,
+        specifiedType: const FullType(String),
+      );
+    }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -203,12 +191,26 @@ class _$IndividualJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
+        case r'country':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.country = valueDes;
+          break;
+        case r'firstname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.firstname = valueDes;
+          break;
+        case r'address':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.address = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -217,51 +219,19 @@ class _$IndividualJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'city':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atType = valueDes;
-          break;
-        case r'firstname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.firstname = valueDes;
-          break;
-        case r'lastname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastname = valueDes;
-          break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.email = valueDes;
+          result.city = valueDes;
           break;
         case r'mobile':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.mobile = valueDes;
-          break;
-        case r'mainCenter':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.mainCenter = valueDes;
           break;
         case r'language':
           final valueDes = serializers.deserialize(
@@ -270,37 +240,47 @@ class _$IndividualJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
           ) as String;
           result.language = valueDes;
           break;
-        case r'address':
+        case r'lastname':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.address = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastname = valueDes;
           break;
         case r'zipcode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.zipcode = valueDes;
           break;
-        case r'city':
+        case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.city = valueDes;
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
           break;
-        case r'country':
+        case r'mainCenter':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.country = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.mainCenter = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
           break;
         default:
           unhandled.add(key);

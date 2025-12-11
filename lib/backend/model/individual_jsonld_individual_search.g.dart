@@ -9,48 +9,53 @@ part of 'individual_jsonld_individual_search.dart';
 class _$IndividualJsonldIndividualSearch
     extends IndividualJsonldIndividualSearch {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
+  final String? reference;
   @override
   final String? firstname;
-  @override
-  final String? lastname;
-  @override
-  final String? tosAcceptedAt;
-  @override
-  final BuiltList<EnterpriseJsonldIndividualSearch>? enterprises;
-  @override
-  final String? email;
   @override
   final String? phone;
   @override
   final String? mobile;
   @override
-  final String? reference;
+  final DateTime? tosAcceptedAt;
   @override
   final int? id;
+  @override
+  final BuiltList<EnterpriseJsonldIndividualSearch>? enterprises;
+  @override
+  final String? email;
+  @override
+  final String? lastname;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$IndividualJsonldIndividualSearch(
           [void Function(IndividualJsonldIndividualSearchBuilder)? updates]) =>
       (new IndividualJsonldIndividualSearchBuilder()..update(updates))._build();
 
   _$IndividualJsonldIndividualSearch._(
-      {this.atContext,
-      this.atId,
-      this.atType,
+      {this.reference,
       this.firstname,
-      this.lastname,
-      this.tosAcceptedAt,
-      this.enterprises,
-      this.email,
       this.phone,
       this.mobile,
-      this.reference,
-      this.id})
-      : super._();
+      this.tosAcceptedAt,
+      this.id,
+      this.enterprises,
+      this.email,
+      this.lastname,
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'IndividualJsonldIndividualSearch', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'IndividualJsonldIndividualSearch', 'atType');
+  }
 
   @override
   IndividualJsonldIndividualSearch rebuild(
@@ -65,35 +70,35 @@ class _$IndividualJsonldIndividualSearch
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is IndividualJsonldIndividualSearch &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
+        reference == other.reference &&
         firstname == other.firstname &&
-        lastname == other.lastname &&
-        tosAcceptedAt == other.tosAcceptedAt &&
-        enterprises == other.enterprises &&
-        email == other.email &&
         phone == other.phone &&
         mobile == other.mobile &&
-        reference == other.reference &&
-        id == other.id;
+        tosAcceptedAt == other.tosAcceptedAt &&
+        id == other.id &&
+        enterprises == other.enterprises &&
+        email == other.email &&
+        lastname == other.lastname &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, reference.hashCode);
+    _$hash = $jc(_$hash, firstname.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, mobile.hashCode);
+    _$hash = $jc(_$hash, tosAcceptedAt.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, enterprises.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, lastname.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, firstname.hashCode);
-    _$hash = $jc(_$hash, lastname.hashCode);
-    _$hash = $jc(_$hash, tosAcceptedAt.hashCode);
-    _$hash = $jc(_$hash, enterprises.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, phone.hashCode);
-    _$hash = $jc(_$hash, mobile.hashCode);
-    _$hash = $jc(_$hash, reference.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101,18 +106,18 @@ class _$IndividualJsonldIndividualSearch
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'IndividualJsonldIndividualSearch')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
+          ..add('reference', reference)
           ..add('firstname', firstname)
-          ..add('lastname', lastname)
-          ..add('tosAcceptedAt', tosAcceptedAt)
-          ..add('enterprises', enterprises)
-          ..add('email', email)
           ..add('phone', phone)
           ..add('mobile', mobile)
-          ..add('reference', reference)
-          ..add('id', id))
+          ..add('tosAcceptedAt', tosAcceptedAt)
+          ..add('id', id)
+          ..add('enterprises', enterprises)
+          ..add('email', email)
+          ..add('lastname', lastname)
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -120,62 +125,65 @@ class _$IndividualJsonldIndividualSearch
 class IndividualJsonldIndividualSearchBuilder
     implements
         Builder<IndividualJsonldIndividualSearch,
-            IndividualJsonldIndividualSearchBuilder> {
+            IndividualJsonldIndividualSearchBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$IndividualJsonldIndividualSearch? _$v;
 
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
+  String? _reference;
+  String? get reference => _$this._reference;
+  set reference(covariant String? reference) => _$this._reference = reference;
 
   String? _firstname;
   String? get firstname => _$this._firstname;
-  set firstname(String? firstname) => _$this._firstname = firstname;
+  set firstname(covariant String? firstname) => _$this._firstname = firstname;
 
-  String? _lastname;
-  String? get lastname => _$this._lastname;
-  set lastname(String? lastname) => _$this._lastname = lastname;
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(covariant String? phone) => _$this._phone = phone;
 
-  String? _tosAcceptedAt;
-  String? get tosAcceptedAt => _$this._tosAcceptedAt;
-  set tosAcceptedAt(String? tosAcceptedAt) =>
+  String? _mobile;
+  String? get mobile => _$this._mobile;
+  set mobile(covariant String? mobile) => _$this._mobile = mobile;
+
+  DateTime? _tosAcceptedAt;
+  DateTime? get tosAcceptedAt => _$this._tosAcceptedAt;
+  set tosAcceptedAt(covariant DateTime? tosAcceptedAt) =>
       _$this._tosAcceptedAt = tosAcceptedAt;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
 
   ListBuilder<EnterpriseJsonldIndividualSearch>? _enterprises;
   ListBuilder<EnterpriseJsonldIndividualSearch> get enterprises =>
       _$this._enterprises ??=
           new ListBuilder<EnterpriseJsonldIndividualSearch>();
-  set enterprises(ListBuilder<EnterpriseJsonldIndividualSearch>? enterprises) =>
+  set enterprises(
+          covariant ListBuilder<EnterpriseJsonldIndividualSearch>?
+              enterprises) =>
       _$this._enterprises = enterprises;
 
   String? _email;
   String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
+  set email(covariant String? email) => _$this._email = email;
 
-  String? _phone;
-  String? get phone => _$this._phone;
-  set phone(String? phone) => _$this._phone = phone;
+  String? _lastname;
+  String? get lastname => _$this._lastname;
+  set lastname(covariant String? lastname) => _$this._lastname = lastname;
 
-  String? _mobile;
-  String? get mobile => _$this._mobile;
-  set mobile(String? mobile) => _$this._mobile = mobile;
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
 
-  String? _reference;
-  String? get reference => _$this._reference;
-  set reference(String? reference) => _$this._reference = reference;
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   IndividualJsonldIndividualSearchBuilder() {
     IndividualJsonldIndividualSearch._defaults(this);
@@ -184,25 +192,25 @@ class IndividualJsonldIndividualSearchBuilder
   IndividualJsonldIndividualSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _reference = $v.reference;
+      _firstname = $v.firstname;
+      _phone = $v.phone;
+      _mobile = $v.mobile;
+      _tosAcceptedAt = $v.tosAcceptedAt;
+      _id = $v.id;
+      _enterprises = $v.enterprises?.toBuilder();
+      _email = $v.email;
+      _lastname = $v.lastname;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _firstname = $v.firstname;
-      _lastname = $v.lastname;
-      _tosAcceptedAt = $v.tosAcceptedAt;
-      _enterprises = $v.enterprises?.toBuilder();
-      _email = $v.email;
-      _phone = $v.phone;
-      _mobile = $v.mobile;
-      _reference = $v.reference;
-      _id = $v.id;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(IndividualJsonldIndividualSearch other) {
+  void replace(covariant IndividualJsonldIndividualSearch other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$IndividualJsonldIndividualSearch;
   }
@@ -220,27 +228,29 @@ class IndividualJsonldIndividualSearchBuilder
     try {
       _$result = _$v ??
           new _$IndividualJsonldIndividualSearch._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
+            reference: reference,
             firstname: firstname,
-            lastname: lastname,
-            tosAcceptedAt: tosAcceptedAt,
-            enterprises: _enterprises?.build(),
-            email: email,
             phone: phone,
             mobile: mobile,
-            reference: reference,
+            tosAcceptedAt: tosAcceptedAt,
             id: id,
+            enterprises: _enterprises?.build(),
+            email: email,
+            lastname: lastname,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'IndividualJsonldIndividualSearch', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'IndividualJsonldIndividualSearch', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-
         _$failedField = 'enterprises';
         _enterprises?.build();
+
+        _$failedField = 'atContext';
+        _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'IndividualJsonldIndividualSearch', _$failedField, e.toString());

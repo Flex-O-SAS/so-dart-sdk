@@ -8,23 +8,35 @@ part of 'service_jsonld_service_search.dart';
 
 class _$ServiceJsonldServiceSearch extends ServiceJsonldServiceSearch {
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final BuiltList<SavedLabelJsonldServiceSearch>? savedLabels;
+  @override
+  final int? id;
   @override
   final BuiltList<ServiceCenterJsonldServiceSearch>? serviceCenters;
   @override
-  final int? id;
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$ServiceJsonldServiceSearch(
           [void Function(ServiceJsonldServiceSearchBuilder)? updates]) =>
       (new ServiceJsonldServiceSearchBuilder()..update(updates))._build();
 
   _$ServiceJsonldServiceSearch._(
-      {this.atId, this.atType, this.savedLabels, this.serviceCenters, this.id})
-      : super._();
+      {this.savedLabels,
+      this.id,
+      this.serviceCenters,
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'ServiceJsonldServiceSearch', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'ServiceJsonldServiceSearch', 'atType');
+  }
 
   @override
   ServiceJsonldServiceSearch rebuild(
@@ -39,21 +51,23 @@ class _$ServiceJsonldServiceSearch extends ServiceJsonldServiceSearch {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ServiceJsonldServiceSearch &&
-        atId == other.atId &&
-        atType == other.atType &&
         savedLabels == other.savedLabels &&
+        id == other.id &&
         serviceCenters == other.serviceCenters &&
-        id == other.id;
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, savedLabels.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, serviceCenters.hashCode);
+    _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, savedLabels.hashCode);
-    _$hash = $jc(_$hash, serviceCenters.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,45 +75,55 @@ class _$ServiceJsonldServiceSearch extends ServiceJsonldServiceSearch {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ServiceJsonldServiceSearch')
-          ..add('atId', atId)
-          ..add('atType', atType)
           ..add('savedLabels', savedLabels)
+          ..add('id', id)
           ..add('serviceCenters', serviceCenters)
-          ..add('id', id))
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
 
 class ServiceJsonldServiceSearchBuilder
     implements
-        Builder<ServiceJsonldServiceSearch, ServiceJsonldServiceSearchBuilder> {
+        Builder<ServiceJsonldServiceSearch, ServiceJsonldServiceSearchBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$ServiceJsonldServiceSearch? _$v;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
 
   ListBuilder<SavedLabelJsonldServiceSearch>? _savedLabels;
   ListBuilder<SavedLabelJsonldServiceSearch> get savedLabels =>
       _$this._savedLabels ??= new ListBuilder<SavedLabelJsonldServiceSearch>();
-  set savedLabels(ListBuilder<SavedLabelJsonldServiceSearch>? savedLabels) =>
+  set savedLabels(
+          covariant ListBuilder<SavedLabelJsonldServiceSearch>? savedLabels) =>
       _$this._savedLabels = savedLabels;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
 
   ListBuilder<ServiceCenterJsonldServiceSearch>? _serviceCenters;
   ListBuilder<ServiceCenterJsonldServiceSearch> get serviceCenters =>
       _$this._serviceCenters ??=
           new ListBuilder<ServiceCenterJsonldServiceSearch>();
   set serviceCenters(
-          ListBuilder<ServiceCenterJsonldServiceSearch>? serviceCenters) =>
+          covariant ListBuilder<ServiceCenterJsonldServiceSearch>?
+              serviceCenters) =>
       _$this._serviceCenters = serviceCenters;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   ServiceJsonldServiceSearchBuilder() {
     ServiceJsonldServiceSearch._defaults(this);
@@ -108,18 +132,19 @@ class ServiceJsonldServiceSearchBuilder
   ServiceJsonldServiceSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _savedLabels = $v.savedLabels?.toBuilder();
+      _id = $v.id;
+      _serviceCenters = $v.serviceCenters?.toBuilder();
+      _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _savedLabels = $v.savedLabels?.toBuilder();
-      _serviceCenters = $v.serviceCenters?.toBuilder();
-      _id = $v.id;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(ServiceJsonldServiceSearch other) {
+  void replace(covariant ServiceJsonldServiceSearch other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ServiceJsonldServiceSearch;
   }
@@ -137,19 +162,25 @@ class ServiceJsonldServiceSearchBuilder
     try {
       _$result = _$v ??
           new _$ServiceJsonldServiceSearch._(
-            atId: atId,
-            atType: atType,
             savedLabels: _savedLabels?.build(),
-            serviceCenters: _serviceCenters?.build(),
             id: id,
+            serviceCenters: _serviceCenters?.build(),
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'ServiceJsonldServiceSearch', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'ServiceJsonldServiceSearch', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'savedLabels';
         _savedLabels?.build();
+
         _$failedField = 'serviceCenters';
         _serviceCenters?.build();
+        _$failedField = 'atContext';
+        _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'ServiceJsonldServiceSearch', _$failedField, e.toString());

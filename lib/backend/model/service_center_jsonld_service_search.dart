@@ -3,30 +3,22 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_service_search.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'service_center_jsonld_service_search.g.dart';
 
-/// 
+/// ServiceCenterJsonldServiceSearch
 ///
 /// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
+/// * [center] 
 /// * [price] 
 /// * [id] 
 @BuiltValue()
 abstract class ServiceCenterJsonldServiceSearch implements Built<ServiceCenterJsonldServiceSearch, ServiceCenterJsonldServiceSearchBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+  @BuiltValueField(wireName: r'center')
+  CenterJsonldServiceSearch? get center;
 
   @BuiltValueField(wireName: r'price')
   num? get price;
@@ -57,25 +49,11 @@ class _$ServiceCenterJsonldServiceSearchSerializer implements PrimitiveSerialize
     ServiceCenterJsonldServiceSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
+    if (object.center != null) {
+      yield r'center';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
+        object.center,
+        specifiedType: const FullType.nullable(CenterJsonldServiceSearch),
       );
     }
     if (object.price != null) {
@@ -115,26 +93,13 @@ class _$ServiceCenterJsonldServiceSearchSerializer implements PrimitiveSerialize
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
+        case r'center':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
+            specifiedType: const FullType.nullable(CenterJsonldServiceSearch),
+          ) as CenterJsonldServiceSearch?;
+          if (valueDes == null) continue;
+          result.center.replace(valueDes);
           break;
         case r'price':
           final valueDes = serializers.deserialize(

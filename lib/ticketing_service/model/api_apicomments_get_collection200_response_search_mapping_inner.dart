@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -25,7 +24,7 @@ abstract class ApiApicommentsGetCollection200ResponseSearchMappingInner implemen
   String? get variable;
 
   @BuiltValueField(wireName: r'property')
-  JsonObject? get property;
+  String? get property;
 
   @BuiltValueField(wireName: r'required')
   bool? get required_;
@@ -71,7 +70,7 @@ class _$ApiApicommentsGetCollection200ResponseSearchMappingInnerSerializer imple
       yield r'property';
       yield serializers.serialize(
         object.property,
-        specifiedType: const FullType.nullable(JsonObject),
+        specifiedType: const FullType(String),
       );
     }
     if (object.required_ != null) {
@@ -121,9 +120,8 @@ class _$ApiApicommentsGetCollection200ResponseSearchMappingInnerSerializer imple
         case r'property':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.property = valueDes;
           break;
         case r'required':

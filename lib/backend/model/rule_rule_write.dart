@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'rule_rule_write.g.dart';
 
-/// 
+/// RuleRuleWrite
 ///
 /// Properties:
 /// * [priority] 

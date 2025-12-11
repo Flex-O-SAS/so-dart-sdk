@@ -3,27 +3,24 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'company_jsonld_company_search.g.dart';
 
-/// 
+/// CompanyJsonldCompanySearch
 ///
 /// Properties:
+/// * [atContext] 
 /// * [atId] 
 /// * [atType] 
 /// * [reference] 
 /// * [companyName] 
 /// * [id] 
 @BuiltValue()
-abstract class CompanyJsonldCompanySearch implements Built<CompanyJsonldCompanySearch, CompanyJsonldCompanySearchBuilder> {
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
+abstract class CompanyJsonldCompanySearch implements HydraItemBaseSchema, Built<CompanyJsonldCompanySearch, CompanyJsonldCompanySearchBuilder> {
   @BuiltValueField(wireName: r'reference')
   String? get reference;
 
@@ -56,20 +53,6 @@ class _$CompanyJsonldCompanySearchSerializer implements PrimitiveSerializer<Comp
     CompanyJsonldCompanySearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.reference != null) {
       yield r'reference';
       yield serializers.serialize(
@@ -77,11 +60,11 @@ class _$CompanyJsonldCompanySearchSerializer implements PrimitiveSerializer<Comp
         specifiedType: const FullType(String),
       );
     }
-    if (object.companyName != null) {
-      yield r'companyName';
+    if (object.atContext != null) {
+      yield r'@context';
       yield serializers.serialize(
-        object.companyName,
-        specifiedType: const FullType(String),
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.id != null) {
@@ -89,6 +72,23 @@ class _$CompanyJsonldCompanySearchSerializer implements PrimitiveSerializer<Comp
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(int),
+      );
+    }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
+    if (object.companyName != null) {
+      yield r'companyName';
+      yield serializers.serialize(
+        object.companyName,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -114,6 +114,27 @@ class _$CompanyJsonldCompanySearchSerializer implements PrimitiveSerializer<Comp
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'reference':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.reference = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
@@ -128,26 +149,12 @@ class _$CompanyJsonldCompanySearchSerializer implements PrimitiveSerializer<Comp
           ) as String;
           result.atType = valueDes;
           break;
-        case r'reference':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.reference = valueDes;
-          break;
         case r'companyName':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.companyName = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
           break;
         default:
           unhandled.add(key);

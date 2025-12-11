@@ -3,13 +3,14 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'staff_jsonld_staff_search.g.dart';
 
-/// 
+/// StaffJsonldStaffSearch
 ///
 /// Properties:
 /// * [atContext] 
@@ -21,30 +22,21 @@ part 'staff_jsonld_staff_search.g.dart';
 /// * [reference] 
 /// * [id] 
 @BuiltValue()
-abstract class StaffJsonldStaffSearch implements Built<StaffJsonldStaffSearch, StaffJsonldStaffSearchBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+abstract class StaffJsonldStaffSearch implements HydraItemBaseSchema, Built<StaffJsonldStaffSearch, StaffJsonldStaffSearchBuilder> {
+  @BuiltValueField(wireName: r'reference')
+  String? get reference;
 
   @BuiltValueField(wireName: r'firstname')
   String? get firstname;
 
-  @BuiltValueField(wireName: r'lastname')
-  String? get lastname;
-
   @BuiltValueField(wireName: r'tosAcceptedAt')
-  String? get tosAcceptedAt;
-
-  @BuiltValueField(wireName: r'reference')
-  String? get reference;
+  DateTime? get tosAcceptedAt;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  @BuiltValueField(wireName: r'lastname')
+  String? get lastname;
 
   StaffJsonldStaffSearch._();
 
@@ -69,24 +61,10 @@ class _$StaffJsonldStaffSearchSerializer implements PrimitiveSerializer<StaffJso
     StaffJsonldStaffSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
+    if (object.reference != null) {
+      yield r'reference';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
+        object.reference,
         specifiedType: const FullType(String),
       );
     }
@@ -97,25 +75,23 @@ class _$StaffJsonldStaffSearchSerializer implements PrimitiveSerializer<StaffJso
         specifiedType: const FullType(String),
       );
     }
-    if (object.lastname != null) {
-      yield r'lastname';
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.atContext != null) {
+      yield r'@context';
       yield serializers.serialize(
-        object.lastname,
-        specifiedType: const FullType(String),
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.tosAcceptedAt != null) {
       yield r'tosAcceptedAt';
       yield serializers.serialize(
         object.tosAcceptedAt,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.reference != null) {
-      yield r'reference';
-      yield serializers.serialize(
-        object.reference,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType(DateTime),
       );
     }
     if (object.id != null) {
@@ -123,6 +99,18 @@ class _$StaffJsonldStaffSearchSerializer implements PrimitiveSerializer<StaffJso
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(int),
+      );
+    }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
+    if (object.lastname != null) {
+      yield r'lastname';
+      yield serializers.serialize(
+        object.lastname,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -148,26 +136,12 @@ class _$StaffJsonldStaffSearchSerializer implements PrimitiveSerializer<StaffJso
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
+        case r'reference':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
+          result.reference = valueDes;
           break;
         case r'firstname':
           final valueDes = serializers.deserialize(
@@ -176,27 +150,26 @@ class _$StaffJsonldStaffSearchSerializer implements PrimitiveSerializer<StaffJso
           ) as String;
           result.firstname = valueDes;
           break;
-        case r'lastname':
+        case r'@id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.lastname = valueDes;
+          result.atId = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
           break;
         case r'tosAcceptedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.tosAcceptedAt = valueDes;
-          break;
-        case r'reference':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.reference = valueDes;
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -204,6 +177,20 @@ class _$StaffJsonldStaffSearchSerializer implements PrimitiveSerializer<StaffJso
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
+          break;
+        case r'lastname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastname = valueDes;
           break;
         default:
           unhandled.add(key);

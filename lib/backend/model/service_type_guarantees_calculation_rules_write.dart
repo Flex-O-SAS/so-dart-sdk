@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'service_type_guarantees_calculation_rules_write.g.dart';
 
-/// 
+/// ServiceTypeGuaranteesCalculationRulesWrite
 ///
 /// Properties:
 /// * [createdAt] 

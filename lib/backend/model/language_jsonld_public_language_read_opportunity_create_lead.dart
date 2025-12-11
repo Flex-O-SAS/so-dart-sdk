@@ -3,31 +3,23 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'language_jsonld_public_language_read_opportunity_create_lead.g.dart';
 
-/// 
+/// LanguageJsonldPublicLanguageReadOpportunityCreateLead
 ///
 /// Properties:
+/// * [atContext] 
 /// * [atId] 
 /// * [atType] 
-/// * [atContext] 
 /// * [code] 
 /// * [label] 
 @BuiltValue()
-abstract class LanguageJsonldPublicLanguageReadOpportunityCreateLead implements Built<LanguageJsonldPublicLanguageReadOpportunityCreateLead, LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder> {
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
-
+abstract class LanguageJsonldPublicLanguageReadOpportunityCreateLead implements HydraItemBaseSchema, Built<LanguageJsonldPublicLanguageReadOpportunityCreateLead, LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder> {
   @BuiltValueField(wireName: r'code')
   String? get code;
 
@@ -57,25 +49,11 @@ class _$LanguageJsonldPublicLanguageReadOpportunityCreateLeadSerializer implemen
     LanguageJsonldPublicLanguageReadOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.atContext != null) {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.code != null) {
@@ -92,6 +70,16 @@ class _$LanguageJsonldPublicLanguageReadOpportunityCreateLeadSerializer implemen
         specifiedType: const FullType(String),
       );
     }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -115,25 +103,11 @@ class _$LanguageJsonldPublicLanguageReadOpportunityCreateLeadSerializer implemen
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
           result.atContext.replace(valueDes);
           break;
         case r'code':
@@ -149,6 +123,20 @@ class _$LanguageJsonldPublicLanguageReadOpportunityCreateLeadSerializer implemen
             specifiedType: const FullType(String),
           ) as String;
           result.label = valueDes;
+          break;
+        case r'@id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atId = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
           break;
         default:
           unhandled.add(key);

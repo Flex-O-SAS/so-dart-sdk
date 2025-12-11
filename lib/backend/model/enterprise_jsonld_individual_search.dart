@@ -3,13 +3,14 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'enterprise_jsonld_individual_search.g.dart';
 
-/// 
+/// EnterpriseJsonldIndividualSearch
 ///
 /// Properties:
 /// * [atContext] 
@@ -22,33 +23,24 @@ part 'enterprise_jsonld_individual_search.g.dart';
 /// * [reference] 
 /// * [id] 
 @BuiltValue()
-abstract class EnterpriseJsonldIndividualSearch implements Built<EnterpriseJsonldIndividualSearch, EnterpriseJsonldIndividualSearchBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'name')
-  String? get name;
-
-  @BuiltValueField(wireName: r'email')
-  String? get email;
+abstract class EnterpriseJsonldIndividualSearch implements HydraItemBaseSchema, Built<EnterpriseJsonldIndividualSearch, EnterpriseJsonldIndividualSearchBuilder> {
+  @BuiltValueField(wireName: r'reference')
+  String? get reference;
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
 
+  @BuiltValueField(wireName: r'name')
+  String? get name;
+
   @BuiltValueField(wireName: r'mobile')
   String? get mobile;
 
-  @BuiltValueField(wireName: r'reference')
-  String? get reference;
-
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  @BuiltValueField(wireName: r'email')
+  String? get email;
 
   EnterpriseJsonldIndividualSearch._();
 
@@ -73,24 +65,22 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
     EnterpriseJsonldIndividualSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
+    if (object.reference != null) {
+      yield r'reference';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
+        object.reference,
         specifiedType: const FullType(String),
       );
     }
-    if (object.atType != null) {
-      yield r'@type';
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.phone != null) {
+      yield r'phone';
       yield serializers.serialize(
-        object.atType,
+        object.phone,
         specifiedType: const FullType(String),
       );
     }
@@ -101,32 +91,18 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
         specifiedType: const FullType(String),
       );
     }
-    if (object.email != null) {
-      yield r'email';
-      yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.phone != null) {
-      yield r'phone';
-      yield serializers.serialize(
-        object.phone,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     if (object.mobile != null) {
       yield r'mobile';
       yield serializers.serialize(
         object.mobile,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
-    if (object.reference != null) {
-      yield r'reference';
+    if (object.atContext != null) {
+      yield r'@context';
       yield serializers.serialize(
-        object.reference,
-        specifiedType: const FullType(String),
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.id != null) {
@@ -134,6 +110,18 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(int),
+      );
+    }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -159,12 +147,12 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
+        case r'reference':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.reference = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -173,12 +161,12 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'phone':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atType = valueDes;
+          result.phone = valueDes;
           break;
         case r'name':
           final valueDes = serializers.deserialize(
@@ -187,36 +175,19 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
           ) as String;
           result.name = valueDes;
           break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.email = valueDes;
-          break;
-        case r'phone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.phone = valueDes;
-          break;
         case r'mobile':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.mobile = valueDes;
-          break;
-        case r'reference':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.reference = valueDes;
+          result.mobile = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -224,6 +195,20 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
           break;
         default:
           unhandled.add(key);

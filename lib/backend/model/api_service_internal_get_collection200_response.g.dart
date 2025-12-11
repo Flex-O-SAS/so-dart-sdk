@@ -11,11 +11,11 @@ class _$ApiServiceInternalGetCollection200Response
   @override
   final BuiltList<ServiceJsonldServiceSearch> member;
   @override
+  final HydraCollectionBaseSchemaAllOfView? view;
+  @override
   final int? totalItems;
   @override
-  final ApiCentersGetCollection200ResponseView? view;
-  @override
-  final ApiCentersGetCollection200ResponseSearch? search;
+  final HydraCollectionBaseSchemaNoPaginationSearch? search;
 
   factory _$ApiServiceInternalGetCollection200Response(
           [void Function(ApiServiceInternalGetCollection200ResponseBuilder)?
@@ -24,7 +24,7 @@ class _$ApiServiceInternalGetCollection200Response
           ._build();
 
   _$ApiServiceInternalGetCollection200Response._(
-      {required this.member, this.totalItems, this.view, this.search})
+      {required this.member, this.view, this.totalItems, this.search})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         member, r'ApiServiceInternalGetCollection200Response', 'member');
@@ -45,8 +45,8 @@ class _$ApiServiceInternalGetCollection200Response
     if (identical(other, this)) return true;
     return other is ApiServiceInternalGetCollection200Response &&
         member == other.member &&
-        totalItems == other.totalItems &&
         view == other.view &&
+        totalItems == other.totalItems &&
         search == other.search;
   }
 
@@ -54,8 +54,8 @@ class _$ApiServiceInternalGetCollection200Response
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, member.hashCode);
-    _$hash = $jc(_$hash, totalItems.hashCode);
     _$hash = $jc(_$hash, view.hashCode);
+    _$hash = $jc(_$hash, totalItems.hashCode);
     _$hash = $jc(_$hash, search.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -66,8 +66,8 @@ class _$ApiServiceInternalGetCollection200Response
     return (newBuiltValueToStringHelper(
             r'ApiServiceInternalGetCollection200Response')
           ..add('member', member)
-          ..add('totalItems', totalItems)
           ..add('view', view)
+          ..add('totalItems', totalItems)
           ..add('search', search))
         .toString();
   }
@@ -76,29 +76,33 @@ class _$ApiServiceInternalGetCollection200Response
 class ApiServiceInternalGetCollection200ResponseBuilder
     implements
         Builder<ApiServiceInternalGetCollection200Response,
-            ApiServiceInternalGetCollection200ResponseBuilder> {
+            ApiServiceInternalGetCollection200ResponseBuilder>,
+        HydraCollectionBaseSchemaBuilder {
   _$ApiServiceInternalGetCollection200Response? _$v;
 
   ListBuilder<ServiceJsonldServiceSearch>? _member;
   ListBuilder<ServiceJsonldServiceSearch> get member =>
       _$this._member ??= new ListBuilder<ServiceJsonldServiceSearch>();
-  set member(ListBuilder<ServiceJsonldServiceSearch>? member) =>
+  set member(covariant ListBuilder<ServiceJsonldServiceSearch>? member) =>
       _$this._member = member;
+
+  HydraCollectionBaseSchemaAllOfViewBuilder? _view;
+  HydraCollectionBaseSchemaAllOfViewBuilder get view =>
+      _$this._view ??= new HydraCollectionBaseSchemaAllOfViewBuilder();
+  set view(covariant HydraCollectionBaseSchemaAllOfViewBuilder? view) =>
+      _$this._view = view;
 
   int? _totalItems;
   int? get totalItems => _$this._totalItems;
-  set totalItems(int? totalItems) => _$this._totalItems = totalItems;
+  set totalItems(covariant int? totalItems) => _$this._totalItems = totalItems;
 
-  ApiCentersGetCollection200ResponseViewBuilder? _view;
-  ApiCentersGetCollection200ResponseViewBuilder get view =>
-      _$this._view ??= new ApiCentersGetCollection200ResponseViewBuilder();
-  set view(ApiCentersGetCollection200ResponseViewBuilder? view) =>
-      _$this._view = view;
-
-  ApiCentersGetCollection200ResponseSearchBuilder? _search;
-  ApiCentersGetCollection200ResponseSearchBuilder get search =>
-      _$this._search ??= new ApiCentersGetCollection200ResponseSearchBuilder();
-  set search(ApiCentersGetCollection200ResponseSearchBuilder? search) =>
+  HydraCollectionBaseSchemaNoPaginationSearchBuilder? _search;
+  HydraCollectionBaseSchemaNoPaginationSearchBuilder get search =>
+      _$this._search ??=
+          new HydraCollectionBaseSchemaNoPaginationSearchBuilder();
+  set search(
+          covariant HydraCollectionBaseSchemaNoPaginationSearchBuilder?
+              search) =>
       _$this._search = search;
 
   ApiServiceInternalGetCollection200ResponseBuilder() {
@@ -109,8 +113,8 @@ class ApiServiceInternalGetCollection200ResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _member = $v.member.toBuilder();
-      _totalItems = $v.totalItems;
       _view = $v.view?.toBuilder();
+      _totalItems = $v.totalItems;
       _search = $v.search?.toBuilder();
       _$v = null;
     }
@@ -118,7 +122,7 @@ class ApiServiceInternalGetCollection200ResponseBuilder
   }
 
   @override
-  void replace(ApiServiceInternalGetCollection200Response other) {
+  void replace(covariant ApiServiceInternalGetCollection200Response other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiServiceInternalGetCollection200Response;
   }
@@ -139,8 +143,8 @@ class ApiServiceInternalGetCollection200ResponseBuilder
       _$result = _$v ??
           new _$ApiServiceInternalGetCollection200Response._(
             member: member.build(),
-            totalItems: totalItems,
             view: _view?.build(),
+            totalItems: totalItems,
             search: _search?.build(),
           );
     } catch (_) {
@@ -148,9 +152,9 @@ class ApiServiceInternalGetCollection200ResponseBuilder
       try {
         _$failedField = 'member';
         member.build();
-
         _$failedField = 'view';
         _view?.build();
+
         _$failedField = 'search';
         _search?.build();
       } catch (e) {

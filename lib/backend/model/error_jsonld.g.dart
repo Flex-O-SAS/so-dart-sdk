@@ -8,38 +8,41 @@ part of 'error_jsonld.dart';
 
 class _$ErrorJsonld extends ErrorJsonld {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
+  final String? instance;
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final String? title;
+  final String? description;
   @override
   final String? detail;
   @override
-  final num? status;
-  @override
-  final String? instance;
+  final String? title;
   @override
   final String? type;
   @override
-  final String? description;
+  final num? status;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$ErrorJsonld([void Function(ErrorJsonldBuilder)? updates]) =>
       (new ErrorJsonldBuilder()..update(updates))._build();
 
   _$ErrorJsonld._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.title,
+      {this.instance,
+      this.description,
       this.detail,
-      this.status,
-      this.instance,
+      this.title,
       this.type,
-      this.description})
-      : super._();
+      this.status,
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(atId, r'ErrorJsonld', 'atId');
+    BuiltValueNullFieldError.checkNotNull(atType, r'ErrorJsonld', 'atType');
+  }
 
   @override
   ErrorJsonld rebuild(void Function(ErrorJsonldBuilder) updates) =>
@@ -52,29 +55,29 @@ class _$ErrorJsonld extends ErrorJsonld {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ErrorJsonld &&
+        instance == other.instance &&
+        description == other.description &&
+        detail == other.detail &&
+        title == other.title &&
+        type == other.type &&
+        status == other.status &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        title == other.title &&
-        detail == other.detail &&
-        status == other.status &&
-        instance == other.instance &&
-        type == other.type &&
-        description == other.description;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, instance.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, detail.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, title.hashCode);
-    _$hash = $jc(_$hash, detail.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, instance.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -82,59 +85,63 @@ class _$ErrorJsonld extends ErrorJsonld {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ErrorJsonld')
+          ..add('instance', instance)
+          ..add('description', description)
+          ..add('detail', detail)
+          ..add('title', title)
+          ..add('type', type)
+          ..add('status', status)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('title', title)
-          ..add('detail', detail)
-          ..add('status', status)
-          ..add('instance', instance)
-          ..add('type', type)
-          ..add('description', description))
+          ..add('atType', atType))
         .toString();
   }
 }
 
-class ErrorJsonldBuilder implements Builder<ErrorJsonld, ErrorJsonldBuilder> {
+class ErrorJsonldBuilder
+    implements
+        Builder<ErrorJsonld, ErrorJsonldBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$ErrorJsonld? _$v;
 
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
+  String? _instance;
+  String? get instance => _$this._instance;
+  set instance(covariant String? instance) => _$this._instance = instance;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
+  String? _detail;
+  String? get detail => _$this._detail;
+  set detail(covariant String? detail) => _$this._detail = detail;
+
+  String? _title;
+  String? get title => _$this._title;
+  set title(covariant String? title) => _$this._title = title;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(covariant String? type) => _$this._type = type;
+
+  num? _status;
+  num? get status => _$this._status;
+  set status(covariant num? status) => _$this._status = status;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
   String? _atType;
   String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  String? _title;
-  String? get title => _$this._title;
-  set title(String? title) => _$this._title = title;
-
-  String? _detail;
-  String? get detail => _$this._detail;
-  set detail(String? detail) => _$this._detail = detail;
-
-  num? _status;
-  num? get status => _$this._status;
-  set status(num? status) => _$this._status = status;
-
-  String? _instance;
-  String? get instance => _$this._instance;
-  set instance(String? instance) => _$this._instance = instance;
-
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   ErrorJsonldBuilder() {
     ErrorJsonld._defaults(this);
@@ -143,22 +150,22 @@ class ErrorJsonldBuilder implements Builder<ErrorJsonld, ErrorJsonldBuilder> {
   ErrorJsonldBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _instance = $v.instance;
+      _description = $v.description;
+      _detail = $v.detail;
+      _title = $v.title;
+      _type = $v.type;
+      _status = $v.status;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _title = $v.title;
-      _detail = $v.detail;
-      _status = $v.status;
-      _instance = $v.instance;
-      _type = $v.type;
-      _description = $v.description;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(ErrorJsonld other) {
+  void replace(covariant ErrorJsonld other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ErrorJsonld;
   }
@@ -176,15 +183,17 @@ class ErrorJsonldBuilder implements Builder<ErrorJsonld, ErrorJsonldBuilder> {
     try {
       _$result = _$v ??
           new _$ErrorJsonld._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            title: title,
-            detail: detail,
-            status: status,
             instance: instance,
-            type: type,
             description: description,
+            detail: detail,
+            title: title,
+            type: type,
+            status: status,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'ErrorJsonld', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'ErrorJsonld', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

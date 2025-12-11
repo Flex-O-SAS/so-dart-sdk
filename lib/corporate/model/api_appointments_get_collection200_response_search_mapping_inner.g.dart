@@ -13,7 +13,7 @@ class _$ApiAppointmentsGetCollection200ResponseSearchMappingInner
   @override
   final String? variable;
   @override
-  final JsonObject? property;
+  final String? property;
   @override
   final bool? required_;
 
@@ -89,9 +89,9 @@ class ApiAppointmentsGetCollection200ResponseSearchMappingInnerBuilder
   String? get variable => _$this._variable;
   set variable(String? variable) => _$this._variable = variable;
 
-  JsonObject? _property;
-  JsonObject? get property => _$this._property;
-  set property(JsonObject? property) => _$this._property = property;
+  String? _property;
+  String? get property => _$this._property;
+  set property(String? property) => _$this._property = property;
 
   bool? _required_;
   bool? get required_ => _$this._required_;

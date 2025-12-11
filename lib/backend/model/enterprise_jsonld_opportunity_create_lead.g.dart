@@ -9,31 +9,31 @@ part of 'enterprise_jsonld_opportunity_create_lead.dart';
 class _$EnterpriseJsonldOpportunityCreateLead
     extends EnterpriseJsonldOpportunityCreateLead {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
+  final String? zipcode;
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final String? name;
-  @override
-  final String? type;
-  @override
-  final String? email;
-  @override
-  final String? mobile;
-  @override
-  final String? mainCenter;
-  @override
-  final String? language;
+  final String? country;
   @override
   final String? address;
   @override
-  final String? zipcode;
-  @override
   final String? city;
   @override
-  final String? country;
+  final String? name;
+  @override
+  final String? mobile;
+  @override
+  final String? language;
+  @override
+  final String? type;
+  @override
+  final String? mainCenter;
+  @override
+  final String? email;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$EnterpriseJsonldOpportunityCreateLead(
           [void Function(EnterpriseJsonldOpportunityCreateLeadBuilder)?
@@ -42,20 +42,25 @@ class _$EnterpriseJsonldOpportunityCreateLead
           ._build();
 
   _$EnterpriseJsonldOpportunityCreateLead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.name,
-      this.type,
-      this.email,
-      this.mobile,
-      this.mainCenter,
-      this.language,
+      {this.zipcode,
+      this.country,
       this.address,
-      this.zipcode,
       this.city,
-      this.country})
-      : super._();
+      this.name,
+      this.mobile,
+      this.language,
+      this.type,
+      this.mainCenter,
+      this.email,
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'EnterpriseJsonldOpportunityCreateLead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'EnterpriseJsonldOpportunityCreateLead', 'atType');
+  }
 
   @override
   EnterpriseJsonldOpportunityCreateLead rebuild(
@@ -71,37 +76,37 @@ class _$EnterpriseJsonldOpportunityCreateLead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is EnterpriseJsonldOpportunityCreateLead &&
+        zipcode == other.zipcode &&
+        country == other.country &&
+        address == other.address &&
+        city == other.city &&
+        name == other.name &&
+        mobile == other.mobile &&
+        language == other.language &&
+        type == other.type &&
+        mainCenter == other.mainCenter &&
+        email == other.email &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        name == other.name &&
-        type == other.type &&
-        email == other.email &&
-        mobile == other.mobile &&
-        mainCenter == other.mainCenter &&
-        language == other.language &&
-        address == other.address &&
-        zipcode == other.zipcode &&
-        city == other.city &&
-        country == other.country;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, zipcode.hashCode);
+    _$hash = $jc(_$hash, country.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, city.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, mobile.hashCode);
+    _$hash = $jc(_$hash, language.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, mainCenter.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, mobile.hashCode);
-    _$hash = $jc(_$hash, mainCenter.hashCode);
-    _$hash = $jc(_$hash, language.hashCode);
-    _$hash = $jc(_$hash, address.hashCode);
-    _$hash = $jc(_$hash, zipcode.hashCode);
-    _$hash = $jc(_$hash, city.hashCode);
-    _$hash = $jc(_$hash, country.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -110,19 +115,19 @@ class _$EnterpriseJsonldOpportunityCreateLead
   String toString() {
     return (newBuiltValueToStringHelper(
             r'EnterpriseJsonldOpportunityCreateLead')
+          ..add('zipcode', zipcode)
+          ..add('country', country)
+          ..add('address', address)
+          ..add('city', city)
+          ..add('name', name)
+          ..add('mobile', mobile)
+          ..add('language', language)
+          ..add('type', type)
+          ..add('mainCenter', mainCenter)
+          ..add('email', email)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('name', name)
-          ..add('type', type)
-          ..add('email', email)
-          ..add('mobile', mobile)
-          ..add('mainCenter', mainCenter)
-          ..add('language', language)
-          ..add('address', address)
-          ..add('zipcode', zipcode)
-          ..add('city', city)
-          ..add('country', country))
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -130,62 +135,64 @@ class _$EnterpriseJsonldOpportunityCreateLead
 class EnterpriseJsonldOpportunityCreateLeadBuilder
     implements
         Builder<EnterpriseJsonldOpportunityCreateLead,
-            EnterpriseJsonldOpportunityCreateLeadBuilder> {
+            EnterpriseJsonldOpportunityCreateLeadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$EnterpriseJsonldOpportunityCreateLead? _$v;
 
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
+  String? _zipcode;
+  String? get zipcode => _$this._zipcode;
+  set zipcode(covariant String? zipcode) => _$this._zipcode = zipcode;
+
+  String? _country;
+  String? get country => _$this._country;
+  set country(covariant String? country) => _$this._country = country;
+
+  String? _address;
+  String? get address => _$this._address;
+  set address(covariant String? address) => _$this._address = address;
+
+  String? _city;
+  String? get city => _$this._city;
+  set city(covariant String? city) => _$this._city = city;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  String? _mobile;
+  String? get mobile => _$this._mobile;
+  set mobile(covariant String? mobile) => _$this._mobile = mobile;
+
+  String? _language;
+  String? get language => _$this._language;
+  set language(covariant String? language) => _$this._language = language;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(covariant String? type) => _$this._type = type;
+
+  String? _mainCenter;
+  String? get mainCenter => _$this._mainCenter;
+  set mainCenter(covariant String? mainCenter) =>
+      _$this._mainCenter = mainCenter;
+
+  String? _email;
+  String? get email => _$this._email;
+  set email(covariant String? email) => _$this._email = email;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
   String? _atType;
   String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
-
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
-
-  String? _mobile;
-  String? get mobile => _$this._mobile;
-  set mobile(String? mobile) => _$this._mobile = mobile;
-
-  String? _mainCenter;
-  String? get mainCenter => _$this._mainCenter;
-  set mainCenter(String? mainCenter) => _$this._mainCenter = mainCenter;
-
-  String? _language;
-  String? get language => _$this._language;
-  set language(String? language) => _$this._language = language;
-
-  String? _address;
-  String? get address => _$this._address;
-  set address(String? address) => _$this._address = address;
-
-  String? _zipcode;
-  String? get zipcode => _$this._zipcode;
-  set zipcode(String? zipcode) => _$this._zipcode = zipcode;
-
-  String? _city;
-  String? get city => _$this._city;
-  set city(String? city) => _$this._city = city;
-
-  String? _country;
-  String? get country => _$this._country;
-  set country(String? country) => _$this._country = country;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   EnterpriseJsonldOpportunityCreateLeadBuilder() {
     EnterpriseJsonldOpportunityCreateLead._defaults(this);
@@ -194,26 +201,26 @@ class EnterpriseJsonldOpportunityCreateLeadBuilder
   EnterpriseJsonldOpportunityCreateLeadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _zipcode = $v.zipcode;
+      _country = $v.country;
+      _address = $v.address;
+      _city = $v.city;
+      _name = $v.name;
+      _mobile = $v.mobile;
+      _language = $v.language;
+      _type = $v.type;
+      _mainCenter = $v.mainCenter;
+      _email = $v.email;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _name = $v.name;
-      _type = $v.type;
-      _email = $v.email;
-      _mobile = $v.mobile;
-      _mainCenter = $v.mainCenter;
-      _language = $v.language;
-      _address = $v.address;
-      _zipcode = $v.zipcode;
-      _city = $v.city;
-      _country = $v.country;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(EnterpriseJsonldOpportunityCreateLead other) {
+  void replace(covariant EnterpriseJsonldOpportunityCreateLead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$EnterpriseJsonldOpportunityCreateLead;
   }
@@ -232,19 +239,21 @@ class EnterpriseJsonldOpportunityCreateLeadBuilder
     try {
       _$result = _$v ??
           new _$EnterpriseJsonldOpportunityCreateLead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            name: name,
-            type: type,
-            email: email,
-            mobile: mobile,
-            mainCenter: mainCenter,
-            language: language,
-            address: address,
             zipcode: zipcode,
-            city: city,
             country: country,
+            address: address,
+            city: city,
+            name: name,
+            mobile: mobile,
+            language: language,
+            type: type,
+            mainCenter: mainCenter,
+            email: email,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'EnterpriseJsonldOpportunityCreateLead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'EnterpriseJsonldOpportunityCreateLead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

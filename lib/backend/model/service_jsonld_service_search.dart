@@ -3,6 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/model/service_center_jsonld_service_search.dart';
 import 'package:so_dart_sdk/backend/model/saved_label_jsonld_service_search.dart';
@@ -11,30 +13,25 @@ import 'package:built_value/serializer.dart';
 
 part 'service_jsonld_service_search.g.dart';
 
-/// 
+/// ServiceJsonldServiceSearch
 ///
 /// Properties:
+/// * [atContext] 
 /// * [atId] 
 /// * [atType] 
 /// * [savedLabels] 
 /// * [serviceCenters] 
 /// * [id] 
 @BuiltValue()
-abstract class ServiceJsonldServiceSearch implements Built<ServiceJsonldServiceSearch, ServiceJsonldServiceSearchBuilder> {
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
+abstract class ServiceJsonldServiceSearch implements HydraItemBaseSchema, Built<ServiceJsonldServiceSearch, ServiceJsonldServiceSearchBuilder> {
   @BuiltValueField(wireName: r'savedLabels')
   BuiltList<SavedLabelJsonldServiceSearch>? get savedLabels;
 
-  @BuiltValueField(wireName: r'serviceCenters')
-  BuiltList<ServiceCenterJsonldServiceSearch>? get serviceCenters;
-
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  @BuiltValueField(wireName: r'serviceCenters')
+  BuiltList<ServiceCenterJsonldServiceSearch>? get serviceCenters;
 
   ServiceJsonldServiceSearch._();
 
@@ -59,20 +56,6 @@ class _$ServiceJsonldServiceSearchSerializer implements PrimitiveSerializer<Serv
     ServiceJsonldServiceSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.savedLabels != null) {
       yield r'savedLabels';
       yield serializers.serialize(
@@ -80,11 +63,11 @@ class _$ServiceJsonldServiceSearchSerializer implements PrimitiveSerializer<Serv
         specifiedType: const FullType(BuiltList, [FullType(SavedLabelJsonldServiceSearch)]),
       );
     }
-    if (object.serviceCenters != null) {
-      yield r'serviceCenters';
+    if (object.atContext != null) {
+      yield r'@context';
       yield serializers.serialize(
-        object.serviceCenters,
-        specifiedType: const FullType(BuiltList, [FullType(ServiceCenterJsonldServiceSearch)]),
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.id != null) {
@@ -94,6 +77,23 @@ class _$ServiceJsonldServiceSearchSerializer implements PrimitiveSerializer<Serv
         specifiedType: const FullType(int),
       );
     }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.serviceCenters != null) {
+      yield r'serviceCenters';
+      yield serializers.serialize(
+        object.serviceCenters,
+        specifiedType: const FullType(BuiltList, [FullType(ServiceCenterJsonldServiceSearch)]),
+      );
+    }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -117,26 +117,33 @@ class _$ServiceJsonldServiceSearchSerializer implements PrimitiveSerializer<Serv
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
         case r'savedLabels':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(SavedLabelJsonldServiceSearch)]),
           ) as BuiltList<SavedLabelJsonldServiceSearch>;
           result.savedLabels.replace(valueDes);
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
+        case r'@id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atId = valueDes;
           break;
         case r'serviceCenters':
           final valueDes = serializers.deserialize(
@@ -145,12 +152,12 @@ class _$ServiceJsonldServiceSearchSerializer implements PrimitiveSerializer<Serv
           ) as BuiltList<ServiceCenterJsonldServiceSearch>;
           result.serviceCenters.replace(valueDes);
           break;
-        case r'id':
+        case r'@type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
           break;
         default:
           unhandled.add(key);

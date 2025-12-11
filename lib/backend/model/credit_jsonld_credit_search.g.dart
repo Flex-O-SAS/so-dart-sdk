@@ -8,21 +8,32 @@ part of 'credit_jsonld_credit_search.dart';
 
 class _$CreditJsonldCreditSearch extends CreditJsonldCreditSearch {
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final String? reference;
   @override
   final int? id;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$CreditJsonldCreditSearch(
           [void Function(CreditJsonldCreditSearchBuilder)? updates]) =>
       (new CreditJsonldCreditSearchBuilder()..update(updates))._build();
 
   _$CreditJsonldCreditSearch._(
-      {this.atId, this.atType, this.reference, this.id})
-      : super._();
+      {this.reference,
+      this.id,
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'CreditJsonldCreditSearch', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'CreditJsonldCreditSearch', 'atType');
+  }
 
   @override
   CreditJsonldCreditSearch rebuild(
@@ -37,19 +48,21 @@ class _$CreditJsonldCreditSearch extends CreditJsonldCreditSearch {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CreditJsonldCreditSearch &&
-        atId == other.atId &&
-        atType == other.atType &&
         reference == other.reference &&
-        id == other.id;
+        id == other.id &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, atContext.hashCode);
+    _$hash = $jc(_$hash, atId.hashCode);
+    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -57,34 +70,42 @@ class _$CreditJsonldCreditSearch extends CreditJsonldCreditSearch {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CreditJsonldCreditSearch')
-          ..add('atId', atId)
-          ..add('atType', atType)
           ..add('reference', reference)
-          ..add('id', id))
+          ..add('id', id)
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
 
 class CreditJsonldCreditSearchBuilder
     implements
-        Builder<CreditJsonldCreditSearch, CreditJsonldCreditSearchBuilder> {
+        Builder<CreditJsonldCreditSearch, CreditJsonldCreditSearchBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$CreditJsonldCreditSearch? _$v;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
 
   String? _reference;
   String? get reference => _$this._reference;
-  set reference(String? reference) => _$this._reference = reference;
+  set reference(covariant String? reference) => _$this._reference = reference;
 
   int? _id;
   int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  set id(covariant int? id) => _$this._id = id;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   CreditJsonldCreditSearchBuilder() {
     CreditJsonldCreditSearch._defaults(this);
@@ -93,17 +114,18 @@ class CreditJsonldCreditSearchBuilder
   CreditJsonldCreditSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atId = $v.atId;
-      _atType = $v.atType;
       _reference = $v.reference;
       _id = $v.id;
+      _atContext = $v.atContext?.toBuilder();
+      _atId = $v.atId;
+      _atType = $v.atType;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(CreditJsonldCreditSearch other) {
+  void replace(covariant CreditJsonldCreditSearch other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CreditJsonldCreditSearch;
   }
@@ -117,13 +139,29 @@ class CreditJsonldCreditSearchBuilder
   CreditJsonldCreditSearch build() => _build();
 
   _$CreditJsonldCreditSearch _build() {
-    final _$result = _$v ??
-        new _$CreditJsonldCreditSearch._(
-          atId: atId,
-          atType: atType,
-          reference: reference,
-          id: id,
-        );
+    _$CreditJsonldCreditSearch _$result;
+    try {
+      _$result = _$v ??
+          new _$CreditJsonldCreditSearch._(
+            reference: reference,
+            id: id,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'CreditJsonldCreditSearch', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'CreditJsonldCreditSearch', 'atType'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'atContext';
+        _atContext?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'CreditJsonldCreditSearch', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

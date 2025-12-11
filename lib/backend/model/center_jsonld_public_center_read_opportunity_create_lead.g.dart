@@ -9,36 +9,38 @@ part of 'center_jsonld_public_center_read_opportunity_create_lead.dart';
 class _$CenterJsonldPublicCenterReadOpportunityCreateLead
     extends CenterJsonldPublicCenterReadOpportunityCreateLead {
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
-  final String? name;
-  @override
-  final String? email;
-  @override
-  final String? phone;
-  @override
-  final String? openingHour;
-  @override
-  final String? closureHour;
-  @override
-  final String? openingDate;
-  @override
-  final BuiltList<CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner>?
-      assets;
-  @override
-  final String? address;
-  @override
-  final String? zipcode;
-  @override
-  final String? city;
+  final DateTime? openingHour;
   @override
   final String? country;
   @override
+  final String? address;
+  @override
+  final String? city;
+  @override
+  final DateTime? closureHour;
+  @override
+  final String? reference;
+  @override
+  final String? zipcode;
+  @override
+  final BuiltList<CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>?
+      assets;
+  @override
+  final String? phone;
+  @override
+  final String? name;
+  @override
   final int? id;
+  @override
+  final DateTime? openingDate;
+  @override
+  final String? email;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$CenterJsonldPublicCenterReadOpportunityCreateLead(
           [void Function(
@@ -49,22 +51,28 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
           ._build();
 
   _$CenterJsonldPublicCenterReadOpportunityCreateLead._(
-      {this.atId,
-      this.atType,
-      this.atContext,
-      this.name,
-      this.email,
-      this.phone,
-      this.openingHour,
-      this.closureHour,
-      this.openingDate,
-      this.assets,
-      this.address,
-      this.zipcode,
-      this.city,
+      {this.openingHour,
       this.country,
-      this.id})
-      : super._();
+      this.address,
+      this.city,
+      this.closureHour,
+      this.reference,
+      this.zipcode,
+      this.assets,
+      this.phone,
+      this.name,
+      this.id,
+      this.openingDate,
+      this.email,
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'CenterJsonldPublicCenterReadOpportunityCreateLead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'CenterJsonldPublicCenterReadOpportunityCreateLead', 'atType');
+  }
 
   @override
   CenterJsonldPublicCenterReadOpportunityCreateLead rebuild(
@@ -82,41 +90,43 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CenterJsonldPublicCenterReadOpportunityCreateLead &&
-        atId == other.atId &&
-        atType == other.atType &&
-        atContext == other.atContext &&
-        name == other.name &&
-        email == other.email &&
-        phone == other.phone &&
         openingHour == other.openingHour &&
-        closureHour == other.closureHour &&
-        openingDate == other.openingDate &&
-        assets == other.assets &&
-        address == other.address &&
-        zipcode == other.zipcode &&
-        city == other.city &&
         country == other.country &&
-        id == other.id;
+        address == other.address &&
+        city == other.city &&
+        closureHour == other.closureHour &&
+        reference == other.reference &&
+        zipcode == other.zipcode &&
+        assets == other.assets &&
+        phone == other.phone &&
+        name == other.name &&
+        id == other.id &&
+        openingDate == other.openingDate &&
+        email == other.email &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, openingHour.hashCode);
+    _$hash = $jc(_$hash, country.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, city.hashCode);
+    _$hash = $jc(_$hash, closureHour.hashCode);
+    _$hash = $jc(_$hash, reference.hashCode);
+    _$hash = $jc(_$hash, zipcode.hashCode);
+    _$hash = $jc(_$hash, assets.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, openingDate.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, atContext.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, phone.hashCode);
-    _$hash = $jc(_$hash, openingHour.hashCode);
-    _$hash = $jc(_$hash, closureHour.hashCode);
-    _$hash = $jc(_$hash, openingDate.hashCode);
-    _$hash = $jc(_$hash, assets.hashCode);
-    _$hash = $jc(_$hash, address.hashCode);
-    _$hash = $jc(_$hash, zipcode.hashCode);
-    _$hash = $jc(_$hash, city.hashCode);
-    _$hash = $jc(_$hash, country.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -125,21 +135,22 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
   String toString() {
     return (newBuiltValueToStringHelper(
             r'CenterJsonldPublicCenterReadOpportunityCreateLead')
-          ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('atContext', atContext)
-          ..add('name', name)
-          ..add('email', email)
-          ..add('phone', phone)
           ..add('openingHour', openingHour)
-          ..add('closureHour', closureHour)
-          ..add('openingDate', openingDate)
-          ..add('assets', assets)
-          ..add('address', address)
-          ..add('zipcode', zipcode)
-          ..add('city', city)
           ..add('country', country)
-          ..add('id', id))
+          ..add('address', address)
+          ..add('city', city)
+          ..add('closureHour', closureHour)
+          ..add('reference', reference)
+          ..add('zipcode', zipcode)
+          ..add('assets', assets)
+          ..add('phone', phone)
+          ..add('name', name)
+          ..add('id', id)
+          ..add('openingDate', openingDate)
+          ..add('email', email)
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -147,77 +158,85 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
 class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
     implements
         Builder<CenterJsonldPublicCenterReadOpportunityCreateLead,
-            CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder> {
+            CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$CenterJsonldPublicCenterReadOpportunityCreateLead? _$v;
 
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
-
-  String? _phone;
-  String? get phone => _$this._phone;
-  set phone(String? phone) => _$this._phone = phone;
-
-  String? _openingHour;
-  String? get openingHour => _$this._openingHour;
-  set openingHour(String? openingHour) => _$this._openingHour = openingHour;
-
-  String? _closureHour;
-  String? get closureHour => _$this._closureHour;
-  set closureHour(String? closureHour) => _$this._closureHour = closureHour;
-
-  String? _openingDate;
-  String? get openingDate => _$this._openingDate;
-  set openingDate(String? openingDate) => _$this._openingDate = openingDate;
-
-  ListBuilder<CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner>?
-      _assets;
-  ListBuilder<CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner>
-      get assets => _$this._assets ??= new ListBuilder<
-          CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner>();
-  set assets(
-          ListBuilder<
-                  CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner>?
-              assets) =>
-      _$this._assets = assets;
-
-  String? _address;
-  String? get address => _$this._address;
-  set address(String? address) => _$this._address = address;
-
-  String? _zipcode;
-  String? get zipcode => _$this._zipcode;
-  set zipcode(String? zipcode) => _$this._zipcode = zipcode;
-
-  String? _city;
-  String? get city => _$this._city;
-  set city(String? city) => _$this._city = city;
+  DateTime? _openingHour;
+  DateTime? get openingHour => _$this._openingHour;
+  set openingHour(covariant DateTime? openingHour) =>
+      _$this._openingHour = openingHour;
 
   String? _country;
   String? get country => _$this._country;
-  set country(String? country) => _$this._country = country;
+  set country(covariant String? country) => _$this._country = country;
+
+  String? _address;
+  String? get address => _$this._address;
+  set address(covariant String? address) => _$this._address = address;
+
+  String? _city;
+  String? get city => _$this._city;
+  set city(covariant String? city) => _$this._city = city;
+
+  DateTime? _closureHour;
+  DateTime? get closureHour => _$this._closureHour;
+  set closureHour(covariant DateTime? closureHour) =>
+      _$this._closureHour = closureHour;
+
+  String? _reference;
+  String? get reference => _$this._reference;
+  set reference(covariant String? reference) => _$this._reference = reference;
+
+  String? _zipcode;
+  String? get zipcode => _$this._zipcode;
+  set zipcode(covariant String? zipcode) => _$this._zipcode = zipcode;
+
+  ListBuilder<CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>?
+      _assets;
+  ListBuilder<CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>
+      get assets => _$this._assets ??= new ListBuilder<
+          CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>();
+  set assets(
+          covariant ListBuilder<
+                  CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>?
+              assets) =>
+      _$this._assets = assets;
+
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(covariant String? phone) => _$this._phone = phone;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
 
   int? _id;
   int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  set id(covariant int? id) => _$this._id = id;
+
+  DateTime? _openingDate;
+  DateTime? get openingDate => _$this._openingDate;
+  set openingDate(covariant DateTime? openingDate) =>
+      _$this._openingDate = openingDate;
+
+  String? _email;
+  String? get email => _$this._email;
+  set email(covariant String? email) => _$this._email = email;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder() {
     CenterJsonldPublicCenterReadOpportunityCreateLead._defaults(this);
@@ -226,28 +245,30 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
   CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _openingHour = $v.openingHour;
+      _country = $v.country;
+      _address = $v.address;
+      _city = $v.city;
+      _closureHour = $v.closureHour;
+      _reference = $v.reference;
+      _zipcode = $v.zipcode;
+      _assets = $v.assets?.toBuilder();
+      _phone = $v.phone;
+      _name = $v.name;
+      _id = $v.id;
+      _openingDate = $v.openingDate;
+      _email = $v.email;
+      _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _atContext = $v.atContext?.toBuilder();
-      _name = $v.name;
-      _email = $v.email;
-      _phone = $v.phone;
-      _openingHour = $v.openingHour;
-      _closureHour = $v.closureHour;
-      _openingDate = $v.openingDate;
-      _assets = $v.assets?.toBuilder();
-      _address = $v.address;
-      _zipcode = $v.zipcode;
-      _city = $v.city;
-      _country = $v.country;
-      _id = $v.id;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(CenterJsonldPublicCenterReadOpportunityCreateLead other) {
+  void replace(
+      covariant CenterJsonldPublicCenterReadOpportunityCreateLead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CenterJsonldPublicCenterReadOpportunityCreateLead;
   }
@@ -267,30 +288,33 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
     try {
       _$result = _$v ??
           new _$CenterJsonldPublicCenterReadOpportunityCreateLead._(
-            atId: atId,
-            atType: atType,
-            atContext: _atContext?.build(),
-            name: name,
-            email: email,
-            phone: phone,
             openingHour: openingHour,
-            closureHour: closureHour,
-            openingDate: openingDate,
-            assets: _assets?.build(),
-            address: address,
-            zipcode: zipcode,
-            city: city,
             country: country,
+            address: address,
+            city: city,
+            closureHour: closureHour,
+            reference: reference,
+            zipcode: zipcode,
+            assets: _assets?.build(),
+            phone: phone,
+            name: name,
             id: id,
+            openingDate: openingDate,
+            email: email,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(atId,
+                r'CenterJsonldPublicCenterReadOpportunityCreateLead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(atType,
+                r'CenterJsonldPublicCenterReadOpportunityCreateLead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-
         _$failedField = 'assets';
         _assets?.build();
+
+        _$failedField = 'atContext';
+        _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'CenterJsonldPublicCenterReadOpportunityCreateLead',

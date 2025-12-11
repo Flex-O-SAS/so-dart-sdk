@@ -8,23 +8,35 @@ part of 'center_jsonld_center_search.dart';
 
 class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final String? reference;
   @override
   final String? name;
   @override
   final int? id;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$CenterJsonldCenterSearch(
           [void Function(CenterJsonldCenterSearchBuilder)? updates]) =>
       (new CenterJsonldCenterSearchBuilder()..update(updates))._build();
 
   _$CenterJsonldCenterSearch._(
-      {this.atId, this.atType, this.reference, this.name, this.id})
-      : super._();
+      {this.reference,
+      this.name,
+      this.id,
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'CenterJsonldCenterSearch', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'CenterJsonldCenterSearch', 'atType');
+  }
 
   @override
   CenterJsonldCenterSearch rebuild(
@@ -39,21 +51,23 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CenterJsonldCenterSearch &&
-        atId == other.atId &&
-        atType == other.atType &&
         reference == other.reference &&
         name == other.name &&
-        id == other.id;
+        id == other.id &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, atContext.hashCode);
+    _$hash = $jc(_$hash, atId.hashCode);
+    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,39 +75,47 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CenterJsonldCenterSearch')
-          ..add('atId', atId)
-          ..add('atType', atType)
           ..add('reference', reference)
           ..add('name', name)
-          ..add('id', id))
+          ..add('id', id)
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
 
 class CenterJsonldCenterSearchBuilder
     implements
-        Builder<CenterJsonldCenterSearch, CenterJsonldCenterSearchBuilder> {
+        Builder<CenterJsonldCenterSearch, CenterJsonldCenterSearchBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$CenterJsonldCenterSearch? _$v;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
 
   String? _reference;
   String? get reference => _$this._reference;
-  set reference(String? reference) => _$this._reference = reference;
+  set reference(covariant String? reference) => _$this._reference = reference;
 
   String? _name;
   String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
+  set name(covariant String? name) => _$this._name = name;
 
   int? _id;
   int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  set id(covariant int? id) => _$this._id = id;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   CenterJsonldCenterSearchBuilder() {
     CenterJsonldCenterSearch._defaults(this);
@@ -102,18 +124,19 @@ class CenterJsonldCenterSearchBuilder
   CenterJsonldCenterSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atId = $v.atId;
-      _atType = $v.atType;
       _reference = $v.reference;
       _name = $v.name;
       _id = $v.id;
+      _atContext = $v.atContext?.toBuilder();
+      _atId = $v.atId;
+      _atType = $v.atType;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(CenterJsonldCenterSearch other) {
+  void replace(covariant CenterJsonldCenterSearch other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CenterJsonldCenterSearch;
   }
@@ -127,14 +150,30 @@ class CenterJsonldCenterSearchBuilder
   CenterJsonldCenterSearch build() => _build();
 
   _$CenterJsonldCenterSearch _build() {
-    final _$result = _$v ??
-        new _$CenterJsonldCenterSearch._(
-          atId: atId,
-          atType: atType,
-          reference: reference,
-          name: name,
-          id: id,
-        );
+    _$CenterJsonldCenterSearch _$result;
+    try {
+      _$result = _$v ??
+          new _$CenterJsonldCenterSearch._(
+            reference: reference,
+            name: name,
+            id: id,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'CenterJsonldCenterSearch', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'CenterJsonldCenterSearch', 'atType'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'atContext';
+        _atContext?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'CenterJsonldCenterSearch', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'expression_expression_write.g.dart';
 
-/// 
+/// ExpressionExpressionWrite
 ///
 /// Properties:
 /// * [comparator] 

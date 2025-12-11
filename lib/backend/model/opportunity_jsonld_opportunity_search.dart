@@ -3,26 +3,23 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'opportunity_jsonld_opportunity_search.g.dart';
 
-/// 
+/// OpportunityJsonldOpportunitySearch
 ///
 /// Properties:
+/// * [atContext] 
 /// * [atId] 
 /// * [atType] 
 /// * [reference] 
 /// * [id] 
 @BuiltValue()
-abstract class OpportunityJsonldOpportunitySearch implements Built<OpportunityJsonldOpportunitySearch, OpportunityJsonldOpportunitySearchBuilder> {
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
+abstract class OpportunityJsonldOpportunitySearch implements HydraItemBaseSchema, Built<OpportunityJsonldOpportunitySearch, OpportunityJsonldOpportunitySearchBuilder> {
   @BuiltValueField(wireName: r'reference')
   String? get reference;
 
@@ -52,25 +49,18 @@ class _$OpportunityJsonldOpportunitySearchSerializer implements PrimitiveSeriali
     OpportunityJsonldOpportunitySearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.reference != null) {
       yield r'reference';
       yield serializers.serialize(
         object.reference,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.id != null) {
@@ -80,6 +70,16 @@ class _$OpportunityJsonldOpportunitySearchSerializer implements PrimitiveSeriali
         specifiedType: const FullType(int),
       );
     }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -103,6 +103,27 @@ class _$OpportunityJsonldOpportunitySearchSerializer implements PrimitiveSeriali
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'reference':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.reference = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
@@ -116,20 +137,6 @@ class _$OpportunityJsonldOpportunitySearchSerializer implements PrimitiveSeriali
             specifiedType: const FullType(String),
           ) as String;
           result.atType = valueDes;
-          break;
-        case r'reference':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.reference = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
           break;
         default:
           unhandled.add(key);

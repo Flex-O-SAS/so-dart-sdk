@@ -18,6 +18,8 @@ do
     cd "${cwd}/services/${service}"
     composer install --no-scripts
     php -d memory_limit=-1 bin/console api:openapi:export --spec-version 3.0.0 --output "${cwd}/services/${service}/openapi.json"
+    perl -0777 -pe 's/"type":\s*\[\s*"string"\s*,\s*"null"\s*\]/"type": "string"/g' -i "${cwd}/services/${service}/openapi.json"
+    perl -0777 -pe 's/"type":\s*\[\s*"integer"\s*,\s*"null"\s*\]/"type": "integer"/g' -i "${cwd}/services/${service}/openapi.json"
     cd "${cwd}"
     service_dart="${service//-/_}"
     openapi-generator generate \

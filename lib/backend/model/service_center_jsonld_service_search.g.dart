@@ -9,11 +9,7 @@ part of 'service_center_jsonld_service_search.dart';
 class _$ServiceCenterJsonldServiceSearch
     extends ServiceCenterJsonldServiceSearch {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
+  final CenterJsonldServiceSearch? center;
   @override
   final num? price;
   @override
@@ -23,8 +19,7 @@ class _$ServiceCenterJsonldServiceSearch
           [void Function(ServiceCenterJsonldServiceSearchBuilder)? updates]) =>
       (new ServiceCenterJsonldServiceSearchBuilder()..update(updates))._build();
 
-  _$ServiceCenterJsonldServiceSearch._(
-      {this.atContext, this.atId, this.atType, this.price, this.id})
+  _$ServiceCenterJsonldServiceSearch._({this.center, this.price, this.id})
       : super._();
 
   @override
@@ -40,9 +35,7 @@ class _$ServiceCenterJsonldServiceSearch
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ServiceCenterJsonldServiceSearch &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
+        center == other.center &&
         price == other.price &&
         id == other.id;
   }
@@ -50,9 +43,7 @@ class _$ServiceCenterJsonldServiceSearch
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atContext.hashCode);
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
+    _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
@@ -62,9 +53,7 @@ class _$ServiceCenterJsonldServiceSearch
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ServiceCenterJsonldServiceSearch')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
+          ..add('center', center)
           ..add('price', price)
           ..add('id', id))
         .toString();
@@ -77,19 +66,11 @@ class ServiceCenterJsonldServiceSearchBuilder
             ServiceCenterJsonldServiceSearchBuilder> {
   _$ServiceCenterJsonldServiceSearch? _$v;
 
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
+  CenterJsonldServiceSearchBuilder? _center;
+  CenterJsonldServiceSearchBuilder get center =>
+      _$this._center ??= new CenterJsonldServiceSearchBuilder();
+  set center(CenterJsonldServiceSearchBuilder? center) =>
+      _$this._center = center;
 
   num? _price;
   num? get price => _$this._price;
@@ -106,9 +87,7 @@ class ServiceCenterJsonldServiceSearchBuilder
   ServiceCenterJsonldServiceSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atContext = $v.atContext?.toBuilder();
-      _atId = $v.atId;
-      _atType = $v.atType;
+      _center = $v.center?.toBuilder();
       _price = $v.price;
       _id = $v.id;
       _$v = null;
@@ -135,17 +114,15 @@ class ServiceCenterJsonldServiceSearchBuilder
     try {
       _$result = _$v ??
           new _$ServiceCenterJsonldServiceSearch._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
+            center: _center?.build(),
             price: price,
             id: id,
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'atContext';
-        _atContext?.build();
+        _$failedField = 'center';
+        _center?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'ServiceCenterJsonldServiceSearch', _$failedField, e.toString());

@@ -11,13 +11,13 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_guarantees_calculation_rules_get_collection200_response.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/guarantees_calculation_rules_guarantees_calculation_rules_write.dart';
+import 'package:so_dart_sdk/backend/model/guarantees_calculation_rules_guarantees_calculation_rules_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/backend/model/guarantees_calculation_rules_jsonld_guarantees_calculation_rules_search.dart';
-import 'package:so_dart_sdk/backend/model/guarantees_calculation_rules_jsonld_guarantees_calculation_rules_write.dart';
 
 class GuaranteesCalculationRulesApi {
 
@@ -193,7 +193,7 @@ class GuaranteesCalculationRulesApi {
   ///
   /// Parameters:
   /// * [id] - GuaranteesCalculationRules identifier
-  /// * [guaranteesCalculationRulesGuaranteesCalculationRulesWrite] - The updated GuaranteesCalculationRules resource
+  /// * [guaranteesCalculationRulesGuaranteesCalculationRulesWriteJsonMergePatch] - The updated GuaranteesCalculationRules resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -205,7 +205,7 @@ class GuaranteesCalculationRulesApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesSearch>> apiGuaranteesCalculationRulesPatchItem({ 
     required String id,
-    required GuaranteesCalculationRulesGuaranteesCalculationRulesWrite guaranteesCalculationRulesGuaranteesCalculationRulesWrite,
+    required GuaranteesCalculationRulesGuaranteesCalculationRulesWriteJsonMergePatch guaranteesCalculationRulesGuaranteesCalculationRulesWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -230,8 +230,8 @@ class GuaranteesCalculationRulesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(GuaranteesCalculationRulesGuaranteesCalculationRulesWrite);
-      _bodyData = _serializers.serialize(guaranteesCalculationRulesGuaranteesCalculationRulesWrite, specifiedType: _type);
+      const _type = FullType(GuaranteesCalculationRulesGuaranteesCalculationRulesWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(guaranteesCalculationRulesGuaranteesCalculationRulesWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -289,7 +289,7 @@ class GuaranteesCalculationRulesApi {
   /// Creates a GuaranteesCalculationRules resource.
   ///
   /// Parameters:
-  /// * [guaranteesCalculationRulesJsonldGuaranteesCalculationRulesWrite] - The new GuaranteesCalculationRules resource
+  /// * [guaranteesCalculationRulesGuaranteesCalculationRulesWrite] - The new GuaranteesCalculationRules resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -300,7 +300,7 @@ class GuaranteesCalculationRulesApi {
   /// Returns a [Future] containing a [Response] with a [GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesSearch] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesSearch>> apiGuaranteesCalculationRulesPostItem({ 
-    required GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesWrite guaranteesCalculationRulesJsonldGuaranteesCalculationRulesWrite,
+    required GuaranteesCalculationRulesGuaranteesCalculationRulesWrite guaranteesCalculationRulesGuaranteesCalculationRulesWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -325,8 +325,8 @@ class GuaranteesCalculationRulesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesWrite);
-      _bodyData = _serializers.serialize(guaranteesCalculationRulesJsonldGuaranteesCalculationRulesWrite, specifiedType: _type);
+      const _type = FullType(GuaranteesCalculationRulesGuaranteesCalculationRulesWrite);
+      _bodyData = _serializers.serialize(guaranteesCalculationRulesGuaranteesCalculationRulesWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

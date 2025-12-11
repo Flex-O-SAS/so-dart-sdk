@@ -158,48 +158,52 @@ class _$RuleJsonldRuleReadRuleActionEnumSerializer
 
 class _$RuleJsonldRuleRead extends RuleJsonldRuleRead {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
+  final RuleJsonldRuleReadRuleActionEnum? ruleAction;
   @override
-  final String? atId;
+  final bool? managed;
   @override
-  final String? atType;
-  @override
-  final int? priority;
+  final RuleJsonldRuleReadRuleTypeEnum? ruleType;
   @override
   final String? name;
   @override
   final String? description;
   @override
+  final int? id;
+  @override
+  final int? priority;
+  @override
   final BuiltList<ExpressionJsonldRuleRead>? expressions;
-  @override
-  final RuleJsonldRuleReadRuleTypeEnum? ruleType;
-  @override
-  final RuleJsonldRuleReadRuleActionEnum? ruleAction;
-  @override
-  final bool? managed;
   @override
   final RuleJsonldRuleRead? parentRule;
   @override
-  final int? id;
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$RuleJsonldRuleRead(
           [void Function(RuleJsonldRuleReadBuilder)? updates]) =>
       (new RuleJsonldRuleReadBuilder()..update(updates))._build();
 
   _$RuleJsonldRuleRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.priority,
+      {this.ruleAction,
+      this.managed,
+      this.ruleType,
       this.name,
       this.description,
+      this.id,
+      this.priority,
       this.expressions,
-      this.ruleType,
-      this.ruleAction,
-      this.managed,
       this.parentRule,
-      this.id})
-      : super._();
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(atId, r'RuleJsonldRuleRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'RuleJsonldRuleRead', 'atType');
+  }
 
   @override
   RuleJsonldRuleRead rebuild(
@@ -214,35 +218,35 @@ class _$RuleJsonldRuleRead extends RuleJsonldRuleRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RuleJsonldRuleRead &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
-        priority == other.priority &&
-        name == other.name &&
-        description == other.description &&
-        expressions == other.expressions &&
-        ruleType == other.ruleType &&
         ruleAction == other.ruleAction &&
         managed == other.managed &&
+        ruleType == other.ruleType &&
+        name == other.name &&
+        description == other.description &&
+        id == other.id &&
+        priority == other.priority &&
+        expressions == other.expressions &&
         parentRule == other.parentRule &&
-        id == other.id;
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, ruleAction.hashCode);
+    _$hash = $jc(_$hash, managed.hashCode);
+    _$hash = $jc(_$hash, ruleType.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, priority.hashCode);
+    _$hash = $jc(_$hash, expressions.hashCode);
+    _$hash = $jc(_$hash, parentRule.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, priority.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, expressions.hashCode);
-    _$hash = $jc(_$hash, ruleType.hashCode);
-    _$hash = $jc(_$hash, ruleAction.hashCode);
-    _$hash = $jc(_$hash, managed.hashCode);
-    _$hash = $jc(_$hash, parentRule.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -250,81 +254,85 @@ class _$RuleJsonldRuleRead extends RuleJsonldRuleRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RuleJsonldRuleRead')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('priority', priority)
-          ..add('name', name)
-          ..add('description', description)
-          ..add('expressions', expressions)
-          ..add('ruleType', ruleType)
           ..add('ruleAction', ruleAction)
           ..add('managed', managed)
+          ..add('ruleType', ruleType)
+          ..add('name', name)
+          ..add('description', description)
+          ..add('id', id)
+          ..add('priority', priority)
+          ..add('expressions', expressions)
           ..add('parentRule', parentRule)
-          ..add('id', id))
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
 
 class RuleJsonldRuleReadBuilder
-    implements Builder<RuleJsonldRuleRead, RuleJsonldRuleReadBuilder> {
+    implements
+        Builder<RuleJsonldRuleRead, RuleJsonldRuleReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$RuleJsonldRuleRead? _$v;
-
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _priority;
-  int? get priority => _$this._priority;
-  set priority(int? priority) => _$this._priority = priority;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  ListBuilder<ExpressionJsonldRuleRead>? _expressions;
-  ListBuilder<ExpressionJsonldRuleRead> get expressions =>
-      _$this._expressions ??= new ListBuilder<ExpressionJsonldRuleRead>();
-  set expressions(ListBuilder<ExpressionJsonldRuleRead>? expressions) =>
-      _$this._expressions = expressions;
-
-  RuleJsonldRuleReadRuleTypeEnum? _ruleType;
-  RuleJsonldRuleReadRuleTypeEnum? get ruleType => _$this._ruleType;
-  set ruleType(RuleJsonldRuleReadRuleTypeEnum? ruleType) =>
-      _$this._ruleType = ruleType;
 
   RuleJsonldRuleReadRuleActionEnum? _ruleAction;
   RuleJsonldRuleReadRuleActionEnum? get ruleAction => _$this._ruleAction;
-  set ruleAction(RuleJsonldRuleReadRuleActionEnum? ruleAction) =>
+  set ruleAction(covariant RuleJsonldRuleReadRuleActionEnum? ruleAction) =>
       _$this._ruleAction = ruleAction;
 
   bool? _managed;
   bool? get managed => _$this._managed;
-  set managed(bool? managed) => _$this._managed = managed;
+  set managed(covariant bool? managed) => _$this._managed = managed;
+
+  RuleJsonldRuleReadRuleTypeEnum? _ruleType;
+  RuleJsonldRuleReadRuleTypeEnum? get ruleType => _$this._ruleType;
+  set ruleType(covariant RuleJsonldRuleReadRuleTypeEnum? ruleType) =>
+      _$this._ruleType = ruleType;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  int? _priority;
+  int? get priority => _$this._priority;
+  set priority(covariant int? priority) => _$this._priority = priority;
+
+  ListBuilder<ExpressionJsonldRuleRead>? _expressions;
+  ListBuilder<ExpressionJsonldRuleRead> get expressions =>
+      _$this._expressions ??= new ListBuilder<ExpressionJsonldRuleRead>();
+  set expressions(
+          covariant ListBuilder<ExpressionJsonldRuleRead>? expressions) =>
+      _$this._expressions = expressions;
 
   RuleJsonldRuleReadBuilder? _parentRule;
   RuleJsonldRuleReadBuilder get parentRule =>
       _$this._parentRule ??= new RuleJsonldRuleReadBuilder();
-  set parentRule(RuleJsonldRuleReadBuilder? parentRule) =>
+  set parentRule(covariant RuleJsonldRuleReadBuilder? parentRule) =>
       _$this._parentRule = parentRule;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   RuleJsonldRuleReadBuilder() {
     RuleJsonldRuleRead._defaults(this);
@@ -333,25 +341,25 @@ class RuleJsonldRuleReadBuilder
   RuleJsonldRuleReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _ruleAction = $v.ruleAction;
+      _managed = $v.managed;
+      _ruleType = $v.ruleType;
+      _name = $v.name;
+      _description = $v.description;
+      _id = $v.id;
+      _priority = $v.priority;
+      _expressions = $v.expressions?.toBuilder();
+      _parentRule = $v.parentRule?.toBuilder();
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _priority = $v.priority;
-      _name = $v.name;
-      _description = $v.description;
-      _expressions = $v.expressions?.toBuilder();
-      _ruleType = $v.ruleType;
-      _ruleAction = $v.ruleAction;
-      _managed = $v.managed;
-      _parentRule = $v.parentRule?.toBuilder();
-      _id = $v.id;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(RuleJsonldRuleRead other) {
+  void replace(covariant RuleJsonldRuleRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$RuleJsonldRuleRead;
   }
@@ -369,30 +377,30 @@ class RuleJsonldRuleReadBuilder
     try {
       _$result = _$v ??
           new _$RuleJsonldRuleRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            priority: priority,
-            name: name,
-            description: description,
-            expressions: _expressions?.build(),
-            ruleType: ruleType,
             ruleAction: ruleAction,
             managed: managed,
-            parentRule: _parentRule?.build(),
+            ruleType: ruleType,
+            name: name,
+            description: description,
             id: id,
+            priority: priority,
+            expressions: _expressions?.build(),
+            parentRule: _parentRule?.build(),
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'RuleJsonldRuleRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'RuleJsonldRuleRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-
         _$failedField = 'expressions';
         _expressions?.build();
-
         _$failedField = 'parentRule';
         _parentRule?.build();
+        _$failedField = 'atContext';
+        _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'RuleJsonldRuleRead', _$failedField, e.toString());

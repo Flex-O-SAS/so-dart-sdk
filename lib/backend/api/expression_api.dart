@@ -11,13 +11,13 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_expressions_get_collection200_response.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/expression_expression_write.dart';
+import 'package:so_dart_sdk/backend/model/expression_expression_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/backend/model/expression_jsonld_expression_read.dart';
-import 'package:so_dart_sdk/backend/model/expression_jsonld_expression_write.dart';
 
 class ExpressionApi {
 
@@ -264,7 +264,7 @@ class ExpressionApi {
   ///
   /// Parameters:
   /// * [id] - Expression identifier
-  /// * [expressionExpressionWrite] - The updated Expression resource
+  /// * [expressionExpressionWriteJsonMergePatch] - The updated Expression resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -276,7 +276,7 @@ class ExpressionApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ExpressionJsonldExpressionRead>> apiExpressionsPatchItem({ 
     required String id,
-    required ExpressionExpressionWrite expressionExpressionWrite,
+    required ExpressionExpressionWriteJsonMergePatch expressionExpressionWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -301,8 +301,8 @@ class ExpressionApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ExpressionExpressionWrite);
-      _bodyData = _serializers.serialize(expressionExpressionWrite, specifiedType: _type);
+      const _type = FullType(ExpressionExpressionWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(expressionExpressionWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -360,7 +360,7 @@ class ExpressionApi {
   /// Creates a Expression resource.
   ///
   /// Parameters:
-  /// * [expressionJsonldExpressionWrite] - The new Expression resource
+  /// * [expressionExpressionWrite] - The new Expression resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -371,7 +371,7 @@ class ExpressionApi {
   /// Returns a [Future] containing a [Response] with a [ExpressionJsonldExpressionRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ExpressionJsonldExpressionRead>> apiExpressionsPostItem({ 
-    required ExpressionJsonldExpressionWrite expressionJsonldExpressionWrite,
+    required ExpressionExpressionWrite expressionExpressionWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -396,8 +396,8 @@ class ExpressionApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ExpressionJsonldExpressionWrite);
-      _bodyData = _serializers.serialize(expressionJsonldExpressionWrite, specifiedType: _type);
+      const _type = FullType(ExpressionExpressionWrite);
+      _bodyData = _serializers.serialize(expressionExpressionWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

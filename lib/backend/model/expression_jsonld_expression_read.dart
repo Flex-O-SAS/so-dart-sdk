@@ -3,15 +3,16 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:so_dart_sdk/backend/model/rule_jsonld_expression_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'expression_jsonld_expression_read.g.dart';
 
-/// 
+/// ExpressionJsonldExpressionRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -23,16 +24,7 @@ part 'expression_jsonld_expression_read.g.dart';
 /// * [rule] 
 /// * [id] 
 @BuiltValue()
-abstract class ExpressionJsonldExpressionRead implements Built<ExpressionJsonldExpressionRead, ExpressionJsonldExpressionReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
+abstract class ExpressionJsonldExpressionRead implements HydraItemBaseSchema, Built<ExpressionJsonldExpressionRead, ExpressionJsonldExpressionReadBuilder> {
   @BuiltValueField(wireName: r'comparator')
   ExpressionJsonldExpressionReadComparatorEnum? get comparator;
   // enum comparatorEnum {  >,  >=,  <,  <=,  ==,  !=,  contains,  matches,  starts with,  end with,  in,  not in,  };
@@ -41,11 +33,11 @@ abstract class ExpressionJsonldExpressionRead implements Built<ExpressionJsonldE
   ExpressionJsonldExpressionReadLeftSideEnum? get leftSide;
   // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  };
 
-  @BuiltValueField(wireName: r'rightSide')
-  String? get rightSide;
-
   @BuiltValueField(wireName: r'rule')
   RuleJsonldExpressionRead? get rule;
+
+  @BuiltValueField(wireName: r'rightSide')
+  String? get rightSide;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -73,27 +65,6 @@ class _$ExpressionJsonldExpressionReadSerializer implements PrimitiveSerializer<
     ExpressionJsonldExpressionRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.comparator != null) {
       yield r'comparator';
       yield serializers.serialize(
@@ -108,18 +79,30 @@ class _$ExpressionJsonldExpressionReadSerializer implements PrimitiveSerializer<
         specifiedType: const FullType(ExpressionJsonldExpressionReadLeftSideEnum),
       );
     }
-    if (object.rightSide != null) {
-      yield r'rightSide';
-      yield serializers.serialize(
-        object.rightSide,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
     if (object.rule != null) {
       yield r'rule';
       yield serializers.serialize(
         object.rule,
         specifiedType: const FullType(RuleJsonldExpressionRead),
+      );
+    }
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
+      );
+    }
+    if (object.rightSide != null) {
+      yield r'rightSide';
+      yield serializers.serialize(
+        object.rightSide,
+        specifiedType: const FullType(String),
       );
     }
     if (object.id != null) {
@@ -129,6 +112,11 @@ class _$ExpressionJsonldExpressionReadSerializer implements PrimitiveSerializer<
         specifiedType: const FullType(int),
       );
     }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -152,27 +140,6 @@ class _$ExpressionJsonldExpressionReadSerializer implements PrimitiveSerializer<
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
         case r'comparator':
           final valueDes = serializers.deserialize(
             value,
@@ -187,12 +154,12 @@ class _$ExpressionJsonldExpressionReadSerializer implements PrimitiveSerializer<
           ) as ExpressionJsonldExpressionReadLeftSideEnum;
           result.leftSide = valueDes;
           break;
-        case r'rightSide':
+        case r'@id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.rightSide = valueDes;
+          result.atId = valueDes;
           break;
         case r'rule':
           final valueDes = serializers.deserialize(
@@ -201,12 +168,33 @@ class _$ExpressionJsonldExpressionReadSerializer implements PrimitiveSerializer<
           ) as RuleJsonldExpressionRead;
           result.rule.replace(valueDes);
           break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'rightSide':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.rightSide = valueDes;
+          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
           break;
         default:
           unhandled.add(key);

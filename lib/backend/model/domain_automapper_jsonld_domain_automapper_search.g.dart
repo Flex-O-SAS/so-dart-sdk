@@ -74,19 +74,19 @@ class _$DomainAutomapperJsonldDomainAutomapperSearchTypeEnumSerializer
 class _$DomainAutomapperJsonldDomainAutomapperSearch
     extends DomainAutomapperJsonldDomainAutomapperSearch {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final String fqdn;
   @override
-  final String? target;
+  final int? id;
   @override
   final DomainAutomapperJsonldDomainAutomapperSearchTypeEnum type;
   @override
-  final int? id;
+  final String? target;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$DomainAutomapperJsonldDomainAutomapperSearch(
           [void Function(DomainAutomapperJsonldDomainAutomapperSearchBuilder)?
@@ -96,18 +96,22 @@ class _$DomainAutomapperJsonldDomainAutomapperSearch
           ._build();
 
   _$DomainAutomapperJsonldDomainAutomapperSearch._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      required this.fqdn,
-      this.target,
+      {required this.fqdn,
+      this.id,
       required this.type,
-      this.id})
+      this.target,
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         fqdn, r'DomainAutomapperJsonldDomainAutomapperSearch', 'fqdn');
     BuiltValueNullFieldError.checkNotNull(
         type, r'DomainAutomapperJsonldDomainAutomapperSearch', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'DomainAutomapperJsonldDomainAutomapperSearch', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'DomainAutomapperJsonldDomainAutomapperSearch', 'atType');
   }
 
   @override
@@ -124,25 +128,25 @@ class _$DomainAutomapperJsonldDomainAutomapperSearch
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DomainAutomapperJsonldDomainAutomapperSearch &&
+        fqdn == other.fqdn &&
+        id == other.id &&
+        type == other.type &&
+        target == other.target &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        fqdn == other.fqdn &&
-        target == other.target &&
-        type == other.type &&
-        id == other.id;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, fqdn.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, target.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, fqdn.hashCode);
-    _$hash = $jc(_$hash, target.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -151,13 +155,13 @@ class _$DomainAutomapperJsonldDomainAutomapperSearch
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DomainAutomapperJsonldDomainAutomapperSearch')
+          ..add('fqdn', fqdn)
+          ..add('id', id)
+          ..add('type', type)
+          ..add('target', target)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('fqdn', fqdn)
-          ..add('target', target)
-          ..add('type', type)
-          ..add('id', id))
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -165,40 +169,43 @@ class _$DomainAutomapperJsonldDomainAutomapperSearch
 class DomainAutomapperJsonldDomainAutomapperSearchBuilder
     implements
         Builder<DomainAutomapperJsonldDomainAutomapperSearch,
-            DomainAutomapperJsonldDomainAutomapperSearchBuilder> {
+            DomainAutomapperJsonldDomainAutomapperSearchBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$DomainAutomapperJsonldDomainAutomapperSearch? _$v;
-
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
 
   String? _fqdn;
   String? get fqdn => _$this._fqdn;
-  set fqdn(String? fqdn) => _$this._fqdn = fqdn;
+  set fqdn(covariant String? fqdn) => _$this._fqdn = fqdn;
 
-  String? _target;
-  String? get target => _$this._target;
-  set target(String? target) => _$this._target = target;
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
 
   DomainAutomapperJsonldDomainAutomapperSearchTypeEnum? _type;
   DomainAutomapperJsonldDomainAutomapperSearchTypeEnum? get type =>
       _$this._type;
-  set type(DomainAutomapperJsonldDomainAutomapperSearchTypeEnum? type) =>
+  set type(
+          covariant DomainAutomapperJsonldDomainAutomapperSearchTypeEnum?
+              type) =>
       _$this._type = type;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  String? _target;
+  String? get target => _$this._target;
+  set target(covariant String? target) => _$this._target = target;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   DomainAutomapperJsonldDomainAutomapperSearchBuilder() {
     DomainAutomapperJsonldDomainAutomapperSearch._defaults(this);
@@ -207,20 +214,20 @@ class DomainAutomapperJsonldDomainAutomapperSearchBuilder
   DomainAutomapperJsonldDomainAutomapperSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _fqdn = $v.fqdn;
+      _id = $v.id;
+      _type = $v.type;
+      _target = $v.target;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _fqdn = $v.fqdn;
-      _target = $v.target;
-      _type = $v.type;
-      _id = $v.id;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(DomainAutomapperJsonldDomainAutomapperSearch other) {
+  void replace(covariant DomainAutomapperJsonldDomainAutomapperSearch other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$DomainAutomapperJsonldDomainAutomapperSearch;
   }
@@ -240,15 +247,17 @@ class DomainAutomapperJsonldDomainAutomapperSearchBuilder
     try {
       _$result = _$v ??
           new _$DomainAutomapperJsonldDomainAutomapperSearch._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
             fqdn: BuiltValueNullFieldError.checkNotNull(
                 fqdn, r'DomainAutomapperJsonldDomainAutomapperSearch', 'fqdn'),
-            target: target,
+            id: id,
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'DomainAutomapperJsonldDomainAutomapperSearch', 'type'),
-            id: id,
+            target: target,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'DomainAutomapperJsonldDomainAutomapperSearch', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(atType,
+                r'DomainAutomapperJsonldDomainAutomapperSearch', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

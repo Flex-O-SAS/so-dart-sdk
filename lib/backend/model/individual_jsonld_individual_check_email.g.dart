@@ -9,11 +9,13 @@ part of 'individual_jsonld_individual_check_email.dart';
 class _$IndividualJsonldIndividualCheckEmail
     extends IndividualJsonldIndividualCheckEmail {
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final String? email;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$IndividualJsonldIndividualCheckEmail(
           [void Function(IndividualJsonldIndividualCheckEmailBuilder)?
@@ -21,8 +23,14 @@ class _$IndividualJsonldIndividualCheckEmail
       (new IndividualJsonldIndividualCheckEmailBuilder()..update(updates))
           ._build();
 
-  _$IndividualJsonldIndividualCheckEmail._({this.atId, this.atType, this.email})
-      : super._();
+  _$IndividualJsonldIndividualCheckEmail._(
+      {this.email, this.atContext, required this.atId, required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'IndividualJsonldIndividualCheckEmail', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'IndividualJsonldIndividualCheckEmail', 'atType');
+  }
 
   @override
   IndividualJsonldIndividualCheckEmail rebuild(
@@ -37,17 +45,19 @@ class _$IndividualJsonldIndividualCheckEmail
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is IndividualJsonldIndividualCheckEmail &&
+        email == other.email &&
+        atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        email == other.email;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -55,9 +65,10 @@ class _$IndividualJsonldIndividualCheckEmail
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'IndividualJsonldIndividualCheckEmail')
+          ..add('email', email)
+          ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('email', email))
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -65,20 +76,27 @@ class _$IndividualJsonldIndividualCheckEmail
 class IndividualJsonldIndividualCheckEmailBuilder
     implements
         Builder<IndividualJsonldIndividualCheckEmail,
-            IndividualJsonldIndividualCheckEmailBuilder> {
+            IndividualJsonldIndividualCheckEmailBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$IndividualJsonldIndividualCheckEmail? _$v;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
 
   String? _email;
   String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
+  set email(covariant String? email) => _$this._email = email;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   IndividualJsonldIndividualCheckEmailBuilder() {
     IndividualJsonldIndividualCheckEmail._defaults(this);
@@ -87,16 +105,17 @@ class IndividualJsonldIndividualCheckEmailBuilder
   IndividualJsonldIndividualCheckEmailBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _email = $v.email;
+      _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _email = $v.email;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(IndividualJsonldIndividualCheckEmail other) {
+  void replace(covariant IndividualJsonldIndividualCheckEmail other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$IndividualJsonldIndividualCheckEmail;
   }
@@ -111,12 +130,30 @@ class IndividualJsonldIndividualCheckEmailBuilder
   IndividualJsonldIndividualCheckEmail build() => _build();
 
   _$IndividualJsonldIndividualCheckEmail _build() {
-    final _$result = _$v ??
-        new _$IndividualJsonldIndividualCheckEmail._(
-          atId: atId,
-          atType: atType,
-          email: email,
-        );
+    _$IndividualJsonldIndividualCheckEmail _$result;
+    try {
+      _$result = _$v ??
+          new _$IndividualJsonldIndividualCheckEmail._(
+            email: email,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'IndividualJsonldIndividualCheckEmail', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'IndividualJsonldIndividualCheckEmail', 'atType'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'atContext';
+        _atContext?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'IndividualJsonldIndividualCheckEmail',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

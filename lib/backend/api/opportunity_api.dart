@@ -11,11 +11,12 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_opportunities_get_collection200_response.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_create_lead.dart';
+import 'package:so_dart_sdk/backend/model/opportunity_opportunity_create_lead.dart';
 
 class OpportunityApi {
 
@@ -31,6 +32,7 @@ class OpportunityApi {
   /// Parameters:
   /// * [page] - The collection page number
   /// * [reference] - 
+  /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -45,6 +47,7 @@ class OpportunityApi {
   Future<Response<ApiOpportunitiesGetCollection200Response>> apiOpportunitiesGetCollection({ 
     int? page = 1,
     String? reference,
+    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
@@ -70,6 +73,7 @@ class OpportunityApi {
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
+      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
     };
@@ -118,7 +122,7 @@ class OpportunityApi {
   /// Creates a Opportunity resource.
   ///
   /// Parameters:
-  /// * [opportunityJsonldOpportunityCreateLead] - The new Opportunity resource
+  /// * [opportunityOpportunityCreateLead] - The new Opportunity resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -129,7 +133,7 @@ class OpportunityApi {
   /// Returns a [Future] containing a [Response] with a [OpportunityJsonldOpportunityCreateLead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<OpportunityJsonldOpportunityCreateLead>> apiOpportunityCreateLead({ 
-    required OpportunityJsonldOpportunityCreateLead opportunityJsonldOpportunityCreateLead,
+    required OpportunityOpportunityCreateLead opportunityOpportunityCreateLead,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -154,8 +158,8 @@ class OpportunityApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OpportunityJsonldOpportunityCreateLead);
-      _bodyData = _serializers.serialize(opportunityJsonldOpportunityCreateLead, specifiedType: _type);
+      const _type = FullType(OpportunityOpportunityCreateLead);
+      _bodyData = _serializers.serialize(opportunityOpportunityCreateLead, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

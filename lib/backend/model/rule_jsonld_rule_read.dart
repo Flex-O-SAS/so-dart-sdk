@@ -3,15 +3,16 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:so_dart_sdk/backend/model/expression_jsonld_rule_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'rule_jsonld_rule_read.g.dart';
 
-/// 
+/// RuleJsonldRuleRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -27,32 +28,7 @@ part 'rule_jsonld_rule_read.g.dart';
 /// * [parentRule] 
 /// * [id] 
 @BuiltValue()
-abstract class RuleJsonldRuleRead implements Built<RuleJsonldRuleRead, RuleJsonldRuleReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'priority')
-  int? get priority;
-
-  @BuiltValueField(wireName: r'name')
-  String? get name;
-
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  @BuiltValueField(wireName: r'expressions')
-  BuiltList<ExpressionJsonldRuleRead>? get expressions;
-
-  @BuiltValueField(wireName: r'ruleType')
-  RuleJsonldRuleReadRuleTypeEnum? get ruleType;
-  // enum ruleTypeEnum {  Booking,  CancelBooking,  };
-
+abstract class RuleJsonldRuleRead implements HydraItemBaseSchema, Built<RuleJsonldRuleRead, RuleJsonldRuleReadBuilder> {
   @BuiltValueField(wireName: r'ruleAction')
   RuleJsonldRuleReadRuleActionEnum? get ruleAction;
   // enum ruleActionEnum {  AllowBooking,  DenyBooking,  PendingBooking,  FreeBooking,  AllowCancelBooking,  DenyCancelBooking,  };
@@ -60,11 +36,27 @@ abstract class RuleJsonldRuleRead implements Built<RuleJsonldRuleRead, RuleJsonl
   @BuiltValueField(wireName: r'managed')
   bool? get managed;
 
-  @BuiltValueField(wireName: r'parentRule')
-  RuleJsonldRuleRead? get parentRule;
+  @BuiltValueField(wireName: r'ruleType')
+  RuleJsonldRuleReadRuleTypeEnum? get ruleType;
+  // enum ruleTypeEnum {  Booking,  CancelBooking,  };
+
+  @BuiltValueField(wireName: r'name')
+  String? get name;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  @BuiltValueField(wireName: r'priority')
+  int? get priority;
+
+  @BuiltValueField(wireName: r'expressions')
+  BuiltList<ExpressionJsonldRuleRead>? get expressions;
+
+  @BuiltValueField(wireName: r'parentRule')
+  RuleJsonldRuleRead? get parentRule;
 
   RuleJsonldRuleRead._();
 
@@ -72,9 +64,9 @@ abstract class RuleJsonldRuleRead implements Built<RuleJsonldRuleRead, RuleJsonl
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleJsonldRuleReadBuilder b) => b
-      ..priority = 1
+      ..ruleAction = RuleJsonldRuleReadRuleActionEnum.valueOf('DenyBooking')
       ..ruleType = RuleJsonldRuleReadRuleTypeEnum.valueOf('Booking')
-      ..ruleAction = RuleJsonldRuleReadRuleActionEnum.valueOf('DenyBooking');
+      ..priority = 1;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RuleJsonldRuleRead> get serializer => _$RuleJsonldRuleReadSerializer();
@@ -92,32 +84,30 @@ class _$RuleJsonldRuleReadSerializer implements PrimitiveSerializer<RuleJsonldRu
     RuleJsonldRuleRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
+    if (object.ruleAction != null) {
+      yield r'ruleAction';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
+        object.ruleAction,
+        specifiedType: const FullType(RuleJsonldRuleReadRuleActionEnum),
       );
     }
-    if (object.atId != null) {
-      yield r'@id';
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.managed != null) {
+      yield r'managed';
       yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
+        object.managed,
+        specifiedType: const FullType(bool),
       );
     }
-    if (object.atType != null) {
-      yield r'@type';
+    if (object.ruleType != null) {
+      yield r'ruleType';
       yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.priority != null) {
-      yield r'priority';
-      yield serializers.serialize(
-        object.priority,
-        specifiedType: const FullType(int),
+        object.ruleType,
+        specifiedType: const FullType(RuleJsonldRuleReadRuleTypeEnum),
       );
     }
     if (object.name != null) {
@@ -134,39 +124,11 @@ class _$RuleJsonldRuleReadSerializer implements PrimitiveSerializer<RuleJsonldRu
         specifiedType: const FullType(String),
       );
     }
-    if (object.expressions != null) {
-      yield r'expressions';
+    if (object.atContext != null) {
+      yield r'@context';
       yield serializers.serialize(
-        object.expressions,
-        specifiedType: const FullType(BuiltList, [FullType(ExpressionJsonldRuleRead)]),
-      );
-    }
-    if (object.ruleType != null) {
-      yield r'ruleType';
-      yield serializers.serialize(
-        object.ruleType,
-        specifiedType: const FullType(RuleJsonldRuleReadRuleTypeEnum),
-      );
-    }
-    if (object.ruleAction != null) {
-      yield r'ruleAction';
-      yield serializers.serialize(
-        object.ruleAction,
-        specifiedType: const FullType(RuleJsonldRuleReadRuleActionEnum),
-      );
-    }
-    if (object.managed != null) {
-      yield r'managed';
-      yield serializers.serialize(
-        object.managed,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.parentRule != null) {
-      yield r'parentRule';
-      yield serializers.serialize(
-        object.parentRule,
-        specifiedType: const FullType.nullable(RuleJsonldRuleRead),
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.id != null) {
@@ -174,6 +136,32 @@ class _$RuleJsonldRuleReadSerializer implements PrimitiveSerializer<RuleJsonldRu
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.priority != null) {
+      yield r'priority';
+      yield serializers.serialize(
+        object.priority,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.expressions != null) {
+      yield r'expressions';
+      yield serializers.serialize(
+        object.expressions,
+        specifiedType: const FullType(BuiltList, [FullType(ExpressionJsonldRuleRead)]),
+      );
+    }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
+    if (object.parentRule != null) {
+      yield r'parentRule';
+      yield serializers.serialize(
+        object.parentRule,
+        specifiedType: const FullType.nullable(RuleJsonldRuleRead),
       );
     }
   }
@@ -199,12 +187,12 @@ class _$RuleJsonldRuleReadSerializer implements PrimitiveSerializer<RuleJsonldRu
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
+        case r'ruleAction':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
+            specifiedType: const FullType(RuleJsonldRuleReadRuleActionEnum),
+          ) as RuleJsonldRuleReadRuleActionEnum;
+          result.ruleAction = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -213,19 +201,19 @@ class _$RuleJsonldRuleReadSerializer implements PrimitiveSerializer<RuleJsonldRu
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'managed':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.managed = valueDes;
           break;
-        case r'priority':
+        case r'ruleType':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.priority = valueDes;
+            specifiedType: const FullType(RuleJsonldRuleReadRuleTypeEnum),
+          ) as RuleJsonldRuleReadRuleTypeEnum;
+          result.ruleType = valueDes;
           break;
         case r'name':
           final valueDes = serializers.deserialize(
@@ -241,6 +229,27 @@ class _$RuleJsonldRuleReadSerializer implements PrimitiveSerializer<RuleJsonldRu
           ) as String;
           result.description = valueDes;
           break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
+        case r'priority':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.priority = valueDes;
+          break;
         case r'expressions':
           final valueDes = serializers.deserialize(
             value,
@@ -248,26 +257,12 @@ class _$RuleJsonldRuleReadSerializer implements PrimitiveSerializer<RuleJsonldRu
           ) as BuiltList<ExpressionJsonldRuleRead>;
           result.expressions.replace(valueDes);
           break;
-        case r'ruleType':
+        case r'@type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(RuleJsonldRuleReadRuleTypeEnum),
-          ) as RuleJsonldRuleReadRuleTypeEnum;
-          result.ruleType = valueDes;
-          break;
-        case r'ruleAction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RuleJsonldRuleReadRuleActionEnum),
-          ) as RuleJsonldRuleReadRuleActionEnum;
-          result.ruleAction = valueDes;
-          break;
-        case r'managed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.managed = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
           break;
         case r'parentRule':
           final valueDes = serializers.deserialize(
@@ -276,13 +271,6 @@ class _$RuleJsonldRuleReadSerializer implements PrimitiveSerializer<RuleJsonldRu
           ) as RuleJsonldRuleRead?;
           if (valueDes == null) continue;
           result.parentRule.replace(valueDes);
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
           break;
         default:
           unhandled.add(key);

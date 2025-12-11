@@ -11,10 +11,10 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_domain_automapper_get_collection200_response.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/domain_automapper_domain_automapper_write.dart';
 import 'package:so_dart_sdk/backend/model/domain_automapper_jsonld_domain_automapper_search.dart';
-import 'package:so_dart_sdk/backend/model/domain_automapper_jsonld_domain_automapper_write.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
 
@@ -256,7 +256,7 @@ class DomainAutomapperApi {
   /// Creates a DomainAutomapper resource.
   ///
   /// Parameters:
-  /// * [domainAutomapperJsonldDomainAutomapperWrite] - The new DomainAutomapper resource
+  /// * [domainAutomapperDomainAutomapperWrite] - The new DomainAutomapper resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -267,7 +267,7 @@ class DomainAutomapperApi {
   /// Returns a [Future] containing a [Response] with a [DomainAutomapperJsonldDomainAutomapperSearch] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<DomainAutomapperJsonldDomainAutomapperSearch>> apiDomainAutomapperPostItem({ 
-    required DomainAutomapperJsonldDomainAutomapperWrite domainAutomapperJsonldDomainAutomapperWrite,
+    required DomainAutomapperDomainAutomapperWrite domainAutomapperDomainAutomapperWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -292,8 +292,8 @@ class DomainAutomapperApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(DomainAutomapperJsonldDomainAutomapperWrite);
-      _bodyData = _serializers.serialize(domainAutomapperJsonldDomainAutomapperWrite, specifiedType: _type);
+      const _type = FullType(DomainAutomapperDomainAutomapperWrite);
+      _bodyData = _serializers.serialize(domainAutomapperDomainAutomapperWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

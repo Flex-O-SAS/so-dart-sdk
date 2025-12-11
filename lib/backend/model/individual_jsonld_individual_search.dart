@@ -4,14 +4,15 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'individual_jsonld_individual_search.g.dart';
 
-/// 
+/// IndividualJsonldIndividualSearch
 ///
 /// Properties:
 /// * [atContext] 
@@ -27,30 +28,12 @@ part 'individual_jsonld_individual_search.g.dart';
 /// * [reference] 
 /// * [id] 
 @BuiltValue()
-abstract class IndividualJsonldIndividualSearch implements Built<IndividualJsonldIndividualSearch, IndividualJsonldIndividualSearchBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+abstract class IndividualJsonldIndividualSearch implements HydraItemBaseSchema, Built<IndividualJsonldIndividualSearch, IndividualJsonldIndividualSearchBuilder> {
+  @BuiltValueField(wireName: r'reference')
+  String? get reference;
 
   @BuiltValueField(wireName: r'firstname')
   String? get firstname;
-
-  @BuiltValueField(wireName: r'lastname')
-  String? get lastname;
-
-  @BuiltValueField(wireName: r'tosAcceptedAt')
-  String? get tosAcceptedAt;
-
-  @BuiltValueField(wireName: r'enterprises')
-  BuiltList<EnterpriseJsonldIndividualSearch>? get enterprises;
-
-  @BuiltValueField(wireName: r'email')
-  String? get email;
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
@@ -58,11 +41,20 @@ abstract class IndividualJsonldIndividualSearch implements Built<IndividualJsonl
   @BuiltValueField(wireName: r'mobile')
   String? get mobile;
 
-  @BuiltValueField(wireName: r'reference')
-  String? get reference;
+  @BuiltValueField(wireName: r'tosAcceptedAt')
+  DateTime? get tosAcceptedAt;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  @BuiltValueField(wireName: r'enterprises')
+  BuiltList<EnterpriseJsonldIndividualSearch>? get enterprises;
+
+  @BuiltValueField(wireName: r'email')
+  String? get email;
+
+  @BuiltValueField(wireName: r'lastname')
+  String? get lastname;
 
   IndividualJsonldIndividualSearch._();
 
@@ -87,24 +79,10 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
     IndividualJsonldIndividualSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
+    if (object.reference != null) {
+      yield r'reference';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
+        object.reference,
         specifiedType: const FullType(String),
       );
     }
@@ -112,21 +90,47 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
       yield r'firstname';
       yield serializers.serialize(
         object.firstname,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
-    if (object.lastname != null) {
-      yield r'lastname';
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.phone != null) {
+      yield r'phone';
       yield serializers.serialize(
-        object.lastname,
+        object.phone,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.mobile != null) {
+      yield r'mobile';
+      yield serializers.serialize(
+        object.mobile,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.tosAcceptedAt != null) {
       yield r'tosAcceptedAt';
       yield serializers.serialize(
         object.tosAcceptedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(int),
       );
     }
     if (object.enterprises != null) {
@@ -136,39 +140,23 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
         specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldIndividualSearch)]),
       );
     }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
     if (object.email != null) {
       yield r'email';
       yield serializers.serialize(
         object.email,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.phone != null) {
-      yield r'phone';
-      yield serializers.serialize(
-        object.phone,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.mobile != null) {
-      yield r'mobile';
-      yield serializers.serialize(
-        object.mobile,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.reference != null) {
-      yield r'reference';
-      yield serializers.serialize(
-        object.reference,
         specifiedType: const FullType(String),
       );
     }
-    if (object.id != null) {
-      yield r'id';
+    if (object.lastname != null) {
+      yield r'lastname';
       yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
+        object.lastname,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -194,12 +182,19 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
+        case r'reference':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.reference = valueDes;
+          break;
+        case r'firstname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.firstname = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -208,35 +203,40 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'phone':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atType = valueDes;
+          result.phone = valueDes;
           break;
-        case r'firstname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.firstname = valueDes;
-          break;
-        case r'lastname':
+        case r'mobile':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.lastname = valueDes;
+          result.mobile = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
           break;
         case r'tosAcceptedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.tosAcceptedAt = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
           break;
         case r'enterprises':
           final valueDes = serializers.deserialize(
@@ -245,43 +245,26 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
           ) as BuiltList<EnterpriseJsonldIndividualSearch>;
           result.enterprises.replace(valueDes);
           break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.email = valueDes;
-          break;
-        case r'phone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.phone = valueDes;
-          break;
-        case r'mobile':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.mobile = valueDes;
-          break;
-        case r'reference':
+        case r'@type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.reference = valueDes;
+          result.atType = valueDes;
           break;
-        case r'id':
+        case r'email':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
+          break;
+        case r'lastname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastname = valueDes;
           break;
         default:
           unhandled.add(key);

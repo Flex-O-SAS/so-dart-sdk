@@ -3,17 +3,17 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/happening_staff_feed_back_jsonld_happening_read.dart';
-import 'package:so_dart_sdk/backend/model/happening_partner_link_jsonld_happening_read.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'happening_jsonld_happening_read.g.dart';
 
-/// 
+/// HappeningJsonldHappeningRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -35,60 +35,51 @@ part 'happening_jsonld_happening_read.g.dart';
 /// * [begin] 
 /// * [end] 
 @BuiltValue()
-abstract class HappeningJsonldHappeningRead implements Built<HappeningJsonldHappeningRead, HappeningJsonldHappeningReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
-
-  @BuiltValueField(wireName: r'name')
-  String? get name;
-
-  @BuiltValueField(wireName: r'banner')
-  String? get banner;
-
-  @BuiltValueField(wireName: r'center')
-  CenterJsonldHappeningRead? get center;
-
-  @BuiltValueField(wireName: r'place')
-  String? get place;
-
-  @BuiltValueField(wireName: r'publicatedAt')
-  String? get publicatedAt;
-
-  @BuiltValueField(wireName: r'archivedAt')
-  String? get archivedAt;
-
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  @BuiltValueField(wireName: r'nbUsers')
-  int? get nbUsers;
-
+abstract class HappeningJsonldHappeningRead implements HydraItemBaseSchema, Built<HappeningJsonldHappeningRead, HappeningJsonldHappeningReadBuilder> {
   @BuiltValueField(wireName: r'maxUsers')
   int? get maxUsers;
 
   @BuiltValueField(wireName: r'happeningPartnerLink')
-  HappeningPartnerLinkJsonldHappeningRead? get happeningPartnerLink;
+  JsonObject? get happeningPartnerLink;
+
+  @BuiltValueField(wireName: r'center')
+  CenterJsonldHappeningRead? get center;
+
+  @BuiltValueField(wireName: r'banner')
+  String? get banner;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  @BuiltValueField(wireName: r'happeningStaffFeedBacks')
+  BuiltList<JsonObject>? get happeningStaffFeedBacks;
 
   @BuiltValueField(wireName: r'isActive')
   bool? get isActive;
 
-  @BuiltValueField(wireName: r'happeningStaffFeedBacks')
-  BuiltList<HappeningStaffFeedBackJsonldHappeningRead>? get happeningStaffFeedBacks;
+  @BuiltValueField(wireName: r'archivedAt')
+  DateTime? get archivedAt;
 
-  @BuiltValueField(wireName: r'begin')
-  String? get begin;
+  @BuiltValueField(wireName: r'name')
+  String? get name;
+
+  @BuiltValueField(wireName: r'publicatedAt')
+  DateTime? get publicatedAt;
+
+  @BuiltValueField(wireName: r'nbUsers')
+  int? get nbUsers;
 
   @BuiltValueField(wireName: r'end')
-  String? get end;
+  DateTime? get end;
+
+  @BuiltValueField(wireName: r'id')
+  int? get id;
+
+  @BuiltValueField(wireName: r'place')
+  String? get place;
+
+  @BuiltValueField(wireName: r'begin')
+  DateTime? get begin;
 
   HappeningJsonldHappeningRead._();
 
@@ -114,48 +105,25 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
     HappeningJsonldHappeningRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
+    if (object.maxUsers != null) {
+      yield r'maxUsers';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
+        object.maxUsers,
         specifiedType: const FullType(int),
       );
     }
-    if (object.name != null) {
-      yield r'name';
+    if (object.happeningPartnerLink != null) {
+      yield r'happeningPartnerLink';
       yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
+        object.happeningPartnerLink,
+        specifiedType: const FullType(JsonObject),
       );
     }
-    if (object.banner != null) {
-      yield r'banner';
-      yield serializers.serialize(
-        object.banner,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
     if (object.center != null) {
       yield r'center';
       yield serializers.serialize(
@@ -163,53 +131,25 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
         specifiedType: const FullType.nullable(CenterJsonldHappeningRead),
       );
     }
-    if (object.place != null) {
-      yield r'place';
+    if (object.banner != null) {
+      yield r'banner';
       yield serializers.serialize(
-        object.place,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.publicatedAt != null) {
-      yield r'publicatedAt';
-      yield serializers.serialize(
-        object.publicatedAt,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.archivedAt != null) {
-      yield r'archivedAt';
-      yield serializers.serialize(
-        object.archivedAt,
-        specifiedType: const FullType.nullable(String),
+        object.banner,
+        specifiedType: const FullType(String),
       );
     }
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
         object.description,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
-    if (object.nbUsers != null) {
-      yield r'nbUsers';
+    if (object.happeningStaffFeedBacks != null) {
+      yield r'happeningStaffFeedBacks';
       yield serializers.serialize(
-        object.nbUsers,
-        specifiedType: const FullType.nullable(int),
-      );
-    }
-    if (object.maxUsers != null) {
-      yield r'maxUsers';
-      yield serializers.serialize(
-        object.maxUsers,
-        specifiedType: const FullType.nullable(int),
-      );
-    }
-    if (object.happeningPartnerLink != null) {
-      yield r'happeningPartnerLink';
-      yield serializers.serialize(
-        object.happeningPartnerLink,
-        specifiedType: const FullType.nullable(HappeningPartnerLinkJsonldHappeningRead),
+        object.happeningStaffFeedBacks,
+        specifiedType: const FullType(BuiltList, [FullType(JsonObject)]),
       );
     }
     if (object.isActive != null) {
@@ -219,27 +159,74 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
         specifiedType: const FullType(bool),
       );
     }
-    if (object.happeningStaffFeedBacks != null) {
-      yield r'happeningStaffFeedBacks';
+    if (object.archivedAt != null) {
+      yield r'archivedAt';
       yield serializers.serialize(
-        object.happeningStaffFeedBacks,
-        specifiedType: const FullType(BuiltList, [FullType(HappeningStaffFeedBackJsonldHappeningRead)]),
+        object.archivedAt,
+        specifiedType: const FullType(DateTime),
       );
     }
-    if (object.begin != null) {
-      yield r'begin';
+    if (object.name != null) {
+      yield r'name';
       yield serializers.serialize(
-        object.begin,
-        specifiedType: const FullType.nullable(String),
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.publicatedAt != null) {
+      yield r'publicatedAt';
+      yield serializers.serialize(
+        object.publicatedAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.nbUsers != null) {
+      yield r'nbUsers';
+      yield serializers.serialize(
+        object.nbUsers,
+        specifiedType: const FullType(int),
       );
     }
     if (object.end != null) {
       yield r'end';
       yield serializers.serialize(
         object.end,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.place != null) {
+      yield r'place';
+      yield serializers.serialize(
+        object.place,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.begin != null) {
+      yield r'begin';
+      yield serializers.serialize(
+        object.begin,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -263,12 +250,19 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
+        case r'maxUsers':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
+            specifiedType: const FullType(int),
+          ) as int;
+          result.maxUsers = valueDes;
+          break;
+        case r'happeningPartnerLink':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.happeningPartnerLink = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -276,35 +270,6 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
             specifiedType: const FullType(String),
           ) as String;
           result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'banner':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.banner = valueDes;
           break;
         case r'center':
           final valueDes = serializers.deserialize(
@@ -314,61 +279,26 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
           if (valueDes == null) continue;
           result.center.replace(valueDes);
           break;
-        case r'place':
+        case r'banner':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.place = valueDes;
-          break;
-        case r'publicatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.publicatedAt = valueDes;
-          break;
-        case r'archivedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.archivedAt = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.banner = valueDes;
           break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.description = valueDes;
           break;
-        case r'nbUsers':
+        case r'happeningStaffFeedBacks':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
-          result.nbUsers = valueDes;
-          break;
-        case r'maxUsers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
-          result.maxUsers = valueDes;
-          break;
-        case r'happeningPartnerLink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(HappeningPartnerLinkJsonldHappeningRead),
-          ) as HappeningPartnerLinkJsonldHappeningRead?;
-          if (valueDes == null) continue;
-          result.happeningPartnerLink.replace(valueDes);
+            specifiedType: const FullType(BuiltList, [FullType(JsonObject)]),
+          ) as BuiltList<JsonObject>;
+          result.happeningStaffFeedBacks.replace(valueDes);
           break;
         case r'isActive':
           final valueDes = serializers.deserialize(
@@ -377,28 +307,75 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
           ) as bool;
           result.isActive = valueDes;
           break;
-        case r'happeningStaffFeedBacks':
+        case r'archivedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(HappeningStaffFeedBackJsonldHappeningRead)]),
-          ) as BuiltList<HappeningStaffFeedBackJsonldHappeningRead>;
-          result.happeningStaffFeedBacks.replace(valueDes);
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.archivedAt = valueDes;
           break;
-        case r'begin':
+        case r'name':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.begin = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'publicatedAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.publicatedAt = valueDes;
+          break;
+        case r'nbUsers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.nbUsers = valueDes;
           break;
         case r'end':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.end = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
+        case r'place':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.place = valueDes;
+          break;
+        case r'begin':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.begin = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -26,11 +26,11 @@ class CompanyApi {
   /// Parameters:
   /// * [page] - The collection page number
   /// * [itemsPerPage] - The number of items per page
-  /// * [reference] - 
-  /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [companyName] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
+  /// * [referenceLeftSquareBracketRightSquareBracket] - 
+  /// * [referencePartialLeftSquareBracketRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -43,11 +43,11 @@ class CompanyApi {
   Future<Response<ApiCompaniesGetCollection200Response>> apiCompaniesGetCollection({ 
     int? page = 1,
     int? itemsPerPage = 30,
-    String? reference,
-    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     String? companyName,
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
+    String? referenceLeftSquareBracketRightSquareBracket,
+    String? referencePartialLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -71,11 +71,11 @@ class CompanyApi {
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
       if (itemsPerPage != null) r'itemsPerPage': encodeQueryParameter(_serializers, itemsPerPage, const FullType(int)),
-      if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
-      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (companyName != null) r'companyName': encodeQueryParameter(_serializers, companyName, const FullType(String)),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeQueryParameter(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(String)),
+      if (referencePartialLeftSquareBracketRightSquareBracket != null) r'reference_partial[]': encodeQueryParameter(_serializers, referencePartialLeftSquareBracketRightSquareBracket, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

@@ -33,8 +33,10 @@ class EnterpriseApi {
   /// * [name] - 
   /// * [email] - 
   /// * [reference] - 
+  /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
+  /// * [referencePartialLeftSquareBracketRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -51,8 +53,10 @@ class EnterpriseApi {
     String? name,
     String? email,
     String? reference,
+    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
+    String? referencePartialLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -80,8 +84,10 @@ class EnterpriseApi {
       if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
       if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
+      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (referencePartialLeftSquareBracketRightSquareBracket != null) r'reference_partial[]': encodeQueryParameter(_serializers, referencePartialLeftSquareBracketRightSquareBracket, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

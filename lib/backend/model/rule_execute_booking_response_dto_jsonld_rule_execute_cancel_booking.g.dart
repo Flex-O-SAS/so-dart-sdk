@@ -9,13 +9,13 @@ part of 'rule_execute_booking_response_dto_jsonld_rule_execute_cancel_booking.da
 class _$RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking
     extends RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final bool? allowCancelBooking;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking(
           [void Function(
@@ -26,8 +26,18 @@ class _$RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking
           ._build();
 
   _$RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking._(
-      {this.atContext, this.atId, this.atType, this.allowCancelBooking})
-      : super._();
+      {this.allowCancelBooking,
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(atId,
+        r'RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType,
+        r'RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking',
+        'atType');
+  }
 
   @override
   RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking rebuild(
@@ -47,19 +57,19 @@ class _$RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking
     if (identical(other, this)) return true;
     return other
             is RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking &&
+        allowCancelBooking == other.allowCancelBooking &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        allowCancelBooking == other.allowCancelBooking;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, allowCancelBooking.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, allowCancelBooking.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -68,10 +78,10 @@ class _$RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking
   String toString() {
     return (newBuiltValueToStringHelper(
             r'RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking')
+          ..add('allowCancelBooking', allowCancelBooking)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('allowCancelBooking', allowCancelBooking))
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -79,27 +89,28 @@ class _$RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking
 class RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBookingBuilder
     implements
         Builder<RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking,
-            RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBookingBuilder> {
+            RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBookingBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking? _$v;
 
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
+  bool? _allowCancelBooking;
+  bool? get allowCancelBooking => _$this._allowCancelBooking;
+  set allowCancelBooking(covariant bool? allowCancelBooking) =>
+      _$this._allowCancelBooking = allowCancelBooking;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
   String? _atType;
   String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  bool? _allowCancelBooking;
-  bool? get allowCancelBooking => _$this._allowCancelBooking;
-  set allowCancelBooking(bool? allowCancelBooking) =>
-      _$this._allowCancelBooking = allowCancelBooking;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBookingBuilder() {
     RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking._defaults(this);
@@ -109,10 +120,10 @@ class RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBookingBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
+      _allowCancelBooking = $v.allowCancelBooking;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _allowCancelBooking = $v.allowCancelBooking;
       _$v = null;
     }
     return this;
@@ -120,7 +131,8 @@ class RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBookingBuilder
 
   @override
   void replace(
-      RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking other) {
+      covariant RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking
+          other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v =
         other as _$RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking;
@@ -143,10 +155,16 @@ class RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBookingBuilder
     try {
       _$result = _$v ??
           new _$RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
             allowCancelBooking: allowCancelBooking,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId,
+                r'RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking',
+                'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType,
+                r'RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking',
+                'atType'),
           );
     } catch (_) {
       late String _$failedField;

@@ -9,12 +9,6 @@ part of 'service_center_jsonld_reservation_read.dart';
 class _$ServiceCenterJsonldReservationRead
     extends ServiceCenterJsonldReservationRead {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final CenterJsonldReservationRead? center;
   @override
   final num? price;
@@ -27,13 +21,7 @@ class _$ServiceCenterJsonldReservationRead
       (new ServiceCenterJsonldReservationReadBuilder()..update(updates))
           ._build();
 
-  _$ServiceCenterJsonldReservationRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.center,
-      this.price,
-      this.id})
+  _$ServiceCenterJsonldReservationRead._({this.center, this.price, this.id})
       : super._();
 
   @override
@@ -49,9 +37,6 @@ class _$ServiceCenterJsonldReservationRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ServiceCenterJsonldReservationRead &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
         center == other.center &&
         price == other.price &&
         id == other.id;
@@ -60,9 +45,6 @@ class _$ServiceCenterJsonldReservationRead
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atContext.hashCode);
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
@@ -73,9 +55,6 @@ class _$ServiceCenterJsonldReservationRead
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ServiceCenterJsonldReservationRead')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
           ..add('center', center)
           ..add('price', price)
           ..add('id', id))
@@ -88,20 +67,6 @@ class ServiceCenterJsonldReservationReadBuilder
         Builder<ServiceCenterJsonldReservationRead,
             ServiceCenterJsonldReservationReadBuilder> {
   _$ServiceCenterJsonldReservationRead? _$v;
-
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
 
   CenterJsonldReservationReadBuilder? _center;
   CenterJsonldReservationReadBuilder get center =>
@@ -124,9 +89,6 @@ class ServiceCenterJsonldReservationReadBuilder
   ServiceCenterJsonldReservationReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atContext = $v.atContext?.toBuilder();
-      _atId = $v.atId;
-      _atType = $v.atType;
       _center = $v.center?.toBuilder();
       _price = $v.price;
       _id = $v.id;
@@ -155,9 +117,6 @@ class ServiceCenterJsonldReservationReadBuilder
     try {
       _$result = _$v ??
           new _$ServiceCenterJsonldReservationRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
             center: _center?.build(),
             price: price,
             id: id,
@@ -165,9 +124,6 @@ class ServiceCenterJsonldReservationReadBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-
         _$failedField = 'center';
         _center?.build();
       } catch (e) {

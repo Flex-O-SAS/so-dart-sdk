@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'rule_expression_write.g.dart';
 
-/// 
+/// RuleExpressionWrite
 ///
 /// Properties:
 /// * [createdAt] 

@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'guarantees_calculation_rules_guarantees_calculation_rules_write.g.dart';
 
-/// 
+/// GuaranteesCalculationRulesGuaranteesCalculationRulesWrite
 ///
 /// Properties:
 /// * [serviceType] 

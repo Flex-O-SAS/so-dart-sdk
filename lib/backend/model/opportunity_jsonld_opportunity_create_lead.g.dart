@@ -6,6 +6,38 @@ part of 'opportunity_jsonld_opportunity_create_lead.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const OpportunityJsonldOpportunityCreateLeadOriginEnum
+    _$opportunityJsonldOpportunityCreateLeadOriginEnum_number1 =
+    const OpportunityJsonldOpportunityCreateLeadOriginEnum._('number1');
+const OpportunityJsonldOpportunityCreateLeadOriginEnum
+    _$opportunityJsonldOpportunityCreateLeadOriginEnum_number2 =
+    const OpportunityJsonldOpportunityCreateLeadOriginEnum._('number2');
+const OpportunityJsonldOpportunityCreateLeadOriginEnum
+    _$opportunityJsonldOpportunityCreateLeadOriginEnum_number3 =
+    const OpportunityJsonldOpportunityCreateLeadOriginEnum._('number3');
+
+OpportunityJsonldOpportunityCreateLeadOriginEnum
+    _$opportunityJsonldOpportunityCreateLeadOriginEnumValueOf(String name) {
+  switch (name) {
+    case 'number1':
+      return _$opportunityJsonldOpportunityCreateLeadOriginEnum_number1;
+    case 'number2':
+      return _$opportunityJsonldOpportunityCreateLeadOriginEnum_number2;
+    case 'number3':
+      return _$opportunityJsonldOpportunityCreateLeadOriginEnum_number3;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<OpportunityJsonldOpportunityCreateLeadOriginEnum>
+    _$opportunityJsonldOpportunityCreateLeadOriginEnumValues = new BuiltSet<
+        OpportunityJsonldOpportunityCreateLeadOriginEnum>(const <OpportunityJsonldOpportunityCreateLeadOriginEnum>[
+  _$opportunityJsonldOpportunityCreateLeadOriginEnum_number1,
+  _$opportunityJsonldOpportunityCreateLeadOriginEnum_number2,
+  _$opportunityJsonldOpportunityCreateLeadOriginEnum_number3,
+]);
+
 const OpportunityJsonldOpportunityCreateLeadTypeEnum
     _$opportunityJsonldOpportunityCreateLeadTypeEnum_FULL_DESKTOP =
     const OpportunityJsonldOpportunityCreateLeadTypeEnum._('FULL_DESKTOP');
@@ -56,9 +88,47 @@ final BuiltSet<OpportunityJsonldOpportunityCreateLeadTypeEnum>
   _$opportunityJsonldOpportunityCreateLeadTypeEnum_DOMICILIATION,
 ]);
 
+Serializer<OpportunityJsonldOpportunityCreateLeadOriginEnum>
+    _$opportunityJsonldOpportunityCreateLeadOriginEnumSerializer =
+    new _$OpportunityJsonldOpportunityCreateLeadOriginEnumSerializer();
 Serializer<OpportunityJsonldOpportunityCreateLeadTypeEnum>
     _$opportunityJsonldOpportunityCreateLeadTypeEnumSerializer =
     new _$OpportunityJsonldOpportunityCreateLeadTypeEnumSerializer();
+
+class _$OpportunityJsonldOpportunityCreateLeadOriginEnumSerializer
+    implements
+        PrimitiveSerializer<OpportunityJsonldOpportunityCreateLeadOriginEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'number1': 1,
+    'number2': 2,
+    'number3': 3,
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    1: 'number1',
+    2: 'number2',
+    3: 'number3',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    OpportunityJsonldOpportunityCreateLeadOriginEnum
+  ];
+  @override
+  final String wireName = 'OpportunityJsonldOpportunityCreateLeadOriginEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          OpportunityJsonldOpportunityCreateLeadOriginEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  OpportunityJsonldOpportunityCreateLeadOriginEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      OpportunityJsonldOpportunityCreateLeadOriginEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
 
 class _$OpportunityJsonldOpportunityCreateLeadTypeEnumSerializer
     implements
@@ -104,25 +174,25 @@ class _$OpportunityJsonldOpportunityCreateLeadTypeEnumSerializer
 class _$OpportunityJsonldOpportunityCreateLead
     extends OpportunityJsonldOpportunityCreateLead {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
+  final IndividualJsonldOpportunityCreateLead? owner;
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final int? origin;
-  @override
-  final String? commitment;
+  final OpportunityJsonldOpportunityCreateLeadOriginEnum origin;
   @override
   final String? center;
   @override
-  final EnterpriseJsonldOpportunityCreateLead client;
+  final String? commitment;
   @override
-  final IndividualJsonldOpportunityCreateLead? owner;
+  final EnterpriseJsonldOpportunityCreateLead client;
   @override
   final OpportunityJsonldOpportunityCreateLeadTypeEnum type;
   @override
-  final String? begin;
+  final DateTime? begin;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$OpportunityJsonldOpportunityCreateLead(
           [void Function(OpportunityJsonldOpportunityCreateLeadBuilder)?
@@ -131,21 +201,27 @@ class _$OpportunityJsonldOpportunityCreateLead
           ._build();
 
   _$OpportunityJsonldOpportunityCreateLead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.origin,
-      this.commitment,
+      {this.owner,
+      required this.origin,
       this.center,
+      this.commitment,
       required this.client,
-      this.owner,
       required this.type,
-      this.begin})
+      this.begin,
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        origin, r'OpportunityJsonldOpportunityCreateLead', 'origin');
     BuiltValueNullFieldError.checkNotNull(
         client, r'OpportunityJsonldOpportunityCreateLead', 'client');
     BuiltValueNullFieldError.checkNotNull(
         type, r'OpportunityJsonldOpportunityCreateLead', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'OpportunityJsonldOpportunityCreateLead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'OpportunityJsonldOpportunityCreateLead', 'atType');
   }
 
   @override
@@ -162,31 +238,31 @@ class _$OpportunityJsonldOpportunityCreateLead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is OpportunityJsonldOpportunityCreateLead &&
+        owner == other.owner &&
+        origin == other.origin &&
+        center == other.center &&
+        commitment == other.commitment &&
+        client == other.client &&
+        type == other.type &&
+        begin == other.begin &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        origin == other.origin &&
-        commitment == other.commitment &&
-        center == other.center &&
-        client == other.client &&
-        owner == other.owner &&
-        type == other.type &&
-        begin == other.begin;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, owner.hashCode);
+    _$hash = $jc(_$hash, origin.hashCode);
+    _$hash = $jc(_$hash, center.hashCode);
+    _$hash = $jc(_$hash, commitment.hashCode);
+    _$hash = $jc(_$hash, client.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, begin.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, origin.hashCode);
-    _$hash = $jc(_$hash, commitment.hashCode);
-    _$hash = $jc(_$hash, center.hashCode);
-    _$hash = $jc(_$hash, client.hashCode);
-    _$hash = $jc(_$hash, owner.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, begin.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -195,16 +271,16 @@ class _$OpportunityJsonldOpportunityCreateLead
   String toString() {
     return (newBuiltValueToStringHelper(
             r'OpportunityJsonldOpportunityCreateLead')
+          ..add('owner', owner)
+          ..add('origin', origin)
+          ..add('center', center)
+          ..add('commitment', commitment)
+          ..add('client', client)
+          ..add('type', type)
+          ..add('begin', begin)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('origin', origin)
-          ..add('commitment', commitment)
-          ..add('center', center)
-          ..add('client', client)
-          ..add('owner', owner)
-          ..add('type', type)
-          ..add('begin', begin))
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -212,55 +288,60 @@ class _$OpportunityJsonldOpportunityCreateLead
 class OpportunityJsonldOpportunityCreateLeadBuilder
     implements
         Builder<OpportunityJsonldOpportunityCreateLead,
-            OpportunityJsonldOpportunityCreateLeadBuilder> {
+            OpportunityJsonldOpportunityCreateLeadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$OpportunityJsonldOpportunityCreateLead? _$v;
-
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _origin;
-  int? get origin => _$this._origin;
-  set origin(int? origin) => _$this._origin = origin;
-
-  String? _commitment;
-  String? get commitment => _$this._commitment;
-  set commitment(String? commitment) => _$this._commitment = commitment;
-
-  String? _center;
-  String? get center => _$this._center;
-  set center(String? center) => _$this._center = center;
-
-  EnterpriseJsonldOpportunityCreateLeadBuilder? _client;
-  EnterpriseJsonldOpportunityCreateLeadBuilder get client =>
-      _$this._client ??= new EnterpriseJsonldOpportunityCreateLeadBuilder();
-  set client(EnterpriseJsonldOpportunityCreateLeadBuilder? client) =>
-      _$this._client = client;
 
   IndividualJsonldOpportunityCreateLeadBuilder? _owner;
   IndividualJsonldOpportunityCreateLeadBuilder get owner =>
       _$this._owner ??= new IndividualJsonldOpportunityCreateLeadBuilder();
-  set owner(IndividualJsonldOpportunityCreateLeadBuilder? owner) =>
+  set owner(covariant IndividualJsonldOpportunityCreateLeadBuilder? owner) =>
       _$this._owner = owner;
+
+  OpportunityJsonldOpportunityCreateLeadOriginEnum? _origin;
+  OpportunityJsonldOpportunityCreateLeadOriginEnum? get origin =>
+      _$this._origin;
+  set origin(
+          covariant OpportunityJsonldOpportunityCreateLeadOriginEnum? origin) =>
+      _$this._origin = origin;
+
+  String? _center;
+  String? get center => _$this._center;
+  set center(covariant String? center) => _$this._center = center;
+
+  String? _commitment;
+  String? get commitment => _$this._commitment;
+  set commitment(covariant String? commitment) =>
+      _$this._commitment = commitment;
+
+  EnterpriseJsonldOpportunityCreateLeadBuilder? _client;
+  EnterpriseJsonldOpportunityCreateLeadBuilder get client =>
+      _$this._client ??= new EnterpriseJsonldOpportunityCreateLeadBuilder();
+  set client(covariant EnterpriseJsonldOpportunityCreateLeadBuilder? client) =>
+      _$this._client = client;
 
   OpportunityJsonldOpportunityCreateLeadTypeEnum? _type;
   OpportunityJsonldOpportunityCreateLeadTypeEnum? get type => _$this._type;
-  set type(OpportunityJsonldOpportunityCreateLeadTypeEnum? type) =>
+  set type(covariant OpportunityJsonldOpportunityCreateLeadTypeEnum? type) =>
       _$this._type = type;
 
-  String? _begin;
-  String? get begin => _$this._begin;
-  set begin(String? begin) => _$this._begin = begin;
+  DateTime? _begin;
+  DateTime? get begin => _$this._begin;
+  set begin(covariant DateTime? begin) => _$this._begin = begin;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   OpportunityJsonldOpportunityCreateLeadBuilder() {
     OpportunityJsonldOpportunityCreateLead._defaults(this);
@@ -269,23 +350,23 @@ class OpportunityJsonldOpportunityCreateLeadBuilder
   OpportunityJsonldOpportunityCreateLeadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _owner = $v.owner?.toBuilder();
+      _origin = $v.origin;
+      _center = $v.center;
+      _commitment = $v.commitment;
+      _client = $v.client.toBuilder();
+      _type = $v.type;
+      _begin = $v.begin;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _origin = $v.origin;
-      _commitment = $v.commitment;
-      _center = $v.center;
-      _client = $v.client.toBuilder();
-      _owner = $v.owner?.toBuilder();
-      _type = $v.type;
-      _begin = $v.begin;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(OpportunityJsonldOpportunityCreateLead other) {
+  void replace(covariant OpportunityJsonldOpportunityCreateLead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$OpportunityJsonldOpportunityCreateLead;
   }
@@ -304,28 +385,32 @@ class OpportunityJsonldOpportunityCreateLeadBuilder
     try {
       _$result = _$v ??
           new _$OpportunityJsonldOpportunityCreateLead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            origin: origin,
-            commitment: commitment,
-            center: center,
-            client: client.build(),
             owner: _owner?.build(),
+            origin: BuiltValueNullFieldError.checkNotNull(
+                origin, r'OpportunityJsonldOpportunityCreateLead', 'origin'),
+            center: center,
+            commitment: commitment,
+            client: client.build(),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'OpportunityJsonldOpportunityCreateLead', 'type'),
             begin: begin,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'OpportunityJsonldOpportunityCreateLead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'OpportunityJsonldOpportunityCreateLead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'atContext';
-        _atContext?.build();
+        _$failedField = 'owner';
+        _owner?.build();
 
         _$failedField = 'client';
         client.build();
-        _$failedField = 'owner';
-        _owner?.build();
+
+        _$failedField = 'atContext';
+        _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'OpportunityJsonldOpportunityCreateLead',

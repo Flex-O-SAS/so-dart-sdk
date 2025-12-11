@@ -3,15 +3,16 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'individual_jsonld_enterprise_search_enterprise_read.g.dart';
 
-/// 
+/// IndividualJsonldEnterpriseSearchEnterpriseRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -25,21 +26,18 @@ part 'individual_jsonld_enterprise_search_enterprise_read.g.dart';
 /// * [reference] 
 /// * [id] 
 @BuiltValue()
-abstract class IndividualJsonldEnterpriseSearchEnterpriseRead implements Built<IndividualJsonldEnterpriseSearchEnterpriseRead, IndividualJsonldEnterpriseSearchEnterpriseReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+abstract class IndividualJsonldEnterpriseSearchEnterpriseRead implements HydraItemBaseSchema, Built<IndividualJsonldEnterpriseSearchEnterpriseRead, IndividualJsonldEnterpriseSearchEnterpriseReadBuilder> {
+  @BuiltValueField(wireName: r'reference')
+  String? get reference;
 
   @BuiltValueField(wireName: r'firstname')
   String? get firstname;
 
-  @BuiltValueField(wireName: r'lastname')
-  String? get lastname;
+  @BuiltValueField(wireName: r'phone')
+  String? get phone;
+
+  @BuiltValueField(wireName: r'id')
+  int? get id;
 
   @BuiltValueField(wireName: r'enterprises')
   BuiltList<EnterpriseJsonldEnterpriseSearchEnterpriseRead>? get enterprises;
@@ -47,14 +45,8 @@ abstract class IndividualJsonldEnterpriseSearchEnterpriseRead implements Built<I
   @BuiltValueField(wireName: r'email')
   String? get email;
 
-  @BuiltValueField(wireName: r'phone')
-  String? get phone;
-
-  @BuiltValueField(wireName: r'reference')
-  String? get reference;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+  @BuiltValueField(wireName: r'lastname')
+  String? get lastname;
 
   IndividualJsonldEnterpriseSearchEnterpriseRead._();
 
@@ -79,24 +71,10 @@ class _$IndividualJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
     IndividualJsonldEnterpriseSearchEnterpriseRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
+    if (object.reference != null) {
+      yield r'reference';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
+        object.reference,
         specifiedType: const FullType(String),
       );
     }
@@ -104,14 +82,33 @@ class _$IndividualJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
       yield r'firstname';
       yield serializers.serialize(
         object.firstname,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
-    if (object.lastname != null) {
-      yield r'lastname';
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.phone != null) {
+      yield r'phone';
       yield serializers.serialize(
-        object.lastname,
+        object.phone,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(int),
       );
     }
     if (object.enterprises != null) {
@@ -121,32 +118,23 @@ class _$IndividualJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
         specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead)]),
       );
     }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
     if (object.email != null) {
       yield r'email';
       yield serializers.serialize(
         object.email,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.phone != null) {
-      yield r'phone';
-      yield serializers.serialize(
-        object.phone,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.reference != null) {
-      yield r'reference';
-      yield serializers.serialize(
-        object.reference,
         specifiedType: const FullType(String),
       );
     }
-    if (object.id != null) {
-      yield r'id';
+    if (object.lastname != null) {
+      yield r'lastname';
       yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
+        object.lastname,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -172,12 +160,19 @@ class _$IndividualJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
+        case r'reference':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
-          result.atContext.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.reference = valueDes;
+          break;
+        case r'firstname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.firstname = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -186,27 +181,26 @@ class _$IndividualJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'phone':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atType = valueDes;
+          result.phone = valueDes;
           break;
-        case r'firstname':
+        case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.firstname = valueDes;
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
           break;
-        case r'lastname':
+        case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastname = valueDes;
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
           break;
         case r'enterprises':
           final valueDes = serializers.deserialize(
@@ -215,35 +209,26 @@ class _$IndividualJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
           ) as BuiltList<EnterpriseJsonldEnterpriseSearchEnterpriseRead>;
           result.enterprises.replace(valueDes);
           break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.email = valueDes;
-          break;
-        case r'phone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.phone = valueDes;
-          break;
-        case r'reference':
+        case r'@type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.reference = valueDes;
+          result.atType = valueDes;
           break;
-        case r'id':
+        case r'email':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
+          break;
+        case r'lastname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastname = valueDes;
           break;
         default:
           unhandled.add(key);

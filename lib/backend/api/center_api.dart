@@ -30,8 +30,6 @@ class CenterApi {
   /// Parameters:
   /// * [page] - The collection page number
   /// * [groupsLeftSquareBracketRightSquareBracket] - 
-  /// * [reference] - 
-  /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [name] - 
   /// * [email] - 
   /// * [emailLeftSquareBracketRightSquareBracket] - 
@@ -39,6 +37,8 @@ class CenterApi {
   /// * [isActive] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
+  /// * [referenceLeftSquareBracketRightSquareBracket] - 
+  /// * [referencePartialLeftSquareBracketRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -51,8 +51,6 @@ class CenterApi {
   Future<Response<ApiCentersGetCollection200Response>> apiCentersGetCollection({ 
     int? page = 1,
     BuiltList<String>? groupsLeftSquareBracketRightSquareBracket,
-    String? reference,
-    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     String? name,
     String? email,
     BuiltList<String>? emailLeftSquareBracketRightSquareBracket,
@@ -60,6 +58,8 @@ class CenterApi {
     bool? isActive,
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
+    String? referenceLeftSquareBracketRightSquareBracket,
+    String? referencePartialLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -83,8 +83,6 @@ class CenterApi {
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
       if (groupsLeftSquareBracketRightSquareBracket != null) r'groups[]': encodeCollectionQueryParameter<String>(_serializers, groupsLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
-      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
       if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
       if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': encodeCollectionQueryParameter<String>(_serializers, emailLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
@@ -92,6 +90,8 @@ class CenterApi {
       if (isActive != null) r'isActive': encodeQueryParameter(_serializers, isActive, const FullType(bool)),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeQueryParameter(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(String)),
+      if (referencePartialLeftSquareBracketRightSquareBracket != null) r'reference_partial[]': encodeQueryParameter(_serializers, referencePartialLeftSquareBracketRightSquareBracket, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -140,8 +140,6 @@ class CenterApi {
   /// Parameters:
   /// * [page] - The collection page number
   /// * [groupsLeftSquareBracketRightSquareBracket] - 
-  /// * [reference] - 
-  /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [name] - 
   /// * [email] - 
   /// * [emailLeftSquareBracketRightSquareBracket] - 
@@ -161,8 +159,6 @@ class CenterApi {
   Future<Response<ApiCentersPublicGetCollection200Response>> apiCentersPublicGetCollection({ 
     int? page = 1,
     BuiltList<String>? groupsLeftSquareBracketRightSquareBracket,
-    String? reference,
-    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     String? name,
     String? email,
     BuiltList<String>? emailLeftSquareBracketRightSquareBracket,
@@ -193,8 +189,6 @@ class CenterApi {
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
       if (groupsLeftSquareBracketRightSquareBracket != null) r'groups[]': encodeCollectionQueryParameter<String>(_serializers, groupsLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
-      if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
-      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
       if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
       if (emailLeftSquareBracketRightSquareBracket != null) r'email[]': encodeCollectionQueryParameter<String>(_serializers, emailLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),

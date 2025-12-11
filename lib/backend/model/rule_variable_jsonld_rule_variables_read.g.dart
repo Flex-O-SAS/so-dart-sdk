@@ -9,15 +9,17 @@ part of 'rule_variable_jsonld_rule_variables_read.dart';
 class _$RuleVariableJsonldRuleVariablesRead
     extends RuleVariableJsonldRuleVariablesRead {
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final String? name;
   @override
   final String? label;
   @override
   final String? type;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$RuleVariableJsonldRuleVariablesRead(
           [void Function(RuleVariableJsonldRuleVariablesReadBuilder)?
@@ -26,8 +28,18 @@ class _$RuleVariableJsonldRuleVariablesRead
           ._build();
 
   _$RuleVariableJsonldRuleVariablesRead._(
-      {this.atId, this.atType, this.name, this.label, this.type})
-      : super._();
+      {this.name,
+      this.label,
+      this.type,
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'RuleVariableJsonldRuleVariablesRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'RuleVariableJsonldRuleVariablesRead', 'atType');
+  }
 
   @override
   RuleVariableJsonldRuleVariablesRead rebuild(
@@ -42,21 +54,23 @@ class _$RuleVariableJsonldRuleVariablesRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RuleVariableJsonldRuleVariablesRead &&
-        atId == other.atId &&
-        atType == other.atType &&
         name == other.name &&
         label == other.label &&
-        type == other.type;
+        type == other.type &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, label.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, atContext.hashCode);
+    _$hash = $jc(_$hash, atId.hashCode);
+    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -64,11 +78,12 @@ class _$RuleVariableJsonldRuleVariablesRead
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RuleVariableJsonldRuleVariablesRead')
-          ..add('atId', atId)
-          ..add('atType', atType)
           ..add('name', name)
           ..add('label', label)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -76,28 +91,35 @@ class _$RuleVariableJsonldRuleVariablesRead
 class RuleVariableJsonldRuleVariablesReadBuilder
     implements
         Builder<RuleVariableJsonldRuleVariablesRead,
-            RuleVariableJsonldRuleVariablesReadBuilder> {
+            RuleVariableJsonldRuleVariablesReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$RuleVariableJsonldRuleVariablesRead? _$v;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
 
   String? _name;
   String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
+  set name(covariant String? name) => _$this._name = name;
 
   String? _label;
   String? get label => _$this._label;
-  set label(String? label) => _$this._label = label;
+  set label(covariant String? label) => _$this._label = label;
 
   String? _type;
   String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
+  set type(covariant String? type) => _$this._type = type;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   RuleVariableJsonldRuleVariablesReadBuilder() {
     RuleVariableJsonldRuleVariablesRead._defaults(this);
@@ -106,18 +128,19 @@ class RuleVariableJsonldRuleVariablesReadBuilder
   RuleVariableJsonldRuleVariablesReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atId = $v.atId;
-      _atType = $v.atType;
       _name = $v.name;
       _label = $v.label;
       _type = $v.type;
+      _atContext = $v.atContext?.toBuilder();
+      _atId = $v.atId;
+      _atType = $v.atType;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(RuleVariableJsonldRuleVariablesRead other) {
+  void replace(covariant RuleVariableJsonldRuleVariablesRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$RuleVariableJsonldRuleVariablesRead;
   }
@@ -132,14 +155,32 @@ class RuleVariableJsonldRuleVariablesReadBuilder
   RuleVariableJsonldRuleVariablesRead build() => _build();
 
   _$RuleVariableJsonldRuleVariablesRead _build() {
-    final _$result = _$v ??
-        new _$RuleVariableJsonldRuleVariablesRead._(
-          atId: atId,
-          atType: atType,
-          name: name,
-          label: label,
-          type: type,
-        );
+    _$RuleVariableJsonldRuleVariablesRead _$result;
+    try {
+      _$result = _$v ??
+          new _$RuleVariableJsonldRuleVariablesRead._(
+            name: name,
+            label: label,
+            type: type,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'RuleVariableJsonldRuleVariablesRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'RuleVariableJsonldRuleVariablesRead', 'atType'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'atContext';
+        _atContext?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'RuleVariableJsonldRuleVariablesRead',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

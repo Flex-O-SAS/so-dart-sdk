@@ -7,10 +7,10 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add($HydraCollectionBaseSchema.serializer)
+      ..add($HydraCollectionBaseSchemaNoPagination.serializer)
+      ..add($HydraItemBaseSchema.serializer)
       ..add(ApiCentersGetCollection200Response.serializer)
-      ..add(ApiCentersGetCollection200ResponseSearch.serializer)
-      ..add(ApiCentersGetCollection200ResponseSearchMappingInner.serializer)
-      ..add(ApiCentersGetCollection200ResponseView.serializer)
       ..add(ApiCentersPublicGetCollection200Response.serializer)
       ..add(ApiCompaniesGetCollection200Response.serializer)
       ..add(ApiContractsGetCollection200Response.serializer)
@@ -33,84 +33,85 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiStaffGetCollection200Response.serializer)
       ..add(CenterJsonldCenterSearch.serializer)
       ..add(CenterJsonldHappeningRead.serializer)
-      ..add(CenterJsonldHappeningReadContext.serializer)
-      ..add(CenterJsonldHappeningReadContextOneOf.serializer)
-      ..add(CenterJsonldHappeningReadContextOneOfHydraEnum.serializer)
       ..add(CenterJsonldPublicCenterReadOpportunityCreateLead.serializer)
-      ..add(CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner
+      ..add(CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets
           .serializer)
       ..add(CenterJsonldReservationRead.serializer)
+      ..add(CenterJsonldServiceSearch.serializer)
       ..add(
           CommitmentJsonldPublicCommitmentReadOpportunityCreateLead.serializer)
       ..add(CompanyJsonldCompanySearch.serializer)
-      ..add(ConstraintViolationJson.serializer)
-      ..add(ConstraintViolationJsonViolationsInner.serializer)
-      ..add(ConstraintViolationJsonldJsonld.serializer)
+      ..add(ConstraintViolation.serializer)
+      ..add(ConstraintViolationJsonld.serializer)
+      ..add(ConstraintViolationViolationsInner.serializer)
       ..add(ContractJsonldContractSearch.serializer)
       ..add(CreditJsonldCreditSearch.serializer)
+      ..add(DomainAutomapperDomainAutomapperWrite.serializer)
+      ..add(DomainAutomapperDomainAutomapperWriteTypeEnum.serializer)
       ..add(DomainAutomapperJsonldDomainAutomapperSearch.serializer)
       ..add(DomainAutomapperJsonldDomainAutomapperSearchTypeEnum.serializer)
-      ..add(DomainAutomapperJsonldDomainAutomapperWrite.serializer)
-      ..add(DomainAutomapperJsonldDomainAutomapperWriteTypeEnum.serializer)
       ..add(EnterpriseJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(EnterpriseJsonldIndividualSearch.serializer)
       ..add(EnterpriseJsonldOpportunityCreateLead.serializer)
+      ..add(EnterpriseOpportunityCreateLead.serializer)
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
       ..add(ExpressionExpressionWrite.serializer)
       ..add(ExpressionExpressionWriteComparatorEnum.serializer)
+      ..add(ExpressionExpressionWriteJsonMergePatch.serializer)
+      ..add(ExpressionExpressionWriteJsonMergePatchComparatorEnum.serializer)
+      ..add(ExpressionExpressionWriteJsonMergePatchLeftSideEnum.serializer)
       ..add(ExpressionExpressionWriteLeftSideEnum.serializer)
       ..add(ExpressionJsonldExpressionRead.serializer)
       ..add(ExpressionJsonldExpressionReadComparatorEnum.serializer)
       ..add(ExpressionJsonldExpressionReadLeftSideEnum.serializer)
-      ..add(ExpressionJsonldExpressionWrite.serializer)
-      ..add(ExpressionJsonldExpressionWriteComparatorEnum.serializer)
-      ..add(ExpressionJsonldExpressionWriteLeftSideEnum.serializer)
       ..add(ExpressionJsonldRuleRead.serializer)
-      ..add(ExpressionJsonldRuleWrite.serializer)
-      ..add(ExpressionJsonldRuleWriteComparatorEnum.serializer)
-      ..add(ExpressionJsonldRuleWriteLeftSideEnum.serializer)
       ..add(ExpressionRuleWrite.serializer)
       ..add(ExpressionRuleWriteComparatorEnum.serializer)
       ..add(ExpressionRuleWriteLeftSideEnum.serializer)
       ..add(
           GuaranteesCalculationRulesGuaranteesCalculationRulesWrite.serializer)
+      ..add(
+          GuaranteesCalculationRulesGuaranteesCalculationRulesWriteJsonMergePatch
+              .serializer)
       ..add(GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesSearch
-          .serializer)
-      ..add(GuaranteesCalculationRulesJsonldGuaranteesCalculationRulesWrite
           .serializer)
       ..add(HappeningJsonldHappeningRead.serializer)
       ..add(HappeningJsonldHappeningSearch.serializer)
-      ..add(HappeningPartnerLinkJsonldHappeningRead.serializer)
-      ..add(HappeningPartnerLinkJsonldHappeningSearch.serializer)
-      ..add(HappeningStaffFeedBackJsonldHappeningRead.serializer)
-      ..add(HappeningStaffFeedBackJsonldHappeningSearch.serializer)
-      ..add(IndividualIndividualWrite.serializer)
+      ..add(HydraCollectionBaseSchemaAllOfView.serializer)
+      ..add(HydraCollectionBaseSchemaNoPaginationSearch.serializer)
+      ..add(HydraCollectionBaseSchemaNoPaginationSearchMappingInner.serializer)
+      ..add(HydraItemBaseSchemaContext.serializer)
+      ..add(HydraItemBaseSchemaContextOneOf.serializer)
+      ..add(HydraItemBaseSchemaContextOneOfHydraEnum.serializer)
+      ..add(IndividualIndividualWriteJsonMergePatch.serializer)
       ..add(IndividualJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(IndividualJsonldIndividualCheckEmail.serializer)
       ..add(IndividualJsonldIndividualSearch.serializer)
       ..add(IndividualJsonldOpportunityCreateLead.serializer)
+      ..add(IndividualOpportunityCreateLeadJsonMergePatch.serializer)
       ..add(InvoiceJsonldInvoiceSearch.serializer)
       ..add(LanguageJsonldPublicLanguageReadOpportunityCreateLead.serializer)
       ..add(OpportunityJsonldOpportunityCreateLead.serializer)
+      ..add(OpportunityJsonldOpportunityCreateLeadOriginEnum.serializer)
       ..add(OpportunityJsonldOpportunityCreateLeadTypeEnum.serializer)
       ..add(OpportunityJsonldOpportunitySearch.serializer)
-      ..add(RuleExecuteBookingDtoJsonldRuleExecuteBooking.serializer)
+      ..add(OpportunityOpportunityCreateLead.serializer)
+      ..add(OpportunityOpportunityCreateLeadTypeEnum.serializer)
+      ..add(RuleExecuteBookingDtoRuleExecuteBooking.serializer)
       ..add(RuleExecuteBookingResponseDtoJsonldRuleExecuteBooking.serializer)
       ..add(RuleExecuteBookingResponseDtoJsonldRuleExecuteCancelBooking
           .serializer)
-      ..add(
-          RuleExecuteCancelBookingDtoJsonldRuleExecuteCancelBooking.serializer)
+      ..add(RuleExecuteCancelBookingDtoRuleExecuteCancelBooking.serializer)
       ..add(RuleExpressionWrite.serializer)
       ..add(RuleJsonldExpressionRead.serializer)
-      ..add(RuleJsonldExpressionWrite.serializer)
       ..add(RuleJsonldRuleRead.serializer)
       ..add(RuleJsonldRuleReadRuleActionEnum.serializer)
       ..add(RuleJsonldRuleReadRuleTypeEnum.serializer)
-      ..add(RuleJsonldRuleWrite.serializer)
-      ..add(RuleJsonldRuleWriteRuleActionEnum.serializer)
-      ..add(RuleJsonldRuleWriteRuleTypeEnum.serializer)
       ..add(RuleRuleWrite.serializer)
+      ..add(RuleRuleWriteJsonMergePatch.serializer)
+      ..add(RuleRuleWriteJsonMergePatchRuleActionEnum.serializer)
+      ..add(RuleRuleWriteJsonMergePatchRuleTypeEnum.serializer)
       ..add(RuleRuleWriteRuleActionEnum.serializer)
       ..add(RuleRuleWriteRuleTypeEnum.serializer)
       ..add(RuleVariableJsonldRuleVariablesRead.serializer)
@@ -122,16 +123,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ServiceJsonldServiceSearch.serializer)
       ..add(ServiceTypeGuaranteesCalculationRulesWrite.serializer)
       ..add(ServiceTypeJsonldGuaranteesCalculationRulesSearch.serializer)
-      ..add(ServiceTypeJsonldGuaranteesCalculationRulesWrite.serializer)
       ..add(ServiceTypeJsonldServiceTypeSearch.serializer)
       ..add(StaffJsonldStaffSearch.serializer)
-      ..add(StaffStaffWrite.serializer)
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(ApiCentersGetCollection200ResponseSearchMappingInner)
-          ]),
-          () => new ListBuilder<
-              ApiCentersGetCollection200ResponseSearchMappingInner>())
+      ..add(StaffStaffWriteJsonMergePatch.serializer)
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(CenterJsonldCenterSearch)]),
@@ -145,22 +139,22 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
-                CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner)
+                CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets)
           ]),
           () => new ListBuilder<
-              CenterJsonldPublicCenterReadOpportunityCreateLeadAssetsInner>())
+              CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(CompanyJsonldCompanySearch)]),
           () => new ListBuilder<CompanyJsonldCompanySearch>())
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(ConstraintViolationJsonViolationsInner)]),
-          () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
+              const [const FullType(ConstraintViolationViolationsInner)]),
+          () => new ListBuilder<ConstraintViolationViolationsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(ConstraintViolationJsonViolationsInner)]),
-          () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
+              const [const FullType(ConstraintViolationViolationsInner)]),
+          () => new ListBuilder<ConstraintViolationViolationsInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ContractJsonldContractSearch)]),
@@ -200,8 +194,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<ExpressionJsonldRuleRead>())
       ..addBuilderFactory(
           const FullType(
-              BuiltList, const [const FullType(ExpressionJsonldRuleWrite)]),
-          () => new ListBuilder<ExpressionJsonldRuleWrite>())
+              BuiltList, const [const FullType(ExpressionRuleWrite)]),
+          () => new ListBuilder<ExpressionRuleWrite>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ExpressionRuleWrite)]),
@@ -219,14 +213,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<HappeningJsonldHappeningSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(HappeningStaffFeedBackJsonldHappeningRead)
+            const FullType(
+                HydraCollectionBaseSchemaNoPaginationSearchMappingInner)
           ]),
-          () => new ListBuilder<HappeningStaffFeedBackJsonldHappeningRead>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(HappeningStaffFeedBackJsonldHappeningSearch)
-          ]),
-          () => new ListBuilder<HappeningStaffFeedBackJsonldHappeningSearch>())
+          () => new ListBuilder<
+              HydraCollectionBaseSchemaNoPaginationSearchMappingInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(IndividualJsonldEnterpriseSearchEnterpriseRead)
@@ -245,6 +236,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(InvoiceJsonldInvoiceSearch)]),
           () => new ListBuilder<InvoiceJsonldInvoiceSearch>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(JsonObject)]),
+          () => new ListBuilder<JsonObject>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(JsonObject)]),
+          () => new ListBuilder<JsonObject>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(

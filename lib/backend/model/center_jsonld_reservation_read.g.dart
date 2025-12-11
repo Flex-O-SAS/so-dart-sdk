@@ -8,21 +8,26 @@ part of 'center_jsonld_reservation_read.dart';
 
 class _$CenterJsonldReservationRead extends CenterJsonldReservationRead {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final int? id;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$CenterJsonldReservationRead(
           [void Function(CenterJsonldReservationReadBuilder)? updates]) =>
       (new CenterJsonldReservationReadBuilder()..update(updates))._build();
 
   _$CenterJsonldReservationRead._(
-      {this.atContext, this.atId, this.atType, this.id})
-      : super._();
+      {this.id, this.atContext, required this.atId, required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'CenterJsonldReservationRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'CenterJsonldReservationRead', 'atType');
+  }
 
   @override
   CenterJsonldReservationRead rebuild(
@@ -37,19 +42,19 @@ class _$CenterJsonldReservationRead extends CenterJsonldReservationRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CenterJsonldReservationRead &&
+        id == other.id &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        id == other.id;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -57,10 +62,10 @@ class _$CenterJsonldReservationRead extends CenterJsonldReservationRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CenterJsonldReservationRead')
+          ..add('id', id)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('id', id))
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -68,26 +73,27 @@ class _$CenterJsonldReservationRead extends CenterJsonldReservationRead {
 class CenterJsonldReservationReadBuilder
     implements
         Builder<CenterJsonldReservationRead,
-            CenterJsonldReservationReadBuilder> {
+            CenterJsonldReservationReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$CenterJsonldReservationRead? _$v;
 
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
   String? _atType;
   String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   CenterJsonldReservationReadBuilder() {
     CenterJsonldReservationRead._defaults(this);
@@ -96,17 +102,17 @@ class CenterJsonldReservationReadBuilder
   CenterJsonldReservationReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _id = $v.id;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(CenterJsonldReservationRead other) {
+  void replace(covariant CenterJsonldReservationRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CenterJsonldReservationRead;
   }
@@ -124,10 +130,12 @@ class CenterJsonldReservationReadBuilder
     try {
       _$result = _$v ??
           new _$CenterJsonldReservationRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
             id: id,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'CenterJsonldReservationRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'CenterJsonldReservationRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

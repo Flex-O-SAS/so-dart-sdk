@@ -11,12 +11,12 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/staff_jsonld_staff_search.dart';
-import 'package:so_dart_sdk/backend/model/staff_staff_write.dart';
+import 'package:so_dart_sdk/backend/model/staff_staff_write_json_merge_patch.dart';
 
 class StaffApi {
 
@@ -34,6 +34,7 @@ class StaffApi {
   /// * [firstname] - 
   /// * [lastname] - 
   /// * [reference] - 
+  /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -50,6 +51,7 @@ class StaffApi {
     String? firstname,
     String? lastname,
     String? reference,
+    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
@@ -77,6 +79,7 @@ class StaffApi {
       if (firstname != null) r'firstname': encodeQueryParameter(_serializers, firstname, const FullType(String)),
       if (lastname != null) r'lastname': encodeQueryParameter(_serializers, lastname, const FullType(String)),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
+      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
     };
@@ -201,7 +204,7 @@ class StaffApi {
   ///
   /// Parameters:
   /// * [id] - Staff identifier
-  /// * [staffStaffWrite] - The updated Staff resource
+  /// * [staffStaffWriteJsonMergePatch] - The updated Staff resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -213,7 +216,7 @@ class StaffApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<StaffJsonldStaffSearch>> apiStaffPatchItem({ 
     required String id,
-    required StaffStaffWrite staffStaffWrite,
+    required StaffStaffWriteJsonMergePatch staffStaffWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -238,8 +241,8 @@ class StaffApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(StaffStaffWrite);
-      _bodyData = _serializers.serialize(staffStaffWrite, specifiedType: _type);
+      const _type = FullType(StaffStaffWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(staffStaffWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

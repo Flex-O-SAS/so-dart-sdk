@@ -12,11 +12,11 @@ import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_individuals_check_email_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_individuals_get_collection200_response.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
+import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
-import 'package:so_dart_sdk/backend/model/individual_individual_write.dart';
+import 'package:so_dart_sdk/backend/model/individual_individual_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
 
 class IndividualApi {
@@ -39,6 +39,7 @@ class IndividualApi {
   /// * [clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket] - 
   /// * [email] - 
   /// * [reference] - 
+  /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [id2] - 
@@ -48,7 +49,7 @@ class IndividualApi {
   /// * [updatedAt] - 
   /// * [updatedAtLeftSquareBracketRightSquareBracket] - 
   /// * [reference2] - 
-  /// * [referenceLeftSquareBracketRightSquareBracket] - 
+  /// * [referenceLeftSquareBracketRightSquareBracket2] - 
   /// * [emailExists] - 
   /// * [emailExistsLeftSquareBracketRightSquareBracket] - 
   /// * [phone] - 
@@ -111,6 +112,7 @@ class IndividualApi {
     BuiltList<String>? clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket,
     String? email,
     String? reference,
+    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     int? id2,
@@ -120,7 +122,7 @@ class IndividualApi {
     String? updatedAt,
     String? updatedAtLeftSquareBracketRightSquareBracket,
     String? reference2,
-    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
+    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket2,
     String? emailExists,
     BuiltList<String>? emailExistsLeftSquareBracketRightSquareBracket,
     String? phone,
@@ -194,6 +196,7 @@ class IndividualApi {
       if (clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket != null) r'clientLinks.enterprise[]': encodeCollectionQueryParameter<String>(_serializers, clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
+      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (id2 != null) r'id': encodeQueryParameter(_serializers, id2, const FullType(int)),
@@ -203,7 +206,7 @@ class IndividualApi {
       if (updatedAt != null) r'updatedAt': encodeQueryParameter(_serializers, updatedAt, const FullType(String)),
       if (updatedAtLeftSquareBracketRightSquareBracket != null) r'updatedAt[]': encodeQueryParameter(_serializers, updatedAtLeftSquareBracketRightSquareBracket, const FullType(String)),
       if (reference2 != null) r'reference': encodeQueryParameter(_serializers, reference2, const FullType(String)),
-      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (referenceLeftSquareBracketRightSquareBracket2 != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket2, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (emailExists != null) r'email_exists': encodeQueryParameter(_serializers, emailExists, const FullType(String)),
       if (emailExistsLeftSquareBracketRightSquareBracket != null) r'email_exists[]': encodeCollectionQueryParameter<String>(_serializers, emailExistsLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (phone != null) r'phone': encodeQueryParameter(_serializers, phone, const FullType(String)),
@@ -303,8 +306,10 @@ class IndividualApi {
   /// * [clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket] - 
   /// * [email] - 
   /// * [reference] - 
+  /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
+  /// * [referencePartialLeftSquareBracketRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -324,8 +329,10 @@ class IndividualApi {
     BuiltList<String>? clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket,
     String? email,
     String? reference,
+    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
+    String? referencePartialLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -356,8 +363,10 @@ class IndividualApi {
       if (clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket != null) r'clientLinks.enterprise[]': encodeCollectionQueryParameter<String>(_serializers, clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
+      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (referencePartialLeftSquareBracketRightSquareBracket != null) r'reference_partial[]': encodeQueryParameter(_serializers, referencePartialLeftSquareBracketRightSquareBracket, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -480,7 +489,7 @@ class IndividualApi {
   ///
   /// Parameters:
   /// * [id] - Individual identifier
-  /// * [individualIndividualWrite] - The updated Individual resource
+  /// * [individualIndividualWriteJsonMergePatch] - The updated Individual resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -492,7 +501,7 @@ class IndividualApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<IndividualJsonldIndividualSearch>> apiIndividualsPatchItem({ 
     required String id,
-    required IndividualIndividualWrite individualIndividualWrite,
+    required IndividualIndividualWriteJsonMergePatch individualIndividualWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -517,8 +526,8 @@ class IndividualApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(IndividualIndividualWrite);
-      _bodyData = _serializers.serialize(individualIndividualWrite, specifiedType: _type);
+      const _type = FullType(IndividualIndividualWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(individualIndividualWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

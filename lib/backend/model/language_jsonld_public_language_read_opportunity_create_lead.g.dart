@@ -9,15 +9,15 @@ part of 'language_jsonld_public_language_read_opportunity_create_lead.dart';
 class _$LanguageJsonldPublicLanguageReadOpportunityCreateLead
     extends LanguageJsonldPublicLanguageReadOpportunityCreateLead {
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
   final String? code;
   @override
   final String? label;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$LanguageJsonldPublicLanguageReadOpportunityCreateLead(
           [void Function(
@@ -28,8 +28,17 @@ class _$LanguageJsonldPublicLanguageReadOpportunityCreateLead
           ._build();
 
   _$LanguageJsonldPublicLanguageReadOpportunityCreateLead._(
-      {this.atId, this.atType, this.atContext, this.code, this.label})
-      : super._();
+      {this.code,
+      this.label,
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'LanguageJsonldPublicLanguageReadOpportunityCreateLead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(atType,
+        r'LanguageJsonldPublicLanguageReadOpportunityCreateLead', 'atType');
+  }
 
   @override
   LanguageJsonldPublicLanguageReadOpportunityCreateLead rebuild(
@@ -47,21 +56,21 @@ class _$LanguageJsonldPublicLanguageReadOpportunityCreateLead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is LanguageJsonldPublicLanguageReadOpportunityCreateLead &&
-        atId == other.atId &&
-        atType == other.atType &&
-        atContext == other.atContext &&
         code == other.code &&
-        label == other.label;
+        label == other.label &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jc(_$hash, label.hashCode);
+    _$hash = $jc(_$hash, atContext.hashCode);
+    _$hash = $jc(_$hash, atId.hashCode);
+    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -70,11 +79,11 @@ class _$LanguageJsonldPublicLanguageReadOpportunityCreateLead
   String toString() {
     return (newBuiltValueToStringHelper(
             r'LanguageJsonldPublicLanguageReadOpportunityCreateLead')
-          ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('atContext', atContext)
           ..add('code', code)
-          ..add('label', label))
+          ..add('label', label)
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -82,30 +91,31 @@ class _$LanguageJsonldPublicLanguageReadOpportunityCreateLead
 class LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder
     implements
         Builder<LanguageJsonldPublicLanguageReadOpportunityCreateLead,
-            LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder> {
+            LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$LanguageJsonldPublicLanguageReadOpportunityCreateLead? _$v;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
 
   String? _code;
   String? get code => _$this._code;
-  set code(String? code) => _$this._code = code;
+  set code(covariant String? code) => _$this._code = code;
 
   String? _label;
   String? get label => _$this._label;
-  set label(String? label) => _$this._label = label;
+  set label(covariant String? label) => _$this._label = label;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder() {
     LanguageJsonldPublicLanguageReadOpportunityCreateLead._defaults(this);
@@ -114,18 +124,19 @@ class LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder
   LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atId = $v.atId;
-      _atType = $v.atType;
-      _atContext = $v.atContext?.toBuilder();
       _code = $v.code;
       _label = $v.label;
+      _atContext = $v.atContext?.toBuilder();
+      _atId = $v.atId;
+      _atType = $v.atType;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(LanguageJsonldPublicLanguageReadOpportunityCreateLead other) {
+  void replace(
+      covariant LanguageJsonldPublicLanguageReadOpportunityCreateLead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LanguageJsonldPublicLanguageReadOpportunityCreateLead;
   }
@@ -146,11 +157,17 @@ class LanguageJsonldPublicLanguageReadOpportunityCreateLeadBuilder
     try {
       _$result = _$v ??
           new _$LanguageJsonldPublicLanguageReadOpportunityCreateLead._(
-            atId: atId,
-            atType: atType,
-            atContext: _atContext?.build(),
             code: code,
             label: label,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId,
+                r'LanguageJsonldPublicLanguageReadOpportunityCreateLead',
+                'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType,
+                r'LanguageJsonldPublicLanguageReadOpportunityCreateLead',
+                'atType'),
           );
     } catch (_) {
       late String _$failedField;

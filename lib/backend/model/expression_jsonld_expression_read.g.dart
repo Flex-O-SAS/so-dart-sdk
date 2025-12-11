@@ -348,36 +348,41 @@ class _$ExpressionJsonldExpressionReadLeftSideEnumSerializer
 
 class _$ExpressionJsonldExpressionRead extends ExpressionJsonldExpressionRead {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final ExpressionJsonldExpressionReadComparatorEnum? comparator;
   @override
   final ExpressionJsonldExpressionReadLeftSideEnum? leftSide;
   @override
-  final String? rightSide;
-  @override
   final RuleJsonldExpressionRead? rule;
   @override
+  final String? rightSide;
+  @override
   final int? id;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$ExpressionJsonldExpressionRead(
           [void Function(ExpressionJsonldExpressionReadBuilder)? updates]) =>
       (new ExpressionJsonldExpressionReadBuilder()..update(updates))._build();
 
   _$ExpressionJsonldExpressionRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.comparator,
+      {this.comparator,
       this.leftSide,
-      this.rightSide,
       this.rule,
-      this.id})
-      : super._();
+      this.rightSide,
+      this.id,
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'ExpressionJsonldExpressionRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'ExpressionJsonldExpressionRead', 'atType');
+  }
 
   @override
   ExpressionJsonldExpressionRead rebuild(
@@ -392,27 +397,27 @@ class _$ExpressionJsonldExpressionRead extends ExpressionJsonldExpressionRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ExpressionJsonldExpressionRead &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
         comparator == other.comparator &&
         leftSide == other.leftSide &&
-        rightSide == other.rightSide &&
         rule == other.rule &&
-        id == other.id;
+        rightSide == other.rightSide &&
+        id == other.id &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, comparator.hashCode);
+    _$hash = $jc(_$hash, leftSide.hashCode);
+    _$hash = $jc(_$hash, rule.hashCode);
+    _$hash = $jc(_$hash, rightSide.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, comparator.hashCode);
-    _$hash = $jc(_$hash, leftSide.hashCode);
-    _$hash = $jc(_$hash, rightSide.hashCode);
-    _$hash = $jc(_$hash, rule.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -420,14 +425,14 @@ class _$ExpressionJsonldExpressionRead extends ExpressionJsonldExpressionRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ExpressionJsonldExpressionRead')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
           ..add('comparator', comparator)
           ..add('leftSide', leftSide)
-          ..add('rightSide', rightSide)
           ..add('rule', rule)
-          ..add('id', id))
+          ..add('rightSide', rightSide)
+          ..add('id', id)
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -435,46 +440,50 @@ class _$ExpressionJsonldExpressionRead extends ExpressionJsonldExpressionRead {
 class ExpressionJsonldExpressionReadBuilder
     implements
         Builder<ExpressionJsonldExpressionRead,
-            ExpressionJsonldExpressionReadBuilder> {
+            ExpressionJsonldExpressionReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$ExpressionJsonldExpressionRead? _$v;
-
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
 
   ExpressionJsonldExpressionReadComparatorEnum? _comparator;
   ExpressionJsonldExpressionReadComparatorEnum? get comparator =>
       _$this._comparator;
-  set comparator(ExpressionJsonldExpressionReadComparatorEnum? comparator) =>
+  set comparator(
+          covariant ExpressionJsonldExpressionReadComparatorEnum? comparator) =>
       _$this._comparator = comparator;
 
   ExpressionJsonldExpressionReadLeftSideEnum? _leftSide;
   ExpressionJsonldExpressionReadLeftSideEnum? get leftSide => _$this._leftSide;
-  set leftSide(ExpressionJsonldExpressionReadLeftSideEnum? leftSide) =>
+  set leftSide(
+          covariant ExpressionJsonldExpressionReadLeftSideEnum? leftSide) =>
       _$this._leftSide = leftSide;
-
-  String? _rightSide;
-  String? get rightSide => _$this._rightSide;
-  set rightSide(String? rightSide) => _$this._rightSide = rightSide;
 
   RuleJsonldExpressionReadBuilder? _rule;
   RuleJsonldExpressionReadBuilder get rule =>
       _$this._rule ??= new RuleJsonldExpressionReadBuilder();
-  set rule(RuleJsonldExpressionReadBuilder? rule) => _$this._rule = rule;
+  set rule(covariant RuleJsonldExpressionReadBuilder? rule) =>
+      _$this._rule = rule;
+
+  String? _rightSide;
+  String? get rightSide => _$this._rightSide;
+  set rightSide(covariant String? rightSide) => _$this._rightSide = rightSide;
 
   int? _id;
   int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  set id(covariant int? id) => _$this._id = id;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   ExpressionJsonldExpressionReadBuilder() {
     ExpressionJsonldExpressionRead._defaults(this);
@@ -483,21 +492,21 @@ class ExpressionJsonldExpressionReadBuilder
   ExpressionJsonldExpressionReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _comparator = $v.comparator;
+      _leftSide = $v.leftSide;
+      _rule = $v.rule?.toBuilder();
+      _rightSide = $v.rightSide;
+      _id = $v.id;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _comparator = $v.comparator;
-      _leftSide = $v.leftSide;
-      _rightSide = $v.rightSide;
-      _rule = $v.rule?.toBuilder();
-      _id = $v.id;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(ExpressionJsonldExpressionRead other) {
+  void replace(covariant ExpressionJsonldExpressionRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ExpressionJsonldExpressionRead;
   }
@@ -515,23 +524,25 @@ class ExpressionJsonldExpressionReadBuilder
     try {
       _$result = _$v ??
           new _$ExpressionJsonldExpressionRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
             comparator: comparator,
             leftSide: leftSide,
-            rightSide: rightSide,
             rule: _rule?.build(),
+            rightSide: rightSide,
             id: id,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'ExpressionJsonldExpressionRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'ExpressionJsonldExpressionRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-
         _$failedField = 'rule';
         _rule?.build();
+
+        _$failedField = 'atContext';
+        _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'ExpressionJsonldExpressionRead', _$failedField, e.toString());

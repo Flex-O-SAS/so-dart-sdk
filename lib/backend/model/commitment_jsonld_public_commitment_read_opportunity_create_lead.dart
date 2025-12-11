@@ -3,13 +3,14 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read_context.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'commitment_jsonld_public_commitment_read_opportunity_create_lead.g.dart';
 
-/// 
+/// CommitmentJsonldPublicCommitmentReadOpportunityCreateLead
 ///
 /// Properties:
 /// * [atContext] 
@@ -18,21 +19,12 @@ part 'commitment_jsonld_public_commitment_read_opportunity_create_lead.g.dart';
 /// * [label] 
 /// * [reference] 
 @BuiltValue()
-abstract class CommitmentJsonldPublicCommitmentReadOpportunityCreateLead implements Built<CommitmentJsonldPublicCommitmentReadOpportunityCreateLead, CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CenterJsonldHappeningReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+abstract class CommitmentJsonldPublicCommitmentReadOpportunityCreateLead implements HydraItemBaseSchema, Built<CommitmentJsonldPublicCommitmentReadOpportunityCreateLead, CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadBuilder> {
+  @BuiltValueField(wireName: r'reference')
+  String? get reference;
 
   @BuiltValueField(wireName: r'label')
   String? get label;
-
-  @BuiltValueField(wireName: r'reference')
-  String? get reference;
 
   CommitmentJsonldPublicCommitmentReadOpportunityCreateLead._();
 
@@ -57,25 +49,18 @@ class _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadSerializer impl
     CommitmentJsonldPublicCommitmentReadOpportunityCreateLead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.reference != null) {
+      yield r'reference';
+      yield serializers.serialize(
+        object.reference,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.atContext != null) {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(CenterJsonldHappeningReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.label != null) {
@@ -85,13 +70,16 @@ class _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadSerializer impl
         specifiedType: const FullType(String),
       );
     }
-    if (object.reference != null) {
-      yield r'reference';
-      yield serializers.serialize(
-        object.reference,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -115,12 +103,26 @@ class _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadSerializer impl
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'reference':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.reference = valueDes;
+          break;
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CenterJsonldHappeningReadContext),
-          ) as CenterJsonldHappeningReadContext;
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
           result.atContext.replace(valueDes);
+          break;
+        case r'label':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.label = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -135,20 +137,6 @@ class _$CommitmentJsonldPublicCommitmentReadOpportunityCreateLeadSerializer impl
             specifiedType: const FullType(String),
           ) as String;
           result.atType = valueDes;
-          break;
-        case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.label = valueDes;
-          break;
-        case r'reference':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.reference = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -8,21 +8,26 @@ part of 'rule_jsonld_expression_read.dart';
 
 class _$RuleJsonldExpressionRead extends RuleJsonldExpressionRead {
   @override
-  final CenterJsonldHappeningReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final int? id;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$RuleJsonldExpressionRead(
           [void Function(RuleJsonldExpressionReadBuilder)? updates]) =>
       (new RuleJsonldExpressionReadBuilder()..update(updates))._build();
 
   _$RuleJsonldExpressionRead._(
-      {this.atContext, this.atId, this.atType, this.id})
-      : super._();
+      {this.id, this.atContext, required this.atId, required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'RuleJsonldExpressionRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'RuleJsonldExpressionRead', 'atType');
+  }
 
   @override
   RuleJsonldExpressionRead rebuild(
@@ -37,19 +42,19 @@ class _$RuleJsonldExpressionRead extends RuleJsonldExpressionRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RuleJsonldExpressionRead &&
+        id == other.id &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        id == other.id;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -57,36 +62,37 @@ class _$RuleJsonldExpressionRead extends RuleJsonldExpressionRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RuleJsonldExpressionRead')
+          ..add('id', id)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('id', id))
+          ..add('atType', atType))
         .toString();
   }
 }
 
 class RuleJsonldExpressionReadBuilder
     implements
-        Builder<RuleJsonldExpressionRead, RuleJsonldExpressionReadBuilder> {
+        Builder<RuleJsonldExpressionRead, RuleJsonldExpressionReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$RuleJsonldExpressionRead? _$v;
 
-  CenterJsonldHappeningReadContextBuilder? _atContext;
-  CenterJsonldHappeningReadContextBuilder get atContext =>
-      _$this._atContext ??= new CenterJsonldHappeningReadContextBuilder();
-  set atContext(CenterJsonldHappeningReadContextBuilder? atContext) =>
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
   String? _atType;
   String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   RuleJsonldExpressionReadBuilder() {
     RuleJsonldExpressionRead._defaults(this);
@@ -95,17 +101,17 @@ class RuleJsonldExpressionReadBuilder
   RuleJsonldExpressionReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _id = $v.id;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(RuleJsonldExpressionRead other) {
+  void replace(covariant RuleJsonldExpressionRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$RuleJsonldExpressionRead;
   }
@@ -123,10 +129,12 @@ class RuleJsonldExpressionReadBuilder
     try {
       _$result = _$v ??
           new _$RuleJsonldExpressionRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
             id: id,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'RuleJsonldExpressionRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'RuleJsonldExpressionRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

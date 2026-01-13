@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'tag_tag_read.g.dart';
 
-/// 
+/// TagTagRead
 ///
 /// Properties:
 /// * [id] 

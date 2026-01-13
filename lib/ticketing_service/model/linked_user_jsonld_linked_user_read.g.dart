@@ -8,40 +8,44 @@ part of 'linked_user_jsonld_linked_user_read.dart';
 
 class _$LinkedUserJsonldLinkedUserRead extends LinkedUserJsonldLinkedUserRead {
   @override
-  final CommentJsonldCommentReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final int? id;
+  final DateTime? createdAt;
   @override
   final String ticket;
   @override
+  final int? id;
+  @override
   final String user;
   @override
-  final DateTime? createdAt;
-  @override
   final DateTime? updatedAt;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$LinkedUserJsonldLinkedUserRead(
           [void Function(LinkedUserJsonldLinkedUserReadBuilder)? updates]) =>
       (new LinkedUserJsonldLinkedUserReadBuilder()..update(updates))._build();
 
   _$LinkedUserJsonldLinkedUserRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.id,
+      {this.createdAt,
       required this.ticket,
+      this.id,
       required this.user,
-      this.createdAt,
-      this.updatedAt})
+      this.updatedAt,
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         ticket, r'LinkedUserJsonldLinkedUserRead', 'ticket');
     BuiltValueNullFieldError.checkNotNull(
         user, r'LinkedUserJsonldLinkedUserRead', 'user');
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'LinkedUserJsonldLinkedUserRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'LinkedUserJsonldLinkedUserRead', 'atType');
   }
 
   @override
@@ -57,27 +61,27 @@ class _$LinkedUserJsonldLinkedUserRead extends LinkedUserJsonldLinkedUserRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is LinkedUserJsonldLinkedUserRead &&
+        createdAt == other.createdAt &&
+        ticket == other.ticket &&
+        id == other.id &&
+        user == other.user &&
+        updatedAt == other.updatedAt &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        id == other.id &&
-        ticket == other.ticket &&
-        user == other.user &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, ticket.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, ticket.hashCode);
-    _$hash = $jc(_$hash, user.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -85,14 +89,14 @@ class _$LinkedUserJsonldLinkedUserRead extends LinkedUserJsonldLinkedUserRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'LinkedUserJsonldLinkedUserRead')
+          ..add('createdAt', createdAt)
+          ..add('ticket', ticket)
+          ..add('id', id)
+          ..add('user', user)
+          ..add('updatedAt', updatedAt)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('id', id)
-          ..add('ticket', ticket)
-          ..add('user', user)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -100,42 +104,43 @@ class _$LinkedUserJsonldLinkedUserRead extends LinkedUserJsonldLinkedUserRead {
 class LinkedUserJsonldLinkedUserReadBuilder
     implements
         Builder<LinkedUserJsonldLinkedUserRead,
-            LinkedUserJsonldLinkedUserReadBuilder> {
+            LinkedUserJsonldLinkedUserReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$LinkedUserJsonldLinkedUserRead? _$v;
 
-  CommentJsonldCommentReadContextBuilder? _atContext;
-  CommentJsonldCommentReadContextBuilder get atContext =>
-      _$this._atContext ??= new CommentJsonldCommentReadContextBuilder();
-  set atContext(CommentJsonldCommentReadContextBuilder? atContext) =>
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _ticket;
+  String? get ticket => _$this._ticket;
+  set ticket(covariant String? ticket) => _$this._ticket = ticket;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  String? _user;
+  String? get user => _$this._user;
+  set user(covariant String? user) => _$this._user = user;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
   String? _atType;
   String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _ticket;
-  String? get ticket => _$this._ticket;
-  set ticket(String? ticket) => _$this._ticket = ticket;
-
-  String? _user;
-  String? get user => _$this._user;
-  set user(String? user) => _$this._user = user;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   LinkedUserJsonldLinkedUserReadBuilder() {
     LinkedUserJsonldLinkedUserRead._defaults(this);
@@ -144,21 +149,21 @@ class LinkedUserJsonldLinkedUserReadBuilder
   LinkedUserJsonldLinkedUserReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _createdAt = $v.createdAt;
+      _ticket = $v.ticket;
+      _id = $v.id;
+      _user = $v.user;
+      _updatedAt = $v.updatedAt;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _id = $v.id;
-      _ticket = $v.ticket;
-      _user = $v.user;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(LinkedUserJsonldLinkedUserRead other) {
+  void replace(covariant LinkedUserJsonldLinkedUserRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LinkedUserJsonldLinkedUserRead;
   }
@@ -176,16 +181,18 @@ class LinkedUserJsonldLinkedUserReadBuilder
     try {
       _$result = _$v ??
           new _$LinkedUserJsonldLinkedUserRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            id: id,
+            createdAt: createdAt,
             ticket: BuiltValueNullFieldError.checkNotNull(
                 ticket, r'LinkedUserJsonldLinkedUserRead', 'ticket'),
+            id: id,
             user: BuiltValueNullFieldError.checkNotNull(
                 user, r'LinkedUserJsonldLinkedUserRead', 'user'),
-            createdAt: createdAt,
             updatedAt: updatedAt,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'LinkedUserJsonldLinkedUserRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'LinkedUserJsonldLinkedUserRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

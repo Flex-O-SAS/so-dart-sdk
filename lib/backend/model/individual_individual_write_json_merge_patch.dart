@@ -15,7 +15,7 @@ part 'individual_individual_write_json_merge_patch.g.dart';
 @BuiltValue()
 abstract class IndividualIndividualWriteJsonMergePatch implements Built<IndividualIndividualWriteJsonMergePatch, IndividualIndividualWriteJsonMergePatchBuilder> {
   @BuiltValueField(wireName: r'tosAcceptedAt')
-  String? get tosAcceptedAt;
+  DateTime? get tosAcceptedAt;
 
   IndividualIndividualWriteJsonMergePatch._();
 
@@ -44,7 +44,7 @@ class _$IndividualIndividualWriteJsonMergePatchSerializer implements PrimitiveSe
       yield r'tosAcceptedAt';
       yield serializers.serialize(
         object.tosAcceptedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -73,9 +73,8 @@ class _$IndividualIndividualWriteJsonMergePatchSerializer implements PrimitiveSe
         case r'tosAcceptedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.tosAcceptedAt = valueDes;
           break;
         default:

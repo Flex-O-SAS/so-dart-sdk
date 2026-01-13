@@ -9,7 +9,7 @@ part of 'individual_individual_write_json_merge_patch.dart';
 class _$IndividualIndividualWriteJsonMergePatch
     extends IndividualIndividualWriteJsonMergePatch {
   @override
-  final String? tosAcceptedAt;
+  final DateTime? tosAcceptedAt;
 
   factory _$IndividualIndividualWriteJsonMergePatch(
           [void Function(IndividualIndividualWriteJsonMergePatchBuilder)?
@@ -59,9 +59,9 @@ class IndividualIndividualWriteJsonMergePatchBuilder
             IndividualIndividualWriteJsonMergePatchBuilder> {
   _$IndividualIndividualWriteJsonMergePatch? _$v;
 
-  String? _tosAcceptedAt;
-  String? get tosAcceptedAt => _$this._tosAcceptedAt;
-  set tosAcceptedAt(String? tosAcceptedAt) =>
+  DateTime? _tosAcceptedAt;
+  DateTime? get tosAcceptedAt => _$this._tosAcceptedAt;
+  set tosAcceptedAt(DateTime? tosAcceptedAt) =>
       _$this._tosAcceptedAt = tosAcceptedAt;
 
   IndividualIndividualWriteJsonMergePatchBuilder() {

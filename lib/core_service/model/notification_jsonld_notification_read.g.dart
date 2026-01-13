@@ -157,37 +157,37 @@ class _$NotificationJsonldNotificationReadStatusEnumSerializer
 class _$NotificationJsonldNotificationRead
     extends NotificationJsonldNotificationRead {
   @override
-  final BrandingSettingJsonldBrandingSettingReadContext? atContext;
+  final String? template;
   @override
-  final String? atId;
-  @override
-  final String? atType;
+  final JsonObject? metadata;
   @override
   final String? subject;
+  @override
+  final DateTime? sentAt;
   @override
   final NotificationJsonldNotificationReadTypeEnum? type;
   @override
   final String? message;
   @override
-  final JsonObject? metadata;
-  @override
-  final BuiltList<IdentityDtoJsonldNotificationRead>? recipients;
-  @override
-  final String? template;
-  @override
-  final IdentityDtoJsonldNotificationRead? sender;
-  @override
-  final bool? isMarkdown;
+  final DateTime? createdAt;
   @override
   final bool? directMail;
   @override
-  final String? sentAt;
+  final IdentityDtoJsonldNotificationRead? sender;
   @override
-  final DateTime? createdAt;
+  final BuiltList<IdentityDtoJsonldNotificationRead>? recipients;
+  @override
+  final bool? isMarkdown;
+  @override
+  final String? internalMessage;
   @override
   final NotificationJsonldNotificationReadStatusEnum? status;
   @override
-  final String? internalMessage;
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$NotificationJsonldNotificationRead(
           [void Function(NotificationJsonldNotificationReadBuilder)?
@@ -196,23 +196,28 @@ class _$NotificationJsonldNotificationRead
           ._build();
 
   _$NotificationJsonldNotificationRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
+      {this.template,
+      this.metadata,
       this.subject,
+      this.sentAt,
       this.type,
       this.message,
-      this.metadata,
-      this.recipients,
-      this.template,
-      this.sender,
-      this.isMarkdown,
-      this.directMail,
-      this.sentAt,
       this.createdAt,
+      this.directMail,
+      this.sender,
+      this.recipients,
+      this.isMarkdown,
+      this.internalMessage,
       this.status,
-      this.internalMessage})
-      : super._();
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'NotificationJsonldNotificationRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'NotificationJsonldNotificationRead', 'atType');
+  }
 
   @override
   NotificationJsonldNotificationRead rebuild(
@@ -227,43 +232,43 @@ class _$NotificationJsonldNotificationRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is NotificationJsonldNotificationRead &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
+        template == other.template &&
+        metadata == other.metadata &&
         subject == other.subject &&
+        sentAt == other.sentAt &&
         type == other.type &&
         message == other.message &&
-        metadata == other.metadata &&
-        recipients == other.recipients &&
-        template == other.template &&
-        sender == other.sender &&
-        isMarkdown == other.isMarkdown &&
-        directMail == other.directMail &&
-        sentAt == other.sentAt &&
         createdAt == other.createdAt &&
+        directMail == other.directMail &&
+        sender == other.sender &&
+        recipients == other.recipients &&
+        isMarkdown == other.isMarkdown &&
+        internalMessage == other.internalMessage &&
         status == other.status &&
-        internalMessage == other.internalMessage;
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, template.hashCode);
+    _$hash = $jc(_$hash, metadata.hashCode);
+    _$hash = $jc(_$hash, subject.hashCode);
+    _$hash = $jc(_$hash, sentAt.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, directMail.hashCode);
+    _$hash = $jc(_$hash, sender.hashCode);
+    _$hash = $jc(_$hash, recipients.hashCode);
+    _$hash = $jc(_$hash, isMarkdown.hashCode);
+    _$hash = $jc(_$hash, internalMessage.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, subject.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, message.hashCode);
-    _$hash = $jc(_$hash, metadata.hashCode);
-    _$hash = $jc(_$hash, recipients.hashCode);
-    _$hash = $jc(_$hash, template.hashCode);
-    _$hash = $jc(_$hash, sender.hashCode);
-    _$hash = $jc(_$hash, isMarkdown.hashCode);
-    _$hash = $jc(_$hash, directMail.hashCode);
-    _$hash = $jc(_$hash, sentAt.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, internalMessage.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -271,22 +276,22 @@ class _$NotificationJsonldNotificationRead
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'NotificationJsonldNotificationRead')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
+          ..add('template', template)
+          ..add('metadata', metadata)
           ..add('subject', subject)
+          ..add('sentAt', sentAt)
           ..add('type', type)
           ..add('message', message)
-          ..add('metadata', metadata)
-          ..add('recipients', recipients)
-          ..add('template', template)
-          ..add('sender', sender)
-          ..add('isMarkdown', isMarkdown)
-          ..add('directMail', directMail)
-          ..add('sentAt', sentAt)
           ..add('createdAt', createdAt)
+          ..add('directMail', directMail)
+          ..add('sender', sender)
+          ..add('recipients', recipients)
+          ..add('isMarkdown', isMarkdown)
+          ..add('internalMessage', internalMessage)
           ..add('status', status)
-          ..add('internalMessage', internalMessage))
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -294,84 +299,85 @@ class _$NotificationJsonldNotificationRead
 class NotificationJsonldNotificationReadBuilder
     implements
         Builder<NotificationJsonldNotificationRead,
-            NotificationJsonldNotificationReadBuilder> {
+            NotificationJsonldNotificationReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$NotificationJsonldNotificationRead? _$v;
 
-  BrandingSettingJsonldBrandingSettingReadContextBuilder? _atContext;
-  BrandingSettingJsonldBrandingSettingReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new BrandingSettingJsonldBrandingSettingReadContextBuilder();
-  set atContext(
-          BrandingSettingJsonldBrandingSettingReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
+  String? _template;
+  String? get template => _$this._template;
+  set template(covariant String? template) => _$this._template = template;
 
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
+  JsonObject? _metadata;
+  JsonObject? get metadata => _$this._metadata;
+  set metadata(covariant JsonObject? metadata) => _$this._metadata = metadata;
 
   String? _subject;
   String? get subject => _$this._subject;
-  set subject(String? subject) => _$this._subject = subject;
+  set subject(covariant String? subject) => _$this._subject = subject;
+
+  DateTime? _sentAt;
+  DateTime? get sentAt => _$this._sentAt;
+  set sentAt(covariant DateTime? sentAt) => _$this._sentAt = sentAt;
 
   NotificationJsonldNotificationReadTypeEnum? _type;
   NotificationJsonldNotificationReadTypeEnum? get type => _$this._type;
-  set type(NotificationJsonldNotificationReadTypeEnum? type) =>
+  set type(covariant NotificationJsonldNotificationReadTypeEnum? type) =>
       _$this._type = type;
 
   String? _message;
   String? get message => _$this._message;
-  set message(String? message) => _$this._message = message;
+  set message(covariant String? message) => _$this._message = message;
 
-  JsonObject? _metadata;
-  JsonObject? get metadata => _$this._metadata;
-  set metadata(JsonObject? metadata) => _$this._metadata = metadata;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  bool? _directMail;
+  bool? get directMail => _$this._directMail;
+  set directMail(covariant bool? directMail) => _$this._directMail = directMail;
+
+  IdentityDtoJsonldNotificationReadBuilder? _sender;
+  IdentityDtoJsonldNotificationReadBuilder get sender =>
+      _$this._sender ??= new IdentityDtoJsonldNotificationReadBuilder();
+  set sender(covariant IdentityDtoJsonldNotificationReadBuilder? sender) =>
+      _$this._sender = sender;
 
   ListBuilder<IdentityDtoJsonldNotificationRead>? _recipients;
   ListBuilder<IdentityDtoJsonldNotificationRead> get recipients =>
       _$this._recipients ??=
           new ListBuilder<IdentityDtoJsonldNotificationRead>();
-  set recipients(ListBuilder<IdentityDtoJsonldNotificationRead>? recipients) =>
+  set recipients(
+          covariant ListBuilder<IdentityDtoJsonldNotificationRead>?
+              recipients) =>
       _$this._recipients = recipients;
-
-  String? _template;
-  String? get template => _$this._template;
-  set template(String? template) => _$this._template = template;
-
-  IdentityDtoJsonldNotificationReadBuilder? _sender;
-  IdentityDtoJsonldNotificationReadBuilder get sender =>
-      _$this._sender ??= new IdentityDtoJsonldNotificationReadBuilder();
-  set sender(IdentityDtoJsonldNotificationReadBuilder? sender) =>
-      _$this._sender = sender;
 
   bool? _isMarkdown;
   bool? get isMarkdown => _$this._isMarkdown;
-  set isMarkdown(bool? isMarkdown) => _$this._isMarkdown = isMarkdown;
-
-  bool? _directMail;
-  bool? get directMail => _$this._directMail;
-  set directMail(bool? directMail) => _$this._directMail = directMail;
-
-  String? _sentAt;
-  String? get sentAt => _$this._sentAt;
-  set sentAt(String? sentAt) => _$this._sentAt = sentAt;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  NotificationJsonldNotificationReadStatusEnum? _status;
-  NotificationJsonldNotificationReadStatusEnum? get status => _$this._status;
-  set status(NotificationJsonldNotificationReadStatusEnum? status) =>
-      _$this._status = status;
+  set isMarkdown(covariant bool? isMarkdown) => _$this._isMarkdown = isMarkdown;
 
   String? _internalMessage;
   String? get internalMessage => _$this._internalMessage;
-  set internalMessage(String? internalMessage) =>
+  set internalMessage(covariant String? internalMessage) =>
       _$this._internalMessage = internalMessage;
+
+  NotificationJsonldNotificationReadStatusEnum? _status;
+  NotificationJsonldNotificationReadStatusEnum? get status => _$this._status;
+  set status(covariant NotificationJsonldNotificationReadStatusEnum? status) =>
+      _$this._status = status;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   NotificationJsonldNotificationReadBuilder() {
     NotificationJsonldNotificationRead._defaults(this);
@@ -380,29 +386,29 @@ class NotificationJsonldNotificationReadBuilder
   NotificationJsonldNotificationReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _template = $v.template;
+      _metadata = $v.metadata;
+      _subject = $v.subject;
+      _sentAt = $v.sentAt;
+      _type = $v.type;
+      _message = $v.message;
+      _createdAt = $v.createdAt;
+      _directMail = $v.directMail;
+      _sender = $v.sender?.toBuilder();
+      _recipients = $v.recipients?.toBuilder();
+      _isMarkdown = $v.isMarkdown;
+      _internalMessage = $v.internalMessage;
+      _status = $v.status;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _subject = $v.subject;
-      _type = $v.type;
-      _message = $v.message;
-      _metadata = $v.metadata;
-      _recipients = $v.recipients?.toBuilder();
-      _template = $v.template;
-      _sender = $v.sender?.toBuilder();
-      _isMarkdown = $v.isMarkdown;
-      _directMail = $v.directMail;
-      _sentAt = $v.sentAt;
-      _createdAt = $v.createdAt;
-      _status = $v.status;
-      _internalMessage = $v.internalMessage;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(NotificationJsonldNotificationRead other) {
+  void replace(covariant NotificationJsonldNotificationRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$NotificationJsonldNotificationRead;
   }
@@ -421,34 +427,35 @@ class NotificationJsonldNotificationReadBuilder
     try {
       _$result = _$v ??
           new _$NotificationJsonldNotificationRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
+            template: template,
+            metadata: metadata,
             subject: subject,
+            sentAt: sentAt,
             type: type,
             message: message,
-            metadata: metadata,
-            recipients: _recipients?.build(),
-            template: template,
-            sender: _sender?.build(),
-            isMarkdown: isMarkdown,
-            directMail: directMail,
-            sentAt: sentAt,
             createdAt: createdAt,
-            status: status,
+            directMail: directMail,
+            sender: _sender?.build(),
+            recipients: _recipients?.build(),
+            isMarkdown: isMarkdown,
             internalMessage: internalMessage,
+            status: status,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'NotificationJsonldNotificationRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'NotificationJsonldNotificationRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-
+        _$failedField = 'sender';
+        _sender?.build();
         _$failedField = 'recipients';
         _recipients?.build();
 
-        _$failedField = 'sender';
-        _sender?.build();
+        _$failedField = 'atContext';
+        _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'NotificationJsonldNotificationRead', _$failedField, e.toString());

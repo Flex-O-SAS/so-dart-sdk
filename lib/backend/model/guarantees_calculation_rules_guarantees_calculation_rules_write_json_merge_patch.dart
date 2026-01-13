@@ -28,7 +28,7 @@ abstract class GuaranteesCalculationRulesGuaranteesCalculationRulesWriteJsonMerg
   DateTime? get createdAt;
 
   @BuiltValueField(wireName: r'updatedAt')
-  String? get updatedAt;
+  DateTime? get updatedAt;
 
   GuaranteesCalculationRulesGuaranteesCalculationRulesWriteJsonMergePatch._();
 
@@ -78,7 +78,7 @@ class _$GuaranteesCalculationRulesGuaranteesCalculationRulesWriteJsonMergePatchS
       yield r'updatedAt';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -128,9 +128,8 @@ class _$GuaranteesCalculationRulesGuaranteesCalculationRulesWriteJsonMergePatchS
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.updatedAt = valueDes;
           break;
         default:

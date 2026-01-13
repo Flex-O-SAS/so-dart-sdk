@@ -11,8 +11,9 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/marketplace_service/api_util.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_tags_get_collection200_response.dart';
+import 'package:so_dart_sdk/marketplace_service/model/error.dart';
+import 'package:so_dart_sdk/marketplace_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/marketplace_service/model/tag_jsonld_tag_read.dart';
-import 'package:so_dart_sdk/marketplace_service/model/tag_tag_read.dart';
 
 class TagApi {
 

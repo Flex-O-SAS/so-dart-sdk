@@ -11,11 +11,11 @@ class _$ApiAppointmentClientGetCollection200Response
   @override
   final BuiltList<AppointmentClientJsonldAppointmentClientRead> member;
   @override
+  final HydraCollectionBaseSchemaAllOfView? view;
+  @override
   final int? totalItems;
   @override
-  final ApiAppointmentsGetCollection200ResponseView? view;
-  @override
-  final ApiAppointmentsGetCollection200ResponseSearch? search;
+  final HydraCollectionBaseSchemaNoPaginationSearch? search;
 
   factory _$ApiAppointmentClientGetCollection200Response(
           [void Function(ApiAppointmentClientGetCollection200ResponseBuilder)?
@@ -25,7 +25,7 @@ class _$ApiAppointmentClientGetCollection200Response
           ._build();
 
   _$ApiAppointmentClientGetCollection200Response._(
-      {required this.member, this.totalItems, this.view, this.search})
+      {required this.member, this.view, this.totalItems, this.search})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         member, r'ApiAppointmentClientGetCollection200Response', 'member');
@@ -46,8 +46,8 @@ class _$ApiAppointmentClientGetCollection200Response
     if (identical(other, this)) return true;
     return other is ApiAppointmentClientGetCollection200Response &&
         member == other.member &&
-        totalItems == other.totalItems &&
         view == other.view &&
+        totalItems == other.totalItems &&
         search == other.search;
   }
 
@@ -55,8 +55,8 @@ class _$ApiAppointmentClientGetCollection200Response
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, member.hashCode);
-    _$hash = $jc(_$hash, totalItems.hashCode);
     _$hash = $jc(_$hash, view.hashCode);
+    _$hash = $jc(_$hash, totalItems.hashCode);
     _$hash = $jc(_$hash, search.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -67,8 +67,8 @@ class _$ApiAppointmentClientGetCollection200Response
     return (newBuiltValueToStringHelper(
             r'ApiAppointmentClientGetCollection200Response')
           ..add('member', member)
-          ..add('totalItems', totalItems)
           ..add('view', view)
+          ..add('totalItems', totalItems)
           ..add('search', search))
         .toString();
   }
@@ -77,7 +77,8 @@ class _$ApiAppointmentClientGetCollection200Response
 class ApiAppointmentClientGetCollection200ResponseBuilder
     implements
         Builder<ApiAppointmentClientGetCollection200Response,
-            ApiAppointmentClientGetCollection200ResponseBuilder> {
+            ApiAppointmentClientGetCollection200ResponseBuilder>,
+        HydraCollectionBaseSchemaBuilder {
   _$ApiAppointmentClientGetCollection200Response? _$v;
 
   ListBuilder<AppointmentClientJsonldAppointmentClientRead>? _member;
@@ -85,24 +86,27 @@ class ApiAppointmentClientGetCollection200ResponseBuilder
       _$this._member ??=
           new ListBuilder<AppointmentClientJsonldAppointmentClientRead>();
   set member(
-          ListBuilder<AppointmentClientJsonldAppointmentClientRead>? member) =>
+          covariant ListBuilder<AppointmentClientJsonldAppointmentClientRead>?
+              member) =>
       _$this._member = member;
+
+  HydraCollectionBaseSchemaAllOfViewBuilder? _view;
+  HydraCollectionBaseSchemaAllOfViewBuilder get view =>
+      _$this._view ??= new HydraCollectionBaseSchemaAllOfViewBuilder();
+  set view(covariant HydraCollectionBaseSchemaAllOfViewBuilder? view) =>
+      _$this._view = view;
 
   int? _totalItems;
   int? get totalItems => _$this._totalItems;
-  set totalItems(int? totalItems) => _$this._totalItems = totalItems;
+  set totalItems(covariant int? totalItems) => _$this._totalItems = totalItems;
 
-  ApiAppointmentsGetCollection200ResponseViewBuilder? _view;
-  ApiAppointmentsGetCollection200ResponseViewBuilder get view =>
-      _$this._view ??= new ApiAppointmentsGetCollection200ResponseViewBuilder();
-  set view(ApiAppointmentsGetCollection200ResponseViewBuilder? view) =>
-      _$this._view = view;
-
-  ApiAppointmentsGetCollection200ResponseSearchBuilder? _search;
-  ApiAppointmentsGetCollection200ResponseSearchBuilder get search =>
+  HydraCollectionBaseSchemaNoPaginationSearchBuilder? _search;
+  HydraCollectionBaseSchemaNoPaginationSearchBuilder get search =>
       _$this._search ??=
-          new ApiAppointmentsGetCollection200ResponseSearchBuilder();
-  set search(ApiAppointmentsGetCollection200ResponseSearchBuilder? search) =>
+          new HydraCollectionBaseSchemaNoPaginationSearchBuilder();
+  set search(
+          covariant HydraCollectionBaseSchemaNoPaginationSearchBuilder?
+              search) =>
       _$this._search = search;
 
   ApiAppointmentClientGetCollection200ResponseBuilder() {
@@ -113,8 +117,8 @@ class ApiAppointmentClientGetCollection200ResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _member = $v.member.toBuilder();
-      _totalItems = $v.totalItems;
       _view = $v.view?.toBuilder();
+      _totalItems = $v.totalItems;
       _search = $v.search?.toBuilder();
       _$v = null;
     }
@@ -122,7 +126,7 @@ class ApiAppointmentClientGetCollection200ResponseBuilder
   }
 
   @override
-  void replace(ApiAppointmentClientGetCollection200Response other) {
+  void replace(covariant ApiAppointmentClientGetCollection200Response other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiAppointmentClientGetCollection200Response;
   }
@@ -143,8 +147,8 @@ class ApiAppointmentClientGetCollection200ResponseBuilder
       _$result = _$v ??
           new _$ApiAppointmentClientGetCollection200Response._(
             member: member.build(),
-            totalItems: totalItems,
             view: _view?.build(),
+            totalItems: totalItems,
             search: _search?.build(),
           );
     } catch (_) {
@@ -152,9 +156,9 @@ class ApiAppointmentClientGetCollection200ResponseBuilder
       try {
         _$failedField = 'member';
         member.build();
-
         _$failedField = 'view';
         _view?.build();
+
         _$failedField = 'search';
         _search?.build();
       } catch (e) {

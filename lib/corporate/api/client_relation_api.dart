@@ -12,9 +12,10 @@ import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/corporate/api_util.dart';
 import 'package:so_dart_sdk/corporate/model/api_client_relation_get_collection200_response.dart';
 import 'package:so_dart_sdk/corporate/model/client_relation.dart';
+import 'package:so_dart_sdk/corporate/model/client_relation_json_merge_patch.dart';
 import 'package:so_dart_sdk/corporate/model/client_relation_jsonld.dart';
-import 'package:so_dart_sdk/corporate/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/corporate/model/constraint_violation.dart';
+import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/corporate/model/error.dart';
 import 'package:so_dart_sdk/corporate/model/error_jsonld.dart';
 
@@ -94,6 +95,7 @@ class ClientRelationApi {
   /// * [orderLeftSquareBracketBeginRightSquareBracket] - 
   /// * [orderLeftSquareBracketEndRightSquareBracket] - 
   /// * [type] - 
+  /// * [typeLeftSquareBracketRightSquareBracket] - 
   /// * [beginLeftSquareBracketBeforeRightSquareBracket] - 
   /// * [beginLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [beginLeftSquareBracketAfterRightSquareBracket] - 
@@ -122,6 +124,7 @@ class ClientRelationApi {
     String? orderLeftSquareBracketBeginRightSquareBracket = 'asc',
     String? orderLeftSquareBracketEndRightSquareBracket = 'asc',
     String? type,
+    BuiltList<String>? typeLeftSquareBracketRightSquareBracket,
     String? beginLeftSquareBracketBeforeRightSquareBracket,
     String? beginLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? beginLeftSquareBracketAfterRightSquareBracket,
@@ -168,6 +171,7 @@ class ClientRelationApi {
       if (orderLeftSquareBracketBeginRightSquareBracket != null) r'order[begin]': encodeQueryParameter(_serializers, orderLeftSquareBracketBeginRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketEndRightSquareBracket != null) r'order[end]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndRightSquareBracket, const FullType(String)),
       if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
+      if (typeLeftSquareBracketRightSquareBracket != null) r'type[]': encodeCollectionQueryParameter<String>(_serializers, typeLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (beginLeftSquareBracketBeforeRightSquareBracket != null) r'begin[before]': encodeQueryParameter(_serializers, beginLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
       if (beginLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'begin[strictly_before]': encodeQueryParameter(_serializers, beginLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (beginLeftSquareBracketAfterRightSquareBracket != null) r'begin[after]': encodeQueryParameter(_serializers, beginLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
@@ -304,7 +308,7 @@ class ClientRelationApi {
   /// Creates a ClientRelation resource.
   ///
   /// Parameters:
-  /// * [clientRelationJsonld] - The new ClientRelation resource
+  /// * [clientRelation] - The new ClientRelation resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -315,7 +319,7 @@ class ClientRelationApi {
   /// Returns a [Future] containing a [Response] with a [ClientRelationJsonld] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ClientRelationJsonld>> apiClientRelationPostItem({ 
-    required ClientRelationJsonld clientRelationJsonld,
+    required ClientRelation clientRelation,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -340,15 +344,15 @@ class ClientRelationApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ClientRelationJsonld);
-      _bodyData = _serializers.serialize(clientRelationJsonld, specifiedType: _type);
+      const _type = FullType(ClientRelation);
+      _bodyData = _serializers.serialize(clientRelation, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -407,7 +411,7 @@ class ClientRelationApi {
   ///
   /// Parameters:
   /// * [id] - ClientRelation identifier
-  /// * [clientRelation] - The updated ClientRelation resource
+  /// * [clientRelationJsonMergePatch] - The updated ClientRelation resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -419,7 +423,7 @@ class ClientRelationApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ClientRelationJsonld>> apiClientRelationPutItem({ 
     required String id,
-    required ClientRelation clientRelation,
+    required ClientRelationJsonMergePatch clientRelationJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -451,8 +455,8 @@ class ClientRelationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ClientRelation);
-      _bodyData = _serializers.serialize(clientRelation, specifiedType: _type);
+      const _type = FullType(ClientRelationJsonMergePatch);
+      _bodyData = _serializers.serialize(clientRelationJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

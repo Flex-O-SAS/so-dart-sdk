@@ -3,35 +3,27 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/ticketing_service/model/hydra_collection_base_schema_all_of_view.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_collection_base_schema.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_search.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_collection_base_schema_no_pagination_search.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_view.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'api_apicomments_get_collection200_response.g.dart';
 
-/// ApiApicommentsGetCollection200Response
+/// Comment.jsonld-comment.read collection.
 ///
 /// Properties:
-/// * [member] 
 /// * [totalItems] 
-/// * [view] 
 /// * [search] 
+/// * [view] 
+/// * [member] 
 @BuiltValue()
-abstract class ApiApicommentsGetCollection200Response implements Built<ApiApicommentsGetCollection200Response, ApiApicommentsGetCollection200ResponseBuilder> {
+abstract class ApiApicommentsGetCollection200Response implements HydraCollectionBaseSchema, Built<ApiApicommentsGetCollection200Response, ApiApicommentsGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
   BuiltList<CommentJsonldCommentRead> get member;
-
-  @BuiltValueField(wireName: r'totalItems')
-  int? get totalItems;
-
-  @BuiltValueField(wireName: r'view')
-  ApiApicommentsGetCollection200ResponseView? get view;
-
-  @BuiltValueField(wireName: r'search')
-  ApiApicommentsGetCollection200ResponseSearch? get search;
 
   ApiApicommentsGetCollection200Response._();
 
@@ -68,18 +60,18 @@ class _$ApiApicommentsGetCollection200ResponseSerializer implements PrimitiveSer
         specifiedType: const FullType(int),
       );
     }
-    if (object.view != null) {
-      yield r'view';
-      yield serializers.serialize(
-        object.view,
-        specifiedType: const FullType(ApiApicommentsGetCollection200ResponseView),
-      );
-    }
     if (object.search != null) {
       yield r'search';
       yield serializers.serialize(
         object.search,
-        specifiedType: const FullType(ApiApicommentsGetCollection200ResponseSearch),
+        specifiedType: const FullType(HydraCollectionBaseSchemaNoPaginationSearch),
+      );
+    }
+    if (object.view != null) {
+      yield r'view';
+      yield serializers.serialize(
+        object.view,
+        specifiedType: const FullType(HydraCollectionBaseSchemaAllOfView),
       );
     }
   }
@@ -119,19 +111,19 @@ class _$ApiApicommentsGetCollection200ResponseSerializer implements PrimitiveSer
           ) as int;
           result.totalItems = valueDes;
           break;
-        case r'view':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiApicommentsGetCollection200ResponseView),
-          ) as ApiApicommentsGetCollection200ResponseView;
-          result.view.replace(valueDes);
-          break;
         case r'search':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ApiApicommentsGetCollection200ResponseSearch),
-          ) as ApiApicommentsGetCollection200ResponseSearch;
+            specifiedType: const FullType(HydraCollectionBaseSchemaNoPaginationSearch),
+          ) as HydraCollectionBaseSchemaNoPaginationSearch;
           result.search.replace(valueDes);
+          break;
+        case r'view':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraCollectionBaseSchemaAllOfView),
+          ) as HydraCollectionBaseSchemaAllOfView;
+          result.view.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -8,42 +8,44 @@ part of 'comment_jsonld_comment_read.dart';
 
 class _$CommentJsonldCommentRead extends CommentJsonldCommentRead {
   @override
-  final CommentJsonldCommentReadContext? atContext;
+  final DateTime? createdAt;
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final int? id;
+  final String ticket;
   @override
   final String author;
   @override
   final String description;
   @override
-  final bool notify;
+  final int? id;
   @override
-  final DateTime? createdAt;
+  final bool notify;
   @override
   final DateTime? updatedAt;
   @override
-  final String ticket;
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$CommentJsonldCommentRead(
           [void Function(CommentJsonldCommentReadBuilder)? updates]) =>
       (new CommentJsonldCommentReadBuilder()..update(updates))._build();
 
   _$CommentJsonldCommentRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.id,
+      {this.createdAt,
+      required this.ticket,
       required this.author,
       required this.description,
+      this.id,
       required this.notify,
-      this.createdAt,
       this.updatedAt,
-      required this.ticket})
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        ticket, r'CommentJsonldCommentRead', 'ticket');
     BuiltValueNullFieldError.checkNotNull(
         author, r'CommentJsonldCommentRead', 'author');
     BuiltValueNullFieldError.checkNotNull(
@@ -51,7 +53,9 @@ class _$CommentJsonldCommentRead extends CommentJsonldCommentRead {
     BuiltValueNullFieldError.checkNotNull(
         notify, r'CommentJsonldCommentRead', 'notify');
     BuiltValueNullFieldError.checkNotNull(
-        ticket, r'CommentJsonldCommentRead', 'ticket');
+        atId, r'CommentJsonldCommentRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'CommentJsonldCommentRead', 'atType');
   }
 
   @override
@@ -67,31 +71,31 @@ class _$CommentJsonldCommentRead extends CommentJsonldCommentRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CommentJsonldCommentRead &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
-        id == other.id &&
+        createdAt == other.createdAt &&
+        ticket == other.ticket &&
         author == other.author &&
         description == other.description &&
+        id == other.id &&
         notify == other.notify &&
-        createdAt == other.createdAt &&
         updatedAt == other.updatedAt &&
-        ticket == other.ticket;
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, ticket.hashCode);
+    _$hash = $jc(_$hash, author.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, notify.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, author.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, notify.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
-    _$hash = $jc(_$hash, ticket.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -99,66 +103,68 @@ class _$CommentJsonldCommentRead extends CommentJsonldCommentRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CommentJsonldCommentRead')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('ticket', ticket)
           ..add('author', author)
           ..add('description', description)
+          ..add('id', id)
           ..add('notify', notify)
-          ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt)
-          ..add('ticket', ticket))
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
 
 class CommentJsonldCommentReadBuilder
     implements
-        Builder<CommentJsonldCommentRead, CommentJsonldCommentReadBuilder> {
+        Builder<CommentJsonldCommentRead, CommentJsonldCommentReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$CommentJsonldCommentRead? _$v;
 
-  CommentJsonldCommentReadContextBuilder? _atContext;
-  CommentJsonldCommentReadContextBuilder get atContext =>
-      _$this._atContext ??= new CommentJsonldCommentReadContextBuilder();
-  set atContext(CommentJsonldCommentReadContextBuilder? atContext) =>
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _ticket;
+  String? get ticket => _$this._ticket;
+  set ticket(covariant String? ticket) => _$this._ticket = ticket;
+
+  String? _author;
+  String? get author => _$this._author;
+  set author(covariant String? author) => _$this._author = author;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  bool? _notify;
+  bool? get notify => _$this._notify;
+  set notify(covariant bool? notify) => _$this._notify = notify;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
   String? _atType;
   String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _author;
-  String? get author => _$this._author;
-  set author(String? author) => _$this._author = author;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  bool? _notify;
-  bool? get notify => _$this._notify;
-  set notify(bool? notify) => _$this._notify = notify;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
-  String? _ticket;
-  String? get ticket => _$this._ticket;
-  set ticket(String? ticket) => _$this._ticket = ticket;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   CommentJsonldCommentReadBuilder() {
     CommentJsonldCommentRead._defaults(this);
@@ -167,23 +173,23 @@ class CommentJsonldCommentReadBuilder
   CommentJsonldCommentReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _createdAt = $v.createdAt;
+      _ticket = $v.ticket;
+      _author = $v.author;
+      _description = $v.description;
+      _id = $v.id;
+      _notify = $v.notify;
+      _updatedAt = $v.updatedAt;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _id = $v.id;
-      _author = $v.author;
-      _description = $v.description;
-      _notify = $v.notify;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
-      _ticket = $v.ticket;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(CommentJsonldCommentRead other) {
+  void replace(covariant CommentJsonldCommentRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CommentJsonldCommentRead;
   }
@@ -201,20 +207,22 @@ class CommentJsonldCommentReadBuilder
     try {
       _$result = _$v ??
           new _$CommentJsonldCommentRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            id: id,
+            createdAt: createdAt,
+            ticket: BuiltValueNullFieldError.checkNotNull(
+                ticket, r'CommentJsonldCommentRead', 'ticket'),
             author: BuiltValueNullFieldError.checkNotNull(
                 author, r'CommentJsonldCommentRead', 'author'),
             description: BuiltValueNullFieldError.checkNotNull(
                 description, r'CommentJsonldCommentRead', 'description'),
+            id: id,
             notify: BuiltValueNullFieldError.checkNotNull(
                 notify, r'CommentJsonldCommentRead', 'notify'),
-            createdAt: createdAt,
             updatedAt: updatedAt,
-            ticket: BuiltValueNullFieldError.checkNotNull(
-                ticket, r'CommentJsonldCommentRead', 'ticket'),
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'CommentJsonldCommentRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'CommentJsonldCommentRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

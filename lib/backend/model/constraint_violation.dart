@@ -95,14 +95,14 @@ class _$ConstraintViolationSerializer implements PrimitiveSerializer<ConstraintV
       yield r'title';
       yield serializers.serialize(
         object.title,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.instance != null) {
       yield r'instance';
       yield serializers.serialize(
         object.instance,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -159,17 +159,15 @@ class _$ConstraintViolationSerializer implements PrimitiveSerializer<ConstraintV
         case r'title':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.title = valueDes;
           break;
         case r'instance':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.instance = valueDes;
           break;
         default:

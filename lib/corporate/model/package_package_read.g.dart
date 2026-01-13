@@ -155,11 +155,11 @@ class _$PackagePackageRead extends PackagePackageRead {
   @override
   final DateTime receptionDate;
   @override
-  final String? handoverDate;
+  final DateTime? handoverDate;
   @override
   final String? handoverClient;
   @override
-  final String? securityCode;
+  final String securityCode;
 
   factory _$PackagePackageRead(
           [void Function(PackagePackageReadBuilder)? updates]) =>
@@ -176,7 +176,7 @@ class _$PackagePackageRead extends PackagePackageRead {
       required this.receptionDate,
       this.handoverDate,
       this.handoverClient,
-      this.securityCode})
+      required this.securityCode})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         recipient, r'PackagePackageRead', 'recipient');
@@ -190,6 +190,8 @@ class _$PackagePackageRead extends PackagePackageRead {
         trackingNumber, r'PackagePackageRead', 'trackingNumber');
     BuiltValueNullFieldError.checkNotNull(
         receptionDate, r'PackagePackageRead', 'receptionDate');
+    BuiltValueNullFieldError.checkNotNull(
+        securityCode, r'PackagePackageRead', 'securityCode');
   }
 
   @override
@@ -292,9 +294,10 @@ class PackagePackageReadBuilder
   set receptionDate(DateTime? receptionDate) =>
       _$this._receptionDate = receptionDate;
 
-  String? _handoverDate;
-  String? get handoverDate => _$this._handoverDate;
-  set handoverDate(String? handoverDate) => _$this._handoverDate = handoverDate;
+  DateTime? _handoverDate;
+  DateTime? get handoverDate => _$this._handoverDate;
+  set handoverDate(DateTime? handoverDate) =>
+      _$this._handoverDate = handoverDate;
 
   String? _handoverClient;
   String? get handoverClient => _$this._handoverClient;
@@ -362,7 +365,8 @@ class PackagePackageReadBuilder
               receptionDate, r'PackagePackageRead', 'receptionDate'),
           handoverDate: handoverDate,
           handoverClient: handoverClient,
-          securityCode: securityCode,
+          securityCode: BuiltValueNullFieldError.checkNotNull(
+              securityCode, r'PackagePackageRead', 'securityCode'),
         );
     replace(_$result);
     return _$result;

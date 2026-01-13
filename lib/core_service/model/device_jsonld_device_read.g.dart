@@ -74,36 +74,40 @@ class _$DeviceJsonldDeviceReadSource_EnumSerializer
 
 class _$DeviceJsonldDeviceRead extends DeviceJsonldDeviceRead {
   @override
-  final BrandingSettingJsonldBrandingSettingReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final String token;
-  @override
   final String subscriber;
   @override
   final DeviceJsonldDeviceReadSource_Enum source_;
+  @override
+  final String token;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$DeviceJsonldDeviceRead(
           [void Function(DeviceJsonldDeviceReadBuilder)? updates]) =>
       (new DeviceJsonldDeviceReadBuilder()..update(updates))._build();
 
   _$DeviceJsonldDeviceRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
+      {required this.subscriber,
+      required this.source_,
       required this.token,
-      required this.subscriber,
-      required this.source_})
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        token, r'DeviceJsonldDeviceRead', 'token');
     BuiltValueNullFieldError.checkNotNull(
         subscriber, r'DeviceJsonldDeviceRead', 'subscriber');
     BuiltValueNullFieldError.checkNotNull(
         source_, r'DeviceJsonldDeviceRead', 'source_');
+    BuiltValueNullFieldError.checkNotNull(
+        token, r'DeviceJsonldDeviceRead', 'token');
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'DeviceJsonldDeviceRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'DeviceJsonldDeviceRead', 'atType');
   }
 
   @override
@@ -119,23 +123,23 @@ class _$DeviceJsonldDeviceRead extends DeviceJsonldDeviceRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DeviceJsonldDeviceRead &&
+        subscriber == other.subscriber &&
+        source_ == other.source_ &&
+        token == other.token &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        token == other.token &&
-        subscriber == other.subscriber &&
-        source_ == other.source_;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, subscriber.hashCode);
+    _$hash = $jc(_$hash, source_.hashCode);
+    _$hash = $jc(_$hash, token.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, token.hashCode);
-    _$hash = $jc(_$hash, subscriber.hashCode);
-    _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -143,48 +147,49 @@ class _$DeviceJsonldDeviceRead extends DeviceJsonldDeviceRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'DeviceJsonldDeviceRead')
+          ..add('subscriber', subscriber)
+          ..add('source_', source_)
+          ..add('token', token)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('token', token)
-          ..add('subscriber', subscriber)
-          ..add('source_', source_))
+          ..add('atType', atType))
         .toString();
   }
 }
 
 class DeviceJsonldDeviceReadBuilder
-    implements Builder<DeviceJsonldDeviceRead, DeviceJsonldDeviceReadBuilder> {
+    implements
+        Builder<DeviceJsonldDeviceRead, DeviceJsonldDeviceReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$DeviceJsonldDeviceRead? _$v;
 
-  BrandingSettingJsonldBrandingSettingReadContextBuilder? _atContext;
-  BrandingSettingJsonldBrandingSettingReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new BrandingSettingJsonldBrandingSettingReadContextBuilder();
-  set atContext(
-          BrandingSettingJsonldBrandingSettingReadContextBuilder? atContext) =>
+  String? _subscriber;
+  String? get subscriber => _$this._subscriber;
+  set subscriber(covariant String? subscriber) =>
+      _$this._subscriber = subscriber;
+
+  DeviceJsonldDeviceReadSource_Enum? _source_;
+  DeviceJsonldDeviceReadSource_Enum? get source_ => _$this._source_;
+  set source_(covariant DeviceJsonldDeviceReadSource_Enum? source_) =>
+      _$this._source_ = source_;
+
+  String? _token;
+  String? get token => _$this._token;
+  set token(covariant String? token) => _$this._token = token;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
   String? _atType;
   String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  String? _token;
-  String? get token => _$this._token;
-  set token(String? token) => _$this._token = token;
-
-  String? _subscriber;
-  String? get subscriber => _$this._subscriber;
-  set subscriber(String? subscriber) => _$this._subscriber = subscriber;
-
-  DeviceJsonldDeviceReadSource_Enum? _source_;
-  DeviceJsonldDeviceReadSource_Enum? get source_ => _$this._source_;
-  set source_(DeviceJsonldDeviceReadSource_Enum? source_) =>
-      _$this._source_ = source_;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   DeviceJsonldDeviceReadBuilder() {
     DeviceJsonldDeviceRead._defaults(this);
@@ -193,19 +198,19 @@ class DeviceJsonldDeviceReadBuilder
   DeviceJsonldDeviceReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _subscriber = $v.subscriber;
+      _source_ = $v.source_;
+      _token = $v.token;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _token = $v.token;
-      _subscriber = $v.subscriber;
-      _source_ = $v.source_;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(DeviceJsonldDeviceRead other) {
+  void replace(covariant DeviceJsonldDeviceRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$DeviceJsonldDeviceRead;
   }
@@ -223,15 +228,17 @@ class DeviceJsonldDeviceReadBuilder
     try {
       _$result = _$v ??
           new _$DeviceJsonldDeviceRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            token: BuiltValueNullFieldError.checkNotNull(
-                token, r'DeviceJsonldDeviceRead', 'token'),
             subscriber: BuiltValueNullFieldError.checkNotNull(
                 subscriber, r'DeviceJsonldDeviceRead', 'subscriber'),
             source_: BuiltValueNullFieldError.checkNotNull(
                 source_, r'DeviceJsonldDeviceRead', 'source_'),
+            token: BuiltValueNullFieldError.checkNotNull(
+                token, r'DeviceJsonldDeviceRead', 'token'),
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'DeviceJsonldDeviceRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'DeviceJsonldDeviceRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

@@ -3,15 +3,16 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_item_read_service_read.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema.dart';
 import 'package:so_dart_sdk/marketplace_service/model/service_jsonld_item_read_service_read.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'item_jsonld_item_read_service_read.g.dart';
 
-/// 
+/// ItemJsonldItemReadServiceRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -30,51 +31,42 @@ part 'item_jsonld_item_read_service_read.g.dart';
 /// * [beginDate] 
 /// * [endDate] 
 @BuiltValue()
-abstract class ItemJsonldItemReadServiceRead implements Built<ItemJsonldItemReadServiceRead, ItemJsonldItemReadServiceReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AddressJsonldProviderReadAddressReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
-
-  @BuiltValueField(wireName: r'provider')
-  ProviderJsonldItemReadServiceRead get provider;
-
-  @BuiltValueField(wireName: r'service')
-  ServiceJsonldItemReadServiceRead get service;
-
-  @BuiltValueField(wireName: r'label')
-  String get label;
-
-  @BuiltValueField(wireName: r'site')
-  int? get site;
-
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  @BuiltValueField(wireName: r'price')
-  num? get price;
-
-  @BuiltValueField(wireName: r'isBookable')
-  bool get isBookable;
-
-  @BuiltValueField(wireName: r'isOnline')
-  bool get isOnline;
-
+abstract class ItemJsonldItemReadServiceRead implements HydraItemBaseSchema, Built<ItemJsonldItemReadServiceRead, ItemJsonldItemReadServiceReadBuilder> {
   @BuiltValueField(wireName: r'imageLink')
   String? get imageLink;
 
   @BuiltValueField(wireName: r'beginDate')
   DateTime get beginDate;
 
+  @BuiltValueField(wireName: r'site')
+  int? get site;
+
+  @BuiltValueField(wireName: r'isBookable')
+  bool get isBookable;
+
+  @BuiltValueField(wireName: r'provider')
+  ProviderJsonldItemReadServiceRead get provider;
+
   @BuiltValueField(wireName: r'endDate')
-  String? get endDate;
+  DateTime? get endDate;
+
+  @BuiltValueField(wireName: r'service')
+  ServiceJsonldItemReadServiceRead get service;
+
+  @BuiltValueField(wireName: r'price')
+  num? get price;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  @BuiltValueField(wireName: r'isOnline')
+  bool get isOnline;
+
+  @BuiltValueField(wireName: r'id')
+  int? get id;
+
+  @BuiltValueField(wireName: r'label')
+  String get label;
 
   ItemJsonldItemReadServiceRead._();
 
@@ -99,34 +91,59 @@ class _$ItemJsonldItemReadServiceReadSerializer implements PrimitiveSerializer<I
     ItemJsonldItemReadServiceRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.endDate != null) {
+      yield r'endDate';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
+        object.endDate,
+        specifiedType: const FullType(DateTime),
       );
     }
-    if (object.atId != null) {
-      yield r'@id';
+    if (object.description != null) {
+      yield r'description';
       yield serializers.serialize(
-        object.atId,
+        object.description,
         specifiedType: const FullType(String),
       );
     }
-    if (object.atType != null) {
-      yield r'@type';
+    yield r'isOnline';
+    yield serializers.serialize(
+      object.isOnline,
+      specifiedType: const FullType(bool),
+    );
+    yield r'label';
+    yield serializers.serialize(
+      object.label,
+      specifiedType: const FullType(String),
+    );
+    if (object.imageLink != null) {
+      yield r'imageLink';
       yield serializers.serialize(
-        object.atType,
+        object.imageLink,
         specifiedType: const FullType(String),
       );
     }
-    if (object.id != null) {
-      yield r'id';
+    yield r'beginDate';
+    yield serializers.serialize(
+      object.beginDate,
+      specifiedType: const FullType(DateTime),
+    );
+    if (object.site != null) {
+      yield r'site';
       yield serializers.serialize(
-        object.id,
+        object.site,
         specifiedType: const FullType(int),
       );
     }
+    yield r'isBookable';
+    yield serializers.serialize(
+      object.isBookable,
+      specifiedType: const FullType(bool),
+    );
     yield r'provider';
     yield serializers.serialize(
       object.provider,
@@ -137,25 +154,6 @@ class _$ItemJsonldItemReadServiceReadSerializer implements PrimitiveSerializer<I
       object.service,
       specifiedType: const FullType(ServiceJsonldItemReadServiceRead),
     );
-    yield r'label';
-    yield serializers.serialize(
-      object.label,
-      specifiedType: const FullType(String),
-    );
-    if (object.site != null) {
-      yield r'site';
-      yield serializers.serialize(
-        object.site,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     if (object.price != null) {
       yield r'price';
       yield serializers.serialize(
@@ -163,35 +161,25 @@ class _$ItemJsonldItemReadServiceReadSerializer implements PrimitiveSerializer<I
         specifiedType: const FullType.nullable(num),
       );
     }
-    yield r'isBookable';
-    yield serializers.serialize(
-      object.isBookable,
-      specifiedType: const FullType(bool),
-    );
-    yield r'isOnline';
-    yield serializers.serialize(
-      object.isOnline,
-      specifiedType: const FullType(bool),
-    );
-    if (object.imageLink != null) {
-      yield r'imageLink';
+    if (object.atContext != null) {
+      yield r'@context';
       yield serializers.serialize(
-        object.imageLink,
-        specifiedType: const FullType.nullable(String),
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
-    yield r'beginDate';
-    yield serializers.serialize(
-      object.beginDate,
-      specifiedType: const FullType(DateTime),
-    );
-    if (object.endDate != null) {
-      yield r'endDate';
+    if (object.id != null) {
+      yield r'id';
       yield serializers.serialize(
-        object.endDate,
-        specifiedType: const FullType.nullable(String),
+        object.id,
+        specifiedType: const FullType(int),
       );
     }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -215,13 +203,6 @@ class _$ItemJsonldItemReadServiceReadSerializer implements PrimitiveSerializer<I
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-          ) as AddressJsonldProviderReadAddressReadContext;
-          result.atContext.replace(valueDes);
-          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
@@ -229,19 +210,61 @@ class _$ItemJsonldItemReadServiceReadSerializer implements PrimitiveSerializer<I
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'endDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.endDate = valueDes;
+          break;
+        case r'description':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atType = valueDes;
+          result.description = valueDes;
           break;
-        case r'id':
+        case r'isOnline':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isOnline = valueDes;
+          break;
+        case r'label':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.label = valueDes;
+          break;
+        case r'imageLink':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.imageLink = valueDes;
+          break;
+        case r'beginDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.beginDate = valueDes;
+          break;
+        case r'site':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
-          result.id = valueDes;
+          result.site = valueDes;
+          break;
+        case r'isBookable':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isBookable = valueDes;
           break;
         case r'provider':
           final valueDes = serializers.deserialize(
@@ -257,28 +280,6 @@ class _$ItemJsonldItemReadServiceReadSerializer implements PrimitiveSerializer<I
           ) as ServiceJsonldItemReadServiceRead;
           result.service.replace(valueDes);
           break;
-        case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.label = valueDes;
-          break;
-        case r'site':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.site = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.description = valueDes;
-          break;
         case r'price':
           final valueDes = serializers.deserialize(
             value,
@@ -287,42 +288,26 @@ class _$ItemJsonldItemReadServiceReadSerializer implements PrimitiveSerializer<I
           if (valueDes == null) continue;
           result.price = valueDes;
           break;
-        case r'isBookable':
+        case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isBookable = valueDes;
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
           break;
-        case r'isOnline':
+        case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isOnline = valueDes;
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
           break;
-        case r'imageLink':
+        case r'@type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.imageLink = valueDes;
-          break;
-        case r'beginDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.beginDate = valueDes;
-          break;
-        case r'endDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.endDate = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
           break;
         default:
           unhandled.add(key);

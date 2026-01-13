@@ -15,7 +15,7 @@ part 'staff_staff_write_json_merge_patch.g.dart';
 @BuiltValue()
 abstract class StaffStaffWriteJsonMergePatch implements Built<StaffStaffWriteJsonMergePatch, StaffStaffWriteJsonMergePatchBuilder> {
   @BuiltValueField(wireName: r'tosAcceptedAt')
-  String? get tosAcceptedAt;
+  DateTime? get tosAcceptedAt;
 
   StaffStaffWriteJsonMergePatch._();
 
@@ -44,7 +44,7 @@ class _$StaffStaffWriteJsonMergePatchSerializer implements PrimitiveSerializer<S
       yield r'tosAcceptedAt';
       yield serializers.serialize(
         object.tosAcceptedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -73,9 +73,8 @@ class _$StaffStaffWriteJsonMergePatchSerializer implements PrimitiveSerializer<S
         case r'tosAcceptedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.tosAcceptedAt = valueDes;
           break;
         default:

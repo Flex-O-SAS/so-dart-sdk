@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'branding_setting_branding_setting_write.g.dart';
 
-/// 
+/// BrandingSettingBrandingSettingWrite
 ///
 /// Properties:
 /// * [orgId] 
@@ -157,28 +157,28 @@ class _$BrandingSettingBrandingSettingWriteSerializer implements PrimitiveSerial
       yield r'logoUrl';
       yield serializers.serialize(
         object.logoUrl,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.logoDarkUrl != null) {
       yield r'logoDarkUrl';
       yield serializers.serialize(
         object.logoDarkUrl,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.iconUrl != null) {
       yield r'iconUrl';
       yield serializers.serialize(
         object.iconUrl,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.iconDarkUrl != null) {
       yield r'iconDarkUrl';
       yield serializers.serialize(
         object.iconDarkUrl,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'disableWatermark';
@@ -289,33 +289,29 @@ class _$BrandingSettingBrandingSettingWriteSerializer implements PrimitiveSerial
         case r'logoUrl':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.logoUrl = valueDes;
           break;
         case r'logoDarkUrl':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.logoDarkUrl = valueDes;
           break;
         case r'iconUrl':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.iconUrl = valueDes;
           break;
         case r'iconDarkUrl':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.iconDarkUrl = valueDes;
           break;
         case r'disableWatermark':

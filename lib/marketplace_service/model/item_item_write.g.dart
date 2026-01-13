@@ -28,7 +28,7 @@ class _$ItemItemWrite extends ItemItemWrite {
   @override
   final DateTime beginDate;
   @override
-  final String? endDate;
+  final DateTime? endDate;
 
   factory _$ItemItemWrite([void Function(ItemItemWriteBuilder)? updates]) =>
       (new ItemItemWriteBuilder()..update(updates))._build();
@@ -162,9 +162,9 @@ class ItemItemWriteBuilder
   DateTime? get beginDate => _$this._beginDate;
   set beginDate(DateTime? beginDate) => _$this._beginDate = beginDate;
 
-  String? _endDate;
-  String? get endDate => _$this._endDate;
-  set endDate(String? endDate) => _$this._endDate = endDate;
+  DateTime? _endDate;
+  DateTime? get endDate => _$this._endDate;
+  set endDate(DateTime? endDate) => _$this._endDate = endDate;
 
   ItemItemWriteBuilder() {
     ItemItemWrite._defaults(this);

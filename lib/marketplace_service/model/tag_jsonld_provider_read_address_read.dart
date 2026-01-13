@@ -3,13 +3,14 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'tag_jsonld_provider_read_address_read.g.dart';
 
-/// 
+/// TagJsonldProviderReadAddressRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -18,16 +19,7 @@ part 'tag_jsonld_provider_read_address_read.g.dart';
 /// * [id] 
 /// * [label] 
 @BuiltValue()
-abstract class TagJsonldProviderReadAddressRead implements Built<TagJsonldProviderReadAddressRead, TagJsonldProviderReadAddressReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AddressJsonldProviderReadAddressReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
+abstract class TagJsonldProviderReadAddressRead implements HydraItemBaseSchema, Built<TagJsonldProviderReadAddressRead, TagJsonldProviderReadAddressReadBuilder> {
   @BuiltValueField(wireName: r'id')
   int? get id;
 
@@ -61,21 +53,7 @@ class _$TagJsonldProviderReadAddressReadSerializer implements PrimitiveSerialize
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.id != null) {
@@ -88,6 +66,16 @@ class _$TagJsonldProviderReadAddressReadSerializer implements PrimitiveSerialize
     yield r'label';
     yield serializers.serialize(
       object.label,
+      specifiedType: const FullType(String),
+    );
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
       specifiedType: const FullType(String),
     );
   }
@@ -116,23 +104,9 @@ class _$TagJsonldProviderReadAddressReadSerializer implements PrimitiveSerialize
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-          ) as AddressJsonldProviderReadAddressReadContext;
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
           result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -147,6 +121,20 @@ class _$TagJsonldProviderReadAddressReadSerializer implements PrimitiveSerialize
             specifiedType: const FullType(String),
           ) as String;
           result.label = valueDes;
+          break;
+        case r'@id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atId = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
           break;
         default:
           unhandled.add(key);

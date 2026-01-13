@@ -3,14 +3,15 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/core_service/model/hydra_item_base_schema.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_read_context.dart';
+import 'package:so_dart_sdk/core_service/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'device_jsonld_device_read.g.dart';
 
-/// 
+/// DeviceJsonldDeviceRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -20,25 +21,16 @@ part 'device_jsonld_device_read.g.dart';
 /// * [subscriber] 
 /// * [source_] 
 @BuiltValue()
-abstract class DeviceJsonldDeviceRead implements Built<DeviceJsonldDeviceRead, DeviceJsonldDeviceReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  BrandingSettingJsonldBrandingSettingReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'token')
-  String get token;
-
+abstract class DeviceJsonldDeviceRead implements HydraItemBaseSchema, Built<DeviceJsonldDeviceRead, DeviceJsonldDeviceReadBuilder> {
   @BuiltValueField(wireName: r'subscriber')
   String get subscriber;
 
   @BuiltValueField(wireName: r'source')
   DeviceJsonldDeviceReadSource_Enum get source_;
   // enum source_Enum {  web,  ios,  android,  };
+
+  @BuiltValueField(wireName: r'token')
+  String get token;
 
   DeviceJsonldDeviceRead._();
 
@@ -63,41 +55,37 @@ class _$DeviceJsonldDeviceReadSerializer implements PrimitiveSerializer<DeviceJs
     DeviceJsonldDeviceRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'source';
+    yield serializers.serialize(
+      object.source_,
+      specifiedType: const FullType(DeviceJsonldDeviceReadSource_Enum),
+    );
     if (object.atContext != null) {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(BrandingSettingJsonldBrandingSettingReadContext),
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    yield r'token';
-    yield serializers.serialize(
-      object.token,
-      specifiedType: const FullType(String),
-    );
     yield r'subscriber';
     yield serializers.serialize(
       object.subscriber,
       specifiedType: const FullType(String),
     );
-    yield r'source';
+    yield r'@id';
     yield serializers.serialize(
-      object.source_,
-      specifiedType: const FullType(DeviceJsonldDeviceReadSource_Enum),
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
+    yield r'token';
+    yield serializers.serialize(
+      object.token,
+      specifiedType: const FullType(String),
     );
   }
 
@@ -122,12 +110,26 @@ class _$DeviceJsonldDeviceReadSerializer implements PrimitiveSerializer<DeviceJs
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'source':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DeviceJsonldDeviceReadSource_Enum),
+          ) as DeviceJsonldDeviceReadSource_Enum;
+          result.source_ = valueDes;
+          break;
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BrandingSettingJsonldBrandingSettingReadContext),
-          ) as BrandingSettingJsonldBrandingSettingReadContext;
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
           result.atContext.replace(valueDes);
+          break;
+        case r'subscriber':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.subscriber = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -149,20 +151,6 @@ class _$DeviceJsonldDeviceReadSerializer implements PrimitiveSerializer<DeviceJs
             specifiedType: const FullType(String),
           ) as String;
           result.token = valueDes;
-          break;
-        case r'subscriber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.subscriber = valueDes;
-          break;
-        case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DeviceJsonldDeviceReadSource_Enum),
-          ) as DeviceJsonldDeviceReadSource_Enum;
-          result.source_ = valueDes;
           break;
         default:
           unhandled.add(key);

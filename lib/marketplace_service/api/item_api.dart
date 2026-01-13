@@ -11,10 +11,13 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/marketplace_service/api_util.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_items_get_collection200_response.dart';
-import 'package:so_dart_sdk/marketplace_service/model/item_item_read_service_read.dart';
+import 'package:so_dart_sdk/marketplace_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/marketplace_service/model/constraint_violation_jsonld.dart';
+import 'package:so_dart_sdk/marketplace_service/model/error.dart';
+import 'package:so_dart_sdk/marketplace_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_item_write.dart';
+import 'package:so_dart_sdk/marketplace_service/model/item_item_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_jsonld_item_read_service_read.dart';
-import 'package:so_dart_sdk/marketplace_service/model/item_jsonld_item_write.dart';
 
 class ItemApi {
 
@@ -54,7 +57,6 @@ class ItemApi {
   /// * [updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketAfterRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
-  /// * [acceptLanguage] - Item Accept-Language
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -91,7 +93,6 @@ class ItemApi {
     String? updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? updatedAtLeftSquareBracketAfterRightSquareBracket,
     String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
-    String? acceptLanguage,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -103,7 +104,6 @@ class ItemApi {
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{
@@ -194,7 +194,6 @@ class ItemApi {
   ///
   /// Parameters:
   /// * [id] - Item identifier
-  /// * [acceptLanguage] - Item Accept-Language
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -206,7 +205,6 @@ class ItemApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ItemJsonldItemReadServiceRead>> apiItemsGetItem({ 
     required String id,
-    String? acceptLanguage,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -218,7 +216,6 @@ class ItemApi {
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{
@@ -279,8 +276,7 @@ class ItemApi {
   ///
   /// Parameters:
   /// * [id] - Item identifier
-  /// * [itemItemWrite] - The updated Item resource
-  /// * [acceptLanguage] - Item Accept-Language
+  /// * [itemItemWriteJsonMergePatch] - The updated Item resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -292,8 +288,7 @@ class ItemApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ItemJsonldItemReadServiceRead>> apiItemsPatchItem({ 
     required String id,
-    required ItemItemWrite itemItemWrite,
-    String? acceptLanguage,
+    required ItemItemWriteJsonMergePatch itemItemWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -305,7 +300,6 @@ class ItemApi {
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{
@@ -326,8 +320,8 @@ class ItemApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ItemItemWrite);
-      _bodyData = _serializers.serialize(itemItemWrite, specifiedType: _type);
+      const _type = FullType(ItemItemWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(itemItemWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -385,8 +379,7 @@ class ItemApi {
   /// Creates a Item resource.
   ///
   /// Parameters:
-  /// * [itemJsonldItemWrite] - The new Item resource
-  /// * [acceptLanguage] - Item Accept-Language
+  /// * [itemItemWrite] - The new Item resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -397,8 +390,7 @@ class ItemApi {
   /// Returns a [Future] containing a [Response] with a [ItemJsonldItemReadServiceRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ItemJsonldItemReadServiceRead>> apiItemsPostItem({ 
-    required ItemJsonldItemWrite itemJsonldItemWrite,
-    String? acceptLanguage,
+    required ItemItemWrite itemItemWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -410,7 +402,6 @@ class ItemApi {
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{
@@ -424,15 +415,15 @@ class ItemApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ItemJsonldItemWrite);
-      _bodyData = _serializers.serialize(itemJsonldItemWrite, specifiedType: _type);
+      const _type = FullType(ItemItemWrite);
+      _bodyData = _serializers.serialize(itemItemWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -517,7 +508,6 @@ class ItemApi {
   /// * [updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketAfterRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
-  /// * [acceptLanguage] - Item Accept-Language
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -555,7 +545,6 @@ class ItemApi {
     String? updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? updatedAtLeftSquareBracketAfterRightSquareBracket,
     String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
-    String? acceptLanguage,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -567,7 +556,6 @@ class ItemApi {
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{

@@ -6,6 +6,38 @@ part of 'opportunity_opportunity_create_lead.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const OpportunityOpportunityCreateLeadOriginEnum
+    _$opportunityOpportunityCreateLeadOriginEnum_number1 =
+    const OpportunityOpportunityCreateLeadOriginEnum._('number1');
+const OpportunityOpportunityCreateLeadOriginEnum
+    _$opportunityOpportunityCreateLeadOriginEnum_number2 =
+    const OpportunityOpportunityCreateLeadOriginEnum._('number2');
+const OpportunityOpportunityCreateLeadOriginEnum
+    _$opportunityOpportunityCreateLeadOriginEnum_number3 =
+    const OpportunityOpportunityCreateLeadOriginEnum._('number3');
+
+OpportunityOpportunityCreateLeadOriginEnum
+    _$opportunityOpportunityCreateLeadOriginEnumValueOf(String name) {
+  switch (name) {
+    case 'number1':
+      return _$opportunityOpportunityCreateLeadOriginEnum_number1;
+    case 'number2':
+      return _$opportunityOpportunityCreateLeadOriginEnum_number2;
+    case 'number3':
+      return _$opportunityOpportunityCreateLeadOriginEnum_number3;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<OpportunityOpportunityCreateLeadOriginEnum>
+    _$opportunityOpportunityCreateLeadOriginEnumValues = new BuiltSet<
+        OpportunityOpportunityCreateLeadOriginEnum>(const <OpportunityOpportunityCreateLeadOriginEnum>[
+  _$opportunityOpportunityCreateLeadOriginEnum_number1,
+  _$opportunityOpportunityCreateLeadOriginEnum_number2,
+  _$opportunityOpportunityCreateLeadOriginEnum_number3,
+]);
+
 const OpportunityOpportunityCreateLeadTypeEnum
     _$opportunityOpportunityCreateLeadTypeEnum_FULL_DESKTOP =
     const OpportunityOpportunityCreateLeadTypeEnum._('FULL_DESKTOP');
@@ -56,9 +88,46 @@ final BuiltSet<OpportunityOpportunityCreateLeadTypeEnum>
   _$opportunityOpportunityCreateLeadTypeEnum_DOMICILIATION,
 ]);
 
+Serializer<OpportunityOpportunityCreateLeadOriginEnum>
+    _$opportunityOpportunityCreateLeadOriginEnumSerializer =
+    new _$OpportunityOpportunityCreateLeadOriginEnumSerializer();
 Serializer<OpportunityOpportunityCreateLeadTypeEnum>
     _$opportunityOpportunityCreateLeadTypeEnumSerializer =
     new _$OpportunityOpportunityCreateLeadTypeEnumSerializer();
+
+class _$OpportunityOpportunityCreateLeadOriginEnumSerializer
+    implements PrimitiveSerializer<OpportunityOpportunityCreateLeadOriginEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'number1': 1,
+    'number2': 2,
+    'number3': 3,
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    1: 'number1',
+    2: 'number2',
+    3: 'number3',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    OpportunityOpportunityCreateLeadOriginEnum
+  ];
+  @override
+  final String wireName = 'OpportunityOpportunityCreateLeadOriginEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          OpportunityOpportunityCreateLeadOriginEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  OpportunityOpportunityCreateLeadOriginEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      OpportunityOpportunityCreateLeadOriginEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
 
 class _$OpportunityOpportunityCreateLeadTypeEnumSerializer
     implements PrimitiveSerializer<OpportunityOpportunityCreateLeadTypeEnum> {
@@ -103,7 +172,7 @@ class _$OpportunityOpportunityCreateLeadTypeEnumSerializer
 class _$OpportunityOpportunityCreateLead
     extends OpportunityOpportunityCreateLead {
   @override
-  final int? origin;
+  final OpportunityOpportunityCreateLeadOriginEnum origin;
   @override
   final String? commitment;
   @override
@@ -111,18 +180,18 @@ class _$OpportunityOpportunityCreateLead
   @override
   final EnterpriseOpportunityCreateLead client;
   @override
-  final IndividualOpportunityCreateLeadJsonMergePatch? owner;
+  final IndividualOpportunityCreateLead? owner;
   @override
   final OpportunityOpportunityCreateLeadTypeEnum type;
   @override
-  final String? begin;
+  final DateTime? begin;
 
   factory _$OpportunityOpportunityCreateLead(
           [void Function(OpportunityOpportunityCreateLeadBuilder)? updates]) =>
       (new OpportunityOpportunityCreateLeadBuilder()..update(updates))._build();
 
   _$OpportunityOpportunityCreateLead._(
-      {this.origin,
+      {required this.origin,
       this.commitment,
       this.center,
       required this.client,
@@ -130,6 +199,8 @@ class _$OpportunityOpportunityCreateLead
       required this.type,
       this.begin})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        origin, r'OpportunityOpportunityCreateLead', 'origin');
     BuiltValueNullFieldError.checkNotNull(
         client, r'OpportunityOpportunityCreateLead', 'client');
     BuiltValueNullFieldError.checkNotNull(
@@ -192,9 +263,10 @@ class OpportunityOpportunityCreateLeadBuilder
             OpportunityOpportunityCreateLeadBuilder> {
   _$OpportunityOpportunityCreateLead? _$v;
 
-  int? _origin;
-  int? get origin => _$this._origin;
-  set origin(int? origin) => _$this._origin = origin;
+  OpportunityOpportunityCreateLeadOriginEnum? _origin;
+  OpportunityOpportunityCreateLeadOriginEnum? get origin => _$this._origin;
+  set origin(OpportunityOpportunityCreateLeadOriginEnum? origin) =>
+      _$this._origin = origin;
 
   String? _commitment;
   String? get commitment => _$this._commitment;
@@ -210,11 +282,10 @@ class OpportunityOpportunityCreateLeadBuilder
   set client(EnterpriseOpportunityCreateLeadBuilder? client) =>
       _$this._client = client;
 
-  IndividualOpportunityCreateLeadJsonMergePatchBuilder? _owner;
-  IndividualOpportunityCreateLeadJsonMergePatchBuilder get owner =>
-      _$this._owner ??=
-          new IndividualOpportunityCreateLeadJsonMergePatchBuilder();
-  set owner(IndividualOpportunityCreateLeadJsonMergePatchBuilder? owner) =>
+  IndividualOpportunityCreateLeadBuilder? _owner;
+  IndividualOpportunityCreateLeadBuilder get owner =>
+      _$this._owner ??= new IndividualOpportunityCreateLeadBuilder();
+  set owner(IndividualOpportunityCreateLeadBuilder? owner) =>
       _$this._owner = owner;
 
   OpportunityOpportunityCreateLeadTypeEnum? _type;
@@ -222,9 +293,9 @@ class OpportunityOpportunityCreateLeadBuilder
   set type(OpportunityOpportunityCreateLeadTypeEnum? type) =>
       _$this._type = type;
 
-  String? _begin;
-  String? get begin => _$this._begin;
-  set begin(String? begin) => _$this._begin = begin;
+  DateTime? _begin;
+  DateTime? get begin => _$this._begin;
+  set begin(DateTime? begin) => _$this._begin = begin;
 
   OpportunityOpportunityCreateLeadBuilder() {
     OpportunityOpportunityCreateLead._defaults(this);
@@ -264,7 +335,8 @@ class OpportunityOpportunityCreateLeadBuilder
     try {
       _$result = _$v ??
           new _$OpportunityOpportunityCreateLead._(
-            origin: origin,
+            origin: BuiltValueNullFieldError.checkNotNull(
+                origin, r'OpportunityOpportunityCreateLead', 'origin'),
             commitment: commitment,
             center: center,
             client: client.build(),

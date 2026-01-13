@@ -12,7 +12,7 @@ import 'package:built_value/serializer.dart';
 
 part 'provider_provider_read_address_read.g.dart';
 
-/// 
+/// ProviderProviderReadAddressRead
 ///
 /// Properties:
 /// * [id] 
@@ -100,35 +100,35 @@ class _$ProviderProviderReadAddressReadSerializer implements PrimitiveSerializer
       yield r'description';
       yield serializers.serialize(
         object.description,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.link != null) {
       yield r'link';
       yield serializers.serialize(
         object.link,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.linkLabel != null) {
       yield r'linkLabel';
       yield serializers.serialize(
         object.linkLabel,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.phone != null) {
       yield r'phone';
       yield serializers.serialize(
         object.phone,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.imageLink != null) {
       yield r'imageLink';
       yield serializers.serialize(
         object.imageLink,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.items != null) {
@@ -195,41 +195,36 @@ class _$ProviderProviderReadAddressReadSerializer implements PrimitiveSerializer
         case r'description':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.description = valueDes;
           break;
         case r'link':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.link = valueDes;
           break;
         case r'linkLabel':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.linkLabel = valueDes;
           break;
         case r'phone':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.phone = valueDes;
           break;
         case r'imageLink':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.imageLink = valueDes;
           break;
         case r'items':

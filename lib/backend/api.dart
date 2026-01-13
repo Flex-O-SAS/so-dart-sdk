@@ -13,6 +13,8 @@ import 'package:so_dart_sdk/backend/api/center_api.dart';
 import 'package:so_dart_sdk/backend/api/commitment_api.dart';
 import 'package:so_dart_sdk/backend/api/company_api.dart';
 import 'package:so_dart_sdk/backend/api/contract_api.dart';
+import 'package:so_dart_sdk/backend/api/contract_service_api.dart';
+import 'package:so_dart_sdk/backend/api/contract_service_user_api.dart';
 import 'package:so_dart_sdk/backend/api/credit_api.dart';
 import 'package:so_dart_sdk/backend/api/domain_automapper_api.dart';
 import 'package:so_dart_sdk/backend/api/enterprise_api.dart';
@@ -26,8 +28,10 @@ import 'package:so_dart_sdk/backend/api/opportunity_api.dart';
 import 'package:so_dart_sdk/backend/api/rule_api.dart';
 import 'package:so_dart_sdk/backend/api/rule_variable_api.dart';
 import 'package:so_dart_sdk/backend/api/service_api.dart';
+import 'package:so_dart_sdk/backend/api/service_shape_api.dart';
 import 'package:so_dart_sdk/backend/api/service_type_api.dart';
 import 'package:so_dart_sdk/backend/api/staff_api.dart';
+import 'package:so_dart_sdk/backend/api/tag_api.dart';
 
 class SoDartSdk {
   static const String basePath = r'http://localhost';
@@ -105,6 +109,18 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   ContractApi getContractApi() {
     return ContractApi(dio, serializers);
+  }
+
+  /// Get ContractServiceApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ContractServiceApi getContractServiceApi() {
+    return ContractServiceApi(dio, serializers);
+  }
+
+  /// Get ContractServiceUserApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ContractServiceUserApi getContractServiceUserApi() {
+    return ContractServiceUserApi(dio, serializers);
   }
 
   /// Get CreditApi instance, base route and serializer can be overridden by a given but be careful,
@@ -185,6 +201,12 @@ class SoDartSdk {
     return ServiceApi(dio, serializers);
   }
 
+  /// Get ServiceShapeApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ServiceShapeApi getServiceShapeApi() {
+    return ServiceShapeApi(dio, serializers);
+  }
+
   /// Get ServiceTypeApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   ServiceTypeApi getServiceTypeApi() {
@@ -195,5 +217,11 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   StaffApi getStaffApi() {
     return StaffApi(dio, serializers);
+  }
+
+  /// Get TagApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  TagApi getTagApi() {
+    return TagApi(dio, serializers);
   }
 }

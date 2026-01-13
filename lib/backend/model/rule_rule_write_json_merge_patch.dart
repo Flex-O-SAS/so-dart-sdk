@@ -52,7 +52,7 @@ abstract class RuleRuleWriteJsonMergePatch implements Built<RuleRuleWriteJsonMer
   DateTime? get createdAt;
 
   @BuiltValueField(wireName: r'updatedAt')
-  String? get updatedAt;
+  DateTime? get updatedAt;
 
   RuleRuleWriteJsonMergePatch._();
 
@@ -140,7 +140,7 @@ class _$RuleRuleWriteJsonMergePatchSerializer implements PrimitiveSerializer<Rul
       yield r'updatedAt';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -226,9 +226,8 @@ class _$RuleRuleWriteJsonMergePatchSerializer implements PrimitiveSerializer<Rul
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.updatedAt = valueDes;
           break;
         default:

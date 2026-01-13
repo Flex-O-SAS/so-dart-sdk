@@ -163,7 +163,7 @@ class _$RuleRuleWrite extends RuleRuleWrite {
   @override
   final DateTime? createdAt;
   @override
-  final String? updatedAt;
+  final DateTime? updatedAt;
 
   factory _$RuleRuleWrite([void Function(RuleRuleWriteBuilder)? updates]) =>
       (new RuleRuleWriteBuilder()..update(updates))._build();
@@ -276,9 +276,9 @@ class RuleRuleWriteBuilder
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  String? _updatedAt;
-  String? get updatedAt => _$this._updatedAt;
-  set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   RuleRuleWriteBuilder() {
     RuleRuleWrite._defaults(this);

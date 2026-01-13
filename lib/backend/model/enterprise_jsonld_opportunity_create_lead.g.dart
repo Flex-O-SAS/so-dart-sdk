@@ -17,6 +17,8 @@ class _$EnterpriseJsonldOpportunityCreateLead
   @override
   final String? city;
   @override
+  final String? timezone;
+  @override
   final String? name;
   @override
   final String? mobile;
@@ -46,6 +48,7 @@ class _$EnterpriseJsonldOpportunityCreateLead
       this.country,
       this.address,
       this.city,
+      this.timezone,
       this.name,
       this.mobile,
       this.language,
@@ -80,6 +83,7 @@ class _$EnterpriseJsonldOpportunityCreateLead
         country == other.country &&
         address == other.address &&
         city == other.city &&
+        timezone == other.timezone &&
         name == other.name &&
         mobile == other.mobile &&
         language == other.language &&
@@ -98,6 +102,7 @@ class _$EnterpriseJsonldOpportunityCreateLead
     _$hash = $jc(_$hash, country.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jc(_$hash, city.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, mobile.hashCode);
     _$hash = $jc(_$hash, language.hashCode);
@@ -119,6 +124,7 @@ class _$EnterpriseJsonldOpportunityCreateLead
           ..add('country', country)
           ..add('address', address)
           ..add('city', city)
+          ..add('timezone', timezone)
           ..add('name', name)
           ..add('mobile', mobile)
           ..add('language', language)
@@ -154,6 +160,10 @@ class EnterpriseJsonldOpportunityCreateLeadBuilder
   String? _city;
   String? get city => _$this._city;
   set city(covariant String? city) => _$this._city = city;
+
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(covariant String? timezone) => _$this._timezone = timezone;
 
   String? _name;
   String? get name => _$this._name;
@@ -205,6 +215,7 @@ class EnterpriseJsonldOpportunityCreateLeadBuilder
       _country = $v.country;
       _address = $v.address;
       _city = $v.city;
+      _timezone = $v.timezone;
       _name = $v.name;
       _mobile = $v.mobile;
       _language = $v.language;
@@ -243,6 +254,7 @@ class EnterpriseJsonldOpportunityCreateLeadBuilder
             country: country,
             address: address,
             city: city,
+            timezone: timezone,
             name: name,
             mobile: mobile,
             language: language,

@@ -95,7 +95,7 @@ class _$RuleExecuteBookingDtoRuleExecuteBookingSerializer implements PrimitiveSe
       yield r'nbPerson';
       yield serializers.serialize(
         object.nbPerson,
-        specifiedType: const FullType.nullable(int),
+        specifiedType: const FullType(int),
       );
     }
     if (object.individual != null) {
@@ -144,7 +144,7 @@ class _$RuleExecuteBookingDtoRuleExecuteBookingSerializer implements PrimitiveSe
       yield r'message';
       yield serializers.serialize(
         object.message,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -187,9 +187,8 @@ class _$RuleExecuteBookingDtoRuleExecuteBookingSerializer implements PrimitiveSe
         case r'nbPerson':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(int),
+          ) as int;
           result.nbPerson = valueDes;
           break;
         case r'individual':
@@ -237,9 +236,8 @@ class _$RuleExecuteBookingDtoRuleExecuteBookingSerializer implements PrimitiveSe
         case r'message':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.message = valueDes;
           break;
         default:

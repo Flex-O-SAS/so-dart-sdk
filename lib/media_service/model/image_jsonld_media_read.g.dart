@@ -24,13 +24,13 @@ class _$ImageJsonldMediaRead extends ImageJsonldMediaRead {
   @override
   final String? mimeType;
   @override
-  final BuiltList<int>? dimensions;
+  final JsonObject? dimensions;
   @override
   final JsonObject? metadata;
   @override
-  final String? beginDate;
+  final DateTime? beginDate;
   @override
-  final String? endDate;
+  final DateTime? endDate;
 
   factory _$ImageJsonldMediaRead(
           [void Function(ImageJsonldMediaReadBuilder)? updates]) =>
@@ -154,23 +154,21 @@ class ImageJsonldMediaReadBuilder
   String? get mimeType => _$this._mimeType;
   set mimeType(String? mimeType) => _$this._mimeType = mimeType;
 
-  ListBuilder<int>? _dimensions;
-  ListBuilder<int> get dimensions =>
-      _$this._dimensions ??= new ListBuilder<int>();
-  set dimensions(ListBuilder<int>? dimensions) =>
-      _$this._dimensions = dimensions;
+  JsonObject? _dimensions;
+  JsonObject? get dimensions => _$this._dimensions;
+  set dimensions(JsonObject? dimensions) => _$this._dimensions = dimensions;
 
   JsonObject? _metadata;
   JsonObject? get metadata => _$this._metadata;
   set metadata(JsonObject? metadata) => _$this._metadata = metadata;
 
-  String? _beginDate;
-  String? get beginDate => _$this._beginDate;
-  set beginDate(String? beginDate) => _$this._beginDate = beginDate;
+  DateTime? _beginDate;
+  DateTime? get beginDate => _$this._beginDate;
+  set beginDate(DateTime? beginDate) => _$this._beginDate = beginDate;
 
-  String? _endDate;
-  String? get endDate => _$this._endDate;
-  set endDate(String? endDate) => _$this._endDate = endDate;
+  DateTime? _endDate;
+  DateTime? get endDate => _$this._endDate;
+  set endDate(DateTime? endDate) => _$this._endDate = endDate;
 
   ImageJsonldMediaReadBuilder() {
     ImageJsonldMediaRead._defaults(this);
@@ -187,7 +185,7 @@ class ImageJsonldMediaReadBuilder
       _filePath = $v.filePath;
       _size = $v.size;
       _mimeType = $v.mimeType;
-      _dimensions = $v.dimensions?.toBuilder();
+      _dimensions = $v.dimensions;
       _metadata = $v.metadata;
       _beginDate = $v.beginDate;
       _endDate = $v.endDate;
@@ -223,7 +221,7 @@ class ImageJsonldMediaReadBuilder
             filePath: filePath,
             size: size,
             mimeType: mimeType,
-            dimensions: _dimensions?.build(),
+            dimensions: dimensions,
             metadata: metadata,
             beginDate: beginDate,
             endDate: endDate,
@@ -233,9 +231,6 @@ class ImageJsonldMediaReadBuilder
       try {
         _$failedField = 'atContext';
         _atContext?.build();
-
-        _$failedField = 'dimensions';
-        _dimensions?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'ImageJsonldMediaRead', _$failedField, e.toString());

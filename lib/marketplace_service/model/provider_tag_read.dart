@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'provider_tag_read.g.dart';
 
-/// 
+/// ProviderTagRead
 ///
 /// Properties:
 /// * [id] 

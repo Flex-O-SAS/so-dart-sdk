@@ -11,12 +11,11 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/corporate/api_util.dart';
 import 'package:so_dart_sdk/corporate/model/api_appointments_get_collection200_response.dart';
-import 'package:so_dart_sdk/corporate/model/appointment_appointment_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_appointment_write.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_appointment_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read.dart';
-import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_write.dart';
-import 'package:so_dart_sdk/corporate/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/corporate/model/constraint_violation.dart';
+import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/corporate/model/error.dart';
 import 'package:so_dart_sdk/corporate/model/error_jsonld.dart';
 
@@ -101,7 +100,9 @@ class AppointmentApi {
   /// * [orderLeftSquareBracketBeginDateRightSquareBracket] - 
   /// * [orderLeftSquareBracketEndDateRightSquareBracket] - 
   /// * [type] - 
+  /// * [typeLeftSquareBracketRightSquareBracket] - 
   /// * [status] - 
+  /// * [statusLeftSquareBracketRightSquareBracket] - 
   /// * [cancellationDateLeftSquareBracketBeforeRightSquareBracket] - 
   /// * [cancellationDateLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [cancellationDateLeftSquareBracketAfterRightSquareBracket] - 
@@ -139,7 +140,9 @@ class AppointmentApi {
     String? orderLeftSquareBracketBeginDateRightSquareBracket = 'asc',
     String? orderLeftSquareBracketEndDateRightSquareBracket = 'asc',
     String? type,
+    BuiltList<String>? typeLeftSquareBracketRightSquareBracket,
     String? status,
+    BuiltList<String>? statusLeftSquareBracketRightSquareBracket,
     String? cancellationDateLeftSquareBracketBeforeRightSquareBracket,
     String? cancellationDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? cancellationDateLeftSquareBracketAfterRightSquareBracket,
@@ -195,7 +198,9 @@ class AppointmentApi {
       if (orderLeftSquareBracketBeginDateRightSquareBracket != null) r'order[beginDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketBeginDateRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketEndDateRightSquareBracket != null) r'order[endDate]': encodeQueryParameter(_serializers, orderLeftSquareBracketEndDateRightSquareBracket, const FullType(String)),
       if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
+      if (typeLeftSquareBracketRightSquareBracket != null) r'type[]': encodeCollectionQueryParameter<String>(_serializers, typeLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
+      if (statusLeftSquareBracketRightSquareBracket != null) r'status[]': encodeCollectionQueryParameter<String>(_serializers, statusLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (cancellationDateLeftSquareBracketBeforeRightSquareBracket != null) r'cancellationDate[before]': encodeQueryParameter(_serializers, cancellationDateLeftSquareBracketBeforeRightSquareBracket, const FullType(String)),
       if (cancellationDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'cancellationDate[strictly_before]': encodeQueryParameter(_serializers, cancellationDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (cancellationDateLeftSquareBracketAfterRightSquareBracket != null) r'cancellationDate[after]': encodeQueryParameter(_serializers, cancellationDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
@@ -336,7 +341,7 @@ class AppointmentApi {
   /// Creates a Appointment resource.
   ///
   /// Parameters:
-  /// * [appointmentJsonldAppointmentWrite] - The new Appointment resource
+  /// * [appointmentAppointmentWrite] - The new Appointment resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -347,7 +352,7 @@ class AppointmentApi {
   /// Returns a [Future] containing a [Response] with a [AppointmentJsonldAppointmentRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AppointmentJsonldAppointmentRead>> apiAppointmentsPostItem({ 
-    required AppointmentJsonldAppointmentWrite appointmentJsonldAppointmentWrite,
+    required AppointmentAppointmentWrite appointmentAppointmentWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -372,15 +377,15 @@ class AppointmentApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AppointmentJsonldAppointmentWrite);
-      _bodyData = _serializers.serialize(appointmentJsonldAppointmentWrite, specifiedType: _type);
+      const _type = FullType(AppointmentAppointmentWrite);
+      _bodyData = _serializers.serialize(appointmentAppointmentWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -439,7 +444,7 @@ class AppointmentApi {
   ///
   /// Parameters:
   /// * [id] - Appointment identifier
-  /// * [appointmentAppointmentWrite] - The updated Appointment resource
+  /// * [appointmentAppointmentWriteJsonMergePatch] - The updated Appointment resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -451,7 +456,7 @@ class AppointmentApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AppointmentJsonldAppointmentRead>> apiAppointmentsPutItem({ 
     required String id,
-    required AppointmentAppointmentWrite appointmentAppointmentWrite,
+    required AppointmentAppointmentWriteJsonMergePatch appointmentAppointmentWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -483,8 +488,8 @@ class AppointmentApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AppointmentAppointmentWrite);
-      _bodyData = _serializers.serialize(appointmentAppointmentWrite, specifiedType: _type);
+      const _type = FullType(AppointmentAppointmentWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(appointmentAppointmentWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

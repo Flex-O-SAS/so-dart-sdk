@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'address_provider_write_address_write.g.dart';
 
-/// 
+/// AddressProviderWriteAddressWrite
 ///
 /// Properties:
 /// * [id] 

@@ -9,33 +9,33 @@ part of 'provider_jsonld_provider_read_address_read.dart';
 class _$ProviderJsonldProviderReadAddressRead
     extends ProviderJsonldProviderReadAddressRead {
   @override
-  final AddressJsonldProviderReadAddressReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final int? id;
-  @override
-  final String name;
-  @override
-  final String? description;
-  @override
-  final String? link;
-  @override
   final String? linkLabel;
-  @override
-  final String? phone;
   @override
   final String? imageLink;
   @override
-  final BuiltList<ItemJsonldProviderReadAddressRead>? items;
-  @override
   final AddressJsonldProviderReadAddressRead address;
+  @override
+  final String? phone;
+  @override
+  final String name;
+  @override
+  final String? link;
+  @override
+  final String? description;
+  @override
+  final int? id;
   @override
   final bool isActive;
   @override
+  final BuiltList<ItemJsonldProviderReadAddressRead>? items;
+  @override
   final BuiltList<TagJsonldProviderReadAddressRead>? tags;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$ProviderJsonldProviderReadAddressRead(
           [void Function(ProviderJsonldProviderReadAddressReadBuilder)?
@@ -44,27 +44,31 @@ class _$ProviderJsonldProviderReadAddressRead
           ._build();
 
   _$ProviderJsonldProviderReadAddressRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.id,
-      required this.name,
-      this.description,
-      this.link,
-      this.linkLabel,
-      this.phone,
+      {this.linkLabel,
       this.imageLink,
-      this.items,
       required this.address,
+      this.phone,
+      required this.name,
+      this.link,
+      this.description,
+      this.id,
       required this.isActive,
-      this.tags})
+      this.items,
+      this.tags,
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        name, r'ProviderJsonldProviderReadAddressRead', 'name');
     BuiltValueNullFieldError.checkNotNull(
         address, r'ProviderJsonldProviderReadAddressRead', 'address');
     BuiltValueNullFieldError.checkNotNull(
+        name, r'ProviderJsonldProviderReadAddressRead', 'name');
+    BuiltValueNullFieldError.checkNotNull(
         isActive, r'ProviderJsonldProviderReadAddressRead', 'isActive');
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'ProviderJsonldProviderReadAddressRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'ProviderJsonldProviderReadAddressRead', 'atType');
   }
 
   @override
@@ -81,39 +85,39 @@ class _$ProviderJsonldProviderReadAddressRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ProviderJsonldProviderReadAddressRead &&
+        linkLabel == other.linkLabel &&
+        imageLink == other.imageLink &&
+        address == other.address &&
+        phone == other.phone &&
+        name == other.name &&
+        link == other.link &&
+        description == other.description &&
+        id == other.id &&
+        isActive == other.isActive &&
+        items == other.items &&
+        tags == other.tags &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        id == other.id &&
-        name == other.name &&
-        description == other.description &&
-        link == other.link &&
-        linkLabel == other.linkLabel &&
-        phone == other.phone &&
-        imageLink == other.imageLink &&
-        items == other.items &&
-        address == other.address &&
-        isActive == other.isActive &&
-        tags == other.tags;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, linkLabel.hashCode);
+    _$hash = $jc(_$hash, imageLink.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, link.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, isActive.hashCode);
+    _$hash = $jc(_$hash, items.hashCode);
+    _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, link.hashCode);
-    _$hash = $jc(_$hash, linkLabel.hashCode);
-    _$hash = $jc(_$hash, phone.hashCode);
-    _$hash = $jc(_$hash, imageLink.hashCode);
-    _$hash = $jc(_$hash, items.hashCode);
-    _$hash = $jc(_$hash, address.hashCode);
-    _$hash = $jc(_$hash, isActive.hashCode);
-    _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -122,20 +126,20 @@ class _$ProviderJsonldProviderReadAddressRead
   String toString() {
     return (newBuiltValueToStringHelper(
             r'ProviderJsonldProviderReadAddressRead')
+          ..add('linkLabel', linkLabel)
+          ..add('imageLink', imageLink)
+          ..add('address', address)
+          ..add('phone', phone)
+          ..add('name', name)
+          ..add('link', link)
+          ..add('description', description)
+          ..add('id', id)
+          ..add('isActive', isActive)
+          ..add('items', items)
+          ..add('tags', tags)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('id', id)
-          ..add('name', name)
-          ..add('description', description)
-          ..add('link', link)
-          ..add('linkLabel', linkLabel)
-          ..add('phone', phone)
-          ..add('imageLink', imageLink)
-          ..add('items', items)
-          ..add('address', address)
-          ..add('isActive', isActive)
-          ..add('tags', tags))
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -143,74 +147,74 @@ class _$ProviderJsonldProviderReadAddressRead
 class ProviderJsonldProviderReadAddressReadBuilder
     implements
         Builder<ProviderJsonldProviderReadAddressRead,
-            ProviderJsonldProviderReadAddressReadBuilder> {
+            ProviderJsonldProviderReadAddressReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$ProviderJsonldProviderReadAddressRead? _$v;
-
-  AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
-  AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new AddressJsonldProviderReadAddressReadContextBuilder();
-  set atContext(
-          AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  String? _link;
-  String? get link => _$this._link;
-  set link(String? link) => _$this._link = link;
 
   String? _linkLabel;
   String? get linkLabel => _$this._linkLabel;
-  set linkLabel(String? linkLabel) => _$this._linkLabel = linkLabel;
-
-  String? _phone;
-  String? get phone => _$this._phone;
-  set phone(String? phone) => _$this._phone = phone;
+  set linkLabel(covariant String? linkLabel) => _$this._linkLabel = linkLabel;
 
   String? _imageLink;
   String? get imageLink => _$this._imageLink;
-  set imageLink(String? imageLink) => _$this._imageLink = imageLink;
-
-  ListBuilder<ItemJsonldProviderReadAddressRead>? _items;
-  ListBuilder<ItemJsonldProviderReadAddressRead> get items =>
-      _$this._items ??= new ListBuilder<ItemJsonldProviderReadAddressRead>();
-  set items(ListBuilder<ItemJsonldProviderReadAddressRead>? items) =>
-      _$this._items = items;
+  set imageLink(covariant String? imageLink) => _$this._imageLink = imageLink;
 
   AddressJsonldProviderReadAddressReadBuilder? _address;
   AddressJsonldProviderReadAddressReadBuilder get address =>
       _$this._address ??= new AddressJsonldProviderReadAddressReadBuilder();
-  set address(AddressJsonldProviderReadAddressReadBuilder? address) =>
+  set address(covariant AddressJsonldProviderReadAddressReadBuilder? address) =>
       _$this._address = address;
+
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(covariant String? phone) => _$this._phone = phone;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  String? _link;
+  String? get link => _$this._link;
+  set link(covariant String? link) => _$this._link = link;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
 
   bool? _isActive;
   bool? get isActive => _$this._isActive;
-  set isActive(bool? isActive) => _$this._isActive = isActive;
+  set isActive(covariant bool? isActive) => _$this._isActive = isActive;
+
+  ListBuilder<ItemJsonldProviderReadAddressRead>? _items;
+  ListBuilder<ItemJsonldProviderReadAddressRead> get items =>
+      _$this._items ??= new ListBuilder<ItemJsonldProviderReadAddressRead>();
+  set items(covariant ListBuilder<ItemJsonldProviderReadAddressRead>? items) =>
+      _$this._items = items;
 
   ListBuilder<TagJsonldProviderReadAddressRead>? _tags;
   ListBuilder<TagJsonldProviderReadAddressRead> get tags =>
       _$this._tags ??= new ListBuilder<TagJsonldProviderReadAddressRead>();
-  set tags(ListBuilder<TagJsonldProviderReadAddressRead>? tags) =>
+  set tags(covariant ListBuilder<TagJsonldProviderReadAddressRead>? tags) =>
       _$this._tags = tags;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   ProviderJsonldProviderReadAddressReadBuilder() {
     ProviderJsonldProviderReadAddressRead._defaults(this);
@@ -219,27 +223,27 @@ class ProviderJsonldProviderReadAddressReadBuilder
   ProviderJsonldProviderReadAddressReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _linkLabel = $v.linkLabel;
+      _imageLink = $v.imageLink;
+      _address = $v.address.toBuilder();
+      _phone = $v.phone;
+      _name = $v.name;
+      _link = $v.link;
+      _description = $v.description;
+      _id = $v.id;
+      _isActive = $v.isActive;
+      _items = $v.items?.toBuilder();
+      _tags = $v.tags?.toBuilder();
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _id = $v.id;
-      _name = $v.name;
-      _description = $v.description;
-      _link = $v.link;
-      _linkLabel = $v.linkLabel;
-      _phone = $v.phone;
-      _imageLink = $v.imageLink;
-      _items = $v.items?.toBuilder();
-      _address = $v.address.toBuilder();
-      _isActive = $v.isActive;
-      _tags = $v.tags?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(ProviderJsonldProviderReadAddressRead other) {
+  void replace(covariant ProviderJsonldProviderReadAddressRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ProviderJsonldProviderReadAddressRead;
   }
@@ -258,36 +262,37 @@ class ProviderJsonldProviderReadAddressReadBuilder
     try {
       _$result = _$v ??
           new _$ProviderJsonldProviderReadAddressRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            id: id,
+            linkLabel: linkLabel,
+            imageLink: imageLink,
+            address: address.build(),
+            phone: phone,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'ProviderJsonldProviderReadAddressRead', 'name'),
-            description: description,
             link: link,
-            linkLabel: linkLabel,
-            phone: phone,
-            imageLink: imageLink,
-            items: _items?.build(),
-            address: address.build(),
+            description: description,
+            id: id,
             isActive: BuiltValueNullFieldError.checkNotNull(
                 isActive, r'ProviderJsonldProviderReadAddressRead', 'isActive'),
+            items: _items?.build(),
             tags: _tags?.build(),
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'ProviderJsonldProviderReadAddressRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'ProviderJsonldProviderReadAddressRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-
-        _$failedField = 'items';
-        _items?.build();
         _$failedField = 'address';
         address.build();
 
+        _$failedField = 'items';
+        _items?.build();
         _$failedField = 'tags';
         _tags?.build();
+        _$failedField = 'atContext';
+        _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'ProviderJsonldProviderReadAddressRead',

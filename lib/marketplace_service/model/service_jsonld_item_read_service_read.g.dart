@@ -9,11 +9,7 @@ part of 'service_jsonld_item_read_service_read.dart';
 class _$ServiceJsonldItemReadServiceRead
     extends ServiceJsonldItemReadServiceRead {
   @override
-  final AddressJsonldProviderReadAddressReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
+  final String? imageLink;
   @override
   final int? id;
   @override
@@ -21,21 +17,30 @@ class _$ServiceJsonldItemReadServiceRead
   @override
   final int? prioritization;
   @override
-  final String? imageLink;
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$ServiceJsonldItemReadServiceRead(
           [void Function(ServiceJsonldItemReadServiceReadBuilder)? updates]) =>
       (new ServiceJsonldItemReadServiceReadBuilder()..update(updates))._build();
 
   _$ServiceJsonldItemReadServiceRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
+      {this.imageLink,
       this.id,
       this.label,
       this.prioritization,
-      this.imageLink})
-      : super._();
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'ServiceJsonldItemReadServiceRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'ServiceJsonldItemReadServiceRead', 'atType');
+  }
 
   @override
   ServiceJsonldItemReadServiceRead rebuild(
@@ -50,25 +55,25 @@ class _$ServiceJsonldItemReadServiceRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ServiceJsonldItemReadServiceRead &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
+        imageLink == other.imageLink &&
         id == other.id &&
         label == other.label &&
         prioritization == other.prioritization &&
-        imageLink == other.imageLink;
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atContext.hashCode);
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
+    _$hash = $jc(_$hash, imageLink.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, label.hashCode);
     _$hash = $jc(_$hash, prioritization.hashCode);
-    _$hash = $jc(_$hash, imageLink.hashCode);
+    _$hash = $jc(_$hash, atContext.hashCode);
+    _$hash = $jc(_$hash, atId.hashCode);
+    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -76,13 +81,13 @@ class _$ServiceJsonldItemReadServiceRead
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ServiceJsonldItemReadServiceRead')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
+          ..add('imageLink', imageLink)
           ..add('id', id)
           ..add('label', label)
           ..add('prioritization', prioritization)
-          ..add('imageLink', imageLink))
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -90,41 +95,40 @@ class _$ServiceJsonldItemReadServiceRead
 class ServiceJsonldItemReadServiceReadBuilder
     implements
         Builder<ServiceJsonldItemReadServiceRead,
-            ServiceJsonldItemReadServiceReadBuilder> {
+            ServiceJsonldItemReadServiceReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$ServiceJsonldItemReadServiceRead? _$v;
 
-  AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
-  AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new AddressJsonldProviderReadAddressReadContextBuilder();
-  set atContext(
-          AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
+  String? _imageLink;
+  String? get imageLink => _$this._imageLink;
+  set imageLink(covariant String? imageLink) => _$this._imageLink = imageLink;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  String? _label;
+  String? get label => _$this._label;
+  set label(covariant String? label) => _$this._label = label;
+
+  int? _prioritization;
+  int? get prioritization => _$this._prioritization;
+  set prioritization(covariant int? prioritization) =>
+      _$this._prioritization = prioritization;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
   String? _atType;
   String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _label;
-  String? get label => _$this._label;
-  set label(String? label) => _$this._label = label;
-
-  int? _prioritization;
-  int? get prioritization => _$this._prioritization;
-  set prioritization(int? prioritization) =>
-      _$this._prioritization = prioritization;
-
-  String? _imageLink;
-  String? get imageLink => _$this._imageLink;
-  set imageLink(String? imageLink) => _$this._imageLink = imageLink;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   ServiceJsonldItemReadServiceReadBuilder() {
     ServiceJsonldItemReadServiceRead._defaults(this);
@@ -133,20 +137,20 @@ class ServiceJsonldItemReadServiceReadBuilder
   ServiceJsonldItemReadServiceReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atContext = $v.atContext?.toBuilder();
-      _atId = $v.atId;
-      _atType = $v.atType;
+      _imageLink = $v.imageLink;
       _id = $v.id;
       _label = $v.label;
       _prioritization = $v.prioritization;
-      _imageLink = $v.imageLink;
+      _atContext = $v.atContext?.toBuilder();
+      _atId = $v.atId;
+      _atType = $v.atType;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(ServiceJsonldItemReadServiceRead other) {
+  void replace(covariant ServiceJsonldItemReadServiceRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ServiceJsonldItemReadServiceRead;
   }
@@ -164,13 +168,15 @@ class ServiceJsonldItemReadServiceReadBuilder
     try {
       _$result = _$v ??
           new _$ServiceJsonldItemReadServiceRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
+            imageLink: imageLink,
             id: id,
             label: label,
             prioritization: prioritization,
-            imageLink: imageLink,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'ServiceJsonldItemReadServiceRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'ServiceJsonldItemReadServiceRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

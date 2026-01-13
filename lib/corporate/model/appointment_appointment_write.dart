@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'appointment_appointment_write.g.dart';
 
-/// 
+/// AppointmentAppointmentWrite
 ///
 /// Properties:
 /// * [organiser] 
@@ -48,7 +48,7 @@ abstract class AppointmentAppointmentWrite implements Built<AppointmentAppointme
   // enum statusEnum {  scheduled,  cancelled,  done,  };
 
   @BuiltValueField(wireName: r'cancellationDate')
-  String? get cancellationDate;
+  DateTime? get cancellationDate;
 
   @BuiltValueField(wireName: r'cancellationReason')
   String? get cancellationReason;
@@ -97,7 +97,7 @@ class _$AppointmentAppointmentWriteSerializer implements PrimitiveSerializer<App
       yield r'staff';
       yield serializers.serialize(
         object.staff,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'site';
@@ -114,7 +114,7 @@ class _$AppointmentAppointmentWriteSerializer implements PrimitiveSerializer<App
       yield r'description';
       yield serializers.serialize(
         object.description,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'status';
@@ -126,14 +126,14 @@ class _$AppointmentAppointmentWriteSerializer implements PrimitiveSerializer<App
       yield r'cancellationDate';
       yield serializers.serialize(
         object.cancellationDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
     if (object.cancellationReason != null) {
       yield r'cancellationReason';
       yield serializers.serialize(
         object.cancellationReason,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'beginDate';
@@ -157,7 +157,7 @@ class _$AppointmentAppointmentWriteSerializer implements PrimitiveSerializer<App
       yield r'title';
       yield serializers.serialize(
         object.title,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -193,9 +193,8 @@ class _$AppointmentAppointmentWriteSerializer implements PrimitiveSerializer<App
         case r'staff':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.staff = valueDes;
           break;
         case r'site':
@@ -215,9 +214,8 @@ class _$AppointmentAppointmentWriteSerializer implements PrimitiveSerializer<App
         case r'description':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.description = valueDes;
           break;
         case r'status':
@@ -230,17 +228,15 @@ class _$AppointmentAppointmentWriteSerializer implements PrimitiveSerializer<App
         case r'cancellationDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.cancellationDate = valueDes;
           break;
         case r'cancellationReason':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.cancellationReason = valueDes;
           break;
         case r'beginDate':
@@ -267,9 +263,8 @@ class _$AppointmentAppointmentWriteSerializer implements PrimitiveSerializer<App
         case r'title':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.title = valueDes;
           break;
         default:

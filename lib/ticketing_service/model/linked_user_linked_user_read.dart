@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'linked_user_linked_user_read.g.dart';
 
-/// 
+/// LinkedUserLinkedUserRead
 ///
 /// Properties:
 /// * [id] 

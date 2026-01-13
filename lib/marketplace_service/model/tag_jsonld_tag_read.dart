@@ -3,35 +3,30 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_tag_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/service_jsonld_tag_read.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'tag_jsonld_tag_read.g.dart';
 
-/// 
+/// TagJsonldTagRead
 ///
 /// Properties:
+/// * [atContext] 
 /// * [atId] 
 /// * [atType] 
-/// * [atContext] 
 /// * [id] 
 /// * [label] 
 /// * [providers] 
 /// * [service] 
 @BuiltValue()
-abstract class TagJsonldTagRead implements Built<TagJsonldTagRead, TagJsonldTagReadBuilder> {
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'@context')
-  AddressJsonldProviderReadAddressReadContext? get atContext;
+abstract class TagJsonldTagRead implements HydraItemBaseSchema, Built<TagJsonldTagRead, TagJsonldTagReadBuilder> {
+  @BuiltValueField(wireName: r'service')
+  ServiceJsonldTagRead get service;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -41,9 +36,6 @@ abstract class TagJsonldTagRead implements Built<TagJsonldTagRead, TagJsonldTagR
 
   @BuiltValueField(wireName: r'providers')
   BuiltList<ProviderJsonldTagRead> get providers;
-
-  @BuiltValueField(wireName: r'service')
-  ServiceJsonldTagRead get service;
 
   TagJsonldTagRead._();
 
@@ -68,25 +60,21 @@ class _$TagJsonldTagReadSerializer implements PrimitiveSerializer<TagJsonldTagRe
     TagJsonldTagRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'service';
+    yield serializers.serialize(
+      object.service,
+      specifiedType: const FullType(ServiceJsonldTagRead),
+    );
     if (object.atContext != null) {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.id != null) {
@@ -101,15 +89,15 @@ class _$TagJsonldTagReadSerializer implements PrimitiveSerializer<TagJsonldTagRe
       object.label,
       specifiedType: const FullType(String),
     );
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
     yield r'providers';
     yield serializers.serialize(
       object.providers,
       specifiedType: const FullType(BuiltList, [FullType(ProviderJsonldTagRead)]),
-    );
-    yield r'service';
-    yield serializers.serialize(
-      object.service,
-      specifiedType: const FullType(ServiceJsonldTagRead),
     );
   }
 
@@ -141,18 +129,18 @@ class _$TagJsonldTagReadSerializer implements PrimitiveSerializer<TagJsonldTagRe
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'service':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
+            specifiedType: const FullType(ServiceJsonldTagRead),
+          ) as ServiceJsonldTagRead;
+          result.service.replace(valueDes);
           break;
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-          ) as AddressJsonldProviderReadAddressReadContext;
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
           result.atContext.replace(valueDes);
           break;
         case r'id':
@@ -169,19 +157,19 @@ class _$TagJsonldTagReadSerializer implements PrimitiveSerializer<TagJsonldTagRe
           ) as String;
           result.label = valueDes;
           break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
+          break;
         case r'providers':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(ProviderJsonldTagRead)]),
           ) as BuiltList<ProviderJsonldTagRead>;
           result.providers.replace(valueDes);
-          break;
-        case r'service':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ServiceJsonldTagRead),
-          ) as ServiceJsonldTagRead;
-          result.service.replace(valueDes);
           break;
         default:
           unhandled.add(key);

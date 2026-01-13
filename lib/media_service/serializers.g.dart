@@ -31,13 +31,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ImageJsonldMediaRead)]),
-          () => new ListBuilder<ImageJsonldMediaRead>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>()))
+          () => new ListBuilder<ImageJsonldMediaRead>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

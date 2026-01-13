@@ -3,14 +3,15 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'reservation_jsonld_reservation_read.g.dart';
 
-/// 
+/// ReservationJsonldReservationRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -27,21 +28,21 @@ part 'reservation_jsonld_reservation_read.g.dart';
 /// * [createdAt] 
 /// * [updatedAt] 
 @BuiltValue()
-abstract class ReservationJsonldReservationRead implements Built<ReservationJsonldReservationRead, ReservationJsonldReservationReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AddressJsonldProviderReadAddressReadContext? get atContext;
+abstract class ReservationJsonldReservationRead implements HydraItemBaseSchema, Built<ReservationJsonldReservationRead, ReservationJsonldReservationReadBuilder> {
+  @BuiltValueField(wireName: r'date')
+  DateTime get date;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
 
   @BuiltValueField(wireName: r'item')
   String get item;
+
+  @BuiltValueField(wireName: r'quantity')
+  int get quantity;
+
+  @BuiltValueField(wireName: r'ticket')
+  String? get ticket;
 
   @BuiltValueField(wireName: r'author')
   String get author;
@@ -49,21 +50,12 @@ abstract class ReservationJsonldReservationRead implements Built<ReservationJson
   @BuiltValueField(wireName: r'description')
   String? get description;
 
-  @BuiltValueField(wireName: r'quantity')
-  int get quantity;
-
-  @BuiltValueField(wireName: r'date')
-  DateTime get date;
-
   @BuiltValueField(wireName: r'paymentMethod')
   ReservationJsonldReservationReadPaymentMethodEnum get paymentMethod;
   // enum paymentMethodEnum {  cb,  cash,  voucher,  };
 
-  @BuiltValueField(wireName: r'ticket')
-  String? get ticket;
-
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+  @BuiltValueField(wireName: r'id')
+  int? get id;
 
   @BuiltValueField(wireName: r'updatedAt')
   DateTime? get updatedAt;
@@ -91,39 +83,33 @@ class _$ReservationJsonldReservationReadSerializer implements PrimitiveSerialize
     ReservationJsonldReservationRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
+    yield r'date';
+    yield serializers.serialize(
+      object.date,
+      specifiedType: const FullType(DateTime),
+    );
     yield r'item';
     yield serializers.serialize(
       object.item,
       specifiedType: const FullType(String),
     );
+    yield r'quantity';
+    yield serializers.serialize(
+      object.quantity,
+      specifiedType: const FullType(int),
+    );
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.ticket != null) {
+      yield r'ticket';
+      yield serializers.serialize(
+        object.ticket,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'author';
     yield serializers.serialize(
       object.author,
@@ -133,29 +119,7 @@ class _$ReservationJsonldReservationReadSerializer implements PrimitiveSerialize
       yield r'description';
       yield serializers.serialize(
         object.description,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'quantity';
-    yield serializers.serialize(
-      object.quantity,
-      specifiedType: const FullType(int),
-    );
-    yield r'date';
-    yield serializers.serialize(
-      object.date,
-      specifiedType: const FullType(DateTime),
-    );
-    yield r'paymentMethod';
-    yield serializers.serialize(
-      object.paymentMethod,
-      specifiedType: const FullType(ReservationJsonldReservationReadPaymentMethodEnum),
-    );
-    if (object.ticket != null) {
-      yield r'ticket';
-      yield serializers.serialize(
-        object.ticket,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.createdAt != null) {
@@ -165,6 +129,30 @@ class _$ReservationJsonldReservationReadSerializer implements PrimitiveSerialize
         specifiedType: const FullType(DateTime),
       );
     }
+    yield r'paymentMethod';
+    yield serializers.serialize(
+      object.paymentMethod,
+      specifiedType: const FullType(ReservationJsonldReservationReadPaymentMethodEnum),
+    );
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(int),
+      );
+    }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
     if (object.updatedAt != null) {
       yield r'updatedAt';
       yield serializers.serialize(
@@ -195,12 +183,26 @@ class _$ReservationJsonldReservationReadSerializer implements PrimitiveSerialize
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
+        case r'date':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-          ) as AddressJsonldProviderReadAddressReadContext;
-          result.atContext.replace(valueDes);
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.date = valueDes;
+          break;
+        case r'item':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.item = valueDes;
+          break;
+        case r'quantity':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.quantity = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -209,26 +211,12 @@ class _$ReservationJsonldReservationReadSerializer implements PrimitiveSerialize
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'ticket':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'item':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.item = valueDes;
+          result.ticket = valueDes;
           break;
         case r'author':
           final valueDes = serializers.deserialize(
@@ -240,24 +228,16 @@ class _$ReservationJsonldReservationReadSerializer implements PrimitiveSerialize
         case r'description':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.description = valueDes;
           break;
-        case r'quantity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.quantity = valueDes;
-          break;
-        case r'date':
+        case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
-          result.date = valueDes;
+          result.createdAt = valueDes;
           break;
         case r'paymentMethod':
           final valueDes = serializers.deserialize(
@@ -266,20 +246,26 @@ class _$ReservationJsonldReservationReadSerializer implements PrimitiveSerialize
           ) as ReservationJsonldReservationReadPaymentMethodEnum;
           result.paymentMethod = valueDes;
           break;
-        case r'ticket':
+        case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.ticket = valueDes;
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
           break;
-        case r'createdAt':
+        case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
           break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(

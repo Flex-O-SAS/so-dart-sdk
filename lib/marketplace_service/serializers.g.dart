@@ -7,40 +7,44 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add($HydraCollectionBaseSchema.serializer)
+      ..add($HydraCollectionBaseSchemaNoPagination.serializer)
+      ..add($HydraItemBaseSchema.serializer)
       ..add(AddressJsonldProviderReadAddressRead.serializer)
-      ..add(AddressJsonldProviderReadAddressReadContext.serializer)
-      ..add(AddressJsonldProviderReadAddressReadContextOneOf.serializer)
-      ..add(
-          AddressJsonldProviderReadAddressReadContextOneOfHydraEnum.serializer)
-      ..add(AddressJsonldProviderWriteAddressWrite.serializer)
       ..add(AddressProviderReadAddressRead.serializer)
       ..add(AddressProviderWriteAddressWrite.serializer)
       ..add(ApiItemsGetCollection200Response.serializer)
-      ..add(ApiItemsGetCollection200ResponseSearch.serializer)
-      ..add(ApiItemsGetCollection200ResponseSearchMappingInner.serializer)
-      ..add(ApiItemsGetCollection200ResponseView.serializer)
       ..add(ApiProvidersGetCollection200Response.serializer)
       ..add(ApiReservationsGetCollection200Response.serializer)
       ..add(ApiServicesGetCollection200Response.serializer)
       ..add(ApiTagsGetCollection200Response.serializer)
+      ..add(ConstraintViolation.serializer)
+      ..add(ConstraintViolationJsonld.serializer)
+      ..add(ConstraintViolationViolationsInner.serializer)
+      ..add(Error.serializer)
+      ..add(ErrorJsonld.serializer)
+      ..add(HydraCollectionBaseSchemaAllOfView.serializer)
+      ..add(HydraCollectionBaseSchemaNoPaginationSearch.serializer)
+      ..add(HydraCollectionBaseSchemaNoPaginationSearchMappingInner.serializer)
+      ..add(HydraItemBaseSchemaContext.serializer)
+      ..add(HydraItemBaseSchemaContextOneOf.serializer)
+      ..add(HydraItemBaseSchemaContextOneOfHydraEnum.serializer)
       ..add(ItemItemReadServiceRead.serializer)
       ..add(ItemItemWrite.serializer)
+      ..add(ItemItemWriteJsonMergePatch.serializer)
       ..add(ItemJsonldItemReadServiceRead.serializer)
-      ..add(ItemJsonldItemWrite.serializer)
       ..add(ItemJsonldProviderReadAddressRead.serializer)
       ..add(ItemProviderReadAddressRead.serializer)
       ..add(ProviderItemReadServiceRead.serializer)
       ..add(ProviderJsonldItemReadServiceRead.serializer)
       ..add(ProviderJsonldProviderReadAddressRead.serializer)
-      ..add(ProviderJsonldProviderWriteAddressWrite.serializer)
       ..add(ProviderJsonldTagRead.serializer)
       ..add(ProviderProviderReadAddressRead.serializer)
       ..add(ProviderProviderWriteAddressWrite.serializer)
+      ..add(ProviderProviderWriteAddressWriteJsonMergePatch.serializer)
       ..add(ProviderTagRead.serializer)
       ..add(ReservationJsonldReservationRead.serializer)
       ..add(ReservationJsonldReservationReadPaymentMethodEnum.serializer)
-      ..add(ReservationJsonldReservationWrite.serializer)
-      ..add(ReservationJsonldReservationWritePaymentMethodEnum.serializer)
       ..add(ReservationReservationRead.serializer)
       ..add(ReservationReservationReadPaymentMethodEnum.serializer)
       ..add(ReservationReservationWrite.serializer)
@@ -56,11 +60,20 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(TagProviderReadAddressRead.serializer)
       ..add(TagTagRead.serializer)
       ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(ConstraintViolationViolationsInner)]),
+          () => new ListBuilder<ConstraintViolationViolationsInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(ConstraintViolationViolationsInner)]),
+          () => new ListBuilder<ConstraintViolationViolationsInner>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(ApiItemsGetCollection200ResponseSearchMappingInner)
+            const FullType(
+                HydraCollectionBaseSchemaNoPaginationSearchMappingInner)
           ]),
           () => new ListBuilder<
-              ApiItemsGetCollection200ResponseSearchMappingInner>())
+              HydraCollectionBaseSchemaNoPaginationSearchMappingInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ItemJsonldItemReadServiceRead)]),

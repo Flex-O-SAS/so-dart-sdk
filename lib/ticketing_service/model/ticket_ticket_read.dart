@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'ticket_ticket_read.g.dart';
 
-/// 
+/// TicketTicketRead
 ///
 /// Properties:
 /// * [id] 
@@ -41,7 +41,7 @@ abstract class TicketTicketRead implements Built<TicketTicketRead, TicketTicketR
   DateTime get startDate;
 
   @BuiltValueField(wireName: r'endDate')
-  String? get endDate;
+  DateTime? get endDate;
 
   @BuiltValueField(wireName: r'description')
   String get description;
@@ -124,7 +124,7 @@ class _$TicketTicketReadSerializer implements PrimitiveSerializer<TicketTicketRe
       yield r'endDate';
       yield serializers.serialize(
         object.endDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
     yield r'description';
@@ -141,7 +141,7 @@ class _$TicketTicketReadSerializer implements PrimitiveSerializer<TicketTicketRe
       yield r'assignee';
       yield serializers.serialize(
         object.assignee,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'status';
@@ -158,7 +158,7 @@ class _$TicketTicketReadSerializer implements PrimitiveSerializer<TicketTicketRe
       yield r'location';
       yield serializers.serialize(
         object.location,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.metadata != null) {
@@ -250,9 +250,8 @@ class _$TicketTicketReadSerializer implements PrimitiveSerializer<TicketTicketRe
         case r'endDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.endDate = valueDes;
           break;
         case r'description':
@@ -272,9 +271,8 @@ class _$TicketTicketReadSerializer implements PrimitiveSerializer<TicketTicketRe
         case r'assignee':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.assignee = valueDes;
           break;
         case r'status':
@@ -294,9 +292,8 @@ class _$TicketTicketReadSerializer implements PrimitiveSerializer<TicketTicketRe
         case r'location':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.location = valueDes;
           break;
         case r'metadata':

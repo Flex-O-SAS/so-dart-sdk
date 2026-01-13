@@ -1,0 +1,1829 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+
+// ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/center_printer.dart';
+import 'package:so_dart_sdk/backend/model/visor_reader.dart';
+import 'package:so_dart_sdk/backend/model/center_assets_inner.dart';
+import 'package:so_dart_sdk/backend/model/staff_center.dart';
+import 'package:so_dart_sdk/backend/model/center_bay.dart';
+import 'package:so_dart_sdk/backend/model/center_cluster.dart';
+import 'package:so_dart_sdk/backend/model/attribution_log.dart';
+import 'package:so_dart_sdk/backend/model/quotation.dart';
+import 'package:so_dart_sdk/backend/model/center_conveniences.dart';
+import 'package:so_dart_sdk/backend/model/client.dart';
+import 'package:so_dart_sdk/backend/model/floor_plan.dart';
+import 'package:so_dart_sdk/backend/model/presence_log.dart';
+import 'package:so_dart_sdk/backend/model/wifi_station.dart';
+import 'package:so_dart_sdk/backend/model/acquisition_cost.dart';
+import 'package:so_dart_sdk/backend/model/center_bp.dart';
+import 'package:so_dart_sdk/backend/model/center_connection.dart';
+import 'package:so_dart_sdk/backend/model/discount.dart';
+import 'package:so_dart_sdk/backend/model/visor_client.dart';
+import 'package:so_dart_sdk/backend/model/customer_reservation.dart';
+import 'package:so_dart_sdk/backend/model/contract_draft.dart';
+import 'package:so_dart_sdk/backend/model/center_fidensio.dart';
+import 'package:so_dart_sdk/backend/model/accounting_file_log.dart';
+import 'package:so_dart_sdk/backend/model/saved_label.dart';
+import 'package:so_dart_sdk/backend/model/wifi_log.dart';
+import 'package:so_dart_sdk/backend/model/client_request.dart';
+import 'package:so_dart_sdk/backend/model/bank_account.dart';
+import 'package:so_dart_sdk/backend/model/center_discount.dart';
+import 'package:so_dart_sdk/backend/model/visor_identifier.dart';
+import 'package:so_dart_sdk/backend/model/center_plugin.dart';
+import 'package:so_dart_sdk/backend/model/event.dart';
+import 'package:so_dart_sdk/backend/model/center_configuration.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/backend/model/center_discount_grid.dart';
+import 'package:so_dart_sdk/backend/model/center_ip.dart';
+import 'package:so_dart_sdk/backend/model/center_opening_days.dart';
+import 'package:so_dart_sdk/backend/model/payment.dart';
+import 'package:so_dart_sdk/backend/model/service_center.dart';
+import 'package:so_dart_sdk/backend/model/center_plan.dart';
+import 'package:so_dart_sdk/backend/model/center_price.dart';
+import 'package:so_dart_sdk/backend/model/center_network.dart';
+import 'package:so_dart_sdk/backend/model/client_center.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
+
+part 'center.g.dart';
+
+/// Center
+///
+/// Properties:
+/// * [reference] 
+/// * [name] 
+/// * [description] 
+/// * [serviceCenters] 
+/// * [centerPrices] 
+/// * [staff] 
+/// * [opportunities] 
+/// * [contracts] 
+/// * [clients] 
+/// * [email] 
+/// * [phone] 
+/// * [rcs] 
+/// * [par] 
+/// * [discount] 
+/// * [siret] 
+/// * [presentationQuotation] 
+/// * [visitLink] 
+/// * [centerConveniences] 
+/// * [centerFidensio] 
+/// * [centerBps] 
+/// * [events] 
+/// * [spacedesignerUrl] 
+/// * [centerPlans] 
+/// * [spacedesignerAvailableUrl] 
+/// * [credits] 
+/// * [clientCenters] 
+/// * [clientRequests] 
+/// * [capital] 
+/// * [rcsCity] 
+/// * [companyName] 
+/// * [centerConfiguration] 
+/// * [acquisitionCosts] 
+/// * [longitude] 
+/// * [latitude] 
+/// * [quotations] 
+/// * [payments] 
+/// * [customerReservations] 
+/// * [visorClients] 
+/// * [visorReaders] 
+/// * [visorIdentifiers] 
+/// * [wifiLogs] 
+/// * [wifiStations] 
+/// * [centerCluster] 
+/// * [attributionLogs] 
+/// * [realEstateProgram] 
+/// * [region] 
+/// * [openingHour] 
+/// * [closureHour] 
+/// * [openingDate] 
+/// * [leaseSigningDate] 
+/// * [madaDate] 
+/// * [nbDesktops] 
+/// * [nbMeetingRooms] 
+/// * [rentalSurface] 
+/// * [isActiveFront] 
+/// * [centerNetwork] 
+/// * [centerConnections] 
+/// * [centerIps] 
+/// * [centerPrinters] 
+/// * [centerBays] 
+/// * [adsLaunchDate] 
+/// * [tva] 
+/// * [presenceLogs] 
+/// * [bankAccounts] 
+/// * [accountingFileLogs] 
+/// * [companyCode] 
+/// * [visorInstallationKey] 
+/// * [visorIndividuals] 
+/// * [googleMapsLink] 
+/// * [centerDiscountGrids] 
+/// * [happenings] 
+/// * [presentationSavedLabels] 
+/// * [floorPlans] 
+/// * [centerDiscounts] 
+/// * [centerPlugins] 
+/// * [company] 
+/// * [contractDrafts] 
+/// * [staffCenters] 
+/// * [centerOpeningDays] 
+/// * [assets] 
+/// * [isActive] 
+/// * [address] 
+/// * [zipcode] 
+/// * [city] 
+/// * [country] 
+/// * [capacity] 
+/// * [surface] 
+/// * [centerImage] 
+/// * [discounts] 
+/// * [id] 
+/// * [currentCenterPriceEnd] 
+/// * [fullAddress] 
+/// * [createdAt] 
+/// * [updatedAt] 
+@BuiltValue()
+abstract class Center implements Built<Center, CenterBuilder> {
+  @BuiltValueField(wireName: r'reference')
+  String? get reference;
+
+  @BuiltValueField(wireName: r'name')
+  String? get name;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  @BuiltValueField(wireName: r'serviceCenters')
+  BuiltList<ServiceCenter>? get serviceCenters;
+
+  @BuiltValueField(wireName: r'centerPrices')
+  BuiltList<CenterPrice>? get centerPrices;
+
+  @BuiltValueField(wireName: r'staff')
+  BuiltList<String>? get staff;
+
+  @BuiltValueField(wireName: r'opportunities')
+  BuiltList<String>? get opportunities;
+
+  @BuiltValueField(wireName: r'contracts')
+  BuiltList<String>? get contracts;
+
+  @BuiltValueField(wireName: r'clients')
+  BuiltList<Client>? get clients;
+
+  @BuiltValueField(wireName: r'email')
+  String? get email;
+
+  @BuiltValueField(wireName: r'phone')
+  String? get phone;
+
+  @BuiltValueField(wireName: r'rcs')
+  String? get rcs;
+
+  @BuiltValueField(wireName: r'par')
+  String? get par;
+
+  @BuiltValueField(wireName: r'discount')
+  BuiltList<Discount>? get discount;
+
+  @BuiltValueField(wireName: r'siret')
+  String? get siret;
+
+  @BuiltValueField(wireName: r'presentationQuotation')
+  String? get presentationQuotation;
+
+  @BuiltValueField(wireName: r'visitLink')
+  String? get visitLink;
+
+  @BuiltValueField(wireName: r'centerConveniences')
+  BuiltList<CenterConveniences>? get centerConveniences;
+
+  @BuiltValueField(wireName: r'centerFidensio')
+  CenterFidensio? get centerFidensio;
+
+  @BuiltValueField(wireName: r'centerBps')
+  BuiltList<CenterBp>? get centerBps;
+
+  @BuiltValueField(wireName: r'events')
+  BuiltList<Event>? get events;
+
+  @BuiltValueField(wireName: r'spacedesignerUrl')
+  String? get spacedesignerUrl;
+
+  @BuiltValueField(wireName: r'centerPlans')
+  BuiltList<CenterPlan>? get centerPlans;
+
+  @BuiltValueField(wireName: r'spacedesignerAvailableUrl')
+  String? get spacedesignerAvailableUrl;
+
+  @BuiltValueField(wireName: r'credits')
+  BuiltList<String>? get credits;
+
+  @BuiltValueField(wireName: r'clientCenters')
+  BuiltList<ClientCenter>? get clientCenters;
+
+  @BuiltValueField(wireName: r'clientRequests')
+  BuiltList<ClientRequest>? get clientRequests;
+
+  @BuiltValueField(wireName: r'capital')
+  int? get capital;
+
+  @BuiltValueField(wireName: r'rcsCity')
+  String? get rcsCity;
+
+  @BuiltValueField(wireName: r'companyName')
+  String? get companyName;
+
+  @BuiltValueField(wireName: r'centerConfiguration')
+  CenterConfiguration? get centerConfiguration;
+
+  @BuiltValueField(wireName: r'acquisitionCosts')
+  BuiltList<AcquisitionCost>? get acquisitionCosts;
+
+  @BuiltValueField(wireName: r'longitude')
+  String? get longitude;
+
+  @BuiltValueField(wireName: r'latitude')
+  String? get latitude;
+
+  @BuiltValueField(wireName: r'quotations')
+  BuiltList<Quotation>? get quotations;
+
+  @BuiltValueField(wireName: r'payments')
+  BuiltList<Payment>? get payments;
+
+  @BuiltValueField(wireName: r'customerReservations')
+  BuiltList<CustomerReservation>? get customerReservations;
+
+  @BuiltValueField(wireName: r'visorClients')
+  BuiltList<VisorClient>? get visorClients;
+
+  @BuiltValueField(wireName: r'visorReaders')
+  BuiltList<VisorReader>? get visorReaders;
+
+  @BuiltValueField(wireName: r'visorIdentifiers')
+  BuiltList<VisorIdentifier>? get visorIdentifiers;
+
+  @BuiltValueField(wireName: r'wifiLogs')
+  BuiltList<WifiLog>? get wifiLogs;
+
+  @BuiltValueField(wireName: r'wifiStations')
+  BuiltList<WifiStation>? get wifiStations;
+
+  @BuiltValueField(wireName: r'centerCluster')
+  CenterCluster? get centerCluster;
+
+  @BuiltValueField(wireName: r'attributionLogs')
+  BuiltList<AttributionLog>? get attributionLogs;
+
+  @BuiltValueField(wireName: r'realEstateProgram')
+  String? get realEstateProgram;
+
+  @BuiltValueField(wireName: r'region')
+  String? get region;
+
+  @BuiltValueField(wireName: r'openingHour')
+  DateTime? get openingHour;
+
+  @BuiltValueField(wireName: r'closureHour')
+  DateTime? get closureHour;
+
+  @BuiltValueField(wireName: r'openingDate')
+  DateTime? get openingDate;
+
+  @BuiltValueField(wireName: r'leaseSigningDate')
+  DateTime? get leaseSigningDate;
+
+  @BuiltValueField(wireName: r'madaDate')
+  DateTime? get madaDate;
+
+  @BuiltValueField(wireName: r'nbDesktops')
+  int? get nbDesktops;
+
+  @BuiltValueField(wireName: r'nbMeetingRooms')
+  int? get nbMeetingRooms;
+
+  @BuiltValueField(wireName: r'rentalSurface')
+  num? get rentalSurface;
+
+  @BuiltValueField(wireName: r'isActiveFront')
+  bool? get isActiveFront;
+
+  @BuiltValueField(wireName: r'centerNetwork')
+  CenterNetwork? get centerNetwork;
+
+  @BuiltValueField(wireName: r'centerConnections')
+  BuiltList<CenterConnection>? get centerConnections;
+
+  @BuiltValueField(wireName: r'centerIps')
+  BuiltList<CenterIp>? get centerIps;
+
+  @BuiltValueField(wireName: r'centerPrinters')
+  BuiltList<CenterPrinter>? get centerPrinters;
+
+  @BuiltValueField(wireName: r'centerBays')
+  BuiltList<CenterBay>? get centerBays;
+
+  @BuiltValueField(wireName: r'adsLaunchDate')
+  DateTime? get adsLaunchDate;
+
+  @BuiltValueField(wireName: r'tva')
+  String? get tva;
+
+  @BuiltValueField(wireName: r'presenceLogs')
+  BuiltList<PresenceLog>? get presenceLogs;
+
+  @BuiltValueField(wireName: r'bankAccounts')
+  BuiltList<BankAccount>? get bankAccounts;
+
+  @BuiltValueField(wireName: r'accountingFileLogs')
+  BuiltList<AccountingFileLog>? get accountingFileLogs;
+
+  @BuiltValueField(wireName: r'companyCode')
+  String? get companyCode;
+
+  @BuiltValueField(wireName: r'visorInstallationKey')
+  String? get visorInstallationKey;
+
+  @BuiltValueField(wireName: r'visorIndividuals')
+  BuiltList<String>? get visorIndividuals;
+
+  @BuiltValueField(wireName: r'googleMapsLink')
+  String? get googleMapsLink;
+
+  @BuiltValueField(wireName: r'centerDiscountGrids')
+  BuiltList<CenterDiscountGrid>? get centerDiscountGrids;
+
+  @BuiltValueField(wireName: r'happenings')
+  BuiltList<String>? get happenings;
+
+  @BuiltValueField(wireName: r'presentationSavedLabels')
+  BuiltList<SavedLabel>? get presentationSavedLabels;
+
+  @BuiltValueField(wireName: r'floorPlans')
+  BuiltList<FloorPlan>? get floorPlans;
+
+  @BuiltValueField(wireName: r'centerDiscounts')
+  BuiltList<CenterDiscount>? get centerDiscounts;
+
+  @BuiltValueField(wireName: r'centerPlugins')
+  BuiltList<CenterPlugin>? get centerPlugins;
+
+  @BuiltValueField(wireName: r'company')
+  String? get company;
+
+  @BuiltValueField(wireName: r'contractDrafts')
+  BuiltList<ContractDraft>? get contractDrafts;
+
+  @BuiltValueField(wireName: r'staffCenters')
+  BuiltList<StaffCenter>? get staffCenters;
+
+  @BuiltValueField(wireName: r'centerOpeningDays')
+  BuiltList<CenterOpeningDays>? get centerOpeningDays;
+
+  @BuiltValueField(wireName: r'assets')
+  BuiltList<CenterAssetsInner>? get assets;
+
+  @BuiltValueField(wireName: r'isActive')
+  bool? get isActive;
+
+  @BuiltValueField(wireName: r'address')
+  String? get address;
+
+  @BuiltValueField(wireName: r'zipcode')
+  String? get zipcode;
+
+  @BuiltValueField(wireName: r'city')
+  String? get city;
+
+  @BuiltValueField(wireName: r'country')
+  String? get country;
+
+  @BuiltValueField(wireName: r'capacity')
+  int? get capacity;
+
+  @BuiltValueField(wireName: r'surface')
+  num? get surface;
+
+  @BuiltValueField(wireName: r'centerImage')
+  String? get centerImage;
+
+  @BuiltValueField(wireName: r'discounts')
+  BuiltList<Discount>? get discounts;
+
+  @BuiltValueField(wireName: r'id')
+  int? get id;
+
+  @BuiltValueField(wireName: r'currentCenterPriceEnd')
+  DateTime? get currentCenterPriceEnd;
+
+  @BuiltValueField(wireName: r'fullAddress')
+  String? get fullAddress;
+
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
+
+  @BuiltValueField(wireName: r'updatedAt')
+  DateTime? get updatedAt;
+
+  Center._();
+
+  factory Center([void updates(CenterBuilder b)]) = _$Center;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(CenterBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<Center> get serializer => _$CenterSerializer();
+}
+
+class _$CenterSerializer implements PrimitiveSerializer<Center> {
+  @override
+  final Iterable<Type> types = const [Center, _$Center];
+
+  @override
+  final String wireName = r'Center';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    Center object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.reference != null) {
+      yield r'reference';
+      yield serializers.serialize(
+        object.reference,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.serviceCenters != null) {
+      yield r'serviceCenters';
+      yield serializers.serialize(
+        object.serviceCenters,
+        specifiedType: const FullType(BuiltList, [FullType(ServiceCenter)]),
+      );
+    }
+    if (object.centerPrices != null) {
+      yield r'centerPrices';
+      yield serializers.serialize(
+        object.centerPrices,
+        specifiedType: const FullType(BuiltList, [FullType(CenterPrice)]),
+      );
+    }
+    if (object.staff != null) {
+      yield r'staff';
+      yield serializers.serialize(
+        object.staff,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.opportunities != null) {
+      yield r'opportunities';
+      yield serializers.serialize(
+        object.opportunities,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.contracts != null) {
+      yield r'contracts';
+      yield serializers.serialize(
+        object.contracts,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.clients != null) {
+      yield r'clients';
+      yield serializers.serialize(
+        object.clients,
+        specifiedType: const FullType(BuiltList, [FullType(Client)]),
+      );
+    }
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.phone != null) {
+      yield r'phone';
+      yield serializers.serialize(
+        object.phone,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.rcs != null) {
+      yield r'rcs';
+      yield serializers.serialize(
+        object.rcs,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.par != null) {
+      yield r'par';
+      yield serializers.serialize(
+        object.par,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.discount != null) {
+      yield r'discount';
+      yield serializers.serialize(
+        object.discount,
+        specifiedType: const FullType(BuiltList, [FullType(Discount)]),
+      );
+    }
+    if (object.siret != null) {
+      yield r'siret';
+      yield serializers.serialize(
+        object.siret,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.presentationQuotation != null) {
+      yield r'presentationQuotation';
+      yield serializers.serialize(
+        object.presentationQuotation,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.visitLink != null) {
+      yield r'visitLink';
+      yield serializers.serialize(
+        object.visitLink,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.centerConveniences != null) {
+      yield r'centerConveniences';
+      yield serializers.serialize(
+        object.centerConveniences,
+        specifiedType: const FullType(BuiltList, [FullType(CenterConveniences)]),
+      );
+    }
+    if (object.centerFidensio != null) {
+      yield r'centerFidensio';
+      yield serializers.serialize(
+        object.centerFidensio,
+        specifiedType: const FullType.nullable(CenterFidensio),
+      );
+    }
+    if (object.centerBps != null) {
+      yield r'centerBps';
+      yield serializers.serialize(
+        object.centerBps,
+        specifiedType: const FullType(BuiltList, [FullType(CenterBp)]),
+      );
+    }
+    if (object.events != null) {
+      yield r'events';
+      yield serializers.serialize(
+        object.events,
+        specifiedType: const FullType(BuiltList, [FullType(Event)]),
+      );
+    }
+    if (object.spacedesignerUrl != null) {
+      yield r'spacedesignerUrl';
+      yield serializers.serialize(
+        object.spacedesignerUrl,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.centerPlans != null) {
+      yield r'centerPlans';
+      yield serializers.serialize(
+        object.centerPlans,
+        specifiedType: const FullType(BuiltList, [FullType(CenterPlan)]),
+      );
+    }
+    if (object.spacedesignerAvailableUrl != null) {
+      yield r'spacedesignerAvailableUrl';
+      yield serializers.serialize(
+        object.spacedesignerAvailableUrl,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.credits != null) {
+      yield r'credits';
+      yield serializers.serialize(
+        object.credits,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.clientCenters != null) {
+      yield r'clientCenters';
+      yield serializers.serialize(
+        object.clientCenters,
+        specifiedType: const FullType(BuiltList, [FullType(ClientCenter)]),
+      );
+    }
+    if (object.clientRequests != null) {
+      yield r'clientRequests';
+      yield serializers.serialize(
+        object.clientRequests,
+        specifiedType: const FullType(BuiltList, [FullType(ClientRequest)]),
+      );
+    }
+    if (object.capital != null) {
+      yield r'capital';
+      yield serializers.serialize(
+        object.capital,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.rcsCity != null) {
+      yield r'rcsCity';
+      yield serializers.serialize(
+        object.rcsCity,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.companyName != null) {
+      yield r'companyName';
+      yield serializers.serialize(
+        object.companyName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.centerConfiguration != null) {
+      yield r'centerConfiguration';
+      yield serializers.serialize(
+        object.centerConfiguration,
+        specifiedType: const FullType.nullable(CenterConfiguration),
+      );
+    }
+    if (object.acquisitionCosts != null) {
+      yield r'acquisitionCosts';
+      yield serializers.serialize(
+        object.acquisitionCosts,
+        specifiedType: const FullType(BuiltList, [FullType(AcquisitionCost)]),
+      );
+    }
+    if (object.longitude != null) {
+      yield r'longitude';
+      yield serializers.serialize(
+        object.longitude,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.latitude != null) {
+      yield r'latitude';
+      yield serializers.serialize(
+        object.latitude,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.quotations != null) {
+      yield r'quotations';
+      yield serializers.serialize(
+        object.quotations,
+        specifiedType: const FullType(BuiltList, [FullType(Quotation)]),
+      );
+    }
+    if (object.payments != null) {
+      yield r'payments';
+      yield serializers.serialize(
+        object.payments,
+        specifiedType: const FullType(BuiltList, [FullType(Payment)]),
+      );
+    }
+    if (object.customerReservations != null) {
+      yield r'customerReservations';
+      yield serializers.serialize(
+        object.customerReservations,
+        specifiedType: const FullType(BuiltList, [FullType(CustomerReservation)]),
+      );
+    }
+    if (object.visorClients != null) {
+      yield r'visorClients';
+      yield serializers.serialize(
+        object.visorClients,
+        specifiedType: const FullType(BuiltList, [FullType(VisorClient)]),
+      );
+    }
+    if (object.visorReaders != null) {
+      yield r'visorReaders';
+      yield serializers.serialize(
+        object.visorReaders,
+        specifiedType: const FullType(BuiltList, [FullType(VisorReader)]),
+      );
+    }
+    if (object.visorIdentifiers != null) {
+      yield r'visorIdentifiers';
+      yield serializers.serialize(
+        object.visorIdentifiers,
+        specifiedType: const FullType(BuiltList, [FullType(VisorIdentifier)]),
+      );
+    }
+    if (object.wifiLogs != null) {
+      yield r'wifiLogs';
+      yield serializers.serialize(
+        object.wifiLogs,
+        specifiedType: const FullType(BuiltList, [FullType(WifiLog)]),
+      );
+    }
+    if (object.wifiStations != null) {
+      yield r'wifiStations';
+      yield serializers.serialize(
+        object.wifiStations,
+        specifiedType: const FullType(BuiltList, [FullType(WifiStation)]),
+      );
+    }
+    if (object.centerCluster != null) {
+      yield r'centerCluster';
+      yield serializers.serialize(
+        object.centerCluster,
+        specifiedType: const FullType.nullable(CenterCluster),
+      );
+    }
+    if (object.attributionLogs != null) {
+      yield r'attributionLogs';
+      yield serializers.serialize(
+        object.attributionLogs,
+        specifiedType: const FullType(BuiltList, [FullType(AttributionLog)]),
+      );
+    }
+    if (object.realEstateProgram != null) {
+      yield r'realEstateProgram';
+      yield serializers.serialize(
+        object.realEstateProgram,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.region != null) {
+      yield r'region';
+      yield serializers.serialize(
+        object.region,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.openingHour != null) {
+      yield r'openingHour';
+      yield serializers.serialize(
+        object.openingHour,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.closureHour != null) {
+      yield r'closureHour';
+      yield serializers.serialize(
+        object.closureHour,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.openingDate != null) {
+      yield r'openingDate';
+      yield serializers.serialize(
+        object.openingDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.leaseSigningDate != null) {
+      yield r'leaseSigningDate';
+      yield serializers.serialize(
+        object.leaseSigningDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.madaDate != null) {
+      yield r'madaDate';
+      yield serializers.serialize(
+        object.madaDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.nbDesktops != null) {
+      yield r'nbDesktops';
+      yield serializers.serialize(
+        object.nbDesktops,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.nbMeetingRooms != null) {
+      yield r'nbMeetingRooms';
+      yield serializers.serialize(
+        object.nbMeetingRooms,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.rentalSurface != null) {
+      yield r'rentalSurface';
+      yield serializers.serialize(
+        object.rentalSurface,
+        specifiedType: const FullType.nullable(num),
+      );
+    }
+    if (object.isActiveFront != null) {
+      yield r'isActiveFront';
+      yield serializers.serialize(
+        object.isActiveFront,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.centerNetwork != null) {
+      yield r'centerNetwork';
+      yield serializers.serialize(
+        object.centerNetwork,
+        specifiedType: const FullType.nullable(CenterNetwork),
+      );
+    }
+    if (object.centerConnections != null) {
+      yield r'centerConnections';
+      yield serializers.serialize(
+        object.centerConnections,
+        specifiedType: const FullType(BuiltList, [FullType(CenterConnection)]),
+      );
+    }
+    if (object.centerIps != null) {
+      yield r'centerIps';
+      yield serializers.serialize(
+        object.centerIps,
+        specifiedType: const FullType(BuiltList, [FullType(CenterIp)]),
+      );
+    }
+    if (object.centerPrinters != null) {
+      yield r'centerPrinters';
+      yield serializers.serialize(
+        object.centerPrinters,
+        specifiedType: const FullType(BuiltList, [FullType(CenterPrinter)]),
+      );
+    }
+    if (object.centerBays != null) {
+      yield r'centerBays';
+      yield serializers.serialize(
+        object.centerBays,
+        specifiedType: const FullType(BuiltList, [FullType(CenterBay)]),
+      );
+    }
+    if (object.adsLaunchDate != null) {
+      yield r'adsLaunchDate';
+      yield serializers.serialize(
+        object.adsLaunchDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.tva != null) {
+      yield r'tva';
+      yield serializers.serialize(
+        object.tva,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.presenceLogs != null) {
+      yield r'presenceLogs';
+      yield serializers.serialize(
+        object.presenceLogs,
+        specifiedType: const FullType(BuiltList, [FullType(PresenceLog)]),
+      );
+    }
+    if (object.bankAccounts != null) {
+      yield r'bankAccounts';
+      yield serializers.serialize(
+        object.bankAccounts,
+        specifiedType: const FullType(BuiltList, [FullType(BankAccount)]),
+      );
+    }
+    if (object.accountingFileLogs != null) {
+      yield r'accountingFileLogs';
+      yield serializers.serialize(
+        object.accountingFileLogs,
+        specifiedType: const FullType(BuiltList, [FullType(AccountingFileLog)]),
+      );
+    }
+    if (object.companyCode != null) {
+      yield r'companyCode';
+      yield serializers.serialize(
+        object.companyCode,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.visorInstallationKey != null) {
+      yield r'visorInstallationKey';
+      yield serializers.serialize(
+        object.visorInstallationKey,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.visorIndividuals != null) {
+      yield r'visorIndividuals';
+      yield serializers.serialize(
+        object.visorIndividuals,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.googleMapsLink != null) {
+      yield r'googleMapsLink';
+      yield serializers.serialize(
+        object.googleMapsLink,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.centerDiscountGrids != null) {
+      yield r'centerDiscountGrids';
+      yield serializers.serialize(
+        object.centerDiscountGrids,
+        specifiedType: const FullType(BuiltList, [FullType(CenterDiscountGrid)]),
+      );
+    }
+    if (object.happenings != null) {
+      yield r'happenings';
+      yield serializers.serialize(
+        object.happenings,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.presentationSavedLabels != null) {
+      yield r'presentationSavedLabels';
+      yield serializers.serialize(
+        object.presentationSavedLabels,
+        specifiedType: const FullType(BuiltList, [FullType(SavedLabel)]),
+      );
+    }
+    if (object.floorPlans != null) {
+      yield r'floorPlans';
+      yield serializers.serialize(
+        object.floorPlans,
+        specifiedType: const FullType(BuiltList, [FullType(FloorPlan)]),
+      );
+    }
+    if (object.centerDiscounts != null) {
+      yield r'centerDiscounts';
+      yield serializers.serialize(
+        object.centerDiscounts,
+        specifiedType: const FullType(BuiltList, [FullType(CenterDiscount)]),
+      );
+    }
+    if (object.centerPlugins != null) {
+      yield r'centerPlugins';
+      yield serializers.serialize(
+        object.centerPlugins,
+        specifiedType: const FullType(BuiltList, [FullType(CenterPlugin)]),
+      );
+    }
+    if (object.company != null) {
+      yield r'company';
+      yield serializers.serialize(
+        object.company,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.contractDrafts != null) {
+      yield r'contractDrafts';
+      yield serializers.serialize(
+        object.contractDrafts,
+        specifiedType: const FullType(BuiltList, [FullType(ContractDraft)]),
+      );
+    }
+    if (object.staffCenters != null) {
+      yield r'staffCenters';
+      yield serializers.serialize(
+        object.staffCenters,
+        specifiedType: const FullType(BuiltList, [FullType(StaffCenter)]),
+      );
+    }
+    if (object.centerOpeningDays != null) {
+      yield r'centerOpeningDays';
+      yield serializers.serialize(
+        object.centerOpeningDays,
+        specifiedType: const FullType(BuiltList, [FullType(CenterOpeningDays)]),
+      );
+    }
+    if (object.assets != null) {
+      yield r'assets';
+      yield serializers.serialize(
+        object.assets,
+        specifiedType: const FullType(BuiltList, [FullType(CenterAssetsInner)]),
+      );
+    }
+    if (object.isActive != null) {
+      yield r'isActive';
+      yield serializers.serialize(
+        object.isActive,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.address != null) {
+      yield r'address';
+      yield serializers.serialize(
+        object.address,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.zipcode != null) {
+      yield r'zipcode';
+      yield serializers.serialize(
+        object.zipcode,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.city != null) {
+      yield r'city';
+      yield serializers.serialize(
+        object.city,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.country != null) {
+      yield r'country';
+      yield serializers.serialize(
+        object.country,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.capacity != null) {
+      yield r'capacity';
+      yield serializers.serialize(
+        object.capacity,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.surface != null) {
+      yield r'surface';
+      yield serializers.serialize(
+        object.surface,
+        specifiedType: const FullType.nullable(num),
+      );
+    }
+    if (object.centerImage != null) {
+      yield r'centerImage';
+      yield serializers.serialize(
+        object.centerImage,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.discounts != null) {
+      yield r'discounts';
+      yield serializers.serialize(
+        object.discounts,
+        specifiedType: const FullType(BuiltList, [FullType(Discount)]),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.currentCenterPriceEnd != null) {
+      yield r'currentCenterPriceEnd';
+      yield serializers.serialize(
+        object.currentCenterPriceEnd,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.fullAddress != null) {
+      yield r'fullAddress';
+      yield serializers.serialize(
+        object.fullAddress,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.createdAt != null) {
+      yield r'createdAt';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.updatedAt != null) {
+      yield r'updatedAt';
+      yield serializers.serialize(
+        object.updatedAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    Center object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required CenterBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'reference':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.reference = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'serviceCenters':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ServiceCenter)]),
+          ) as BuiltList<ServiceCenter>;
+          result.serviceCenters.replace(valueDes);
+          break;
+        case r'centerPrices':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterPrice)]),
+          ) as BuiltList<CenterPrice>;
+          result.centerPrices.replace(valueDes);
+          break;
+        case r'staff':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.staff.replace(valueDes);
+          break;
+        case r'opportunities':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.opportunities.replace(valueDes);
+          break;
+        case r'contracts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.contracts.replace(valueDes);
+          break;
+        case r'clients':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(Client)]),
+          ) as BuiltList<Client>;
+          result.clients.replace(valueDes);
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
+          break;
+        case r'phone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.phone = valueDes;
+          break;
+        case r'rcs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.rcs = valueDes;
+          break;
+        case r'par':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.par = valueDes;
+          break;
+        case r'discount':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(Discount)]),
+          ) as BuiltList<Discount>;
+          result.discount.replace(valueDes);
+          break;
+        case r'siret':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.siret = valueDes;
+          break;
+        case r'presentationQuotation':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.presentationQuotation = valueDes;
+          break;
+        case r'visitLink':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.visitLink = valueDes;
+          break;
+        case r'centerConveniences':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterConveniences)]),
+          ) as BuiltList<CenterConveniences>;
+          result.centerConveniences.replace(valueDes);
+          break;
+        case r'centerFidensio':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(CenterFidensio),
+          ) as CenterFidensio?;
+          if (valueDes == null) continue;
+          result.centerFidensio.replace(valueDes);
+          break;
+        case r'centerBps':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterBp)]),
+          ) as BuiltList<CenterBp>;
+          result.centerBps.replace(valueDes);
+          break;
+        case r'events':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(Event)]),
+          ) as BuiltList<Event>;
+          result.events.replace(valueDes);
+          break;
+        case r'spacedesignerUrl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.spacedesignerUrl = valueDes;
+          break;
+        case r'centerPlans':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterPlan)]),
+          ) as BuiltList<CenterPlan>;
+          result.centerPlans.replace(valueDes);
+          break;
+        case r'spacedesignerAvailableUrl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.spacedesignerAvailableUrl = valueDes;
+          break;
+        case r'credits':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.credits.replace(valueDes);
+          break;
+        case r'clientCenters':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ClientCenter)]),
+          ) as BuiltList<ClientCenter>;
+          result.clientCenters.replace(valueDes);
+          break;
+        case r'clientRequests':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ClientRequest)]),
+          ) as BuiltList<ClientRequest>;
+          result.clientRequests.replace(valueDes);
+          break;
+        case r'capital':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.capital = valueDes;
+          break;
+        case r'rcsCity':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.rcsCity = valueDes;
+          break;
+        case r'companyName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.companyName = valueDes;
+          break;
+        case r'centerConfiguration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(CenterConfiguration),
+          ) as CenterConfiguration?;
+          if (valueDes == null) continue;
+          result.centerConfiguration.replace(valueDes);
+          break;
+        case r'acquisitionCosts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AcquisitionCost)]),
+          ) as BuiltList<AcquisitionCost>;
+          result.acquisitionCosts.replace(valueDes);
+          break;
+        case r'longitude':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.longitude = valueDes;
+          break;
+        case r'latitude':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.latitude = valueDes;
+          break;
+        case r'quotations':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(Quotation)]),
+          ) as BuiltList<Quotation>;
+          result.quotations.replace(valueDes);
+          break;
+        case r'payments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(Payment)]),
+          ) as BuiltList<Payment>;
+          result.payments.replace(valueDes);
+          break;
+        case r'customerReservations':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CustomerReservation)]),
+          ) as BuiltList<CustomerReservation>;
+          result.customerReservations.replace(valueDes);
+          break;
+        case r'visorClients':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(VisorClient)]),
+          ) as BuiltList<VisorClient>;
+          result.visorClients.replace(valueDes);
+          break;
+        case r'visorReaders':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(VisorReader)]),
+          ) as BuiltList<VisorReader>;
+          result.visorReaders.replace(valueDes);
+          break;
+        case r'visorIdentifiers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(VisorIdentifier)]),
+          ) as BuiltList<VisorIdentifier>;
+          result.visorIdentifiers.replace(valueDes);
+          break;
+        case r'wifiLogs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(WifiLog)]),
+          ) as BuiltList<WifiLog>;
+          result.wifiLogs.replace(valueDes);
+          break;
+        case r'wifiStations':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(WifiStation)]),
+          ) as BuiltList<WifiStation>;
+          result.wifiStations.replace(valueDes);
+          break;
+        case r'centerCluster':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(CenterCluster),
+          ) as CenterCluster?;
+          if (valueDes == null) continue;
+          result.centerCluster.replace(valueDes);
+          break;
+        case r'attributionLogs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AttributionLog)]),
+          ) as BuiltList<AttributionLog>;
+          result.attributionLogs.replace(valueDes);
+          break;
+        case r'realEstateProgram':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.realEstateProgram = valueDes;
+          break;
+        case r'region':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.region = valueDes;
+          break;
+        case r'openingHour':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.openingHour = valueDes;
+          break;
+        case r'closureHour':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.closureHour = valueDes;
+          break;
+        case r'openingDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.openingDate = valueDes;
+          break;
+        case r'leaseSigningDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.leaseSigningDate = valueDes;
+          break;
+        case r'madaDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.madaDate = valueDes;
+          break;
+        case r'nbDesktops':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.nbDesktops = valueDes;
+          break;
+        case r'nbMeetingRooms':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.nbMeetingRooms = valueDes;
+          break;
+        case r'rentalSurface':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(num),
+          ) as num?;
+          if (valueDes == null) continue;
+          result.rentalSurface = valueDes;
+          break;
+        case r'isActiveFront':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isActiveFront = valueDes;
+          break;
+        case r'centerNetwork':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(CenterNetwork),
+          ) as CenterNetwork?;
+          if (valueDes == null) continue;
+          result.centerNetwork.replace(valueDes);
+          break;
+        case r'centerConnections':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterConnection)]),
+          ) as BuiltList<CenterConnection>;
+          result.centerConnections.replace(valueDes);
+          break;
+        case r'centerIps':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterIp)]),
+          ) as BuiltList<CenterIp>;
+          result.centerIps.replace(valueDes);
+          break;
+        case r'centerPrinters':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterPrinter)]),
+          ) as BuiltList<CenterPrinter>;
+          result.centerPrinters.replace(valueDes);
+          break;
+        case r'centerBays':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterBay)]),
+          ) as BuiltList<CenterBay>;
+          result.centerBays.replace(valueDes);
+          break;
+        case r'adsLaunchDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.adsLaunchDate = valueDes;
+          break;
+        case r'tva':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.tva = valueDes;
+          break;
+        case r'presenceLogs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(PresenceLog)]),
+          ) as BuiltList<PresenceLog>;
+          result.presenceLogs.replace(valueDes);
+          break;
+        case r'bankAccounts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BankAccount)]),
+          ) as BuiltList<BankAccount>;
+          result.bankAccounts.replace(valueDes);
+          break;
+        case r'accountingFileLogs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AccountingFileLog)]),
+          ) as BuiltList<AccountingFileLog>;
+          result.accountingFileLogs.replace(valueDes);
+          break;
+        case r'companyCode':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.companyCode = valueDes;
+          break;
+        case r'visorInstallationKey':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.visorInstallationKey = valueDes;
+          break;
+        case r'visorIndividuals':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.visorIndividuals.replace(valueDes);
+          break;
+        case r'googleMapsLink':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.googleMapsLink = valueDes;
+          break;
+        case r'centerDiscountGrids':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterDiscountGrid)]),
+          ) as BuiltList<CenterDiscountGrid>;
+          result.centerDiscountGrids.replace(valueDes);
+          break;
+        case r'happenings':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.happenings.replace(valueDes);
+          break;
+        case r'presentationSavedLabels':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(SavedLabel)]),
+          ) as BuiltList<SavedLabel>;
+          result.presentationSavedLabels.replace(valueDes);
+          break;
+        case r'floorPlans':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(FloorPlan)]),
+          ) as BuiltList<FloorPlan>;
+          result.floorPlans.replace(valueDes);
+          break;
+        case r'centerDiscounts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterDiscount)]),
+          ) as BuiltList<CenterDiscount>;
+          result.centerDiscounts.replace(valueDes);
+          break;
+        case r'centerPlugins':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterPlugin)]),
+          ) as BuiltList<CenterPlugin>;
+          result.centerPlugins.replace(valueDes);
+          break;
+        case r'company':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.company = valueDes;
+          break;
+        case r'contractDrafts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ContractDraft)]),
+          ) as BuiltList<ContractDraft>;
+          result.contractDrafts.replace(valueDes);
+          break;
+        case r'staffCenters':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(StaffCenter)]),
+          ) as BuiltList<StaffCenter>;
+          result.staffCenters.replace(valueDes);
+          break;
+        case r'centerOpeningDays':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterOpeningDays)]),
+          ) as BuiltList<CenterOpeningDays>;
+          result.centerOpeningDays.replace(valueDes);
+          break;
+        case r'assets':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterAssetsInner)]),
+          ) as BuiltList<CenterAssetsInner>;
+          result.assets.replace(valueDes);
+          break;
+        case r'isActive':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isActive = valueDes;
+          break;
+        case r'address':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.address = valueDes;
+          break;
+        case r'zipcode':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.zipcode = valueDes;
+          break;
+        case r'city':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.city = valueDes;
+          break;
+        case r'country':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.country = valueDes;
+          break;
+        case r'capacity':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.capacity = valueDes;
+          break;
+        case r'surface':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(num),
+          ) as num?;
+          if (valueDes == null) continue;
+          result.surface = valueDes;
+          break;
+        case r'centerImage':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.centerImage = valueDes;
+          break;
+        case r'discounts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(Discount)]),
+          ) as BuiltList<Discount>;
+          result.discounts.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
+        case r'currentCenterPriceEnd':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.currentCenterPriceEnd = valueDes;
+          break;
+        case r'fullAddress':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.fullAddress = valueDes;
+          break;
+        case r'createdAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
+          break;
+        case r'updatedAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.updatedAt = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  Center deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = CenterBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
+}
+

@@ -83,81 +83,85 @@ class _$TicketJsonldTicketReadStatusEnumSerializer
 
 class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   @override
-  final String? atId;
+  final JsonObject? metadata;
   @override
-  final String? atType;
+  final BuiltList<String>? comments;
   @override
-  final CommentJsonldCommentReadContext? atContext;
-  @override
-  final int? id;
-  @override
-  final String title;
-  @override
-  final DateTime startDate;
-  @override
-  final String? endDate;
-  @override
-  final String description;
+  final DateTime? endDate;
   @override
   final String author;
   @override
-  final String? assignee;
+  final String description;
   @override
-  final TicketJsonldTicketReadStatusEnum status;
-  @override
-  final String site;
-  @override
-  final String? location;
-  @override
-  final JsonObject? metadata;
-  @override
-  final DateTime? createdAt;
-  @override
-  final DateTime? updatedAt;
-  @override
-  final BuiltList<String>? linkedUsers;
+  final String title;
   @override
   final BuiltList<String>? tags;
   @override
-  final BuiltList<String>? comments;
+  final DateTime? createdAt;
+  @override
+  final String site;
+  @override
+  final BuiltList<String>? linkedUsers;
+  @override
+  final String? location;
+  @override
+  final int? id;
+  @override
+  final String? assignee;
+  @override
+  final DateTime startDate;
+  @override
+  final TicketJsonldTicketReadStatusEnum status;
+  @override
+  final DateTime? updatedAt;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$TicketJsonldTicketRead(
           [void Function(TicketJsonldTicketReadBuilder)? updates]) =>
       (new TicketJsonldTicketReadBuilder()..update(updates))._build();
 
   _$TicketJsonldTicketRead._(
-      {this.atId,
-      this.atType,
-      this.atContext,
-      this.id,
-      required this.title,
-      required this.startDate,
+      {this.metadata,
+      this.comments,
       this.endDate,
-      required this.description,
       required this.author,
-      this.assignee,
-      required this.status,
-      required this.site,
-      this.location,
-      this.metadata,
-      this.createdAt,
-      this.updatedAt,
-      this.linkedUsers,
+      required this.description,
+      required this.title,
       this.tags,
-      this.comments})
+      this.createdAt,
+      required this.site,
+      this.linkedUsers,
+      this.location,
+      this.id,
+      this.assignee,
+      required this.startDate,
+      required this.status,
+      this.updatedAt,
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'TicketJsonldTicketRead', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        startDate, r'TicketJsonldTicketRead', 'startDate');
-    BuiltValueNullFieldError.checkNotNull(
-        description, r'TicketJsonldTicketRead', 'description');
     BuiltValueNullFieldError.checkNotNull(
         author, r'TicketJsonldTicketRead', 'author');
     BuiltValueNullFieldError.checkNotNull(
-        status, r'TicketJsonldTicketRead', 'status');
+        description, r'TicketJsonldTicketRead', 'description');
+    BuiltValueNullFieldError.checkNotNull(
+        title, r'TicketJsonldTicketRead', 'title');
     BuiltValueNullFieldError.checkNotNull(
         site, r'TicketJsonldTicketRead', 'site');
+    BuiltValueNullFieldError.checkNotNull(
+        startDate, r'TicketJsonldTicketRead', 'startDate');
+    BuiltValueNullFieldError.checkNotNull(
+        status, r'TicketJsonldTicketRead', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'TicketJsonldTicketRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'TicketJsonldTicketRead', 'atType');
   }
 
   @override
@@ -173,49 +177,49 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TicketJsonldTicketRead &&
-        atId == other.atId &&
-        atType == other.atType &&
-        atContext == other.atContext &&
-        id == other.id &&
-        title == other.title &&
-        startDate == other.startDate &&
-        endDate == other.endDate &&
-        description == other.description &&
-        author == other.author &&
-        assignee == other.assignee &&
-        status == other.status &&
-        site == other.site &&
-        location == other.location &&
         metadata == other.metadata &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt &&
-        linkedUsers == other.linkedUsers &&
+        comments == other.comments &&
+        endDate == other.endDate &&
+        author == other.author &&
+        description == other.description &&
+        title == other.title &&
         tags == other.tags &&
-        comments == other.comments;
+        createdAt == other.createdAt &&
+        site == other.site &&
+        linkedUsers == other.linkedUsers &&
+        location == other.location &&
+        id == other.id &&
+        assignee == other.assignee &&
+        startDate == other.startDate &&
+        status == other.status &&
+        updatedAt == other.updatedAt &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, metadata.hashCode);
+    _$hash = $jc(_$hash, comments.hashCode);
+    _$hash = $jc(_$hash, endDate.hashCode);
+    _$hash = $jc(_$hash, author.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, tags.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, site.hashCode);
+    _$hash = $jc(_$hash, linkedUsers.hashCode);
+    _$hash = $jc(_$hash, location.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, assignee.hashCode);
+    _$hash = $jc(_$hash, startDate.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, atContext.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, title.hashCode);
-    _$hash = $jc(_$hash, startDate.hashCode);
-    _$hash = $jc(_$hash, endDate.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, author.hashCode);
-    _$hash = $jc(_$hash, assignee.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, site.hashCode);
-    _$hash = $jc(_$hash, location.hashCode);
-    _$hash = $jc(_$hash, metadata.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
-    _$hash = $jc(_$hash, linkedUsers.hashCode);
-    _$hash = $jc(_$hash, tags.hashCode);
-    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -223,114 +227,118 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TicketJsonldTicketRead')
-          ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('atContext', atContext)
-          ..add('id', id)
-          ..add('title', title)
-          ..add('startDate', startDate)
-          ..add('endDate', endDate)
-          ..add('description', description)
-          ..add('author', author)
-          ..add('assignee', assignee)
-          ..add('status', status)
-          ..add('site', site)
-          ..add('location', location)
           ..add('metadata', metadata)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt)
-          ..add('linkedUsers', linkedUsers)
+          ..add('comments', comments)
+          ..add('endDate', endDate)
+          ..add('author', author)
+          ..add('description', description)
+          ..add('title', title)
           ..add('tags', tags)
-          ..add('comments', comments))
+          ..add('createdAt', createdAt)
+          ..add('site', site)
+          ..add('linkedUsers', linkedUsers)
+          ..add('location', location)
+          ..add('id', id)
+          ..add('assignee', assignee)
+          ..add('startDate', startDate)
+          ..add('status', status)
+          ..add('updatedAt', updatedAt)
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
 
 class TicketJsonldTicketReadBuilder
-    implements Builder<TicketJsonldTicketRead, TicketJsonldTicketReadBuilder> {
+    implements
+        Builder<TicketJsonldTicketRead, TicketJsonldTicketReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$TicketJsonldTicketRead? _$v;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  CommentJsonldCommentReadContextBuilder? _atContext;
-  CommentJsonldCommentReadContextBuilder get atContext =>
-      _$this._atContext ??= new CommentJsonldCommentReadContextBuilder();
-  set atContext(CommentJsonldCommentReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _title;
-  String? get title => _$this._title;
-  set title(String? title) => _$this._title = title;
-
-  DateTime? _startDate;
-  DateTime? get startDate => _$this._startDate;
-  set startDate(DateTime? startDate) => _$this._startDate = startDate;
-
-  String? _endDate;
-  String? get endDate => _$this._endDate;
-  set endDate(String? endDate) => _$this._endDate = endDate;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  String? _author;
-  String? get author => _$this._author;
-  set author(String? author) => _$this._author = author;
-
-  String? _assignee;
-  String? get assignee => _$this._assignee;
-  set assignee(String? assignee) => _$this._assignee = assignee;
-
-  TicketJsonldTicketReadStatusEnum? _status;
-  TicketJsonldTicketReadStatusEnum? get status => _$this._status;
-  set status(TicketJsonldTicketReadStatusEnum? status) =>
-      _$this._status = status;
-
-  String? _site;
-  String? get site => _$this._site;
-  set site(String? site) => _$this._site = site;
-
-  String? _location;
-  String? get location => _$this._location;
-  set location(String? location) => _$this._location = location;
 
   JsonObject? _metadata;
   JsonObject? get metadata => _$this._metadata;
-  set metadata(JsonObject? metadata) => _$this._metadata = metadata;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
-  ListBuilder<String>? _linkedUsers;
-  ListBuilder<String> get linkedUsers =>
-      _$this._linkedUsers ??= new ListBuilder<String>();
-  set linkedUsers(ListBuilder<String>? linkedUsers) =>
-      _$this._linkedUsers = linkedUsers;
-
-  ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
-  set tags(ListBuilder<String>? tags) => _$this._tags = tags;
+  set metadata(covariant JsonObject? metadata) => _$this._metadata = metadata;
 
   ListBuilder<String>? _comments;
   ListBuilder<String> get comments =>
       _$this._comments ??= new ListBuilder<String>();
-  set comments(ListBuilder<String>? comments) => _$this._comments = comments;
+  set comments(covariant ListBuilder<String>? comments) =>
+      _$this._comments = comments;
+
+  DateTime? _endDate;
+  DateTime? get endDate => _$this._endDate;
+  set endDate(covariant DateTime? endDate) => _$this._endDate = endDate;
+
+  String? _author;
+  String? get author => _$this._author;
+  set author(covariant String? author) => _$this._author = author;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
+  String? _title;
+  String? get title => _$this._title;
+  set title(covariant String? title) => _$this._title = title;
+
+  ListBuilder<String>? _tags;
+  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
+  set tags(covariant ListBuilder<String>? tags) => _$this._tags = tags;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _site;
+  String? get site => _$this._site;
+  set site(covariant String? site) => _$this._site = site;
+
+  ListBuilder<String>? _linkedUsers;
+  ListBuilder<String> get linkedUsers =>
+      _$this._linkedUsers ??= new ListBuilder<String>();
+  set linkedUsers(covariant ListBuilder<String>? linkedUsers) =>
+      _$this._linkedUsers = linkedUsers;
+
+  String? _location;
+  String? get location => _$this._location;
+  set location(covariant String? location) => _$this._location = location;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  String? _assignee;
+  String? get assignee => _$this._assignee;
+  set assignee(covariant String? assignee) => _$this._assignee = assignee;
+
+  DateTime? _startDate;
+  DateTime? get startDate => _$this._startDate;
+  set startDate(covariant DateTime? startDate) => _$this._startDate = startDate;
+
+  TicketJsonldTicketReadStatusEnum? _status;
+  TicketJsonldTicketReadStatusEnum? get status => _$this._status;
+  set status(covariant TicketJsonldTicketReadStatusEnum? status) =>
+      _$this._status = status;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   TicketJsonldTicketReadBuilder() {
     TicketJsonldTicketRead._defaults(this);
@@ -339,32 +347,32 @@ class TicketJsonldTicketReadBuilder
   TicketJsonldTicketReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _metadata = $v.metadata;
+      _comments = $v.comments?.toBuilder();
+      _endDate = $v.endDate;
+      _author = $v.author;
+      _description = $v.description;
+      _title = $v.title;
+      _tags = $v.tags?.toBuilder();
+      _createdAt = $v.createdAt;
+      _site = $v.site;
+      _linkedUsers = $v.linkedUsers?.toBuilder();
+      _location = $v.location;
+      _id = $v.id;
+      _assignee = $v.assignee;
+      _startDate = $v.startDate;
+      _status = $v.status;
+      _updatedAt = $v.updatedAt;
+      _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _atContext = $v.atContext?.toBuilder();
-      _id = $v.id;
-      _title = $v.title;
-      _startDate = $v.startDate;
-      _endDate = $v.endDate;
-      _description = $v.description;
-      _author = $v.author;
-      _assignee = $v.assignee;
-      _status = $v.status;
-      _site = $v.site;
-      _location = $v.location;
-      _metadata = $v.metadata;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
-      _linkedUsers = $v.linkedUsers?.toBuilder();
-      _tags = $v.tags?.toBuilder();
-      _comments = $v.comments?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(TicketJsonldTicketRead other) {
+  void replace(covariant TicketJsonldTicketRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TicketJsonldTicketRead;
   }
@@ -382,44 +390,48 @@ class TicketJsonldTicketReadBuilder
     try {
       _$result = _$v ??
           new _$TicketJsonldTicketRead._(
-            atId: atId,
-            atType: atType,
-            atContext: _atContext?.build(),
-            id: id,
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'TicketJsonldTicketRead', 'title'),
-            startDate: BuiltValueNullFieldError.checkNotNull(
-                startDate, r'TicketJsonldTicketRead', 'startDate'),
+            metadata: metadata,
+            comments: _comments?.build(),
             endDate: endDate,
-            description: BuiltValueNullFieldError.checkNotNull(
-                description, r'TicketJsonldTicketRead', 'description'),
             author: BuiltValueNullFieldError.checkNotNull(
                 author, r'TicketJsonldTicketRead', 'author'),
-            assignee: assignee,
-            status: BuiltValueNullFieldError.checkNotNull(
-                status, r'TicketJsonldTicketRead', 'status'),
+            description: BuiltValueNullFieldError.checkNotNull(
+                description, r'TicketJsonldTicketRead', 'description'),
+            title: BuiltValueNullFieldError.checkNotNull(
+                title, r'TicketJsonldTicketRead', 'title'),
+            tags: _tags?.build(),
+            createdAt: createdAt,
             site: BuiltValueNullFieldError.checkNotNull(
                 site, r'TicketJsonldTicketRead', 'site'),
-            location: location,
-            metadata: metadata,
-            createdAt: createdAt,
-            updatedAt: updatedAt,
             linkedUsers: _linkedUsers?.build(),
-            tags: _tags?.build(),
-            comments: _comments?.build(),
+            location: location,
+            id: id,
+            assignee: assignee,
+            startDate: BuiltValueNullFieldError.checkNotNull(
+                startDate, r'TicketJsonldTicketRead', 'startDate'),
+            status: BuiltValueNullFieldError.checkNotNull(
+                status, r'TicketJsonldTicketRead', 'status'),
+            updatedAt: updatedAt,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'TicketJsonldTicketRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'TicketJsonldTicketRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'atContext';
-        _atContext?.build();
+        _$failedField = 'comments';
+        _comments?.build();
+
+        _$failedField = 'tags';
+        _tags?.build();
 
         _$failedField = 'linkedUsers';
         _linkedUsers?.build();
-        _$failedField = 'tags';
-        _tags?.build();
-        _$failedField = 'comments';
-        _comments?.build();
+
+        _$failedField = 'atContext';
+        _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'TicketJsonldTicketRead', _$failedField, e.toString());

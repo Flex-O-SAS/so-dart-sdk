@@ -15,73 +15,77 @@ import 'package:so_dart_sdk/ticketing_service/date_serializer.dart';
 import 'package:so_dart_sdk/ticketing_service/model/date.dart';
 
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response.dart';
-import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_search.dart';
-import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_search_mapping_inner.dart';
-import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apilinked_users_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apitags_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_tickets_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read_context.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read_context_one_of.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json_violations_inner.dart';
-import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_violations_inner.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_collection_base_schema.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_collection_base_schema_all_of_view.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_collection_base_schema_no_pagination.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_collection_base_schema_no_pagination_search.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_collection_base_schema_no_pagination_search_mapping_inner.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_item_base_schema_context.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_item_base_schema_context_one_of.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_user_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_user_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_ticket_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_ticket_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_tag_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_tag_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/tag_tag_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write_json_merge_patch.dart';
 
 part 'serializers.g.dart';
 
 @SerializersFor([
   ApiApicommentsGetCollection200Response,
-  ApiApicommentsGetCollection200ResponseSearch,
-  ApiApicommentsGetCollection200ResponseSearchMappingInner,
-  ApiApicommentsGetCollection200ResponseView,
   ApiApilinkedUsersGetCollection200Response,
   ApiApitagsGetCollection200Response,
   ApiTicketsGetCollection200Response,
   CommentCommentRead,
   CommentCommentWrite,
+  CommentCommentWriteJsonMergePatch,
   CommentJsonldCommentRead,
-  CommentJsonldCommentReadContext,
-  CommentJsonldCommentReadContextOneOf,
-  CommentJsonldCommentWrite,
-  ConstraintViolationJson,
-  ConstraintViolationJsonViolationsInner,
-  ConstraintViolationJsonldJsonld,
+  ConstraintViolation,
+  ConstraintViolationJsonld,
+  ConstraintViolationViolationsInner,
   Error,
   ErrorJsonld,
+  HydraCollectionBaseSchema,$HydraCollectionBaseSchema,
+  HydraCollectionBaseSchemaAllOfView,
+  HydraCollectionBaseSchemaNoPagination,$HydraCollectionBaseSchemaNoPagination,
+  HydraCollectionBaseSchemaNoPaginationSearch,
+  HydraCollectionBaseSchemaNoPaginationSearchMappingInner,
+  HydraItemBaseSchema,$HydraItemBaseSchema,
+  HydraItemBaseSchemaContext,
+  HydraItemBaseSchemaContextOneOf,
   LinkedUserJsonldLinkedUserRead,
-  LinkedUserJsonldLinkedUserWrite,
-  LinkedUserJsonldTicketWrite,
   LinkedUserLinkedUserRead,
   LinkedUserLinkedUserWrite,
+  LinkedUserLinkedUserWriteJsonMergePatch,
   LinkedUserTicketWrite,
   TagJsonldTagRead,
-  TagJsonldTagWrite,
   TagTagRead,
   TagTagWrite,
+  TagTagWriteJsonMergePatch,
   TicketJsonldTicketRead,
-  TicketJsonldTicketWrite,
   TicketTicketRead,
   TicketTicketWrite,
+  TicketTicketWriteJsonMergePatch,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
@@ -92,6 +96,9 @@ Serializers serializers = (_$serializers.toBuilder()
         const FullType(BuiltList, [FullType(String)]),
         () => ListBuilder<String>(),
       )
+      ..add(HydraCollectionBaseSchema.serializer)
+      ..add(HydraCollectionBaseSchemaNoPagination.serializer)
+      ..add(HydraItemBaseSchema.serializer)
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())

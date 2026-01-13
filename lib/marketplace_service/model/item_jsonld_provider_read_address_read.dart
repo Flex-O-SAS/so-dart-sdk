@@ -3,13 +3,14 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'item_jsonld_provider_read_address_read.g.dart';
 
-/// 
+/// ItemJsonldProviderReadAddressRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -18,21 +19,12 @@ part 'item_jsonld_provider_read_address_read.g.dart';
 /// * [service] 
 /// * [isBookable] 
 @BuiltValue()
-abstract class ItemJsonldProviderReadAddressRead implements Built<ItemJsonldProviderReadAddressRead, ItemJsonldProviderReadAddressReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AddressJsonldProviderReadAddressReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+abstract class ItemJsonldProviderReadAddressRead implements HydraItemBaseSchema, Built<ItemJsonldProviderReadAddressRead, ItemJsonldProviderReadAddressReadBuilder> {
+  @BuiltValueField(wireName: r'isBookable')
+  bool get isBookable;
 
   @BuiltValueField(wireName: r'service')
   String get service;
-
-  @BuiltValueField(wireName: r'isBookable')
-  bool get isBookable;
 
   ItemJsonldProviderReadAddressRead._();
 
@@ -61,32 +53,28 @@ class _$ItemJsonldProviderReadAddressReadSerializer implements PrimitiveSerializ
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    yield r'service';
+    yield r'@id';
     yield serializers.serialize(
-      object.service,
+      object.atId,
       specifiedType: const FullType(String),
     );
     yield r'isBookable';
     yield serializers.serialize(
       object.isBookable,
       specifiedType: const FullType(bool),
+    );
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
+    yield r'service';
+    yield serializers.serialize(
+      object.service,
+      specifiedType: const FullType(String),
     );
   }
 
@@ -114,8 +102,8 @@ class _$ItemJsonldProviderReadAddressReadSerializer implements PrimitiveSerializ
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-          ) as AddressJsonldProviderReadAddressReadContext;
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
           result.atContext.replace(valueDes);
           break;
         case r'@id':
@@ -124,6 +112,13 @@ class _$ItemJsonldProviderReadAddressReadSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.atId = valueDes;
+          break;
+        case r'isBookable':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isBookable = valueDes;
           break;
         case r'@type':
           final valueDes = serializers.deserialize(
@@ -138,13 +133,6 @@ class _$ItemJsonldProviderReadAddressReadSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.service = valueDes;
-          break;
-        case r'isBookable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isBookable = valueDes;
           break;
         default:
           unhandled.add(key);

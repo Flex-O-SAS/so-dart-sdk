@@ -59,47 +59,47 @@ class _$ClientRelationJsonldTypeEnumSerializer
 
 class _$ClientRelationJsonld extends ClientRelationJsonld {
   @override
-  final AppointmentJsonldAppointmentReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final int? id;
+  final DateTime? createdAt;
   @override
   final String client;
+  @override
+  final String? description;
+  @override
+  final DateTime? end;
+  @override
+  final int? id;
   @override
   final String clientRelated;
   @override
   final ClientRelationJsonldTypeEnum type;
   @override
-  final String? description;
-  @override
-  final String? begin;
-  @override
-  final String? end;
-  @override
-  final DateTime? createdAt;
+  final DateTime? begin;
   @override
   final DateTime? updatedAt;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$ClientRelationJsonld(
           [void Function(ClientRelationJsonldBuilder)? updates]) =>
       (new ClientRelationJsonldBuilder()..update(updates))._build();
 
   _$ClientRelationJsonld._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.id,
+      {this.createdAt,
       required this.client,
+      this.description,
+      this.end,
+      this.id,
       required this.clientRelated,
       required this.type,
-      this.description,
       this.begin,
-      this.end,
-      this.createdAt,
-      this.updatedAt})
+      this.updatedAt,
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         client, r'ClientRelationJsonld', 'client');
@@ -107,6 +107,10 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
         clientRelated, r'ClientRelationJsonld', 'clientRelated');
     BuiltValueNullFieldError.checkNotNull(
         type, r'ClientRelationJsonld', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'ClientRelationJsonld', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'ClientRelationJsonld', 'atType');
   }
 
   @override
@@ -122,35 +126,35 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ClientRelationJsonld &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
-        id == other.id &&
+        createdAt == other.createdAt &&
         client == other.client &&
+        description == other.description &&
+        end == other.end &&
+        id == other.id &&
         clientRelated == other.clientRelated &&
         type == other.type &&
-        description == other.description &&
         begin == other.begin &&
-        end == other.end &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, client.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, end.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, clientRelated.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, begin.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, client.hashCode);
-    _$hash = $jc(_$hash, clientRelated.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, begin.hashCode);
-    _$hash = $jc(_$hash, end.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -158,77 +162,79 @@ class _$ClientRelationJsonld extends ClientRelationJsonld {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ClientRelationJsonld')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('id', id)
+          ..add('createdAt', createdAt)
           ..add('client', client)
+          ..add('description', description)
+          ..add('end', end)
+          ..add('id', id)
           ..add('clientRelated', clientRelated)
           ..add('type', type)
-          ..add('description', description)
           ..add('begin', begin)
-          ..add('end', end)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
 
 class ClientRelationJsonldBuilder
-    implements Builder<ClientRelationJsonld, ClientRelationJsonldBuilder> {
+    implements
+        Builder<ClientRelationJsonld, ClientRelationJsonldBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$ClientRelationJsonld? _$v;
 
-  AppointmentJsonldAppointmentReadContextBuilder? _atContext;
-  AppointmentJsonldAppointmentReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new AppointmentJsonldAppointmentReadContextBuilder();
-  set atContext(AppointmentJsonldAppointmentReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
 
   String? _client;
   String? get client => _$this._client;
-  set client(String? client) => _$this._client = client;
+  set client(covariant String? client) => _$this._client = client;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
+  DateTime? _end;
+  DateTime? get end => _$this._end;
+  set end(covariant DateTime? end) => _$this._end = end;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
 
   String? _clientRelated;
   String? get clientRelated => _$this._clientRelated;
-  set clientRelated(String? clientRelated) =>
+  set clientRelated(covariant String? clientRelated) =>
       _$this._clientRelated = clientRelated;
 
   ClientRelationJsonldTypeEnum? _type;
   ClientRelationJsonldTypeEnum? get type => _$this._type;
-  set type(ClientRelationJsonldTypeEnum? type) => _$this._type = type;
+  set type(covariant ClientRelationJsonldTypeEnum? type) => _$this._type = type;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  String? _begin;
-  String? get begin => _$this._begin;
-  set begin(String? begin) => _$this._begin = begin;
-
-  String? _end;
-  String? get end => _$this._end;
-  set end(String? end) => _$this._end = end;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _begin;
+  DateTime? get begin => _$this._begin;
+  set begin(covariant DateTime? begin) => _$this._begin = begin;
 
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+  set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   ClientRelationJsonldBuilder() {
     ClientRelationJsonld._defaults(this);
@@ -237,25 +243,25 @@ class ClientRelationJsonldBuilder
   ClientRelationJsonldBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _createdAt = $v.createdAt;
+      _client = $v.client;
+      _description = $v.description;
+      _end = $v.end;
+      _id = $v.id;
+      _clientRelated = $v.clientRelated;
+      _type = $v.type;
+      _begin = $v.begin;
+      _updatedAt = $v.updatedAt;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _id = $v.id;
-      _client = $v.client;
-      _clientRelated = $v.clientRelated;
-      _type = $v.type;
-      _description = $v.description;
-      _begin = $v.begin;
-      _end = $v.end;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(ClientRelationJsonld other) {
+  void replace(covariant ClientRelationJsonld other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ClientRelationJsonld;
   }
@@ -273,21 +279,23 @@ class ClientRelationJsonldBuilder
     try {
       _$result = _$v ??
           new _$ClientRelationJsonld._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            id: id,
+            createdAt: createdAt,
             client: BuiltValueNullFieldError.checkNotNull(
                 client, r'ClientRelationJsonld', 'client'),
+            description: description,
+            end: end,
+            id: id,
             clientRelated: BuiltValueNullFieldError.checkNotNull(
                 clientRelated, r'ClientRelationJsonld', 'clientRelated'),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'ClientRelationJsonld', 'type'),
-            description: description,
             begin: begin,
-            end: end,
-            createdAt: createdAt,
             updatedAt: updatedAt,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'ClientRelationJsonld', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'ClientRelationJsonld', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

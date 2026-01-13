@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/individual_opportunity_create_lead_json_merge_patch.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/backend/model/individual_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_opportunity_create_lead.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -14,7 +14,7 @@ part 'opportunity_opportunity_create_lead.g.dart';
 /// OpportunityOpportunityCreateLead
 ///
 /// Properties:
-/// * [origin] 
+/// * [origin] - Origine de l'opportunité
 /// * [commitment] 
 /// * [center] 
 /// * [client] 
@@ -23,8 +23,10 @@ part 'opportunity_opportunity_create_lead.g.dart';
 /// * [begin] 
 @BuiltValue()
 abstract class OpportunityOpportunityCreateLead implements Built<OpportunityOpportunityCreateLead, OpportunityOpportunityCreateLeadBuilder> {
+  /// Origine de l'opportunité
   @BuiltValueField(wireName: r'origin')
-  int? get origin;
+  OpportunityOpportunityCreateLeadOriginEnum get origin;
+  // enum originEnum {  1,  2,  3,  };
 
   @BuiltValueField(wireName: r'commitment')
   String? get commitment;
@@ -36,7 +38,7 @@ abstract class OpportunityOpportunityCreateLead implements Built<OpportunityOppo
   EnterpriseOpportunityCreateLead get client;
 
   @BuiltValueField(wireName: r'owner')
-  IndividualOpportunityCreateLeadJsonMergePatch? get owner;
+  IndividualOpportunityCreateLead? get owner;
 
   /// Type de l'opportunité
   @BuiltValueField(wireName: r'type')
@@ -44,7 +46,7 @@ abstract class OpportunityOpportunityCreateLead implements Built<OpportunityOppo
   // enum typeEnum {  FULL_DESKTOP,  FULL_COWORKING,  MEETING,  COWORKING,  OPEN_DESKTOP,  DOMICILIATION,  };
 
   @BuiltValueField(wireName: r'begin')
-  String? get begin;
+  DateTime? get begin;
 
   OpportunityOpportunityCreateLead._();
 
@@ -71,22 +73,22 @@ class _$OpportunityOpportunityCreateLeadSerializer implements PrimitiveSerialize
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'origin';
-    yield object.origin == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.origin,
-      specifiedType: const FullType.nullable(int),
+      specifiedType: const FullType(OpportunityOpportunityCreateLeadOriginEnum),
     );
     if (object.commitment != null) {
       yield r'commitment';
       yield serializers.serialize(
         object.commitment,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.center != null) {
       yield r'center';
       yield serializers.serialize(
         object.center,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'client';
@@ -97,7 +99,7 @@ class _$OpportunityOpportunityCreateLeadSerializer implements PrimitiveSerialize
     yield r'owner';
     yield object.owner == null ? null : serializers.serialize(
       object.owner,
-      specifiedType: const FullType.nullable(IndividualOpportunityCreateLeadJsonMergePatch),
+      specifiedType: const FullType.nullable(IndividualOpportunityCreateLead),
     );
     yield r'type';
     yield serializers.serialize(
@@ -108,7 +110,7 @@ class _$OpportunityOpportunityCreateLeadSerializer implements PrimitiveSerialize
       yield r'begin';
       yield serializers.serialize(
         object.begin,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -137,25 +139,22 @@ class _$OpportunityOpportunityCreateLeadSerializer implements PrimitiveSerialize
         case r'origin':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(OpportunityOpportunityCreateLeadOriginEnum),
+          ) as OpportunityOpportunityCreateLeadOriginEnum;
           result.origin = valueDes;
           break;
         case r'commitment':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.commitment = valueDes;
           break;
         case r'center':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.center = valueDes;
           break;
         case r'client':
@@ -168,8 +167,8 @@ class _$OpportunityOpportunityCreateLeadSerializer implements PrimitiveSerialize
         case r'owner':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(IndividualOpportunityCreateLeadJsonMergePatch),
-          ) as IndividualOpportunityCreateLeadJsonMergePatch?;
+            specifiedType: const FullType.nullable(IndividualOpportunityCreateLead),
+          ) as IndividualOpportunityCreateLead?;
           if (valueDes == null) continue;
           result.owner.replace(valueDes);
           break;
@@ -183,9 +182,8 @@ class _$OpportunityOpportunityCreateLeadSerializer implements PrimitiveSerialize
         case r'begin':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.begin = valueDes;
           break;
         default:
@@ -215,6 +213,26 @@ class _$OpportunityOpportunityCreateLeadSerializer implements PrimitiveSerialize
     );
     return result.build();
   }
+}
+
+class OpportunityOpportunityCreateLeadOriginEnum extends EnumClass {
+
+  /// Origine de l'opportunité
+  @BuiltValueEnumConst(wireNumber: 1)
+  static const OpportunityOpportunityCreateLeadOriginEnum number1 = _$opportunityOpportunityCreateLeadOriginEnum_number1;
+  /// Origine de l'opportunité
+  @BuiltValueEnumConst(wireNumber: 2)
+  static const OpportunityOpportunityCreateLeadOriginEnum number2 = _$opportunityOpportunityCreateLeadOriginEnum_number2;
+  /// Origine de l'opportunité
+  @BuiltValueEnumConst(wireNumber: 3)
+  static const OpportunityOpportunityCreateLeadOriginEnum number3 = _$opportunityOpportunityCreateLeadOriginEnum_number3;
+
+  static Serializer<OpportunityOpportunityCreateLeadOriginEnum> get serializer => _$opportunityOpportunityCreateLeadOriginEnumSerializer;
+
+  const OpportunityOpportunityCreateLeadOriginEnum._(String name): super(name);
+
+  static BuiltSet<OpportunityOpportunityCreateLeadOriginEnum> get values => _$opportunityOpportunityCreateLeadOriginEnumValues;
+  static OpportunityOpportunityCreateLeadOriginEnum valueOf(String name) => _$opportunityOpportunityCreateLeadOriginEnumValueOf(name);
 }
 
 class OpportunityOpportunityCreateLeadTypeEnum extends EnumClass {

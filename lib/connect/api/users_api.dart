@@ -9,9 +9,6 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:so_dart_sdk/connect/api_util.dart';
-import 'package:so_dart_sdk/connect/model/error_response.dart';
-import 'package:so_dart_sdk/connect/model/user_dto.dart';
-import 'package:so_dart_sdk/connect/model/user_response_dto.dart';
 
 class UsersApi {
 
@@ -27,7 +24,6 @@ class UsersApi {
   /// Parameters:
   /// * [providerUuid] - UUID du provider
   /// * [userReference] - Identifiant de l'utilisateur
-  /// * [userDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,12 +31,11 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [UserResponseDto] as data
+  /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserResponseDto>> providersProviderUuidUsersUserReferencePut({ 
+  Future<Response<void>> providersProviderUuidUsersUserReferencePut({ 
     required String providerUuid,
     required String userReference,
-    required UserDto userDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -64,66 +59,18 @@ class UsersApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
-    dynamic _bodyData;
-
-    try {
-      const _type = FullType(UserDto);
-      _bodyData = _serializers.serialize(userDto, specifiedType: _type);
-
-    } catch(error, stackTrace) {
-      throw DioException(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
     final _response = await _dio.request<Object>(
       _path,
-      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    UserResponseDto? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(UserResponseDto),
-      ) as UserResponseDto;
-
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<UserResponseDto>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+    return _response;
   }
 
 }

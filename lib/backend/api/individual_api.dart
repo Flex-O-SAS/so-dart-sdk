@@ -78,6 +78,8 @@ class IndividualApi {
   /// * [cityLeftSquareBracketRightSquareBracket] - 
   /// * [country] - 
   /// * [countryLeftSquareBracketRightSquareBracket] - 
+  /// * [timezone] - 
+  /// * [timezoneLeftSquareBracketRightSquareBracket] - 
   /// * [firstname2] - 
   /// * [firstnameLeftSquareBracketRightSquareBracket] - 
   /// * [lastname2] - 
@@ -151,6 +153,8 @@ class IndividualApi {
     BuiltList<String>? cityLeftSquareBracketRightSquareBracket,
     String? country,
     BuiltList<String>? countryLeftSquareBracketRightSquareBracket,
+    String? timezone,
+    BuiltList<String>? timezoneLeftSquareBracketRightSquareBracket,
     String? firstname2,
     BuiltList<String>? firstnameLeftSquareBracketRightSquareBracket,
     String? lastname2,
@@ -235,6 +239,8 @@ class IndividualApi {
       if (cityLeftSquareBracketRightSquareBracket != null) r'city[]': encodeCollectionQueryParameter<String>(_serializers, cityLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (country != null) r'country': encodeQueryParameter(_serializers, country, const FullType(String)),
       if (countryLeftSquareBracketRightSquareBracket != null) r'country[]': encodeCollectionQueryParameter<String>(_serializers, countryLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (timezone != null) r'timezone': encodeQueryParameter(_serializers, timezone, const FullType(String)),
+      if (timezoneLeftSquareBracketRightSquareBracket != null) r'timezone[]': encodeCollectionQueryParameter<String>(_serializers, timezoneLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (firstname2 != null) r'firstname': encodeQueryParameter(_serializers, firstname2, const FullType(String)),
       if (firstnameLeftSquareBracketRightSquareBracket != null) r'firstname[]': encodeCollectionQueryParameter<String>(_serializers, firstnameLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (lastname2 != null) r'lastname': encodeQueryParameter(_serializers, lastname2, const FullType(String)),

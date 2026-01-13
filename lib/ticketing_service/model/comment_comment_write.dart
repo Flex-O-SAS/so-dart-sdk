@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'comment_comment_write.g.dart';
 
-/// 
+/// CommentCommentWrite
 ///
 /// Properties:
 /// * [author] 

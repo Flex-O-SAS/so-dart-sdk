@@ -9,8 +9,6 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:so_dart_sdk/connect/api_util.dart';
-import 'package:so_dart_sdk/connect/model/error_response.dart';
-import 'package:so_dart_sdk/connect/model/menu_list_dto.dart';
 
 class MiscApi {
 
@@ -32,9 +30,9 @@ class MiscApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [MenuListDto] as data
+  /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MenuListDto>> providersProviderUuidMenusGet({ 
+  Future<Response<void>> providersProviderUuidMenusGet({ 
     required String providerUuid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -70,35 +68,7 @@ class MiscApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    MenuListDto? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(MenuListDto),
-      ) as MenuListDto;
-
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<MenuListDto>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+    return _response;
   }
 
 }

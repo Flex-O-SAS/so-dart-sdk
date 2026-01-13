@@ -8,7 +8,7 @@ part of 'staff_staff_write_json_merge_patch.dart';
 
 class _$StaffStaffWriteJsonMergePatch extends StaffStaffWriteJsonMergePatch {
   @override
-  final String? tosAcceptedAt;
+  final DateTime? tosAcceptedAt;
 
   factory _$StaffStaffWriteJsonMergePatch(
           [void Function(StaffStaffWriteJsonMergePatchBuilder)? updates]) =>
@@ -54,9 +54,9 @@ class StaffStaffWriteJsonMergePatchBuilder
             StaffStaffWriteJsonMergePatchBuilder> {
   _$StaffStaffWriteJsonMergePatch? _$v;
 
-  String? _tosAcceptedAt;
-  String? get tosAcceptedAt => _$this._tosAcceptedAt;
-  set tosAcceptedAt(String? tosAcceptedAt) =>
+  DateTime? _tosAcceptedAt;
+  DateTime? get tosAcceptedAt => _$this._tosAcceptedAt;
+  set tosAcceptedAt(DateTime? tosAcceptedAt) =>
       _$this._tosAcceptedAt = tosAcceptedAt;
 
   StaffStaffWriteJsonMergePatchBuilder() {

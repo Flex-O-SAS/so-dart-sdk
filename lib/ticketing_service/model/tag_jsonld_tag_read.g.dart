@@ -8,33 +8,37 @@ part of 'tag_jsonld_tag_read.dart';
 
 class _$TagJsonldTagRead extends TagJsonldTagRead {
   @override
-  final CommentJsonldCommentReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final int? id;
+  final DateTime? createdAt;
   @override
   final String? name;
   @override
-  final DateTime? createdAt;
+  final int? id;
   @override
   final DateTime? updatedAt;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$TagJsonldTagRead(
           [void Function(TagJsonldTagReadBuilder)? updates]) =>
       (new TagJsonldTagReadBuilder()..update(updates))._build();
 
   _$TagJsonldTagRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.id,
+      {this.createdAt,
       this.name,
-      this.createdAt,
-      this.updatedAt})
-      : super._();
+      this.id,
+      this.updatedAt,
+      this.atContext,
+      required this.atId,
+      required this.atType})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(atId, r'TagJsonldTagRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'TagJsonldTagRead', 'atType');
+  }
 
   @override
   TagJsonldTagRead rebuild(void Function(TagJsonldTagReadBuilder) updates) =>
@@ -48,25 +52,25 @@ class _$TagJsonldTagRead extends TagJsonldTagRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TagJsonldTagRead &&
+        createdAt == other.createdAt &&
+        name == other.name &&
+        id == other.id &&
+        updatedAt == other.updatedAt &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        id == other.id &&
-        name == other.name &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -74,50 +78,52 @@ class _$TagJsonldTagRead extends TagJsonldTagRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TagJsonldTagRead')
+          ..add('createdAt', createdAt)
+          ..add('name', name)
+          ..add('id', id)
+          ..add('updatedAt', updatedAt)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('id', id)
-          ..add('name', name)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('atType', atType))
         .toString();
   }
 }
 
 class TagJsonldTagReadBuilder
-    implements Builder<TagJsonldTagRead, TagJsonldTagReadBuilder> {
+    implements
+        Builder<TagJsonldTagRead, TagJsonldTagReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$TagJsonldTagRead? _$v;
 
-  CommentJsonldCommentReadContextBuilder? _atContext;
-  CommentJsonldCommentReadContextBuilder get atContext =>
-      _$this._atContext ??= new CommentJsonldCommentReadContextBuilder();
-  set atContext(CommentJsonldCommentReadContextBuilder? atContext) =>
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
   String? _atType;
   String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   TagJsonldTagReadBuilder() {
     TagJsonldTagRead._defaults(this);
@@ -126,20 +132,20 @@ class TagJsonldTagReadBuilder
   TagJsonldTagReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _createdAt = $v.createdAt;
+      _name = $v.name;
+      _id = $v.id;
+      _updatedAt = $v.updatedAt;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _id = $v.id;
-      _name = $v.name;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(TagJsonldTagRead other) {
+  void replace(covariant TagJsonldTagRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagJsonldTagRead;
   }
@@ -157,13 +163,15 @@ class TagJsonldTagReadBuilder
     try {
       _$result = _$v ??
           new _$TagJsonldTagRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            id: id,
-            name: name,
             createdAt: createdAt,
+            name: name,
+            id: id,
             updatedAt: updatedAt,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'TagJsonldTagRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'TagJsonldTagRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

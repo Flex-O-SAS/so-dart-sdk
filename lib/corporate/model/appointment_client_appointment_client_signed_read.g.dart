@@ -102,7 +102,7 @@ class _$AppointmentClientAppointmentClientSignedRead
   @override
   final String? id;
   @override
-  final AppointmentAppointmentClientSignedRead? appointment;
+  final AppointmentAppointmentClientSignedRead appointment;
   @override
   final String email;
   @override
@@ -116,9 +116,9 @@ class _$AppointmentClientAppointmentClientSignedRead
   @override
   final String? comment;
   @override
-  final String? responseDate;
+  final DateTime? responseDate;
   @override
-  final String? lastSentInvitationDate;
+  final DateTime? lastSentInvitationDate;
 
   factory _$AppointmentClientAppointmentClientSignedRead(
           [void Function(AppointmentClientAppointmentClientSignedReadBuilder)?
@@ -129,7 +129,7 @@ class _$AppointmentClientAppointmentClientSignedRead
 
   _$AppointmentClientAppointmentClientSignedRead._(
       {this.id,
-      this.appointment,
+      required this.appointment,
       required this.email,
       this.phone,
       this.firstname,
@@ -139,6 +139,8 @@ class _$AppointmentClientAppointmentClientSignedRead
       this.responseDate,
       this.lastSentInvitationDate})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(appointment,
+        r'AppointmentClientAppointmentClientSignedRead', 'appointment');
     BuiltValueNullFieldError.checkNotNull(
         email, r'AppointmentClientAppointmentClientSignedRead', 'email');
     BuiltValueNullFieldError.checkNotNull(
@@ -249,13 +251,14 @@ class AppointmentClientAppointmentClientSignedReadBuilder
   String? get comment => _$this._comment;
   set comment(String? comment) => _$this._comment = comment;
 
-  String? _responseDate;
-  String? get responseDate => _$this._responseDate;
-  set responseDate(String? responseDate) => _$this._responseDate = responseDate;
+  DateTime? _responseDate;
+  DateTime? get responseDate => _$this._responseDate;
+  set responseDate(DateTime? responseDate) =>
+      _$this._responseDate = responseDate;
 
-  String? _lastSentInvitationDate;
-  String? get lastSentInvitationDate => _$this._lastSentInvitationDate;
-  set lastSentInvitationDate(String? lastSentInvitationDate) =>
+  DateTime? _lastSentInvitationDate;
+  DateTime? get lastSentInvitationDate => _$this._lastSentInvitationDate;
+  set lastSentInvitationDate(DateTime? lastSentInvitationDate) =>
       _$this._lastSentInvitationDate = lastSentInvitationDate;
 
   AppointmentClientAppointmentClientSignedReadBuilder() {
@@ -266,7 +269,7 @@ class AppointmentClientAppointmentClientSignedReadBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _appointment = $v.appointment?.toBuilder();
+      _appointment = $v.appointment.toBuilder();
       _email = $v.email;
       _phone = $v.phone;
       _firstname = $v.firstname;
@@ -302,7 +305,7 @@ class AppointmentClientAppointmentClientSignedReadBuilder
       _$result = _$v ??
           new _$AppointmentClientAppointmentClientSignedRead._(
             id: id,
-            appointment: _appointment?.build(),
+            appointment: appointment.build(),
             email: BuiltValueNullFieldError.checkNotNull(email,
                 r'AppointmentClientAppointmentClientSignedRead', 'email'),
             phone: phone,
@@ -318,7 +321,7 @@ class AppointmentClientAppointmentClientSignedReadBuilder
       late String _$failedField;
       try {
         _$failedField = 'appointment';
-        _appointment?.build();
+        appointment.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'AppointmentClientAppointmentClientSignedRead',

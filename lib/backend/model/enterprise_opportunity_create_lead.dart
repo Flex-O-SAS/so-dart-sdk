@@ -21,6 +21,7 @@ part 'enterprise_opportunity_create_lead.g.dart';
 /// * [zipcode] 
 /// * [city] 
 /// * [country] 
+/// * [timezone] 
 @BuiltValue()
 abstract class EnterpriseOpportunityCreateLead implements Built<EnterpriseOpportunityCreateLead, EnterpriseOpportunityCreateLeadBuilder> {
   @BuiltValueField(wireName: r'name')
@@ -52,6 +53,9 @@ abstract class EnterpriseOpportunityCreateLead implements Built<EnterpriseOpport
 
   @BuiltValueField(wireName: r'country')
   String? get country;
+
+  @BuiltValueField(wireName: r'timezone')
+  String? get timezone;
 
   EnterpriseOpportunityCreateLead._();
 
@@ -87,28 +91,28 @@ class _$EnterpriseOpportunityCreateLeadSerializer implements PrimitiveSerializer
       yield r'type';
       yield serializers.serialize(
         object.type,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.email != null) {
       yield r'email';
       yield serializers.serialize(
         object.email,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.mobile != null) {
       yield r'mobile';
       yield serializers.serialize(
         object.mobile,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.mainCenter != null) {
       yield r'mainCenter';
       yield serializers.serialize(
         object.mainCenter,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.language != null) {
@@ -122,28 +126,35 @@ class _$EnterpriseOpportunityCreateLeadSerializer implements PrimitiveSerializer
       yield r'address';
       yield serializers.serialize(
         object.address,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.zipcode != null) {
       yield r'zipcode';
       yield serializers.serialize(
         object.zipcode,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.city != null) {
       yield r'city';
       yield serializers.serialize(
         object.city,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.country != null) {
       yield r'country';
       yield serializers.serialize(
         object.country,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.timezone != null) {
+      yield r'timezone';
+      yield serializers.serialize(
+        object.timezone,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -179,33 +190,29 @@ class _$EnterpriseOpportunityCreateLeadSerializer implements PrimitiveSerializer
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.type = valueDes;
           break;
         case r'email':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.email = valueDes;
           break;
         case r'mobile':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.mobile = valueDes;
           break;
         case r'mainCenter':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.mainCenter = valueDes;
           break;
         case r'language':
@@ -218,34 +225,37 @@ class _$EnterpriseOpportunityCreateLeadSerializer implements PrimitiveSerializer
         case r'address':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.address = valueDes;
           break;
         case r'zipcode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.zipcode = valueDes;
           break;
         case r'city':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.city = valueDes;
           break;
         case r'country':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.country = valueDes;
+          break;
+        case r'timezone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timezone = valueDes;
           break;
         default:
           unhandled.add(key);

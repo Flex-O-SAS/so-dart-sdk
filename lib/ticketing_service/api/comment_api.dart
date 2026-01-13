@@ -11,12 +11,11 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/api_util.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
 
@@ -289,7 +288,7 @@ class CommentApi {
   ///
   /// Parameters:
   /// * [id] - Comment identifier
-  /// * [commentCommentWrite] - The updated Comment resource
+  /// * [commentCommentWriteJsonMergePatch] - The updated Comment resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -301,7 +300,7 @@ class CommentApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<CommentJsonldCommentRead>> apiApicommentsIdPatch({ 
     required String id,
-    required CommentCommentWrite commentCommentWrite,
+    required CommentCommentWriteJsonMergePatch commentCommentWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -333,8 +332,8 @@ class CommentApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CommentCommentWrite);
-      _bodyData = _serializers.serialize(commentCommentWrite, specifiedType: _type);
+      const _type = FullType(CommentCommentWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(commentCommentWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -392,7 +391,7 @@ class CommentApi {
   /// Creates a Comment resource.
   ///
   /// Parameters:
-  /// * [commentJsonldCommentWrite] - The new Comment resource
+  /// * [commentCommentWrite] - The new Comment resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -403,7 +402,7 @@ class CommentApi {
   /// Returns a [Future] containing a [Response] with a [CommentJsonldCommentRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<CommentJsonldCommentRead>> apiApicommentsPost({ 
-    required CommentJsonldCommentWrite commentJsonldCommentWrite,
+    required CommentCommentWrite commentCommentWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -428,15 +427,15 @@ class CommentApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CommentJsonldCommentWrite);
-      _bodyData = _serializers.serialize(commentJsonldCommentWrite, specifiedType: _type);
+      const _type = FullType(CommentCommentWrite);
+      _bodyData = _serializers.serialize(commentCommentWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

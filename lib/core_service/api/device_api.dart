@@ -11,10 +11,10 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/core_service/api_util.dart';
 import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
-import 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/device_device_write.dart';
 import 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
-import 'package:so_dart_sdk/core_service/model/device_jsonld_device_write.dart';
 import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
 
@@ -259,7 +259,7 @@ class DeviceApi {
   /// Creates a Device resource.
   ///
   /// Parameters:
-  /// * [deviceJsonldDeviceWrite] - The new Device resource
+  /// * [deviceDeviceWrite] - The new Device resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -270,7 +270,7 @@ class DeviceApi {
   /// Returns a [Future] containing a [Response] with a [DeviceJsonldDeviceRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<DeviceJsonldDeviceRead>> apiDevicesPostItem({ 
-    required DeviceJsonldDeviceWrite deviceJsonldDeviceWrite,
+    required DeviceDeviceWrite deviceDeviceWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -302,8 +302,8 @@ class DeviceApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(DeviceJsonldDeviceWrite);
-      _bodyData = _serializers.serialize(deviceJsonldDeviceWrite, specifiedType: _type);
+      const _type = FullType(DeviceDeviceWrite);
+      _bodyData = _serializers.serialize(deviceDeviceWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

@@ -11,7 +11,6 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/marketplace_service/api_util.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_services_get_collection200_response.dart';
-import 'package:so_dart_sdk/marketplace_service/model/service_service_read.dart';
 
 class ServiceApi {
 
@@ -39,7 +38,6 @@ class ServiceApi {
   /// * [updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketAfterRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
-  /// * [acceptLanguage] - Service Accept-Language
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -64,7 +62,6 @@ class ServiceApi {
     String? updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? updatedAtLeftSquareBracketAfterRightSquareBracket,
     String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
-    String? acceptLanguage,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -76,7 +73,6 @@ class ServiceApi {
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{

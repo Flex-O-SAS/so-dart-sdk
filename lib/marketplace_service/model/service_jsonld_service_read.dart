@@ -3,14 +3,17 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'service_jsonld_service_read.g.dart';
 
-/// 
+/// ServiceJsonldServiceRead
 ///
 /// Properties:
+/// * [atContext] 
 /// * [atId] 
 /// * [atType] 
 /// * [id] 
@@ -18,12 +21,9 @@ part 'service_jsonld_service_read.g.dart';
 /// * [prioritization] 
 /// * [imageLink] 
 @BuiltValue()
-abstract class ServiceJsonldServiceRead implements Built<ServiceJsonldServiceRead, ServiceJsonldServiceReadBuilder> {
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+abstract class ServiceJsonldServiceRead implements HydraItemBaseSchema, Built<ServiceJsonldServiceRead, ServiceJsonldServiceReadBuilder> {
+  @BuiltValueField(wireName: r'imageLink')
+  String? get imageLink;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -33,9 +33,6 @@ abstract class ServiceJsonldServiceRead implements Built<ServiceJsonldServiceRea
 
   @BuiltValueField(wireName: r'prioritization')
   int? get prioritization;
-
-  @BuiltValueField(wireName: r'imageLink')
-  String? get imageLink;
 
   ServiceJsonldServiceRead._();
 
@@ -60,18 +57,23 @@ class _$ServiceJsonldServiceReadSerializer implements PrimitiveSerializer<Servic
     ServiceJsonldServiceRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atId != null) {
-      yield r'@id';
+    if (object.imageLink != null) {
+      yield r'imageLink';
       yield serializers.serialize(
-        object.atId,
+        object.imageLink,
         specifiedType: const FullType(String),
       );
     }
-    if (object.atType != null) {
-      yield r'@type';
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.atContext != null) {
+      yield r'@context';
       yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.id != null) {
@@ -88,18 +90,16 @@ class _$ServiceJsonldServiceReadSerializer implements PrimitiveSerializer<Servic
         specifiedType: const FullType(String),
       );
     }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
     if (object.prioritization != null) {
       yield r'prioritization';
       yield serializers.serialize(
         object.prioritization,
         specifiedType: const FullType(int),
-      );
-    }
-    if (object.imageLink != null) {
-      yield r'imageLink';
-      yield serializers.serialize(
-        object.imageLink,
-        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -125,6 +125,13 @@ class _$ServiceJsonldServiceReadSerializer implements PrimitiveSerializer<Servic
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'imageLink':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.imageLink = valueDes;
+          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
@@ -132,12 +139,12 @@ class _$ServiceJsonldServiceReadSerializer implements PrimitiveSerializer<Servic
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -153,20 +160,19 @@ class _$ServiceJsonldServiceReadSerializer implements PrimitiveSerializer<Servic
           ) as String;
           result.label = valueDes;
           break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
+          break;
         case r'prioritization':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.prioritization = valueDes;
-          break;
-        case r'imageLink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.imageLink = valueDes;
           break;
         default:
           unhandled.add(key);

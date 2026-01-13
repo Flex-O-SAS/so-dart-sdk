@@ -3,35 +3,27 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/marketplace_service/model/hydra_collection_base_schema_no_pagination_search.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_provider_read_address_read.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/marketplace_service/model/api_items_get_collection200_response_view.dart';
-import 'package:so_dart_sdk/marketplace_service/model/api_items_get_collection200_response_search.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_collection_base_schema_all_of_view.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_collection_base_schema.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'api_providers_get_collection200_response.g.dart';
 
-/// ApiProvidersGetCollection200Response
+/// Provider.jsonld-provider.read_address.read collection.
 ///
 /// Properties:
-/// * [member] 
 /// * [totalItems] 
-/// * [view] 
 /// * [search] 
+/// * [view] 
+/// * [member] 
 @BuiltValue()
-abstract class ApiProvidersGetCollection200Response implements Built<ApiProvidersGetCollection200Response, ApiProvidersGetCollection200ResponseBuilder> {
+abstract class ApiProvidersGetCollection200Response implements HydraCollectionBaseSchema, Built<ApiProvidersGetCollection200Response, ApiProvidersGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
   BuiltList<ProviderJsonldProviderReadAddressRead> get member;
-
-  @BuiltValueField(wireName: r'totalItems')
-  int? get totalItems;
-
-  @BuiltValueField(wireName: r'view')
-  ApiItemsGetCollection200ResponseView? get view;
-
-  @BuiltValueField(wireName: r'search')
-  ApiItemsGetCollection200ResponseSearch? get search;
 
   ApiProvidersGetCollection200Response._();
 
@@ -68,18 +60,18 @@ class _$ApiProvidersGetCollection200ResponseSerializer implements PrimitiveSeria
         specifiedType: const FullType(int),
       );
     }
-    if (object.view != null) {
-      yield r'view';
-      yield serializers.serialize(
-        object.view,
-        specifiedType: const FullType(ApiItemsGetCollection200ResponseView),
-      );
-    }
     if (object.search != null) {
       yield r'search';
       yield serializers.serialize(
         object.search,
-        specifiedType: const FullType(ApiItemsGetCollection200ResponseSearch),
+        specifiedType: const FullType(HydraCollectionBaseSchemaNoPaginationSearch),
+      );
+    }
+    if (object.view != null) {
+      yield r'view';
+      yield serializers.serialize(
+        object.view,
+        specifiedType: const FullType(HydraCollectionBaseSchemaAllOfView),
       );
     }
   }
@@ -119,19 +111,19 @@ class _$ApiProvidersGetCollection200ResponseSerializer implements PrimitiveSeria
           ) as int;
           result.totalItems = valueDes;
           break;
-        case r'view':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiItemsGetCollection200ResponseView),
-          ) as ApiItemsGetCollection200ResponseView;
-          result.view.replace(valueDes);
-          break;
         case r'search':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ApiItemsGetCollection200ResponseSearch),
-          ) as ApiItemsGetCollection200ResponseSearch;
+            specifiedType: const FullType(HydraCollectionBaseSchemaNoPaginationSearch),
+          ) as HydraCollectionBaseSchemaNoPaginationSearch;
           result.search.replace(valueDes);
+          break;
+        case r'view':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraCollectionBaseSchemaAllOfView),
+          ) as HydraCollectionBaseSchemaAllOfView;
+          result.view.replace(valueDes);
           break;
         default:
           unhandled.add(key);

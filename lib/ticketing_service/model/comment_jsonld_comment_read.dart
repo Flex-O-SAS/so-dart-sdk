@@ -3,13 +3,14 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read_context.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'comment_jsonld_comment_read.g.dart';
 
-/// 
+/// CommentJsonldCommentRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -23,18 +24,12 @@ part 'comment_jsonld_comment_read.g.dart';
 /// * [updatedAt] 
 /// * [ticket] 
 @BuiltValue()
-abstract class CommentJsonldCommentRead implements Built<CommentJsonldCommentRead, CommentJsonldCommentReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CommentJsonldCommentReadContext? get atContext;
+abstract class CommentJsonldCommentRead implements HydraItemBaseSchema, Built<CommentJsonldCommentRead, CommentJsonldCommentReadBuilder> {
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+  @BuiltValueField(wireName: r'ticket')
+  String get ticket;
 
   @BuiltValueField(wireName: r'author')
   String get author;
@@ -42,17 +37,14 @@ abstract class CommentJsonldCommentRead implements Built<CommentJsonldCommentRea
   @BuiltValueField(wireName: r'description')
   String get description;
 
+  @BuiltValueField(wireName: r'id')
+  int? get id;
+
   @BuiltValueField(wireName: r'notify')
   bool get notify;
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
-
   @BuiltValueField(wireName: r'updatedAt')
   DateTime? get updatedAt;
-
-  @BuiltValueField(wireName: r'ticket')
-  String get ticket;
 
   CommentJsonldCommentRead._();
 
@@ -77,34 +69,23 @@ class _$CommentJsonldCommentReadSerializer implements PrimitiveSerializer<Commen
     CommentJsonldCommentRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
+    if (object.createdAt != null) {
+      yield r'createdAt';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(CommentJsonldCommentReadContext),
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
       );
     }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'ticket';
+    yield serializers.serialize(
+      object.ticket,
+      specifiedType: const FullType(String),
+    );
     yield r'author';
     yield serializers.serialize(
       object.author,
@@ -115,18 +96,30 @@ class _$CommentJsonldCommentReadSerializer implements PrimitiveSerializer<Commen
       object.description,
       specifiedType: const FullType(String),
     );
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(int),
+      );
+    }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
     yield r'notify';
     yield serializers.serialize(
       object.notify,
       specifiedType: const FullType(bool),
     );
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     if (object.updatedAt != null) {
       yield r'updatedAt';
       yield serializers.serialize(
@@ -134,11 +127,6 @@ class _$CommentJsonldCommentReadSerializer implements PrimitiveSerializer<Commen
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'ticket';
-    yield serializers.serialize(
-      object.ticket,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -162,12 +150,12 @@ class _$CommentJsonldCommentReadSerializer implements PrimitiveSerializer<Commen
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
+        case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CommentJsonldCommentReadContext),
-          ) as CommentJsonldCommentReadContext;
-          result.atContext.replace(valueDes);
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -176,19 +164,12 @@ class _$CommentJsonldCommentReadSerializer implements PrimitiveSerializer<Commen
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'ticket':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
+          result.ticket = valueDes;
           break;
         case r'author':
           final valueDes = serializers.deserialize(
@@ -204,6 +185,27 @@ class _$CommentJsonldCommentReadSerializer implements PrimitiveSerializer<Commen
           ) as String;
           result.description = valueDes;
           break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
+          break;
         case r'notify':
           final valueDes = serializers.deserialize(
             value,
@@ -211,26 +213,12 @@ class _$CommentJsonldCommentReadSerializer implements PrimitiveSerializer<Commen
           ) as bool;
           result.notify = valueDes;
           break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.updatedAt = valueDes;
-          break;
-        case r'ticket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.ticket = valueDes;
           break;
         default:
           unhandled.add(key);

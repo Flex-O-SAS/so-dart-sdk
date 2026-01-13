@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'service_service_read.g.dart';
 
-/// 
+/// ServiceServiceRead
 ///
 /// Properties:
 /// * [id] 
@@ -77,7 +77,7 @@ class _$ServiceServiceReadSerializer implements PrimitiveSerializer<ServiceServi
       yield r'imageLink';
       yield serializers.serialize(
         object.imageLink,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -127,9 +127,8 @@ class _$ServiceServiceReadSerializer implements PrimitiveSerializer<ServiceServi
         case r'imageLink':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.imageLink = valueDes;
           break;
         default:

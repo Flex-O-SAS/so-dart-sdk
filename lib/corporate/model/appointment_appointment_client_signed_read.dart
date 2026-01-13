@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'appointment_appointment_client_signed_read.g.dart';
 
-/// 
+/// AppointmentAppointmentClientSignedRead
 ///
 /// Properties:
 /// * [id] 
@@ -52,7 +52,7 @@ abstract class AppointmentAppointmentClientSignedRead implements Built<Appointme
   // enum statusEnum {  scheduled,  cancelled,  done,  };
 
   @BuiltValueField(wireName: r'cancellationDate')
-  String? get cancellationDate;
+  DateTime? get cancellationDate;
 
   @BuiltValueField(wireName: r'cancellationReason')
   String? get cancellationReason;
@@ -111,7 +111,7 @@ class _$AppointmentAppointmentClientSignedReadSerializer implements PrimitiveSer
       yield r'staff';
       yield serializers.serialize(
         object.staff,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'site';
@@ -128,7 +128,7 @@ class _$AppointmentAppointmentClientSignedReadSerializer implements PrimitiveSer
       yield r'description';
       yield serializers.serialize(
         object.description,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'status';
@@ -140,14 +140,14 @@ class _$AppointmentAppointmentClientSignedReadSerializer implements PrimitiveSer
       yield r'cancellationDate';
       yield serializers.serialize(
         object.cancellationDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
     if (object.cancellationReason != null) {
       yield r'cancellationReason';
       yield serializers.serialize(
         object.cancellationReason,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'beginDate';
@@ -178,7 +178,7 @@ class _$AppointmentAppointmentClientSignedReadSerializer implements PrimitiveSer
       yield r'title';
       yield serializers.serialize(
         object.title,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -221,9 +221,8 @@ class _$AppointmentAppointmentClientSignedReadSerializer implements PrimitiveSer
         case r'staff':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.staff = valueDes;
           break;
         case r'site':
@@ -243,9 +242,8 @@ class _$AppointmentAppointmentClientSignedReadSerializer implements PrimitiveSer
         case r'description':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.description = valueDes;
           break;
         case r'status':
@@ -258,17 +256,15 @@ class _$AppointmentAppointmentClientSignedReadSerializer implements PrimitiveSer
         case r'cancellationDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.cancellationDate = valueDes;
           break;
         case r'cancellationReason':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.cancellationReason = valueDes;
           break;
         case r'beginDate':
@@ -302,9 +298,8 @@ class _$AppointmentAppointmentClientSignedReadSerializer implements PrimitiveSer
         case r'title':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.title = valueDes;
           break;
         default:

@@ -12,10 +12,10 @@ import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/core_service/api_util.dart';
 import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/branding_setting_branding_setting_write.dart';
+import 'package:so_dart_sdk/core_service/model/branding_setting_branding_setting_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_read.dart';
-import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_write.dart';
-import 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
 
@@ -261,7 +261,7 @@ class BrandingSettingApi {
   ///
   /// Parameters:
   /// * [orgId] - BrandingSetting identifier
-  /// * [brandingSettingBrandingSettingWrite] - The updated BrandingSetting resource
+  /// * [brandingSettingBrandingSettingWriteJsonMergePatch] - The updated BrandingSetting resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -273,7 +273,7 @@ class BrandingSettingApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BrandingSettingJsonldBrandingSettingRead>> apiBrandingPatchItem({ 
     required String orgId,
-    required BrandingSettingBrandingSettingWrite brandingSettingBrandingSettingWrite,
+    required BrandingSettingBrandingSettingWriteJsonMergePatch brandingSettingBrandingSettingWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -305,8 +305,8 @@ class BrandingSettingApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(BrandingSettingBrandingSettingWrite);
-      _bodyData = _serializers.serialize(brandingSettingBrandingSettingWrite, specifiedType: _type);
+      const _type = FullType(BrandingSettingBrandingSettingWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(brandingSettingBrandingSettingWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -364,7 +364,7 @@ class BrandingSettingApi {
   /// Creates a BrandingSetting resource.
   ///
   /// Parameters:
-  /// * [brandingSettingJsonldBrandingSettingWrite] - The new BrandingSetting resource
+  /// * [brandingSettingBrandingSettingWrite] - The new BrandingSetting resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -375,7 +375,7 @@ class BrandingSettingApi {
   /// Returns a [Future] containing a [Response] with a [BrandingSettingJsonldBrandingSettingRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BrandingSettingJsonldBrandingSettingRead>> apiBrandingPostItem({ 
-    required BrandingSettingJsonldBrandingSettingWrite brandingSettingJsonldBrandingSettingWrite,
+    required BrandingSettingBrandingSettingWrite brandingSettingBrandingSettingWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -407,8 +407,8 @@ class BrandingSettingApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(BrandingSettingJsonldBrandingSettingWrite);
-      _bodyData = _serializers.serialize(brandingSettingJsonldBrandingSettingWrite, specifiedType: _type);
+      const _type = FullType(BrandingSettingBrandingSettingWrite);
+      _bodyData = _serializers.serialize(brandingSettingBrandingSettingWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

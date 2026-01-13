@@ -96,43 +96,43 @@ class _$BrandingSettingJsonldBrandingSettingReadThemeModeEnumSerializer
 class _$BrandingSettingJsonldBrandingSettingRead
     extends BrandingSettingJsonldBrandingSettingRead {
   @override
-  final BrandingSettingJsonldBrandingSettingReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final String orgId;
-  @override
-  final String primaryColor;
-  @override
   final bool hideLoginNameSuffix;
-  @override
-  final String warnColor;
   @override
   final String backgroundColor;
   @override
-  final String fontColor;
+  final String? iconDarkUrl;
   @override
-  final String primaryColorDark;
+  final String primaryColor;
+  @override
+  final String warnColorDark;
+  @override
+  final String? logoDarkUrl;
+  @override
+  final BrandingSettingJsonldBrandingSettingReadThemeModeEnum? themeMode;
+  @override
+  final bool disableWatermark;
   @override
   final String backgroundColorDark;
   @override
-  final String warnColorDark;
+  final String orgId;
   @override
   final String fontColorDark;
   @override
   final String? logoUrl;
   @override
-  final String? logoDarkUrl;
+  final String primaryColorDark;
   @override
   final String? iconUrl;
   @override
-  final String? iconDarkUrl;
+  final String warnColor;
   @override
-  final bool disableWatermark;
+  final String fontColor;
   @override
-  final BrandingSettingJsonldBrandingSettingReadThemeModeEnum? themeMode;
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$BrandingSettingJsonldBrandingSettingRead(
           [void Function(BrandingSettingJsonldBrandingSettingReadBuilder)?
@@ -141,48 +141,52 @@ class _$BrandingSettingJsonldBrandingSettingRead
           ._build();
 
   _$BrandingSettingJsonldBrandingSettingRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      required this.orgId,
-      required this.primaryColor,
-      required this.hideLoginNameSuffix,
-      required this.warnColor,
+      {required this.hideLoginNameSuffix,
       required this.backgroundColor,
-      required this.fontColor,
-      required this.primaryColorDark,
-      required this.backgroundColorDark,
+      this.iconDarkUrl,
+      required this.primaryColor,
       required this.warnColorDark,
+      this.logoDarkUrl,
+      this.themeMode,
+      required this.disableWatermark,
+      required this.backgroundColorDark,
+      required this.orgId,
       required this.fontColorDark,
       this.logoUrl,
-      this.logoDarkUrl,
+      required this.primaryColorDark,
       this.iconUrl,
-      this.iconDarkUrl,
-      required this.disableWatermark,
-      this.themeMode})
+      required this.warnColor,
+      required this.fontColor,
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        orgId, r'BrandingSettingJsonldBrandingSettingRead', 'orgId');
-    BuiltValueNullFieldError.checkNotNull(primaryColor,
-        r'BrandingSettingJsonldBrandingSettingRead', 'primaryColor');
     BuiltValueNullFieldError.checkNotNull(hideLoginNameSuffix,
         r'BrandingSettingJsonldBrandingSettingRead', 'hideLoginNameSuffix');
-    BuiltValueNullFieldError.checkNotNull(
-        warnColor, r'BrandingSettingJsonldBrandingSettingRead', 'warnColor');
     BuiltValueNullFieldError.checkNotNull(backgroundColor,
         r'BrandingSettingJsonldBrandingSettingRead', 'backgroundColor');
-    BuiltValueNullFieldError.checkNotNull(
-        fontColor, r'BrandingSettingJsonldBrandingSettingRead', 'fontColor');
-    BuiltValueNullFieldError.checkNotNull(primaryColorDark,
-        r'BrandingSettingJsonldBrandingSettingRead', 'primaryColorDark');
-    BuiltValueNullFieldError.checkNotNull(backgroundColorDark,
-        r'BrandingSettingJsonldBrandingSettingRead', 'backgroundColorDark');
+    BuiltValueNullFieldError.checkNotNull(primaryColor,
+        r'BrandingSettingJsonldBrandingSettingRead', 'primaryColor');
     BuiltValueNullFieldError.checkNotNull(warnColorDark,
         r'BrandingSettingJsonldBrandingSettingRead', 'warnColorDark');
-    BuiltValueNullFieldError.checkNotNull(fontColorDark,
-        r'BrandingSettingJsonldBrandingSettingRead', 'fontColorDark');
     BuiltValueNullFieldError.checkNotNull(disableWatermark,
         r'BrandingSettingJsonldBrandingSettingRead', 'disableWatermark');
+    BuiltValueNullFieldError.checkNotNull(backgroundColorDark,
+        r'BrandingSettingJsonldBrandingSettingRead', 'backgroundColorDark');
+    BuiltValueNullFieldError.checkNotNull(
+        orgId, r'BrandingSettingJsonldBrandingSettingRead', 'orgId');
+    BuiltValueNullFieldError.checkNotNull(fontColorDark,
+        r'BrandingSettingJsonldBrandingSettingRead', 'fontColorDark');
+    BuiltValueNullFieldError.checkNotNull(primaryColorDark,
+        r'BrandingSettingJsonldBrandingSettingRead', 'primaryColorDark');
+    BuiltValueNullFieldError.checkNotNull(
+        warnColor, r'BrandingSettingJsonldBrandingSettingRead', 'warnColor');
+    BuiltValueNullFieldError.checkNotNull(
+        fontColor, r'BrandingSettingJsonldBrandingSettingRead', 'fontColor');
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'BrandingSettingJsonldBrandingSettingRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'BrandingSettingJsonldBrandingSettingRead', 'atType');
   }
 
   @override
@@ -199,49 +203,49 @@ class _$BrandingSettingJsonldBrandingSettingRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BrandingSettingJsonldBrandingSettingRead &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
-        orgId == other.orgId &&
-        primaryColor == other.primaryColor &&
         hideLoginNameSuffix == other.hideLoginNameSuffix &&
-        warnColor == other.warnColor &&
         backgroundColor == other.backgroundColor &&
-        fontColor == other.fontColor &&
-        primaryColorDark == other.primaryColorDark &&
-        backgroundColorDark == other.backgroundColorDark &&
+        iconDarkUrl == other.iconDarkUrl &&
+        primaryColor == other.primaryColor &&
         warnColorDark == other.warnColorDark &&
+        logoDarkUrl == other.logoDarkUrl &&
+        themeMode == other.themeMode &&
+        disableWatermark == other.disableWatermark &&
+        backgroundColorDark == other.backgroundColorDark &&
+        orgId == other.orgId &&
         fontColorDark == other.fontColorDark &&
         logoUrl == other.logoUrl &&
-        logoDarkUrl == other.logoDarkUrl &&
+        primaryColorDark == other.primaryColorDark &&
         iconUrl == other.iconUrl &&
-        iconDarkUrl == other.iconDarkUrl &&
-        disableWatermark == other.disableWatermark &&
-        themeMode == other.themeMode;
+        warnColor == other.warnColor &&
+        fontColor == other.fontColor &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, hideLoginNameSuffix.hashCode);
+    _$hash = $jc(_$hash, backgroundColor.hashCode);
+    _$hash = $jc(_$hash, iconDarkUrl.hashCode);
+    _$hash = $jc(_$hash, primaryColor.hashCode);
+    _$hash = $jc(_$hash, warnColorDark.hashCode);
+    _$hash = $jc(_$hash, logoDarkUrl.hashCode);
+    _$hash = $jc(_$hash, themeMode.hashCode);
+    _$hash = $jc(_$hash, disableWatermark.hashCode);
+    _$hash = $jc(_$hash, backgroundColorDark.hashCode);
+    _$hash = $jc(_$hash, orgId.hashCode);
+    _$hash = $jc(_$hash, fontColorDark.hashCode);
+    _$hash = $jc(_$hash, logoUrl.hashCode);
+    _$hash = $jc(_$hash, primaryColorDark.hashCode);
+    _$hash = $jc(_$hash, iconUrl.hashCode);
+    _$hash = $jc(_$hash, warnColor.hashCode);
+    _$hash = $jc(_$hash, fontColor.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, orgId.hashCode);
-    _$hash = $jc(_$hash, primaryColor.hashCode);
-    _$hash = $jc(_$hash, hideLoginNameSuffix.hashCode);
-    _$hash = $jc(_$hash, warnColor.hashCode);
-    _$hash = $jc(_$hash, backgroundColor.hashCode);
-    _$hash = $jc(_$hash, fontColor.hashCode);
-    _$hash = $jc(_$hash, primaryColorDark.hashCode);
-    _$hash = $jc(_$hash, backgroundColorDark.hashCode);
-    _$hash = $jc(_$hash, warnColorDark.hashCode);
-    _$hash = $jc(_$hash, fontColorDark.hashCode);
-    _$hash = $jc(_$hash, logoUrl.hashCode);
-    _$hash = $jc(_$hash, logoDarkUrl.hashCode);
-    _$hash = $jc(_$hash, iconUrl.hashCode);
-    _$hash = $jc(_$hash, iconDarkUrl.hashCode);
-    _$hash = $jc(_$hash, disableWatermark.hashCode);
-    _$hash = $jc(_$hash, themeMode.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -250,25 +254,25 @@ class _$BrandingSettingJsonldBrandingSettingRead
   String toString() {
     return (newBuiltValueToStringHelper(
             r'BrandingSettingJsonldBrandingSettingRead')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('orgId', orgId)
-          ..add('primaryColor', primaryColor)
           ..add('hideLoginNameSuffix', hideLoginNameSuffix)
-          ..add('warnColor', warnColor)
           ..add('backgroundColor', backgroundColor)
-          ..add('fontColor', fontColor)
-          ..add('primaryColorDark', primaryColorDark)
-          ..add('backgroundColorDark', backgroundColorDark)
+          ..add('iconDarkUrl', iconDarkUrl)
+          ..add('primaryColor', primaryColor)
           ..add('warnColorDark', warnColorDark)
+          ..add('logoDarkUrl', logoDarkUrl)
+          ..add('themeMode', themeMode)
+          ..add('disableWatermark', disableWatermark)
+          ..add('backgroundColorDark', backgroundColorDark)
+          ..add('orgId', orgId)
           ..add('fontColorDark', fontColorDark)
           ..add('logoUrl', logoUrl)
-          ..add('logoDarkUrl', logoDarkUrl)
+          ..add('primaryColorDark', primaryColorDark)
           ..add('iconUrl', iconUrl)
-          ..add('iconDarkUrl', iconDarkUrl)
-          ..add('disableWatermark', disableWatermark)
-          ..add('themeMode', themeMode))
+          ..add('warnColor', warnColor)
+          ..add('fontColor', fontColor)
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -276,98 +280,101 @@ class _$BrandingSettingJsonldBrandingSettingRead
 class BrandingSettingJsonldBrandingSettingReadBuilder
     implements
         Builder<BrandingSettingJsonldBrandingSettingRead,
-            BrandingSettingJsonldBrandingSettingReadBuilder> {
+            BrandingSettingJsonldBrandingSettingReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$BrandingSettingJsonldBrandingSettingRead? _$v;
-
-  BrandingSettingJsonldBrandingSettingReadContextBuilder? _atContext;
-  BrandingSettingJsonldBrandingSettingReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new BrandingSettingJsonldBrandingSettingReadContextBuilder();
-  set atContext(
-          BrandingSettingJsonldBrandingSettingReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  String? _orgId;
-  String? get orgId => _$this._orgId;
-  set orgId(String? orgId) => _$this._orgId = orgId;
-
-  String? _primaryColor;
-  String? get primaryColor => _$this._primaryColor;
-  set primaryColor(String? primaryColor) => _$this._primaryColor = primaryColor;
 
   bool? _hideLoginNameSuffix;
   bool? get hideLoginNameSuffix => _$this._hideLoginNameSuffix;
-  set hideLoginNameSuffix(bool? hideLoginNameSuffix) =>
+  set hideLoginNameSuffix(covariant bool? hideLoginNameSuffix) =>
       _$this._hideLoginNameSuffix = hideLoginNameSuffix;
-
-  String? _warnColor;
-  String? get warnColor => _$this._warnColor;
-  set warnColor(String? warnColor) => _$this._warnColor = warnColor;
 
   String? _backgroundColor;
   String? get backgroundColor => _$this._backgroundColor;
-  set backgroundColor(String? backgroundColor) =>
+  set backgroundColor(covariant String? backgroundColor) =>
       _$this._backgroundColor = backgroundColor;
-
-  String? _fontColor;
-  String? get fontColor => _$this._fontColor;
-  set fontColor(String? fontColor) => _$this._fontColor = fontColor;
-
-  String? _primaryColorDark;
-  String? get primaryColorDark => _$this._primaryColorDark;
-  set primaryColorDark(String? primaryColorDark) =>
-      _$this._primaryColorDark = primaryColorDark;
-
-  String? _backgroundColorDark;
-  String? get backgroundColorDark => _$this._backgroundColorDark;
-  set backgroundColorDark(String? backgroundColorDark) =>
-      _$this._backgroundColorDark = backgroundColorDark;
-
-  String? _warnColorDark;
-  String? get warnColorDark => _$this._warnColorDark;
-  set warnColorDark(String? warnColorDark) =>
-      _$this._warnColorDark = warnColorDark;
-
-  String? _fontColorDark;
-  String? get fontColorDark => _$this._fontColorDark;
-  set fontColorDark(String? fontColorDark) =>
-      _$this._fontColorDark = fontColorDark;
-
-  String? _logoUrl;
-  String? get logoUrl => _$this._logoUrl;
-  set logoUrl(String? logoUrl) => _$this._logoUrl = logoUrl;
-
-  String? _logoDarkUrl;
-  String? get logoDarkUrl => _$this._logoDarkUrl;
-  set logoDarkUrl(String? logoDarkUrl) => _$this._logoDarkUrl = logoDarkUrl;
-
-  String? _iconUrl;
-  String? get iconUrl => _$this._iconUrl;
-  set iconUrl(String? iconUrl) => _$this._iconUrl = iconUrl;
 
   String? _iconDarkUrl;
   String? get iconDarkUrl => _$this._iconDarkUrl;
-  set iconDarkUrl(String? iconDarkUrl) => _$this._iconDarkUrl = iconDarkUrl;
+  set iconDarkUrl(covariant String? iconDarkUrl) =>
+      _$this._iconDarkUrl = iconDarkUrl;
 
-  bool? _disableWatermark;
-  bool? get disableWatermark => _$this._disableWatermark;
-  set disableWatermark(bool? disableWatermark) =>
-      _$this._disableWatermark = disableWatermark;
+  String? _primaryColor;
+  String? get primaryColor => _$this._primaryColor;
+  set primaryColor(covariant String? primaryColor) =>
+      _$this._primaryColor = primaryColor;
+
+  String? _warnColorDark;
+  String? get warnColorDark => _$this._warnColorDark;
+  set warnColorDark(covariant String? warnColorDark) =>
+      _$this._warnColorDark = warnColorDark;
+
+  String? _logoDarkUrl;
+  String? get logoDarkUrl => _$this._logoDarkUrl;
+  set logoDarkUrl(covariant String? logoDarkUrl) =>
+      _$this._logoDarkUrl = logoDarkUrl;
 
   BrandingSettingJsonldBrandingSettingReadThemeModeEnum? _themeMode;
   BrandingSettingJsonldBrandingSettingReadThemeModeEnum? get themeMode =>
       _$this._themeMode;
   set themeMode(
-          BrandingSettingJsonldBrandingSettingReadThemeModeEnum? themeMode) =>
+          covariant BrandingSettingJsonldBrandingSettingReadThemeModeEnum?
+              themeMode) =>
       _$this._themeMode = themeMode;
+
+  bool? _disableWatermark;
+  bool? get disableWatermark => _$this._disableWatermark;
+  set disableWatermark(covariant bool? disableWatermark) =>
+      _$this._disableWatermark = disableWatermark;
+
+  String? _backgroundColorDark;
+  String? get backgroundColorDark => _$this._backgroundColorDark;
+  set backgroundColorDark(covariant String? backgroundColorDark) =>
+      _$this._backgroundColorDark = backgroundColorDark;
+
+  String? _orgId;
+  String? get orgId => _$this._orgId;
+  set orgId(covariant String? orgId) => _$this._orgId = orgId;
+
+  String? _fontColorDark;
+  String? get fontColorDark => _$this._fontColorDark;
+  set fontColorDark(covariant String? fontColorDark) =>
+      _$this._fontColorDark = fontColorDark;
+
+  String? _logoUrl;
+  String? get logoUrl => _$this._logoUrl;
+  set logoUrl(covariant String? logoUrl) => _$this._logoUrl = logoUrl;
+
+  String? _primaryColorDark;
+  String? get primaryColorDark => _$this._primaryColorDark;
+  set primaryColorDark(covariant String? primaryColorDark) =>
+      _$this._primaryColorDark = primaryColorDark;
+
+  String? _iconUrl;
+  String? get iconUrl => _$this._iconUrl;
+  set iconUrl(covariant String? iconUrl) => _$this._iconUrl = iconUrl;
+
+  String? _warnColor;
+  String? get warnColor => _$this._warnColor;
+  set warnColor(covariant String? warnColor) => _$this._warnColor = warnColor;
+
+  String? _fontColor;
+  String? get fontColor => _$this._fontColor;
+  set fontColor(covariant String? fontColor) => _$this._fontColor = fontColor;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   BrandingSettingJsonldBrandingSettingReadBuilder() {
     BrandingSettingJsonldBrandingSettingRead._defaults(this);
@@ -376,32 +383,32 @@ class BrandingSettingJsonldBrandingSettingReadBuilder
   BrandingSettingJsonldBrandingSettingReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _hideLoginNameSuffix = $v.hideLoginNameSuffix;
+      _backgroundColor = $v.backgroundColor;
+      _iconDarkUrl = $v.iconDarkUrl;
+      _primaryColor = $v.primaryColor;
+      _warnColorDark = $v.warnColorDark;
+      _logoDarkUrl = $v.logoDarkUrl;
+      _themeMode = $v.themeMode;
+      _disableWatermark = $v.disableWatermark;
+      _backgroundColorDark = $v.backgroundColorDark;
+      _orgId = $v.orgId;
+      _fontColorDark = $v.fontColorDark;
+      _logoUrl = $v.logoUrl;
+      _primaryColorDark = $v.primaryColorDark;
+      _iconUrl = $v.iconUrl;
+      _warnColor = $v.warnColor;
+      _fontColor = $v.fontColor;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _orgId = $v.orgId;
-      _primaryColor = $v.primaryColor;
-      _hideLoginNameSuffix = $v.hideLoginNameSuffix;
-      _warnColor = $v.warnColor;
-      _backgroundColor = $v.backgroundColor;
-      _fontColor = $v.fontColor;
-      _primaryColorDark = $v.primaryColorDark;
-      _backgroundColorDark = $v.backgroundColorDark;
-      _warnColorDark = $v.warnColorDark;
-      _fontColorDark = $v.fontColorDark;
-      _logoUrl = $v.logoUrl;
-      _logoDarkUrl = $v.logoDarkUrl;
-      _iconUrl = $v.iconUrl;
-      _iconDarkUrl = $v.iconDarkUrl;
-      _disableWatermark = $v.disableWatermark;
-      _themeMode = $v.themeMode;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(BrandingSettingJsonldBrandingSettingRead other) {
+  void replace(covariant BrandingSettingJsonldBrandingSettingRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$BrandingSettingJsonldBrandingSettingRead;
   }
@@ -420,46 +427,48 @@ class BrandingSettingJsonldBrandingSettingReadBuilder
     try {
       _$result = _$v ??
           new _$BrandingSettingJsonldBrandingSettingRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            orgId: BuiltValueNullFieldError.checkNotNull(
-                orgId, r'BrandingSettingJsonldBrandingSettingRead', 'orgId'),
-            primaryColor: BuiltValueNullFieldError.checkNotNull(primaryColor,
-                r'BrandingSettingJsonldBrandingSettingRead', 'primaryColor'),
             hideLoginNameSuffix: BuiltValueNullFieldError.checkNotNull(
                 hideLoginNameSuffix,
                 r'BrandingSettingJsonldBrandingSettingRead',
                 'hideLoginNameSuffix'),
-            warnColor: BuiltValueNullFieldError.checkNotNull(warnColor,
-                r'BrandingSettingJsonldBrandingSettingRead', 'warnColor'),
             backgroundColor: BuiltValueNullFieldError.checkNotNull(
                 backgroundColor,
                 r'BrandingSettingJsonldBrandingSettingRead',
                 'backgroundColor'),
-            fontColor: BuiltValueNullFieldError.checkNotNull(fontColor,
-                r'BrandingSettingJsonldBrandingSettingRead', 'fontColor'),
-            primaryColorDark: BuiltValueNullFieldError.checkNotNull(
-                primaryColorDark,
-                r'BrandingSettingJsonldBrandingSettingRead',
-                'primaryColorDark'),
-            backgroundColorDark: BuiltValueNullFieldError.checkNotNull(
-                backgroundColorDark,
-                r'BrandingSettingJsonldBrandingSettingRead',
-                'backgroundColorDark'),
+            iconDarkUrl: iconDarkUrl,
+            primaryColor: BuiltValueNullFieldError.checkNotNull(primaryColor,
+                r'BrandingSettingJsonldBrandingSettingRead', 'primaryColor'),
             warnColorDark: BuiltValueNullFieldError.checkNotNull(warnColorDark,
                 r'BrandingSettingJsonldBrandingSettingRead', 'warnColorDark'),
-            fontColorDark: BuiltValueNullFieldError.checkNotNull(fontColorDark,
-                r'BrandingSettingJsonldBrandingSettingRead', 'fontColorDark'),
-            logoUrl: logoUrl,
             logoDarkUrl: logoDarkUrl,
-            iconUrl: iconUrl,
-            iconDarkUrl: iconDarkUrl,
+            themeMode: themeMode,
             disableWatermark: BuiltValueNullFieldError.checkNotNull(
                 disableWatermark,
                 r'BrandingSettingJsonldBrandingSettingRead',
                 'disableWatermark'),
-            themeMode: themeMode,
+            backgroundColorDark: BuiltValueNullFieldError.checkNotNull(
+                backgroundColorDark,
+                r'BrandingSettingJsonldBrandingSettingRead',
+                'backgroundColorDark'),
+            orgId: BuiltValueNullFieldError.checkNotNull(
+                orgId, r'BrandingSettingJsonldBrandingSettingRead', 'orgId'),
+            fontColorDark: BuiltValueNullFieldError.checkNotNull(fontColorDark,
+                r'BrandingSettingJsonldBrandingSettingRead', 'fontColorDark'),
+            logoUrl: logoUrl,
+            primaryColorDark: BuiltValueNullFieldError.checkNotNull(
+                primaryColorDark,
+                r'BrandingSettingJsonldBrandingSettingRead',
+                'primaryColorDark'),
+            iconUrl: iconUrl,
+            warnColor: BuiltValueNullFieldError.checkNotNull(warnColor,
+                r'BrandingSettingJsonldBrandingSettingRead', 'warnColor'),
+            fontColor: BuiltValueNullFieldError.checkNotNull(fontColor,
+                r'BrandingSettingJsonldBrandingSettingRead', 'fontColor'),
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'BrandingSettingJsonldBrandingSettingRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'BrandingSettingJsonldBrandingSettingRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

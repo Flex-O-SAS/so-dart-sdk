@@ -116,7 +116,7 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
       yield r'happeningPartnerLink';
       yield serializers.serialize(
         object.happeningPartnerLink,
-        specifiedType: const FullType(JsonObject),
+        specifiedType: const FullType.nullable(JsonObject),
       );
     }
     yield r'@id';
@@ -260,8 +260,9 @@ class _$HappeningJsonldHappeningReadSerializer implements PrimitiveSerializer<Ha
         case r'happeningPartnerLink':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.happeningPartnerLink = valueDes;
           break;
         case r'@id':

@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'package_package_write.g.dart';
 
-/// 
+/// PackagePackageWrite
 ///
 /// Properties:
 /// * [recipient] 
@@ -48,13 +48,13 @@ abstract class PackagePackageWrite implements Built<PackagePackageWrite, Package
   DateTime get receptionDate;
 
   @BuiltValueField(wireName: r'handoverDate')
-  String? get handoverDate;
+  DateTime? get handoverDate;
 
   @BuiltValueField(wireName: r'handoverClient')
   String? get handoverClient;
 
   @BuiltValueField(wireName: r'securityCode')
-  String? get securityCode;
+  String get securityCode;
 
   PackagePackageWrite._();
 
@@ -118,20 +118,20 @@ class _$PackagePackageWriteSerializer implements PrimitiveSerializer<PackagePack
       yield r'handoverDate';
       yield serializers.serialize(
         object.handoverDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
     if (object.handoverClient != null) {
       yield r'handoverClient';
       yield serializers.serialize(
         object.handoverClient,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'securityCode';
-    yield object.securityCode == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.securityCode,
-      specifiedType: const FullType.nullable(String),
+      specifiedType: const FullType(String),
     );
   }
 
@@ -208,25 +208,22 @@ class _$PackagePackageWriteSerializer implements PrimitiveSerializer<PackagePack
         case r'handoverDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.handoverDate = valueDes;
           break;
         case r'handoverClient':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.handoverClient = valueDes;
           break;
         case r'securityCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.securityCode = valueDes;
           break;
         default:

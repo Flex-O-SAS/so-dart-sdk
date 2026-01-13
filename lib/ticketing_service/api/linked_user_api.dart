@@ -8,17 +8,15 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/api_util.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apilinked_users_get_collection200_response.dart';
-import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_user_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_user_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_write_json_merge_patch.dart';
 
 class LinkedUserApi {
 
@@ -283,7 +281,7 @@ class LinkedUserApi {
   ///
   /// Parameters:
   /// * [id] - LinkedUser identifier
-  /// * [linkedUserLinkedUserWrite] - The updated LinkedUser resource
+  /// * [linkedUserLinkedUserWriteJsonMergePatch] - The updated LinkedUser resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -295,7 +293,7 @@ class LinkedUserApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<LinkedUserJsonldLinkedUserRead>> apiApilinkedUsersIdPatch({ 
     required String id,
-    required LinkedUserLinkedUserWrite linkedUserLinkedUserWrite,
+    required LinkedUserLinkedUserWriteJsonMergePatch linkedUserLinkedUserWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -327,8 +325,8 @@ class LinkedUserApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(LinkedUserLinkedUserWrite);
-      _bodyData = _serializers.serialize(linkedUserLinkedUserWrite, specifiedType: _type);
+      const _type = FullType(LinkedUserLinkedUserWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(linkedUserLinkedUserWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -386,7 +384,7 @@ class LinkedUserApi {
   /// Creates a LinkedUser resource.
   ///
   /// Parameters:
-  /// * [linkedUserJsonldLinkedUserWrite] - The new LinkedUser resource
+  /// * [linkedUserLinkedUserWrite] - The new LinkedUser resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -397,7 +395,7 @@ class LinkedUserApi {
   /// Returns a [Future] containing a [Response] with a [LinkedUserJsonldLinkedUserRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<LinkedUserJsonldLinkedUserRead>> apiApilinkedUsersPost({ 
-    required LinkedUserJsonldLinkedUserWrite linkedUserJsonldLinkedUserWrite,
+    required LinkedUserLinkedUserWrite linkedUserLinkedUserWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -422,15 +420,15 @@ class LinkedUserApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(LinkedUserJsonldLinkedUserWrite);
-      _bodyData = _serializers.serialize(linkedUserJsonldLinkedUserWrite, specifiedType: _type);
+      const _type = FullType(LinkedUserLinkedUserWrite);
+      _bodyData = _serializers.serialize(linkedUserLinkedUserWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

@@ -3,14 +3,15 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/corporate/model/hydra_item_base_schema.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read_context.dart';
+import 'package:so_dart_sdk/corporate/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'client_relation_jsonld.g.dart';
 
-/// 
+/// ClientRelationJsonld
 ///
 /// Properties:
 /// * [atContext] 
@@ -26,21 +27,21 @@ part 'client_relation_jsonld.g.dart';
 /// * [createdAt] 
 /// * [updatedAt] 
 @BuiltValue()
-abstract class ClientRelationJsonld implements Built<ClientRelationJsonld, ClientRelationJsonldBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AppointmentJsonldAppointmentReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+abstract class ClientRelationJsonld implements HydraItemBaseSchema, Built<ClientRelationJsonld, ClientRelationJsonldBuilder> {
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
 
   @BuiltValueField(wireName: r'client')
   String get client;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  @BuiltValueField(wireName: r'end')
+  DateTime? get end;
+
+  @BuiltValueField(wireName: r'id')
+  int? get id;
 
   @BuiltValueField(wireName: r'clientRelated')
   String get clientRelated;
@@ -49,17 +50,8 @@ abstract class ClientRelationJsonld implements Built<ClientRelationJsonld, Clien
   ClientRelationJsonldTypeEnum get type;
   // enum typeEnum {  delegation_package_reception,  };
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'begin')
-  String? get begin;
-
-  @BuiltValueField(wireName: r'end')
-  String? get end;
-
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+  DateTime? get begin;
 
   @BuiltValueField(wireName: r'updatedAt')
   DateTime? get updatedAt;
@@ -87,25 +79,42 @@ class _$ClientRelationJsonldSerializer implements PrimitiveSerializer<ClientRela
     ClientRelationJsonld object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.createdAt != null) {
+      yield r'createdAt';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'client';
+    yield serializers.serialize(
+      object.client,
+      specifiedType: const FullType(String),
+    );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.end != null) {
+      yield r'end';
+      yield serializers.serialize(
+        object.end,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.atContext != null) {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(AppointmentJsonldAppointmentReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.id != null) {
@@ -115,11 +124,6 @@ class _$ClientRelationJsonldSerializer implements PrimitiveSerializer<ClientRela
         specifiedType: const FullType(int),
       );
     }
-    yield r'client';
-    yield serializers.serialize(
-      object.client,
-      specifiedType: const FullType(String),
-    );
     yield r'clientRelated';
     yield serializers.serialize(
       object.clientRelated,
@@ -130,34 +134,18 @@ class _$ClientRelationJsonldSerializer implements PrimitiveSerializer<ClientRela
       object.type,
       specifiedType: const FullType(ClientRelationJsonldTypeEnum),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     if (object.begin != null) {
       yield r'begin';
       yield serializers.serialize(
         object.begin,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.end != null) {
-      yield r'end';
-      yield serializers.serialize(
-        object.end,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
         specifiedType: const FullType(DateTime),
       );
     }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
     if (object.updatedAt != null) {
       yield r'updatedAt';
       yield serializers.serialize(
@@ -188,12 +176,12 @@ class _$ClientRelationJsonldSerializer implements PrimitiveSerializer<ClientRela
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
+        case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AppointmentJsonldAppointmentReadContext),
-          ) as AppointmentJsonldAppointmentReadContext;
-          result.atContext.replace(valueDes);
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -202,12 +190,33 @@ class _$ClientRelationJsonldSerializer implements PrimitiveSerializer<ClientRela
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'client':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atType = valueDes;
+          result.client = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'end':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.end = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -215,13 +224,6 @@ class _$ClientRelationJsonldSerializer implements PrimitiveSerializer<ClientRela
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
-          break;
-        case r'client':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.client = valueDes;
           break;
         case r'clientRelated':
           final valueDes = serializers.deserialize(
@@ -237,36 +239,19 @@ class _$ClientRelationJsonldSerializer implements PrimitiveSerializer<ClientRela
           ) as ClientRelationJsonldTypeEnum;
           result.type = valueDes;
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.description = valueDes;
-          break;
         case r'begin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.begin = valueDes;
-          break;
-        case r'end':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.end = valueDes;
-          break;
-        case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
-          result.createdAt = valueDes;
+          result.begin = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
           break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(

@@ -26,6 +26,7 @@ part 'individual_jsonld_opportunity_create_lead.g.dart';
 /// * [zipcode] 
 /// * [city] 
 /// * [country] 
+/// * [timezone] 
 @BuiltValue()
 abstract class IndividualJsonldOpportunityCreateLead implements HydraItemBaseSchema, Built<IndividualJsonldOpportunityCreateLead, IndividualJsonldOpportunityCreateLeadBuilder> {
   @BuiltValueField(wireName: r'zipcode')
@@ -42,6 +43,9 @@ abstract class IndividualJsonldOpportunityCreateLead implements HydraItemBaseSch
 
   @BuiltValueField(wireName: r'city')
   String? get city;
+
+  @BuiltValueField(wireName: r'timezone')
+  String? get timezone;
 
   @BuiltValueField(wireName: r'mobile')
   String? get mobile;
@@ -111,6 +115,13 @@ class _$IndividualJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
       yield r'city';
       yield serializers.serialize(
         object.city,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.timezone != null) {
+      yield r'timezone';
+      yield serializers.serialize(
+        object.timezone,
         specifiedType: const FullType(String),
       );
     }
@@ -225,6 +236,13 @@ class _$IndividualJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
             specifiedType: const FullType(String),
           ) as String;
           result.city = valueDes;
+          break;
+        case r'timezone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timezone = valueDes;
           break;
         case r'mobile':
           final valueDes = serializers.deserialize(

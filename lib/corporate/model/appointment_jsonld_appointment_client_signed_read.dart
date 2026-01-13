@@ -3,14 +3,15 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/corporate/model/hydra_item_base_schema.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read_context.dart';
+import 'package:so_dart_sdk/corporate/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'appointment_jsonld_appointment_client_signed_read.g.dart';
 
-/// 
+/// AppointmentJsonldAppointmentClientSignedRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -31,59 +32,50 @@ part 'appointment_jsonld_appointment_client_signed_read.g.dart';
 /// * [updatedAt] 
 /// * [title] 
 @BuiltValue()
-abstract class AppointmentJsonldAppointmentClientSignedRead implements Built<AppointmentJsonldAppointmentClientSignedRead, AppointmentJsonldAppointmentClientSignedReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AppointmentJsonldAppointmentReadContext? get atContext;
+abstract class AppointmentJsonldAppointmentClientSignedRead implements HydraItemBaseSchema, Built<AppointmentJsonldAppointmentClientSignedRead, AppointmentJsonldAppointmentClientSignedReadBuilder> {
+  @BuiltValueField(wireName: r'cancellationReason')
+  String? get cancellationReason;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
+  @BuiltValueField(wireName: r'endDate')
+  DateTime get endDate;
 
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
-
-  @BuiltValueField(wireName: r'organiser')
-  String get organiser;
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   @BuiltValueField(wireName: r'staff')
   String? get staff;
-
-  @BuiltValueField(wireName: r'site')
-  int get site;
 
   @BuiltValueField(wireName: r'type')
   AppointmentJsonldAppointmentClientSignedReadTypeEnum get type;
   // enum typeEnum {  visit,  };
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
+  @BuiltValueField(wireName: r'title')
+  String? get title;
+
+  @BuiltValueField(wireName: r'organiser')
+  String get organiser;
+
+  @BuiltValueField(wireName: r'beginDate')
+  DateTime get beginDate;
+
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
+
+  @BuiltValueField(wireName: r'site')
+  int get site;
+
+  @BuiltValueField(wireName: r'id')
+  int? get id;
 
   @BuiltValueField(wireName: r'status')
   AppointmentJsonldAppointmentClientSignedReadStatusEnum get status;
   // enum statusEnum {  scheduled,  cancelled,  done,  };
 
   @BuiltValueField(wireName: r'cancellationDate')
-  String? get cancellationDate;
-
-  @BuiltValueField(wireName: r'cancellationReason')
-  String? get cancellationReason;
-
-  @BuiltValueField(wireName: r'beginDate')
-  DateTime get beginDate;
-
-  @BuiltValueField(wireName: r'endDate')
-  DateTime get endDate;
-
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+  DateTime? get cancellationDate;
 
   @BuiltValueField(wireName: r'updatedAt')
   DateTime? get updatedAt;
-
-  @BuiltValueField(wireName: r'title')
-  String? get title;
 
   AppointmentJsonldAppointmentClientSignedRead._();
 
@@ -108,32 +100,47 @@ class _$AppointmentJsonldAppointmentClientSignedReadSerializer implements Primit
     AppointmentJsonldAppointmentClientSignedRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.cancellationReason != null) {
+      yield r'cancellationReason';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(AppointmentJsonldAppointmentReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
+        object.cancellationReason,
         specifiedType: const FullType(String),
       );
     }
-    if (object.atType != null) {
-      yield r'@type';
+    yield r'endDate';
+    yield serializers.serialize(
+      object.endDate,
+      specifiedType: const FullType(DateTime),
+    );
+    if (object.description != null) {
+      yield r'description';
       yield serializers.serialize(
-        object.atType,
+        object.description,
         specifiedType: const FullType(String),
       );
     }
-    if (object.id != null) {
-      yield r'id';
+    if (object.staff != null) {
+      yield r'staff';
       yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
+        object.staff,
+        specifiedType: const FullType(String),
+      );
+    }
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(AppointmentJsonldAppointmentClientSignedReadTypeEnum),
+    );
+    if (object.title != null) {
+      yield r'title';
+      yield serializers.serialize(
+        object.title,
+        specifiedType: const FullType(String),
       );
     }
     yield r'organiser';
@@ -141,57 +148,9 @@ class _$AppointmentJsonldAppointmentClientSignedReadSerializer implements Primit
       object.organiser,
       specifiedType: const FullType(String),
     );
-    if (object.staff != null) {
-      yield r'staff';
-      yield serializers.serialize(
-        object.staff,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'site';
-    yield serializers.serialize(
-      object.site,
-      specifiedType: const FullType(int),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(AppointmentJsonldAppointmentClientSignedReadTypeEnum),
-    );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'status';
-    yield serializers.serialize(
-      object.status,
-      specifiedType: const FullType(AppointmentJsonldAppointmentClientSignedReadStatusEnum),
-    );
-    if (object.cancellationDate != null) {
-      yield r'cancellationDate';
-      yield serializers.serialize(
-        object.cancellationDate,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.cancellationReason != null) {
-      yield r'cancellationReason';
-      yield serializers.serialize(
-        object.cancellationReason,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'beginDate';
     yield serializers.serialize(
       object.beginDate,
-      specifiedType: const FullType(DateTime),
-    );
-    yield r'endDate';
-    yield serializers.serialize(
-      object.endDate,
       specifiedType: const FullType(DateTime),
     );
     if (object.createdAt != null) {
@@ -201,18 +160,47 @@ class _$AppointmentJsonldAppointmentClientSignedReadSerializer implements Primit
         specifiedType: const FullType(DateTime),
       );
     }
+    yield r'site';
+    yield serializers.serialize(
+      object.site,
+      specifiedType: const FullType(int),
+    );
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(int),
+      );
+    }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
+    yield r'status';
+    yield serializers.serialize(
+      object.status,
+      specifiedType: const FullType(AppointmentJsonldAppointmentClientSignedReadStatusEnum),
+    );
+    if (object.cancellationDate != null) {
+      yield r'cancellationDate';
+      yield serializers.serialize(
+        object.cancellationDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.updatedAt != null) {
       yield r'updatedAt';
       yield serializers.serialize(
         object.updatedAt,
         specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.title != null) {
-      yield r'title';
-      yield serializers.serialize(
-        object.title,
-        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -238,13 +226,6 @@ class _$AppointmentJsonldAppointmentClientSignedReadSerializer implements Primit
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AppointmentJsonldAppointmentReadContext),
-          ) as AppointmentJsonldAppointmentReadContext;
-          result.atContext.replace(valueDes);
-          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
@@ -252,41 +233,33 @@ class _$AppointmentJsonldAppointmentClientSignedReadSerializer implements Primit
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'cancellationReason':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atType = valueDes;
+          result.cancellationReason = valueDes;
           break;
-        case r'id':
+        case r'endDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.endDate = valueDes;
           break;
-        case r'organiser':
+        case r'description':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.organiser = valueDes;
+          result.description = valueDes;
           break;
         case r'staff':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.staff = valueDes;
-          break;
-        case r'site':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.site = valueDes;
           break;
         case r'type':
           final valueDes = serializers.deserialize(
@@ -295,13 +268,61 @@ class _$AppointmentJsonldAppointmentClientSignedReadSerializer implements Primit
           ) as AppointmentJsonldAppointmentClientSignedReadTypeEnum;
           result.type = valueDes;
           break;
-        case r'description':
+        case r'title':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.description = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.title = valueDes;
+          break;
+        case r'organiser':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.organiser = valueDes;
+          break;
+        case r'beginDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.beginDate = valueDes;
+          break;
+        case r'createdAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
+          break;
+        case r'site':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.site = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
           break;
         case r'status':
           final valueDes = serializers.deserialize(
@@ -313,39 +334,9 @@ class _$AppointmentJsonldAppointmentClientSignedReadSerializer implements Primit
         case r'cancellationDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.cancellationDate = valueDes;
-          break;
-        case r'cancellationReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.cancellationReason = valueDes;
-          break;
-        case r'beginDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.beginDate = valueDes;
-          break;
-        case r'endDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.endDate = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
           break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(
@@ -353,14 +344,6 @@ class _$AppointmentJsonldAppointmentClientSignedReadSerializer implements Primit
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.updatedAt = valueDes;
-          break;
-        case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.title = valueDes;
           break;
         default:
           unhandled.add(key);

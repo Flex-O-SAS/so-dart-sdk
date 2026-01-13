@@ -39,7 +39,7 @@ abstract class ExpressionExpressionWriteJsonMergePatch implements Built<Expressi
   DateTime? get createdAt;
 
   @BuiltValueField(wireName: r'updatedAt')
-  String? get updatedAt;
+  DateTime? get updatedAt;
 
   ExpressionExpressionWriteJsonMergePatch._();
 
@@ -103,7 +103,7 @@ class _$ExpressionExpressionWriteJsonMergePatchSerializer implements PrimitiveSe
       yield r'updatedAt';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -167,9 +167,8 @@ class _$ExpressionExpressionWriteJsonMergePatchSerializer implements PrimitiveSe
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.updatedAt = valueDes;
           break;
         default:

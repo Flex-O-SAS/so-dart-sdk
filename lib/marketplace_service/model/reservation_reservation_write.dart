@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'reservation_reservation_write.g.dart';
 
-/// 
+/// ReservationReservationWrite
 ///
 /// Properties:
 /// * [item] 
@@ -76,7 +76,7 @@ class _$ReservationReservationWriteSerializer implements PrimitiveSerializer<Res
       yield r'description';
       yield serializers.serialize(
         object.description,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'quantity';
@@ -134,9 +134,8 @@ class _$ReservationReservationWriteSerializer implements PrimitiveSerializer<Res
         case r'description':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.description = valueDes;
           break;
         case r'quantity':

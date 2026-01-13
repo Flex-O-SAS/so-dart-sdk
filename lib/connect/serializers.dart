@@ -14,10 +14,8 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:so_dart_sdk/connect/date_serializer.dart';
 import 'package:so_dart_sdk/connect/model/date.dart';
 
-import 'package:so_dart_sdk/connect/model/access_cards_provider_uuid_cards_get200_response_inner.dart';
 import 'package:so_dart_sdk/connect/model/auth_response.dart';
 import 'package:so_dart_sdk/connect/model/box_list_dto_inner.dart';
-import 'package:so_dart_sdk/connect/model/devices_unlock_post_request.dart';
 import 'package:so_dart_sdk/connect/model/error_response.dart';
 import 'package:so_dart_sdk/connect/model/menu_list_dto.dart';
 import 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner.dart';
@@ -25,8 +23,6 @@ import 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner.
 import 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner_items_inner.dart';
 import 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_site.dart';
 import 'package:so_dart_sdk/connect/model/provider_response_inner.dart';
-import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get200_response.dart';
-import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get404_response.dart';
 import 'package:so_dart_sdk/connect/model/unlock_response.dart';
 import 'package:so_dart_sdk/connect/model/user_dto.dart';
 import 'package:so_dart_sdk/connect/model/user_response_dto.dart';
@@ -34,10 +30,8 @@ import 'package:so_dart_sdk/connect/model/user_response_dto.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
-  AccessCardsProviderUuidCardsGet200ResponseInner,
   AuthResponse,
   BoxListDtoInner,
-  DevicesUnlockPostRequest,
   ErrorResponse,
   MenuListDto,
   MenuListDtoMenusInner,
@@ -45,29 +39,11 @@ part 'serializers.g.dart';
   MenuListDtoMenusInnerItemsInnerItemsInner,
   MenuListDtoMenusInnerSite,
   ProviderResponseInner,
-  ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response,
-  ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response,
   UnlockResponse,
   UserDto,
   UserResponseDto,
 ])
 Serializers serializers = (_$serializers.toBuilder()
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ProviderResponseInner)]),
-        () => ListBuilder<ProviderResponseInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AccessCardsProviderUuidCardsGet200ResponseInner)]),
-        () => ListBuilder<AccessCardsProviderUuidCardsGet200ResponseInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BoxListDtoInner)]),
-        () => ListBuilder<BoxListDtoInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(String)]),
-        () => ListBuilder<String>(),
-      )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())

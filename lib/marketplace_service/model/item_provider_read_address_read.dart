@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'item_provider_read_address_read.g.dart';
 
-/// 
+/// ItemProviderReadAddressRead
 ///
 /// Properties:
 /// * [service] 

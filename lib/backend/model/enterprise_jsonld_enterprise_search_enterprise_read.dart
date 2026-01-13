@@ -20,6 +20,7 @@ part 'enterprise_jsonld_enterprise_search_enterprise_read.g.dart';
 /// * [atType] 
 /// * [name] 
 /// * [type] 
+/// * [tags] 
 /// * [individuals] 
 /// * [email] 
 /// * [phone] 
@@ -47,6 +48,9 @@ abstract class EnterpriseJsonldEnterpriseSearchEnterpriseRead implements HydraIt
 
   @BuiltValueField(wireName: r'email')
   String? get email;
+
+  @BuiltValueField(wireName: r'tags')
+  BuiltList<String>? get tags;
 
   EnterpriseJsonldEnterpriseSearchEnterpriseRead._();
 
@@ -87,7 +91,7 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
       yield r'phone';
       yield serializers.serialize(
         object.phone,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.name != null) {
@@ -134,7 +138,14 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
       yield r'email';
       yield serializers.serialize(
         object.email,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.tags != null) {
+      yield r'tags';
+      yield serializers.serialize(
+        object.tags,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
   }
@@ -177,9 +188,8 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
         case r'phone':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.phone = valueDes;
           break;
         case r'name':
@@ -227,10 +237,16 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
         case r'email':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.email = valueDes;
+          break;
+        case r'tags':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.tags.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -3,14 +3,15 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/corporate/model/hydra_item_base_schema.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read_context.dart';
+import 'package:so_dart_sdk/corporate/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'package_jsonld_package_read.g.dart';
 
-/// 
+/// PackageJsonldPackageRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -28,50 +29,41 @@ part 'package_jsonld_package_read.g.dart';
 /// * [handoverClient] 
 /// * [securityCode] 
 @BuiltValue()
-abstract class PackageJsonldPackageRead implements Built<PackageJsonldPackageRead, PackageJsonldPackageReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AppointmentJsonldAppointmentReadContext? get atContext;
+abstract class PackageJsonldPackageRead implements HydraItemBaseSchema, Built<PackageJsonldPackageRead, PackageJsonldPackageReadBuilder> {
+  @BuiltValueField(wireName: r'site')
+  int get site;
 
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+  @BuiltValueField(wireName: r'receptionDate')
+  DateTime get receptionDate;
 
   @BuiltValueField(wireName: r'recipient')
   String get recipient;
 
+  @BuiltValueField(wireName: r'securityCode')
+  String get securityCode;
+
   @BuiltValueField(wireName: r'staff')
   String get staff;
 
-  @BuiltValueField(wireName: r'site')
-  int get site;
+  @BuiltValueField(wireName: r'id')
+  int? get id;
 
   @BuiltValueField(wireName: r'type')
   PackageJsonldPackageReadTypeEnum get type;
   // enum typeEnum {  standard_letter,  tracked_letter,  registered_letter,  package,  food_package,  };
 
-  @BuiltValueField(wireName: r'status')
-  PackageJsonldPackageReadStatusEnum get status;
-  // enum statusEnum {  received,  handed_over,  };
+  @BuiltValueField(wireName: r'handoverClient')
+  String? get handoverClient;
 
   @BuiltValueField(wireName: r'trackingNumber')
   String get trackingNumber;
 
-  @BuiltValueField(wireName: r'receptionDate')
-  DateTime get receptionDate;
+  @BuiltValueField(wireName: r'status')
+  PackageJsonldPackageReadStatusEnum get status;
+  // enum statusEnum {  received,  handed_over,  };
 
   @BuiltValueField(wireName: r'handoverDate')
-  String? get handoverDate;
-
-  @BuiltValueField(wireName: r'handoverClient')
-  String? get handoverClient;
-
-  @BuiltValueField(wireName: r'securityCode')
-  String? get securityCode;
+  DateTime? get handoverDate;
 
   PackageJsonldPackageRead._();
 
@@ -96,25 +88,60 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
     PackageJsonldPackageRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'receptionDate';
+    yield serializers.serialize(
+      object.receptionDate,
+      specifiedType: const FullType(DateTime),
+    );
+    yield r'securityCode';
+    yield serializers.serialize(
+      object.securityCode,
+      specifiedType: const FullType(String),
+    );
+    yield r'staff';
+    yield serializers.serialize(
+      object.staff,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(PackageJsonldPackageReadTypeEnum),
+    );
+    if (object.handoverClient != null) {
+      yield r'handoverClient';
+      yield serializers.serialize(
+        object.handoverClient,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.handoverDate != null) {
+      yield r'handoverDate';
+      yield serializers.serialize(
+        object.handoverDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    yield r'site';
+    yield serializers.serialize(
+      object.site,
+      specifiedType: const FullType(int),
+    );
+    yield r'recipient';
+    yield serializers.serialize(
+      object.recipient,
+      specifiedType: const FullType(String),
+    );
     if (object.atContext != null) {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(AppointmentJsonldAppointmentReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.id != null) {
@@ -124,59 +151,20 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
         specifiedType: const FullType(int),
       );
     }
-    yield r'recipient';
-    yield serializers.serialize(
-      object.recipient,
-      specifiedType: const FullType(String),
-    );
-    yield r'staff';
-    yield serializers.serialize(
-      object.staff,
-      specifiedType: const FullType(String),
-    );
-    yield r'site';
-    yield serializers.serialize(
-      object.site,
-      specifiedType: const FullType(int),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(PackageJsonldPackageReadTypeEnum),
-    );
-    yield r'status';
-    yield serializers.serialize(
-      object.status,
-      specifiedType: const FullType(PackageJsonldPackageReadStatusEnum),
-    );
     yield r'trackingNumber';
     yield serializers.serialize(
       object.trackingNumber,
       specifiedType: const FullType(String),
     );
-    yield r'receptionDate';
+    yield r'@type';
     yield serializers.serialize(
-      object.receptionDate,
-      specifiedType: const FullType(DateTime),
+      object.atType,
+      specifiedType: const FullType(String),
     );
-    if (object.handoverDate != null) {
-      yield r'handoverDate';
-      yield serializers.serialize(
-        object.handoverDate,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.handoverClient != null) {
-      yield r'handoverClient';
-      yield serializers.serialize(
-        object.handoverClient,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
-    yield r'securityCode';
-    yield object.securityCode == null ? null : serializers.serialize(
-      object.securityCode,
-      specifiedType: const FullType.nullable(String),
+    yield r'status';
+    yield serializers.serialize(
+      object.status,
+      specifiedType: const FullType(PackageJsonldPackageReadStatusEnum),
     );
   }
 
@@ -201,75 +189,12 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AppointmentJsonldAppointmentReadContext),
-          ) as AppointmentJsonldAppointmentReadContext;
-          result.atContext.replace(valueDes);
-          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'recipient':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.recipient = valueDes;
-          break;
-        case r'staff':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.staff = valueDes;
-          break;
-        case r'site':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.site = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PackageJsonldPackageReadTypeEnum),
-          ) as PackageJsonldPackageReadTypeEnum;
-          result.type = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PackageJsonldPackageReadStatusEnum),
-          ) as PackageJsonldPackageReadStatusEnum;
-          result.status = valueDes;
-          break;
-        case r'trackingNumber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.trackingNumber = valueDes;
           break;
         case r'receptionDate':
           final valueDes = serializers.deserialize(
@@ -278,29 +203,89 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
           ) as DateTime;
           result.receptionDate = valueDes;
           break;
-        case r'handoverDate':
+        case r'securityCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.handoverDate = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.securityCode = valueDes;
+          break;
+        case r'staff':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.staff = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(PackageJsonldPackageReadTypeEnum),
+          ) as PackageJsonldPackageReadTypeEnum;
+          result.type = valueDes;
           break;
         case r'handoverClient':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.handoverClient = valueDes;
           break;
-        case r'securityCode':
+        case r'handoverDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.securityCode = valueDes;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.handoverDate = valueDes;
+          break;
+        case r'site':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.site = valueDes;
+          break;
+        case r'recipient':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.recipient = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
+        case r'trackingNumber':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.trackingNumber = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
+          break;
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(PackageJsonldPackageReadStatusEnum),
+          ) as PackageJsonldPackageReadStatusEnum;
+          result.status = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -15,35 +15,41 @@ import 'package:so_dart_sdk/marketplace_service/date_serializer.dart';
 import 'package:so_dart_sdk/marketplace_service/model/date.dart';
 
 import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read.dart';
-import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context.dart';
-import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context_one_of.dart';
-import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_write_address_write.dart';
 import 'package:so_dart_sdk/marketplace_service/model/address_provider_read_address_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/address_provider_write_address_write.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_items_get_collection200_response.dart';
-import 'package:so_dart_sdk/marketplace_service/model/api_items_get_collection200_response_search.dart';
-import 'package:so_dart_sdk/marketplace_service/model/api_items_get_collection200_response_search_mapping_inner.dart';
-import 'package:so_dart_sdk/marketplace_service/model/api_items_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_providers_get_collection200_response.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_reservations_get_collection200_response.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_services_get_collection200_response.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_tags_get_collection200_response.dart';
+import 'package:so_dart_sdk/marketplace_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/marketplace_service/model/constraint_violation_jsonld.dart';
+import 'package:so_dart_sdk/marketplace_service/model/constraint_violation_violations_inner.dart';
+import 'package:so_dart_sdk/marketplace_service/model/error.dart';
+import 'package:so_dart_sdk/marketplace_service/model/error_jsonld.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_collection_base_schema.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_collection_base_schema_all_of_view.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_collection_base_schema_no_pagination.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_collection_base_schema_no_pagination_search.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_collection_base_schema_no_pagination_search_mapping_inner.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema_context.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema_context_one_of.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_item_read_service_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_item_write.dart';
+import 'package:so_dart_sdk/marketplace_service/model/item_item_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_jsonld_item_read_service_read.dart';
-import 'package:so_dart_sdk/marketplace_service/model/item_jsonld_item_write.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_jsonld_provider_read_address_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/item_provider_read_address_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_item_read_service_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_item_read_service_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_provider_read_address_read.dart';
-import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_provider_write_address_write.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_tag_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_provider_read_address_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_provider_write_address_write.dart';
+import 'package:so_dart_sdk/marketplace_service/model/provider_provider_write_address_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_tag_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_read.dart';
-import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_write.dart';
 import 'package:so_dart_sdk/marketplace_service/model/reservation_reservation_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/reservation_reservation_write.dart';
 import 'package:so_dart_sdk/marketplace_service/model/service_item_read_service_read.dart';
@@ -61,35 +67,41 @@ part 'serializers.g.dart';
 
 @SerializersFor([
   AddressJsonldProviderReadAddressRead,
-  AddressJsonldProviderReadAddressReadContext,
-  AddressJsonldProviderReadAddressReadContextOneOf,
-  AddressJsonldProviderWriteAddressWrite,
   AddressProviderReadAddressRead,
   AddressProviderWriteAddressWrite,
   ApiItemsGetCollection200Response,
-  ApiItemsGetCollection200ResponseSearch,
-  ApiItemsGetCollection200ResponseSearchMappingInner,
-  ApiItemsGetCollection200ResponseView,
   ApiProvidersGetCollection200Response,
   ApiReservationsGetCollection200Response,
   ApiServicesGetCollection200Response,
   ApiTagsGetCollection200Response,
+  ConstraintViolation,
+  ConstraintViolationJsonld,
+  ConstraintViolationViolationsInner,
+  Error,
+  ErrorJsonld,
+  HydraCollectionBaseSchema,$HydraCollectionBaseSchema,
+  HydraCollectionBaseSchemaAllOfView,
+  HydraCollectionBaseSchemaNoPagination,$HydraCollectionBaseSchemaNoPagination,
+  HydraCollectionBaseSchemaNoPaginationSearch,
+  HydraCollectionBaseSchemaNoPaginationSearchMappingInner,
+  HydraItemBaseSchema,$HydraItemBaseSchema,
+  HydraItemBaseSchemaContext,
+  HydraItemBaseSchemaContextOneOf,
   ItemItemReadServiceRead,
   ItemItemWrite,
+  ItemItemWriteJsonMergePatch,
   ItemJsonldItemReadServiceRead,
-  ItemJsonldItemWrite,
   ItemJsonldProviderReadAddressRead,
   ItemProviderReadAddressRead,
   ProviderItemReadServiceRead,
   ProviderJsonldItemReadServiceRead,
   ProviderJsonldProviderReadAddressRead,
-  ProviderJsonldProviderWriteAddressWrite,
   ProviderJsonldTagRead,
   ProviderProviderReadAddressRead,
   ProviderProviderWriteAddressWrite,
+  ProviderProviderWriteAddressWriteJsonMergePatch,
   ProviderTagRead,
   ReservationJsonldReservationRead,
-  ReservationJsonldReservationWrite,
   ReservationReservationRead,
   ReservationReservationWrite,
   ServiceItemReadServiceRead,
@@ -112,6 +124,9 @@ Serializers serializers = (_$serializers.toBuilder()
         const FullType(BuiltList, [FullType(String)]),
         () => ListBuilder<String>(),
       )
+      ..add(HydraCollectionBaseSchema.serializer)
+      ..add(HydraCollectionBaseSchemaNoPagination.serializer)
+      ..add(HydraItemBaseSchema.serializer)
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())

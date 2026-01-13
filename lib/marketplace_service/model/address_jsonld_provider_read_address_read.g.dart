@@ -9,12 +9,6 @@ part of 'address_jsonld_provider_read_address_read.dart';
 class _$AddressJsonldProviderReadAddressRead
     extends AddressJsonldProviderReadAddressRead {
   @override
-  final AddressJsonldProviderReadAddressReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final int? id;
   @override
   final String address;
@@ -32,10 +26,7 @@ class _$AddressJsonldProviderReadAddressRead
           ._build();
 
   _$AddressJsonldProviderReadAddressRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.id,
+      {this.id,
       required this.address,
       required this.zipcode,
       required this.city,
@@ -64,9 +55,6 @@ class _$AddressJsonldProviderReadAddressRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AddressJsonldProviderReadAddressRead &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
         id == other.id &&
         address == other.address &&
         zipcode == other.zipcode &&
@@ -77,9 +65,6 @@ class _$AddressJsonldProviderReadAddressRead
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atContext.hashCode);
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jc(_$hash, zipcode.hashCode);
@@ -92,9 +77,6 @@ class _$AddressJsonldProviderReadAddressRead
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AddressJsonldProviderReadAddressRead')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
           ..add('id', id)
           ..add('address', address)
           ..add('zipcode', zipcode)
@@ -109,22 +91,6 @@ class AddressJsonldProviderReadAddressReadBuilder
         Builder<AddressJsonldProviderReadAddressRead,
             AddressJsonldProviderReadAddressReadBuilder> {
   _$AddressJsonldProviderReadAddressRead? _$v;
-
-  AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
-  AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new AddressJsonldProviderReadAddressReadContextBuilder();
-  set atContext(
-          AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
 
   int? _id;
   int? get id => _$this._id;
@@ -153,9 +119,6 @@ class AddressJsonldProviderReadAddressReadBuilder
   AddressJsonldProviderReadAddressReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atContext = $v.atContext?.toBuilder();
-      _atId = $v.atId;
-      _atType = $v.atType;
       _id = $v.id;
       _address = $v.address;
       _zipcode = $v.zipcode;
@@ -182,36 +145,18 @@ class AddressJsonldProviderReadAddressReadBuilder
   AddressJsonldProviderReadAddressRead build() => _build();
 
   _$AddressJsonldProviderReadAddressRead _build() {
-    _$AddressJsonldProviderReadAddressRead _$result;
-    try {
-      _$result = _$v ??
-          new _$AddressJsonldProviderReadAddressRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            id: id,
-            address: BuiltValueNullFieldError.checkNotNull(
-                address, r'AddressJsonldProviderReadAddressRead', 'address'),
-            zipcode: BuiltValueNullFieldError.checkNotNull(
-                zipcode, r'AddressJsonldProviderReadAddressRead', 'zipcode'),
-            city: BuiltValueNullFieldError.checkNotNull(
-                city, r'AddressJsonldProviderReadAddressRead', 'city'),
-            country: BuiltValueNullFieldError.checkNotNull(
-                country, r'AddressJsonldProviderReadAddressRead', 'country'),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'AddressJsonldProviderReadAddressRead',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$AddressJsonldProviderReadAddressRead._(
+          id: id,
+          address: BuiltValueNullFieldError.checkNotNull(
+              address, r'AddressJsonldProviderReadAddressRead', 'address'),
+          zipcode: BuiltValueNullFieldError.checkNotNull(
+              zipcode, r'AddressJsonldProviderReadAddressRead', 'zipcode'),
+          city: BuiltValueNullFieldError.checkNotNull(
+              city, r'AddressJsonldProviderReadAddressRead', 'city'),
+          country: BuiltValueNullFieldError.checkNotNull(
+              country, r'AddressJsonldProviderReadAddressRead', 'country'),
+        );
     replace(_$result);
     return _$result;
   }

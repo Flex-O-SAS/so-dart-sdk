@@ -7,71 +7,73 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add($HydraCollectionBaseSchema.serializer)
+      ..add($HydraCollectionBaseSchemaNoPagination.serializer)
+      ..add($HydraItemBaseSchema.serializer)
       ..add(ApiBrandingGetCollection200Response.serializer)
-      ..add(ApiBrandingGetCollection200ResponseSearch.serializer)
-      ..add(ApiBrandingGetCollection200ResponseSearchMappingInner.serializer)
-      ..add(ApiBrandingGetCollection200ResponseView.serializer)
       ..add(ApiDevicesGetCollection200Response.serializer)
       ..add(ApiSubscribersGetCollection200Response.serializer)
       ..add(BrandingSettingBrandingSettingWrite.serializer)
+      ..add(BrandingSettingBrandingSettingWriteJsonMergePatch.serializer)
+      ..add(BrandingSettingBrandingSettingWriteJsonMergePatchThemeModeEnum
+          .serializer)
       ..add(BrandingSettingBrandingSettingWriteThemeModeEnum.serializer)
       ..add(BrandingSettingJsonldBrandingSettingRead.serializer)
-      ..add(BrandingSettingJsonldBrandingSettingReadContext.serializer)
-      ..add(BrandingSettingJsonldBrandingSettingReadContextOneOf.serializer)
-      ..add(BrandingSettingJsonldBrandingSettingReadContextOneOfHydraEnum
-          .serializer)
       ..add(BrandingSettingJsonldBrandingSettingReadThemeModeEnum.serializer)
-      ..add(BrandingSettingJsonldBrandingSettingWrite.serializer)
-      ..add(BrandingSettingJsonldBrandingSettingWriteThemeModeEnum.serializer)
       ..add(BrandingSettingJsonldDiscoveryReadBrandingSettingRead.serializer)
       ..add(BrandingSettingJsonldDiscoveryReadBrandingSettingReadThemeModeEnum
           .serializer)
-      ..add(ConstraintViolationJson.serializer)
-      ..add(ConstraintViolationJsonViolationsInner.serializer)
-      ..add(ConstraintViolationJsonldJsonld.serializer)
-      ..add(DataPartDtoJsonldNotificationWrite.serializer)
+      ..add(ConstraintViolation.serializer)
+      ..add(ConstraintViolationJsonld.serializer)
+      ..add(ConstraintViolationViolationsInner.serializer)
+      ..add(DataPartDtoNotificationWrite.serializer)
+      ..add(DeviceDeviceWrite.serializer)
+      ..add(DeviceDeviceWriteSource_Enum.serializer)
       ..add(DeviceJsonldDeviceRead.serializer)
       ..add(DeviceJsonldDeviceReadSource_Enum.serializer)
-      ..add(DeviceJsonldDeviceWrite.serializer)
-      ..add(DeviceJsonldDeviceWriteSource_Enum.serializer)
       ..add(DiscoveryJsonldDiscoveryReadBrandingSettingRead.serializer)
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
+      ..add(HydraCollectionBaseSchemaAllOfView.serializer)
+      ..add(HydraCollectionBaseSchemaNoPaginationSearch.serializer)
+      ..add(HydraCollectionBaseSchemaNoPaginationSearchMappingInner.serializer)
+      ..add(HydraItemBaseSchemaContext.serializer)
+      ..add(HydraItemBaseSchemaContextOneOf.serializer)
+      ..add(HydraItemBaseSchemaContextOneOfHydraEnum.serializer)
       ..add(IdentityDtoJsonldNotificationRead.serializer)
       ..add(IdentityDtoJsonldNotificationReadTypeEnum.serializer)
-      ..add(IdentityDtoJsonldNotificationWrite.serializer)
-      ..add(IdentityDtoJsonldNotificationWriteTypeEnum.serializer)
+      ..add(IdentityDtoNotificationWrite.serializer)
+      ..add(IdentityDtoNotificationWriteTypeEnum.serializer)
       ..add(NotificationJsonldNotificationRead.serializer)
       ..add(NotificationJsonldNotificationReadStatusEnum.serializer)
       ..add(NotificationJsonldNotificationReadTypeEnum.serializer)
-      ..add(NotificationNotificationDtoJsonldNotificationWrite.serializer)
-      ..add(
-          NotificationNotificationDtoJsonldNotificationWriteTypeEnum.serializer)
+      ..add(NotificationNotificationDtoNotificationWrite.serializer)
+      ..add(NotificationNotificationDtoNotificationWriteTypeEnum.serializer)
       ..add(SubscriberJsonldSubscriberRead.serializer)
-      ..add(SubscriberJsonldSubscriberWrite.serializer)
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(
-                ApiBrandingGetCollection200ResponseSearchMappingInner)
-          ]),
-          () => new ListBuilder<
-              ApiBrandingGetCollection200ResponseSearchMappingInner>())
+      ..add(SubscriberSubscriberWrite.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(BrandingSettingJsonldBrandingSettingRead)]),
           () => new ListBuilder<BrandingSettingJsonldBrandingSettingRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(ConstraintViolationJsonViolationsInner)]),
-          () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
+              const [const FullType(ConstraintViolationViolationsInner)]),
+          () => new ListBuilder<ConstraintViolationViolationsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(ConstraintViolationJsonViolationsInner)]),
-          () => new ListBuilder<ConstraintViolationJsonViolationsInner>())
+              const [const FullType(ConstraintViolationViolationsInner)]),
+          () => new ListBuilder<ConstraintViolationViolationsInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(DeviceJsonldDeviceRead)]),
           () => new ListBuilder<DeviceJsonldDeviceRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                HydraCollectionBaseSchemaNoPaginationSearchMappingInner)
+          ]),
+          () => new ListBuilder<
+              HydraCollectionBaseSchemaNoPaginationSearchMappingInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(IdentityDtoJsonldNotificationRead)]),
@@ -95,13 +97,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltMap, const [const FullType(String), const FullType(String)]),
           () => new MapBuilder<String, String>())
       ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(IdentityDtoJsonldNotificationWrite)]),
-          () => new ListBuilder<IdentityDtoJsonldNotificationWrite>())
+          const FullType(
+              BuiltList, const [const FullType(IdentityDtoNotificationWrite)]),
+          () => new ListBuilder<IdentityDtoNotificationWrite>())
       ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(DataPartDtoJsonldNotificationWrite)]),
-          () => new ListBuilder<DataPartDtoJsonldNotificationWrite>()))
+          const FullType(
+              BuiltList, const [const FullType(DataPartDtoNotificationWrite)]),
+          () => new ListBuilder<DataPartDtoNotificationWrite>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

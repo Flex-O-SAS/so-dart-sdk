@@ -9,15 +9,15 @@ part of 'item_jsonld_provider_read_address_read.dart';
 class _$ItemJsonldProviderReadAddressRead
     extends ItemJsonldProviderReadAddressRead {
   @override
-  final AddressJsonldProviderReadAddressReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
+  final bool isBookable;
   @override
   final String service;
   @override
-  final bool isBookable;
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$ItemJsonldProviderReadAddressRead(
           [void Function(ItemJsonldProviderReadAddressReadBuilder)? updates]) =>
@@ -25,16 +25,20 @@ class _$ItemJsonldProviderReadAddressRead
           ._build();
 
   _$ItemJsonldProviderReadAddressRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
+      {required this.isBookable,
       required this.service,
-      required this.isBookable})
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        isBookable, r'ItemJsonldProviderReadAddressRead', 'isBookable');
     BuiltValueNullFieldError.checkNotNull(
         service, r'ItemJsonldProviderReadAddressRead', 'service');
     BuiltValueNullFieldError.checkNotNull(
-        isBookable, r'ItemJsonldProviderReadAddressRead', 'isBookable');
+        atId, r'ItemJsonldProviderReadAddressRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'ItemJsonldProviderReadAddressRead', 'atType');
   }
 
   @override
@@ -50,21 +54,21 @@ class _$ItemJsonldProviderReadAddressRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ItemJsonldProviderReadAddressRead &&
+        isBookable == other.isBookable &&
+        service == other.service &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        service == other.service &&
-        isBookable == other.isBookable;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, isBookable.hashCode);
+    _$hash = $jc(_$hash, service.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, service.hashCode);
-    _$hash = $jc(_$hash, isBookable.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -72,11 +76,11 @@ class _$ItemJsonldProviderReadAddressRead
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ItemJsonldProviderReadAddressRead')
+          ..add('isBookable', isBookable)
+          ..add('service', service)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('service', service)
-          ..add('isBookable', isBookable))
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -84,32 +88,31 @@ class _$ItemJsonldProviderReadAddressRead
 class ItemJsonldProviderReadAddressReadBuilder
     implements
         Builder<ItemJsonldProviderReadAddressRead,
-            ItemJsonldProviderReadAddressReadBuilder> {
+            ItemJsonldProviderReadAddressReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$ItemJsonldProviderReadAddressRead? _$v;
 
-  AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
-  AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new AddressJsonldProviderReadAddressReadContextBuilder();
-  set atContext(
-          AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
+  bool? _isBookable;
+  bool? get isBookable => _$this._isBookable;
+  set isBookable(covariant bool? isBookable) => _$this._isBookable = isBookable;
+
+  String? _service;
+  String? get service => _$this._service;
+  set service(covariant String? service) => _$this._service = service;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
   String? _atType;
   String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  String? _service;
-  String? get service => _$this._service;
-  set service(String? service) => _$this._service = service;
-
-  bool? _isBookable;
-  bool? get isBookable => _$this._isBookable;
-  set isBookable(bool? isBookable) => _$this._isBookable = isBookable;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   ItemJsonldProviderReadAddressReadBuilder() {
     ItemJsonldProviderReadAddressRead._defaults(this);
@@ -118,18 +121,18 @@ class ItemJsonldProviderReadAddressReadBuilder
   ItemJsonldProviderReadAddressReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _isBookable = $v.isBookable;
+      _service = $v.service;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _service = $v.service;
-      _isBookable = $v.isBookable;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(ItemJsonldProviderReadAddressRead other) {
+  void replace(covariant ItemJsonldProviderReadAddressRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ItemJsonldProviderReadAddressRead;
   }
@@ -148,13 +151,15 @@ class ItemJsonldProviderReadAddressReadBuilder
     try {
       _$result = _$v ??
           new _$ItemJsonldProviderReadAddressRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            service: BuiltValueNullFieldError.checkNotNull(
-                service, r'ItemJsonldProviderReadAddressRead', 'service'),
             isBookable: BuiltValueNullFieldError.checkNotNull(
                 isBookable, r'ItemJsonldProviderReadAddressRead', 'isBookable'),
+            service: BuiltValueNullFieldError.checkNotNull(
+                service, r'ItemJsonldProviderReadAddressRead', 'service'),
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'ItemJsonldProviderReadAddressRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'ItemJsonldProviderReadAddressRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

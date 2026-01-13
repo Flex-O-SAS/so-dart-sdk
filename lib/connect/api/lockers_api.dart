@@ -9,7 +9,12 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'dart:typed_data';
+import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/connect/api_util.dart';
+import 'package:so_dart_sdk/connect/model/box_list_dto_inner.dart';
+import 'package:so_dart_sdk/connect/model/error_response.dart';
+import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get200_response.dart';
+import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get404_response.dart';
 
 class LockersApi {
 
@@ -32,9 +37,9 @@ class LockersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [BuiltList<BoxListDtoInner>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> providersProviderUuidUsersUserReferenceLockersGet({ 
+  Future<Response<BuiltList<BoxListDtoInner>>> providersProviderUuidUsersUserReferenceLockersGet({ 
     required String providerUuid,
     required String userReference,
     CancelToken? cancelToken,
@@ -71,7 +76,35 @@ class LockersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    BuiltList<BoxListDtoInner>? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BuiltList, [FullType(BoxListDtoInner)]),
+      ) as BuiltList<BoxListDtoInner>;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<BuiltList<BoxListDtoInner>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Récupérer le QR code d&#39;un utilisateur

@@ -7,8 +7,10 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(AccessCardsProviderUuidCardsGet200ResponseInner.serializer)
       ..add(AuthResponse.serializer)
       ..add(BoxListDtoInner.serializer)
+      ..add(DevicesUnlockPostRequest.serializer)
       ..add(ErrorResponse.serializer)
       ..add(MenuListDto.serializer)
       ..add(MenuListDtoMenusInner.serializer)
@@ -16,6 +18,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(MenuListDtoMenusInnerItemsInnerItemsInner.serializer)
       ..add(MenuListDtoMenusInnerSite.serializer)
       ..add(ProviderResponseInner.serializer)
+      ..add(ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response
+          .serializer)
+      ..add(ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response
+          .serializer)
       ..add(UnlockResponse.serializer)
       ..add(UserDto.serializer)
       ..add(UserResponseDto.serializer)

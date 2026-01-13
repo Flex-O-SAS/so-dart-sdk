@@ -657,8 +657,10 @@ export 'package:so_dart_sdk/connect/api/misc_api.dart';
 export 'package:so_dart_sdk/connect/api/providers_api.dart';
 export 'package:so_dart_sdk/connect/api/users_api.dart';
 
+export 'package:so_dart_sdk/connect/model/access_cards_provider_uuid_cards_get200_response_inner.dart';
 export 'package:so_dart_sdk/connect/model/auth_response.dart';
 export 'package:so_dart_sdk/connect/model/box_list_dto_inner.dart';
+export 'package:so_dart_sdk/connect/model/devices_unlock_post_request.dart';
 export 'package:so_dart_sdk/connect/model/error_response.dart';
 export 'package:so_dart_sdk/connect/model/menu_list_dto.dart';
 export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner.dart';
@@ -666,6 +668,8 @@ export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner.
 export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner_items_inner.dart';
 export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_site.dart';
 export 'package:so_dart_sdk/connect/model/provider_response_inner.dart';
+export 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get200_response.dart';
+export 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get404_response.dart';
 export 'package:so_dart_sdk/connect/model/unlock_response.dart';
 export 'package:so_dart_sdk/connect/model/user_dto.dart';
 export 'package:so_dart_sdk/connect/model/user_response_dto.dart';

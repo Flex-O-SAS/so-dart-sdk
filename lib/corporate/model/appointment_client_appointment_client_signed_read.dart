@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'appointment_client_appointment_client_signed_read.g.dart';
 
-/// 
+/// AppointmentClientAppointmentClientSignedRead
 ///
 /// Properties:
 /// * [id] 
@@ -29,7 +29,7 @@ abstract class AppointmentClientAppointmentClientSignedRead implements Built<App
   String? get id;
 
   @BuiltValueField(wireName: r'appointment')
-  AppointmentAppointmentClientSignedRead? get appointment;
+  AppointmentAppointmentClientSignedRead get appointment;
 
   @BuiltValueField(wireName: r'email')
   String get email;
@@ -51,10 +51,10 @@ abstract class AppointmentClientAppointmentClientSignedRead implements Built<App
   String? get comment;
 
   @BuiltValueField(wireName: r'responseDate')
-  String? get responseDate;
+  DateTime? get responseDate;
 
   @BuiltValueField(wireName: r'lastSentInvitationDate')
-  String? get lastSentInvitationDate;
+  DateTime? get lastSentInvitationDate;
 
   AppointmentClientAppointmentClientSignedRead._();
 
@@ -83,13 +83,13 @@ class _$AppointmentClientAppointmentClientSignedReadSerializer implements Primit
       yield r'id';
       yield serializers.serialize(
         object.id,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'appointment';
-    yield object.appointment == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.appointment,
-      specifiedType: const FullType.nullable(AppointmentAppointmentClientSignedRead),
+      specifiedType: const FullType(AppointmentAppointmentClientSignedRead),
     );
     yield r'email';
     yield serializers.serialize(
@@ -100,21 +100,21 @@ class _$AppointmentClientAppointmentClientSignedReadSerializer implements Primit
       yield r'phone';
       yield serializers.serialize(
         object.phone,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.firstname != null) {
       yield r'firstname';
       yield serializers.serialize(
         object.firstname,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.lastname != null) {
       yield r'lastname';
       yield serializers.serialize(
         object.lastname,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'status';
@@ -126,21 +126,21 @@ class _$AppointmentClientAppointmentClientSignedReadSerializer implements Primit
       yield r'comment';
       yield serializers.serialize(
         object.comment,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.responseDate != null) {
       yield r'responseDate';
       yield serializers.serialize(
         object.responseDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
     if (object.lastSentInvitationDate != null) {
       yield r'lastSentInvitationDate';
       yield serializers.serialize(
         object.lastSentInvitationDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -169,17 +169,15 @@ class _$AppointmentClientAppointmentClientSignedReadSerializer implements Primit
         case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.id = valueDes;
           break;
         case r'appointment':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(AppointmentAppointmentClientSignedRead),
-          ) as AppointmentAppointmentClientSignedRead?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(AppointmentAppointmentClientSignedRead),
+          ) as AppointmentAppointmentClientSignedRead;
           result.appointment.replace(valueDes);
           break;
         case r'email':
@@ -192,25 +190,22 @@ class _$AppointmentClientAppointmentClientSignedReadSerializer implements Primit
         case r'phone':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.phone = valueDes;
           break;
         case r'firstname':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.firstname = valueDes;
           break;
         case r'lastname':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.lastname = valueDes;
           break;
         case r'status':
@@ -223,25 +218,22 @@ class _$AppointmentClientAppointmentClientSignedReadSerializer implements Primit
         case r'comment':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.comment = valueDes;
           break;
         case r'responseDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.responseDate = valueDes;
           break;
         case r'lastSentInvitationDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.lastSentInvitationDate = valueDes;
           break;
         default:

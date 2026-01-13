@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'service_tag_read.g.dart';
 
-/// 
+/// ServiceTagRead
 ///
 /// Properties:
 /// * [id] 

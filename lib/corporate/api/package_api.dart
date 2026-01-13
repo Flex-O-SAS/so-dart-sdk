@@ -11,14 +11,13 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/corporate/api_util.dart';
 import 'package:so_dart_sdk/corporate/model/api_packages_get_collection200_response.dart';
-import 'package:so_dart_sdk/corporate/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/corporate/model/constraint_violation.dart';
+import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/corporate/model/error.dart';
 import 'package:so_dart_sdk/corporate/model/error_jsonld.dart';
 import 'package:so_dart_sdk/corporate/model/package_jsonld_package_read.dart';
-import 'package:so_dart_sdk/corporate/model/package_jsonld_package_write.dart';
-import 'package:so_dart_sdk/corporate/model/package_package_read.dart';
 import 'package:so_dart_sdk/corporate/model/package_package_write.dart';
+import 'package:so_dart_sdk/corporate/model/package_package_write_json_merge_patch.dart';
 
 class PackageApi {
 
@@ -102,7 +101,9 @@ class PackageApi {
   /// * [site] - 
   /// * [siteLeftSquareBracketRightSquareBracket] - 
   /// * [type] - 
+  /// * [typeLeftSquareBracketRightSquareBracket] - 
   /// * [status] - 
+  /// * [statusLeftSquareBracketRightSquareBracket] - 
   /// * [orderLeftSquareBracketTypeRightSquareBracket] - 
   /// * [orderLeftSquareBracketStatusRightSquareBracket] - 
   /// * [orderLeftSquareBracketTrackingNumberRightSquareBracket] - 
@@ -142,7 +143,9 @@ class PackageApi {
     int? site,
     BuiltList<int>? siteLeftSquareBracketRightSquareBracket,
     String? type,
+    BuiltList<String>? typeLeftSquareBracketRightSquareBracket,
     String? status,
+    BuiltList<String>? statusLeftSquareBracketRightSquareBracket,
     String? orderLeftSquareBracketTypeRightSquareBracket = 'asc',
     String? orderLeftSquareBracketStatusRightSquareBracket = 'asc',
     String? orderLeftSquareBracketTrackingNumberRightSquareBracket = 'asc',
@@ -200,7 +203,9 @@ class PackageApi {
       if (site != null) r'site': encodeQueryParameter(_serializers, site, const FullType(int)),
       if (siteLeftSquareBracketRightSquareBracket != null) r'site[]': encodeCollectionQueryParameter<int>(_serializers, siteLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (type != null) r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
+      if (typeLeftSquareBracketRightSquareBracket != null) r'type[]': encodeCollectionQueryParameter<String>(_serializers, typeLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
+      if (statusLeftSquareBracketRightSquareBracket != null) r'status[]': encodeCollectionQueryParameter<String>(_serializers, statusLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (orderLeftSquareBracketTypeRightSquareBracket != null) r'order[type]': encodeQueryParameter(_serializers, orderLeftSquareBracketTypeRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': encodeQueryParameter(_serializers, orderLeftSquareBracketStatusRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketTrackingNumberRightSquareBracket != null) r'order[trackingNumber]': encodeQueryParameter(_serializers, orderLeftSquareBracketTrackingNumberRightSquareBracket, const FullType(String)),
@@ -342,7 +347,7 @@ class PackageApi {
   /// Creates a Package resource.
   ///
   /// Parameters:
-  /// * [packageJsonldPackageWrite] - The new Package resource
+  /// * [packagePackageWrite] - The new Package resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -353,7 +358,7 @@ class PackageApi {
   /// Returns a [Future] containing a [Response] with a [PackageJsonldPackageRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<PackageJsonldPackageRead>> apiPackagesPostItem({ 
-    required PackageJsonldPackageWrite packageJsonldPackageWrite,
+    required PackagePackageWrite packagePackageWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -378,15 +383,15 @@ class PackageApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(PackageJsonldPackageWrite);
-      _bodyData = _serializers.serialize(packageJsonldPackageWrite, specifiedType: _type);
+      const _type = FullType(PackagePackageWrite);
+      _bodyData = _serializers.serialize(packagePackageWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -445,7 +450,7 @@ class PackageApi {
   ///
   /// Parameters:
   /// * [id] - Package identifier
-  /// * [packagePackageWrite] - The updated Package resource
+  /// * [packagePackageWriteJsonMergePatch] - The updated Package resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -457,7 +462,7 @@ class PackageApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<PackageJsonldPackageRead>> apiPackagesPutItem({ 
     required String id,
-    required PackagePackageWrite packagePackageWrite,
+    required PackagePackageWriteJsonMergePatch packagePackageWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -489,8 +494,8 @@ class PackageApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(PackagePackageWrite);
-      _bodyData = _serializers.serialize(packagePackageWrite, specifiedType: _type);
+      const _type = FullType(PackagePackageWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(packagePackageWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

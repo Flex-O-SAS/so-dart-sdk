@@ -135,12 +135,6 @@ class _$IdentityDtoJsonldNotificationReadTypeEnumSerializer
 class _$IdentityDtoJsonldNotificationRead
     extends IdentityDtoJsonldNotificationRead {
   @override
-  final BrandingSettingJsonldBrandingSettingReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
   final String identifier;
   @override
   final IdentityDtoJsonldNotificationReadTypeEnum type;
@@ -153,12 +147,7 @@ class _$IdentityDtoJsonldNotificationRead
           ._build();
 
   _$IdentityDtoJsonldNotificationRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      required this.identifier,
-      required this.type,
-      this.locale})
+      {required this.identifier, required this.type, this.locale})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         identifier, r'IdentityDtoJsonldNotificationRead', 'identifier');
@@ -179,9 +168,6 @@ class _$IdentityDtoJsonldNotificationRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is IdentityDtoJsonldNotificationRead &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
         identifier == other.identifier &&
         type == other.type &&
         locale == other.locale;
@@ -190,9 +176,6 @@ class _$IdentityDtoJsonldNotificationRead
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atContext.hashCode);
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jc(_$hash, identifier.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, locale.hashCode);
@@ -203,9 +186,6 @@ class _$IdentityDtoJsonldNotificationRead
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'IdentityDtoJsonldNotificationRead')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
           ..add('identifier', identifier)
           ..add('type', type)
           ..add('locale', locale))
@@ -218,22 +198,6 @@ class IdentityDtoJsonldNotificationReadBuilder
         Builder<IdentityDtoJsonldNotificationRead,
             IdentityDtoJsonldNotificationReadBuilder> {
   _$IdentityDtoJsonldNotificationRead? _$v;
-
-  BrandingSettingJsonldBrandingSettingReadContextBuilder? _atContext;
-  BrandingSettingJsonldBrandingSettingReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new BrandingSettingJsonldBrandingSettingReadContextBuilder();
-  set atContext(
-          BrandingSettingJsonldBrandingSettingReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
 
   String? _identifier;
   String? get identifier => _$this._identifier;
@@ -255,9 +219,6 @@ class IdentityDtoJsonldNotificationReadBuilder
   IdentityDtoJsonldNotificationReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atContext = $v.atContext?.toBuilder();
-      _atId = $v.atId;
-      _atType = $v.atType;
       _identifier = $v.identifier;
       _type = $v.type;
       _locale = $v.locale;
@@ -282,30 +243,14 @@ class IdentityDtoJsonldNotificationReadBuilder
   IdentityDtoJsonldNotificationRead build() => _build();
 
   _$IdentityDtoJsonldNotificationRead _build() {
-    _$IdentityDtoJsonldNotificationRead _$result;
-    try {
-      _$result = _$v ??
-          new _$IdentityDtoJsonldNotificationRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            identifier: BuiltValueNullFieldError.checkNotNull(
-                identifier, r'IdentityDtoJsonldNotificationRead', 'identifier'),
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'IdentityDtoJsonldNotificationRead', 'type'),
-            locale: locale,
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'IdentityDtoJsonldNotificationRead', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$IdentityDtoJsonldNotificationRead._(
+          identifier: BuiltValueNullFieldError.checkNotNull(
+              identifier, r'IdentityDtoJsonldNotificationRead', 'identifier'),
+          type: BuiltValueNullFieldError.checkNotNull(
+              type, r'IdentityDtoJsonldNotificationRead', 'type'),
+          locale: locale,
+        );
     replace(_$result);
     return _$result;
   }

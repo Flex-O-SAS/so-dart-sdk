@@ -11,9 +11,11 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/marketplace_service/api_util.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_reservations_get_collection200_response.dart';
+import 'package:so_dart_sdk/marketplace_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/marketplace_service/model/constraint_violation_jsonld.dart';
+import 'package:so_dart_sdk/marketplace_service/model/error.dart';
+import 'package:so_dart_sdk/marketplace_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_read.dart';
-import 'package:so_dart_sdk/marketplace_service/model/reservation_jsonld_reservation_write.dart';
-import 'package:so_dart_sdk/marketplace_service/model/reservation_reservation_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/reservation_reservation_write.dart';
 
 class ReservationApi {
@@ -40,7 +42,6 @@ class ReservationApi {
   /// * [updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketAfterRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
-  /// * [acceptLanguage] - Reservation Accept-Language
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -63,7 +64,6 @@ class ReservationApi {
     String? updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? updatedAtLeftSquareBracketAfterRightSquareBracket,
     String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
-    String? acceptLanguage,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -75,7 +75,6 @@ class ReservationApi {
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{
@@ -152,7 +151,6 @@ class ReservationApi {
   ///
   /// Parameters:
   /// * [id] - Reservation identifier
-  /// * [acceptLanguage] - Reservation Accept-Language
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -164,7 +162,6 @@ class ReservationApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ReservationJsonldReservationRead>> apiReservationsGetItem({ 
     required String id,
-    String? acceptLanguage,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -176,7 +173,6 @@ class ReservationApi {
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{
@@ -236,8 +232,7 @@ class ReservationApi {
   /// Creates a Reservation resource.
   ///
   /// Parameters:
-  /// * [reservationJsonldReservationWrite] - The new Reservation resource
-  /// * [acceptLanguage] - Reservation Accept-Language
+  /// * [reservationReservationWrite] - The new Reservation resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -248,8 +243,7 @@ class ReservationApi {
   /// Returns a [Future] containing a [Response] with a [ReservationJsonldReservationRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ReservationJsonldReservationRead>> apiReservationsPostItem({ 
-    required ReservationJsonldReservationWrite reservationJsonldReservationWrite,
-    String? acceptLanguage,
+    required ReservationReservationWrite reservationReservationWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -261,7 +255,6 @@ class ReservationApi {
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{
@@ -275,15 +268,15 @@ class ReservationApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ReservationJsonldReservationWrite);
-      _bodyData = _serializers.serialize(reservationJsonldReservationWrite, specifiedType: _type);
+      const _type = FullType(ReservationReservationWrite);
+      _bodyData = _serializers.serialize(reservationReservationWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

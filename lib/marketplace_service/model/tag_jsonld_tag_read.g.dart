@@ -8,11 +8,7 @@ part of 'tag_jsonld_tag_read.dart';
 
 class _$TagJsonldTagRead extends TagJsonldTagRead {
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final AddressJsonldProviderReadAddressReadContext? atContext;
+  final ServiceJsonldTagRead service;
   @override
   final int? id;
   @override
@@ -20,26 +16,33 @@ class _$TagJsonldTagRead extends TagJsonldTagRead {
   @override
   final BuiltList<ProviderJsonldTagRead> providers;
   @override
-  final ServiceJsonldTagRead service;
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$TagJsonldTagRead(
           [void Function(TagJsonldTagReadBuilder)? updates]) =>
       (new TagJsonldTagReadBuilder()..update(updates))._build();
 
   _$TagJsonldTagRead._(
-      {this.atId,
-      this.atType,
-      this.atContext,
+      {required this.service,
       this.id,
       required this.label,
       required this.providers,
-      required this.service})
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        service, r'TagJsonldTagRead', 'service');
     BuiltValueNullFieldError.checkNotNull(label, r'TagJsonldTagRead', 'label');
     BuiltValueNullFieldError.checkNotNull(
         providers, r'TagJsonldTagRead', 'providers');
+    BuiltValueNullFieldError.checkNotNull(atId, r'TagJsonldTagRead', 'atId');
     BuiltValueNullFieldError.checkNotNull(
-        service, r'TagJsonldTagRead', 'service');
+        atType, r'TagJsonldTagRead', 'atType');
   }
 
   @override
@@ -54,25 +57,25 @@ class _$TagJsonldTagRead extends TagJsonldTagRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TagJsonldTagRead &&
-        atId == other.atId &&
-        atType == other.atType &&
-        atContext == other.atContext &&
+        service == other.service &&
         id == other.id &&
         label == other.label &&
         providers == other.providers &&
-        service == other.service;
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, atId.hashCode);
-    _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, atContext.hashCode);
+    _$hash = $jc(_$hash, service.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, label.hashCode);
     _$hash = $jc(_$hash, providers.hashCode);
-    _$hash = $jc(_$hash, service.hashCode);
+    _$hash = $jc(_$hash, atContext.hashCode);
+    _$hash = $jc(_$hash, atId.hashCode);
+    _$hash = $jc(_$hash, atType.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -80,56 +83,56 @@ class _$TagJsonldTagRead extends TagJsonldTagRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TagJsonldTagRead')
-          ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('atContext', atContext)
+          ..add('service', service)
           ..add('id', id)
           ..add('label', label)
           ..add('providers', providers)
-          ..add('service', service))
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
 
 class TagJsonldTagReadBuilder
-    implements Builder<TagJsonldTagRead, TagJsonldTagReadBuilder> {
+    implements
+        Builder<TagJsonldTagRead, TagJsonldTagReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$TagJsonldTagRead? _$v;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
-  AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new AddressJsonldProviderReadAddressReadContextBuilder();
-  set atContext(
-          AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _label;
-  String? get label => _$this._label;
-  set label(String? label) => _$this._label = label;
-
-  ListBuilder<ProviderJsonldTagRead>? _providers;
-  ListBuilder<ProviderJsonldTagRead> get providers =>
-      _$this._providers ??= new ListBuilder<ProviderJsonldTagRead>();
-  set providers(ListBuilder<ProviderJsonldTagRead>? providers) =>
-      _$this._providers = providers;
 
   ServiceJsonldTagReadBuilder? _service;
   ServiceJsonldTagReadBuilder get service =>
       _$this._service ??= new ServiceJsonldTagReadBuilder();
-  set service(ServiceJsonldTagReadBuilder? service) =>
+  set service(covariant ServiceJsonldTagReadBuilder? service) =>
       _$this._service = service;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  String? _label;
+  String? get label => _$this._label;
+  set label(covariant String? label) => _$this._label = label;
+
+  ListBuilder<ProviderJsonldTagRead>? _providers;
+  ListBuilder<ProviderJsonldTagRead> get providers =>
+      _$this._providers ??= new ListBuilder<ProviderJsonldTagRead>();
+  set providers(covariant ListBuilder<ProviderJsonldTagRead>? providers) =>
+      _$this._providers = providers;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   TagJsonldTagReadBuilder() {
     TagJsonldTagRead._defaults(this);
@@ -138,20 +141,20 @@ class TagJsonldTagReadBuilder
   TagJsonldTagReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _atId = $v.atId;
-      _atType = $v.atType;
-      _atContext = $v.atContext?.toBuilder();
+      _service = $v.service.toBuilder();
       _id = $v.id;
       _label = $v.label;
       _providers = $v.providers.toBuilder();
-      _service = $v.service.toBuilder();
+      _atContext = $v.atContext?.toBuilder();
+      _atId = $v.atId;
+      _atType = $v.atType;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(TagJsonldTagRead other) {
+  void replace(covariant TagJsonldTagRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagJsonldTagRead;
   }
@@ -169,25 +172,27 @@ class TagJsonldTagReadBuilder
     try {
       _$result = _$v ??
           new _$TagJsonldTagRead._(
-            atId: atId,
-            atType: atType,
-            atContext: _atContext?.build(),
+            service: service.build(),
             id: id,
             label: BuiltValueNullFieldError.checkNotNull(
                 label, r'TagJsonldTagRead', 'label'),
             providers: providers.build(),
-            service: service.build(),
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'TagJsonldTagRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'TagJsonldTagRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'atContext';
-        _atContext?.build();
+        _$failedField = 'service';
+        service.build();
 
         _$failedField = 'providers';
         providers.build();
-        _$failedField = 'service';
-        service.build();
+        _$failedField = 'atContext';
+        _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'TagJsonldTagRead', _$failedField, e.toString());

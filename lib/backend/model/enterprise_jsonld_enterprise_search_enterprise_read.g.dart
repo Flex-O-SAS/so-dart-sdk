@@ -23,6 +23,8 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseRead
   @override
   final String? email;
   @override
+  final BuiltList<String>? tags;
+  @override
   final HydraItemBaseSchemaContext? atContext;
   @override
   final String atId;
@@ -44,6 +46,7 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseRead
       this.type,
       this.individuals,
       this.email,
+      this.tags,
       this.atContext,
       required this.atId,
       required this.atType})
@@ -76,6 +79,7 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseRead
         type == other.type &&
         individuals == other.individuals &&
         email == other.email &&
+        tags == other.tags &&
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType;
@@ -91,6 +95,7 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseRead
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, individuals.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
@@ -109,6 +114,7 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseRead
           ..add('type', type)
           ..add('individuals', individuals)
           ..add('email', email)
+          ..add('tags', tags)
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType))
@@ -156,6 +162,10 @@ class EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder
   String? get email => _$this._email;
   set email(covariant String? email) => _$this._email = email;
 
+  ListBuilder<String>? _tags;
+  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
+  set tags(covariant ListBuilder<String>? tags) => _$this._tags = tags;
+
   HydraItemBaseSchemaContextBuilder? _atContext;
   HydraItemBaseSchemaContextBuilder get atContext =>
       _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
@@ -184,6 +194,7 @@ class EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder
       _type = $v.type;
       _individuals = $v.individuals?.toBuilder();
       _email = $v.email;
+      _tags = $v.tags?.toBuilder();
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
@@ -220,6 +231,7 @@ class EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder
             type: type,
             individuals: _individuals?.build(),
             email: email,
+            tags: _tags?.build(),
             atContext: _atContext?.build(),
             atId: BuiltValueNullFieldError.checkNotNull(atId,
                 r'EnterpriseJsonldEnterpriseSearchEnterpriseRead', 'atId'),
@@ -232,6 +244,8 @@ class EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder
         _$failedField = 'individuals';
         _individuals?.build();
 
+        _$failedField = 'tags';
+        _tags?.build();
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {

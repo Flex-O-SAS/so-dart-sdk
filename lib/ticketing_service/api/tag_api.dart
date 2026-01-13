@@ -8,17 +8,15 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/api_util.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apitags_get_collection200_response.dart';
-import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/tag_tag_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_tag_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/tag_tag_write_json_merge_patch.dart';
 
 class TagApi {
 
@@ -286,7 +284,7 @@ class TagApi {
   ///
   /// Parameters:
   /// * [id] - Tag identifier
-  /// * [tagTagWrite] - The updated Tag resource
+  /// * [tagTagWriteJsonMergePatch] - The updated Tag resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -298,7 +296,7 @@ class TagApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<TagJsonldTagRead>> apiApitagsIdPatch({ 
     required String id,
-    required TagTagWrite tagTagWrite,
+    required TagTagWriteJsonMergePatch tagTagWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -330,8 +328,8 @@ class TagApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TagTagWrite);
-      _bodyData = _serializers.serialize(tagTagWrite, specifiedType: _type);
+      const _type = FullType(TagTagWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(tagTagWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -389,7 +387,7 @@ class TagApi {
   /// Creates a Tag resource.
   ///
   /// Parameters:
-  /// * [tagJsonldTagWrite] - The new Tag resource
+  /// * [tagTagWrite] - The new Tag resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -400,7 +398,7 @@ class TagApi {
   /// Returns a [Future] containing a [Response] with a [TagJsonldTagRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<TagJsonldTagRead>> apiApitagsPost({ 
-    required TagJsonldTagWrite tagJsonldTagWrite,
+    required TagTagWrite tagTagWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -425,15 +423,15 @@ class TagApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TagJsonldTagWrite);
-      _bodyData = _serializers.serialize(tagJsonldTagWrite, specifiedType: _type);
+      const _type = FullType(TagTagWrite);
+      _bodyData = _serializers.serialize(tagTagWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

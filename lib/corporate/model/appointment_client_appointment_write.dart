@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'appointment_client_appointment_write.g.dart';
 
-/// 
+/// AppointmentClientAppointmentWrite
 ///
 /// Properties:
 /// * [email] 
@@ -67,21 +67,21 @@ class _$AppointmentClientAppointmentWriteSerializer implements PrimitiveSerializ
       yield r'phone';
       yield serializers.serialize(
         object.phone,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.firstname != null) {
       yield r'firstname';
       yield serializers.serialize(
         object.firstname,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.lastname != null) {
       yield r'lastname';
       yield serializers.serialize(
         object.lastname,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'status';
@@ -122,25 +122,22 @@ class _$AppointmentClientAppointmentWriteSerializer implements PrimitiveSerializ
         case r'phone':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.phone = valueDes;
           break;
         case r'firstname':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.firstname = valueDes;
           break;
         case r'lastname':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.lastname = valueDes;
           break;
         case r'status':

@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'linked_user_ticket_write.g.dart';
 
-/// 
+/// LinkedUserTicketWrite
 ///
 /// Properties:
 /// * [user] 

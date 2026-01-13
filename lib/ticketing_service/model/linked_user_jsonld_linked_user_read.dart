@@ -3,13 +3,14 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read_context.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/ticketing_service/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'linked_user_jsonld_linked_user_read.g.dart';
 
-/// 
+/// LinkedUserJsonldLinkedUserRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -21,27 +22,18 @@ part 'linked_user_jsonld_linked_user_read.g.dart';
 /// * [createdAt] 
 /// * [updatedAt] 
 @BuiltValue()
-abstract class LinkedUserJsonldLinkedUserRead implements Built<LinkedUserJsonldLinkedUserRead, LinkedUserJsonldLinkedUserReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  CommentJsonldCommentReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+abstract class LinkedUserJsonldLinkedUserRead implements HydraItemBaseSchema, Built<LinkedUserJsonldLinkedUserRead, LinkedUserJsonldLinkedUserReadBuilder> {
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
 
   @BuiltValueField(wireName: r'ticket')
   String get ticket;
 
+  @BuiltValueField(wireName: r'id')
+  int? get id;
+
   @BuiltValueField(wireName: r'user')
   String get user;
-
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
 
   @BuiltValueField(wireName: r'updatedAt')
   DateTime? get updatedAt;
@@ -69,25 +61,28 @@ class _$LinkedUserJsonldLinkedUserReadSerializer implements PrimitiveSerializer<
     LinkedUserJsonldLinkedUserRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.createdAt != null) {
+      yield r'createdAt';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'ticket';
+    yield serializers.serialize(
+      object.ticket,
+      specifiedType: const FullType(String),
+    );
     if (object.atContext != null) {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(CommentJsonldCommentReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.id != null) {
@@ -97,23 +92,16 @@ class _$LinkedUserJsonldLinkedUserReadSerializer implements PrimitiveSerializer<
         specifiedType: const FullType(int),
       );
     }
-    yield r'ticket';
-    yield serializers.serialize(
-      object.ticket,
-      specifiedType: const FullType(String),
-    );
     yield r'user';
     yield serializers.serialize(
       object.user,
       specifiedType: const FullType(String),
     );
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
     if (object.updatedAt != null) {
       yield r'updatedAt';
       yield serializers.serialize(
@@ -144,12 +132,12 @@ class _$LinkedUserJsonldLinkedUserReadSerializer implements PrimitiveSerializer<
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
+        case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CommentJsonldCommentReadContext),
-          ) as CommentJsonldCommentReadContext;
-          result.atContext.replace(valueDes);
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -158,12 +146,19 @@ class _$LinkedUserJsonldLinkedUserReadSerializer implements PrimitiveSerializer<
           ) as String;
           result.atId = valueDes;
           break;
-        case r'@type':
+        case r'ticket':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atType = valueDes;
+          result.ticket = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -172,13 +167,6 @@ class _$LinkedUserJsonldLinkedUserReadSerializer implements PrimitiveSerializer<
           ) as int;
           result.id = valueDes;
           break;
-        case r'ticket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.ticket = valueDes;
-          break;
         case r'user':
           final valueDes = serializers.deserialize(
             value,
@@ -186,12 +174,12 @@ class _$LinkedUserJsonldLinkedUserReadSerializer implements PrimitiveSerializer<
           ) as String;
           result.user = valueDes;
           break;
-        case r'createdAt':
+        case r'@type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
           break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(

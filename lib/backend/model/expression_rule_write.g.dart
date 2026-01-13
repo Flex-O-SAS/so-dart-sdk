@@ -351,7 +351,7 @@ class _$ExpressionRuleWrite extends ExpressionRuleWrite {
   @override
   final DateTime? createdAt;
   @override
-  final String? updatedAt;
+  final DateTime? updatedAt;
 
   factory _$ExpressionRuleWrite(
           [void Function(ExpressionRuleWriteBuilder)? updates]) =>
@@ -431,9 +431,9 @@ class ExpressionRuleWriteBuilder
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  String? _updatedAt;
-  String? get updatedAt => _$this._updatedAt;
-  set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   ExpressionRuleWriteBuilder() {
     ExpressionRuleWrite._defaults(this);

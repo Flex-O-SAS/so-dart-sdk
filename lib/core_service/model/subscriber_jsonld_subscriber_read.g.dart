@@ -8,32 +8,36 @@ part of 'subscriber_jsonld_subscriber_read.dart';
 
 class _$SubscriberJsonldSubscriberRead extends SubscriberJsonldSubscriberRead {
   @override
-  final BrandingSettingJsonldBrandingSettingReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
+  final DateTime? createdAt;
   @override
   final String userIdentifier;
   @override
-  final DateTime? createdAt;
-  @override
   final DateTime? updatedAt;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$SubscriberJsonldSubscriberRead(
           [void Function(SubscriberJsonldSubscriberReadBuilder)? updates]) =>
       (new SubscriberJsonldSubscriberReadBuilder()..update(updates))._build();
 
   _$SubscriberJsonldSubscriberRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
+      {this.createdAt,
       required this.userIdentifier,
-      this.createdAt,
-      this.updatedAt})
+      this.updatedAt,
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         userIdentifier, r'SubscriberJsonldSubscriberRead', 'userIdentifier');
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'SubscriberJsonldSubscriberRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'SubscriberJsonldSubscriberRead', 'atType');
   }
 
   @override
@@ -49,23 +53,23 @@ class _$SubscriberJsonldSubscriberRead extends SubscriberJsonldSubscriberRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is SubscriberJsonldSubscriberRead &&
+        createdAt == other.createdAt &&
+        userIdentifier == other.userIdentifier &&
+        updatedAt == other.updatedAt &&
         atContext == other.atContext &&
         atId == other.atId &&
-        atType == other.atType &&
-        userIdentifier == other.userIdentifier &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, userIdentifier.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, userIdentifier.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -73,12 +77,12 @@ class _$SubscriberJsonldSubscriberRead extends SubscriberJsonldSubscriberRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'SubscriberJsonldSubscriberRead')
+          ..add('createdAt', createdAt)
+          ..add('userIdentifier', userIdentifier)
+          ..add('updatedAt', updatedAt)
           ..add('atContext', atContext)
           ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('userIdentifier', userIdentifier)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -86,37 +90,36 @@ class _$SubscriberJsonldSubscriberRead extends SubscriberJsonldSubscriberRead {
 class SubscriberJsonldSubscriberReadBuilder
     implements
         Builder<SubscriberJsonldSubscriberRead,
-            SubscriberJsonldSubscriberReadBuilder> {
+            SubscriberJsonldSubscriberReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$SubscriberJsonldSubscriberRead? _$v;
 
-  BrandingSettingJsonldBrandingSettingReadContextBuilder? _atContext;
-  BrandingSettingJsonldBrandingSettingReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new BrandingSettingJsonldBrandingSettingReadContextBuilder();
-  set atContext(
-          BrandingSettingJsonldBrandingSettingReadContextBuilder? atContext) =>
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _userIdentifier;
+  String? get userIdentifier => _$this._userIdentifier;
+  set userIdentifier(covariant String? userIdentifier) =>
+      _$this._userIdentifier = userIdentifier;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
       _$this._atContext = atContext;
 
   String? _atId;
   String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
 
   String? _atType;
   String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  String? _userIdentifier;
-  String? get userIdentifier => _$this._userIdentifier;
-  set userIdentifier(String? userIdentifier) =>
-      _$this._userIdentifier = userIdentifier;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   SubscriberJsonldSubscriberReadBuilder() {
     SubscriberJsonldSubscriberRead._defaults(this);
@@ -125,19 +128,19 @@ class SubscriberJsonldSubscriberReadBuilder
   SubscriberJsonldSubscriberReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _createdAt = $v.createdAt;
+      _userIdentifier = $v.userIdentifier;
+      _updatedAt = $v.updatedAt;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _userIdentifier = $v.userIdentifier;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(SubscriberJsonldSubscriberRead other) {
+  void replace(covariant SubscriberJsonldSubscriberRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SubscriberJsonldSubscriberRead;
   }
@@ -155,15 +158,17 @@ class SubscriberJsonldSubscriberReadBuilder
     try {
       _$result = _$v ??
           new _$SubscriberJsonldSubscriberRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
+            createdAt: createdAt,
             userIdentifier: BuiltValueNullFieldError.checkNotNull(
                 userIdentifier,
                 r'SubscriberJsonldSubscriberRead',
                 'userIdentifier'),
-            createdAt: createdAt,
             updatedAt: updatedAt,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'SubscriberJsonldSubscriberRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'SubscriberJsonldSubscriberRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

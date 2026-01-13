@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'tag_tag_write.g.dart';
 
-/// 
+/// TagTagWrite
 ///
 /// Properties:
 /// * [name] 

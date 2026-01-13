@@ -98,7 +98,7 @@ class _$AppointmentClientAppointmentClientRead
   @override
   final String? id;
   @override
-  final String? appointment;
+  final String appointment;
   @override
   final String email;
   @override
@@ -112,9 +112,9 @@ class _$AppointmentClientAppointmentClientRead
   @override
   final String? comment;
   @override
-  final String? responseDate;
+  final DateTime? responseDate;
   @override
-  final String? lastSentInvitationDate;
+  final DateTime? lastSentInvitationDate;
 
   factory _$AppointmentClientAppointmentClientRead(
           [void Function(AppointmentClientAppointmentClientReadBuilder)?
@@ -124,7 +124,7 @@ class _$AppointmentClientAppointmentClientRead
 
   _$AppointmentClientAppointmentClientRead._(
       {this.id,
-      this.appointment,
+      required this.appointment,
       required this.email,
       this.phone,
       this.firstname,
@@ -134,6 +134,8 @@ class _$AppointmentClientAppointmentClientRead
       this.responseDate,
       this.lastSentInvitationDate})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        appointment, r'AppointmentClientAppointmentClientRead', 'appointment');
     BuiltValueNullFieldError.checkNotNull(
         email, r'AppointmentClientAppointmentClientRead', 'email');
     BuiltValueNullFieldError.checkNotNull(
@@ -241,13 +243,14 @@ class AppointmentClientAppointmentClientReadBuilder
   String? get comment => _$this._comment;
   set comment(String? comment) => _$this._comment = comment;
 
-  String? _responseDate;
-  String? get responseDate => _$this._responseDate;
-  set responseDate(String? responseDate) => _$this._responseDate = responseDate;
+  DateTime? _responseDate;
+  DateTime? get responseDate => _$this._responseDate;
+  set responseDate(DateTime? responseDate) =>
+      _$this._responseDate = responseDate;
 
-  String? _lastSentInvitationDate;
-  String? get lastSentInvitationDate => _$this._lastSentInvitationDate;
-  set lastSentInvitationDate(String? lastSentInvitationDate) =>
+  DateTime? _lastSentInvitationDate;
+  DateTime? get lastSentInvitationDate => _$this._lastSentInvitationDate;
+  set lastSentInvitationDate(DateTime? lastSentInvitationDate) =>
       _$this._lastSentInvitationDate = lastSentInvitationDate;
 
   AppointmentClientAppointmentClientReadBuilder() {
@@ -291,7 +294,8 @@ class AppointmentClientAppointmentClientReadBuilder
     final _$result = _$v ??
         new _$AppointmentClientAppointmentClientRead._(
           id: id,
-          appointment: appointment,
+          appointment: BuiltValueNullFieldError.checkNotNull(appointment,
+              r'AppointmentClientAppointmentClientRead', 'appointment'),
           email: BuiltValueNullFieldError.checkNotNull(
               email, r'AppointmentClientAppointmentClientRead', 'email'),
           phone: phone,

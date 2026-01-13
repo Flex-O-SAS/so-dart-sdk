@@ -11,14 +11,13 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/api_util.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_tickets_get_collection200_response.dart';
-import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write_json_merge_patch.dart';
 
 class TicketApi {
 
@@ -119,6 +118,7 @@ class TicketApi {
   /// * [tagsPeriodIdLeftSquareBracketRightSquareBracket] - 
   /// * [tagsPeriodName] - 
   /// * [status] - 
+  /// * [statusLeftSquareBracketRightSquareBracket] - 
   /// * [metadataLeftSquareBracketTypeRightSquareBracket] - JSON metadata partial search. example: metadata[type]=finance
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -163,6 +163,7 @@ class TicketApi {
     BuiltList<int>? tagsPeriodIdLeftSquareBracketRightSquareBracket,
     String? tagsPeriodName,
     String? status,
+    BuiltList<String>? statusLeftSquareBracketRightSquareBracket,
     String? metadataLeftSquareBracketTypeRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -225,6 +226,7 @@ class TicketApi {
       if (tagsPeriodIdLeftSquareBracketRightSquareBracket != null) r'tags.id[]': encodeCollectionQueryParameter<int>(_serializers, tagsPeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (tagsPeriodName != null) r'tags.name': encodeQueryParameter(_serializers, tagsPeriodName, const FullType(String)),
       if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
+      if (statusLeftSquareBracketRightSquareBracket != null) r'status[]': encodeCollectionQueryParameter<String>(_serializers, statusLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (metadataLeftSquareBracketTypeRightSquareBracket != null) r'metadata[type]': encodeQueryParameter(_serializers, metadataLeftSquareBracketTypeRightSquareBracket, const FullType(String)),
     };
 
@@ -355,7 +357,7 @@ class TicketApi {
   ///
   /// Parameters:
   /// * [id] - Ticket identifier
-  /// * [ticketTicketWrite] - The updated Ticket resource
+  /// * [ticketTicketWriteJsonMergePatch] - The updated Ticket resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -367,7 +369,7 @@ class TicketApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<TicketJsonldTicketRead>> apiTicketsPatchItem({ 
     required String id,
-    required TicketTicketWrite ticketTicketWrite,
+    required TicketTicketWriteJsonMergePatch ticketTicketWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -399,8 +401,8 @@ class TicketApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TicketTicketWrite);
-      _bodyData = _serializers.serialize(ticketTicketWrite, specifiedType: _type);
+      const _type = FullType(TicketTicketWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(ticketTicketWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -458,7 +460,7 @@ class TicketApi {
   /// Creates a Ticket resource.
   ///
   /// Parameters:
-  /// * [ticketJsonldTicketWrite] - The new Ticket resource
+  /// * [ticketTicketWrite] - The new Ticket resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -469,7 +471,7 @@ class TicketApi {
   /// Returns a [Future] containing a [Response] with a [TicketJsonldTicketRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<TicketJsonldTicketRead>> apiTicketsPostItem({ 
-    required TicketJsonldTicketWrite ticketJsonldTicketWrite,
+    required TicketTicketWrite ticketTicketWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -494,15 +496,15 @@ class TicketApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TicketJsonldTicketWrite);
-      _bodyData = _serializers.serialize(ticketJsonldTicketWrite, specifiedType: _type);
+      const _type = FullType(TicketTicketWrite);
+      _bodyData = _serializers.serialize(ticketTicketWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

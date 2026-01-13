@@ -19,7 +19,7 @@ abstract class RuleExpressionWrite implements Built<RuleExpressionWrite, RuleExp
   DateTime? get createdAt;
 
   @BuiltValueField(wireName: r'updatedAt')
-  String? get updatedAt;
+  DateTime? get updatedAt;
 
   RuleExpressionWrite._();
 
@@ -55,7 +55,7 @@ class _$RuleExpressionWriteSerializer implements PrimitiveSerializer<RuleExpress
       yield r'updatedAt';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -91,9 +91,8 @@ class _$RuleExpressionWriteSerializer implements PrimitiveSerializer<RuleExpress
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.updatedAt = valueDes;
           break;
         default:

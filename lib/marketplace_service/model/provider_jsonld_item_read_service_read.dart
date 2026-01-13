@@ -3,13 +3,14 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/marketplace_service/model/address_jsonld_provider_read_address_read_context.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/marketplace_service/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'provider_jsonld_item_read_service_read.g.dart';
 
-/// 
+/// ProviderJsonldItemReadServiceRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -18,21 +19,12 @@ part 'provider_jsonld_item_read_service_read.g.dart';
 /// * [id] 
 /// * [name] 
 @BuiltValue()
-abstract class ProviderJsonldItemReadServiceRead implements Built<ProviderJsonldItemReadServiceRead, ProviderJsonldItemReadServiceReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  AddressJsonldProviderReadAddressReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
+abstract class ProviderJsonldItemReadServiceRead implements HydraItemBaseSchema, Built<ProviderJsonldItemReadServiceRead, ProviderJsonldItemReadServiceReadBuilder> {
+  @BuiltValueField(wireName: r'name')
+  String get name;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   ProviderJsonldItemReadServiceRead._();
 
@@ -57,25 +49,16 @@ class _$ProviderJsonldItemReadServiceReadSerializer implements PrimitiveSerializ
     ProviderJsonldItemReadServiceRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.atContext != null) {
       yield r'@context';
       yield serializers.serialize(
         object.atContext,
-        specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
     if (object.id != null) {
@@ -85,9 +68,14 @@ class _$ProviderJsonldItemReadServiceReadSerializer implements PrimitiveSerializ
         specifiedType: const FullType(int),
       );
     }
-    yield r'name';
+    yield r'@id';
     yield serializers.serialize(
-      object.name,
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
       specifiedType: const FullType(String),
     );
   }
@@ -113,12 +101,26 @@ class _$ProviderJsonldItemReadServiceReadSerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'@context':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AddressJsonldProviderReadAddressReadContext),
-          ) as AddressJsonldProviderReadAddressReadContext;
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
           result.atContext.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -133,20 +135,6 @@ class _$ProviderJsonldItemReadServiceReadSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         default:
           unhandled.add(key);

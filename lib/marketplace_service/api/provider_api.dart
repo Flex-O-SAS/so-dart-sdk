@@ -11,10 +11,13 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/marketplace_service/api_util.dart';
 import 'package:so_dart_sdk/marketplace_service/model/api_providers_get_collection200_response.dart';
+import 'package:so_dart_sdk/marketplace_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/marketplace_service/model/constraint_violation_jsonld.dart';
+import 'package:so_dart_sdk/marketplace_service/model/error.dart';
+import 'package:so_dart_sdk/marketplace_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_provider_read_address_read.dart';
-import 'package:so_dart_sdk/marketplace_service/model/provider_jsonld_provider_write_address_write.dart';
-import 'package:so_dart_sdk/marketplace_service/model/provider_provider_read_address_read.dart';
 import 'package:so_dart_sdk/marketplace_service/model/provider_provider_write_address_write.dart';
+import 'package:so_dart_sdk/marketplace_service/model/provider_provider_write_address_write_json_merge_patch.dart';
 
 class ProviderApi {
 
@@ -51,7 +54,6 @@ class ProviderApi {
   /// * [updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketAfterRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
-  /// * [acceptLanguage] - Provider Accept-Language
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -85,7 +87,6 @@ class ProviderApi {
     String? updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? updatedAtLeftSquareBracketAfterRightSquareBracket,
     String? updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket,
-    String? acceptLanguage,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -97,7 +98,6 @@ class ProviderApi {
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{
@@ -185,7 +185,6 @@ class ProviderApi {
   ///
   /// Parameters:
   /// * [id] - Provider identifier
-  /// * [acceptLanguage] - Provider Accept-Language
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -197,7 +196,6 @@ class ProviderApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ProviderJsonldProviderReadAddressRead>> apiProvidersGetItem({ 
     required String id,
-    String? acceptLanguage,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -209,7 +207,6 @@ class ProviderApi {
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{
@@ -270,8 +267,7 @@ class ProviderApi {
   ///
   /// Parameters:
   /// * [id] - Provider identifier
-  /// * [providerProviderWriteAddressWrite] - The updated Provider resource
-  /// * [acceptLanguage] - Provider Accept-Language
+  /// * [providerProviderWriteAddressWriteJsonMergePatch] - The updated Provider resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -283,8 +279,7 @@ class ProviderApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ProviderJsonldProviderReadAddressRead>> apiProvidersPatchItem({ 
     required String id,
-    required ProviderProviderWriteAddressWrite providerProviderWriteAddressWrite,
-    String? acceptLanguage,
+    required ProviderProviderWriteAddressWriteJsonMergePatch providerProviderWriteAddressWriteJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -296,7 +291,6 @@ class ProviderApi {
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{
@@ -317,8 +311,8 @@ class ProviderApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ProviderProviderWriteAddressWrite);
-      _bodyData = _serializers.serialize(providerProviderWriteAddressWrite, specifiedType: _type);
+      const _type = FullType(ProviderProviderWriteAddressWriteJsonMergePatch);
+      _bodyData = _serializers.serialize(providerProviderWriteAddressWriteJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -376,8 +370,7 @@ class ProviderApi {
   /// Creates a Provider resource.
   ///
   /// Parameters:
-  /// * [providerJsonldProviderWriteAddressWrite] - The new Provider resource
-  /// * [acceptLanguage] - Provider Accept-Language
+  /// * [providerProviderWriteAddressWrite] - The new Provider resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -388,8 +381,7 @@ class ProviderApi {
   /// Returns a [Future] containing a [Response] with a [ProviderJsonldProviderReadAddressRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ProviderJsonldProviderReadAddressRead>> apiProvidersPostItem({ 
-    required ProviderJsonldProviderWriteAddressWrite providerJsonldProviderWriteAddressWrite,
-    String? acceptLanguage,
+    required ProviderProviderWriteAddressWrite providerProviderWriteAddressWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -401,7 +393,6 @@ class ProviderApi {
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
-        if (acceptLanguage != null) r'Accept-Language': acceptLanguage,
         ...?headers,
       },
       extra: <String, dynamic>{
@@ -415,15 +406,15 @@ class ProviderApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'application/ld+json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ProviderJsonldProviderWriteAddressWrite);
-      _bodyData = _serializers.serialize(providerJsonldProviderWriteAddressWrite, specifiedType: _type);
+      const _type = FullType(ProviderProviderWriteAddressWrite);
+      _bodyData = _serializers.serialize(providerProviderWriteAddressWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

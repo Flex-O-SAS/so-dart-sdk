@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'reservation_reservation_read.g.dart';
 
-/// 
+/// ReservationReservationRead
 ///
 /// Properties:
 /// * [id] 
@@ -99,7 +99,7 @@ class _$ReservationReservationReadSerializer implements PrimitiveSerializer<Rese
       yield r'description';
       yield serializers.serialize(
         object.description,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'quantity';
@@ -121,7 +121,7 @@ class _$ReservationReservationReadSerializer implements PrimitiveSerializer<Rese
       yield r'ticket';
       yield serializers.serialize(
         object.ticket,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.createdAt != null) {
@@ -185,9 +185,8 @@ class _$ReservationReservationReadSerializer implements PrimitiveSerializer<Rese
         case r'description':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.description = valueDes;
           break;
         case r'quantity':
@@ -214,9 +213,8 @@ class _$ReservationReservationReadSerializer implements PrimitiveSerializer<Rese
         case r'ticket':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.ticket = valueDes;
           break;
         case r'createdAt':

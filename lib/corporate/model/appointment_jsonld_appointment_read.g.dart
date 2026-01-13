@@ -132,78 +132,82 @@ class _$AppointmentJsonldAppointmentReadStatusEnumSerializer
 class _$AppointmentJsonldAppointmentRead
     extends AppointmentJsonldAppointmentRead {
   @override
-  final AppointmentJsonldAppointmentReadContext? atContext;
-  @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final int? id;
-  @override
-  final String organiser;
-  @override
-  final String? staff;
-  @override
-  final int site;
-  @override
-  final AppointmentJsonldAppointmentReadTypeEnum type;
-  @override
-  final String? description;
-  @override
-  final AppointmentJsonldAppointmentReadStatusEnum status;
-  @override
-  final String? cancellationDate;
-  @override
   final String? cancellationReason;
-  @override
-  final DateTime beginDate;
   @override
   final DateTime endDate;
   @override
-  final BuiltList<AppointmentClientJsonldAppointmentRead>? appointmentClients;
+  final String? description;
+  @override
+  final String? staff;
+  @override
+  final AppointmentJsonldAppointmentReadTypeEnum type;
+  @override
+  final String? title;
+  @override
+  final String organiser;
+  @override
+  final DateTime beginDate;
   @override
   final DateTime? createdAt;
   @override
+  final int site;
+  @override
+  final BuiltList<AppointmentClientJsonldAppointmentRead>? appointmentClients;
+  @override
+  final int? id;
+  @override
+  final AppointmentJsonldAppointmentReadStatusEnum status;
+  @override
+  final DateTime? cancellationDate;
+  @override
   final DateTime? updatedAt;
   @override
-  final String? title;
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$AppointmentJsonldAppointmentRead(
           [void Function(AppointmentJsonldAppointmentReadBuilder)? updates]) =>
       (new AppointmentJsonldAppointmentReadBuilder()..update(updates))._build();
 
   _$AppointmentJsonldAppointmentRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.id,
-      required this.organiser,
-      this.staff,
-      required this.site,
-      required this.type,
+      {this.cancellationReason,
+      required this.endDate,
       this.description,
+      this.staff,
+      required this.type,
+      this.title,
+      required this.organiser,
+      required this.beginDate,
+      this.createdAt,
+      required this.site,
+      this.appointmentClients,
+      this.id,
       required this.status,
       this.cancellationDate,
-      this.cancellationReason,
-      required this.beginDate,
-      required this.endDate,
-      this.appointmentClients,
-      this.createdAt,
       this.updatedAt,
-      this.title})
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        organiser, r'AppointmentJsonldAppointmentRead', 'organiser');
-    BuiltValueNullFieldError.checkNotNull(
-        site, r'AppointmentJsonldAppointmentRead', 'site');
+        endDate, r'AppointmentJsonldAppointmentRead', 'endDate');
     BuiltValueNullFieldError.checkNotNull(
         type, r'AppointmentJsonldAppointmentRead', 'type');
     BuiltValueNullFieldError.checkNotNull(
-        status, r'AppointmentJsonldAppointmentRead', 'status');
+        organiser, r'AppointmentJsonldAppointmentRead', 'organiser');
     BuiltValueNullFieldError.checkNotNull(
         beginDate, r'AppointmentJsonldAppointmentRead', 'beginDate');
     BuiltValueNullFieldError.checkNotNull(
-        endDate, r'AppointmentJsonldAppointmentRead', 'endDate');
+        site, r'AppointmentJsonldAppointmentRead', 'site');
+    BuiltValueNullFieldError.checkNotNull(
+        status, r'AppointmentJsonldAppointmentRead', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'AppointmentJsonldAppointmentRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'AppointmentJsonldAppointmentRead', 'atType');
   }
 
   @override
@@ -219,47 +223,47 @@ class _$AppointmentJsonldAppointmentRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AppointmentJsonldAppointmentRead &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
-        id == other.id &&
-        organiser == other.organiser &&
-        staff == other.staff &&
-        site == other.site &&
-        type == other.type &&
+        cancellationReason == other.cancellationReason &&
+        endDate == other.endDate &&
         description == other.description &&
+        staff == other.staff &&
+        type == other.type &&
+        title == other.title &&
+        organiser == other.organiser &&
+        beginDate == other.beginDate &&
+        createdAt == other.createdAt &&
+        site == other.site &&
+        appointmentClients == other.appointmentClients &&
+        id == other.id &&
         status == other.status &&
         cancellationDate == other.cancellationDate &&
-        cancellationReason == other.cancellationReason &&
-        beginDate == other.beginDate &&
-        endDate == other.endDate &&
-        appointmentClients == other.appointmentClients &&
-        createdAt == other.createdAt &&
         updatedAt == other.updatedAt &&
-        title == other.title;
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, cancellationReason.hashCode);
+    _$hash = $jc(_$hash, endDate.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, staff.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, organiser.hashCode);
+    _$hash = $jc(_$hash, beginDate.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, site.hashCode);
+    _$hash = $jc(_$hash, appointmentClients.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, cancellationDate.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, organiser.hashCode);
-    _$hash = $jc(_$hash, staff.hashCode);
-    _$hash = $jc(_$hash, site.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, cancellationDate.hashCode);
-    _$hash = $jc(_$hash, cancellationReason.hashCode);
-    _$hash = $jc(_$hash, beginDate.hashCode);
-    _$hash = $jc(_$hash, endDate.hashCode);
-    _$hash = $jc(_$hash, appointmentClients.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
-    _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -267,24 +271,24 @@ class _$AppointmentJsonldAppointmentRead
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AppointmentJsonldAppointmentRead')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('id', id)
-          ..add('organiser', organiser)
-          ..add('staff', staff)
-          ..add('site', site)
-          ..add('type', type)
+          ..add('cancellationReason', cancellationReason)
+          ..add('endDate', endDate)
           ..add('description', description)
+          ..add('staff', staff)
+          ..add('type', type)
+          ..add('title', title)
+          ..add('organiser', organiser)
+          ..add('beginDate', beginDate)
+          ..add('createdAt', createdAt)
+          ..add('site', site)
+          ..add('appointmentClients', appointmentClients)
+          ..add('id', id)
           ..add('status', status)
           ..add('cancellationDate', cancellationDate)
-          ..add('cancellationReason', cancellationReason)
-          ..add('beginDate', beginDate)
-          ..add('endDate', endDate)
-          ..add('appointmentClients', appointmentClients)
-          ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt)
-          ..add('title', title))
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -292,92 +296,93 @@ class _$AppointmentJsonldAppointmentRead
 class AppointmentJsonldAppointmentReadBuilder
     implements
         Builder<AppointmentJsonldAppointmentRead,
-            AppointmentJsonldAppointmentReadBuilder> {
+            AppointmentJsonldAppointmentReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$AppointmentJsonldAppointmentRead? _$v;
-
-  AppointmentJsonldAppointmentReadContextBuilder? _atContext;
-  AppointmentJsonldAppointmentReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new AppointmentJsonldAppointmentReadContextBuilder();
-  set atContext(AppointmentJsonldAppointmentReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _organiser;
-  String? get organiser => _$this._organiser;
-  set organiser(String? organiser) => _$this._organiser = organiser;
-
-  String? _staff;
-  String? get staff => _$this._staff;
-  set staff(String? staff) => _$this._staff = staff;
-
-  int? _site;
-  int? get site => _$this._site;
-  set site(int? site) => _$this._site = site;
-
-  AppointmentJsonldAppointmentReadTypeEnum? _type;
-  AppointmentJsonldAppointmentReadTypeEnum? get type => _$this._type;
-  set type(AppointmentJsonldAppointmentReadTypeEnum? type) =>
-      _$this._type = type;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  AppointmentJsonldAppointmentReadStatusEnum? _status;
-  AppointmentJsonldAppointmentReadStatusEnum? get status => _$this._status;
-  set status(AppointmentJsonldAppointmentReadStatusEnum? status) =>
-      _$this._status = status;
-
-  String? _cancellationDate;
-  String? get cancellationDate => _$this._cancellationDate;
-  set cancellationDate(String? cancellationDate) =>
-      _$this._cancellationDate = cancellationDate;
 
   String? _cancellationReason;
   String? get cancellationReason => _$this._cancellationReason;
-  set cancellationReason(String? cancellationReason) =>
+  set cancellationReason(covariant String? cancellationReason) =>
       _$this._cancellationReason = cancellationReason;
-
-  DateTime? _beginDate;
-  DateTime? get beginDate => _$this._beginDate;
-  set beginDate(DateTime? beginDate) => _$this._beginDate = beginDate;
 
   DateTime? _endDate;
   DateTime? get endDate => _$this._endDate;
-  set endDate(DateTime? endDate) => _$this._endDate = endDate;
+  set endDate(covariant DateTime? endDate) => _$this._endDate = endDate;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
+  String? _staff;
+  String? get staff => _$this._staff;
+  set staff(covariant String? staff) => _$this._staff = staff;
+
+  AppointmentJsonldAppointmentReadTypeEnum? _type;
+  AppointmentJsonldAppointmentReadTypeEnum? get type => _$this._type;
+  set type(covariant AppointmentJsonldAppointmentReadTypeEnum? type) =>
+      _$this._type = type;
+
+  String? _title;
+  String? get title => _$this._title;
+  set title(covariant String? title) => _$this._title = title;
+
+  String? _organiser;
+  String? get organiser => _$this._organiser;
+  set organiser(covariant String? organiser) => _$this._organiser = organiser;
+
+  DateTime? _beginDate;
+  DateTime? get beginDate => _$this._beginDate;
+  set beginDate(covariant DateTime? beginDate) => _$this._beginDate = beginDate;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  int? _site;
+  int? get site => _$this._site;
+  set site(covariant int? site) => _$this._site = site;
 
   ListBuilder<AppointmentClientJsonldAppointmentRead>? _appointmentClients;
   ListBuilder<AppointmentClientJsonldAppointmentRead> get appointmentClients =>
       _$this._appointmentClients ??=
           new ListBuilder<AppointmentClientJsonldAppointmentRead>();
   set appointmentClients(
-          ListBuilder<AppointmentClientJsonldAppointmentRead>?
+          covariant ListBuilder<AppointmentClientJsonldAppointmentRead>?
               appointmentClients) =>
       _$this._appointmentClients = appointmentClients;
 
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  AppointmentJsonldAppointmentReadStatusEnum? _status;
+  AppointmentJsonldAppointmentReadStatusEnum? get status => _$this._status;
+  set status(covariant AppointmentJsonldAppointmentReadStatusEnum? status) =>
+      _$this._status = status;
+
+  DateTime? _cancellationDate;
+  DateTime? get cancellationDate => _$this._cancellationDate;
+  set cancellationDate(covariant DateTime? cancellationDate) =>
+      _$this._cancellationDate = cancellationDate;
 
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+  set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
-  String? _title;
-  String? get title => _$this._title;
-  set title(String? title) => _$this._title = title;
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   AppointmentJsonldAppointmentReadBuilder() {
     AppointmentJsonldAppointmentRead._defaults(this);
@@ -386,31 +391,31 @@ class AppointmentJsonldAppointmentReadBuilder
   AppointmentJsonldAppointmentReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _cancellationReason = $v.cancellationReason;
+      _endDate = $v.endDate;
+      _description = $v.description;
+      _staff = $v.staff;
+      _type = $v.type;
+      _title = $v.title;
+      _organiser = $v.organiser;
+      _beginDate = $v.beginDate;
+      _createdAt = $v.createdAt;
+      _site = $v.site;
+      _appointmentClients = $v.appointmentClients?.toBuilder();
+      _id = $v.id;
+      _status = $v.status;
+      _cancellationDate = $v.cancellationDate;
+      _updatedAt = $v.updatedAt;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _id = $v.id;
-      _organiser = $v.organiser;
-      _staff = $v.staff;
-      _site = $v.site;
-      _type = $v.type;
-      _description = $v.description;
-      _status = $v.status;
-      _cancellationDate = $v.cancellationDate;
-      _cancellationReason = $v.cancellationReason;
-      _beginDate = $v.beginDate;
-      _endDate = $v.endDate;
-      _appointmentClients = $v.appointmentClients?.toBuilder();
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
-      _title = $v.title;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(AppointmentJsonldAppointmentRead other) {
+  void replace(covariant AppointmentJsonldAppointmentRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AppointmentJsonldAppointmentRead;
   }
@@ -428,39 +433,41 @@ class AppointmentJsonldAppointmentReadBuilder
     try {
       _$result = _$v ??
           new _$AppointmentJsonldAppointmentRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            id: id,
-            organiser: BuiltValueNullFieldError.checkNotNull(
-                organiser, r'AppointmentJsonldAppointmentRead', 'organiser'),
+            cancellationReason: cancellationReason,
+            endDate: BuiltValueNullFieldError.checkNotNull(
+                endDate, r'AppointmentJsonldAppointmentRead', 'endDate'),
+            description: description,
             staff: staff,
-            site: BuiltValueNullFieldError.checkNotNull(
-                site, r'AppointmentJsonldAppointmentRead', 'site'),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'AppointmentJsonldAppointmentRead', 'type'),
-            description: description,
+            title: title,
+            organiser: BuiltValueNullFieldError.checkNotNull(
+                organiser, r'AppointmentJsonldAppointmentRead', 'organiser'),
+            beginDate: BuiltValueNullFieldError.checkNotNull(
+                beginDate, r'AppointmentJsonldAppointmentRead', 'beginDate'),
+            createdAt: createdAt,
+            site: BuiltValueNullFieldError.checkNotNull(
+                site, r'AppointmentJsonldAppointmentRead', 'site'),
+            appointmentClients: _appointmentClients?.build(),
+            id: id,
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'AppointmentJsonldAppointmentRead', 'status'),
             cancellationDate: cancellationDate,
-            cancellationReason: cancellationReason,
-            beginDate: BuiltValueNullFieldError.checkNotNull(
-                beginDate, r'AppointmentJsonldAppointmentRead', 'beginDate'),
-            endDate: BuiltValueNullFieldError.checkNotNull(
-                endDate, r'AppointmentJsonldAppointmentRead', 'endDate'),
-            appointmentClients: _appointmentClients?.build(),
-            createdAt: createdAt,
             updatedAt: updatedAt,
-            title: title,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'AppointmentJsonldAppointmentRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'AppointmentJsonldAppointmentRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'atContext';
-        _atContext?.build();
-
         _$failedField = 'appointmentClients';
         _appointmentClients?.build();
+
+        _$failedField = 'atContext';
+        _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'AppointmentJsonldAppointmentRead', _$failedField, e.toString());

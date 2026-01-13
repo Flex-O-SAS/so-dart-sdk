@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'item_item_write.g.dart';
 
-/// 
+/// ItemItemWrite
 ///
 /// Properties:
 /// * [provider] 
@@ -55,7 +55,7 @@ abstract class ItemItemWrite implements Built<ItemItemWrite, ItemItemWriteBuilde
   DateTime get beginDate;
 
   @BuiltValueField(wireName: r'endDate')
-  String? get endDate;
+  DateTime? get endDate;
 
   ItemItemWrite._();
 
@@ -106,7 +106,7 @@ class _$ItemItemWriteSerializer implements PrimitiveSerializer<ItemItemWrite> {
       yield r'description';
       yield serializers.serialize(
         object.description,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.price != null) {
@@ -130,7 +130,7 @@ class _$ItemItemWriteSerializer implements PrimitiveSerializer<ItemItemWrite> {
       yield r'imageLink';
       yield serializers.serialize(
         object.imageLink,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     yield r'beginDate';
@@ -142,7 +142,7 @@ class _$ItemItemWriteSerializer implements PrimitiveSerializer<ItemItemWrite> {
       yield r'endDate';
       yield serializers.serialize(
         object.endDate,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -199,9 +199,8 @@ class _$ItemItemWriteSerializer implements PrimitiveSerializer<ItemItemWrite> {
         case r'description':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.description = valueDes;
           break;
         case r'price':
@@ -229,9 +228,8 @@ class _$ItemItemWriteSerializer implements PrimitiveSerializer<ItemItemWrite> {
         case r'imageLink':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.imageLink = valueDes;
           break;
         case r'beginDate':
@@ -244,9 +242,8 @@ class _$ItemItemWriteSerializer implements PrimitiveSerializer<ItemItemWrite> {
         case r'endDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.endDate = valueDes;
           break;
         default:

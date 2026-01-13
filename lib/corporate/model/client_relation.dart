@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'client_relation.g.dart';
 
-/// 
+/// ClientRelation
 ///
 /// Properties:
 /// * [id] 
@@ -40,10 +40,10 @@ abstract class ClientRelation implements Built<ClientRelation, ClientRelationBui
   String? get description;
 
   @BuiltValueField(wireName: r'begin')
-  String? get begin;
+  DateTime? get begin;
 
   @BuiltValueField(wireName: r'end')
-  String? get end;
+  DateTime? get end;
 
   @BuiltValueField(wireName: r'createdAt')
   DateTime? get createdAt;
@@ -100,21 +100,21 @@ class _$ClientRelationSerializer implements PrimitiveSerializer<ClientRelation> 
       yield r'description';
       yield serializers.serialize(
         object.description,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(String),
       );
     }
     if (object.begin != null) {
       yield r'begin';
       yield serializers.serialize(
         object.begin,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
     if (object.end != null) {
       yield r'end';
       yield serializers.serialize(
         object.end,
-        specifiedType: const FullType.nullable(String),
+        specifiedType: const FullType(DateTime),
       );
     }
     if (object.createdAt != null) {
@@ -185,25 +185,22 @@ class _$ClientRelationSerializer implements PrimitiveSerializer<ClientRelation> 
         case r'description':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(String),
+          ) as String;
           result.description = valueDes;
           break;
         case r'begin':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.begin = valueDes;
           break;
         case r'end':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.end = valueDes;
           break;
         case r'createdAt':

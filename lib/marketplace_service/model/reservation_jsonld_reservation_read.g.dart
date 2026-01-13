@@ -80,61 +80,65 @@ class _$ReservationJsonldReservationReadPaymentMethodEnumSerializer
 class _$ReservationJsonldReservationRead
     extends ReservationJsonldReservationRead {
   @override
-  final AddressJsonldProviderReadAddressReadContext? atContext;
+  final DateTime date;
   @override
-  final String? atId;
-  @override
-  final String? atType;
-  @override
-  final int? id;
+  final DateTime? createdAt;
   @override
   final String item;
+  @override
+  final int quantity;
+  @override
+  final String? ticket;
   @override
   final String author;
   @override
   final String? description;
   @override
-  final int quantity;
-  @override
-  final DateTime date;
-  @override
   final ReservationJsonldReservationReadPaymentMethodEnum paymentMethod;
   @override
-  final String? ticket;
-  @override
-  final DateTime? createdAt;
+  final int? id;
   @override
   final DateTime? updatedAt;
+  @override
+  final HydraItemBaseSchemaContext? atContext;
+  @override
+  final String atId;
+  @override
+  final String atType;
 
   factory _$ReservationJsonldReservationRead(
           [void Function(ReservationJsonldReservationReadBuilder)? updates]) =>
       (new ReservationJsonldReservationReadBuilder()..update(updates))._build();
 
   _$ReservationJsonldReservationRead._(
-      {this.atContext,
-      this.atId,
-      this.atType,
-      this.id,
+      {required this.date,
+      this.createdAt,
       required this.item,
+      required this.quantity,
+      this.ticket,
       required this.author,
       this.description,
-      required this.quantity,
-      required this.date,
       required this.paymentMethod,
-      this.ticket,
-      this.createdAt,
-      this.updatedAt})
+      this.id,
+      this.updatedAt,
+      this.atContext,
+      required this.atId,
+      required this.atType})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        item, r'ReservationJsonldReservationRead', 'item');
-    BuiltValueNullFieldError.checkNotNull(
-        author, r'ReservationJsonldReservationRead', 'author');
-    BuiltValueNullFieldError.checkNotNull(
-        quantity, r'ReservationJsonldReservationRead', 'quantity');
     BuiltValueNullFieldError.checkNotNull(
         date, r'ReservationJsonldReservationRead', 'date');
     BuiltValueNullFieldError.checkNotNull(
+        item, r'ReservationJsonldReservationRead', 'item');
+    BuiltValueNullFieldError.checkNotNull(
+        quantity, r'ReservationJsonldReservationRead', 'quantity');
+    BuiltValueNullFieldError.checkNotNull(
+        author, r'ReservationJsonldReservationRead', 'author');
+    BuiltValueNullFieldError.checkNotNull(
         paymentMethod, r'ReservationJsonldReservationRead', 'paymentMethod');
+    BuiltValueNullFieldError.checkNotNull(
+        atId, r'ReservationJsonldReservationRead', 'atId');
+    BuiltValueNullFieldError.checkNotNull(
+        atType, r'ReservationJsonldReservationRead', 'atType');
   }
 
   @override
@@ -150,37 +154,37 @@ class _$ReservationJsonldReservationRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ReservationJsonldReservationRead &&
-        atContext == other.atContext &&
-        atId == other.atId &&
-        atType == other.atType &&
-        id == other.id &&
+        date == other.date &&
+        createdAt == other.createdAt &&
         item == other.item &&
+        quantity == other.quantity &&
+        ticket == other.ticket &&
         author == other.author &&
         description == other.description &&
-        quantity == other.quantity &&
-        date == other.date &&
         paymentMethod == other.paymentMethod &&
-        ticket == other.ticket &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        id == other.id &&
+        updatedAt == other.updatedAt &&
+        atContext == other.atContext &&
+        atId == other.atId &&
+        atType == other.atType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, date.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, item.hashCode);
+    _$hash = $jc(_$hash, quantity.hashCode);
+    _$hash = $jc(_$hash, ticket.hashCode);
+    _$hash = $jc(_$hash, author.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, paymentMethod.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, item.hashCode);
-    _$hash = $jc(_$hash, author.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, quantity.hashCode);
-    _$hash = $jc(_$hash, date.hashCode);
-    _$hash = $jc(_$hash, paymentMethod.hashCode);
-    _$hash = $jc(_$hash, ticket.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -188,19 +192,19 @@ class _$ReservationJsonldReservationRead
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ReservationJsonldReservationRead')
-          ..add('atContext', atContext)
-          ..add('atId', atId)
-          ..add('atType', atType)
-          ..add('id', id)
+          ..add('date', date)
+          ..add('createdAt', createdAt)
           ..add('item', item)
+          ..add('quantity', quantity)
+          ..add('ticket', ticket)
           ..add('author', author)
           ..add('description', description)
-          ..add('quantity', quantity)
-          ..add('date', date)
           ..add('paymentMethod', paymentMethod)
-          ..add('ticket', ticket)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('id', id)
+          ..add('updatedAt', updatedAt)
+          ..add('atContext', atContext)
+          ..add('atId', atId)
+          ..add('atType', atType))
         .toString();
   }
 }
@@ -208,67 +212,68 @@ class _$ReservationJsonldReservationRead
 class ReservationJsonldReservationReadBuilder
     implements
         Builder<ReservationJsonldReservationRead,
-            ReservationJsonldReservationReadBuilder> {
+            ReservationJsonldReservationReadBuilder>,
+        HydraItemBaseSchemaBuilder {
   _$ReservationJsonldReservationRead? _$v;
-
-  AddressJsonldProviderReadAddressReadContextBuilder? _atContext;
-  AddressJsonldProviderReadAddressReadContextBuilder get atContext =>
-      _$this._atContext ??=
-          new AddressJsonldProviderReadAddressReadContextBuilder();
-  set atContext(
-          AddressJsonldProviderReadAddressReadContextBuilder? atContext) =>
-      _$this._atContext = atContext;
-
-  String? _atId;
-  String? get atId => _$this._atId;
-  set atId(String? atId) => _$this._atId = atId;
-
-  String? _atType;
-  String? get atType => _$this._atType;
-  set atType(String? atType) => _$this._atType = atType;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _item;
-  String? get item => _$this._item;
-  set item(String? item) => _$this._item = item;
-
-  String? _author;
-  String? get author => _$this._author;
-  set author(String? author) => _$this._author = author;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  int? _quantity;
-  int? get quantity => _$this._quantity;
-  set quantity(int? quantity) => _$this._quantity = quantity;
 
   DateTime? _date;
   DateTime? get date => _$this._date;
-  set date(DateTime? date) => _$this._date = date;
+  set date(covariant DateTime? date) => _$this._date = date;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _item;
+  String? get item => _$this._item;
+  set item(covariant String? item) => _$this._item = item;
+
+  int? _quantity;
+  int? get quantity => _$this._quantity;
+  set quantity(covariant int? quantity) => _$this._quantity = quantity;
+
+  String? _ticket;
+  String? get ticket => _$this._ticket;
+  set ticket(covariant String? ticket) => _$this._ticket = ticket;
+
+  String? _author;
+  String? get author => _$this._author;
+  set author(covariant String? author) => _$this._author = author;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
 
   ReservationJsonldReservationReadPaymentMethodEnum? _paymentMethod;
   ReservationJsonldReservationReadPaymentMethodEnum? get paymentMethod =>
       _$this._paymentMethod;
   set paymentMethod(
-          ReservationJsonldReservationReadPaymentMethodEnum? paymentMethod) =>
+          covariant ReservationJsonldReservationReadPaymentMethodEnum?
+              paymentMethod) =>
       _$this._paymentMethod = paymentMethod;
 
-  String? _ticket;
-  String? get ticket => _$this._ticket;
-  set ticket(String? ticket) => _$this._ticket = ticket;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
 
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+  set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  HydraItemBaseSchemaContextBuilder? _atContext;
+  HydraItemBaseSchemaContextBuilder get atContext =>
+      _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
+  set atContext(covariant HydraItemBaseSchemaContextBuilder? atContext) =>
+      _$this._atContext = atContext;
+
+  String? _atId;
+  String? get atId => _$this._atId;
+  set atId(covariant String? atId) => _$this._atId = atId;
+
+  String? _atType;
+  String? get atType => _$this._atType;
+  set atType(covariant String? atType) => _$this._atType = atType;
 
   ReservationJsonldReservationReadBuilder() {
     ReservationJsonldReservationRead._defaults(this);
@@ -277,26 +282,26 @@ class ReservationJsonldReservationReadBuilder
   ReservationJsonldReservationReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _date = $v.date;
+      _createdAt = $v.createdAt;
+      _item = $v.item;
+      _quantity = $v.quantity;
+      _ticket = $v.ticket;
+      _author = $v.author;
+      _description = $v.description;
+      _paymentMethod = $v.paymentMethod;
+      _id = $v.id;
+      _updatedAt = $v.updatedAt;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
-      _id = $v.id;
-      _item = $v.item;
-      _author = $v.author;
-      _description = $v.description;
-      _quantity = $v.quantity;
-      _date = $v.date;
-      _paymentMethod = $v.paymentMethod;
-      _ticket = $v.ticket;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(ReservationJsonldReservationRead other) {
+  void replace(covariant ReservationJsonldReservationRead other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ReservationJsonldReservationRead;
   }
@@ -314,24 +319,26 @@ class ReservationJsonldReservationReadBuilder
     try {
       _$result = _$v ??
           new _$ReservationJsonldReservationRead._(
-            atContext: _atContext?.build(),
-            atId: atId,
-            atType: atType,
-            id: id,
+            date: BuiltValueNullFieldError.checkNotNull(
+                date, r'ReservationJsonldReservationRead', 'date'),
+            createdAt: createdAt,
             item: BuiltValueNullFieldError.checkNotNull(
                 item, r'ReservationJsonldReservationRead', 'item'),
+            quantity: BuiltValueNullFieldError.checkNotNull(
+                quantity, r'ReservationJsonldReservationRead', 'quantity'),
+            ticket: ticket,
             author: BuiltValueNullFieldError.checkNotNull(
                 author, r'ReservationJsonldReservationRead', 'author'),
             description: description,
-            quantity: BuiltValueNullFieldError.checkNotNull(
-                quantity, r'ReservationJsonldReservationRead', 'quantity'),
-            date: BuiltValueNullFieldError.checkNotNull(
-                date, r'ReservationJsonldReservationRead', 'date'),
             paymentMethod: BuiltValueNullFieldError.checkNotNull(paymentMethod,
                 r'ReservationJsonldReservationRead', 'paymentMethod'),
-            ticket: ticket,
-            createdAt: createdAt,
+            id: id,
             updatedAt: updatedAt,
+            atContext: _atContext?.build(),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'ReservationJsonldReservationRead', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'ReservationJsonldReservationRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;

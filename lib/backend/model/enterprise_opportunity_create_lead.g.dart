@@ -28,6 +28,8 @@ class _$EnterpriseOpportunityCreateLead
   final String? city;
   @override
   final String? country;
+  @override
+  final String? timezone;
 
   factory _$EnterpriseOpportunityCreateLead(
           [void Function(EnterpriseOpportunityCreateLeadBuilder)? updates]) =>
@@ -43,7 +45,8 @@ class _$EnterpriseOpportunityCreateLead
       this.address,
       this.zipcode,
       this.city,
-      this.country})
+      this.country,
+      this.timezone})
       : super._();
 
   @override
@@ -68,7 +71,8 @@ class _$EnterpriseOpportunityCreateLead
         address == other.address &&
         zipcode == other.zipcode &&
         city == other.city &&
-        country == other.country;
+        country == other.country &&
+        timezone == other.timezone;
   }
 
   @override
@@ -84,6 +88,7 @@ class _$EnterpriseOpportunityCreateLead
     _$hash = $jc(_$hash, zipcode.hashCode);
     _$hash = $jc(_$hash, city.hashCode);
     _$hash = $jc(_$hash, country.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -100,7 +105,8 @@ class _$EnterpriseOpportunityCreateLead
           ..add('address', address)
           ..add('zipcode', zipcode)
           ..add('city', city)
-          ..add('country', country))
+          ..add('country', country)
+          ..add('timezone', timezone))
         .toString();
   }
 }
@@ -151,6 +157,10 @@ class EnterpriseOpportunityCreateLeadBuilder
   String? get country => _$this._country;
   set country(String? country) => _$this._country = country;
 
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(String? timezone) => _$this._timezone = timezone;
+
   EnterpriseOpportunityCreateLeadBuilder() {
     EnterpriseOpportunityCreateLead._defaults(this);
   }
@@ -168,6 +178,7 @@ class EnterpriseOpportunityCreateLeadBuilder
       _zipcode = $v.zipcode;
       _city = $v.city;
       _country = $v.country;
+      _timezone = $v.timezone;
       _$v = null;
     }
     return this;
@@ -200,6 +211,7 @@ class EnterpriseOpportunityCreateLeadBuilder
           zipcode: zipcode,
           city: city,
           country: country,
+          timezone: timezone,
         );
     replace(_$result);
     return _$result;

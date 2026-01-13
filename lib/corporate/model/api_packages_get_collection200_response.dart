@@ -3,35 +3,27 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/corporate/model/hydra_collection_base_schema_no_pagination_search.dart';
+import 'package:so_dart_sdk/corporate/model/hydra_collection_base_schema_all_of_view.dart';
 import 'package:so_dart_sdk/corporate/model/package_jsonld_package_read.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/corporate/model/api_appointments_get_collection200_response_view.dart';
-import 'package:so_dart_sdk/corporate/model/api_appointments_get_collection200_response_search.dart';
+import 'package:so_dart_sdk/corporate/model/hydra_collection_base_schema.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'api_packages_get_collection200_response.g.dart';
 
-/// ApiPackagesGetCollection200Response
+/// Package.jsonld-package.read collection.
 ///
 /// Properties:
-/// * [member] 
 /// * [totalItems] 
-/// * [view] 
 /// * [search] 
+/// * [view] 
+/// * [member] 
 @BuiltValue()
-abstract class ApiPackagesGetCollection200Response implements Built<ApiPackagesGetCollection200Response, ApiPackagesGetCollection200ResponseBuilder> {
+abstract class ApiPackagesGetCollection200Response implements HydraCollectionBaseSchema, Built<ApiPackagesGetCollection200Response, ApiPackagesGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
   BuiltList<PackageJsonldPackageRead> get member;
-
-  @BuiltValueField(wireName: r'totalItems')
-  int? get totalItems;
-
-  @BuiltValueField(wireName: r'view')
-  ApiAppointmentsGetCollection200ResponseView? get view;
-
-  @BuiltValueField(wireName: r'search')
-  ApiAppointmentsGetCollection200ResponseSearch? get search;
 
   ApiPackagesGetCollection200Response._();
 
@@ -68,18 +60,18 @@ class _$ApiPackagesGetCollection200ResponseSerializer implements PrimitiveSerial
         specifiedType: const FullType(int),
       );
     }
-    if (object.view != null) {
-      yield r'view';
-      yield serializers.serialize(
-        object.view,
-        specifiedType: const FullType(ApiAppointmentsGetCollection200ResponseView),
-      );
-    }
     if (object.search != null) {
       yield r'search';
       yield serializers.serialize(
         object.search,
-        specifiedType: const FullType(ApiAppointmentsGetCollection200ResponseSearch),
+        specifiedType: const FullType(HydraCollectionBaseSchemaNoPaginationSearch),
+      );
+    }
+    if (object.view != null) {
+      yield r'view';
+      yield serializers.serialize(
+        object.view,
+        specifiedType: const FullType(HydraCollectionBaseSchemaAllOfView),
       );
     }
   }
@@ -119,19 +111,19 @@ class _$ApiPackagesGetCollection200ResponseSerializer implements PrimitiveSerial
           ) as int;
           result.totalItems = valueDes;
           break;
-        case r'view':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiAppointmentsGetCollection200ResponseView),
-          ) as ApiAppointmentsGetCollection200ResponseView;
-          result.view.replace(valueDes);
-          break;
         case r'search':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ApiAppointmentsGetCollection200ResponseSearch),
-          ) as ApiAppointmentsGetCollection200ResponseSearch;
+            specifiedType: const FullType(HydraCollectionBaseSchemaNoPaginationSearch),
+          ) as HydraCollectionBaseSchemaNoPaginationSearch;
           result.search.replace(valueDes);
+          break;
+        case r'view':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraCollectionBaseSchemaAllOfView),
+          ) as HydraCollectionBaseSchemaAllOfView;
+          result.view.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -11,12 +11,12 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/core_service/api_util.dart';
 import 'package:so_dart_sdk/core_service/model/api_subscribers_get_collection200_response.dart';
-import 'package:so_dart_sdk/core_service/model/constraint_violation_json.dart';
-import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
-import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_write.dart';
+import 'package:so_dart_sdk/core_service/model/subscriber_subscriber_write.dart';
 
 class SubscriberApi {
 
@@ -259,7 +259,7 @@ class SubscriberApi {
   /// Creates a Subscriber resource.
   ///
   /// Parameters:
-  /// * [subscriberJsonldSubscriberWrite] - The new Subscriber resource
+  /// * [subscriberSubscriberWrite] - The new Subscriber resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -270,7 +270,7 @@ class SubscriberApi {
   /// Returns a [Future] containing a [Response] with a [SubscriberJsonldSubscriberRead] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<SubscriberJsonldSubscriberRead>> apiSubscribersPostItem({ 
-    required SubscriberJsonldSubscriberWrite subscriberJsonldSubscriberWrite,
+    required SubscriberSubscriberWrite subscriberSubscriberWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -302,8 +302,8 @@ class SubscriberApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(SubscriberJsonldSubscriberWrite);
-      _bodyData = _serializers.serialize(subscriberJsonldSubscriberWrite, specifiedType: _type);
+      const _type = FullType(SubscriberSubscriberWrite);
+      _bodyData = _serializers.serialize(subscriberSubscriberWrite, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

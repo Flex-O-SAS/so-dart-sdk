@@ -474,6 +474,9 @@ export 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collecti
 export 'package:so_dart_sdk/ticketing_service/model/api_apilinked_users_get_collection200_response.dart';
 export 'package:so_dart_sdk/ticketing_service/model/api_apitags_get_collection200_response.dart';
 export 'package:so_dart_sdk/ticketing_service/model/api_tickets_get_collection200_response.dart';
+export 'package:so_dart_sdk/ticketing_service/model/attachment_jsonld_ticket_read.dart';
+export 'package:so_dart_sdk/ticketing_service/model/attachment_ticket_read.dart';
+export 'package:so_dart_sdk/ticketing_service/model/attachment_ticket_write.dart';
 export 'package:so_dart_sdk/ticketing_service/model/comment_comment_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
 export 'package:so_dart_sdk/ticketing_service/model/comment_comment_write_json_merge_patch.dart';

@@ -20,6 +20,7 @@ part 'rule_rule_write_json_merge_patch.g.dart';
 /// * [expressions] 
 /// * [ruleType] 
 /// * [ruleAction] 
+/// * [ruleActionArgs] 
 /// * [parentRule] 
 /// * [createdAt] 
 /// * [updatedAt] 
@@ -43,7 +44,10 @@ abstract class RuleRuleWriteJsonMergePatch implements Built<RuleRuleWriteJsonMer
 
   @BuiltValueField(wireName: r'ruleAction')
   RuleRuleWriteJsonMergePatchRuleActionEnum? get ruleAction;
-  // enum ruleActionEnum {  AllowBooking,  DenyBooking,  PendingBooking,  FreeBooking,  AllowCancelBooking,  DenyCancelBooking,  };
+  // enum ruleActionEnum {  AllowBooking,  DenyBooking,  PendingBooking,  FreeBooking,  AllowCancelBooking,  DenyCancelBooking,  DiscountBooking,  };
+
+  @BuiltValueField(wireName: r'ruleActionArgs')
+  BuiltList<String>? get ruleActionArgs;
 
   @BuiltValueField(wireName: r'parentRule')
   RuleRuleWrite? get parentRule;
@@ -120,6 +124,13 @@ class _$RuleRuleWriteJsonMergePatchSerializer implements PrimitiveSerializer<Rul
       yield serializers.serialize(
         object.ruleAction,
         specifiedType: const FullType(RuleRuleWriteJsonMergePatchRuleActionEnum),
+      );
+    }
+    if (object.ruleActionArgs != null) {
+      yield r'ruleActionArgs';
+      yield serializers.serialize(
+        object.ruleActionArgs,
+        specifiedType: const FullType.nullable(BuiltList, [FullType(String)]),
       );
     }
     if (object.parentRule != null) {
@@ -208,6 +219,14 @@ class _$RuleRuleWriteJsonMergePatchSerializer implements PrimitiveSerializer<Rul
           ) as RuleRuleWriteJsonMergePatchRuleActionEnum;
           result.ruleAction = valueDes;
           break;
+        case r'ruleActionArgs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>?;
+          if (valueDes == null) continue;
+          result.ruleActionArgs.replace(valueDes);
+          break;
         case r'parentRule':
           final valueDes = serializers.deserialize(
             value,
@@ -288,6 +307,8 @@ class RuleRuleWriteJsonMergePatchRuleActionEnum extends EnumClass {
   static const RuleRuleWriteJsonMergePatchRuleActionEnum allowCancelBooking = _$ruleRuleWriteJsonMergePatchRuleActionEnum_allowCancelBooking;
   @BuiltValueEnumConst(wireName: r'DenyCancelBooking')
   static const RuleRuleWriteJsonMergePatchRuleActionEnum denyCancelBooking = _$ruleRuleWriteJsonMergePatchRuleActionEnum_denyCancelBooking;
+  @BuiltValueEnumConst(wireName: r'DiscountBooking')
+  static const RuleRuleWriteJsonMergePatchRuleActionEnum discountBooking = _$ruleRuleWriteJsonMergePatchRuleActionEnum_discountBooking;
 
   static Serializer<RuleRuleWriteJsonMergePatchRuleActionEnum> get serializer => _$ruleRuleWriteJsonMergePatchRuleActionEnumSerializer;
 

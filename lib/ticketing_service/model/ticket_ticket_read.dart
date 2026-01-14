@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/ticketing_service/model/attachment_ticket_read.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
@@ -29,6 +30,7 @@ part 'ticket_ticket_read.g.dart';
 /// * [linkedUsers] 
 /// * [tags] 
 /// * [comments] 
+/// * [attachments] 
 @BuiltValue()
 abstract class TicketTicketRead implements Built<TicketTicketRead, TicketTicketReadBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -79,6 +81,9 @@ abstract class TicketTicketRead implements Built<TicketTicketRead, TicketTicketR
 
   @BuiltValueField(wireName: r'comments')
   BuiltList<String>? get comments;
+
+  @BuiltValueField(wireName: r'attachments')
+  BuiltList<AttachmentTicketRead>? get attachments;
 
   TicketTicketRead._();
 
@@ -201,6 +206,13 @@ class _$TicketTicketReadSerializer implements PrimitiveSerializer<TicketTicketRe
       yield serializers.serialize(
         object.comments,
         specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.attachments != null) {
+      yield r'attachments';
+      yield serializers.serialize(
+        object.attachments,
+        specifiedType: const FullType(BuiltList, [FullType(AttachmentTicketRead)]),
       );
     }
   }
@@ -337,6 +349,13 @@ class _$TicketTicketReadSerializer implements PrimitiveSerializer<TicketTicketRe
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.comments.replace(valueDes);
+          break;
+        case r'attachments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AttachmentTicketRead)]),
+          ) as BuiltList<AttachmentTicketRead>;
+          result.attachments.replace(valueDes);
           break;
         default:
           unhandled.add(key);

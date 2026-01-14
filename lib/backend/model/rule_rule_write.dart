@@ -19,6 +19,7 @@ part 'rule_rule_write.g.dart';
 /// * [expressions] 
 /// * [ruleType] 
 /// * [ruleAction] 
+/// * [ruleActionArgs] 
 /// * [parentRule] 
 /// * [createdAt] 
 /// * [updatedAt] 
@@ -42,7 +43,10 @@ abstract class RuleRuleWrite implements Built<RuleRuleWrite, RuleRuleWriteBuilde
 
   @BuiltValueField(wireName: r'ruleAction')
   RuleRuleWriteRuleActionEnum? get ruleAction;
-  // enum ruleActionEnum {  AllowBooking,  DenyBooking,  PendingBooking,  FreeBooking,  AllowCancelBooking,  DenyCancelBooking,  };
+  // enum ruleActionEnum {  AllowBooking,  DenyBooking,  PendingBooking,  FreeBooking,  AllowCancelBooking,  DenyCancelBooking,  DiscountBooking,  };
+
+  @BuiltValueField(wireName: r'ruleActionArgs')
+  BuiltList<String>? get ruleActionArgs;
 
   @BuiltValueField(wireName: r'parentRule')
   RuleRuleWrite? get parentRule;
@@ -119,6 +123,13 @@ class _$RuleRuleWriteSerializer implements PrimitiveSerializer<RuleRuleWrite> {
       yield serializers.serialize(
         object.ruleAction,
         specifiedType: const FullType(RuleRuleWriteRuleActionEnum),
+      );
+    }
+    if (object.ruleActionArgs != null) {
+      yield r'ruleActionArgs';
+      yield serializers.serialize(
+        object.ruleActionArgs,
+        specifiedType: const FullType.nullable(BuiltList, [FullType(String)]),
       );
     }
     if (object.parentRule != null) {
@@ -207,6 +218,14 @@ class _$RuleRuleWriteSerializer implements PrimitiveSerializer<RuleRuleWrite> {
           ) as RuleRuleWriteRuleActionEnum;
           result.ruleAction = valueDes;
           break;
+        case r'ruleActionArgs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>?;
+          if (valueDes == null) continue;
+          result.ruleActionArgs.replace(valueDes);
+          break;
         case r'parentRule':
           final valueDes = serializers.deserialize(
             value,
@@ -287,6 +306,8 @@ class RuleRuleWriteRuleActionEnum extends EnumClass {
   static const RuleRuleWriteRuleActionEnum allowCancelBooking = _$ruleRuleWriteRuleActionEnum_allowCancelBooking;
   @BuiltValueEnumConst(wireName: r'DenyCancelBooking')
   static const RuleRuleWriteRuleActionEnum denyCancelBooking = _$ruleRuleWriteRuleActionEnum_denyCancelBooking;
+  @BuiltValueEnumConst(wireName: r'DiscountBooking')
+  static const RuleRuleWriteRuleActionEnum discountBooking = _$ruleRuleWriteRuleActionEnum_discountBooking;
 
   static Serializer<RuleRuleWriteRuleActionEnum> get serializer => _$ruleRuleWriteRuleActionEnumSerializer;
 

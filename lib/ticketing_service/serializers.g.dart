@@ -14,6 +14,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiApilinkedUsersGetCollection200Response.serializer)
       ..add(ApiApitagsGetCollection200Response.serializer)
       ..add(ApiTicketsGetCollection200Response.serializer)
+      ..add(AttachmentJsonldTicketRead.serializer)
+      ..add(AttachmentTicketRead.serializer)
+      ..add(AttachmentTicketWrite.serializer)
       ..add(CommentCommentRead.serializer)
       ..add(CommentCommentWrite.serializer)
       ..add(CommentCommentWriteJsonMergePatch.serializer)
@@ -78,14 +81,26 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(
+              BuiltList, const [const FullType(AttachmentTicketWrite)]),
+          () => new ListBuilder<AttachmentTicketWrite>())
+      ..addBuilderFactory(
+          const FullType(
               BuiltList, const [const FullType(LinkedUserTicketWrite)]),
           () => new ListBuilder<LinkedUserTicketWrite>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(AttachmentTicketWrite)]),
+          () => new ListBuilder<AttachmentTicketWrite>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(AttachmentJsonldTicketRead)]),
+          () => new ListBuilder<AttachmentJsonldTicketRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
@@ -101,6 +116,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(AttachmentTicketRead)]),
+          () => new ListBuilder<AttachmentTicketRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(TagJsonldTagRead)]),
           () => new ListBuilder<TagJsonldTagRead>())

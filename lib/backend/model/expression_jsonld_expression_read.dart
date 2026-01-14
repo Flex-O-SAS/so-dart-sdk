@@ -27,11 +27,11 @@ part 'expression_jsonld_expression_read.g.dart';
 abstract class ExpressionJsonldExpressionRead implements HydraItemBaseSchema, Built<ExpressionJsonldExpressionRead, ExpressionJsonldExpressionReadBuilder> {
   @BuiltValueField(wireName: r'comparator')
   ExpressionJsonldExpressionReadComparatorEnum? get comparator;
-  // enum comparatorEnum {  >,  >=,  <,  <=,  ==,  !=,  contains,  matches,  starts with,  end with,  in,  not in,  };
+  // enum comparatorEnum {  >,  >=,  <,  <=,  ==,  !=,  contains,  matches,  starts with,  end with,  in,  not in,  at_least_one,  };
 
   @BuiltValueField(wireName: r'leftSide')
   ExpressionJsonldExpressionReadLeftSideEnum? get leftSide;
-  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  };
+  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  TargetEnterpriseTag,  };
 
   @BuiltValueField(wireName: r'rule')
   RuleJsonldExpressionRead? get rule;
@@ -251,6 +251,8 @@ class ExpressionJsonldExpressionReadComparatorEnum extends EnumClass {
   static const ExpressionJsonldExpressionReadComparatorEnum in_ = _$expressionJsonldExpressionReadComparatorEnum_in_;
   @BuiltValueEnumConst(wireName: r'not in')
   static const ExpressionJsonldExpressionReadComparatorEnum notIn = _$expressionJsonldExpressionReadComparatorEnum_notIn;
+  @BuiltValueEnumConst(wireName: r'at_least_one')
+  static const ExpressionJsonldExpressionReadComparatorEnum atLeastOne = _$expressionJsonldExpressionReadComparatorEnum_atLeastOne;
 
   static Serializer<ExpressionJsonldExpressionReadComparatorEnum> get serializer => _$expressionJsonldExpressionReadComparatorEnumSerializer;
 
@@ -300,6 +302,8 @@ class ExpressionJsonldExpressionReadLeftSideEnum extends EnumClass {
   static const ExpressionJsonldExpressionReadLeftSideEnum targetUser = _$expressionJsonldExpressionReadLeftSideEnum_targetUser;
   @BuiltValueEnumConst(wireName: r'TargetType')
   static const ExpressionJsonldExpressionReadLeftSideEnum targetType = _$expressionJsonldExpressionReadLeftSideEnum_targetType;
+  @BuiltValueEnumConst(wireName: r'TargetEnterpriseTag')
+  static const ExpressionJsonldExpressionReadLeftSideEnum targetEnterpriseTag = _$expressionJsonldExpressionReadLeftSideEnum_targetEnterpriseTag;
 
   static Serializer<ExpressionJsonldExpressionReadLeftSideEnum> get serializer => _$expressionJsonldExpressionReadLeftSideEnumSerializer;
 

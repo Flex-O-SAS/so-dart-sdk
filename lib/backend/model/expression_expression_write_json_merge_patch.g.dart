@@ -46,6 +46,9 @@ const ExpressionExpressionWriteJsonMergePatchComparatorEnum
 const ExpressionExpressionWriteJsonMergePatchComparatorEnum
     _$expressionExpressionWriteJsonMergePatchComparatorEnum_notIn =
     const ExpressionExpressionWriteJsonMergePatchComparatorEnum._('notIn');
+const ExpressionExpressionWriteJsonMergePatchComparatorEnum
+    _$expressionExpressionWriteJsonMergePatchComparatorEnum_atLeastOne =
+    const ExpressionExpressionWriteJsonMergePatchComparatorEnum._('atLeastOne');
 
 ExpressionExpressionWriteJsonMergePatchComparatorEnum
     _$expressionExpressionWriteJsonMergePatchComparatorEnumValueOf(
@@ -75,6 +78,8 @@ ExpressionExpressionWriteJsonMergePatchComparatorEnum
       return _$expressionExpressionWriteJsonMergePatchComparatorEnum_in_;
     case 'notIn':
       return _$expressionExpressionWriteJsonMergePatchComparatorEnum_notIn;
+    case 'atLeastOne':
+      return _$expressionExpressionWriteJsonMergePatchComparatorEnum_atLeastOne;
     default:
       throw new ArgumentError(name);
   }
@@ -96,6 +101,7 @@ final BuiltSet<ExpressionExpressionWriteJsonMergePatchComparatorEnum>
   _$expressionExpressionWriteJsonMergePatchComparatorEnum_endWith,
   _$expressionExpressionWriteJsonMergePatchComparatorEnum_in_,
   _$expressionExpressionWriteJsonMergePatchComparatorEnum_notIn,
+  _$expressionExpressionWriteJsonMergePatchComparatorEnum_atLeastOne,
 ]);
 
 const ExpressionExpressionWriteJsonMergePatchLeftSideEnum
@@ -169,6 +175,10 @@ const ExpressionExpressionWriteJsonMergePatchLeftSideEnum
 const ExpressionExpressionWriteJsonMergePatchLeftSideEnum
     _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetType =
     const ExpressionExpressionWriteJsonMergePatchLeftSideEnum._('targetType');
+const ExpressionExpressionWriteJsonMergePatchLeftSideEnum
+    _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetEnterpriseTag =
+    const ExpressionExpressionWriteJsonMergePatchLeftSideEnum._(
+        'targetEnterpriseTag');
 
 ExpressionExpressionWriteJsonMergePatchLeftSideEnum
     _$expressionExpressionWriteJsonMergePatchLeftSideEnumValueOf(String name) {
@@ -211,6 +221,8 @@ ExpressionExpressionWriteJsonMergePatchLeftSideEnum
       return _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetUser;
     case 'targetType':
       return _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetType;
+    case 'targetEnterpriseTag':
+      return _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetEnterpriseTag;
     default:
       throw new ArgumentError(name);
   }
@@ -238,6 +250,7 @@ final BuiltSet<ExpressionExpressionWriteJsonMergePatchLeftSideEnum>
   _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetRole,
   _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetUser,
   _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetType,
+  _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetEnterpriseTag,
 ]);
 
 Serializer<ExpressionExpressionWriteJsonMergePatchComparatorEnum>
@@ -264,6 +277,7 @@ class _$ExpressionExpressionWriteJsonMergePatchComparatorEnumSerializer
     'endWith': 'end with',
     'in_': 'in',
     'notIn': 'not in',
+    'atLeastOne': 'at_least_one',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '>': 'greaterThan',
@@ -278,6 +292,7 @@ class _$ExpressionExpressionWriteJsonMergePatchComparatorEnumSerializer
     'end with': 'endWith',
     'in': 'in_',
     'not in': 'notIn',
+    'at_least_one': 'atLeastOne',
   };
 
   @override
@@ -326,6 +341,7 @@ class _$ExpressionExpressionWriteJsonMergePatchLeftSideEnumSerializer
     'targetRole': 'TargetRole',
     'targetUser': 'TargetUser',
     'targetType': 'TargetType',
+    'targetEnterpriseTag': 'TargetEnterpriseTag',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'BookingBeginHour': 'bookingBeginHour',
@@ -347,6 +363,7 @@ class _$ExpressionExpressionWriteJsonMergePatchLeftSideEnumSerializer
     'TargetRole': 'targetRole',
     'TargetUser': 'targetUser',
     'TargetType': 'targetType',
+    'TargetEnterpriseTag': 'targetEnterpriseTag',
   };
 
   @override

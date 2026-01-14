@@ -42,6 +42,9 @@ const RuleRuleWriteRuleActionEnum
 const RuleRuleWriteRuleActionEnum
     _$ruleRuleWriteRuleActionEnum_denyCancelBooking =
     const RuleRuleWriteRuleActionEnum._('denyCancelBooking');
+const RuleRuleWriteRuleActionEnum
+    _$ruleRuleWriteRuleActionEnum_discountBooking =
+    const RuleRuleWriteRuleActionEnum._('discountBooking');
 
 RuleRuleWriteRuleActionEnum _$ruleRuleWriteRuleActionEnumValueOf(String name) {
   switch (name) {
@@ -57,6 +60,8 @@ RuleRuleWriteRuleActionEnum _$ruleRuleWriteRuleActionEnumValueOf(String name) {
       return _$ruleRuleWriteRuleActionEnum_allowCancelBooking;
     case 'denyCancelBooking':
       return _$ruleRuleWriteRuleActionEnum_denyCancelBooking;
+    case 'discountBooking':
+      return _$ruleRuleWriteRuleActionEnum_discountBooking;
     default:
       throw new ArgumentError(name);
   }
@@ -71,6 +76,7 @@ final BuiltSet<RuleRuleWriteRuleActionEnum>
   _$ruleRuleWriteRuleActionEnum_freeBooking,
   _$ruleRuleWriteRuleActionEnum_allowCancelBooking,
   _$ruleRuleWriteRuleActionEnum_denyCancelBooking,
+  _$ruleRuleWriteRuleActionEnum_discountBooking,
 ]);
 
 Serializer<RuleRuleWriteRuleTypeEnum> _$ruleRuleWriteRuleTypeEnumSerializer =
@@ -117,6 +123,7 @@ class _$RuleRuleWriteRuleActionEnumSerializer
     'freeBooking': 'FreeBooking',
     'allowCancelBooking': 'AllowCancelBooking',
     'denyCancelBooking': 'DenyCancelBooking',
+    'discountBooking': 'DiscountBooking',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'AllowBooking': 'allowBooking',
@@ -125,6 +132,7 @@ class _$RuleRuleWriteRuleActionEnumSerializer
     'FreeBooking': 'freeBooking',
     'AllowCancelBooking': 'allowCancelBooking',
     'DenyCancelBooking': 'denyCancelBooking',
+    'DiscountBooking': 'discountBooking',
   };
 
   @override
@@ -159,6 +167,8 @@ class _$RuleRuleWrite extends RuleRuleWrite {
   @override
   final RuleRuleWriteRuleActionEnum? ruleAction;
   @override
+  final BuiltList<String>? ruleActionArgs;
+  @override
   final RuleRuleWrite? parentRule;
   @override
   final DateTime? createdAt;
@@ -175,6 +185,7 @@ class _$RuleRuleWrite extends RuleRuleWrite {
       this.expressions,
       this.ruleType,
       this.ruleAction,
+      this.ruleActionArgs,
       this.parentRule,
       this.createdAt,
       this.updatedAt})
@@ -197,6 +208,7 @@ class _$RuleRuleWrite extends RuleRuleWrite {
         expressions == other.expressions &&
         ruleType == other.ruleType &&
         ruleAction == other.ruleAction &&
+        ruleActionArgs == other.ruleActionArgs &&
         parentRule == other.parentRule &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt;
@@ -211,6 +223,7 @@ class _$RuleRuleWrite extends RuleRuleWrite {
     _$hash = $jc(_$hash, expressions.hashCode);
     _$hash = $jc(_$hash, ruleType.hashCode);
     _$hash = $jc(_$hash, ruleAction.hashCode);
+    _$hash = $jc(_$hash, ruleActionArgs.hashCode);
     _$hash = $jc(_$hash, parentRule.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
@@ -227,6 +240,7 @@ class _$RuleRuleWrite extends RuleRuleWrite {
           ..add('expressions', expressions)
           ..add('ruleType', ruleType)
           ..add('ruleAction', ruleAction)
+          ..add('ruleActionArgs', ruleActionArgs)
           ..add('parentRule', parentRule)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt))
@@ -266,6 +280,12 @@ class RuleRuleWriteBuilder
   set ruleAction(RuleRuleWriteRuleActionEnum? ruleAction) =>
       _$this._ruleAction = ruleAction;
 
+  ListBuilder<String>? _ruleActionArgs;
+  ListBuilder<String> get ruleActionArgs =>
+      _$this._ruleActionArgs ??= new ListBuilder<String>();
+  set ruleActionArgs(ListBuilder<String>? ruleActionArgs) =>
+      _$this._ruleActionArgs = ruleActionArgs;
+
   RuleRuleWriteBuilder? _parentRule;
   RuleRuleWriteBuilder get parentRule =>
       _$this._parentRule ??= new RuleRuleWriteBuilder();
@@ -293,6 +313,7 @@ class RuleRuleWriteBuilder
       _expressions = $v.expressions?.toBuilder();
       _ruleType = $v.ruleType;
       _ruleAction = $v.ruleAction;
+      _ruleActionArgs = $v.ruleActionArgs?.toBuilder();
       _parentRule = $v.parentRule?.toBuilder();
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
@@ -326,6 +347,7 @@ class RuleRuleWriteBuilder
             expressions: _expressions?.build(),
             ruleType: ruleType,
             ruleAction: ruleAction,
+            ruleActionArgs: _ruleActionArgs?.build(),
             parentRule: _parentRule?.build(),
             createdAt: createdAt,
             updatedAt: updatedAt,
@@ -336,6 +358,8 @@ class RuleRuleWriteBuilder
         _$failedField = 'expressions';
         _expressions?.build();
 
+        _$failedField = 'ruleActionArgs';
+        _ruleActionArgs?.build();
         _$failedField = 'parentRule';
         _parentRule?.build();
       } catch (e) {

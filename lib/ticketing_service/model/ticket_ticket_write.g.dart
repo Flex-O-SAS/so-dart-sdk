@@ -101,6 +101,8 @@ class _$TicketTicketWrite extends TicketTicketWrite {
   final BuiltList<LinkedUserTicketWrite>? linkedUsers;
   @override
   final BuiltList<String>? tags;
+  @override
+  final BuiltList<AttachmentTicketWrite>? attachments;
 
   factory _$TicketTicketWrite(
           [void Function(TicketTicketWriteBuilder)? updates]) =>
@@ -118,7 +120,8 @@ class _$TicketTicketWrite extends TicketTicketWrite {
       this.location,
       this.metadata,
       this.linkedUsers,
-      this.tags})
+      this.tags,
+      this.attachments})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(title, r'TicketTicketWrite', 'title');
     BuiltValueNullFieldError.checkNotNull(
@@ -155,7 +158,8 @@ class _$TicketTicketWrite extends TicketTicketWrite {
         location == other.location &&
         metadata == other.metadata &&
         linkedUsers == other.linkedUsers &&
-        tags == other.tags;
+        tags == other.tags &&
+        attachments == other.attachments;
   }
 
   @override
@@ -173,6 +177,7 @@ class _$TicketTicketWrite extends TicketTicketWrite {
     _$hash = $jc(_$hash, metadata.hashCode);
     _$hash = $jc(_$hash, linkedUsers.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
+    _$hash = $jc(_$hash, attachments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -191,7 +196,8 @@ class _$TicketTicketWrite extends TicketTicketWrite {
           ..add('location', location)
           ..add('metadata', metadata)
           ..add('linkedUsers', linkedUsers)
-          ..add('tags', tags))
+          ..add('tags', tags)
+          ..add('attachments', attachments))
         .toString();
   }
 }
@@ -250,6 +256,12 @@ class TicketTicketWriteBuilder
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
+  ListBuilder<AttachmentTicketWrite>? _attachments;
+  ListBuilder<AttachmentTicketWrite> get attachments =>
+      _$this._attachments ??= new ListBuilder<AttachmentTicketWrite>();
+  set attachments(ListBuilder<AttachmentTicketWrite>? attachments) =>
+      _$this._attachments = attachments;
+
   TicketTicketWriteBuilder() {
     TicketTicketWrite._defaults(this);
   }
@@ -269,6 +281,7 @@ class TicketTicketWriteBuilder
       _metadata = $v.metadata;
       _linkedUsers = $v.linkedUsers?.toBuilder();
       _tags = $v.tags?.toBuilder();
+      _attachments = $v.attachments?.toBuilder();
       _$v = null;
     }
     return this;
@@ -311,6 +324,7 @@ class TicketTicketWriteBuilder
             metadata: metadata,
             linkedUsers: _linkedUsers?.build(),
             tags: _tags?.build(),
+            attachments: _attachments?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -319,6 +333,8 @@ class TicketTicketWriteBuilder
         _linkedUsers?.build();
         _$failedField = 'tags';
         _tags?.build();
+        _$failedField = 'attachments';
+        _attachments?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'TicketTicketWrite', _$failedField, e.toString());

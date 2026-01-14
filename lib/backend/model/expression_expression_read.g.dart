@@ -42,6 +42,9 @@ const ExpressionExpressionReadComparatorEnum
 const ExpressionExpressionReadComparatorEnum
     _$expressionExpressionReadComparatorEnum_notIn =
     const ExpressionExpressionReadComparatorEnum._('notIn');
+const ExpressionExpressionReadComparatorEnum
+    _$expressionExpressionReadComparatorEnum_atLeastOne =
+    const ExpressionExpressionReadComparatorEnum._('atLeastOne');
 
 ExpressionExpressionReadComparatorEnum
     _$expressionExpressionReadComparatorEnumValueOf(String name) {
@@ -70,6 +73,8 @@ ExpressionExpressionReadComparatorEnum
       return _$expressionExpressionReadComparatorEnum_in_;
     case 'notIn':
       return _$expressionExpressionReadComparatorEnum_notIn;
+    case 'atLeastOne':
+      return _$expressionExpressionReadComparatorEnum_atLeastOne;
     default:
       throw new ArgumentError(name);
   }
@@ -90,6 +95,7 @@ final BuiltSet<ExpressionExpressionReadComparatorEnum>
   _$expressionExpressionReadComparatorEnum_endWith,
   _$expressionExpressionReadComparatorEnum_in_,
   _$expressionExpressionReadComparatorEnum_notIn,
+  _$expressionExpressionReadComparatorEnum_atLeastOne,
 ]);
 
 const ExpressionExpressionReadLeftSideEnum
@@ -149,6 +155,9 @@ const ExpressionExpressionReadLeftSideEnum
 const ExpressionExpressionReadLeftSideEnum
     _$expressionExpressionReadLeftSideEnum_targetType =
     const ExpressionExpressionReadLeftSideEnum._('targetType');
+const ExpressionExpressionReadLeftSideEnum
+    _$expressionExpressionReadLeftSideEnum_targetEnterpriseTag =
+    const ExpressionExpressionReadLeftSideEnum._('targetEnterpriseTag');
 
 ExpressionExpressionReadLeftSideEnum
     _$expressionExpressionReadLeftSideEnumValueOf(String name) {
@@ -191,6 +200,8 @@ ExpressionExpressionReadLeftSideEnum
       return _$expressionExpressionReadLeftSideEnum_targetUser;
     case 'targetType':
       return _$expressionExpressionReadLeftSideEnum_targetType;
+    case 'targetEnterpriseTag':
+      return _$expressionExpressionReadLeftSideEnum_targetEnterpriseTag;
     default:
       throw new ArgumentError(name);
   }
@@ -218,6 +229,7 @@ final BuiltSet<ExpressionExpressionReadLeftSideEnum>
   _$expressionExpressionReadLeftSideEnum_targetRole,
   _$expressionExpressionReadLeftSideEnum_targetUser,
   _$expressionExpressionReadLeftSideEnum_targetType,
+  _$expressionExpressionReadLeftSideEnum_targetEnterpriseTag,
 ]);
 
 Serializer<ExpressionExpressionReadComparatorEnum>
@@ -242,6 +254,7 @@ class _$ExpressionExpressionReadComparatorEnumSerializer
     'endWith': 'end with',
     'in_': 'in',
     'notIn': 'not in',
+    'atLeastOne': 'at_least_one',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '>': 'greaterThan',
@@ -256,6 +269,7 @@ class _$ExpressionExpressionReadComparatorEnumSerializer
     'end with': 'endWith',
     'in': 'in_',
     'not in': 'notIn',
+    'at_least_one': 'atLeastOne',
   };
 
   @override
@@ -301,6 +315,7 @@ class _$ExpressionExpressionReadLeftSideEnumSerializer
     'targetRole': 'TargetRole',
     'targetUser': 'TargetUser',
     'targetType': 'TargetType',
+    'targetEnterpriseTag': 'TargetEnterpriseTag',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'BookingBeginHour': 'bookingBeginHour',
@@ -322,6 +337,7 @@ class _$ExpressionExpressionReadLeftSideEnumSerializer
     'TargetRole': 'targetRole',
     'TargetUser': 'targetUser',
     'TargetType': 'targetType',
+    'TargetEnterpriseTag': 'targetEnterpriseTag',
   };
 
   @override

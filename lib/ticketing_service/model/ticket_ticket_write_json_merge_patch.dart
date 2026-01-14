@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/ticketing_service/model/attachment_ticket_write.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_ticket_write.dart';
 import 'package:built_value/json_object.dart';
@@ -26,6 +27,7 @@ part 'ticket_ticket_write_json_merge_patch.g.dart';
 /// * [metadata] 
 /// * [linkedUsers] 
 /// * [tags] 
+/// * [attachments] 
 @BuiltValue()
 abstract class TicketTicketWriteJsonMergePatch implements Built<TicketTicketWriteJsonMergePatch, TicketTicketWriteJsonMergePatchBuilder> {
   @BuiltValueField(wireName: r'title')
@@ -64,6 +66,9 @@ abstract class TicketTicketWriteJsonMergePatch implements Built<TicketTicketWrit
 
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
+
+  @BuiltValueField(wireName: r'attachments')
+  BuiltList<AttachmentTicketWrite>? get attachments;
 
   TicketTicketWriteJsonMergePatch._();
 
@@ -172,6 +177,13 @@ class _$TicketTicketWriteJsonMergePatchSerializer implements PrimitiveSerializer
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
+    if (object.attachments != null) {
+      yield r'attachments';
+      yield serializers.serialize(
+        object.attachments,
+        specifiedType: const FullType(BuiltList, [FullType(AttachmentTicketWrite)]),
+      );
+    }
   }
 
   @override
@@ -278,6 +290,13 @@ class _$TicketTicketWriteJsonMergePatchSerializer implements PrimitiveSerializer
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.tags.replace(valueDes);
+          break;
+        case r'attachments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AttachmentTicketWrite)]),
+          ) as BuiltList<AttachmentTicketWrite>;
+          result.attachments.replace(valueDes);
           break;
         default:
           unhandled.add(key);

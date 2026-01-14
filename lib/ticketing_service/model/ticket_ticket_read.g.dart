@@ -107,6 +107,8 @@ class _$TicketTicketRead extends TicketTicketRead {
   final BuiltList<String>? tags;
   @override
   final BuiltList<String>? comments;
+  @override
+  final BuiltList<AttachmentTicketRead>? attachments;
 
   factory _$TicketTicketRead(
           [void Function(TicketTicketReadBuilder)? updates]) =>
@@ -128,7 +130,8 @@ class _$TicketTicketRead extends TicketTicketRead {
       this.updatedAt,
       this.linkedUsers,
       this.tags,
-      this.comments})
+      this.comments,
+      this.attachments})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(title, r'TicketTicketRead', 'title');
     BuiltValueNullFieldError.checkNotNull(
@@ -169,7 +172,8 @@ class _$TicketTicketRead extends TicketTicketRead {
         updatedAt == other.updatedAt &&
         linkedUsers == other.linkedUsers &&
         tags == other.tags &&
-        comments == other.comments;
+        comments == other.comments &&
+        attachments == other.attachments;
   }
 
   @override
@@ -191,6 +195,7 @@ class _$TicketTicketRead extends TicketTicketRead {
     _$hash = $jc(_$hash, linkedUsers.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, comments.hashCode);
+    _$hash = $jc(_$hash, attachments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -213,7 +218,8 @@ class _$TicketTicketRead extends TicketTicketRead {
           ..add('updatedAt', updatedAt)
           ..add('linkedUsers', linkedUsers)
           ..add('tags', tags)
-          ..add('comments', comments))
+          ..add('comments', comments)
+          ..add('attachments', attachments))
         .toString();
   }
 }
@@ -289,6 +295,12 @@ class TicketTicketReadBuilder
       _$this._comments ??= new ListBuilder<String>();
   set comments(ListBuilder<String>? comments) => _$this._comments = comments;
 
+  ListBuilder<AttachmentTicketRead>? _attachments;
+  ListBuilder<AttachmentTicketRead> get attachments =>
+      _$this._attachments ??= new ListBuilder<AttachmentTicketRead>();
+  set attachments(ListBuilder<AttachmentTicketRead>? attachments) =>
+      _$this._attachments = attachments;
+
   TicketTicketReadBuilder() {
     TicketTicketRead._defaults(this);
   }
@@ -312,6 +324,7 @@ class TicketTicketReadBuilder
       _linkedUsers = $v.linkedUsers?.toBuilder();
       _tags = $v.tags?.toBuilder();
       _comments = $v.comments?.toBuilder();
+      _attachments = $v.attachments?.toBuilder();
       _$v = null;
     }
     return this;
@@ -358,6 +371,7 @@ class TicketTicketReadBuilder
             linkedUsers: _linkedUsers?.build(),
             tags: _tags?.build(),
             comments: _comments?.build(),
+            attachments: _attachments?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -368,6 +382,8 @@ class TicketTicketReadBuilder
         _tags?.build();
         _$failedField = 'comments';
         _comments?.build();
+        _$failedField = 'attachments';
+        _attachments?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'TicketTicketRead', _$failedField, e.toString());

@@ -87,6 +87,8 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   @override
   final BuiltList<String>? comments;
   @override
+  final BuiltList<AttachmentJsonldTicketRead>? attachments;
+  @override
   final DateTime? endDate;
   @override
   final String author;
@@ -128,6 +130,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   _$TicketJsonldTicketRead._(
       {this.metadata,
       this.comments,
+      this.attachments,
       this.endDate,
       required this.author,
       required this.description,
@@ -179,6 +182,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
     return other is TicketJsonldTicketRead &&
         metadata == other.metadata &&
         comments == other.comments &&
+        attachments == other.attachments &&
         endDate == other.endDate &&
         author == other.author &&
         description == other.description &&
@@ -203,6 +207,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
     var _$hash = 0;
     _$hash = $jc(_$hash, metadata.hashCode);
     _$hash = $jc(_$hash, comments.hashCode);
+    _$hash = $jc(_$hash, attachments.hashCode);
     _$hash = $jc(_$hash, endDate.hashCode);
     _$hash = $jc(_$hash, author.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
@@ -229,6 +234,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
     return (newBuiltValueToStringHelper(r'TicketJsonldTicketRead')
           ..add('metadata', metadata)
           ..add('comments', comments)
+          ..add('attachments', attachments)
           ..add('endDate', endDate)
           ..add('author', author)
           ..add('description', description)
@@ -265,6 +271,13 @@ class TicketJsonldTicketReadBuilder
       _$this._comments ??= new ListBuilder<String>();
   set comments(covariant ListBuilder<String>? comments) =>
       _$this._comments = comments;
+
+  ListBuilder<AttachmentJsonldTicketRead>? _attachments;
+  ListBuilder<AttachmentJsonldTicketRead> get attachments =>
+      _$this._attachments ??= new ListBuilder<AttachmentJsonldTicketRead>();
+  set attachments(
+          covariant ListBuilder<AttachmentJsonldTicketRead>? attachments) =>
+      _$this._attachments = attachments;
 
   DateTime? _endDate;
   DateTime? get endDate => _$this._endDate;
@@ -349,6 +362,7 @@ class TicketJsonldTicketReadBuilder
     if ($v != null) {
       _metadata = $v.metadata;
       _comments = $v.comments?.toBuilder();
+      _attachments = $v.attachments?.toBuilder();
       _endDate = $v.endDate;
       _author = $v.author;
       _description = $v.description;
@@ -392,6 +406,7 @@ class TicketJsonldTicketReadBuilder
           new _$TicketJsonldTicketRead._(
             metadata: metadata,
             comments: _comments?.build(),
+            attachments: _attachments?.build(),
             endDate: endDate,
             author: BuiltValueNullFieldError.checkNotNull(
                 author, r'TicketJsonldTicketRead', 'author'),
@@ -423,6 +438,8 @@ class TicketJsonldTicketReadBuilder
       try {
         _$failedField = 'comments';
         _comments?.build();
+        _$failedField = 'attachments';
+        _attachments?.build();
 
         _$failedField = 'tags';
         _tags?.build();

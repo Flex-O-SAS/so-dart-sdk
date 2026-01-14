@@ -830,20 +830,25 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(ExpressionJsonldExpressionRead)]),
           () => new ListBuilder<ExpressionJsonldExpressionRead>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(ExpressionJsonldRuleRead)]),
-          () => new ListBuilder<ExpressionJsonldRuleRead>())
-      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ExpressionRuleRead)]),
           () => new ListBuilder<ExpressionRuleRead>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(ExpressionRuleWrite)]),
-          () => new ListBuilder<ExpressionRuleWrite>())
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ExpressionRuleWrite)]),
           () => new ListBuilder<ExpressionRuleWrite>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ExpressionRuleWrite)]),
+          () => new ListBuilder<ExpressionRuleWrite>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
@@ -1499,6 +1504,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(CommissionPlanDistribution)]),
           () => new ListBuilder<CommissionPlanDistribution>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ExpressionJsonldRuleRead)]),
+          () => new ListBuilder<ExpressionJsonldRuleRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

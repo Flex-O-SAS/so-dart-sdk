@@ -23,11 +23,11 @@ part 'expression_expression_write_json_merge_patch.g.dart';
 abstract class ExpressionExpressionWriteJsonMergePatch implements Built<ExpressionExpressionWriteJsonMergePatch, ExpressionExpressionWriteJsonMergePatchBuilder> {
   @BuiltValueField(wireName: r'comparator')
   ExpressionExpressionWriteJsonMergePatchComparatorEnum? get comparator;
-  // enum comparatorEnum {  >,  >=,  <,  <=,  ==,  !=,  contains,  matches,  starts with,  end with,  in,  not in,  };
+  // enum comparatorEnum {  >,  >=,  <,  <=,  ==,  !=,  contains,  matches,  starts with,  end with,  in,  not in,  at_least_one,  };
 
   @BuiltValueField(wireName: r'leftSide')
   ExpressionExpressionWriteJsonMergePatchLeftSideEnum? get leftSide;
-  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  };
+  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  TargetEnterpriseTag,  };
 
   @BuiltValueField(wireName: r'rightSide')
   String? get rightSide;
@@ -226,6 +226,8 @@ class ExpressionExpressionWriteJsonMergePatchComparatorEnum extends EnumClass {
   static const ExpressionExpressionWriteJsonMergePatchComparatorEnum in_ = _$expressionExpressionWriteJsonMergePatchComparatorEnum_in_;
   @BuiltValueEnumConst(wireName: r'not in')
   static const ExpressionExpressionWriteJsonMergePatchComparatorEnum notIn = _$expressionExpressionWriteJsonMergePatchComparatorEnum_notIn;
+  @BuiltValueEnumConst(wireName: r'at_least_one')
+  static const ExpressionExpressionWriteJsonMergePatchComparatorEnum atLeastOne = _$expressionExpressionWriteJsonMergePatchComparatorEnum_atLeastOne;
 
   static Serializer<ExpressionExpressionWriteJsonMergePatchComparatorEnum> get serializer => _$expressionExpressionWriteJsonMergePatchComparatorEnumSerializer;
 
@@ -275,6 +277,8 @@ class ExpressionExpressionWriteJsonMergePatchLeftSideEnum extends EnumClass {
   static const ExpressionExpressionWriteJsonMergePatchLeftSideEnum targetUser = _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetUser;
   @BuiltValueEnumConst(wireName: r'TargetType')
   static const ExpressionExpressionWriteJsonMergePatchLeftSideEnum targetType = _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetType;
+  @BuiltValueEnumConst(wireName: r'TargetEnterpriseTag')
+  static const ExpressionExpressionWriteJsonMergePatchLeftSideEnum targetEnterpriseTag = _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetEnterpriseTag;
 
   static Serializer<ExpressionExpressionWriteJsonMergePatchLeftSideEnum> get serializer => _$expressionExpressionWriteJsonMergePatchLeftSideEnumSerializer;
 

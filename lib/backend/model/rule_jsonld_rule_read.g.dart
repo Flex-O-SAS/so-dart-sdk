@@ -49,6 +49,9 @@ const RuleJsonldRuleReadRuleActionEnum
 const RuleJsonldRuleReadRuleActionEnum
     _$ruleJsonldRuleReadRuleActionEnum_denyCancelBooking =
     const RuleJsonldRuleReadRuleActionEnum._('denyCancelBooking');
+const RuleJsonldRuleReadRuleActionEnum
+    _$ruleJsonldRuleReadRuleActionEnum_discountBooking =
+    const RuleJsonldRuleReadRuleActionEnum._('discountBooking');
 
 RuleJsonldRuleReadRuleActionEnum _$ruleJsonldRuleReadRuleActionEnumValueOf(
     String name) {
@@ -65,6 +68,8 @@ RuleJsonldRuleReadRuleActionEnum _$ruleJsonldRuleReadRuleActionEnumValueOf(
       return _$ruleJsonldRuleReadRuleActionEnum_allowCancelBooking;
     case 'denyCancelBooking':
       return _$ruleJsonldRuleReadRuleActionEnum_denyCancelBooking;
+    case 'discountBooking':
+      return _$ruleJsonldRuleReadRuleActionEnum_discountBooking;
     default:
       throw new ArgumentError(name);
   }
@@ -79,6 +84,7 @@ final BuiltSet<RuleJsonldRuleReadRuleActionEnum>
   _$ruleJsonldRuleReadRuleActionEnum_freeBooking,
   _$ruleJsonldRuleReadRuleActionEnum_allowCancelBooking,
   _$ruleJsonldRuleReadRuleActionEnum_denyCancelBooking,
+  _$ruleJsonldRuleReadRuleActionEnum_discountBooking,
 ]);
 
 Serializer<RuleJsonldRuleReadRuleTypeEnum>
@@ -127,6 +133,7 @@ class _$RuleJsonldRuleReadRuleActionEnumSerializer
     'freeBooking': 'FreeBooking',
     'allowCancelBooking': 'AllowCancelBooking',
     'denyCancelBooking': 'DenyCancelBooking',
+    'discountBooking': 'DiscountBooking',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'AllowBooking': 'allowBooking',
@@ -135,6 +142,7 @@ class _$RuleJsonldRuleReadRuleActionEnumSerializer
     'FreeBooking': 'freeBooking',
     'AllowCancelBooking': 'allowCancelBooking',
     'DenyCancelBooking': 'denyCancelBooking',
+    'DiscountBooking': 'discountBooking',
   };
 
   @override
@@ -159,6 +167,8 @@ class _$RuleJsonldRuleReadRuleActionEnumSerializer
 class _$RuleJsonldRuleRead extends RuleJsonldRuleRead {
   @override
   final RuleJsonldRuleReadRuleActionEnum? ruleAction;
+  @override
+  final BuiltList<String>? ruleActionArgs;
   @override
   final bool? managed;
   @override
@@ -188,6 +198,7 @@ class _$RuleJsonldRuleRead extends RuleJsonldRuleRead {
 
   _$RuleJsonldRuleRead._(
       {this.ruleAction,
+      this.ruleActionArgs,
       this.managed,
       this.ruleType,
       this.name,
@@ -219,6 +230,7 @@ class _$RuleJsonldRuleRead extends RuleJsonldRuleRead {
     if (identical(other, this)) return true;
     return other is RuleJsonldRuleRead &&
         ruleAction == other.ruleAction &&
+        ruleActionArgs == other.ruleActionArgs &&
         managed == other.managed &&
         ruleType == other.ruleType &&
         name == other.name &&
@@ -236,6 +248,7 @@ class _$RuleJsonldRuleRead extends RuleJsonldRuleRead {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, ruleAction.hashCode);
+    _$hash = $jc(_$hash, ruleActionArgs.hashCode);
     _$hash = $jc(_$hash, managed.hashCode);
     _$hash = $jc(_$hash, ruleType.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
@@ -255,6 +268,7 @@ class _$RuleJsonldRuleRead extends RuleJsonldRuleRead {
   String toString() {
     return (newBuiltValueToStringHelper(r'RuleJsonldRuleRead')
           ..add('ruleAction', ruleAction)
+          ..add('ruleActionArgs', ruleActionArgs)
           ..add('managed', managed)
           ..add('ruleType', ruleType)
           ..add('name', name)
@@ -280,6 +294,12 @@ class RuleJsonldRuleReadBuilder
   RuleJsonldRuleReadRuleActionEnum? get ruleAction => _$this._ruleAction;
   set ruleAction(covariant RuleJsonldRuleReadRuleActionEnum? ruleAction) =>
       _$this._ruleAction = ruleAction;
+
+  ListBuilder<String>? _ruleActionArgs;
+  ListBuilder<String> get ruleActionArgs =>
+      _$this._ruleActionArgs ??= new ListBuilder<String>();
+  set ruleActionArgs(covariant ListBuilder<String>? ruleActionArgs) =>
+      _$this._ruleActionArgs = ruleActionArgs;
 
   bool? _managed;
   bool? get managed => _$this._managed;
@@ -342,6 +362,7 @@ class RuleJsonldRuleReadBuilder
     final $v = _$v;
     if ($v != null) {
       _ruleAction = $v.ruleAction;
+      _ruleActionArgs = $v.ruleActionArgs?.toBuilder();
       _managed = $v.managed;
       _ruleType = $v.ruleType;
       _name = $v.name;
@@ -378,6 +399,7 @@ class RuleJsonldRuleReadBuilder
       _$result = _$v ??
           new _$RuleJsonldRuleRead._(
             ruleAction: ruleAction,
+            ruleActionArgs: _ruleActionArgs?.build(),
             managed: managed,
             ruleType: ruleType,
             name: name,
@@ -395,6 +417,9 @@ class RuleJsonldRuleReadBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'ruleActionArgs';
+        _ruleActionArgs?.build();
+
         _$failedField = 'expressions';
         _expressions?.build();
         _$failedField = 'parentRule';

@@ -6,6 +6,7 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/model/hydra_item_base_schema.dart';
 import 'package:so_dart_sdk/ticketing_service/model/hydra_item_base_schema_context.dart';
+import 'package:so_dart_sdk/ticketing_service/model/attachment_jsonld_ticket_read.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -34,6 +35,7 @@ part 'ticket_jsonld_ticket_read.g.dart';
 /// * [linkedUsers] 
 /// * [tags] 
 /// * [comments] 
+/// * [attachments] 
 @BuiltValue()
 abstract class TicketJsonldTicketRead implements HydraItemBaseSchema, Built<TicketJsonldTicketRead, TicketJsonldTicketReadBuilder> {
   @BuiltValueField(wireName: r'metadata')
@@ -41,6 +43,9 @@ abstract class TicketJsonldTicketRead implements HydraItemBaseSchema, Built<Tick
 
   @BuiltValueField(wireName: r'comments')
   BuiltList<String>? get comments;
+
+  @BuiltValueField(wireName: r'attachments')
+  BuiltList<AttachmentJsonldTicketRead>? get attachments;
 
   @BuiltValueField(wireName: r'endDate')
   DateTime? get endDate;
@@ -120,6 +125,13 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
       yield serializers.serialize(
         object.comments,
         specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.attachments != null) {
+      yield r'attachments';
+      yield serializers.serialize(
+        object.attachments,
+        specifiedType: const FullType(BuiltList, [FullType(AttachmentJsonldTicketRead)]),
       );
     }
     yield r'@id';
@@ -261,6 +273,13 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.comments.replace(valueDes);
+          break;
+        case r'attachments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AttachmentJsonldTicketRead)]),
+          ) as BuiltList<AttachmentJsonldTicketRead>;
+          result.attachments.replace(valueDes);
           break;
         case r'@id':
           final valueDes = serializers.deserialize(

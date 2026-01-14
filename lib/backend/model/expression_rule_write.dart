@@ -21,11 +21,11 @@ part 'expression_rule_write.g.dart';
 abstract class ExpressionRuleWrite implements Built<ExpressionRuleWrite, ExpressionRuleWriteBuilder> {
   @BuiltValueField(wireName: r'comparator')
   ExpressionRuleWriteComparatorEnum? get comparator;
-  // enum comparatorEnum {  >,  >=,  <,  <=,  ==,  !=,  contains,  matches,  starts with,  end with,  in,  not in,  };
+  // enum comparatorEnum {  >,  >=,  <,  <=,  ==,  !=,  contains,  matches,  starts with,  end with,  in,  not in,  at_least_one,  };
 
   @BuiltValueField(wireName: r'leftSide')
   ExpressionRuleWriteLeftSideEnum? get leftSide;
-  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  };
+  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  TargetEnterpriseTag,  };
 
   @BuiltValueField(wireName: r'rightSide')
   String? get rightSide;
@@ -207,6 +207,8 @@ class ExpressionRuleWriteComparatorEnum extends EnumClass {
   static const ExpressionRuleWriteComparatorEnum in_ = _$expressionRuleWriteComparatorEnum_in_;
   @BuiltValueEnumConst(wireName: r'not in')
   static const ExpressionRuleWriteComparatorEnum notIn = _$expressionRuleWriteComparatorEnum_notIn;
+  @BuiltValueEnumConst(wireName: r'at_least_one')
+  static const ExpressionRuleWriteComparatorEnum atLeastOne = _$expressionRuleWriteComparatorEnum_atLeastOne;
 
   static Serializer<ExpressionRuleWriteComparatorEnum> get serializer => _$expressionRuleWriteComparatorEnumSerializer;
 
@@ -256,6 +258,8 @@ class ExpressionRuleWriteLeftSideEnum extends EnumClass {
   static const ExpressionRuleWriteLeftSideEnum targetUser = _$expressionRuleWriteLeftSideEnum_targetUser;
   @BuiltValueEnumConst(wireName: r'TargetType')
   static const ExpressionRuleWriteLeftSideEnum targetType = _$expressionRuleWriteLeftSideEnum_targetType;
+  @BuiltValueEnumConst(wireName: r'TargetEnterpriseTag')
+  static const ExpressionRuleWriteLeftSideEnum targetEnterpriseTag = _$expressionRuleWriteLeftSideEnum_targetEnterpriseTag;
 
   static Serializer<ExpressionRuleWriteLeftSideEnum> get serializer => _$expressionRuleWriteLeftSideEnumSerializer;
 

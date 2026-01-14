@@ -42,6 +42,9 @@ const ExpressionRuleWriteComparatorEnum
 const ExpressionRuleWriteComparatorEnum
     _$expressionRuleWriteComparatorEnum_notIn =
     const ExpressionRuleWriteComparatorEnum._('notIn');
+const ExpressionRuleWriteComparatorEnum
+    _$expressionRuleWriteComparatorEnum_atLeastOne =
+    const ExpressionRuleWriteComparatorEnum._('atLeastOne');
 
 ExpressionRuleWriteComparatorEnum _$expressionRuleWriteComparatorEnumValueOf(
     String name) {
@@ -70,6 +73,8 @@ ExpressionRuleWriteComparatorEnum _$expressionRuleWriteComparatorEnumValueOf(
       return _$expressionRuleWriteComparatorEnum_in_;
     case 'notIn':
       return _$expressionRuleWriteComparatorEnum_notIn;
+    case 'atLeastOne':
+      return _$expressionRuleWriteComparatorEnum_atLeastOne;
     default:
       throw new ArgumentError(name);
   }
@@ -90,6 +95,7 @@ final BuiltSet<ExpressionRuleWriteComparatorEnum>
   _$expressionRuleWriteComparatorEnum_endWith,
   _$expressionRuleWriteComparatorEnum_in_,
   _$expressionRuleWriteComparatorEnum_notIn,
+  _$expressionRuleWriteComparatorEnum_atLeastOne,
 ]);
 
 const ExpressionRuleWriteLeftSideEnum
@@ -149,6 +155,9 @@ const ExpressionRuleWriteLeftSideEnum
 const ExpressionRuleWriteLeftSideEnum
     _$expressionRuleWriteLeftSideEnum_targetType =
     const ExpressionRuleWriteLeftSideEnum._('targetType');
+const ExpressionRuleWriteLeftSideEnum
+    _$expressionRuleWriteLeftSideEnum_targetEnterpriseTag =
+    const ExpressionRuleWriteLeftSideEnum._('targetEnterpriseTag');
 
 ExpressionRuleWriteLeftSideEnum _$expressionRuleWriteLeftSideEnumValueOf(
     String name) {
@@ -191,6 +200,8 @@ ExpressionRuleWriteLeftSideEnum _$expressionRuleWriteLeftSideEnumValueOf(
       return _$expressionRuleWriteLeftSideEnum_targetUser;
     case 'targetType':
       return _$expressionRuleWriteLeftSideEnum_targetType;
+    case 'targetEnterpriseTag':
+      return _$expressionRuleWriteLeftSideEnum_targetEnterpriseTag;
     default:
       throw new ArgumentError(name);
   }
@@ -218,6 +229,7 @@ final BuiltSet<ExpressionRuleWriteLeftSideEnum>
   _$expressionRuleWriteLeftSideEnum_targetRole,
   _$expressionRuleWriteLeftSideEnum_targetUser,
   _$expressionRuleWriteLeftSideEnum_targetType,
+  _$expressionRuleWriteLeftSideEnum_targetEnterpriseTag,
 ]);
 
 Serializer<ExpressionRuleWriteComparatorEnum>
@@ -242,6 +254,7 @@ class _$ExpressionRuleWriteComparatorEnumSerializer
     'endWith': 'end with',
     'in_': 'in',
     'notIn': 'not in',
+    'atLeastOne': 'at_least_one',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '>': 'greaterThan',
@@ -256,6 +269,7 @@ class _$ExpressionRuleWriteComparatorEnumSerializer
     'end with': 'endWith',
     'in': 'in_',
     'not in': 'notIn',
+    'at_least_one': 'atLeastOne',
   };
 
   @override
@@ -299,6 +313,7 @@ class _$ExpressionRuleWriteLeftSideEnumSerializer
     'targetRole': 'TargetRole',
     'targetUser': 'TargetUser',
     'targetType': 'TargetType',
+    'targetEnterpriseTag': 'TargetEnterpriseTag',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'BookingBeginHour': 'bookingBeginHour',
@@ -320,6 +335,7 @@ class _$ExpressionRuleWriteLeftSideEnumSerializer
     'TargetRole': 'targetRole',
     'TargetUser': 'targetUser',
     'TargetType': 'targetType',
+    'TargetEnterpriseTag': 'targetEnterpriseTag',
   };
 
   @override

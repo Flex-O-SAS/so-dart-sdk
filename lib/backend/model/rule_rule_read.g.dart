@@ -42,6 +42,8 @@ const RuleRuleReadRuleActionEnum
 const RuleRuleReadRuleActionEnum
     _$ruleRuleReadRuleActionEnum_denyCancelBooking =
     const RuleRuleReadRuleActionEnum._('denyCancelBooking');
+const RuleRuleReadRuleActionEnum _$ruleRuleReadRuleActionEnum_discountBooking =
+    const RuleRuleReadRuleActionEnum._('discountBooking');
 
 RuleRuleReadRuleActionEnum _$ruleRuleReadRuleActionEnumValueOf(String name) {
   switch (name) {
@@ -57,6 +59,8 @@ RuleRuleReadRuleActionEnum _$ruleRuleReadRuleActionEnumValueOf(String name) {
       return _$ruleRuleReadRuleActionEnum_allowCancelBooking;
     case 'denyCancelBooking':
       return _$ruleRuleReadRuleActionEnum_denyCancelBooking;
+    case 'discountBooking':
+      return _$ruleRuleReadRuleActionEnum_discountBooking;
     default:
       throw new ArgumentError(name);
   }
@@ -70,6 +74,7 @@ final BuiltSet<RuleRuleReadRuleActionEnum> _$ruleRuleReadRuleActionEnumValues =
   _$ruleRuleReadRuleActionEnum_freeBooking,
   _$ruleRuleReadRuleActionEnum_allowCancelBooking,
   _$ruleRuleReadRuleActionEnum_denyCancelBooking,
+  _$ruleRuleReadRuleActionEnum_discountBooking,
 ]);
 
 Serializer<RuleRuleReadRuleTypeEnum> _$ruleRuleReadRuleTypeEnumSerializer =
@@ -115,6 +120,7 @@ class _$RuleRuleReadRuleActionEnumSerializer
     'freeBooking': 'FreeBooking',
     'allowCancelBooking': 'AllowCancelBooking',
     'denyCancelBooking': 'DenyCancelBooking',
+    'discountBooking': 'DiscountBooking',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'AllowBooking': 'allowBooking',
@@ -123,6 +129,7 @@ class _$RuleRuleReadRuleActionEnumSerializer
     'FreeBooking': 'freeBooking',
     'AllowCancelBooking': 'allowCancelBooking',
     'DenyCancelBooking': 'denyCancelBooking',
+    'DiscountBooking': 'discountBooking',
   };
 
   @override
@@ -157,6 +164,8 @@ class _$RuleRuleRead extends RuleRuleRead {
   @override
   final RuleRuleReadRuleActionEnum? ruleAction;
   @override
+  final BuiltList<String>? ruleActionArgs;
+  @override
   final bool? managed;
   @override
   final RuleRuleRead? parentRule;
@@ -173,6 +182,7 @@ class _$RuleRuleRead extends RuleRuleRead {
       this.expressions,
       this.ruleType,
       this.ruleAction,
+      this.ruleActionArgs,
       this.managed,
       this.parentRule,
       this.id})
@@ -195,6 +205,7 @@ class _$RuleRuleRead extends RuleRuleRead {
         expressions == other.expressions &&
         ruleType == other.ruleType &&
         ruleAction == other.ruleAction &&
+        ruleActionArgs == other.ruleActionArgs &&
         managed == other.managed &&
         parentRule == other.parentRule &&
         id == other.id;
@@ -209,6 +220,7 @@ class _$RuleRuleRead extends RuleRuleRead {
     _$hash = $jc(_$hash, expressions.hashCode);
     _$hash = $jc(_$hash, ruleType.hashCode);
     _$hash = $jc(_$hash, ruleAction.hashCode);
+    _$hash = $jc(_$hash, ruleActionArgs.hashCode);
     _$hash = $jc(_$hash, managed.hashCode);
     _$hash = $jc(_$hash, parentRule.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
@@ -225,6 +237,7 @@ class _$RuleRuleRead extends RuleRuleRead {
           ..add('expressions', expressions)
           ..add('ruleType', ruleType)
           ..add('ruleAction', ruleAction)
+          ..add('ruleActionArgs', ruleActionArgs)
           ..add('managed', managed)
           ..add('parentRule', parentRule)
           ..add('id', id))
@@ -264,6 +277,12 @@ class RuleRuleReadBuilder
   set ruleAction(RuleRuleReadRuleActionEnum? ruleAction) =>
       _$this._ruleAction = ruleAction;
 
+  ListBuilder<String>? _ruleActionArgs;
+  ListBuilder<String> get ruleActionArgs =>
+      _$this._ruleActionArgs ??= new ListBuilder<String>();
+  set ruleActionArgs(ListBuilder<String>? ruleActionArgs) =>
+      _$this._ruleActionArgs = ruleActionArgs;
+
   bool? _managed;
   bool? get managed => _$this._managed;
   set managed(bool? managed) => _$this._managed = managed;
@@ -291,6 +310,7 @@ class RuleRuleReadBuilder
       _expressions = $v.expressions?.toBuilder();
       _ruleType = $v.ruleType;
       _ruleAction = $v.ruleAction;
+      _ruleActionArgs = $v.ruleActionArgs?.toBuilder();
       _managed = $v.managed;
       _parentRule = $v.parentRule?.toBuilder();
       _id = $v.id;
@@ -324,6 +344,7 @@ class RuleRuleReadBuilder
             expressions: _expressions?.build(),
             ruleType: ruleType,
             ruleAction: ruleAction,
+            ruleActionArgs: _ruleActionArgs?.build(),
             managed: managed,
             parentRule: _parentRule?.build(),
             id: id,
@@ -333,6 +354,9 @@ class RuleRuleReadBuilder
       try {
         _$failedField = 'expressions';
         _expressions?.build();
+
+        _$failedField = 'ruleActionArgs';
+        _ruleActionArgs?.build();
 
         _$failedField = 'parentRule';
         _parentRule?.build();

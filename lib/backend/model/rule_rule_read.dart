@@ -19,6 +19,7 @@ part 'rule_rule_read.g.dart';
 /// * [expressions] 
 /// * [ruleType] 
 /// * [ruleAction] 
+/// * [ruleActionArgs] 
 /// * [managed] 
 /// * [parentRule] 
 /// * [id] 
@@ -42,7 +43,10 @@ abstract class RuleRuleRead implements Built<RuleRuleRead, RuleRuleReadBuilder> 
 
   @BuiltValueField(wireName: r'ruleAction')
   RuleRuleReadRuleActionEnum? get ruleAction;
-  // enum ruleActionEnum {  AllowBooking,  DenyBooking,  PendingBooking,  FreeBooking,  AllowCancelBooking,  DenyCancelBooking,  };
+  // enum ruleActionEnum {  AllowBooking,  DenyBooking,  PendingBooking,  FreeBooking,  AllowCancelBooking,  DenyCancelBooking,  DiscountBooking,  };
+
+  @BuiltValueField(wireName: r'ruleActionArgs')
+  BuiltList<String>? get ruleActionArgs;
 
   @BuiltValueField(wireName: r'managed')
   bool? get managed;
@@ -119,6 +123,13 @@ class _$RuleRuleReadSerializer implements PrimitiveSerializer<RuleRuleRead> {
       yield serializers.serialize(
         object.ruleAction,
         specifiedType: const FullType(RuleRuleReadRuleActionEnum),
+      );
+    }
+    if (object.ruleActionArgs != null) {
+      yield r'ruleActionArgs';
+      yield serializers.serialize(
+        object.ruleActionArgs,
+        specifiedType: const FullType.nullable(BuiltList, [FullType(String)]),
       );
     }
     if (object.managed != null) {
@@ -207,6 +218,14 @@ class _$RuleRuleReadSerializer implements PrimitiveSerializer<RuleRuleRead> {
           ) as RuleRuleReadRuleActionEnum;
           result.ruleAction = valueDes;
           break;
+        case r'ruleActionArgs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>?;
+          if (valueDes == null) continue;
+          result.ruleActionArgs.replace(valueDes);
+          break;
         case r'managed':
           final valueDes = serializers.deserialize(
             value,
@@ -287,6 +306,8 @@ class RuleRuleReadRuleActionEnum extends EnumClass {
   static const RuleRuleReadRuleActionEnum allowCancelBooking = _$ruleRuleReadRuleActionEnum_allowCancelBooking;
   @BuiltValueEnumConst(wireName: r'DenyCancelBooking')
   static const RuleRuleReadRuleActionEnum denyCancelBooking = _$ruleRuleReadRuleActionEnum_denyCancelBooking;
+  @BuiltValueEnumConst(wireName: r'DiscountBooking')
+  static const RuleRuleReadRuleActionEnum discountBooking = _$ruleRuleReadRuleActionEnum_discountBooking;
 
   static Serializer<RuleRuleReadRuleActionEnum> get serializer => _$ruleRuleReadRuleActionEnumSerializer;
 

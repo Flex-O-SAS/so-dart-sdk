@@ -7,27 +7,43 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add($HydraCollectionBaseSchema.serializer)
+      ..add($HydraCollectionBaseSchemaNoPagination.serializer)
+      ..add($HydraItemBaseSchema.serializer)
       ..add(ApiDocumentsGetCollection200Response.serializer)
-      ..add(ApiDocumentsGetCollection200ResponseSearch.serializer)
-      ..add(ApiDocumentsGetCollection200ResponseSearchMappingInner.serializer)
-      ..add(ApiDocumentsGetCollection200ResponseView.serializer)
       ..add(ApiImagesGetCollection200Response.serializer)
+      ..add(ConstraintViolation.serializer)
+      ..add(ConstraintViolationJsonld.serializer)
+      ..add(ConstraintViolationViolationsInner.serializer)
       ..add(DocumentJsonldMediaRead.serializer)
-      ..add(DocumentJsonldMediaReadContext.serializer)
-      ..add(DocumentJsonldMediaReadContextOneOf.serializer)
-      ..add(DocumentJsonldMediaReadContextOneOfHydraEnum.serializer)
+      ..add(Error.serializer)
+      ..add(ErrorJsonld.serializer)
+      ..add(HydraCollectionBaseSchemaAllOfView.serializer)
+      ..add(HydraCollectionBaseSchemaNoPaginationSearch.serializer)
+      ..add(HydraCollectionBaseSchemaNoPaginationSearchMappingInner.serializer)
+      ..add(HydraItemBaseSchemaContext.serializer)
+      ..add(HydraItemBaseSchemaContextOneOf.serializer)
+      ..add(HydraItemBaseSchemaContextOneOfHydraEnum.serializer)
       ..add(ImageJsonldMediaRead.serializer)
       ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(
-                ApiDocumentsGetCollection200ResponseSearchMappingInner)
-          ]),
-          () => new ListBuilder<
-              ApiDocumentsGetCollection200ResponseSearchMappingInner>())
+          const FullType(BuiltList,
+              const [const FullType(ConstraintViolationViolationsInner)]),
+          () => new ListBuilder<ConstraintViolationViolationsInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(ConstraintViolationViolationsInner)]),
+          () => new ListBuilder<ConstraintViolationViolationsInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(DocumentJsonldMediaRead)]),
           () => new ListBuilder<DocumentJsonldMediaRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                HydraCollectionBaseSchemaNoPaginationSearchMappingInner)
+          ]),
+          () => new ListBuilder<
+              HydraCollectionBaseSchemaNoPaginationSearchMappingInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(ImageJsonldMediaRead)]),

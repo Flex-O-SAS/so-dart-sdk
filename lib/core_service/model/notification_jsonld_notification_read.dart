@@ -83,7 +83,7 @@ abstract class NotificationJsonldNotificationRead implements HydraItemBaseSchema
   static void _defaults(NotificationJsonldNotificationReadBuilder b) => b
       ..directMail = false
       ..isMarkdown = false
-      ..status = NotificationJsonldNotificationReadStatusEnum.valueOf('pending');
+      ..status = const NotificationJsonldNotificationReadStatusEnum._('pending');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<NotificationJsonldNotificationRead> get serializer => _$NotificationJsonldNotificationReadSerializer();

@@ -11,11 +11,11 @@ class _$ApiDocumentsGetCollection200Response
   @override
   final BuiltList<DocumentJsonldMediaRead> member;
   @override
+  final HydraCollectionBaseSchemaAllOfView? view;
+  @override
   final int? totalItems;
   @override
-  final ApiDocumentsGetCollection200ResponseView? view;
-  @override
-  final ApiDocumentsGetCollection200ResponseSearch? search;
+  final HydraCollectionBaseSchemaNoPaginationSearch? search;
 
   factory _$ApiDocumentsGetCollection200Response(
           [void Function(ApiDocumentsGetCollection200ResponseBuilder)?
@@ -24,7 +24,7 @@ class _$ApiDocumentsGetCollection200Response
           ._build();
 
   _$ApiDocumentsGetCollection200Response._(
-      {required this.member, this.totalItems, this.view, this.search})
+      {required this.member, this.view, this.totalItems, this.search})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         member, r'ApiDocumentsGetCollection200Response', 'member');
@@ -44,8 +44,8 @@ class _$ApiDocumentsGetCollection200Response
     if (identical(other, this)) return true;
     return other is ApiDocumentsGetCollection200Response &&
         member == other.member &&
-        totalItems == other.totalItems &&
         view == other.view &&
+        totalItems == other.totalItems &&
         search == other.search;
   }
 
@@ -53,8 +53,8 @@ class _$ApiDocumentsGetCollection200Response
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, member.hashCode);
-    _$hash = $jc(_$hash, totalItems.hashCode);
     _$hash = $jc(_$hash, view.hashCode);
+    _$hash = $jc(_$hash, totalItems.hashCode);
     _$hash = $jc(_$hash, search.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -64,8 +64,8 @@ class _$ApiDocumentsGetCollection200Response
   String toString() {
     return (newBuiltValueToStringHelper(r'ApiDocumentsGetCollection200Response')
           ..add('member', member)
-          ..add('totalItems', totalItems)
           ..add('view', view)
+          ..add('totalItems', totalItems)
           ..add('search', search))
         .toString();
   }
@@ -74,30 +74,33 @@ class _$ApiDocumentsGetCollection200Response
 class ApiDocumentsGetCollection200ResponseBuilder
     implements
         Builder<ApiDocumentsGetCollection200Response,
-            ApiDocumentsGetCollection200ResponseBuilder> {
+            ApiDocumentsGetCollection200ResponseBuilder>,
+        HydraCollectionBaseSchemaBuilder {
   _$ApiDocumentsGetCollection200Response? _$v;
 
   ListBuilder<DocumentJsonldMediaRead>? _member;
   ListBuilder<DocumentJsonldMediaRead> get member =>
       _$this._member ??= new ListBuilder<DocumentJsonldMediaRead>();
-  set member(ListBuilder<DocumentJsonldMediaRead>? member) =>
+  set member(covariant ListBuilder<DocumentJsonldMediaRead>? member) =>
       _$this._member = member;
+
+  HydraCollectionBaseSchemaAllOfViewBuilder? _view;
+  HydraCollectionBaseSchemaAllOfViewBuilder get view =>
+      _$this._view ??= new HydraCollectionBaseSchemaAllOfViewBuilder();
+  set view(covariant HydraCollectionBaseSchemaAllOfViewBuilder? view) =>
+      _$this._view = view;
 
   int? _totalItems;
   int? get totalItems => _$this._totalItems;
-  set totalItems(int? totalItems) => _$this._totalItems = totalItems;
+  set totalItems(covariant int? totalItems) => _$this._totalItems = totalItems;
 
-  ApiDocumentsGetCollection200ResponseViewBuilder? _view;
-  ApiDocumentsGetCollection200ResponseViewBuilder get view =>
-      _$this._view ??= new ApiDocumentsGetCollection200ResponseViewBuilder();
-  set view(ApiDocumentsGetCollection200ResponseViewBuilder? view) =>
-      _$this._view = view;
-
-  ApiDocumentsGetCollection200ResponseSearchBuilder? _search;
-  ApiDocumentsGetCollection200ResponseSearchBuilder get search =>
+  HydraCollectionBaseSchemaNoPaginationSearchBuilder? _search;
+  HydraCollectionBaseSchemaNoPaginationSearchBuilder get search =>
       _$this._search ??=
-          new ApiDocumentsGetCollection200ResponseSearchBuilder();
-  set search(ApiDocumentsGetCollection200ResponseSearchBuilder? search) =>
+          new HydraCollectionBaseSchemaNoPaginationSearchBuilder();
+  set search(
+          covariant HydraCollectionBaseSchemaNoPaginationSearchBuilder?
+              search) =>
       _$this._search = search;
 
   ApiDocumentsGetCollection200ResponseBuilder() {
@@ -108,8 +111,8 @@ class ApiDocumentsGetCollection200ResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _member = $v.member.toBuilder();
-      _totalItems = $v.totalItems;
       _view = $v.view?.toBuilder();
+      _totalItems = $v.totalItems;
       _search = $v.search?.toBuilder();
       _$v = null;
     }
@@ -117,7 +120,7 @@ class ApiDocumentsGetCollection200ResponseBuilder
   }
 
   @override
-  void replace(ApiDocumentsGetCollection200Response other) {
+  void replace(covariant ApiDocumentsGetCollection200Response other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ApiDocumentsGetCollection200Response;
   }
@@ -137,8 +140,8 @@ class ApiDocumentsGetCollection200ResponseBuilder
       _$result = _$v ??
           new _$ApiDocumentsGetCollection200Response._(
             member: member.build(),
-            totalItems: totalItems,
             view: _view?.build(),
+            totalItems: totalItems,
             search: _search?.build(),
           );
     } catch (_) {
@@ -146,9 +149,9 @@ class ApiDocumentsGetCollection200ResponseBuilder
       try {
         _$failedField = 'member';
         member.build();
-
         _$failedField = 'view';
         _view?.build();
+
         _$failedField = 'search';
         _search?.build();
       } catch (e) {

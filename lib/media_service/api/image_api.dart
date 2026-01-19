@@ -11,7 +11,11 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/media_service/api_util.dart';
 import 'package:so_dart_sdk/media_service/model/api_images_get_collection200_response.dart';
+import 'package:so_dart_sdk/media_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/media_service/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/media_service/model/date.dart';
+import 'package:so_dart_sdk/media_service/model/error.dart';
+import 'package:so_dart_sdk/media_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/media_service/model/image_jsonld_media_read.dart';
 
 class ImageApi {

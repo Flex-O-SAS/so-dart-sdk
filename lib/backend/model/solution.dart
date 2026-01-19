@@ -30,6 +30,7 @@ part 'solution.g.dart';
 /// * [type] 
 /// * [discountGrid] 
 /// * [centerPrice] 
+/// * [contractType] 
 /// * [surface] 
 /// * [capacity] 
 /// * [price] 
@@ -78,6 +79,10 @@ abstract class Solution implements Built<Solution, SolutionBuilder> {
 
   @BuiltValueField(wireName: r'centerPrice')
   CenterPrice? get centerPrice;
+
+  @BuiltValueField(wireName: r'contractType')
+  SolutionContractTypeEnum? get contractType;
+  // enum contractTypeEnum {  1,  2,  3,  4,  5,  6,  7,  ,  };
 
   @BuiltValueField(wireName: r'surface')
   num? get surface;
@@ -217,6 +222,13 @@ class _$SolutionSerializer implements PrimitiveSerializer<Solution> {
       yield serializers.serialize(
         object.centerPrice,
         specifiedType: const FullType.nullable(CenterPrice),
+      );
+    }
+    if (object.contractType != null) {
+      yield r'contractType';
+      yield serializers.serialize(
+        object.contractType,
+        specifiedType: const FullType.nullable(SolutionContractTypeEnum),
       );
     }
     if (object.surface != null) {
@@ -392,6 +404,14 @@ class _$SolutionSerializer implements PrimitiveSerializer<Solution> {
           if (valueDes == null) continue;
           result.centerPrice.replace(valueDes);
           break;
+        case r'contractType':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(SolutionContractTypeEnum),
+          ) as SolutionContractTypeEnum?;
+          if (valueDes == null) continue;
+          result.contractType = valueDes;
+          break;
         case r'surface':
           final valueDes = serializers.deserialize(
             value,
@@ -478,5 +498,30 @@ class _$SolutionSerializer implements PrimitiveSerializer<Solution> {
     );
     return result.build();
   }
+}
+
+class SolutionContractTypeEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireNumber: 1)
+  static const SolutionContractTypeEnum number1 = _$solutionContractTypeEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 2)
+  static const SolutionContractTypeEnum number2 = _$solutionContractTypeEnum_number2;
+  @BuiltValueEnumConst(wireNumber: 3)
+  static const SolutionContractTypeEnum number3 = _$solutionContractTypeEnum_number3;
+  @BuiltValueEnumConst(wireNumber: 4)
+  static const SolutionContractTypeEnum number4 = _$solutionContractTypeEnum_number4;
+  @BuiltValueEnumConst(wireNumber: 5)
+  static const SolutionContractTypeEnum number5 = _$solutionContractTypeEnum_number5;
+  @BuiltValueEnumConst(wireNumber: 6)
+  static const SolutionContractTypeEnum number6 = _$solutionContractTypeEnum_number6;
+  @BuiltValueEnumConst(wireNumber: 7)
+  static const SolutionContractTypeEnum number7 = _$solutionContractTypeEnum_number7;
+
+  static Serializer<SolutionContractTypeEnum> get serializer => _$solutionContractTypeEnumSerializer;
+
+  const SolutionContractTypeEnum._(String name): super(name);
+
+  static BuiltSet<SolutionContractTypeEnum> get values => _$solutionContractTypeEnumValues;
+  static SolutionContractTypeEnum valueOf(String name) => _$solutionContractTypeEnumValueOf(name);
 }
 

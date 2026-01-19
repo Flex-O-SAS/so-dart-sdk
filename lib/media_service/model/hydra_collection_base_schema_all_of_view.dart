@@ -6,9 +6,9 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_documents_get_collection200_response_view.g.dart';
+part 'hydra_collection_base_schema_all_of_view.g.dart';
 
-/// ApiDocumentsGetCollection200ResponseView
+/// HydraCollectionBaseSchemaAllOfView
 ///
 /// Properties:
 /// * [atId] 
@@ -18,7 +18,7 @@ part 'api_documents_get_collection200_response_view.g.dart';
 /// * [previous] 
 /// * [next] 
 @BuiltValue()
-abstract class ApiDocumentsGetCollection200ResponseView implements Built<ApiDocumentsGetCollection200ResponseView, ApiDocumentsGetCollection200ResponseViewBuilder> {
+abstract class HydraCollectionBaseSchemaAllOfView implements Built<HydraCollectionBaseSchemaAllOfView, HydraCollectionBaseSchemaAllOfViewBuilder> {
   @BuiltValueField(wireName: r'@id')
   String? get atId;
 
@@ -37,27 +37,27 @@ abstract class ApiDocumentsGetCollection200ResponseView implements Built<ApiDocu
   @BuiltValueField(wireName: r'next')
   String? get next;
 
-  ApiDocumentsGetCollection200ResponseView._();
+  HydraCollectionBaseSchemaAllOfView._();
 
-  factory ApiDocumentsGetCollection200ResponseView([void updates(ApiDocumentsGetCollection200ResponseViewBuilder b)]) = _$ApiDocumentsGetCollection200ResponseView;
+  factory HydraCollectionBaseSchemaAllOfView([void updates(HydraCollectionBaseSchemaAllOfViewBuilder b)]) = _$HydraCollectionBaseSchemaAllOfView;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiDocumentsGetCollection200ResponseViewBuilder b) => b;
+  static void _defaults(HydraCollectionBaseSchemaAllOfViewBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiDocumentsGetCollection200ResponseView> get serializer => _$ApiDocumentsGetCollection200ResponseViewSerializer();
+  static Serializer<HydraCollectionBaseSchemaAllOfView> get serializer => _$HydraCollectionBaseSchemaAllOfViewSerializer();
 }
 
-class _$ApiDocumentsGetCollection200ResponseViewSerializer implements PrimitiveSerializer<ApiDocumentsGetCollection200ResponseView> {
+class _$HydraCollectionBaseSchemaAllOfViewSerializer implements PrimitiveSerializer<HydraCollectionBaseSchemaAllOfView> {
   @override
-  final Iterable<Type> types = const [ApiDocumentsGetCollection200ResponseView, _$ApiDocumentsGetCollection200ResponseView];
+  final Iterable<Type> types = const [HydraCollectionBaseSchemaAllOfView, _$HydraCollectionBaseSchemaAllOfView];
 
   @override
-  final String wireName = r'ApiDocumentsGetCollection200ResponseView';
+  final String wireName = r'HydraCollectionBaseSchemaAllOfView';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiDocumentsGetCollection200ResponseView object, {
+    HydraCollectionBaseSchemaAllOfView object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atId != null) {
@@ -107,7 +107,7 @@ class _$ApiDocumentsGetCollection200ResponseViewSerializer implements PrimitiveS
   @override
   Object serialize(
     Serializers serializers,
-    ApiDocumentsGetCollection200ResponseView object, {
+    HydraCollectionBaseSchemaAllOfView object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -118,7 +118,7 @@ class _$ApiDocumentsGetCollection200ResponseViewSerializer implements PrimitiveS
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiDocumentsGetCollection200ResponseViewBuilder result,
+    required HydraCollectionBaseSchemaAllOfViewBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -176,12 +176,12 @@ class _$ApiDocumentsGetCollection200ResponseViewSerializer implements PrimitiveS
   }
 
   @override
-  ApiDocumentsGetCollection200ResponseView deserialize(
+  HydraCollectionBaseSchemaAllOfView deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiDocumentsGetCollection200ResponseViewBuilder();
+    final result = HydraCollectionBaseSchemaAllOfViewBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

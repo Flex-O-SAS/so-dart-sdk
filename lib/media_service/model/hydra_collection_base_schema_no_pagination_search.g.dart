@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_documents_get_collection200_response_search.dart';
+part of 'hydra_collection_base_schema_no_pagination_search.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiDocumentsGetCollection200ResponseSearch
-    extends ApiDocumentsGetCollection200ResponseSearch {
+class _$HydraCollectionBaseSchemaNoPaginationSearch
+    extends HydraCollectionBaseSchemaNoPaginationSearch {
   @override
   final String? atType;
   @override
@@ -15,33 +15,34 @@ class _$ApiDocumentsGetCollection200ResponseSearch
   @override
   final String? variableRepresentation;
   @override
-  final BuiltList<ApiDocumentsGetCollection200ResponseSearchMappingInner>?
+  final BuiltList<HydraCollectionBaseSchemaNoPaginationSearchMappingInner>?
       mapping;
 
-  factory _$ApiDocumentsGetCollection200ResponseSearch(
-          [void Function(ApiDocumentsGetCollection200ResponseSearchBuilder)?
+  factory _$HydraCollectionBaseSchemaNoPaginationSearch(
+          [void Function(HydraCollectionBaseSchemaNoPaginationSearchBuilder)?
               updates]) =>
-      (new ApiDocumentsGetCollection200ResponseSearchBuilder()..update(updates))
+      (new HydraCollectionBaseSchemaNoPaginationSearchBuilder()
+            ..update(updates))
           ._build();
 
-  _$ApiDocumentsGetCollection200ResponseSearch._(
+  _$HydraCollectionBaseSchemaNoPaginationSearch._(
       {this.atType, this.template, this.variableRepresentation, this.mapping})
       : super._();
 
   @override
-  ApiDocumentsGetCollection200ResponseSearch rebuild(
-          void Function(ApiDocumentsGetCollection200ResponseSearchBuilder)
+  HydraCollectionBaseSchemaNoPaginationSearch rebuild(
+          void Function(HydraCollectionBaseSchemaNoPaginationSearchBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiDocumentsGetCollection200ResponseSearchBuilder toBuilder() =>
-      new ApiDocumentsGetCollection200ResponseSearchBuilder()..replace(this);
+  HydraCollectionBaseSchemaNoPaginationSearchBuilder toBuilder() =>
+      new HydraCollectionBaseSchemaNoPaginationSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiDocumentsGetCollection200ResponseSearch &&
+    return other is HydraCollectionBaseSchemaNoPaginationSearch &&
         atType == other.atType &&
         template == other.template &&
         variableRepresentation == other.variableRepresentation &&
@@ -62,7 +63,7 @@ class _$ApiDocumentsGetCollection200ResponseSearch
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ApiDocumentsGetCollection200ResponseSearch')
+            r'HydraCollectionBaseSchemaNoPaginationSearch')
           ..add('atType', atType)
           ..add('template', template)
           ..add('variableRepresentation', variableRepresentation)
@@ -71,11 +72,11 @@ class _$ApiDocumentsGetCollection200ResponseSearch
   }
 }
 
-class ApiDocumentsGetCollection200ResponseSearchBuilder
+class HydraCollectionBaseSchemaNoPaginationSearchBuilder
     implements
-        Builder<ApiDocumentsGetCollection200ResponseSearch,
-            ApiDocumentsGetCollection200ResponseSearchBuilder> {
-  _$ApiDocumentsGetCollection200ResponseSearch? _$v;
+        Builder<HydraCollectionBaseSchemaNoPaginationSearch,
+            HydraCollectionBaseSchemaNoPaginationSearchBuilder> {
+  _$HydraCollectionBaseSchemaNoPaginationSearch? _$v;
 
   String? _atType;
   String? get atType => _$this._atType;
@@ -90,20 +91,21 @@ class ApiDocumentsGetCollection200ResponseSearchBuilder
   set variableRepresentation(String? variableRepresentation) =>
       _$this._variableRepresentation = variableRepresentation;
 
-  ListBuilder<ApiDocumentsGetCollection200ResponseSearchMappingInner>? _mapping;
-  ListBuilder<ApiDocumentsGetCollection200ResponseSearchMappingInner>
+  ListBuilder<HydraCollectionBaseSchemaNoPaginationSearchMappingInner>?
+      _mapping;
+  ListBuilder<HydraCollectionBaseSchemaNoPaginationSearchMappingInner>
       get mapping => _$this._mapping ??= new ListBuilder<
-          ApiDocumentsGetCollection200ResponseSearchMappingInner>();
+          HydraCollectionBaseSchemaNoPaginationSearchMappingInner>();
   set mapping(
-          ListBuilder<ApiDocumentsGetCollection200ResponseSearchMappingInner>?
+          ListBuilder<HydraCollectionBaseSchemaNoPaginationSearchMappingInner>?
               mapping) =>
       _$this._mapping = mapping;
 
-  ApiDocumentsGetCollection200ResponseSearchBuilder() {
-    ApiDocumentsGetCollection200ResponseSearch._defaults(this);
+  HydraCollectionBaseSchemaNoPaginationSearchBuilder() {
+    HydraCollectionBaseSchemaNoPaginationSearch._defaults(this);
   }
 
-  ApiDocumentsGetCollection200ResponseSearchBuilder get _$this {
+  HydraCollectionBaseSchemaNoPaginationSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atType = $v.atType;
@@ -116,26 +118,26 @@ class ApiDocumentsGetCollection200ResponseSearchBuilder
   }
 
   @override
-  void replace(ApiDocumentsGetCollection200ResponseSearch other) {
+  void replace(HydraCollectionBaseSchemaNoPaginationSearch other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiDocumentsGetCollection200ResponseSearch;
+    _$v = other as _$HydraCollectionBaseSchemaNoPaginationSearch;
   }
 
   @override
   void update(
-      void Function(ApiDocumentsGetCollection200ResponseSearchBuilder)?
+      void Function(HydraCollectionBaseSchemaNoPaginationSearchBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiDocumentsGetCollection200ResponseSearch build() => _build();
+  HydraCollectionBaseSchemaNoPaginationSearch build() => _build();
 
-  _$ApiDocumentsGetCollection200ResponseSearch _build() {
-    _$ApiDocumentsGetCollection200ResponseSearch _$result;
+  _$HydraCollectionBaseSchemaNoPaginationSearch _build() {
+    _$HydraCollectionBaseSchemaNoPaginationSearch _$result;
     try {
       _$result = _$v ??
-          new _$ApiDocumentsGetCollection200ResponseSearch._(
+          new _$HydraCollectionBaseSchemaNoPaginationSearch._(
             atType: atType,
             template: template,
             variableRepresentation: variableRepresentation,
@@ -148,7 +150,7 @@ class ApiDocumentsGetCollection200ResponseSearchBuilder
         _mapping?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'ApiDocumentsGetCollection200ResponseSearch',
+            r'HydraCollectionBaseSchemaNoPaginationSearch',
             _$failedField,
             e.toString());
       }

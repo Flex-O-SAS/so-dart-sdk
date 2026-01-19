@@ -3,55 +3,53 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_search_mapping_inner.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_documents_get_collection200_response_search.g.dart';
+part 'hydra_collection_base_schema_no_pagination_search_mapping_inner.g.dart';
 
-/// ApiDocumentsGetCollection200ResponseSearch
+/// HydraCollectionBaseSchemaNoPaginationSearchMappingInner
 ///
 /// Properties:
 /// * [atType] 
-/// * [template] 
-/// * [variableRepresentation] 
-/// * [mapping] 
+/// * [variable] 
+/// * [property] 
+/// * [required_] 
 @BuiltValue()
-abstract class ApiDocumentsGetCollection200ResponseSearch implements Built<ApiDocumentsGetCollection200ResponseSearch, ApiDocumentsGetCollection200ResponseSearchBuilder> {
+abstract class HydraCollectionBaseSchemaNoPaginationSearchMappingInner implements Built<HydraCollectionBaseSchemaNoPaginationSearchMappingInner, HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder> {
   @BuiltValueField(wireName: r'@type')
   String? get atType;
 
-  @BuiltValueField(wireName: r'template')
-  String? get template;
+  @BuiltValueField(wireName: r'variable')
+  String? get variable;
 
-  @BuiltValueField(wireName: r'variableRepresentation')
-  String? get variableRepresentation;
+  @BuiltValueField(wireName: r'property')
+  String? get property;
 
-  @BuiltValueField(wireName: r'mapping')
-  BuiltList<ApiDocumentsGetCollection200ResponseSearchMappingInner>? get mapping;
+  @BuiltValueField(wireName: r'required')
+  bool? get required_;
 
-  ApiDocumentsGetCollection200ResponseSearch._();
+  HydraCollectionBaseSchemaNoPaginationSearchMappingInner._();
 
-  factory ApiDocumentsGetCollection200ResponseSearch([void updates(ApiDocumentsGetCollection200ResponseSearchBuilder b)]) = _$ApiDocumentsGetCollection200ResponseSearch;
+  factory HydraCollectionBaseSchemaNoPaginationSearchMappingInner([void updates(HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder b)]) = _$HydraCollectionBaseSchemaNoPaginationSearchMappingInner;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiDocumentsGetCollection200ResponseSearchBuilder b) => b;
+  static void _defaults(HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiDocumentsGetCollection200ResponseSearch> get serializer => _$ApiDocumentsGetCollection200ResponseSearchSerializer();
+  static Serializer<HydraCollectionBaseSchemaNoPaginationSearchMappingInner> get serializer => _$HydraCollectionBaseSchemaNoPaginationSearchMappingInnerSerializer();
 }
 
-class _$ApiDocumentsGetCollection200ResponseSearchSerializer implements PrimitiveSerializer<ApiDocumentsGetCollection200ResponseSearch> {
+class _$HydraCollectionBaseSchemaNoPaginationSearchMappingInnerSerializer implements PrimitiveSerializer<HydraCollectionBaseSchemaNoPaginationSearchMappingInner> {
   @override
-  final Iterable<Type> types = const [ApiDocumentsGetCollection200ResponseSearch, _$ApiDocumentsGetCollection200ResponseSearch];
+  final Iterable<Type> types = const [HydraCollectionBaseSchemaNoPaginationSearchMappingInner, _$HydraCollectionBaseSchemaNoPaginationSearchMappingInner];
 
   @override
-  final String wireName = r'ApiDocumentsGetCollection200ResponseSearch';
+  final String wireName = r'HydraCollectionBaseSchemaNoPaginationSearchMappingInner';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiDocumentsGetCollection200ResponseSearch object, {
+    HydraCollectionBaseSchemaNoPaginationSearchMappingInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atType != null) {
@@ -61,25 +59,25 @@ class _$ApiDocumentsGetCollection200ResponseSearchSerializer implements Primitiv
         specifiedType: const FullType(String),
       );
     }
-    if (object.template != null) {
-      yield r'template';
+    if (object.variable != null) {
+      yield r'variable';
       yield serializers.serialize(
-        object.template,
+        object.variable,
         specifiedType: const FullType(String),
       );
     }
-    if (object.variableRepresentation != null) {
-      yield r'variableRepresentation';
+    if (object.property != null) {
+      yield r'property';
       yield serializers.serialize(
-        object.variableRepresentation,
+        object.property,
         specifiedType: const FullType(String),
       );
     }
-    if (object.mapping != null) {
-      yield r'mapping';
+    if (object.required_ != null) {
+      yield r'required';
       yield serializers.serialize(
-        object.mapping,
-        specifiedType: const FullType(BuiltList, [FullType(ApiDocumentsGetCollection200ResponseSearchMappingInner)]),
+        object.required_,
+        specifiedType: const FullType(bool),
       );
     }
   }
@@ -87,7 +85,7 @@ class _$ApiDocumentsGetCollection200ResponseSearchSerializer implements Primitiv
   @override
   Object serialize(
     Serializers serializers,
-    ApiDocumentsGetCollection200ResponseSearch object, {
+    HydraCollectionBaseSchemaNoPaginationSearchMappingInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -98,7 +96,7 @@ class _$ApiDocumentsGetCollection200ResponseSearchSerializer implements Primitiv
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiDocumentsGetCollection200ResponseSearchBuilder result,
+    required HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -112,26 +110,26 @@ class _$ApiDocumentsGetCollection200ResponseSearchSerializer implements Primitiv
           ) as String;
           result.atType = valueDes;
           break;
-        case r'template':
+        case r'variable':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.template = valueDes;
+          result.variable = valueDes;
           break;
-        case r'variableRepresentation':
+        case r'property':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.variableRepresentation = valueDes;
+          result.property = valueDes;
           break;
-        case r'mapping':
+        case r'required':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(ApiDocumentsGetCollection200ResponseSearchMappingInner)]),
-          ) as BuiltList<ApiDocumentsGetCollection200ResponseSearchMappingInner>;
-          result.mapping.replace(valueDes);
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.required_ = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -142,12 +140,12 @@ class _$ApiDocumentsGetCollection200ResponseSearchSerializer implements Primitiv
   }
 
   @override
-  ApiDocumentsGetCollection200ResponseSearch deserialize(
+  HydraCollectionBaseSchemaNoPaginationSearchMappingInner deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiDocumentsGetCollection200ResponseSearchBuilder();
+    final result = HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

@@ -316,6 +316,7 @@ class IndividualApi {
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [referencePartialLeftSquareBracketRightSquareBracket] - 
+  /// * [name] - Search by firstname or lastname
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -339,6 +340,7 @@ class IndividualApi {
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     String? referencePartialLeftSquareBracketRightSquareBracket,
+    String? name,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -373,6 +375,7 @@ class IndividualApi {
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (referencePartialLeftSquareBracketRightSquareBracket != null) r'reference_partial[]': encodeQueryParameter(_serializers, referencePartialLeftSquareBracketRightSquareBracket, const FullType(String)),
+      if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

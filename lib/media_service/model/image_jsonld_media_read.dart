@@ -3,14 +3,15 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_item_base_schema_context.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_item_base_schema.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'image_jsonld_media_read.g.dart';
 
-/// 
+/// ImageJsonldMediaRead
 ///
 /// Properties:
 /// * [atContext] 
@@ -18,6 +19,7 @@ part 'image_jsonld_media_read.g.dart';
 /// * [atType] 
 /// * [id] 
 /// * [temporaryUrl] 
+/// * [permanentUrl] 
 /// * [filePath] 
 /// * [size] 
 /// * [mimeType] 
@@ -26,42 +28,36 @@ part 'image_jsonld_media_read.g.dart';
 /// * [beginDate] 
 /// * [endDate] 
 @BuiltValue()
-abstract class ImageJsonldMediaRead implements Built<ImageJsonldMediaRead, ImageJsonldMediaReadBuilder> {
-  @BuiltValueField(wireName: r'@context')
-  DocumentJsonldMediaReadContext? get atContext;
-
-  @BuiltValueField(wireName: r'@id')
-  String? get atId;
-
-  @BuiltValueField(wireName: r'@type')
-  String? get atType;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
+abstract class ImageJsonldMediaRead implements HydraItemBaseSchema, Built<ImageJsonldMediaRead, ImageJsonldMediaReadBuilder> {
+  @BuiltValueField(wireName: r'beginDate')
+  DateTime? get beginDate;
 
   @BuiltValueField(wireName: r'temporaryUrl')
   String? get temporaryUrl;
 
-  @BuiltValueField(wireName: r'filePath')
-  String? get filePath;
+  @BuiltValueField(wireName: r'metadata')
+  JsonObject? get metadata;
 
   @BuiltValueField(wireName: r'size')
   int? get size;
+
+  @BuiltValueField(wireName: r'endDate')
+  DateTime? get endDate;
+
+  @BuiltValueField(wireName: r'permanentUrl')
+  String? get permanentUrl;
+
+  @BuiltValueField(wireName: r'filePath')
+  String? get filePath;
+
+  @BuiltValueField(wireName: r'id')
+  int? get id;
 
   @BuiltValueField(wireName: r'mimeType')
   String? get mimeType;
 
   @BuiltValueField(wireName: r'dimensions')
   JsonObject? get dimensions;
-
-  @BuiltValueField(wireName: r'metadata')
-  JsonObject? get metadata;
-
-  @BuiltValueField(wireName: r'beginDate')
-  DateTime? get beginDate;
-
-  @BuiltValueField(wireName: r'endDate')
-  DateTime? get endDate;
 
   ImageJsonldMediaRead._();
 
@@ -86,38 +82,36 @@ class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonl
     ImageJsonldMediaRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
-      yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(DocumentJsonldMediaReadContext),
-      );
-    }
-    if (object.atId != null) {
-      yield r'@id';
-      yield serializers.serialize(
-        object.atId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.atType != null) {
-      yield r'@type';
-      yield serializers.serialize(
-        object.atType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(int),
-      );
-    }
     if (object.temporaryUrl != null) {
       yield r'temporaryUrl';
       yield serializers.serialize(
         object.temporaryUrl,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.metadata != null) {
+      yield r'metadata';
+      yield serializers.serialize(
+        object.metadata,
+        specifiedType: const FullType(JsonObject),
+      );
+    }
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.endDate != null) {
+      yield r'endDate';
+      yield serializers.serialize(
+        object.endDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.permanentUrl != null) {
+      yield r'permanentUrl';
+      yield serializers.serialize(
+        object.permanentUrl,
         specifiedType: const FullType(String),
       );
     }
@@ -128,32 +122,11 @@ class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonl
         specifiedType: const FullType(String),
       );
     }
-    if (object.size != null) {
-      yield r'size';
-      yield serializers.serialize(
-        object.size,
-        specifiedType: const FullType(int),
-      );
-    }
     if (object.mimeType != null) {
       yield r'mimeType';
       yield serializers.serialize(
         object.mimeType,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.dimensions != null) {
-      yield r'dimensions';
-      yield serializers.serialize(
-        object.dimensions,
-        specifiedType: const FullType.nullable(JsonObject),
-      );
-    }
-    if (object.metadata != null) {
-      yield r'metadata';
-      yield serializers.serialize(
-        object.metadata,
-        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.beginDate != null) {
@@ -163,11 +136,37 @@ class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonl
         specifiedType: const FullType(DateTime),
       );
     }
-    if (object.endDate != null) {
-      yield r'endDate';
+    if (object.size != null) {
+      yield r'size';
       yield serializers.serialize(
-        object.endDate,
-        specifiedType: const FullType(DateTime),
+        object.size,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.atContext != null) {
+      yield r'@context';
+      yield serializers.serialize(
+        object.atContext,
+        specifiedType: const FullType(HydraItemBaseSchemaContext),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(int),
+      );
+    }
+    yield r'@type';
+    yield serializers.serialize(
+      object.atType,
+      specifiedType: const FullType(String),
+    );
+    if (object.dimensions != null) {
+      yield r'dimensions';
+      yield serializers.serialize(
+        object.dimensions,
+        specifiedType: const FullType.nullable(JsonObject),
       );
     }
   }
@@ -193,69 +192,12 @@ class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonl
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DocumentJsonldMediaReadContext),
-          ) as DocumentJsonldMediaReadContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
-          break;
-        case r'@type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
         case r'temporaryUrl':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.temporaryUrl = valueDes;
-          break;
-        case r'filePath':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.filePath = valueDes;
-          break;
-        case r'size':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.size = valueDes;
-          break;
-        case r'mimeType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.mimeType = valueDes;
-          break;
-        case r'dimensions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
-          result.dimensions = valueDes;
           break;
         case r'metadata':
           final valueDes = serializers.deserialize(
@@ -264,12 +206,12 @@ class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonl
           ) as JsonObject;
           result.metadata = valueDes;
           break;
-        case r'beginDate':
+        case r'@id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.beginDate = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atId = valueDes;
           break;
         case r'endDate':
           final valueDes = serializers.deserialize(
@@ -277,6 +219,70 @@ class _$ImageJsonldMediaReadSerializer implements PrimitiveSerializer<ImageJsonl
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.endDate = valueDes;
+          break;
+        case r'permanentUrl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.permanentUrl = valueDes;
+          break;
+        case r'filePath':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.filePath = valueDes;
+          break;
+        case r'mimeType':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.mimeType = valueDes;
+          break;
+        case r'beginDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.beginDate = valueDes;
+          break;
+        case r'size':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.size = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
+        case r'@type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atType = valueDes;
+          break;
+        case r'dimensions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.dimensions = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_documents_get_collection200_response_view.dart';
+part of 'hydra_collection_base_schema_all_of_view.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiDocumentsGetCollection200ResponseView
-    extends ApiDocumentsGetCollection200ResponseView {
+class _$HydraCollectionBaseSchemaAllOfView
+    extends HydraCollectionBaseSchemaAllOfView {
   @override
   final String? atId;
   @override
@@ -21,30 +21,29 @@ class _$ApiDocumentsGetCollection200ResponseView
   @override
   final String? next;
 
-  factory _$ApiDocumentsGetCollection200ResponseView(
-          [void Function(ApiDocumentsGetCollection200ResponseViewBuilder)?
+  factory _$HydraCollectionBaseSchemaAllOfView(
+          [void Function(HydraCollectionBaseSchemaAllOfViewBuilder)?
               updates]) =>
-      (new ApiDocumentsGetCollection200ResponseViewBuilder()..update(updates))
+      (new HydraCollectionBaseSchemaAllOfViewBuilder()..update(updates))
           ._build();
 
-  _$ApiDocumentsGetCollection200ResponseView._(
+  _$HydraCollectionBaseSchemaAllOfView._(
       {this.atId, this.atType, this.first, this.last, this.previous, this.next})
       : super._();
 
   @override
-  ApiDocumentsGetCollection200ResponseView rebuild(
-          void Function(ApiDocumentsGetCollection200ResponseViewBuilder)
-              updates) =>
+  HydraCollectionBaseSchemaAllOfView rebuild(
+          void Function(HydraCollectionBaseSchemaAllOfViewBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiDocumentsGetCollection200ResponseViewBuilder toBuilder() =>
-      new ApiDocumentsGetCollection200ResponseViewBuilder()..replace(this);
+  HydraCollectionBaseSchemaAllOfViewBuilder toBuilder() =>
+      new HydraCollectionBaseSchemaAllOfViewBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiDocumentsGetCollection200ResponseView &&
+    return other is HydraCollectionBaseSchemaAllOfView &&
         atId == other.atId &&
         atType == other.atType &&
         first == other.first &&
@@ -68,8 +67,7 @@ class _$ApiDocumentsGetCollection200ResponseView
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(
-            r'ApiDocumentsGetCollection200ResponseView')
+    return (newBuiltValueToStringHelper(r'HydraCollectionBaseSchemaAllOfView')
           ..add('atId', atId)
           ..add('atType', atType)
           ..add('first', first)
@@ -80,11 +78,11 @@ class _$ApiDocumentsGetCollection200ResponseView
   }
 }
 
-class ApiDocumentsGetCollection200ResponseViewBuilder
+class HydraCollectionBaseSchemaAllOfViewBuilder
     implements
-        Builder<ApiDocumentsGetCollection200ResponseView,
-            ApiDocumentsGetCollection200ResponseViewBuilder> {
-  _$ApiDocumentsGetCollection200ResponseView? _$v;
+        Builder<HydraCollectionBaseSchemaAllOfView,
+            HydraCollectionBaseSchemaAllOfViewBuilder> {
+  _$HydraCollectionBaseSchemaAllOfView? _$v;
 
   String? _atId;
   String? get atId => _$this._atId;
@@ -110,11 +108,11 @@ class ApiDocumentsGetCollection200ResponseViewBuilder
   String? get next => _$this._next;
   set next(String? next) => _$this._next = next;
 
-  ApiDocumentsGetCollection200ResponseViewBuilder() {
-    ApiDocumentsGetCollection200ResponseView._defaults(this);
+  HydraCollectionBaseSchemaAllOfViewBuilder() {
+    HydraCollectionBaseSchemaAllOfView._defaults(this);
   }
 
-  ApiDocumentsGetCollection200ResponseViewBuilder get _$this {
+  HydraCollectionBaseSchemaAllOfViewBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atId = $v.atId;
@@ -129,23 +127,23 @@ class ApiDocumentsGetCollection200ResponseViewBuilder
   }
 
   @override
-  void replace(ApiDocumentsGetCollection200ResponseView other) {
+  void replace(HydraCollectionBaseSchemaAllOfView other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiDocumentsGetCollection200ResponseView;
+    _$v = other as _$HydraCollectionBaseSchemaAllOfView;
   }
 
   @override
   void update(
-      void Function(ApiDocumentsGetCollection200ResponseViewBuilder)? updates) {
+      void Function(HydraCollectionBaseSchemaAllOfViewBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiDocumentsGetCollection200ResponseView build() => _build();
+  HydraCollectionBaseSchemaAllOfView build() => _build();
 
-  _$ApiDocumentsGetCollection200ResponseView _build() {
+  _$HydraCollectionBaseSchemaAllOfView _build() {
     final _$result = _$v ??
-        new _$ApiDocumentsGetCollection200ResponseView._(
+        new _$HydraCollectionBaseSchemaAllOfView._(
           atId: atId,
           atType: atType,
           first: first,

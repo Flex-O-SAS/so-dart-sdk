@@ -3,35 +3,27 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_search.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_view.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_collection_base_schema_all_of_view.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_collection_base_schema.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_collection_base_schema_no_pagination_search.dart';
 import 'package:so_dart_sdk/media_service/model/image_jsonld_media_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'api_images_get_collection200_response.g.dart';
 
-/// ApiImagesGetCollection200Response
+/// Image.jsonld-media.read collection.
 ///
 /// Properties:
-/// * [member] 
 /// * [totalItems] 
-/// * [view] 
 /// * [search] 
+/// * [view] 
+/// * [member] 
 @BuiltValue()
-abstract class ApiImagesGetCollection200Response implements Built<ApiImagesGetCollection200Response, ApiImagesGetCollection200ResponseBuilder> {
+abstract class ApiImagesGetCollection200Response implements HydraCollectionBaseSchema, Built<ApiImagesGetCollection200Response, ApiImagesGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
   BuiltList<ImageJsonldMediaRead> get member;
-
-  @BuiltValueField(wireName: r'totalItems')
-  int? get totalItems;
-
-  @BuiltValueField(wireName: r'view')
-  ApiDocumentsGetCollection200ResponseView? get view;
-
-  @BuiltValueField(wireName: r'search')
-  ApiDocumentsGetCollection200ResponseSearch? get search;
 
   ApiImagesGetCollection200Response._();
 
@@ -68,18 +60,18 @@ class _$ApiImagesGetCollection200ResponseSerializer implements PrimitiveSerializ
         specifiedType: const FullType(int),
       );
     }
-    if (object.view != null) {
-      yield r'view';
-      yield serializers.serialize(
-        object.view,
-        specifiedType: const FullType(ApiDocumentsGetCollection200ResponseView),
-      );
-    }
     if (object.search != null) {
       yield r'search';
       yield serializers.serialize(
         object.search,
-        specifiedType: const FullType(ApiDocumentsGetCollection200ResponseSearch),
+        specifiedType: const FullType(HydraCollectionBaseSchemaNoPaginationSearch),
+      );
+    }
+    if (object.view != null) {
+      yield r'view';
+      yield serializers.serialize(
+        object.view,
+        specifiedType: const FullType(HydraCollectionBaseSchemaAllOfView),
       );
     }
   }
@@ -119,19 +111,19 @@ class _$ApiImagesGetCollection200ResponseSerializer implements PrimitiveSerializ
           ) as int;
           result.totalItems = valueDes;
           break;
-        case r'view':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiDocumentsGetCollection200ResponseView),
-          ) as ApiDocumentsGetCollection200ResponseView;
-          result.view.replace(valueDes);
-          break;
         case r'search':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ApiDocumentsGetCollection200ResponseSearch),
-          ) as ApiDocumentsGetCollection200ResponseSearch;
+            specifiedType: const FullType(HydraCollectionBaseSchemaNoPaginationSearch),
+          ) as HydraCollectionBaseSchemaNoPaginationSearch;
           result.search.replace(valueDes);
+          break;
+        case r'view':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraCollectionBaseSchemaAllOfView),
+          ) as HydraCollectionBaseSchemaAllOfView;
+          result.view.replace(valueDes);
           break;
         default:
           unhandled.add(key);

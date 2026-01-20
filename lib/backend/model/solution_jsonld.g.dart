@@ -6,6 +6,99 @@ part of 'solution_jsonld.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const SolutionJsonldContractTypeEnum _$solutionJsonldContractTypeEnum_number1 =
+    const SolutionJsonldContractTypeEnum._('number1');
+const SolutionJsonldContractTypeEnum _$solutionJsonldContractTypeEnum_number2 =
+    const SolutionJsonldContractTypeEnum._('number2');
+const SolutionJsonldContractTypeEnum _$solutionJsonldContractTypeEnum_number3 =
+    const SolutionJsonldContractTypeEnum._('number3');
+const SolutionJsonldContractTypeEnum _$solutionJsonldContractTypeEnum_number4 =
+    const SolutionJsonldContractTypeEnum._('number4');
+const SolutionJsonldContractTypeEnum _$solutionJsonldContractTypeEnum_number5 =
+    const SolutionJsonldContractTypeEnum._('number5');
+const SolutionJsonldContractTypeEnum _$solutionJsonldContractTypeEnum_number6 =
+    const SolutionJsonldContractTypeEnum._('number6');
+const SolutionJsonldContractTypeEnum _$solutionJsonldContractTypeEnum_number7 =
+    const SolutionJsonldContractTypeEnum._('number7');
+
+SolutionJsonldContractTypeEnum _$solutionJsonldContractTypeEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'number1':
+      return _$solutionJsonldContractTypeEnum_number1;
+    case 'number2':
+      return _$solutionJsonldContractTypeEnum_number2;
+    case 'number3':
+      return _$solutionJsonldContractTypeEnum_number3;
+    case 'number4':
+      return _$solutionJsonldContractTypeEnum_number4;
+    case 'number5':
+      return _$solutionJsonldContractTypeEnum_number5;
+    case 'number6':
+      return _$solutionJsonldContractTypeEnum_number6;
+    case 'number7':
+      return _$solutionJsonldContractTypeEnum_number7;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<SolutionJsonldContractTypeEnum>
+    _$solutionJsonldContractTypeEnumValues = new BuiltSet<
+        SolutionJsonldContractTypeEnum>(const <SolutionJsonldContractTypeEnum>[
+  _$solutionJsonldContractTypeEnum_number1,
+  _$solutionJsonldContractTypeEnum_number2,
+  _$solutionJsonldContractTypeEnum_number3,
+  _$solutionJsonldContractTypeEnum_number4,
+  _$solutionJsonldContractTypeEnum_number5,
+  _$solutionJsonldContractTypeEnum_number6,
+  _$solutionJsonldContractTypeEnum_number7,
+]);
+
+Serializer<SolutionJsonldContractTypeEnum>
+    _$solutionJsonldContractTypeEnumSerializer =
+    new _$SolutionJsonldContractTypeEnumSerializer();
+
+class _$SolutionJsonldContractTypeEnumSerializer
+    implements PrimitiveSerializer<SolutionJsonldContractTypeEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'number1': 1,
+    'number2': 2,
+    'number3': 3,
+    'number4': 4,
+    'number5': 5,
+    'number6': 6,
+    'number7': 7,
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    1: 'number1',
+    2: 'number2',
+    3: 'number3',
+    4: 'number4',
+    5: 'number5',
+    6: 'number6',
+    7: 'number7',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[SolutionJsonldContractTypeEnum];
+  @override
+  final String wireName = 'SolutionJsonldContractTypeEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, SolutionJsonldContractTypeEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  SolutionJsonldContractTypeEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      SolutionJsonldContractTypeEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$SolutionJsonld extends SolutionJsonld {
   @override
   final BuiltList<SolutionServiceJsonld>? solutionServices;
@@ -33,6 +126,8 @@ class _$SolutionJsonld extends SolutionJsonld {
   final DiscountGridJsonld? discountGrid;
   @override
   final CenterPriceJsonld? centerPrice;
+  @override
+  final SolutionJsonldContractTypeEnum? contractType;
   @override
   final num? surface;
   @override
@@ -67,6 +162,7 @@ class _$SolutionJsonld extends SolutionJsonld {
       this.type,
       this.discountGrid,
       this.centerPrice,
+      this.contractType,
       this.surface,
       this.capacity,
       this.price,
@@ -102,6 +198,7 @@ class _$SolutionJsonld extends SolutionJsonld {
         type == other.type &&
         discountGrid == other.discountGrid &&
         centerPrice == other.centerPrice &&
+        contractType == other.contractType &&
         surface == other.surface &&
         capacity == other.capacity &&
         price == other.price &&
@@ -128,6 +225,7 @@ class _$SolutionJsonld extends SolutionJsonld {
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, discountGrid.hashCode);
     _$hash = $jc(_$hash, centerPrice.hashCode);
+    _$hash = $jc(_$hash, contractType.hashCode);
     _$hash = $jc(_$hash, surface.hashCode);
     _$hash = $jc(_$hash, capacity.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
@@ -156,6 +254,7 @@ class _$SolutionJsonld extends SolutionJsonld {
           ..add('type', type)
           ..add('discountGrid', discountGrid)
           ..add('centerPrice', centerPrice)
+          ..add('contractType', contractType)
           ..add('surface', surface)
           ..add('capacity', capacity)
           ..add('price', price)
@@ -235,6 +334,11 @@ class SolutionJsonldBuilder
   set centerPrice(CenterPriceJsonldBuilder? centerPrice) =>
       _$this._centerPrice = centerPrice;
 
+  SolutionJsonldContractTypeEnum? _contractType;
+  SolutionJsonldContractTypeEnum? get contractType => _$this._contractType;
+  set contractType(SolutionJsonldContractTypeEnum? contractType) =>
+      _$this._contractType = contractType;
+
   num? _surface;
   num? get surface => _$this._surface;
   set surface(num? surface) => _$this._surface = surface;
@@ -288,6 +392,7 @@ class SolutionJsonldBuilder
       _type = $v.type;
       _discountGrid = $v.discountGrid?.toBuilder();
       _centerPrice = $v.centerPrice?.toBuilder();
+      _contractType = $v.contractType;
       _surface = $v.surface;
       _capacity = $v.capacity;
       _price = $v.price;
@@ -333,6 +438,7 @@ class SolutionJsonldBuilder
             type: type,
             discountGrid: _discountGrid?.build(),
             centerPrice: _centerPrice?.build(),
+            contractType: contractType,
             surface: surface,
             capacity: capacity,
             price: price,

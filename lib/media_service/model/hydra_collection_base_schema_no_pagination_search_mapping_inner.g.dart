@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_documents_get_collection200_response_search_mapping_inner.dart';
+part of 'hydra_collection_base_schema_no_pagination_search_mapping_inner.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiDocumentsGetCollection200ResponseSearchMappingInner
-    extends ApiDocumentsGetCollection200ResponseSearchMappingInner {
+class _$HydraCollectionBaseSchemaNoPaginationSearchMappingInner
+    extends HydraCollectionBaseSchemaNoPaginationSearchMappingInner {
   @override
   final String? atType;
   @override
@@ -17,34 +17,34 @@ class _$ApiDocumentsGetCollection200ResponseSearchMappingInner
   @override
   final bool? required_;
 
-  factory _$ApiDocumentsGetCollection200ResponseSearchMappingInner(
+  factory _$HydraCollectionBaseSchemaNoPaginationSearchMappingInner(
           [void Function(
-                  ApiDocumentsGetCollection200ResponseSearchMappingInnerBuilder)?
+                  HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder)?
               updates]) =>
-      (new ApiDocumentsGetCollection200ResponseSearchMappingInnerBuilder()
+      (new HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder()
             ..update(updates))
           ._build();
 
-  _$ApiDocumentsGetCollection200ResponseSearchMappingInner._(
+  _$HydraCollectionBaseSchemaNoPaginationSearchMappingInner._(
       {this.atType, this.variable, this.property, this.required_})
       : super._();
 
   @override
-  ApiDocumentsGetCollection200ResponseSearchMappingInner rebuild(
+  HydraCollectionBaseSchemaNoPaginationSearchMappingInner rebuild(
           void Function(
-                  ApiDocumentsGetCollection200ResponseSearchMappingInnerBuilder)
+                  HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiDocumentsGetCollection200ResponseSearchMappingInnerBuilder toBuilder() =>
-      new ApiDocumentsGetCollection200ResponseSearchMappingInnerBuilder()
+  HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder toBuilder() =>
+      new HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder()
         ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiDocumentsGetCollection200ResponseSearchMappingInner &&
+    return other is HydraCollectionBaseSchemaNoPaginationSearchMappingInner &&
         atType == other.atType &&
         variable == other.variable &&
         property == other.property &&
@@ -65,7 +65,7 @@ class _$ApiDocumentsGetCollection200ResponseSearchMappingInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ApiDocumentsGetCollection200ResponseSearchMappingInner')
+            r'HydraCollectionBaseSchemaNoPaginationSearchMappingInner')
           ..add('atType', atType)
           ..add('variable', variable)
           ..add('property', property)
@@ -74,11 +74,11 @@ class _$ApiDocumentsGetCollection200ResponseSearchMappingInner
   }
 }
 
-class ApiDocumentsGetCollection200ResponseSearchMappingInnerBuilder
+class HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder
     implements
-        Builder<ApiDocumentsGetCollection200ResponseSearchMappingInner,
-            ApiDocumentsGetCollection200ResponseSearchMappingInnerBuilder> {
-  _$ApiDocumentsGetCollection200ResponseSearchMappingInner? _$v;
+        Builder<HydraCollectionBaseSchemaNoPaginationSearchMappingInner,
+            HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder> {
+  _$HydraCollectionBaseSchemaNoPaginationSearchMappingInner? _$v;
 
   String? _atType;
   String? get atType => _$this._atType;
@@ -96,11 +96,11 @@ class ApiDocumentsGetCollection200ResponseSearchMappingInnerBuilder
   bool? get required_ => _$this._required_;
   set required_(bool? required_) => _$this._required_ = required_;
 
-  ApiDocumentsGetCollection200ResponseSearchMappingInnerBuilder() {
-    ApiDocumentsGetCollection200ResponseSearchMappingInner._defaults(this);
+  HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder() {
+    HydraCollectionBaseSchemaNoPaginationSearchMappingInner._defaults(this);
   }
 
-  ApiDocumentsGetCollection200ResponseSearchMappingInnerBuilder get _$this {
+  HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _atType = $v.atType;
@@ -113,25 +113,25 @@ class ApiDocumentsGetCollection200ResponseSearchMappingInnerBuilder
   }
 
   @override
-  void replace(ApiDocumentsGetCollection200ResponseSearchMappingInner other) {
+  void replace(HydraCollectionBaseSchemaNoPaginationSearchMappingInner other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiDocumentsGetCollection200ResponseSearchMappingInner;
+    _$v = other as _$HydraCollectionBaseSchemaNoPaginationSearchMappingInner;
   }
 
   @override
   void update(
       void Function(
-              ApiDocumentsGetCollection200ResponseSearchMappingInnerBuilder)?
+              HydraCollectionBaseSchemaNoPaginationSearchMappingInnerBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiDocumentsGetCollection200ResponseSearchMappingInner build() => _build();
+  HydraCollectionBaseSchemaNoPaginationSearchMappingInner build() => _build();
 
-  _$ApiDocumentsGetCollection200ResponseSearchMappingInner _build() {
+  _$HydraCollectionBaseSchemaNoPaginationSearchMappingInner _build() {
     final _$result = _$v ??
-        new _$ApiDocumentsGetCollection200ResponseSearchMappingInner._(
+        new _$HydraCollectionBaseSchemaNoPaginationSearchMappingInner._(
           atType: atType,
           variable: variable,
           property: property,

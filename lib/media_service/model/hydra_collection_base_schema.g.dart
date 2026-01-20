@@ -1,15 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_documents_get_collection200_response.dart';
+part of 'hydra_collection_base_schema.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiDocumentsGetCollection200Response
-    extends ApiDocumentsGetCollection200Response {
-  @override
-  final BuiltList<DocumentJsonldMediaRead> member;
+abstract class HydraCollectionBaseSchemaBuilder
+    implements HydraCollectionBaseSchemaNoPaginationBuilder {
+  void replace(covariant HydraCollectionBaseSchema other);
+  void update(void Function(HydraCollectionBaseSchemaBuilder) updates);
+  HydraCollectionBaseSchemaAllOfViewBuilder get view;
+  set view(covariant HydraCollectionBaseSchemaAllOfViewBuilder? view);
+
+  int? get totalItems;
+  set totalItems(covariant int? totalItems);
+
+  HydraCollectionBaseSchemaNoPaginationSearchBuilder get search;
+  set search(
+      covariant HydraCollectionBaseSchemaNoPaginationSearchBuilder? search);
+}
+
+class _$$HydraCollectionBaseSchema extends $HydraCollectionBaseSchema {
   @override
   final HydraCollectionBaseSchemaAllOfView? view;
   @override
@@ -17,33 +29,26 @@ class _$ApiDocumentsGetCollection200Response
   @override
   final HydraCollectionBaseSchemaNoPaginationSearch? search;
 
-  factory _$ApiDocumentsGetCollection200Response(
-          [void Function(ApiDocumentsGetCollection200ResponseBuilder)?
-              updates]) =>
-      (new ApiDocumentsGetCollection200ResponseBuilder()..update(updates))
-          ._build();
+  factory _$$HydraCollectionBaseSchema(
+          [void Function($HydraCollectionBaseSchemaBuilder)? updates]) =>
+      (new $HydraCollectionBaseSchemaBuilder()..update(updates))._build();
 
-  _$ApiDocumentsGetCollection200Response._(
-      {required this.member, this.view, this.totalItems, this.search})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        member, r'ApiDocumentsGetCollection200Response', 'member');
-  }
+  _$$HydraCollectionBaseSchema._({this.view, this.totalItems, this.search})
+      : super._();
 
   @override
-  ApiDocumentsGetCollection200Response rebuild(
-          void Function(ApiDocumentsGetCollection200ResponseBuilder) updates) =>
+  $HydraCollectionBaseSchema rebuild(
+          void Function($HydraCollectionBaseSchemaBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiDocumentsGetCollection200ResponseBuilder toBuilder() =>
-      new ApiDocumentsGetCollection200ResponseBuilder()..replace(this);
+  $HydraCollectionBaseSchemaBuilder toBuilder() =>
+      new $HydraCollectionBaseSchemaBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiDocumentsGetCollection200Response &&
-        member == other.member &&
+    return other is $HydraCollectionBaseSchema &&
         view == other.view &&
         totalItems == other.totalItems &&
         search == other.search;
@@ -52,7 +57,6 @@ class _$ApiDocumentsGetCollection200Response
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, member.hashCode);
     _$hash = $jc(_$hash, view.hashCode);
     _$hash = $jc(_$hash, totalItems.hashCode);
     _$hash = $jc(_$hash, search.hashCode);
@@ -62,8 +66,7 @@ class _$ApiDocumentsGetCollection200Response
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ApiDocumentsGetCollection200Response')
-          ..add('member', member)
+    return (newBuiltValueToStringHelper(r'$HydraCollectionBaseSchema')
           ..add('view', view)
           ..add('totalItems', totalItems)
           ..add('search', search))
@@ -71,18 +74,11 @@ class _$ApiDocumentsGetCollection200Response
   }
 }
 
-class ApiDocumentsGetCollection200ResponseBuilder
+class $HydraCollectionBaseSchemaBuilder
     implements
-        Builder<ApiDocumentsGetCollection200Response,
-            ApiDocumentsGetCollection200ResponseBuilder>,
+        Builder<$HydraCollectionBaseSchema, $HydraCollectionBaseSchemaBuilder>,
         HydraCollectionBaseSchemaBuilder {
-  _$ApiDocumentsGetCollection200Response? _$v;
-
-  ListBuilder<DocumentJsonldMediaRead>? _member;
-  ListBuilder<DocumentJsonldMediaRead> get member =>
-      _$this._member ??= new ListBuilder<DocumentJsonldMediaRead>();
-  set member(covariant ListBuilder<DocumentJsonldMediaRead>? member) =>
-      _$this._member = member;
+  _$$HydraCollectionBaseSchema? _$v;
 
   HydraCollectionBaseSchemaAllOfViewBuilder? _view;
   HydraCollectionBaseSchemaAllOfViewBuilder get view =>
@@ -103,14 +99,13 @@ class ApiDocumentsGetCollection200ResponseBuilder
               search) =>
       _$this._search = search;
 
-  ApiDocumentsGetCollection200ResponseBuilder() {
-    ApiDocumentsGetCollection200Response._defaults(this);
+  $HydraCollectionBaseSchemaBuilder() {
+    $HydraCollectionBaseSchema._defaults(this);
   }
 
-  ApiDocumentsGetCollection200ResponseBuilder get _$this {
+  $HydraCollectionBaseSchemaBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _member = $v.member.toBuilder();
       _view = $v.view?.toBuilder();
       _totalItems = $v.totalItems;
       _search = $v.search?.toBuilder();
@@ -120,26 +115,24 @@ class ApiDocumentsGetCollection200ResponseBuilder
   }
 
   @override
-  void replace(covariant ApiDocumentsGetCollection200Response other) {
+  void replace(covariant $HydraCollectionBaseSchema other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiDocumentsGetCollection200Response;
+    _$v = other as _$$HydraCollectionBaseSchema;
   }
 
   @override
-  void update(
-      void Function(ApiDocumentsGetCollection200ResponseBuilder)? updates) {
+  void update(void Function($HydraCollectionBaseSchemaBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiDocumentsGetCollection200Response build() => _build();
+  $HydraCollectionBaseSchema build() => _build();
 
-  _$ApiDocumentsGetCollection200Response _build() {
-    _$ApiDocumentsGetCollection200Response _$result;
+  _$$HydraCollectionBaseSchema _build() {
+    _$$HydraCollectionBaseSchema _$result;
     try {
       _$result = _$v ??
-          new _$ApiDocumentsGetCollection200Response._(
-            member: member.build(),
+          new _$$HydraCollectionBaseSchema._(
             view: _view?.build(),
             totalItems: totalItems,
             search: _search?.build(),
@@ -147,8 +140,6 @@ class ApiDocumentsGetCollection200ResponseBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'member';
-        member.build();
         _$failedField = 'view';
         _view?.build();
 
@@ -156,9 +147,7 @@ class ApiDocumentsGetCollection200ResponseBuilder
         _search?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'ApiDocumentsGetCollection200Response',
-            _$failedField,
-            e.toString());
+            r'$HydraCollectionBaseSchema', _$failedField, e.toString());
       }
       rethrow;
     }

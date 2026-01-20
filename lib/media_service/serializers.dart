@@ -15,26 +15,42 @@ import 'package:so_dart_sdk/media_service/date_serializer.dart';
 import 'package:so_dart_sdk/media_service/model/date.dart';
 
 import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response.dart';
-import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_search.dart';
-import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_search_mapping_inner.dart';
-import 'package:so_dart_sdk/media_service/model/api_documents_get_collection200_response_view.dart';
 import 'package:so_dart_sdk/media_service/model/api_images_get_collection200_response.dart';
+import 'package:so_dart_sdk/media_service/model/constraint_violation.dart';
+import 'package:so_dart_sdk/media_service/model/constraint_violation_jsonld.dart';
+import 'package:so_dart_sdk/media_service/model/constraint_violation_violations_inner.dart';
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read.dart';
-import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context.dart';
-import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read_context_one_of.dart';
+import 'package:so_dart_sdk/media_service/model/error.dart';
+import 'package:so_dart_sdk/media_service/model/error_jsonld.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_collection_base_schema.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_collection_base_schema_all_of_view.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_collection_base_schema_no_pagination.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_collection_base_schema_no_pagination_search.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_collection_base_schema_no_pagination_search_mapping_inner.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_item_base_schema_context.dart';
+import 'package:so_dart_sdk/media_service/model/hydra_item_base_schema_context_one_of.dart';
 import 'package:so_dart_sdk/media_service/model/image_jsonld_media_read.dart';
 
 part 'serializers.g.dart';
 
 @SerializersFor([
   ApiDocumentsGetCollection200Response,
-  ApiDocumentsGetCollection200ResponseSearch,
-  ApiDocumentsGetCollection200ResponseSearchMappingInner,
-  ApiDocumentsGetCollection200ResponseView,
   ApiImagesGetCollection200Response,
+  ConstraintViolation,
+  ConstraintViolationJsonld,
+  ConstraintViolationViolationsInner,
   DocumentJsonldMediaRead,
-  DocumentJsonldMediaReadContext,
-  DocumentJsonldMediaReadContextOneOf,
+  Error,
+  ErrorJsonld,
+  HydraCollectionBaseSchema,$HydraCollectionBaseSchema,
+  HydraCollectionBaseSchemaAllOfView,
+  HydraCollectionBaseSchemaNoPagination,$HydraCollectionBaseSchemaNoPagination,
+  HydraCollectionBaseSchemaNoPaginationSearch,
+  HydraCollectionBaseSchemaNoPaginationSearchMappingInner,
+  HydraItemBaseSchema,$HydraItemBaseSchema,
+  HydraItemBaseSchemaContext,
+  HydraItemBaseSchemaContextOneOf,
   ImageJsonldMediaRead,
 ])
 Serializers serializers = (_$serializers.toBuilder()
@@ -42,6 +58,9 @@ Serializers serializers = (_$serializers.toBuilder()
         const FullType(BuiltList, [FullType(int)]),
         () => ListBuilder<int>(),
       )
+      ..add(HydraCollectionBaseSchema.serializer)
+      ..add(HydraCollectionBaseSchemaNoPagination.serializer)
+      ..add(HydraItemBaseSchema.serializer)
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())

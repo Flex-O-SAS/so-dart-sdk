@@ -6,6 +6,95 @@ part of 'solution.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const SolutionContractTypeEnum _$solutionContractTypeEnum_number1 =
+    const SolutionContractTypeEnum._('number1');
+const SolutionContractTypeEnum _$solutionContractTypeEnum_number2 =
+    const SolutionContractTypeEnum._('number2');
+const SolutionContractTypeEnum _$solutionContractTypeEnum_number3 =
+    const SolutionContractTypeEnum._('number3');
+const SolutionContractTypeEnum _$solutionContractTypeEnum_number4 =
+    const SolutionContractTypeEnum._('number4');
+const SolutionContractTypeEnum _$solutionContractTypeEnum_number5 =
+    const SolutionContractTypeEnum._('number5');
+const SolutionContractTypeEnum _$solutionContractTypeEnum_number6 =
+    const SolutionContractTypeEnum._('number6');
+const SolutionContractTypeEnum _$solutionContractTypeEnum_number7 =
+    const SolutionContractTypeEnum._('number7');
+
+SolutionContractTypeEnum _$solutionContractTypeEnumValueOf(String name) {
+  switch (name) {
+    case 'number1':
+      return _$solutionContractTypeEnum_number1;
+    case 'number2':
+      return _$solutionContractTypeEnum_number2;
+    case 'number3':
+      return _$solutionContractTypeEnum_number3;
+    case 'number4':
+      return _$solutionContractTypeEnum_number4;
+    case 'number5':
+      return _$solutionContractTypeEnum_number5;
+    case 'number6':
+      return _$solutionContractTypeEnum_number6;
+    case 'number7':
+      return _$solutionContractTypeEnum_number7;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<SolutionContractTypeEnum> _$solutionContractTypeEnumValues =
+    new BuiltSet<SolutionContractTypeEnum>(const <SolutionContractTypeEnum>[
+  _$solutionContractTypeEnum_number1,
+  _$solutionContractTypeEnum_number2,
+  _$solutionContractTypeEnum_number3,
+  _$solutionContractTypeEnum_number4,
+  _$solutionContractTypeEnum_number5,
+  _$solutionContractTypeEnum_number6,
+  _$solutionContractTypeEnum_number7,
+]);
+
+Serializer<SolutionContractTypeEnum> _$solutionContractTypeEnumSerializer =
+    new _$SolutionContractTypeEnumSerializer();
+
+class _$SolutionContractTypeEnumSerializer
+    implements PrimitiveSerializer<SolutionContractTypeEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'number1': 1,
+    'number2': 2,
+    'number3': 3,
+    'number4': 4,
+    'number5': 5,
+    'number6': 6,
+    'number7': 7,
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    1: 'number1',
+    2: 'number2',
+    3: 'number3',
+    4: 'number4',
+    5: 'number5',
+    6: 'number6',
+    7: 'number7',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[SolutionContractTypeEnum];
+  @override
+  final String wireName = 'SolutionContractTypeEnum';
+
+  @override
+  Object serialize(Serializers serializers, SolutionContractTypeEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  SolutionContractTypeEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      SolutionContractTypeEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$Solution extends Solution {
   @override
   final BuiltList<SolutionService>? solutionServices;
@@ -33,6 +122,8 @@ class _$Solution extends Solution {
   final DiscountGrid? discountGrid;
   @override
   final CenterPrice? centerPrice;
+  @override
+  final SolutionContractTypeEnum? contractType;
   @override
   final num? surface;
   @override
@@ -67,6 +158,7 @@ class _$Solution extends Solution {
       this.type,
       this.discountGrid,
       this.centerPrice,
+      this.contractType,
       this.surface,
       this.capacity,
       this.price,
@@ -101,6 +193,7 @@ class _$Solution extends Solution {
         type == other.type &&
         discountGrid == other.discountGrid &&
         centerPrice == other.centerPrice &&
+        contractType == other.contractType &&
         surface == other.surface &&
         capacity == other.capacity &&
         price == other.price &&
@@ -127,6 +220,7 @@ class _$Solution extends Solution {
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, discountGrid.hashCode);
     _$hash = $jc(_$hash, centerPrice.hashCode);
+    _$hash = $jc(_$hash, contractType.hashCode);
     _$hash = $jc(_$hash, surface.hashCode);
     _$hash = $jc(_$hash, capacity.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
@@ -155,6 +249,7 @@ class _$Solution extends Solution {
           ..add('type', type)
           ..add('discountGrid', discountGrid)
           ..add('centerPrice', centerPrice)
+          ..add('contractType', contractType)
           ..add('surface', surface)
           ..add('capacity', capacity)
           ..add('price', price)
@@ -232,6 +327,11 @@ class SolutionBuilder implements Builder<Solution, SolutionBuilder> {
   set centerPrice(CenterPriceBuilder? centerPrice) =>
       _$this._centerPrice = centerPrice;
 
+  SolutionContractTypeEnum? _contractType;
+  SolutionContractTypeEnum? get contractType => _$this._contractType;
+  set contractType(SolutionContractTypeEnum? contractType) =>
+      _$this._contractType = contractType;
+
   num? _surface;
   num? get surface => _$this._surface;
   set surface(num? surface) => _$this._surface = surface;
@@ -285,6 +385,7 @@ class SolutionBuilder implements Builder<Solution, SolutionBuilder> {
       _type = $v.type;
       _discountGrid = $v.discountGrid?.toBuilder();
       _centerPrice = $v.centerPrice?.toBuilder();
+      _contractType = $v.contractType;
       _surface = $v.surface;
       _capacity = $v.capacity;
       _price = $v.price;
@@ -330,6 +431,7 @@ class SolutionBuilder implements Builder<Solution, SolutionBuilder> {
             type: type,
             discountGrid: _discountGrid?.build(),
             centerPrice: _centerPrice?.build(),
+            contractType: contractType,
             surface: surface,
             capacity: capacity,
             price: price,

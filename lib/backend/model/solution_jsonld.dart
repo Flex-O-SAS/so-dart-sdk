@@ -30,6 +30,7 @@ part 'solution_jsonld.g.dart';
 /// * [type] 
 /// * [discountGrid] 
 /// * [centerPrice] 
+/// * [contractType] 
 /// * [surface] 
 /// * [capacity] 
 /// * [price] 
@@ -78,6 +79,10 @@ abstract class SolutionJsonld implements Built<SolutionJsonld, SolutionJsonldBui
 
   @BuiltValueField(wireName: r'centerPrice')
   CenterPriceJsonld? get centerPrice;
+
+  @BuiltValueField(wireName: r'contractType')
+  SolutionJsonldContractTypeEnum? get contractType;
+  // enum contractTypeEnum {  1,  2,  3,  4,  5,  6,  7,  ,  };
 
   @BuiltValueField(wireName: r'surface')
   num? get surface;
@@ -217,6 +222,13 @@ class _$SolutionJsonldSerializer implements PrimitiveSerializer<SolutionJsonld> 
       yield serializers.serialize(
         object.centerPrice,
         specifiedType: const FullType.nullable(CenterPriceJsonld),
+      );
+    }
+    if (object.contractType != null) {
+      yield r'contractType';
+      yield serializers.serialize(
+        object.contractType,
+        specifiedType: const FullType.nullable(SolutionJsonldContractTypeEnum),
       );
     }
     if (object.surface != null) {
@@ -392,6 +404,14 @@ class _$SolutionJsonldSerializer implements PrimitiveSerializer<SolutionJsonld> 
           if (valueDes == null) continue;
           result.centerPrice.replace(valueDes);
           break;
+        case r'contractType':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(SolutionJsonldContractTypeEnum),
+          ) as SolutionJsonldContractTypeEnum?;
+          if (valueDes == null) continue;
+          result.contractType = valueDes;
+          break;
         case r'surface':
           final valueDes = serializers.deserialize(
             value,
@@ -478,5 +498,30 @@ class _$SolutionJsonldSerializer implements PrimitiveSerializer<SolutionJsonld> 
     );
     return result.build();
   }
+}
+
+class SolutionJsonldContractTypeEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireNumber: 1)
+  static const SolutionJsonldContractTypeEnum number1 = _$solutionJsonldContractTypeEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 2)
+  static const SolutionJsonldContractTypeEnum number2 = _$solutionJsonldContractTypeEnum_number2;
+  @BuiltValueEnumConst(wireNumber: 3)
+  static const SolutionJsonldContractTypeEnum number3 = _$solutionJsonldContractTypeEnum_number3;
+  @BuiltValueEnumConst(wireNumber: 4)
+  static const SolutionJsonldContractTypeEnum number4 = _$solutionJsonldContractTypeEnum_number4;
+  @BuiltValueEnumConst(wireNumber: 5)
+  static const SolutionJsonldContractTypeEnum number5 = _$solutionJsonldContractTypeEnum_number5;
+  @BuiltValueEnumConst(wireNumber: 6)
+  static const SolutionJsonldContractTypeEnum number6 = _$solutionJsonldContractTypeEnum_number6;
+  @BuiltValueEnumConst(wireNumber: 7)
+  static const SolutionJsonldContractTypeEnum number7 = _$solutionJsonldContractTypeEnum_number7;
+
+  static Serializer<SolutionJsonldContractTypeEnum> get serializer => _$solutionJsonldContractTypeEnumSerializer;
+
+  const SolutionJsonldContractTypeEnum._(String name): super(name);
+
+  static BuiltSet<SolutionJsonldContractTypeEnum> get values => _$solutionJsonldContractTypeEnumValues;
+  static SolutionJsonldContractTypeEnum valueOf(String name) => _$solutionJsonldContractTypeEnumValueOf(name);
 }
 

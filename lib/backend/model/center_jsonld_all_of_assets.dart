@@ -7,9 +7,9 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'center_jsonld_public_center_read_opportunity_create_lead_all_of_assets.g.dart';
+part 'center_jsonld_all_of_assets.g.dart';
 
-/// CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets
+/// CenterJsonldAllOfAssets
 ///
 /// Properties:
 /// * [id] 
@@ -17,7 +17,7 @@ part 'center_jsonld_public_center_read_opportunity_create_lead_all_of_assets.g.d
 /// * [name] 
 /// * [tags] 
 @BuiltValue()
-abstract class CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets implements Built<CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets, CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssetsBuilder> {
+abstract class CenterJsonldAllOfAssets implements Built<CenterJsonldAllOfAssets, CenterJsonldAllOfAssetsBuilder> {
   @BuiltValueField(wireName: r'id')
   String? get id;
 
@@ -30,27 +30,27 @@ abstract class CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets impl
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
 
-  CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets._();
+  CenterJsonldAllOfAssets._();
 
-  factory CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets([void updates(CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssetsBuilder b)]) = _$CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets;
+  factory CenterJsonldAllOfAssets([void updates(CenterJsonldAllOfAssetsBuilder b)]) = _$CenterJsonldAllOfAssets;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssetsBuilder b) => b;
+  static void _defaults(CenterJsonldAllOfAssetsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets> get serializer => _$CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssetsSerializer();
+  static Serializer<CenterJsonldAllOfAssets> get serializer => _$CenterJsonldAllOfAssetsSerializer();
 }
 
-class _$CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssetsSerializer implements PrimitiveSerializer<CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets> {
+class _$CenterJsonldAllOfAssetsSerializer implements PrimitiveSerializer<CenterJsonldAllOfAssets> {
   @override
-  final Iterable<Type> types = const [CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets, _$CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets];
+  final Iterable<Type> types = const [CenterJsonldAllOfAssets, _$CenterJsonldAllOfAssets];
 
   @override
-  final String wireName = r'CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets';
+  final String wireName = r'CenterJsonldAllOfAssets';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets object, {
+    CenterJsonldAllOfAssets object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.id != null) {
@@ -86,7 +86,7 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssetsSerializer i
   @override
   Object serialize(
     Serializers serializers,
-    CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets object, {
+    CenterJsonldAllOfAssets object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -97,7 +97,7 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssetsSerializer i
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssetsBuilder result,
+    required CenterJsonldAllOfAssetsBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -141,12 +141,12 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssetsSerializer i
   }
 
   @override
-  CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets deserialize(
+  CenterJsonldAllOfAssets deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssetsBuilder();
+    final result = CenterJsonldAllOfAssetsBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

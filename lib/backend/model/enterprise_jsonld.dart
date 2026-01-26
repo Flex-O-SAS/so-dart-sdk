@@ -6,6 +6,7 @@
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -24,15 +25,28 @@ part 'enterprise_jsonld.g.dart';
 /// * [individuals] 
 /// * [email] 
 /// * [phone] 
+/// * [center] 
+/// * [status] 
+/// * [city] 
 /// * [reference] 
 /// * [id] 
+/// * [createdAt] 
 @BuiltValue()
 abstract class EnterpriseJsonld implements HydraItemBaseSchema, Built<EnterpriseJsonld, EnterpriseJsonldBuilder> {
   @BuiltValueField(wireName: r'reference')
   String? get reference;
 
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
+
   @BuiltValueField(wireName: r'phone')
   String? get phone;
+
+  @BuiltValueField(wireName: r'city')
+  String? get city;
+
+  @BuiltValueField(wireName: r'center')
+  CenterJsonld? get center;
 
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -51,6 +65,9 @@ abstract class EnterpriseJsonld implements HydraItemBaseSchema, Built<Enterprise
 
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
+
+  @BuiltValueField(wireName: r'status')
+  int? get status;
 
   EnterpriseJsonld._();
 
@@ -75,6 +92,46 @@ class _$EnterpriseJsonldSerializer implements PrimitiveSerializer<EnterpriseJson
     EnterpriseJsonld object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'@id';
+    yield serializers.serialize(
+      object.atId,
+      specifiedType: const FullType(String),
+    );
+    if (object.city != null) {
+      yield r'city';
+      yield serializers.serialize(
+        object.city,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.center != null) {
+      yield r'center';
+      yield serializers.serialize(
+        object.center,
+        specifiedType: const FullType.nullable(CenterJsonld),
+      );
+    }
+    if (object.type != null) {
+      yield r'type';
+      yield serializers.serialize(
+        object.type,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.individuals != null) {
+      yield r'individuals';
+      yield serializers.serialize(
+        object.individuals,
+        specifiedType: const FullType(BuiltList, [FullType(IndividualJsonld)]),
+      );
+    }
+    if (object.tags != null) {
+      yield r'tags';
+      yield serializers.serialize(
+        object.tags,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
     if (object.reference != null) {
       yield r'reference';
       yield serializers.serialize(
@@ -82,11 +139,13 @@ class _$EnterpriseJsonldSerializer implements PrimitiveSerializer<EnterpriseJson
         specifiedType: const FullType(String),
       );
     }
-    yield r'@id';
-    yield serializers.serialize(
-      object.atId,
-      specifiedType: const FullType(String),
-    );
+    if (object.createdAt != null) {
+      yield r'createdAt';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.phone != null) {
       yield r'phone';
       yield serializers.serialize(
@@ -115,20 +174,6 @@ class _$EnterpriseJsonldSerializer implements PrimitiveSerializer<EnterpriseJson
         specifiedType: const FullType(int),
       );
     }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.individuals != null) {
-      yield r'individuals';
-      yield serializers.serialize(
-        object.individuals,
-        specifiedType: const FullType(BuiltList, [FullType(IndividualJsonld)]),
-      );
-    }
     yield r'@type';
     yield serializers.serialize(
       object.atType,
@@ -141,11 +186,11 @@ class _$EnterpriseJsonldSerializer implements PrimitiveSerializer<EnterpriseJson
         specifiedType: const FullType(String),
       );
     }
-    if (object.tags != null) {
-      yield r'tags';
+    if (object.status != null) {
+      yield r'status';
       yield serializers.serialize(
-        object.tags,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
+        object.status,
+        specifiedType: const FullType(int),
       );
     }
   }
@@ -171,6 +216,49 @@ class _$EnterpriseJsonldSerializer implements PrimitiveSerializer<EnterpriseJson
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'@id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.atId = valueDes;
+          break;
+        case r'city':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.city = valueDes;
+          break;
+        case r'center':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(CenterJsonld),
+          ) as CenterJsonld?;
+          if (valueDes == null) continue;
+          result.center.replace(valueDes);
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.type = valueDes;
+          break;
+        case r'individuals':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(IndividualJsonld)]),
+          ) as BuiltList<IndividualJsonld>;
+          result.individuals.replace(valueDes);
+          break;
+        case r'tags':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.tags.replace(valueDes);
+          break;
         case r'reference':
           final valueDes = serializers.deserialize(
             value,
@@ -178,12 +266,12 @@ class _$EnterpriseJsonldSerializer implements PrimitiveSerializer<EnterpriseJson
           ) as String;
           result.reference = valueDes;
           break;
-        case r'@id':
+        case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.atId = valueDes;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
           break;
         case r'phone':
           final valueDes = serializers.deserialize(
@@ -213,20 +301,6 @@ class _$EnterpriseJsonldSerializer implements PrimitiveSerializer<EnterpriseJson
           ) as int;
           result.id = valueDes;
           break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
-          break;
-        case r'individuals':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(IndividualJsonld)]),
-          ) as BuiltList<IndividualJsonld>;
-          result.individuals.replace(valueDes);
-          break;
         case r'@type':
           final valueDes = serializers.deserialize(
             value,
@@ -241,12 +315,12 @@ class _$EnterpriseJsonldSerializer implements PrimitiveSerializer<EnterpriseJson
           ) as String;
           result.email = valueDes;
           break;
-        case r'tags':
+        case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.tags.replace(valueDes);
+            specifiedType: const FullType(int),
+          ) as int;
+          result.status = valueDes;
           break;
         default:
           unhandled.add(key);

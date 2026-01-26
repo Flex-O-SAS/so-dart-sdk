@@ -82,8 +82,6 @@ class _$TicketTicketWrite extends TicketTicketWrite {
   @override
   final DateTime startDate;
   @override
-  final DateTime? endDate;
-  @override
   final String description;
   @override
   final String author;
@@ -111,7 +109,6 @@ class _$TicketTicketWrite extends TicketTicketWrite {
   _$TicketTicketWrite._(
       {required this.title,
       required this.startDate,
-      this.endDate,
       required this.description,
       required this.author,
       this.assignee,
@@ -149,7 +146,6 @@ class _$TicketTicketWrite extends TicketTicketWrite {
     return other is TicketTicketWrite &&
         title == other.title &&
         startDate == other.startDate &&
-        endDate == other.endDate &&
         description == other.description &&
         author == other.author &&
         assignee == other.assignee &&
@@ -167,7 +163,6 @@ class _$TicketTicketWrite extends TicketTicketWrite {
     var _$hash = 0;
     _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jc(_$hash, startDate.hashCode);
-    _$hash = $jc(_$hash, endDate.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, author.hashCode);
     _$hash = $jc(_$hash, assignee.hashCode);
@@ -187,7 +182,6 @@ class _$TicketTicketWrite extends TicketTicketWrite {
     return (newBuiltValueToStringHelper(r'TicketTicketWrite')
           ..add('title', title)
           ..add('startDate', startDate)
-          ..add('endDate', endDate)
           ..add('description', description)
           ..add('author', author)
           ..add('assignee', assignee)
@@ -213,10 +207,6 @@ class TicketTicketWriteBuilder
   DateTime? _startDate;
   DateTime? get startDate => _$this._startDate;
   set startDate(DateTime? startDate) => _$this._startDate = startDate;
-
-  DateTime? _endDate;
-  DateTime? get endDate => _$this._endDate;
-  set endDate(DateTime? endDate) => _$this._endDate = endDate;
 
   String? _description;
   String? get description => _$this._description;
@@ -271,7 +261,6 @@ class TicketTicketWriteBuilder
     if ($v != null) {
       _title = $v.title;
       _startDate = $v.startDate;
-      _endDate = $v.endDate;
       _description = $v.description;
       _author = $v.author;
       _assignee = $v.assignee;
@@ -310,7 +299,6 @@ class TicketTicketWriteBuilder
                 title, r'TicketTicketWrite', 'title'),
             startDate: BuiltValueNullFieldError.checkNotNull(
                 startDate, r'TicketTicketWrite', 'startDate'),
-            endDate: endDate,
             description: BuiltValueNullFieldError.checkNotNull(
                 description, r'TicketTicketWrite', 'description'),
             author: BuiltValueNullFieldError.checkNotNull(

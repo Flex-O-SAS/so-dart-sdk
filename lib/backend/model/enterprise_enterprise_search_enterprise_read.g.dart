@@ -21,9 +21,17 @@ class _$EnterpriseEnterpriseSearchEnterpriseRead
   @override
   final String? phone;
   @override
+  final CenterEnterpriseSearchEnterpriseRead? center;
+  @override
+  final int? status;
+  @override
+  final String? city;
+  @override
   final String? reference;
   @override
   final int? id;
+  @override
+  final DateTime? createdAt;
 
   factory _$EnterpriseEnterpriseSearchEnterpriseRead(
           [void Function(EnterpriseEnterpriseSearchEnterpriseReadBuilder)?
@@ -38,8 +46,12 @@ class _$EnterpriseEnterpriseSearchEnterpriseRead
       this.individuals,
       this.email,
       this.phone,
+      this.center,
+      this.status,
+      this.city,
       this.reference,
-      this.id})
+      this.id,
+      this.createdAt})
       : super._();
 
   @override
@@ -62,8 +74,12 @@ class _$EnterpriseEnterpriseSearchEnterpriseRead
         individuals == other.individuals &&
         email == other.email &&
         phone == other.phone &&
+        center == other.center &&
+        status == other.status &&
+        city == other.city &&
         reference == other.reference &&
-        id == other.id;
+        id == other.id &&
+        createdAt == other.createdAt;
   }
 
   @override
@@ -75,8 +91,12 @@ class _$EnterpriseEnterpriseSearchEnterpriseRead
     _$hash = $jc(_$hash, individuals.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, center.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, city.hashCode);
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -91,8 +111,12 @@ class _$EnterpriseEnterpriseSearchEnterpriseRead
           ..add('individuals', individuals)
           ..add('email', email)
           ..add('phone', phone)
+          ..add('center', center)
+          ..add('status', status)
+          ..add('city', city)
           ..add('reference', reference)
-          ..add('id', id))
+          ..add('id', id)
+          ..add('createdAt', createdAt))
         .toString();
   }
 }
@@ -131,6 +155,20 @@ class EnterpriseEnterpriseSearchEnterpriseReadBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
+  CenterEnterpriseSearchEnterpriseReadBuilder? _center;
+  CenterEnterpriseSearchEnterpriseReadBuilder get center =>
+      _$this._center ??= new CenterEnterpriseSearchEnterpriseReadBuilder();
+  set center(CenterEnterpriseSearchEnterpriseReadBuilder? center) =>
+      _$this._center = center;
+
+  int? _status;
+  int? get status => _$this._status;
+  set status(int? status) => _$this._status = status;
+
+  String? _city;
+  String? get city => _$this._city;
+  set city(String? city) => _$this._city = city;
+
   String? _reference;
   String? get reference => _$this._reference;
   set reference(String? reference) => _$this._reference = reference;
@@ -138,6 +176,10 @@ class EnterpriseEnterpriseSearchEnterpriseReadBuilder
   int? _id;
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   EnterpriseEnterpriseSearchEnterpriseReadBuilder() {
     EnterpriseEnterpriseSearchEnterpriseRead._defaults(this);
@@ -152,8 +194,12 @@ class EnterpriseEnterpriseSearchEnterpriseReadBuilder
       _individuals = $v.individuals?.toBuilder();
       _email = $v.email;
       _phone = $v.phone;
+      _center = $v.center?.toBuilder();
+      _status = $v.status;
+      _city = $v.city;
       _reference = $v.reference;
       _id = $v.id;
+      _createdAt = $v.createdAt;
       _$v = null;
     }
     return this;
@@ -185,8 +231,12 @@ class EnterpriseEnterpriseSearchEnterpriseReadBuilder
             individuals: _individuals?.build(),
             email: email,
             phone: phone,
+            center: _center?.build(),
+            status: status,
+            city: city,
             reference: reference,
             id: id,
+            createdAt: createdAt,
           );
     } catch (_) {
       late String _$failedField;
@@ -195,6 +245,9 @@ class EnterpriseEnterpriseSearchEnterpriseReadBuilder
         _tags?.build();
         _$failedField = 'individuals';
         _individuals?.build();
+
+        _$failedField = 'center';
+        _center?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'EnterpriseEnterpriseSearchEnterpriseRead',

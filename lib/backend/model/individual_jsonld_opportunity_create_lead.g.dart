@@ -21,11 +21,11 @@ class _$IndividualJsonldOpportunityCreateLead
   @override
   final String? timezone;
   @override
+  final String? center;
+  @override
   final String? mobile;
   @override
   final String? language;
-  @override
-  final String? mainCenter;
   @override
   final String? email;
   @override
@@ -50,9 +50,9 @@ class _$IndividualJsonldOpportunityCreateLead
       this.address,
       this.city,
       this.timezone,
+      this.center,
       this.mobile,
       this.language,
-      this.mainCenter,
       this.email,
       this.lastname,
       this.atContext,
@@ -85,9 +85,9 @@ class _$IndividualJsonldOpportunityCreateLead
         address == other.address &&
         city == other.city &&
         timezone == other.timezone &&
+        center == other.center &&
         mobile == other.mobile &&
         language == other.language &&
-        mainCenter == other.mainCenter &&
         email == other.email &&
         lastname == other.lastname &&
         atContext == other.atContext &&
@@ -104,9 +104,9 @@ class _$IndividualJsonldOpportunityCreateLead
     _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jc(_$hash, city.hashCode);
     _$hash = $jc(_$hash, timezone.hashCode);
+    _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, mobile.hashCode);
     _$hash = $jc(_$hash, language.hashCode);
-    _$hash = $jc(_$hash, mainCenter.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, lastname.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
@@ -126,9 +126,9 @@ class _$IndividualJsonldOpportunityCreateLead
           ..add('address', address)
           ..add('city', city)
           ..add('timezone', timezone)
+          ..add('center', center)
           ..add('mobile', mobile)
           ..add('language', language)
-          ..add('mainCenter', mainCenter)
           ..add('email', email)
           ..add('lastname', lastname)
           ..add('atContext', atContext)
@@ -169,6 +169,10 @@ class IndividualJsonldOpportunityCreateLeadBuilder
   String? get timezone => _$this._timezone;
   set timezone(covariant String? timezone) => _$this._timezone = timezone;
 
+  String? _center;
+  String? get center => _$this._center;
+  set center(covariant String? center) => _$this._center = center;
+
   String? _mobile;
   String? get mobile => _$this._mobile;
   set mobile(covariant String? mobile) => _$this._mobile = mobile;
@@ -176,11 +180,6 @@ class IndividualJsonldOpportunityCreateLeadBuilder
   String? _language;
   String? get language => _$this._language;
   set language(covariant String? language) => _$this._language = language;
-
-  String? _mainCenter;
-  String? get mainCenter => _$this._mainCenter;
-  set mainCenter(covariant String? mainCenter) =>
-      _$this._mainCenter = mainCenter;
 
   String? _email;
   String? get email => _$this._email;
@@ -217,9 +216,9 @@ class IndividualJsonldOpportunityCreateLeadBuilder
       _address = $v.address;
       _city = $v.city;
       _timezone = $v.timezone;
+      _center = $v.center;
       _mobile = $v.mobile;
       _language = $v.language;
-      _mainCenter = $v.mainCenter;
       _email = $v.email;
       _lastname = $v.lastname;
       _atContext = $v.atContext?.toBuilder();
@@ -256,9 +255,9 @@ class IndividualJsonldOpportunityCreateLeadBuilder
             address: address,
             city: city,
             timezone: timezone,
+            center: center,
             mobile: mobile,
             language: language,
-            mainCenter: mainCenter,
             email: email,
             lastname: lastname,
             atContext: _atContext?.build(),

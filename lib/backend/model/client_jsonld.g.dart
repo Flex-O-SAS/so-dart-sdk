@@ -18,7 +18,7 @@ class _$ClientJsonld extends ClientJsonld {
   @override
   final String? fax;
   @override
-  final String? mainCenter;
+  final String? center;
   @override
   final String? language;
   @override
@@ -83,7 +83,7 @@ class _$ClientJsonld extends ClientJsonld {
       this.mobile,
       this.externalUserID,
       this.fax,
-      this.mainCenter,
+      this.center,
       this.language,
       this.accounts,
       this.contracts,
@@ -129,7 +129,7 @@ class _$ClientJsonld extends ClientJsonld {
         mobile == other.mobile &&
         externalUserID == other.externalUserID &&
         fax == other.fax &&
-        mainCenter == other.mainCenter &&
+        center == other.center &&
         language == other.language &&
         accounts == other.accounts &&
         contracts == other.contracts &&
@@ -167,7 +167,7 @@ class _$ClientJsonld extends ClientJsonld {
     _$hash = $jc(_$hash, mobile.hashCode);
     _$hash = $jc(_$hash, externalUserID.hashCode);
     _$hash = $jc(_$hash, fax.hashCode);
-    _$hash = $jc(_$hash, mainCenter.hashCode);
+    _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, language.hashCode);
     _$hash = $jc(_$hash, accounts.hashCode);
     _$hash = $jc(_$hash, contracts.hashCode);
@@ -207,7 +207,7 @@ class _$ClientJsonld extends ClientJsonld {
           ..add('mobile', mobile)
           ..add('externalUserID', externalUserID)
           ..add('fax', fax)
-          ..add('mainCenter', mainCenter)
+          ..add('center', center)
           ..add('language', language)
           ..add('accounts', accounts)
           ..add('contracts', contracts)
@@ -264,9 +264,9 @@ class ClientJsonldBuilder
   String? get fax => _$this._fax;
   set fax(String? fax) => _$this._fax = fax;
 
-  String? _mainCenter;
-  String? get mainCenter => _$this._mainCenter;
-  set mainCenter(String? mainCenter) => _$this._mainCenter = mainCenter;
+  String? _center;
+  String? get center => _$this._center;
+  set center(String? center) => _$this._center = center;
 
   String? _language;
   String? get language => _$this._language;
@@ -413,7 +413,7 @@ class ClientJsonldBuilder
       _mobile = $v.mobile;
       _externalUserID = $v.externalUserID;
       _fax = $v.fax;
-      _mainCenter = $v.mainCenter;
+      _center = $v.center;
       _language = $v.language;
       _accounts = $v.accounts?.toBuilder();
       _contracts = $v.contracts?.toBuilder();
@@ -470,7 +470,7 @@ class ClientJsonldBuilder
             mobile: mobile,
             externalUserID: externalUserID,
             fax: fax,
-            mainCenter: mainCenter,
+            center: center,
             language: language,
             accounts: _accounts?.build(),
             contracts: _contracts?.build(),

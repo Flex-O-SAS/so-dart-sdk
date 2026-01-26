@@ -11,7 +11,13 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseRead
   @override
   final String? reference;
   @override
+  final DateTime? createdAt;
+  @override
   final String? phone;
+  @override
+  final String? city;
+  @override
+  final CenterJsonldEnterpriseSearchEnterpriseRead? center;
   @override
   final String? name;
   @override
@@ -24,6 +30,8 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseRead
   final String? email;
   @override
   final BuiltList<String>? tags;
+  @override
+  final int? status;
   @override
   final HydraItemBaseSchemaContext? atContext;
   @override
@@ -40,13 +48,17 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseRead
 
   _$EnterpriseJsonldEnterpriseSearchEnterpriseRead._(
       {this.reference,
+      this.createdAt,
       this.phone,
+      this.city,
+      this.center,
       this.name,
       this.id,
       this.type,
       this.individuals,
       this.email,
       this.tags,
+      this.status,
       this.atContext,
       required this.atId,
       required this.atType})
@@ -73,13 +85,17 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseRead
     if (identical(other, this)) return true;
     return other is EnterpriseJsonldEnterpriseSearchEnterpriseRead &&
         reference == other.reference &&
+        createdAt == other.createdAt &&
         phone == other.phone &&
+        city == other.city &&
+        center == other.center &&
         name == other.name &&
         id == other.id &&
         type == other.type &&
         individuals == other.individuals &&
         email == other.email &&
         tags == other.tags &&
+        status == other.status &&
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType;
@@ -89,13 +105,17 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseRead
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, reference.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, city.hashCode);
+    _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, individuals.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
@@ -108,13 +128,17 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseRead
     return (newBuiltValueToStringHelper(
             r'EnterpriseJsonldEnterpriseSearchEnterpriseRead')
           ..add('reference', reference)
+          ..add('createdAt', createdAt)
           ..add('phone', phone)
+          ..add('city', city)
+          ..add('center', center)
           ..add('name', name)
           ..add('id', id)
           ..add('type', type)
           ..add('individuals', individuals)
           ..add('email', email)
           ..add('tags', tags)
+          ..add('status', status)
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType))
@@ -133,9 +157,26 @@ class EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder
   String? get reference => _$this._reference;
   set reference(covariant String? reference) => _$this._reference = reference;
 
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
   String? _phone;
   String? get phone => _$this._phone;
   set phone(covariant String? phone) => _$this._phone = phone;
+
+  String? _city;
+  String? get city => _$this._city;
+  set city(covariant String? city) => _$this._city = city;
+
+  CenterJsonldEnterpriseSearchEnterpriseReadBuilder? _center;
+  CenterJsonldEnterpriseSearchEnterpriseReadBuilder get center =>
+      _$this._center ??=
+          new CenterJsonldEnterpriseSearchEnterpriseReadBuilder();
+  set center(
+          covariant CenterJsonldEnterpriseSearchEnterpriseReadBuilder?
+              center) =>
+      _$this._center = center;
 
   String? _name;
   String? get name => _$this._name;
@@ -166,6 +207,10 @@ class EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(covariant ListBuilder<String>? tags) => _$this._tags = tags;
 
+  int? _status;
+  int? get status => _$this._status;
+  set status(covariant int? status) => _$this._status = status;
+
   HydraItemBaseSchemaContextBuilder? _atContext;
   HydraItemBaseSchemaContextBuilder get atContext =>
       _$this._atContext ??= new HydraItemBaseSchemaContextBuilder();
@@ -188,13 +233,17 @@ class EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder
     final $v = _$v;
     if ($v != null) {
       _reference = $v.reference;
+      _createdAt = $v.createdAt;
       _phone = $v.phone;
+      _city = $v.city;
+      _center = $v.center?.toBuilder();
       _name = $v.name;
       _id = $v.id;
       _type = $v.type;
       _individuals = $v.individuals?.toBuilder();
       _email = $v.email;
       _tags = $v.tags?.toBuilder();
+      _status = $v.status;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
@@ -225,13 +274,17 @@ class EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder
       _$result = _$v ??
           new _$EnterpriseJsonldEnterpriseSearchEnterpriseRead._(
             reference: reference,
+            createdAt: createdAt,
             phone: phone,
+            city: city,
+            center: _center?.build(),
             name: name,
             id: id,
             type: type,
             individuals: _individuals?.build(),
             email: email,
             tags: _tags?.build(),
+            status: status,
             atContext: _atContext?.build(),
             atId: BuiltValueNullFieldError.checkNotNull(atId,
                 r'EnterpriseJsonldEnterpriseSearchEnterpriseRead', 'atId'),
@@ -241,11 +294,15 @@ class EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'center';
+        _center?.build();
+
         _$failedField = 'individuals';
         _individuals?.build();
 
         _$failedField = 'tags';
         _tags?.build();
+
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {

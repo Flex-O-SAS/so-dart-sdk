@@ -15,7 +15,7 @@ part 'individual_opportunity_create_lead.g.dart';
 /// * [lastname] 
 /// * [email] 
 /// * [mobile] 
-/// * [mainCenter] 
+/// * [center] 
 /// * [language] 
 /// * [address] 
 /// * [zipcode] 
@@ -36,8 +36,8 @@ abstract class IndividualOpportunityCreateLead implements Built<IndividualOpport
   @BuiltValueField(wireName: r'mobile')
   String? get mobile;
 
-  @BuiltValueField(wireName: r'mainCenter')
-  String? get mainCenter;
+  @BuiltValueField(wireName: r'center')
+  String? get center;
 
   @BuiltValueField(wireName: r'language')
   String? get language;
@@ -108,10 +108,10 @@ class _$IndividualOpportunityCreateLeadSerializer implements PrimitiveSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.mainCenter != null) {
-      yield r'mainCenter';
+    if (object.center != null) {
+      yield r'center';
       yield serializers.serialize(
-        object.mainCenter,
+        object.center,
         specifiedType: const FullType(String),
       );
     }
@@ -208,12 +208,12 @@ class _$IndividualOpportunityCreateLeadSerializer implements PrimitiveSerializer
           ) as String;
           result.mobile = valueDes;
           break;
-        case r'mainCenter':
+        case r'center':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.mainCenter = valueDes;
+          result.center = valueDes;
           break;
         case r'language':
           final valueDes = serializers.deserialize(

@@ -6,14 +6,14 @@
 import 'package:so_dart_sdk/backend/model/hydra_collection_base_schema_no_pagination_search.dart';
 import 'package:so_dart_sdk/backend/model/hydra_collection_base_schema_all_of_view.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
+import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search.dart';
 import 'package:so_dart_sdk/backend/model/hydra_collection_base_schema.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'api_enterprises_get_collection200_response.g.dart';
 
-/// Enterprise.jsonld-enterprise.search_enterprise.read collection.
+/// Enterprise.jsonld-enterprise.search collection.
 ///
 /// Properties:
 /// * [totalItems] 
@@ -23,7 +23,7 @@ part 'api_enterprises_get_collection200_response.g.dart';
 @BuiltValue()
 abstract class ApiEnterprisesGetCollection200Response implements HydraCollectionBaseSchema, Built<ApiEnterprisesGetCollection200Response, ApiEnterprisesGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<EnterpriseJsonldEnterpriseSearchEnterpriseRead> get member;
+  BuiltList<EnterpriseJsonldEnterpriseSearch> get member;
 
   ApiEnterprisesGetCollection200Response._();
 
@@ -51,7 +51,7 @@ class _$ApiEnterprisesGetCollection200ResponseSerializer implements PrimitiveSer
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead)]),
+      specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldEnterpriseSearch)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -100,8 +100,8 @@ class _$ApiEnterprisesGetCollection200ResponseSerializer implements PrimitiveSer
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead)]),
-          ) as BuiltList<EnterpriseJsonldEnterpriseSearchEnterpriseRead>;
+            specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldEnterpriseSearch)]),
+          ) as BuiltList<EnterpriseJsonldEnterpriseSearch>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':

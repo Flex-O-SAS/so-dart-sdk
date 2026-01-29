@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/model/individual_enterprise_search_enterprise_read.dart';
+import 'package:so_dart_sdk/backend/model/center_enterprise_search_enterprise_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,8 +20,12 @@ part 'enterprise_enterprise_search_enterprise_read.g.dart';
 /// * [individuals] 
 /// * [email] 
 /// * [phone] 
+/// * [center] 
+/// * [status] 
+/// * [city] 
 /// * [reference] 
 /// * [id] 
+/// * [createdAt] 
 @BuiltValue()
 abstract class EnterpriseEnterpriseSearchEnterpriseRead implements Built<EnterpriseEnterpriseSearchEnterpriseRead, EnterpriseEnterpriseSearchEnterpriseReadBuilder> {
   @BuiltValueField(wireName: r'name')
@@ -41,11 +46,23 @@ abstract class EnterpriseEnterpriseSearchEnterpriseRead implements Built<Enterpr
   @BuiltValueField(wireName: r'phone')
   String? get phone;
 
+  @BuiltValueField(wireName: r'center')
+  CenterEnterpriseSearchEnterpriseRead? get center;
+
+  @BuiltValueField(wireName: r'status')
+  int? get status;
+
+  @BuiltValueField(wireName: r'city')
+  String? get city;
+
   @BuiltValueField(wireName: r'reference')
   String? get reference;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
 
   EnterpriseEnterpriseSearchEnterpriseRead._();
 
@@ -112,6 +129,27 @@ class _$EnterpriseEnterpriseSearchEnterpriseReadSerializer implements PrimitiveS
         specifiedType: const FullType(String),
       );
     }
+    if (object.center != null) {
+      yield r'center';
+      yield serializers.serialize(
+        object.center,
+        specifiedType: const FullType.nullable(CenterEnterpriseSearchEnterpriseRead),
+      );
+    }
+    if (object.status != null) {
+      yield r'status';
+      yield serializers.serialize(
+        object.status,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.city != null) {
+      yield r'city';
+      yield serializers.serialize(
+        object.city,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.reference != null) {
       yield r'reference';
       yield serializers.serialize(
@@ -124,6 +162,13 @@ class _$EnterpriseEnterpriseSearchEnterpriseReadSerializer implements PrimitiveS
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.createdAt != null) {
+      yield r'createdAt';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -191,6 +236,28 @@ class _$EnterpriseEnterpriseSearchEnterpriseReadSerializer implements PrimitiveS
           ) as String;
           result.phone = valueDes;
           break;
+        case r'center':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(CenterEnterpriseSearchEnterpriseRead),
+          ) as CenterEnterpriseSearchEnterpriseRead?;
+          if (valueDes == null) continue;
+          result.center.replace(valueDes);
+          break;
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.status = valueDes;
+          break;
+        case r'city':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.city = valueDes;
+          break;
         case r'reference':
           final valueDes = serializers.deserialize(
             value,
@@ -204,6 +271,13 @@ class _$EnterpriseEnterpriseSearchEnterpriseReadSerializer implements PrimitiveS
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
+          break;
+        case r'createdAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
           break;
         default:
           unhandled.add(key);

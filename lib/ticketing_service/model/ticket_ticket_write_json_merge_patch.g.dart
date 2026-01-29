@@ -91,8 +91,6 @@ class _$TicketTicketWriteJsonMergePatch
   @override
   final DateTime? startDate;
   @override
-  final DateTime? endDate;
-  @override
   final String? description;
   @override
   final String? author;
@@ -120,7 +118,6 @@ class _$TicketTicketWriteJsonMergePatch
   _$TicketTicketWriteJsonMergePatch._(
       {this.title,
       this.startDate,
-      this.endDate,
       this.description,
       this.author,
       this.assignee,
@@ -148,7 +145,6 @@ class _$TicketTicketWriteJsonMergePatch
     return other is TicketTicketWriteJsonMergePatch &&
         title == other.title &&
         startDate == other.startDate &&
-        endDate == other.endDate &&
         description == other.description &&
         author == other.author &&
         assignee == other.assignee &&
@@ -166,7 +162,6 @@ class _$TicketTicketWriteJsonMergePatch
     var _$hash = 0;
     _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jc(_$hash, startDate.hashCode);
-    _$hash = $jc(_$hash, endDate.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, author.hashCode);
     _$hash = $jc(_$hash, assignee.hashCode);
@@ -186,7 +181,6 @@ class _$TicketTicketWriteJsonMergePatch
     return (newBuiltValueToStringHelper(r'TicketTicketWriteJsonMergePatch')
           ..add('title', title)
           ..add('startDate', startDate)
-          ..add('endDate', endDate)
           ..add('description', description)
           ..add('author', author)
           ..add('assignee', assignee)
@@ -214,10 +208,6 @@ class TicketTicketWriteJsonMergePatchBuilder
   DateTime? _startDate;
   DateTime? get startDate => _$this._startDate;
   set startDate(DateTime? startDate) => _$this._startDate = startDate;
-
-  DateTime? _endDate;
-  DateTime? get endDate => _$this._endDate;
-  set endDate(DateTime? endDate) => _$this._endDate = endDate;
 
   String? _description;
   String? get description => _$this._description;
@@ -273,7 +263,6 @@ class TicketTicketWriteJsonMergePatchBuilder
     if ($v != null) {
       _title = $v.title;
       _startDate = $v.startDate;
-      _endDate = $v.endDate;
       _description = $v.description;
       _author = $v.author;
       _assignee = $v.assignee;
@@ -310,7 +299,6 @@ class TicketTicketWriteJsonMergePatchBuilder
           new _$TicketTicketWriteJsonMergePatch._(
             title: title,
             startDate: startDate,
-            endDate: endDate,
             description: description,
             author: author,
             assignee: assignee,

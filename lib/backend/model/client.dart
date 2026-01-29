@@ -29,7 +29,7 @@ part 'client.g.dart';
 /// * [mobile] 
 /// * [externalUserID] 
 /// * [fax] 
-/// * [mainCenter] 
+/// * [center] 
 /// * [language] 
 /// * [accounts] 
 /// * [contracts] 
@@ -74,8 +74,8 @@ abstract class Client implements Built<Client, ClientBuilder> {
   @BuiltValueField(wireName: r'fax')
   String? get fax;
 
-  @BuiltValueField(wireName: r'mainCenter')
-  String? get mainCenter;
+  @BuiltValueField(wireName: r'center')
+  String? get center;
 
   @BuiltValueField(wireName: r'language')
   String? get language;
@@ -217,10 +217,10 @@ class _$ClientSerializer implements PrimitiveSerializer<Client> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.mainCenter != null) {
-      yield r'mainCenter';
+    if (object.center != null) {
+      yield r'center';
       yield serializers.serialize(
-        object.mainCenter,
+        object.center,
         specifiedType: const FullType(String),
       );
     }
@@ -471,12 +471,12 @@ class _$ClientSerializer implements PrimitiveSerializer<Client> {
           ) as String;
           result.fax = valueDes;
           break;
-        case r'mainCenter':
+        case r'center':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.mainCenter = valueDes;
+          result.center = valueDes;
           break;
         case r'language':
           final valueDes = serializers.deserialize(

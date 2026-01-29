@@ -63,13 +63,18 @@ import 'package:so_dart_sdk/backend/model/center_discount.dart';
 import 'package:so_dart_sdk/backend/model/center_discount_grid.dart';
 import 'package:so_dart_sdk/backend/model/center_discount_grid_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/center_discount_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/center_enterprise_search.dart';
+import 'package:so_dart_sdk/backend/model/center_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/center_fidensio.dart';
 import 'package:so_dart_sdk/backend/model/center_happening_read.dart';
 import 'package:so_dart_sdk/backend/model/center_ip.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_all_of_assets.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_center_search.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_enterprise_search.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_happening_read.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_create_lead.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_create_lead_all_of_assets.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_reservation_read.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_service_search.dart';
 import 'package:so_dart_sdk/backend/model/center_network.dart';
@@ -131,6 +136,7 @@ import 'package:so_dart_sdk/backend/model/contract_service_user_contract_service
 import 'package:so_dart_sdk/backend/model/contract_service_user_draft.dart';
 import 'package:so_dart_sdk/backend/model/contract_service_user_draft_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/contract_service_user_jsonld_contract_service_user_read.dart';
+import 'package:so_dart_sdk/backend/model/contract_verify_contract_dto_json_merge_patch.dart';
 import 'package:so_dart_sdk/backend/model/credit.dart';
 import 'package:so_dart_sdk/backend/model/credit_credit_search.dart';
 import 'package:so_dart_sdk/backend/model/credit_jsonld.dart';
@@ -165,10 +171,12 @@ import 'package:so_dart_sdk/backend/model/email_template_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/endorsement_link.dart';
 import 'package:so_dart_sdk/backend/model/endorsement_link_draft.dart';
 import 'package:so_dart_sdk/backend/model/endorsement_link_draft_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/enterprise_enterprise_search.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_enterprise_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_opportunity_create_lead.dart';
@@ -208,12 +216,14 @@ import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context_one_of.
 import 'package:so_dart_sdk/backend/model/indexation_type.dart';
 import 'package:so_dart_sdk/backend/model/individual_contract_service_user_read.dart';
 import 'package:so_dart_sdk/backend/model/individual_contract_service_user_write_json_merge_patch.dart';
+import 'package:so_dart_sdk/backend/model/individual_enterprise_search.dart';
 import 'package:so_dart_sdk/backend/model/individual_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/individual_individual_check_email.dart';
 import 'package:so_dart_sdk/backend/model/individual_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/individual_individual_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_contract_service_user_read.dart';
+import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_check_email.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
@@ -418,13 +428,18 @@ part 'serializers.g.dart';
   CenterDiscountGrid,
   CenterDiscountGridJsonld,
   CenterDiscountJsonld,
+  CenterEnterpriseSearch,
+  CenterEnterpriseSearchEnterpriseRead,
   CenterFidensio,
   CenterHappeningRead,
   CenterIp,
+  CenterJsonld,
+  CenterJsonldAllOfAssets,
   CenterJsonldCenterSearch,
+  CenterJsonldEnterpriseSearch,
+  CenterJsonldEnterpriseSearchEnterpriseRead,
   CenterJsonldHappeningRead,
   CenterJsonldPublicCenterReadOpportunityCreateLead,
-  CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets,
   CenterJsonldReservationRead,
   CenterJsonldServiceSearch,
   CenterNetwork,
@@ -486,6 +501,7 @@ part 'serializers.g.dart';
   ContractServiceUserDraft,
   ContractServiceUserDraftJsonld,
   ContractServiceUserJsonldContractServiceUserRead,
+  ContractVerifyContractDtoJsonMergePatch,
   Credit,
   CreditCreditSearch,
   CreditJsonld,
@@ -520,10 +536,12 @@ part 'serializers.g.dart';
   EndorsementLink,
   EndorsementLinkDraft,
   EndorsementLinkDraftJsonld,
+  EnterpriseEnterpriseSearch,
   EnterpriseEnterpriseSearchEnterpriseRead,
   EnterpriseEnterpriseWriteJsonMergePatch,
   EnterpriseIndividualSearch,
   EnterpriseJsonld,
+  EnterpriseJsonldEnterpriseSearch,
   EnterpriseJsonldEnterpriseSearchEnterpriseRead,
   EnterpriseJsonldIndividualSearch,
   EnterpriseJsonldOpportunityCreateLead,
@@ -563,12 +581,14 @@ part 'serializers.g.dart';
   IndexationType,
   IndividualContractServiceUserRead,
   IndividualContractServiceUserWriteJsonMergePatch,
+  IndividualEnterpriseSearch,
   IndividualEnterpriseSearchEnterpriseRead,
   IndividualIndividualCheckEmail,
   IndividualIndividualSearch,
   IndividualIndividualWriteJsonMergePatch,
   IndividualJsonld,
   IndividualJsonldContractServiceUserRead,
+  IndividualJsonldEnterpriseSearch,
   IndividualJsonldEnterpriseSearchEnterpriseRead,
   IndividualJsonldIndividualCheckEmail,
   IndividualJsonldIndividualSearch,

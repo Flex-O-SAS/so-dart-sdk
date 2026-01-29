@@ -59,14 +59,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CenterDiscountGrid.serializer)
       ..add(CenterDiscountGridJsonld.serializer)
       ..add(CenterDiscountJsonld.serializer)
+      ..add(CenterEnterpriseSearch.serializer)
+      ..add(CenterEnterpriseSearchEnterpriseRead.serializer)
       ..add(CenterFidensio.serializer)
       ..add(CenterHappeningRead.serializer)
       ..add(CenterIp.serializer)
+      ..add(CenterJsonld.serializer)
+      ..add(CenterJsonldAllOfAssets.serializer)
       ..add(CenterJsonldCenterSearch.serializer)
+      ..add(CenterJsonldEnterpriseSearch.serializer)
+      ..add(CenterJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(CenterJsonldHappeningRead.serializer)
       ..add(CenterJsonldPublicCenterReadOpportunityCreateLead.serializer)
-      ..add(CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets
-          .serializer)
       ..add(CenterJsonldReservationRead.serializer)
       ..add(CenterJsonldServiceSearch.serializer)
       ..add(CenterNetwork.serializer)
@@ -130,6 +134,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ContractServiceUserDraft.serializer)
       ..add(ContractServiceUserDraftJsonld.serializer)
       ..add(ContractServiceUserJsonldContractServiceUserRead.serializer)
+      ..add(ContractVerifyContractDtoJsonMergePatch.serializer)
       ..add(Credit.serializer)
       ..add(CreditCreditSearch.serializer)
       ..add(CreditJsonld.serializer)
@@ -167,10 +172,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(EndorsementLink.serializer)
       ..add(EndorsementLinkDraft.serializer)
       ..add(EndorsementLinkDraftJsonld.serializer)
+      ..add(EnterpriseEnterpriseSearch.serializer)
       ..add(EnterpriseEnterpriseSearchEnterpriseRead.serializer)
       ..add(EnterpriseEnterpriseWriteJsonMergePatch.serializer)
       ..add(EnterpriseIndividualSearch.serializer)
       ..add(EnterpriseJsonld.serializer)
+      ..add(EnterpriseJsonldEnterpriseSearch.serializer)
       ..add(EnterpriseJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(EnterpriseJsonldIndividualSearch.serializer)
       ..add(EnterpriseJsonldOpportunityCreateLead.serializer)
@@ -223,12 +230,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(IndexationType.serializer)
       ..add(IndividualContractServiceUserRead.serializer)
       ..add(IndividualContractServiceUserWriteJsonMergePatch.serializer)
+      ..add(IndividualEnterpriseSearch.serializer)
       ..add(IndividualEnterpriseSearchEnterpriseRead.serializer)
       ..add(IndividualIndividualCheckEmail.serializer)
       ..add(IndividualIndividualSearch.serializer)
       ..add(IndividualIndividualWriteJsonMergePatch.serializer)
       ..add(IndividualJsonld.serializer)
       ..add(IndividualJsonldContractServiceUserRead.serializer)
+      ..add(IndividualJsonldEnterpriseSearch.serializer)
       ..add(IndividualJsonldEnterpriseSearchEnterpriseRead.serializer)
       ..add(IndividualJsonldIndividualCheckEmail.serializer)
       ..add(IndividualJsonldIndividualSearch.serializer)
@@ -569,6 +578,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<CenterConveniencesJsonld>())
       ..addBuilderFactory(
           const FullType(
+              BuiltList, const [const FullType(CenterJsonldAllOfAssets)]),
+          () => new ListBuilder<CenterJsonldAllOfAssets>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(CenterJsonldAllOfAssets)]),
+          () => new ListBuilder<CenterJsonldAllOfAssets>())
+      ..addBuilderFactory(
+          const FullType(
               BuiltList, const [const FullType(CenterJsonldCenterSearch)]),
           () => new ListBuilder<CenterJsonldCenterSearch>())
       ..addBuilderFactory(
@@ -577,13 +594,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               CenterJsonldPublicCenterReadOpportunityCreateLead>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(
-                CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets)
-          ]),
-          () => new ListBuilder<
-              CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(CenterPlugin)]),
           () => new ListBuilder<CenterPlugin>())
@@ -812,11 +822,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(EnterpriseJsonld)]),
           () => new ListBuilder<EnterpriseJsonld>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead)
-          ]),
-          () =>
-              new ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>())
+          const FullType(BuiltList,
+              const [const FullType(EnterpriseJsonldEnterpriseSearch)]),
+          () => new ListBuilder<EnterpriseJsonldEnterpriseSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(EnterpriseJsonldEnterpriseSearchEnterpriseRead)
@@ -872,6 +880,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(IndividualJsonld)]),
           () => new ListBuilder<IndividualJsonld>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(IndividualJsonldEnterpriseSearch)]),
+          () => new ListBuilder<IndividualJsonldEnterpriseSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
@@ -1513,6 +1528,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(ExpressionJsonldRuleRead)]),
           () => new ListBuilder<ExpressionJsonldRuleRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(IndividualEnterpriseSearch)]),
+          () => new ListBuilder<IndividualEnterpriseSearch>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

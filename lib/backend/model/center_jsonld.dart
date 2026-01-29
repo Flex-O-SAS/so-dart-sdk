@@ -4,49 +4,61 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_enterprise_search_enterprise_read.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_all_of_assets.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'enterprise_jsonld_enterprise_search_enterprise_read.g.dart';
+part 'center_jsonld.g.dart';
 
-/// EnterpriseJsonldEnterpriseSearchEnterpriseRead
+/// CenterJsonld
 ///
 /// Properties:
 /// * [atContext] 
 /// * [atId] 
 /// * [atType] 
+/// * [reference] 
 /// * [name] 
-/// * [type] 
-/// * [tags] 
-/// * [individuals] 
 /// * [email] 
 /// * [phone] 
-/// * [center] 
-/// * [status] 
+/// * [openingHour] 
+/// * [closureHour] 
+/// * [openingDate] 
+/// * [assets] 
+/// * [address] 
+/// * [zipcode] 
 /// * [city] 
-/// * [reference] 
+/// * [country] 
 /// * [id] 
-/// * [createdAt] 
 @BuiltValue()
-abstract class EnterpriseJsonldEnterpriseSearchEnterpriseRead implements HydraItemBaseSchema, Built<EnterpriseJsonldEnterpriseSearchEnterpriseRead, EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder> {
-  @BuiltValueField(wireName: r'reference')
-  String? get reference;
+abstract class CenterJsonld implements HydraItemBaseSchema, Built<CenterJsonld, CenterJsonldBuilder> {
+  @BuiltValueField(wireName: r'openingHour')
+  DateTime? get openingHour;
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+  @BuiltValueField(wireName: r'country')
+  String? get country;
 
-  @BuiltValueField(wireName: r'phone')
-  String? get phone;
+  @BuiltValueField(wireName: r'address')
+  String? get address;
 
   @BuiltValueField(wireName: r'city')
   String? get city;
 
-  @BuiltValueField(wireName: r'center')
-  CenterJsonldEnterpriseSearchEnterpriseRead? get center;
+  @BuiltValueField(wireName: r'closureHour')
+  DateTime? get closureHour;
+
+  @BuiltValueField(wireName: r'reference')
+  String? get reference;
+
+  @BuiltValueField(wireName: r'zipcode')
+  String? get zipcode;
+
+  @BuiltValueField(wireName: r'assets')
+  BuiltList<CenterJsonldAllOfAssets>? get assets;
+
+  @BuiltValueField(wireName: r'phone')
+  String? get phone;
 
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -54,44 +66,56 @@ abstract class EnterpriseJsonldEnterpriseSearchEnterpriseRead implements HydraIt
   @BuiltValueField(wireName: r'id')
   int? get id;
 
-  @BuiltValueField(wireName: r'type')
-  String? get type;
-
-  @BuiltValueField(wireName: r'individuals')
-  BuiltList<IndividualJsonldEnterpriseSearchEnterpriseRead>? get individuals;
+  @BuiltValueField(wireName: r'openingDate')
+  DateTime? get openingDate;
 
   @BuiltValueField(wireName: r'email')
   String? get email;
 
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<String>? get tags;
+  CenterJsonld._();
 
-  @BuiltValueField(wireName: r'status')
-  int? get status;
-
-  EnterpriseJsonldEnterpriseSearchEnterpriseRead._();
-
-  factory EnterpriseJsonldEnterpriseSearchEnterpriseRead([void updates(EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder b)]) = _$EnterpriseJsonldEnterpriseSearchEnterpriseRead;
+  factory CenterJsonld([void updates(CenterJsonldBuilder b)]) = _$CenterJsonld;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder b) => b;
+  static void _defaults(CenterJsonldBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<EnterpriseJsonldEnterpriseSearchEnterpriseRead> get serializer => _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer();
+  static Serializer<CenterJsonld> get serializer => _$CenterJsonldSerializer();
 }
 
-class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements PrimitiveSerializer<EnterpriseJsonldEnterpriseSearchEnterpriseRead> {
+class _$CenterJsonldSerializer implements PrimitiveSerializer<CenterJsonld> {
   @override
-  final Iterable<Type> types = const [EnterpriseJsonldEnterpriseSearchEnterpriseRead, _$EnterpriseJsonldEnterpriseSearchEnterpriseRead];
+  final Iterable<Type> types = const [CenterJsonld, _$CenterJsonld];
 
   @override
-  final String wireName = r'EnterpriseJsonldEnterpriseSearchEnterpriseRead';
+  final String wireName = r'CenterJsonld';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    EnterpriseJsonldEnterpriseSearchEnterpriseRead object, {
+    CenterJsonld object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.openingHour != null) {
+      yield r'openingHour';
+      yield serializers.serialize(
+        object.openingHour,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.country != null) {
+      yield r'country';
+      yield serializers.serialize(
+        object.country,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.address != null) {
+      yield r'address';
+      yield serializers.serialize(
+        object.address,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'@id';
     yield serializers.serialize(
       object.atId,
@@ -104,32 +128,11 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
         specifiedType: const FullType(String),
       );
     }
-    if (object.center != null) {
-      yield r'center';
+    if (object.closureHour != null) {
+      yield r'closureHour';
       yield serializers.serialize(
-        object.center,
-        specifiedType: const FullType.nullable(CenterJsonldEnterpriseSearchEnterpriseRead),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.individuals != null) {
-      yield r'individuals';
-      yield serializers.serialize(
-        object.individuals,
-        specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldEnterpriseSearchEnterpriseRead)]),
-      );
-    }
-    if (object.tags != null) {
-      yield r'tags';
-      yield serializers.serialize(
-        object.tags,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
+        object.closureHour,
+        specifiedType: const FullType(DateTime),
       );
     }
     if (object.reference != null) {
@@ -139,11 +142,18 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
         specifiedType: const FullType(String),
       );
     }
-    if (object.createdAt != null) {
-      yield r'createdAt';
+    if (object.zipcode != null) {
+      yield r'zipcode';
       yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
+        object.zipcode,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.assets != null) {
+      yield r'assets';
+      yield serializers.serialize(
+        object.assets,
+        specifiedType: const FullType(BuiltList, [FullType(CenterJsonldAllOfAssets)]),
       );
     }
     if (object.phone != null) {
@@ -174,6 +184,13 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
         specifiedType: const FullType(int),
       );
     }
+    if (object.openingDate != null) {
+      yield r'openingDate';
+      yield serializers.serialize(
+        object.openingDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     yield r'@type';
     yield serializers.serialize(
       object.atType,
@@ -186,19 +203,12 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
         specifiedType: const FullType(String),
       );
     }
-    if (object.status != null) {
-      yield r'status';
-      yield serializers.serialize(
-        object.status,
-        specifiedType: const FullType(int),
-      );
-    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    EnterpriseJsonldEnterpriseSearchEnterpriseRead object, {
+    CenterJsonld object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -209,13 +219,34 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder result,
+    required CenterJsonldBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'openingHour':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.openingHour = valueDes;
+          break;
+        case r'country':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.country = valueDes;
+          break;
+        case r'address':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.address = valueDes;
+          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
@@ -230,34 +261,12 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
           ) as String;
           result.city = valueDes;
           break;
-        case r'center':
+        case r'closureHour':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(CenterJsonldEnterpriseSearchEnterpriseRead),
-          ) as CenterJsonldEnterpriseSearchEnterpriseRead?;
-          if (valueDes == null) continue;
-          result.center.replace(valueDes);
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
-          break;
-        case r'individuals':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldEnterpriseSearchEnterpriseRead)]),
-          ) as BuiltList<IndividualJsonldEnterpriseSearchEnterpriseRead>;
-          result.individuals.replace(valueDes);
-          break;
-        case r'tags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.tags.replace(valueDes);
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.closureHour = valueDes;
           break;
         case r'reference':
           final valueDes = serializers.deserialize(
@@ -266,12 +275,19 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
           ) as String;
           result.reference = valueDes;
           break;
-        case r'createdAt':
+        case r'zipcode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.zipcode = valueDes;
+          break;
+        case r'assets':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CenterJsonldAllOfAssets)]),
+          ) as BuiltList<CenterJsonldAllOfAssets>;
+          result.assets.replace(valueDes);
           break;
         case r'phone':
           final valueDes = serializers.deserialize(
@@ -301,6 +317,13 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
           ) as int;
           result.id = valueDes;
           break;
+        case r'openingDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.openingDate = valueDes;
+          break;
         case r'@type':
           final valueDes = serializers.deserialize(
             value,
@@ -315,13 +338,6 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
           ) as String;
           result.email = valueDes;
           break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.status = valueDes;
-          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -331,12 +347,12 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
   }
 
   @override
-  EnterpriseJsonldEnterpriseSearchEnterpriseRead deserialize(
+  CenterJsonld deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder();
+    final result = CenterJsonldBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

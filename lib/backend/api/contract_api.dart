@@ -16,6 +16,7 @@ import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/contract_contract_dto_jsonld_contract_public_read.dart';
 import 'package:so_dart_sdk/backend/model/contract_contract_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/backend/model/contract_jsonld_contract_search.dart';
+import 'package:so_dart_sdk/backend/model/contract_verify_contract_dto_json_merge_patch.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
 
@@ -227,6 +228,7 @@ class ContractApi {
   ///
   /// Parameters:
   /// * [id] - Contract identifier
+  /// * [token] - Contract token
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -238,6 +240,7 @@ class ContractApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ContractContractDtoJsonldContractPublicRead>> apiContractsPublicGetItem({ 
     required String id,
+    required String token,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -258,9 +261,14 @@ class ContractApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'token': encodeQueryParameter(_serializers, token, const FullType(String)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -302,6 +310,7 @@ class ContractApi {
   ///
   /// Parameters:
   /// * [id] - Contract identifier
+  /// * [token] - Contract token
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -313,6 +322,7 @@ class ContractApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ContractContractDtoJsonldContractPublicRead>> apiContractsSmsPublicPostItem({ 
     required String id,
+    required String token,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -333,9 +343,14 @@ class ContractApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'token': encodeQueryParameter(_serializers, token, const FullType(String)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -377,6 +392,8 @@ class ContractApi {
   ///
   /// Parameters:
   /// * [id] - Contract identifier
+  /// * [token] - Contract token
+  /// * [contractVerifyContractDtoJsonMergePatch] - The updated Contract resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -388,6 +405,8 @@ class ContractApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ContractContractDtoJsonldContractPublicRead>> apiContractsVerifyPublicPatchItem({ 
     required String id,
+    required String token,
+    required ContractVerifyContractDtoJsonMergePatch contractVerifyContractDtoJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -405,12 +424,38 @@ class ContractApi {
         'secure': <Map<String, String>>[],
         ...?extra,
       },
+      contentType: 'application/merge-patch+json',
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'token': encodeQueryParameter(_serializers, token, const FullType(String)),
+    };
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(ContractVerifyContractDtoJsonMergePatch);
+      _bodyData = _serializers.serialize(contractVerifyContractDtoJsonMergePatch, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+          queryParameters: _queryParameters,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

@@ -1,13 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'center_jsonld_public_center_read_opportunity_create_lead.dart';
+part of 'center_jsonld.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$CenterJsonldPublicCenterReadOpportunityCreateLead
-    extends CenterJsonldPublicCenterReadOpportunityCreateLead {
+class _$CenterJsonld extends CenterJsonld {
   @override
   final DateTime? openingHour;
   @override
@@ -41,15 +40,10 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
   @override
   final String atType;
 
-  factory _$CenterJsonldPublicCenterReadOpportunityCreateLead(
-          [void Function(
-                  CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder)?
-              updates]) =>
-      (new CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder()
-            ..update(updates))
-          ._build();
+  factory _$CenterJsonld([void Function(CenterJsonldBuilder)? updates]) =>
+      (new CenterJsonldBuilder()..update(updates))._build();
 
-  _$CenterJsonldPublicCenterReadOpportunityCreateLead._(
+  _$CenterJsonld._(
       {this.openingHour,
       this.country,
       this.address,
@@ -67,28 +61,21 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
       required this.atId,
       required this.atType})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        atId, r'CenterJsonldPublicCenterReadOpportunityCreateLead', 'atId');
-    BuiltValueNullFieldError.checkNotNull(
-        atType, r'CenterJsonldPublicCenterReadOpportunityCreateLead', 'atType');
+    BuiltValueNullFieldError.checkNotNull(atId, r'CenterJsonld', 'atId');
+    BuiltValueNullFieldError.checkNotNull(atType, r'CenterJsonld', 'atType');
   }
 
   @override
-  CenterJsonldPublicCenterReadOpportunityCreateLead rebuild(
-          void Function(
-                  CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder)
-              updates) =>
+  CenterJsonld rebuild(void Function(CenterJsonldBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder toBuilder() =>
-      new CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder()
-        ..replace(this);
+  CenterJsonldBuilder toBuilder() => new CenterJsonldBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CenterJsonldPublicCenterReadOpportunityCreateLead &&
+    return other is CenterJsonld &&
         openingHour == other.openingHour &&
         country == other.country &&
         address == other.address &&
@@ -132,8 +119,7 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(
-            r'CenterJsonldPublicCenterReadOpportunityCreateLead')
+    return (newBuiltValueToStringHelper(r'CenterJsonld')
           ..add('openingHour', openingHour)
           ..add('country', country)
           ..add('address', address)
@@ -154,12 +140,11 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
   }
 }
 
-class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
+class CenterJsonldBuilder
     implements
-        Builder<CenterJsonldPublicCenterReadOpportunityCreateLead,
-            CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder>,
+        Builder<CenterJsonld, CenterJsonldBuilder>,
         HydraItemBaseSchemaBuilder {
-  _$CenterJsonldPublicCenterReadOpportunityCreateLead? _$v;
+  _$CenterJsonld? _$v;
 
   DateTime? _openingHour;
   DateTime? get openingHour => _$this._openingHour;
@@ -232,11 +217,11 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
   String? get atType => _$this._atType;
   set atType(covariant String? atType) => _$this._atType = atType;
 
-  CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder() {
-    CenterJsonldPublicCenterReadOpportunityCreateLead._defaults(this);
+  CenterJsonldBuilder() {
+    CenterJsonld._defaults(this);
   }
 
-  CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder get _$this {
+  CenterJsonldBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _openingHour = $v.openingHour;
@@ -261,27 +246,24 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
   }
 
   @override
-  void replace(
-      covariant CenterJsonldPublicCenterReadOpportunityCreateLead other) {
+  void replace(covariant CenterJsonld other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CenterJsonldPublicCenterReadOpportunityCreateLead;
+    _$v = other as _$CenterJsonld;
   }
 
   @override
-  void update(
-      void Function(CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder)?
-          updates) {
+  void update(void Function(CenterJsonldBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  CenterJsonldPublicCenterReadOpportunityCreateLead build() => _build();
+  CenterJsonld build() => _build();
 
-  _$CenterJsonldPublicCenterReadOpportunityCreateLead _build() {
-    _$CenterJsonldPublicCenterReadOpportunityCreateLead _$result;
+  _$CenterJsonld _build() {
+    _$CenterJsonld _$result;
     try {
       _$result = _$v ??
-          new _$CenterJsonldPublicCenterReadOpportunityCreateLead._(
+          new _$CenterJsonld._(
             openingHour: openingHour,
             country: country,
             address: address,
@@ -296,10 +278,10 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
             openingDate: openingDate,
             email: email,
             atContext: _atContext?.build(),
-            atId: BuiltValueNullFieldError.checkNotNull(atId,
-                r'CenterJsonldPublicCenterReadOpportunityCreateLead', 'atId'),
-            atType: BuiltValueNullFieldError.checkNotNull(atType,
-                r'CenterJsonldPublicCenterReadOpportunityCreateLead', 'atType'),
+            atId: BuiltValueNullFieldError.checkNotNull(
+                atId, r'CenterJsonld', 'atId'),
+            atType: BuiltValueNullFieldError.checkNotNull(
+                atType, r'CenterJsonld', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
@@ -311,9 +293,7 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
         _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'CenterJsonldPublicCenterReadOpportunityCreateLead',
-            _$failedField,
-            e.toString());
+            r'CenterJsonld', _$failedField, e.toString());
       }
       rethrow;
     }

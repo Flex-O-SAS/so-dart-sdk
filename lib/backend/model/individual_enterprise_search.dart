@@ -3,20 +3,17 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/enterprise_enterprise_search_enterprise_read.dart';
-import 'package:so_dart_sdk/backend/model/center_enterprise_search_enterprise_read.dart';
+import 'package:so_dart_sdk/backend/model/center_enterprise_search.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'individual_enterprise_search_enterprise_read.g.dart';
+part 'individual_enterprise_search.g.dart';
 
-/// IndividualEnterpriseSearchEnterpriseRead
+/// IndividualEnterpriseSearch
 ///
 /// Properties:
 /// * [firstname] 
 /// * [lastname] 
-/// * [enterprises] 
 /// * [email] 
 /// * [phone] 
 /// * [center] 
@@ -26,15 +23,12 @@ part 'individual_enterprise_search_enterprise_read.g.dart';
 /// * [id] 
 /// * [createdAt] 
 @BuiltValue()
-abstract class IndividualEnterpriseSearchEnterpriseRead implements Built<IndividualEnterpriseSearchEnterpriseRead, IndividualEnterpriseSearchEnterpriseReadBuilder> {
+abstract class IndividualEnterpriseSearch implements Built<IndividualEnterpriseSearch, IndividualEnterpriseSearchBuilder> {
   @BuiltValueField(wireName: r'firstname')
   String? get firstname;
 
   @BuiltValueField(wireName: r'lastname')
   String? get lastname;
-
-  @BuiltValueField(wireName: r'enterprises')
-  BuiltList<EnterpriseEnterpriseSearchEnterpriseRead>? get enterprises;
 
   @BuiltValueField(wireName: r'email')
   String? get email;
@@ -43,7 +37,7 @@ abstract class IndividualEnterpriseSearchEnterpriseRead implements Built<Individ
   String? get phone;
 
   @BuiltValueField(wireName: r'center')
-  CenterEnterpriseSearchEnterpriseRead? get center;
+  CenterEnterpriseSearch? get center;
 
   @BuiltValueField(wireName: r'status')
   int? get status;
@@ -60,27 +54,27 @@ abstract class IndividualEnterpriseSearchEnterpriseRead implements Built<Individ
   @BuiltValueField(wireName: r'createdAt')
   DateTime? get createdAt;
 
-  IndividualEnterpriseSearchEnterpriseRead._();
+  IndividualEnterpriseSearch._();
 
-  factory IndividualEnterpriseSearchEnterpriseRead([void updates(IndividualEnterpriseSearchEnterpriseReadBuilder b)]) = _$IndividualEnterpriseSearchEnterpriseRead;
+  factory IndividualEnterpriseSearch([void updates(IndividualEnterpriseSearchBuilder b)]) = _$IndividualEnterpriseSearch;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(IndividualEnterpriseSearchEnterpriseReadBuilder b) => b;
+  static void _defaults(IndividualEnterpriseSearchBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<IndividualEnterpriseSearchEnterpriseRead> get serializer => _$IndividualEnterpriseSearchEnterpriseReadSerializer();
+  static Serializer<IndividualEnterpriseSearch> get serializer => _$IndividualEnterpriseSearchSerializer();
 }
 
-class _$IndividualEnterpriseSearchEnterpriseReadSerializer implements PrimitiveSerializer<IndividualEnterpriseSearchEnterpriseRead> {
+class _$IndividualEnterpriseSearchSerializer implements PrimitiveSerializer<IndividualEnterpriseSearch> {
   @override
-  final Iterable<Type> types = const [IndividualEnterpriseSearchEnterpriseRead, _$IndividualEnterpriseSearchEnterpriseRead];
+  final Iterable<Type> types = const [IndividualEnterpriseSearch, _$IndividualEnterpriseSearch];
 
   @override
-  final String wireName = r'IndividualEnterpriseSearchEnterpriseRead';
+  final String wireName = r'IndividualEnterpriseSearch';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    IndividualEnterpriseSearchEnterpriseRead object, {
+    IndividualEnterpriseSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.firstname != null) {
@@ -95,13 +89,6 @@ class _$IndividualEnterpriseSearchEnterpriseReadSerializer implements PrimitiveS
       yield serializers.serialize(
         object.lastname,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.enterprises != null) {
-      yield r'enterprises';
-      yield serializers.serialize(
-        object.enterprises,
-        specifiedType: const FullType(BuiltList, [FullType(EnterpriseEnterpriseSearchEnterpriseRead)]),
       );
     }
     if (object.email != null) {
@@ -122,7 +109,7 @@ class _$IndividualEnterpriseSearchEnterpriseReadSerializer implements PrimitiveS
       yield r'center';
       yield serializers.serialize(
         object.center,
-        specifiedType: const FullType.nullable(CenterEnterpriseSearchEnterpriseRead),
+        specifiedType: const FullType.nullable(CenterEnterpriseSearch),
       );
     }
     if (object.status != null) {
@@ -165,7 +152,7 @@ class _$IndividualEnterpriseSearchEnterpriseReadSerializer implements PrimitiveS
   @override
   Object serialize(
     Serializers serializers,
-    IndividualEnterpriseSearchEnterpriseRead object, {
+    IndividualEnterpriseSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -176,7 +163,7 @@ class _$IndividualEnterpriseSearchEnterpriseReadSerializer implements PrimitiveS
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required IndividualEnterpriseSearchEnterpriseReadBuilder result,
+    required IndividualEnterpriseSearchBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -197,13 +184,6 @@ class _$IndividualEnterpriseSearchEnterpriseReadSerializer implements PrimitiveS
           ) as String;
           result.lastname = valueDes;
           break;
-        case r'enterprises':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(EnterpriseEnterpriseSearchEnterpriseRead)]),
-          ) as BuiltList<EnterpriseEnterpriseSearchEnterpriseRead>;
-          result.enterprises.replace(valueDes);
-          break;
         case r'email':
           final valueDes = serializers.deserialize(
             value,
@@ -221,8 +201,8 @@ class _$IndividualEnterpriseSearchEnterpriseReadSerializer implements PrimitiveS
         case r'center':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(CenterEnterpriseSearchEnterpriseRead),
-          ) as CenterEnterpriseSearchEnterpriseRead?;
+            specifiedType: const FullType.nullable(CenterEnterpriseSearch),
+          ) as CenterEnterpriseSearch?;
           if (valueDes == null) continue;
           result.center.replace(valueDes);
           break;
@@ -270,12 +250,12 @@ class _$IndividualEnterpriseSearchEnterpriseReadSerializer implements PrimitiveS
   }
 
   @override
-  IndividualEnterpriseSearchEnterpriseRead deserialize(
+  IndividualEnterpriseSearch deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = IndividualEnterpriseSearchEnterpriseReadBuilder();
+    final result = IndividualEnterpriseSearchBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

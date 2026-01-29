@@ -3,17 +3,17 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/center_jsonld_enterprise_search.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_enterprise_read.dart';
+import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'enterprise_jsonld_enterprise_search_enterprise_read.g.dart';
+part 'enterprise_jsonld_enterprise_search.g.dart';
 
-/// EnterpriseJsonldEnterpriseSearchEnterpriseRead
+/// EnterpriseJsonldEnterpriseSearch
 ///
 /// Properties:
 /// * [atContext] 
@@ -32,7 +32,7 @@ part 'enterprise_jsonld_enterprise_search_enterprise_read.g.dart';
 /// * [id] 
 /// * [createdAt] 
 @BuiltValue()
-abstract class EnterpriseJsonldEnterpriseSearchEnterpriseRead implements HydraItemBaseSchema, Built<EnterpriseJsonldEnterpriseSearchEnterpriseRead, EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder> {
+abstract class EnterpriseJsonldEnterpriseSearch implements HydraItemBaseSchema, Built<EnterpriseJsonldEnterpriseSearch, EnterpriseJsonldEnterpriseSearchBuilder> {
   @BuiltValueField(wireName: r'reference')
   String? get reference;
 
@@ -46,7 +46,7 @@ abstract class EnterpriseJsonldEnterpriseSearchEnterpriseRead implements HydraIt
   String? get city;
 
   @BuiltValueField(wireName: r'center')
-  CenterJsonldEnterpriseSearchEnterpriseRead? get center;
+  CenterJsonldEnterpriseSearch? get center;
 
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -58,7 +58,7 @@ abstract class EnterpriseJsonldEnterpriseSearchEnterpriseRead implements HydraIt
   String? get type;
 
   @BuiltValueField(wireName: r'individuals')
-  BuiltList<IndividualJsonldEnterpriseSearchEnterpriseRead>? get individuals;
+  BuiltList<IndividualJsonldEnterpriseSearch>? get individuals;
 
   @BuiltValueField(wireName: r'email')
   String? get email;
@@ -69,27 +69,27 @@ abstract class EnterpriseJsonldEnterpriseSearchEnterpriseRead implements HydraIt
   @BuiltValueField(wireName: r'status')
   int? get status;
 
-  EnterpriseJsonldEnterpriseSearchEnterpriseRead._();
+  EnterpriseJsonldEnterpriseSearch._();
 
-  factory EnterpriseJsonldEnterpriseSearchEnterpriseRead([void updates(EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder b)]) = _$EnterpriseJsonldEnterpriseSearchEnterpriseRead;
+  factory EnterpriseJsonldEnterpriseSearch([void updates(EnterpriseJsonldEnterpriseSearchBuilder b)]) = _$EnterpriseJsonldEnterpriseSearch;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder b) => b;
+  static void _defaults(EnterpriseJsonldEnterpriseSearchBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<EnterpriseJsonldEnterpriseSearchEnterpriseRead> get serializer => _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer();
+  static Serializer<EnterpriseJsonldEnterpriseSearch> get serializer => _$EnterpriseJsonldEnterpriseSearchSerializer();
 }
 
-class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements PrimitiveSerializer<EnterpriseJsonldEnterpriseSearchEnterpriseRead> {
+class _$EnterpriseJsonldEnterpriseSearchSerializer implements PrimitiveSerializer<EnterpriseJsonldEnterpriseSearch> {
   @override
-  final Iterable<Type> types = const [EnterpriseJsonldEnterpriseSearchEnterpriseRead, _$EnterpriseJsonldEnterpriseSearchEnterpriseRead];
+  final Iterable<Type> types = const [EnterpriseJsonldEnterpriseSearch, _$EnterpriseJsonldEnterpriseSearch];
 
   @override
-  final String wireName = r'EnterpriseJsonldEnterpriseSearchEnterpriseRead';
+  final String wireName = r'EnterpriseJsonldEnterpriseSearch';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    EnterpriseJsonldEnterpriseSearchEnterpriseRead object, {
+    EnterpriseJsonldEnterpriseSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'@id';
@@ -108,7 +108,7 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
       yield r'center';
       yield serializers.serialize(
         object.center,
-        specifiedType: const FullType.nullable(CenterJsonldEnterpriseSearchEnterpriseRead),
+        specifiedType: const FullType.nullable(CenterJsonldEnterpriseSearch),
       );
     }
     if (object.type != null) {
@@ -122,7 +122,7 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
       yield r'individuals';
       yield serializers.serialize(
         object.individuals,
-        specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldEnterpriseSearchEnterpriseRead)]),
+        specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldEnterpriseSearch)]),
       );
     }
     if (object.tags != null) {
@@ -198,7 +198,7 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
   @override
   Object serialize(
     Serializers serializers,
-    EnterpriseJsonldEnterpriseSearchEnterpriseRead object, {
+    EnterpriseJsonldEnterpriseSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -209,7 +209,7 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder result,
+    required EnterpriseJsonldEnterpriseSearchBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -233,8 +233,8 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
         case r'center':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(CenterJsonldEnterpriseSearchEnterpriseRead),
-          ) as CenterJsonldEnterpriseSearchEnterpriseRead?;
+            specifiedType: const FullType.nullable(CenterJsonldEnterpriseSearch),
+          ) as CenterJsonldEnterpriseSearch?;
           if (valueDes == null) continue;
           result.center.replace(valueDes);
           break;
@@ -248,8 +248,8 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
         case r'individuals':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldEnterpriseSearchEnterpriseRead)]),
-          ) as BuiltList<IndividualJsonldEnterpriseSearchEnterpriseRead>;
+            specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldEnterpriseSearch)]),
+          ) as BuiltList<IndividualJsonldEnterpriseSearch>;
           result.individuals.replace(valueDes);
           break;
         case r'tags':
@@ -331,12 +331,12 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
   }
 
   @override
-  EnterpriseJsonldEnterpriseSearchEnterpriseRead deserialize(
+  EnterpriseJsonldEnterpriseSearch deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder();
+    final result = EnterpriseJsonldEnterpriseSearchBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

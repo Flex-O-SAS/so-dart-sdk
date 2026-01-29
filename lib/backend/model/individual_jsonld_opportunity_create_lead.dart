@@ -20,7 +20,7 @@ part 'individual_jsonld_opportunity_create_lead.g.dart';
 /// * [lastname] 
 /// * [email] 
 /// * [mobile] 
-/// * [mainCenter] 
+/// * [center] 
 /// * [language] 
 /// * [address] 
 /// * [zipcode] 
@@ -47,14 +47,14 @@ abstract class IndividualJsonldOpportunityCreateLead implements HydraItemBaseSch
   @BuiltValueField(wireName: r'timezone')
   String? get timezone;
 
+  @BuiltValueField(wireName: r'center')
+  String? get center;
+
   @BuiltValueField(wireName: r'mobile')
   String? get mobile;
 
   @BuiltValueField(wireName: r'language')
   String? get language;
-
-  @BuiltValueField(wireName: r'mainCenter')
-  String? get mainCenter;
 
   @BuiltValueField(wireName: r'email')
   String? get email;
@@ -125,6 +125,13 @@ class _$IndividualJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
         specifiedType: const FullType(String),
       );
     }
+    if (object.center != null) {
+      yield r'center';
+      yield serializers.serialize(
+        object.center,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.mobile != null) {
       yield r'mobile';
       yield serializers.serialize(
@@ -158,13 +165,6 @@ class _$IndividualJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
       yield serializers.serialize(
         object.atContext,
         specifiedType: const FullType(HydraItemBaseSchemaContext),
-      );
-    }
-    if (object.mainCenter != null) {
-      yield r'mainCenter';
-      yield serializers.serialize(
-        object.mainCenter,
-        specifiedType: const FullType(String),
       );
     }
     yield r'@type';
@@ -244,6 +244,13 @@ class _$IndividualJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
           ) as String;
           result.timezone = valueDes;
           break;
+        case r'center':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.center = valueDes;
+          break;
         case r'mobile':
           final valueDes = serializers.deserialize(
             value,
@@ -278,13 +285,6 @@ class _$IndividualJsonldOpportunityCreateLeadSerializer implements PrimitiveSeri
             specifiedType: const FullType(HydraItemBaseSchemaContext),
           ) as HydraItemBaseSchemaContext;
           result.atContext.replace(valueDes);
-          break;
-        case r'mainCenter':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.mainCenter = valueDes;
           break;
         case r'@type':
           final valueDes = serializers.deserialize(

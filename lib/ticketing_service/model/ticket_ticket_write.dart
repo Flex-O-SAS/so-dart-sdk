@@ -17,7 +17,6 @@ part 'ticket_ticket_write.g.dart';
 /// Properties:
 /// * [title] 
 /// * [startDate] 
-/// * [endDate] 
 /// * [description] 
 /// * [author] 
 /// * [assignee] 
@@ -35,9 +34,6 @@ abstract class TicketTicketWrite implements Built<TicketTicketWrite, TicketTicke
 
   @BuiltValueField(wireName: r'startDate')
   DateTime get startDate;
-
-  @BuiltValueField(wireName: r'endDate')
-  DateTime? get endDate;
 
   @BuiltValueField(wireName: r'description')
   String get description;
@@ -103,13 +99,6 @@ class _$TicketTicketWriteSerializer implements PrimitiveSerializer<TicketTicketW
       object.startDate,
       specifiedType: const FullType(DateTime),
     );
-    if (object.endDate != null) {
-      yield r'endDate';
-      yield serializers.serialize(
-        object.endDate,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'description';
     yield serializers.serialize(
       object.description,
@@ -208,13 +197,6 @@ class _$TicketTicketWriteSerializer implements PrimitiveSerializer<TicketTicketW
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.startDate = valueDes;
-          break;
-        case r'endDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.endDate = valueDes;
           break;
         case r'description':
           final valueDes = serializers.deserialize(

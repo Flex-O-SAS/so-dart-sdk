@@ -3,26 +3,22 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/center_jsonld_enterprise_search.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/individual_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'enterprise_jsonld_enterprise_search_enterprise_read.g.dart';
+part 'individual_jsonld_enterprise_search.g.dart';
 
-/// EnterpriseJsonldEnterpriseSearchEnterpriseRead
+/// IndividualJsonldEnterpriseSearch
 ///
 /// Properties:
 /// * [atContext] 
 /// * [atId] 
 /// * [atType] 
-/// * [name] 
-/// * [type] 
-/// * [tags] 
-/// * [individuals] 
+/// * [firstname] 
+/// * [lastname] 
 /// * [email] 
 /// * [phone] 
 /// * [center] 
@@ -32,12 +28,15 @@ part 'enterprise_jsonld_enterprise_search_enterprise_read.g.dart';
 /// * [id] 
 /// * [createdAt] 
 @BuiltValue()
-abstract class EnterpriseJsonldEnterpriseSearchEnterpriseRead implements HydraItemBaseSchema, Built<EnterpriseJsonldEnterpriseSearchEnterpriseRead, EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder> {
+abstract class IndividualJsonldEnterpriseSearch implements HydraItemBaseSchema, Built<IndividualJsonldEnterpriseSearch, IndividualJsonldEnterpriseSearchBuilder> {
   @BuiltValueField(wireName: r'reference')
   String? get reference;
 
   @BuiltValueField(wireName: r'createdAt')
   DateTime? get createdAt;
+
+  @BuiltValueField(wireName: r'firstname')
+  String? get firstname;
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
@@ -46,52 +45,50 @@ abstract class EnterpriseJsonldEnterpriseSearchEnterpriseRead implements HydraIt
   String? get city;
 
   @BuiltValueField(wireName: r'center')
-  CenterJsonldEnterpriseSearchEnterpriseRead? get center;
-
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+  CenterJsonldEnterpriseSearch? get center;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
 
-  @BuiltValueField(wireName: r'type')
-  String? get type;
-
-  @BuiltValueField(wireName: r'individuals')
-  BuiltList<IndividualJsonldEnterpriseSearchEnterpriseRead>? get individuals;
-
   @BuiltValueField(wireName: r'email')
   String? get email;
 
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<String>? get tags;
+  @BuiltValueField(wireName: r'lastname')
+  String? get lastname;
 
   @BuiltValueField(wireName: r'status')
   int? get status;
 
-  EnterpriseJsonldEnterpriseSearchEnterpriseRead._();
+  IndividualJsonldEnterpriseSearch._();
 
-  factory EnterpriseJsonldEnterpriseSearchEnterpriseRead([void updates(EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder b)]) = _$EnterpriseJsonldEnterpriseSearchEnterpriseRead;
+  factory IndividualJsonldEnterpriseSearch([void updates(IndividualJsonldEnterpriseSearchBuilder b)]) = _$IndividualJsonldEnterpriseSearch;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder b) => b;
+  static void _defaults(IndividualJsonldEnterpriseSearchBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<EnterpriseJsonldEnterpriseSearchEnterpriseRead> get serializer => _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer();
+  static Serializer<IndividualJsonldEnterpriseSearch> get serializer => _$IndividualJsonldEnterpriseSearchSerializer();
 }
 
-class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements PrimitiveSerializer<EnterpriseJsonldEnterpriseSearchEnterpriseRead> {
+class _$IndividualJsonldEnterpriseSearchSerializer implements PrimitiveSerializer<IndividualJsonldEnterpriseSearch> {
   @override
-  final Iterable<Type> types = const [EnterpriseJsonldEnterpriseSearchEnterpriseRead, _$EnterpriseJsonldEnterpriseSearchEnterpriseRead];
+  final Iterable<Type> types = const [IndividualJsonldEnterpriseSearch, _$IndividualJsonldEnterpriseSearch];
 
   @override
-  final String wireName = r'EnterpriseJsonldEnterpriseSearchEnterpriseRead';
+  final String wireName = r'IndividualJsonldEnterpriseSearch';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    EnterpriseJsonldEnterpriseSearchEnterpriseRead object, {
+    IndividualJsonldEnterpriseSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.firstname != null) {
+      yield r'firstname';
+      yield serializers.serialize(
+        object.firstname,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'@id';
     yield serializers.serialize(
       object.atId,
@@ -108,28 +105,14 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
       yield r'center';
       yield serializers.serialize(
         object.center,
-        specifiedType: const FullType.nullable(CenterJsonldEnterpriseSearchEnterpriseRead),
+        specifiedType: const FullType.nullable(CenterJsonldEnterpriseSearch),
       );
     }
-    if (object.type != null) {
-      yield r'type';
+    if (object.lastname != null) {
+      yield r'lastname';
       yield serializers.serialize(
-        object.type,
+        object.lastname,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.individuals != null) {
-      yield r'individuals';
-      yield serializers.serialize(
-        object.individuals,
-        specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldEnterpriseSearchEnterpriseRead)]),
-      );
-    }
-    if (object.tags != null) {
-      yield r'tags';
-      yield serializers.serialize(
-        object.tags,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
     if (object.reference != null) {
@@ -150,13 +133,6 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
       yield r'phone';
       yield serializers.serialize(
         object.phone,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
         specifiedType: const FullType(String),
       );
     }
@@ -198,7 +174,7 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
   @override
   Object serialize(
     Serializers serializers,
-    EnterpriseJsonldEnterpriseSearchEnterpriseRead object, {
+    IndividualJsonldEnterpriseSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -209,13 +185,20 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder result,
+    required IndividualJsonldEnterpriseSearchBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'firstname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.firstname = valueDes;
+          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
@@ -233,31 +216,17 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
         case r'center':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(CenterJsonldEnterpriseSearchEnterpriseRead),
-          ) as CenterJsonldEnterpriseSearchEnterpriseRead?;
+            specifiedType: const FullType.nullable(CenterJsonldEnterpriseSearch),
+          ) as CenterJsonldEnterpriseSearch?;
           if (valueDes == null) continue;
           result.center.replace(valueDes);
           break;
-        case r'type':
+        case r'lastname':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.type = valueDes;
-          break;
-        case r'individuals':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldEnterpriseSearchEnterpriseRead)]),
-          ) as BuiltList<IndividualJsonldEnterpriseSearchEnterpriseRead>;
-          result.individuals.replace(valueDes);
-          break;
-        case r'tags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.tags.replace(valueDes);
+          result.lastname = valueDes;
           break;
         case r'reference':
           final valueDes = serializers.deserialize(
@@ -279,13 +248,6 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
             specifiedType: const FullType(String),
           ) as String;
           result.phone = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'@context':
           final valueDes = serializers.deserialize(
@@ -331,12 +293,12 @@ class _$EnterpriseJsonldEnterpriseSearchEnterpriseReadSerializer implements Prim
   }
 
   @override
-  EnterpriseJsonldEnterpriseSearchEnterpriseRead deserialize(
+  IndividualJsonldEnterpriseSearch deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = EnterpriseJsonldEnterpriseSearchEnterpriseReadBuilder();
+    final result = IndividualJsonldEnterpriseSearchBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

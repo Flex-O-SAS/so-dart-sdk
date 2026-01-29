@@ -1,25 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'individual_enterprise_search_enterprise_read.dart';
+part of 'individual_enterprise_search.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$IndividualEnterpriseSearchEnterpriseRead
-    extends IndividualEnterpriseSearchEnterpriseRead {
+class _$IndividualEnterpriseSearch extends IndividualEnterpriseSearch {
   @override
   final String? firstname;
   @override
   final String? lastname;
   @override
-  final BuiltList<EnterpriseEnterpriseSearchEnterpriseRead>? enterprises;
-  @override
   final String? email;
   @override
   final String? phone;
   @override
-  final CenterEnterpriseSearchEnterpriseRead? center;
+  final CenterEnterpriseSearch? center;
   @override
   final int? status;
   @override
@@ -31,16 +28,13 @@ class _$IndividualEnterpriseSearchEnterpriseRead
   @override
   final DateTime? createdAt;
 
-  factory _$IndividualEnterpriseSearchEnterpriseRead(
-          [void Function(IndividualEnterpriseSearchEnterpriseReadBuilder)?
-              updates]) =>
-      (new IndividualEnterpriseSearchEnterpriseReadBuilder()..update(updates))
-          ._build();
+  factory _$IndividualEnterpriseSearch(
+          [void Function(IndividualEnterpriseSearchBuilder)? updates]) =>
+      (new IndividualEnterpriseSearchBuilder()..update(updates))._build();
 
-  _$IndividualEnterpriseSearchEnterpriseRead._(
+  _$IndividualEnterpriseSearch._(
       {this.firstname,
       this.lastname,
-      this.enterprises,
       this.email,
       this.phone,
       this.center,
@@ -52,22 +46,20 @@ class _$IndividualEnterpriseSearchEnterpriseRead
       : super._();
 
   @override
-  IndividualEnterpriseSearchEnterpriseRead rebuild(
-          void Function(IndividualEnterpriseSearchEnterpriseReadBuilder)
-              updates) =>
+  IndividualEnterpriseSearch rebuild(
+          void Function(IndividualEnterpriseSearchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  IndividualEnterpriseSearchEnterpriseReadBuilder toBuilder() =>
-      new IndividualEnterpriseSearchEnterpriseReadBuilder()..replace(this);
+  IndividualEnterpriseSearchBuilder toBuilder() =>
+      new IndividualEnterpriseSearchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is IndividualEnterpriseSearchEnterpriseRead &&
+    return other is IndividualEnterpriseSearch &&
         firstname == other.firstname &&
         lastname == other.lastname &&
-        enterprises == other.enterprises &&
         email == other.email &&
         phone == other.phone &&
         center == other.center &&
@@ -83,7 +75,6 @@ class _$IndividualEnterpriseSearchEnterpriseRead
     var _$hash = 0;
     _$hash = $jc(_$hash, firstname.hashCode);
     _$hash = $jc(_$hash, lastname.hashCode);
-    _$hash = $jc(_$hash, enterprises.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, center.hashCode);
@@ -98,11 +89,9 @@ class _$IndividualEnterpriseSearchEnterpriseRead
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(
-            r'IndividualEnterpriseSearchEnterpriseRead')
+    return (newBuiltValueToStringHelper(r'IndividualEnterpriseSearch')
           ..add('firstname', firstname)
           ..add('lastname', lastname)
-          ..add('enterprises', enterprises)
           ..add('email', email)
           ..add('phone', phone)
           ..add('center', center)
@@ -115,11 +104,10 @@ class _$IndividualEnterpriseSearchEnterpriseRead
   }
 }
 
-class IndividualEnterpriseSearchEnterpriseReadBuilder
+class IndividualEnterpriseSearchBuilder
     implements
-        Builder<IndividualEnterpriseSearchEnterpriseRead,
-            IndividualEnterpriseSearchEnterpriseReadBuilder> {
-  _$IndividualEnterpriseSearchEnterpriseRead? _$v;
+        Builder<IndividualEnterpriseSearch, IndividualEnterpriseSearchBuilder> {
+  _$IndividualEnterpriseSearch? _$v;
 
   String? _firstname;
   String? get firstname => _$this._firstname;
@@ -129,14 +117,6 @@ class IndividualEnterpriseSearchEnterpriseReadBuilder
   String? get lastname => _$this._lastname;
   set lastname(String? lastname) => _$this._lastname = lastname;
 
-  ListBuilder<EnterpriseEnterpriseSearchEnterpriseRead>? _enterprises;
-  ListBuilder<EnterpriseEnterpriseSearchEnterpriseRead> get enterprises =>
-      _$this._enterprises ??=
-          new ListBuilder<EnterpriseEnterpriseSearchEnterpriseRead>();
-  set enterprises(
-          ListBuilder<EnterpriseEnterpriseSearchEnterpriseRead>? enterprises) =>
-      _$this._enterprises = enterprises;
-
   String? _email;
   String? get email => _$this._email;
   set email(String? email) => _$this._email = email;
@@ -145,11 +125,10 @@ class IndividualEnterpriseSearchEnterpriseReadBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
-  CenterEnterpriseSearchEnterpriseReadBuilder? _center;
-  CenterEnterpriseSearchEnterpriseReadBuilder get center =>
-      _$this._center ??= new CenterEnterpriseSearchEnterpriseReadBuilder();
-  set center(CenterEnterpriseSearchEnterpriseReadBuilder? center) =>
-      _$this._center = center;
+  CenterEnterpriseSearchBuilder? _center;
+  CenterEnterpriseSearchBuilder get center =>
+      _$this._center ??= new CenterEnterpriseSearchBuilder();
+  set center(CenterEnterpriseSearchBuilder? center) => _$this._center = center;
 
   int? _status;
   int? get status => _$this._status;
@@ -171,16 +150,15 @@ class IndividualEnterpriseSearchEnterpriseReadBuilder
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  IndividualEnterpriseSearchEnterpriseReadBuilder() {
-    IndividualEnterpriseSearchEnterpriseRead._defaults(this);
+  IndividualEnterpriseSearchBuilder() {
+    IndividualEnterpriseSearch._defaults(this);
   }
 
-  IndividualEnterpriseSearchEnterpriseReadBuilder get _$this {
+  IndividualEnterpriseSearchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _firstname = $v.firstname;
       _lastname = $v.lastname;
-      _enterprises = $v.enterprises?.toBuilder();
       _email = $v.email;
       _phone = $v.phone;
       _center = $v.center?.toBuilder();
@@ -195,28 +173,26 @@ class IndividualEnterpriseSearchEnterpriseReadBuilder
   }
 
   @override
-  void replace(IndividualEnterpriseSearchEnterpriseRead other) {
+  void replace(IndividualEnterpriseSearch other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$IndividualEnterpriseSearchEnterpriseRead;
+    _$v = other as _$IndividualEnterpriseSearch;
   }
 
   @override
-  void update(
-      void Function(IndividualEnterpriseSearchEnterpriseReadBuilder)? updates) {
+  void update(void Function(IndividualEnterpriseSearchBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  IndividualEnterpriseSearchEnterpriseRead build() => _build();
+  IndividualEnterpriseSearch build() => _build();
 
-  _$IndividualEnterpriseSearchEnterpriseRead _build() {
-    _$IndividualEnterpriseSearchEnterpriseRead _$result;
+  _$IndividualEnterpriseSearch _build() {
+    _$IndividualEnterpriseSearch _$result;
     try {
       _$result = _$v ??
-          new _$IndividualEnterpriseSearchEnterpriseRead._(
+          new _$IndividualEnterpriseSearch._(
             firstname: firstname,
             lastname: lastname,
-            enterprises: _enterprises?.build(),
             email: email,
             phone: phone,
             center: _center?.build(),
@@ -229,16 +205,11 @@ class IndividualEnterpriseSearchEnterpriseReadBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'enterprises';
-        _enterprises?.build();
-
         _$failedField = 'center';
         _center?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'IndividualEnterpriseSearchEnterpriseRead',
-            _$failedField,
-            e.toString());
+            r'IndividualEnterpriseSearch', _$failedField, e.toString());
       }
       rethrow;
     }

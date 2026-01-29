@@ -9,7 +9,7 @@ part of 'api_enterprises_get_collection200_response.dart';
 class _$ApiEnterprisesGetCollection200Response
     extends ApiEnterprisesGetCollection200Response {
   @override
-  final BuiltList<EnterpriseJsonldEnterpriseSearchEnterpriseRead> member;
+  final BuiltList<EnterpriseJsonldEnterpriseSearch> member;
   @override
   final HydraCollectionBaseSchemaAllOfView? view;
   @override
@@ -80,13 +80,10 @@ class ApiEnterprisesGetCollection200ResponseBuilder
         HydraCollectionBaseSchemaBuilder {
   _$ApiEnterprisesGetCollection200Response? _$v;
 
-  ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>? _member;
-  ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead> get member =>
-      _$this._member ??=
-          new ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>();
-  set member(
-          covariant ListBuilder<EnterpriseJsonldEnterpriseSearchEnterpriseRead>?
-              member) =>
+  ListBuilder<EnterpriseJsonldEnterpriseSearch>? _member;
+  ListBuilder<EnterpriseJsonldEnterpriseSearch> get member =>
+      _$this._member ??= new ListBuilder<EnterpriseJsonldEnterpriseSearch>();
+  set member(covariant ListBuilder<EnterpriseJsonldEnterpriseSearch>? member) =>
       _$this._member = member;
 
   HydraCollectionBaseSchemaAllOfViewBuilder? _view;

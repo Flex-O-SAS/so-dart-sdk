@@ -17,7 +17,6 @@ part 'ticket_ticket_write_json_merge_patch.g.dart';
 /// Properties:
 /// * [title] 
 /// * [startDate] 
-/// * [endDate] 
 /// * [description] 
 /// * [author] 
 /// * [assignee] 
@@ -35,9 +34,6 @@ abstract class TicketTicketWriteJsonMergePatch implements Built<TicketTicketWrit
 
   @BuiltValueField(wireName: r'startDate')
   DateTime? get startDate;
-
-  @BuiltValueField(wireName: r'endDate')
-  DateTime? get endDate;
 
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -104,13 +100,6 @@ class _$TicketTicketWriteJsonMergePatchSerializer implements PrimitiveSerializer
       yield r'startDate';
       yield serializers.serialize(
         object.startDate,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.endDate != null) {
-      yield r'endDate';
-      yield serializers.serialize(
-        object.endDate,
         specifiedType: const FullType(DateTime),
       );
     }
@@ -220,13 +209,6 @@ class _$TicketTicketWriteJsonMergePatchSerializer implements PrimitiveSerializer
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.startDate = valueDes;
-          break;
-        case r'endDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.endDate = valueDes;
           break;
         case r'description':
           final valueDes = serializers.deserialize(

@@ -17,7 +17,7 @@ class _$IndividualOpportunityCreateLead
   @override
   final String? mobile;
   @override
-  final String? mainCenter;
+  final String? center;
   @override
   final String? language;
   @override
@@ -40,7 +40,7 @@ class _$IndividualOpportunityCreateLead
       this.lastname,
       this.email,
       this.mobile,
-      this.mainCenter,
+      this.center,
       this.language,
       this.address,
       this.zipcode,
@@ -66,7 +66,7 @@ class _$IndividualOpportunityCreateLead
         lastname == other.lastname &&
         email == other.email &&
         mobile == other.mobile &&
-        mainCenter == other.mainCenter &&
+        center == other.center &&
         language == other.language &&
         address == other.address &&
         zipcode == other.zipcode &&
@@ -82,7 +82,7 @@ class _$IndividualOpportunityCreateLead
     _$hash = $jc(_$hash, lastname.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, mobile.hashCode);
-    _$hash = $jc(_$hash, mainCenter.hashCode);
+    _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, language.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jc(_$hash, zipcode.hashCode);
@@ -100,7 +100,7 @@ class _$IndividualOpportunityCreateLead
           ..add('lastname', lastname)
           ..add('email', email)
           ..add('mobile', mobile)
-          ..add('mainCenter', mainCenter)
+          ..add('center', center)
           ..add('language', language)
           ..add('address', address)
           ..add('zipcode', zipcode)
@@ -133,9 +133,9 @@ class IndividualOpportunityCreateLeadBuilder
   String? get mobile => _$this._mobile;
   set mobile(String? mobile) => _$this._mobile = mobile;
 
-  String? _mainCenter;
-  String? get mainCenter => _$this._mainCenter;
-  set mainCenter(String? mainCenter) => _$this._mainCenter = mainCenter;
+  String? _center;
+  String? get center => _$this._center;
+  set center(String? center) => _$this._center = center;
 
   String? _language;
   String? get language => _$this._language;
@@ -172,7 +172,7 @@ class IndividualOpportunityCreateLeadBuilder
       _lastname = $v.lastname;
       _email = $v.email;
       _mobile = $v.mobile;
-      _mainCenter = $v.mainCenter;
+      _center = $v.center;
       _language = $v.language;
       _address = $v.address;
       _zipcode = $v.zipcode;
@@ -205,7 +205,7 @@ class IndividualOpportunityCreateLeadBuilder
           lastname: lastname,
           email: email,
           mobile: mobile,
-          mainCenter: mainCenter,
+          center: center,
           language: language,
           address: address,
           zipcode: zipcode,

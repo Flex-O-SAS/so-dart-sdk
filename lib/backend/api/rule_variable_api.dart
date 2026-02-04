@@ -8,8 +8,10 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_rule_variables_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/rule_variable_csv_rule_variables_read.dart';
 
 class RuleVariableApi {
 

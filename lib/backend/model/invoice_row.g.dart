@@ -28,8 +28,6 @@ class _$InvoiceRow extends InvoiceRow {
   @override
   final String? contractService;
   @override
-  final int? sellsyId;
-  @override
   final int? type;
   @override
   final BuiltList<CreditRow>? creditRows;
@@ -60,7 +58,6 @@ class _$InvoiceRow extends InvoiceRow {
       this.commissioningFees,
       this.invoice,
       this.contractService,
-      this.sellsyId,
       this.type,
       this.creditRows,
       this.begin,
@@ -92,7 +89,6 @@ class _$InvoiceRow extends InvoiceRow {
         commissioningFees == other.commissioningFees &&
         invoice == other.invoice &&
         contractService == other.contractService &&
-        sellsyId == other.sellsyId &&
         type == other.type &&
         creditRows == other.creditRows &&
         begin == other.begin &&
@@ -116,7 +112,6 @@ class _$InvoiceRow extends InvoiceRow {
     _$hash = $jc(_$hash, commissioningFees.hashCode);
     _$hash = $jc(_$hash, invoice.hashCode);
     _$hash = $jc(_$hash, contractService.hashCode);
-    _$hash = $jc(_$hash, sellsyId.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, creditRows.hashCode);
     _$hash = $jc(_$hash, begin.hashCode);
@@ -142,7 +137,6 @@ class _$InvoiceRow extends InvoiceRow {
           ..add('commissioningFees', commissioningFees)
           ..add('invoice', invoice)
           ..add('contractService', contractService)
-          ..add('sellsyId', sellsyId)
           ..add('type', type)
           ..add('creditRows', creditRows)
           ..add('begin', begin)
@@ -200,10 +194,6 @@ class InvoiceRowBuilder implements Builder<InvoiceRow, InvoiceRowBuilder> {
   set contractService(String? contractService) =>
       _$this._contractService = contractService;
 
-  int? _sellsyId;
-  int? get sellsyId => _$this._sellsyId;
-  set sellsyId(int? sellsyId) => _$this._sellsyId = sellsyId;
-
   int? _type;
   int? get type => _$this._type;
   set type(int? type) => _$this._type = type;
@@ -255,7 +245,6 @@ class InvoiceRowBuilder implements Builder<InvoiceRow, InvoiceRowBuilder> {
       _commissioningFees = $v.commissioningFees;
       _invoice = $v.invoice;
       _contractService = $v.contractService;
-      _sellsyId = $v.sellsyId;
       _type = $v.type;
       _creditRows = $v.creditRows?.toBuilder();
       _begin = $v.begin;
@@ -298,7 +287,6 @@ class InvoiceRowBuilder implements Builder<InvoiceRow, InvoiceRowBuilder> {
             commissioningFees: commissioningFees,
             invoice: invoice,
             contractService: contractService,
-            sellsyId: sellsyId,
             type: type,
             creditRows: _creditRows?.build(),
             begin: begin,

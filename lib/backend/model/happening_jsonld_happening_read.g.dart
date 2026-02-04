@@ -10,8 +10,6 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
   @override
   final int? maxUsers;
   @override
-  final JsonObject? happeningPartnerLink;
-  @override
   final CenterJsonldHappeningRead? center;
   @override
   final String? banner;
@@ -50,7 +48,6 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
 
   _$HappeningJsonldHappeningRead._(
       {this.maxUsers,
-      this.happeningPartnerLink,
       this.center,
       this.banner,
       this.description,
@@ -88,7 +85,6 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
     if (identical(other, this)) return true;
     return other is HappeningJsonldHappeningRead &&
         maxUsers == other.maxUsers &&
-        happeningPartnerLink == other.happeningPartnerLink &&
         center == other.center &&
         banner == other.banner &&
         description == other.description &&
@@ -111,7 +107,6 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, maxUsers.hashCode);
-    _$hash = $jc(_$hash, happeningPartnerLink.hashCode);
     _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, banner.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
@@ -136,7 +131,6 @@ class _$HappeningJsonldHappeningRead extends HappeningJsonldHappeningRead {
   String toString() {
     return (newBuiltValueToStringHelper(r'HappeningJsonldHappeningRead')
           ..add('maxUsers', maxUsers)
-          ..add('happeningPartnerLink', happeningPartnerLink)
           ..add('center', center)
           ..add('banner', banner)
           ..add('description', description)
@@ -167,11 +161,6 @@ class HappeningJsonldHappeningReadBuilder
   int? _maxUsers;
   int? get maxUsers => _$this._maxUsers;
   set maxUsers(covariant int? maxUsers) => _$this._maxUsers = maxUsers;
-
-  JsonObject? _happeningPartnerLink;
-  JsonObject? get happeningPartnerLink => _$this._happeningPartnerLink;
-  set happeningPartnerLink(covariant JsonObject? happeningPartnerLink) =>
-      _$this._happeningPartnerLink = happeningPartnerLink;
 
   CenterJsonldHappeningReadBuilder? _center;
   CenterJsonldHappeningReadBuilder get center =>
@@ -255,7 +244,6 @@ class HappeningJsonldHappeningReadBuilder
     final $v = _$v;
     if ($v != null) {
       _maxUsers = $v.maxUsers;
-      _happeningPartnerLink = $v.happeningPartnerLink;
       _center = $v.center?.toBuilder();
       _banner = $v.banner;
       _description = $v.description;
@@ -297,7 +285,6 @@ class HappeningJsonldHappeningReadBuilder
       _$result = _$v ??
           new _$HappeningJsonldHappeningRead._(
             maxUsers: maxUsers,
-            happeningPartnerLink: happeningPartnerLink,
             center: _center?.build(),
             banner: banner,
             description: description,

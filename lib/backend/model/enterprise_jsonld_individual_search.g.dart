@@ -11,7 +11,11 @@ class _$EnterpriseJsonldIndividualSearch
   @override
   final String? reference;
   @override
+  final DateTime? createdAt;
+  @override
   final String? phone;
+  @override
+  final CenterJsonldIndividualSearch? center;
   @override
   final String? name;
   @override
@@ -33,7 +37,9 @@ class _$EnterpriseJsonldIndividualSearch
 
   _$EnterpriseJsonldIndividualSearch._(
       {this.reference,
+      this.createdAt,
       this.phone,
+      this.center,
       this.name,
       this.mobile,
       this.id,
@@ -62,7 +68,9 @@ class _$EnterpriseJsonldIndividualSearch
     if (identical(other, this)) return true;
     return other is EnterpriseJsonldIndividualSearch &&
         reference == other.reference &&
+        createdAt == other.createdAt &&
         phone == other.phone &&
+        center == other.center &&
         name == other.name &&
         mobile == other.mobile &&
         id == other.id &&
@@ -76,7 +84,9 @@ class _$EnterpriseJsonldIndividualSearch
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, reference.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, mobile.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
@@ -92,7 +102,9 @@ class _$EnterpriseJsonldIndividualSearch
   String toString() {
     return (newBuiltValueToStringHelper(r'EnterpriseJsonldIndividualSearch')
           ..add('reference', reference)
+          ..add('createdAt', createdAt)
           ..add('phone', phone)
+          ..add('center', center)
           ..add('name', name)
           ..add('mobile', mobile)
           ..add('id', id)
@@ -115,9 +127,19 @@ class EnterpriseJsonldIndividualSearchBuilder
   String? get reference => _$this._reference;
   set reference(covariant String? reference) => _$this._reference = reference;
 
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
   String? _phone;
   String? get phone => _$this._phone;
   set phone(covariant String? phone) => _$this._phone = phone;
+
+  CenterJsonldIndividualSearchBuilder? _center;
+  CenterJsonldIndividualSearchBuilder get center =>
+      _$this._center ??= new CenterJsonldIndividualSearchBuilder();
+  set center(covariant CenterJsonldIndividualSearchBuilder? center) =>
+      _$this._center = center;
 
   String? _name;
   String? get name => _$this._name;
@@ -157,7 +179,9 @@ class EnterpriseJsonldIndividualSearchBuilder
     final $v = _$v;
     if ($v != null) {
       _reference = $v.reference;
+      _createdAt = $v.createdAt;
       _phone = $v.phone;
+      _center = $v.center?.toBuilder();
       _name = $v.name;
       _mobile = $v.mobile;
       _id = $v.id;
@@ -190,7 +214,9 @@ class EnterpriseJsonldIndividualSearchBuilder
       _$result = _$v ??
           new _$EnterpriseJsonldIndividualSearch._(
             reference: reference,
+            createdAt: createdAt,
             phone: phone,
+            center: _center?.build(),
             name: name,
             mobile: mobile,
             id: id,
@@ -204,6 +230,9 @@ class EnterpriseJsonldIndividualSearchBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'center';
+        _center?.build();
+
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {

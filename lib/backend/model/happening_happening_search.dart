@@ -20,7 +20,6 @@ part 'happening_happening_search.g.dart';
 /// * [place] 
 /// * [nbUsers] 
 /// * [maxUsers] 
-/// * [happeningPartnerLink] 
 /// * [isActive] 
 /// * [happeningStaffFeedBacks] 
 /// * [begin] 
@@ -47,9 +46,6 @@ abstract class HappeningHappeningSearch implements Built<HappeningHappeningSearc
 
   @BuiltValueField(wireName: r'maxUsers')
   int? get maxUsers;
-
-  @BuiltValueField(wireName: r'happeningPartnerLink')
-  JsonObject? get happeningPartnerLink;
 
   @BuiltValueField(wireName: r'isActive')
   bool? get isActive;
@@ -134,13 +130,6 @@ class _$HappeningHappeningSearchSerializer implements PrimitiveSerializer<Happen
       yield serializers.serialize(
         object.maxUsers,
         specifiedType: const FullType(int),
-      );
-    }
-    if (object.happeningPartnerLink != null) {
-      yield r'happeningPartnerLink';
-      yield serializers.serialize(
-        object.happeningPartnerLink,
-        specifiedType: const FullType.nullable(JsonObject),
       );
     }
     if (object.isActive != null) {
@@ -242,14 +231,6 @@ class _$HappeningHappeningSearchSerializer implements PrimitiveSerializer<Happen
             specifiedType: const FullType(int),
           ) as int;
           result.maxUsers = valueDes;
-          break;
-        case r'happeningPartnerLink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
-          result.happeningPartnerLink = valueDes;
           break;
         case r'isActive':
           final valueDes = serializers.deserialize(

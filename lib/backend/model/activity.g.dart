@@ -16,8 +16,6 @@ class _$Activity extends Activity {
   @override
   final Client? client;
   @override
-  final Broker? broker;
-  @override
   final Event? event;
   @override
   final String? contract;
@@ -40,7 +38,6 @@ class _$Activity extends Activity {
       this.message,
       this.staff,
       this.client,
-      this.broker,
       this.event,
       this.contract,
       this.invoice,
@@ -65,7 +62,6 @@ class _$Activity extends Activity {
         message == other.message &&
         staff == other.staff &&
         client == other.client &&
-        broker == other.broker &&
         event == other.event &&
         contract == other.contract &&
         invoice == other.invoice &&
@@ -82,7 +78,6 @@ class _$Activity extends Activity {
     _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jc(_$hash, staff.hashCode);
     _$hash = $jc(_$hash, client.hashCode);
-    _$hash = $jc(_$hash, broker.hashCode);
     _$hash = $jc(_$hash, event.hashCode);
     _$hash = $jc(_$hash, contract.hashCode);
     _$hash = $jc(_$hash, invoice.hashCode);
@@ -101,7 +96,6 @@ class _$Activity extends Activity {
           ..add('message', message)
           ..add('staff', staff)
           ..add('client', client)
-          ..add('broker', broker)
           ..add('event', event)
           ..add('contract', contract)
           ..add('invoice', invoice)
@@ -131,10 +125,6 @@ class ActivityBuilder implements Builder<Activity, ActivityBuilder> {
   ClientBuilder? _client;
   ClientBuilder get client => _$this._client ??= new ClientBuilder();
   set client(ClientBuilder? client) => _$this._client = client;
-
-  BrokerBuilder? _broker;
-  BrokerBuilder get broker => _$this._broker ??= new BrokerBuilder();
-  set broker(BrokerBuilder? broker) => _$this._broker = broker;
 
   EventBuilder? _event;
   EventBuilder get event => _$this._event ??= new EventBuilder();
@@ -175,7 +165,6 @@ class ActivityBuilder implements Builder<Activity, ActivityBuilder> {
       _message = $v.message;
       _staff = $v.staff;
       _client = $v.client?.toBuilder();
-      _broker = $v.broker?.toBuilder();
       _event = $v.event?.toBuilder();
       _contract = $v.contract;
       _invoice = $v.invoice;
@@ -211,7 +200,6 @@ class ActivityBuilder implements Builder<Activity, ActivityBuilder> {
             message: message,
             staff: staff,
             client: _client?.build(),
-            broker: _broker?.build(),
             event: _event?.build(),
             contract: contract,
             invoice: invoice,
@@ -225,8 +213,6 @@ class ActivityBuilder implements Builder<Activity, ActivityBuilder> {
       try {
         _$failedField = 'client';
         _client?.build();
-        _$failedField = 'broker';
-        _broker?.build();
         _$failedField = 'event';
         _event?.build();
       } catch (e) {

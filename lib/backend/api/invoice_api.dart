@@ -11,6 +11,7 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_invoices_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/invoice_csv_invoice_search.dart';
 
 class InvoiceApi {
 

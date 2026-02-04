@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/center_individual_search.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -15,8 +16,10 @@ part 'enterprise_individual_search.g.dart';
 /// * [email] 
 /// * [phone] 
 /// * [mobile] 
+/// * [center] 
 /// * [reference] 
 /// * [id] 
+/// * [createdAt] 
 @BuiltValue()
 abstract class EnterpriseIndividualSearch implements Built<EnterpriseIndividualSearch, EnterpriseIndividualSearchBuilder> {
   @BuiltValueField(wireName: r'name')
@@ -31,11 +34,17 @@ abstract class EnterpriseIndividualSearch implements Built<EnterpriseIndividualS
   @BuiltValueField(wireName: r'mobile')
   String? get mobile;
 
+  @BuiltValueField(wireName: r'center')
+  CenterIndividualSearch? get center;
+
   @BuiltValueField(wireName: r'reference')
   String? get reference;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
 
   EnterpriseIndividualSearch._();
 
@@ -88,6 +97,13 @@ class _$EnterpriseIndividualSearchSerializer implements PrimitiveSerializer<Ente
         specifiedType: const FullType(String),
       );
     }
+    if (object.center != null) {
+      yield r'center';
+      yield serializers.serialize(
+        object.center,
+        specifiedType: const FullType.nullable(CenterIndividualSearch),
+      );
+    }
     if (object.reference != null) {
       yield r'reference';
       yield serializers.serialize(
@@ -100,6 +116,13 @@ class _$EnterpriseIndividualSearchSerializer implements PrimitiveSerializer<Ente
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.createdAt != null) {
+      yield r'createdAt';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -153,6 +176,14 @@ class _$EnterpriseIndividualSearchSerializer implements PrimitiveSerializer<Ente
           ) as String;
           result.mobile = valueDes;
           break;
+        case r'center':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(CenterIndividualSearch),
+          ) as CenterIndividualSearch?;
+          if (valueDes == null) continue;
+          result.center.replace(valueDes);
+          break;
         case r'reference':
           final valueDes = serializers.deserialize(
             value,
@@ -166,6 +197,13 @@ class _$EnterpriseIndividualSearchSerializer implements PrimitiveSerializer<Ente
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
+          break;
+        case r'createdAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
           break;
         default:
           unhandled.add(key);

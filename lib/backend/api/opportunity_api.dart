@@ -15,6 +15,8 @@ import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/opportunity_csv_opportunity_create_lead.dart';
+import 'package:so_dart_sdk/backend/model/opportunity_csv_opportunity_search.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_opportunity_create_lead.dart';
 

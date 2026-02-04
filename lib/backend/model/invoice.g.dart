@@ -22,8 +22,6 @@ class _$Invoice extends Invoice {
   @override
   final String? paymentLink;
   @override
-  final int? sellsyId;
-  @override
   final num? dueAmount;
   @override
   final num? amountVat;
@@ -79,7 +77,6 @@ class _$Invoice extends Invoice {
       this.contract,
       this.payments,
       this.paymentLink,
-      this.sellsyId,
       this.dueAmount,
       this.amountVat,
       this.totalCost,
@@ -122,7 +119,6 @@ class _$Invoice extends Invoice {
         contract == other.contract &&
         payments == other.payments &&
         paymentLink == other.paymentLink &&
-        sellsyId == other.sellsyId &&
         dueAmount == other.dueAmount &&
         amountVat == other.amountVat &&
         totalCost == other.totalCost &&
@@ -157,7 +153,6 @@ class _$Invoice extends Invoice {
     _$hash = $jc(_$hash, contract.hashCode);
     _$hash = $jc(_$hash, payments.hashCode);
     _$hash = $jc(_$hash, paymentLink.hashCode);
-    _$hash = $jc(_$hash, sellsyId.hashCode);
     _$hash = $jc(_$hash, dueAmount.hashCode);
     _$hash = $jc(_$hash, amountVat.hashCode);
     _$hash = $jc(_$hash, totalCost.hashCode);
@@ -194,7 +189,6 @@ class _$Invoice extends Invoice {
           ..add('contract', contract)
           ..add('payments', payments)
           ..add('paymentLink', paymentLink)
-          ..add('sellsyId', sellsyId)
           ..add('dueAmount', dueAmount)
           ..add('amountVat', amountVat)
           ..add('totalCost', totalCost)
@@ -252,10 +246,6 @@ class InvoiceBuilder implements Builder<Invoice, InvoiceBuilder> {
   String? _paymentLink;
   String? get paymentLink => _$this._paymentLink;
   set paymentLink(String? paymentLink) => _$this._paymentLink = paymentLink;
-
-  int? _sellsyId;
-  int? get sellsyId => _$this._sellsyId;
-  set sellsyId(int? sellsyId) => _$this._sellsyId = sellsyId;
 
   num? _dueAmount;
   num? get dueAmount => _$this._dueAmount;
@@ -373,7 +363,6 @@ class InvoiceBuilder implements Builder<Invoice, InvoiceBuilder> {
       _contract = $v.contract;
       _payments = $v.payments?.toBuilder();
       _paymentLink = $v.paymentLink;
-      _sellsyId = $v.sellsyId;
       _dueAmount = $v.dueAmount;
       _amountVat = $v.amountVat;
       _totalCost = $v.totalCost;
@@ -427,7 +416,6 @@ class InvoiceBuilder implements Builder<Invoice, InvoiceBuilder> {
             contract: contract,
             payments: _payments?.build(),
             paymentLink: paymentLink,
-            sellsyId: sellsyId,
             dueAmount: dueAmount,
             amountVat: amountVat,
             totalCost: totalCost,

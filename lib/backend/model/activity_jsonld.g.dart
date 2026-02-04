@@ -16,8 +16,6 @@ class _$ActivityJsonld extends ActivityJsonld {
   @override
   final ClientJsonld? client;
   @override
-  final BrokerJsonld? broker;
-  @override
   final EventJsonld? event;
   @override
   final String? contract;
@@ -40,7 +38,6 @@ class _$ActivityJsonld extends ActivityJsonld {
       this.message,
       this.staff,
       this.client,
-      this.broker,
       this.event,
       this.contract,
       this.invoice,
@@ -66,7 +63,6 @@ class _$ActivityJsonld extends ActivityJsonld {
         message == other.message &&
         staff == other.staff &&
         client == other.client &&
-        broker == other.broker &&
         event == other.event &&
         contract == other.contract &&
         invoice == other.invoice &&
@@ -83,7 +79,6 @@ class _$ActivityJsonld extends ActivityJsonld {
     _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jc(_$hash, staff.hashCode);
     _$hash = $jc(_$hash, client.hashCode);
-    _$hash = $jc(_$hash, broker.hashCode);
     _$hash = $jc(_$hash, event.hashCode);
     _$hash = $jc(_$hash, contract.hashCode);
     _$hash = $jc(_$hash, invoice.hashCode);
@@ -102,7 +97,6 @@ class _$ActivityJsonld extends ActivityJsonld {
           ..add('message', message)
           ..add('staff', staff)
           ..add('client', client)
-          ..add('broker', broker)
           ..add('event', event)
           ..add('contract', contract)
           ..add('invoice', invoice)
@@ -134,11 +128,6 @@ class ActivityJsonldBuilder
   ClientJsonldBuilder get client =>
       _$this._client ??= new ClientJsonldBuilder();
   set client(ClientJsonldBuilder? client) => _$this._client = client;
-
-  BrokerJsonldBuilder? _broker;
-  BrokerJsonldBuilder get broker =>
-      _$this._broker ??= new BrokerJsonldBuilder();
-  set broker(BrokerJsonldBuilder? broker) => _$this._broker = broker;
 
   EventJsonldBuilder? _event;
   EventJsonldBuilder get event => _$this._event ??= new EventJsonldBuilder();
@@ -179,7 +168,6 @@ class ActivityJsonldBuilder
       _message = $v.message;
       _staff = $v.staff;
       _client = $v.client?.toBuilder();
-      _broker = $v.broker?.toBuilder();
       _event = $v.event?.toBuilder();
       _contract = $v.contract;
       _invoice = $v.invoice;
@@ -215,7 +203,6 @@ class ActivityJsonldBuilder
             message: message,
             staff: staff,
             client: _client?.build(),
-            broker: _broker?.build(),
             event: _event?.build(),
             contract: contract,
             invoice: invoice,
@@ -229,8 +216,6 @@ class ActivityJsonldBuilder
       try {
         _$failedField = 'client';
         _client?.build();
-        _$failedField = 'broker';
-        _broker?.build();
         _$failedField = 'event';
         _event?.build();
       } catch (e) {

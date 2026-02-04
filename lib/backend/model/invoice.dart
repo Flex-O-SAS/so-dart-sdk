@@ -26,7 +26,6 @@ part 'invoice.g.dart';
 /// * [contract] 
 /// * [payments] 
 /// * [paymentLink] 
-/// * [sellsyId] 
 /// * [dueAmount] 
 /// * [amountVat] 
 /// * [totalCost] 
@@ -71,9 +70,6 @@ abstract class Invoice implements Built<Invoice, InvoiceBuilder> {
 
   @BuiltValueField(wireName: r'paymentLink')
   String? get paymentLink;
-
-  @BuiltValueField(wireName: r'sellsyId')
-  int? get sellsyId;
 
   @BuiltValueField(wireName: r'dueAmount')
   num? get dueAmount;
@@ -212,13 +208,6 @@ class _$InvoiceSerializer implements PrimitiveSerializer<Invoice> {
       yield serializers.serialize(
         object.paymentLink,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.sellsyId != null) {
-      yield r'sellsyId';
-      yield serializers.serialize(
-        object.sellsyId,
-        specifiedType: const FullType(int),
       );
     }
     if (object.dueAmount != null) {
@@ -446,13 +435,6 @@ class _$InvoiceSerializer implements PrimitiveSerializer<Invoice> {
             specifiedType: const FullType(String),
           ) as String;
           result.paymentLink = valueDes;
-          break;
-        case r'sellsyId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.sellsyId = valueDes;
           break;
         case r'dueAmount':
           final valueDes = serializers.deserialize(

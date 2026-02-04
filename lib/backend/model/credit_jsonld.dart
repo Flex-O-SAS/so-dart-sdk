@@ -29,7 +29,6 @@ part 'credit_jsonld.g.dart';
 /// * [amountVat] 
 /// * [amountTotal] 
 /// * [amountDue] 
-/// * [sellsyId] 
 /// * [link] 
 /// * [creditRows] 
 /// * [creditLinks] 
@@ -49,6 +48,12 @@ part 'credit_jsonld.g.dart';
 /// * [updatedAt] 
 @BuiltValue()
 abstract class CreditJsonld implements HydraItemBaseSchema, Built<CreditJsonld, CreditJsonldBuilder> {
+  @BuiltValueField(wireName: r'amount')
+  num? get amount;
+
+  @BuiltValueField(wireName: r'center')
+  String? get center;
+
   @BuiltValueField(wireName: r'payments')
   BuiltList<PaymentJsonld>? get payments;
 
@@ -61,8 +66,14 @@ abstract class CreditJsonld implements HydraItemBaseSchema, Built<CreditJsonld, 
   @BuiltValueField(wireName: r'type')
   int? get type;
 
+  @BuiltValueField(wireName: r'creditRows')
+  BuiltList<CreditRowJsonld>? get creditRows;
+
   @BuiltValueField(wireName: r'spentAt')
   DateTime? get spentAt;
+
+  @BuiltValueField(wireName: r'amountDue')
+  num? get amountDue;
 
   @BuiltValueField(wireName: r'reference')
   String? get reference;
@@ -79,11 +90,20 @@ abstract class CreditJsonld implements HydraItemBaseSchema, Built<CreditJsonld, 
   @BuiltValueField(wireName: r'accounted')
   bool? get accounted;
 
+  @BuiltValueField(wireName: r'activities')
+  BuiltList<ActivityJsonld>? get activities;
+
   @BuiltValueField(wireName: r'client')
   ClientJsonld? get client;
 
+  @BuiltValueField(wireName: r'amountTotal')
+  num? get amountTotal;
+
   @BuiltValueField(wireName: r'company')
   String? get company;
+
+  @BuiltValueField(wireName: r'invoice')
+  String? get invoice;
 
   @BuiltValueField(wireName: r'creditLinks')
   BuiltList<CreditLinkJsonld>? get creditLinks;
@@ -91,38 +111,14 @@ abstract class CreditJsonld implements HydraItemBaseSchema, Built<CreditJsonld, 
   @BuiltValueField(wireName: r'id')
   int? get id;
 
-  @BuiltValueField(wireName: r'sellsyId')
-  int? get sellsyId;
-
-  @BuiltValueField(wireName: r'updatedAt')
-  DateTime? get updatedAt;
-
-  @BuiltValueField(wireName: r'amount')
-  num? get amount;
-
-  @BuiltValueField(wireName: r'center')
-  String? get center;
-
-  @BuiltValueField(wireName: r'creditRows')
-  BuiltList<CreditRowJsonld>? get creditRows;
-
-  @BuiltValueField(wireName: r'amountDue')
-  num? get amountDue;
-
-  @BuiltValueField(wireName: r'activities')
-  BuiltList<ActivityJsonld>? get activities;
-
-  @BuiltValueField(wireName: r'amountTotal')
-  num? get amountTotal;
-
-  @BuiltValueField(wireName: r'invoice')
-  String? get invoice;
-
   @BuiltValueField(wireName: r'amountVat')
   num? get amountVat;
 
   @BuiltValueField(wireName: r'status')
   int? get status;
+
+  @BuiltValueField(wireName: r'updatedAt')
+  DateTime? get updatedAt;
 
   CreditJsonld._();
 
@@ -256,13 +252,6 @@ class _$CreditJsonldSerializer implements PrimitiveSerializer<CreditJsonld> {
       yield r'id';
       yield serializers.serialize(
         object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.sellsyId != null) {
-      yield r'sellsyId';
-      yield serializers.serialize(
-        object.sellsyId,
         specifiedType: const FullType(int),
       );
     }
@@ -475,13 +464,6 @@ class _$CreditJsonldSerializer implements PrimitiveSerializer<CreditJsonld> {
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
-          break;
-        case r'sellsyId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.sellsyId = valueDes;
           break;
         case r'@type':
           final valueDes = serializers.deserialize(

@@ -25,7 +25,6 @@ part 'happening_jsonld_happening_search.g.dart';
 /// * [place] 
 /// * [nbUsers] 
 /// * [maxUsers] 
-/// * [happeningPartnerLink] 
 /// * [isActive] 
 /// * [happeningStaffFeedBacks] 
 /// * [begin] 
@@ -34,9 +33,6 @@ part 'happening_jsonld_happening_search.g.dart';
 abstract class HappeningJsonldHappeningSearch implements HydraItemBaseSchema, Built<HappeningJsonldHappeningSearch, HappeningJsonldHappeningSearchBuilder> {
   @BuiltValueField(wireName: r'maxUsers')
   int? get maxUsers;
-
-  @BuiltValueField(wireName: r'happeningPartnerLink')
-  JsonObject? get happeningPartnerLink;
 
   @BuiltValueField(wireName: r'center')
   String? get center;
@@ -97,13 +93,6 @@ class _$HappeningJsonldHappeningSearchSerializer implements PrimitiveSerializer<
       yield serializers.serialize(
         object.maxUsers,
         specifiedType: const FullType(int),
-      );
-    }
-    if (object.happeningPartnerLink != null) {
-      yield r'happeningPartnerLink';
-      yield serializers.serialize(
-        object.happeningPartnerLink,
-        specifiedType: const FullType.nullable(JsonObject),
       );
     }
     yield r'@id';
@@ -222,14 +211,6 @@ class _$HappeningJsonldHappeningSearchSerializer implements PrimitiveSerializer<
             specifiedType: const FullType(int),
           ) as int;
           result.maxUsers = valueDes;
-          break;
-        case r'happeningPartnerLink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
-          result.happeningPartnerLink = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(

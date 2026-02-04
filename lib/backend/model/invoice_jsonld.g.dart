@@ -40,8 +40,6 @@ class _$InvoiceJsonld extends InvoiceJsonld {
   @override
   final int? id;
   @override
-  final int? sellsyId;
-  @override
   final DateTime? updatedAt;
   @override
   final String? period;
@@ -94,7 +92,6 @@ class _$InvoiceJsonld extends InvoiceJsonld {
       this.state,
       this.creditLinks,
       this.id,
-      this.sellsyId,
       this.updatedAt,
       this.period,
       this.amount,
@@ -143,7 +140,6 @@ class _$InvoiceJsonld extends InvoiceJsonld {
         state == other.state &&
         creditLinks == other.creditLinks &&
         id == other.id &&
-        sellsyId == other.sellsyId &&
         updatedAt == other.updatedAt &&
         period == other.period &&
         amount == other.amount &&
@@ -181,7 +177,6 @@ class _$InvoiceJsonld extends InvoiceJsonld {
     _$hash = $jc(_$hash, state.hashCode);
     _$hash = $jc(_$hash, creditLinks.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, sellsyId.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, period.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
@@ -221,7 +216,6 @@ class _$InvoiceJsonld extends InvoiceJsonld {
           ..add('state', state)
           ..add('creditLinks', creditLinks)
           ..add('id', id)
-          ..add('sellsyId', sellsyId)
           ..add('updatedAt', updatedAt)
           ..add('period', period)
           ..add('amount', amount)
@@ -325,10 +319,6 @@ class InvoiceJsonldBuilder
   int? get id => _$this._id;
   set id(covariant int? id) => _$this._id = id;
 
-  int? _sellsyId;
-  int? get sellsyId => _$this._sellsyId;
-  set sellsyId(covariant int? sellsyId) => _$this._sellsyId = sellsyId;
-
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
@@ -427,7 +417,6 @@ class InvoiceJsonldBuilder
       _state = $v.state;
       _creditLinks = $v.creditLinks?.toBuilder();
       _id = $v.id;
-      _sellsyId = $v.sellsyId;
       _updatedAt = $v.updatedAt;
       _period = $v.period;
       _amount = $v.amount;
@@ -484,7 +473,6 @@ class InvoiceJsonldBuilder
             state: state,
             creditLinks: _creditLinks?.build(),
             id: id,
-            sellsyId: sellsyId,
             updatedAt: updatedAt,
             period: period,
             amount: amount,

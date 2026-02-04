@@ -9,6 +9,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:so_dart_sdk/backend/api_util.dart';
+import 'package:so_dart_sdk/backend/model/commitment_csv_public_commitment_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/commitment_jsonld_public_commitment_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';

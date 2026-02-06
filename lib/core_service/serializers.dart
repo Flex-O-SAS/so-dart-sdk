@@ -16,6 +16,7 @@ import 'package:so_dart_sdk/core_service/model/date.dart';
 
 import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
+import 'package:so_dart_sdk/core_service/model/api_notifications_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/api_subscribers_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/branding_setting_branding_setting_write.dart';
 import 'package:so_dart_sdk/core_service/model/branding_setting_branding_setting_write_json_merge_patch.dart';
@@ -50,6 +51,7 @@ part 'serializers.g.dart';
 @SerializersFor([
   ApiBrandingGetCollection200Response,
   ApiDevicesGetCollection200Response,
+  ApiNotificationsGetCollection200Response,
   ApiSubscribersGetCollection200Response,
   BrandingSettingBrandingSettingWrite,
   BrandingSettingBrandingSettingWriteJsonMergePatch,

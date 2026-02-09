@@ -162,6 +162,8 @@ class _$PackagePackageWrite extends PackagePackageWrite {
   final String? handoverClient;
   @override
   final String securityCode;
+  @override
+  final int quantity;
 
   factory _$PackagePackageWrite(
           [void Function(PackagePackageWriteBuilder)? updates]) =>
@@ -177,7 +179,8 @@ class _$PackagePackageWrite extends PackagePackageWrite {
       required this.receptionDate,
       this.handoverDate,
       this.handoverClient,
-      required this.securityCode})
+      required this.securityCode,
+      required this.quantity})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         recipient, r'PackagePackageWrite', 'recipient');
@@ -193,6 +196,8 @@ class _$PackagePackageWrite extends PackagePackageWrite {
         receptionDate, r'PackagePackageWrite', 'receptionDate');
     BuiltValueNullFieldError.checkNotNull(
         securityCode, r'PackagePackageWrite', 'securityCode');
+    BuiltValueNullFieldError.checkNotNull(
+        quantity, r'PackagePackageWrite', 'quantity');
   }
 
   @override
@@ -217,7 +222,8 @@ class _$PackagePackageWrite extends PackagePackageWrite {
         receptionDate == other.receptionDate &&
         handoverDate == other.handoverDate &&
         handoverClient == other.handoverClient &&
-        securityCode == other.securityCode;
+        securityCode == other.securityCode &&
+        quantity == other.quantity;
   }
 
   @override
@@ -233,6 +239,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
     _$hash = $jc(_$hash, handoverDate.hashCode);
     _$hash = $jc(_$hash, handoverClient.hashCode);
     _$hash = $jc(_$hash, securityCode.hashCode);
+    _$hash = $jc(_$hash, quantity.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -249,7 +256,8 @@ class _$PackagePackageWrite extends PackagePackageWrite {
           ..add('receptionDate', receptionDate)
           ..add('handoverDate', handoverDate)
           ..add('handoverClient', handoverClient)
-          ..add('securityCode', securityCode))
+          ..add('securityCode', securityCode)
+          ..add('quantity', quantity))
         .toString();
   }
 }
@@ -302,6 +310,10 @@ class PackagePackageWriteBuilder
   String? get securityCode => _$this._securityCode;
   set securityCode(String? securityCode) => _$this._securityCode = securityCode;
 
+  int? _quantity;
+  int? get quantity => _$this._quantity;
+  set quantity(int? quantity) => _$this._quantity = quantity;
+
   PackagePackageWriteBuilder() {
     PackagePackageWrite._defaults(this);
   }
@@ -319,6 +331,7 @@ class PackagePackageWriteBuilder
       _handoverDate = $v.handoverDate;
       _handoverClient = $v.handoverClient;
       _securityCode = $v.securityCode;
+      _quantity = $v.quantity;
       _$v = null;
     }
     return this;
@@ -359,6 +372,8 @@ class PackagePackageWriteBuilder
           handoverClient: handoverClient,
           securityCode: BuiltValueNullFieldError.checkNotNull(
               securityCode, r'PackagePackageWrite', 'securityCode'),
+          quantity: BuiltValueNullFieldError.checkNotNull(
+              quantity, r'PackagePackageWrite', 'quantity'),
         );
     replace(_$result);
     return _$result;

@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/broker_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/event_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/client_jsonld.dart';
 import 'package:built_value/built_value.dart';
@@ -18,7 +17,6 @@ part 'activity_jsonld.g.dart';
 /// * [message] 
 /// * [staff] 
 /// * [client] 
-/// * [broker] 
 /// * [event] 
 /// * [contract] 
 /// * [invoice] 
@@ -39,9 +37,6 @@ abstract class ActivityJsonld implements Built<ActivityJsonld, ActivityJsonldBui
 
   @BuiltValueField(wireName: r'client')
   ClientJsonld? get client;
-
-  @BuiltValueField(wireName: r'broker')
-  BrokerJsonld? get broker;
 
   @BuiltValueField(wireName: r'event')
   EventJsonld? get event;
@@ -113,13 +108,6 @@ class _$ActivityJsonldSerializer implements PrimitiveSerializer<ActivityJsonld> 
       yield serializers.serialize(
         object.client,
         specifiedType: const FullType.nullable(ClientJsonld),
-      );
-    }
-    if (object.broker != null) {
-      yield r'broker';
-      yield serializers.serialize(
-        object.broker,
-        specifiedType: const FullType.nullable(BrokerJsonld),
       );
     }
     if (object.event != null) {
@@ -222,14 +210,6 @@ class _$ActivityJsonldSerializer implements PrimitiveSerializer<ActivityJsonld> 
           ) as ClientJsonld?;
           if (valueDes == null) continue;
           result.client.replace(valueDes);
-          break;
-        case r'broker':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BrokerJsonld),
-          ) as BrokerJsonld?;
-          if (valueDes == null) continue;
-          result.broker.replace(valueDes);
           break;
         case r'event':
           final valueDes = serializers.deserialize(

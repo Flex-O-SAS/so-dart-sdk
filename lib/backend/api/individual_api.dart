@@ -16,6 +16,9 @@ import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/individual_csv_individual_check_email.dart';
+import 'package:so_dart_sdk/backend/model/individual_csv_individual_search.dart';
+import 'package:so_dart_sdk/backend/model/individual_csv_individual_search_individual_export.dart';
 import 'package:so_dart_sdk/backend/model/individual_individual_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
 
@@ -37,6 +40,7 @@ class IndividualApi {
   /// * [lastname] - 
   /// * [clientLinksPeriodEnterprise] - 
   /// * [clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket] - 
+  /// * [clientLinksPeriodEnterprisePeriodName] - 
   /// * [email] - 
   /// * [reference] - 
   /// * [referenceLeftSquareBracketRightSquareBracket] - 
@@ -112,6 +116,7 @@ class IndividualApi {
     String? lastname,
     String? clientLinksPeriodEnterprise,
     BuiltList<String>? clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket,
+    String? clientLinksPeriodEnterprisePeriodName,
     String? email,
     String? reference,
     BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
@@ -198,6 +203,7 @@ class IndividualApi {
       if (lastname != null) r'lastname': encodeQueryParameter(_serializers, lastname, const FullType(String)),
       if (clientLinksPeriodEnterprise != null) r'clientLinks.enterprise': encodeQueryParameter(_serializers, clientLinksPeriodEnterprise, const FullType(String)),
       if (clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket != null) r'clientLinks.enterprise[]': encodeCollectionQueryParameter<String>(_serializers, clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (clientLinksPeriodEnterprisePeriodName != null) r'clientLinks.enterprise.name': encodeQueryParameter(_serializers, clientLinksPeriodEnterprisePeriodName, const FullType(String)),
       if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
       if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
@@ -310,13 +316,85 @@ class IndividualApi {
   /// * [lastname] - 
   /// * [clientLinksPeriodEnterprise] - 
   /// * [clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket] - 
+  /// * [clientLinksPeriodEnterprisePeriodName] - 
   /// * [email] - 
   /// * [reference] - 
   /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [referencePartialLeftSquareBracketRightSquareBracket] - 
-  /// * [name] - Search by firstname or lastname
+  /// * [name] - Individual name
+  /// * [tag] - Individual tag
+  /// * [centerLeftSquareBracketRightSquareBracket] - 
+  /// * [statusLeftSquareBracketRightSquareBracket] - 
+  /// * [orderLeftSquareBracketFirstnameRightSquareBracket] - 
+  /// * [orderLeftSquareBracketLastnameRightSquareBracket] - 
+  /// * [orderLeftSquareBracketCivilityRightSquareBracket] - 
+  /// * [orderLeftSquareBracketVisorClientsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketVisorLogClientsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketClientLinksRightSquareBracket] - 
+  /// * [orderLeftSquareBracketScheduleDesktopsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketOwnedOpportunitiesRightSquareBracket] - 
+  /// * [orderLeftSquareBracketOwnedContractServicesRightSquareBracket] - 
+  /// * [orderLeftSquareBracketSignatoryContractsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketEventsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketClientRequestsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketCustomerReservationsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketContractServiceUsersRightSquareBracket] - 
+  /// * [orderLeftSquareBracketIsPresentRightSquareBracket] - 
+  /// * [orderLeftSquareBracketWifiLogsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketPresenceLogsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketWifiLoginRightSquareBracket] - 
+  /// * [orderLeftSquareBracketActivCornerAccessRightSquareBracket] - 
+  /// * [orderLeftSquareBracketVisorCentersRightSquareBracket] - 
+  /// * [orderLeftSquareBracketSourcesRightSquareBracket] - 
+  /// * [orderLeftSquareBracketPrescribedOpportunitiesRightSquareBracket] - 
+  /// * [orderLeftSquareBracketSignatoryOpportunitiesRightSquareBracket] - 
+  /// * [orderLeftSquareBracketDecidedOpportunitiesRightSquareBracket] - 
+  /// * [orderLeftSquareBracketPhoneCallsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketSignatoryContractDraftsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketOwnedContractServiceDraftsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketContractServiceUserDraftsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketWelcomrUuidRightSquareBracket] - 
+  /// * [orderLeftSquareBracketMeetingAttendeesRightSquareBracket] - 
+  /// * [orderLeftSquareBracketTosAcceptedAtRightSquareBracket] - 
+  /// * [orderLeftSquareBracketEnterprisesRightSquareBracket] - 
+  /// * [orderLeftSquareBracketLabelledNameRightSquareBracket] - 
+  /// * [orderLeftSquareBracketReadLinkRightSquareBracket] - 
+  /// * [orderLeftSquareBracketContractServicesRightSquareBracket] - 
+  /// * [orderLeftSquareBracketEmailRightSquareBracket] - 
+  /// * [orderLeftSquareBracketPhoneRightSquareBracket] - 
+  /// * [orderLeftSquareBracketMobileRightSquareBracket] - 
+  /// * [orderLeftSquareBracketExternalUserIDRightSquareBracket] - 
+  /// * [orderLeftSquareBracketFaxRightSquareBracket] - 
+  /// * [orderLeftSquareBracketMainCenterRightSquareBracket] - 
+  /// * [orderLeftSquareBracketLanguageRightSquareBracket] - 
+  /// * [orderLeftSquareBracketAccountsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketContractsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketMessagesRightSquareBracket] - 
+  /// * [orderLeftSquareBracketDocumentsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketActivitiesRightSquareBracket] - 
+  /// * [orderLeftSquareBracketStatusRightSquareBracket] - 
+  /// * [orderLeftSquareBracketStripeIdRightSquareBracket] - 
+  /// * [orderLeftSquareBracketCreditsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketClientCentersRightSquareBracket] - 
+  /// * [orderLeftSquareBracketIsKeyAccountRightSquareBracket] - 
+  /// * [orderLeftSquareBracketLitigationsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketRadcheckIdRightSquareBracket] - 
+  /// * [orderLeftSquareBracketIsInvalidEmailRightSquareBracket] - 
+  /// * [orderLeftSquareBracketSsidUsersRightSquareBracket] - 
+  /// * [orderLeftSquareBracketPaymentsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketContractDraftsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketAddressRightSquareBracket] - 
+  /// * [orderLeftSquareBracketZipcodeRightSquareBracket] - 
+  /// * [orderLeftSquareBracketCityRightSquareBracket] - 
+  /// * [orderLeftSquareBracketCountryRightSquareBracket] - 
+  /// * [orderLeftSquareBracketTimezoneRightSquareBracket] - 
+  /// * [orderLeftSquareBracketRequiredInlineDocumentsRightSquareBracket] - 
+  /// * [orderLeftSquareBracketReferenceRightSquareBracket] - 
+  /// * [orderLeftSquareBracketIdRightSquareBracket] - 
+  /// * [orderLeftSquareBracketCreatedAtRightSquareBracket] - 
+  /// * [orderLeftSquareBracketUpdatedAtRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -334,6 +412,7 @@ class IndividualApi {
     String? lastname,
     String? clientLinksPeriodEnterprise,
     BuiltList<String>? clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket,
+    String? clientLinksPeriodEnterprisePeriodName,
     String? email,
     String? reference,
     BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
@@ -341,6 +420,77 @@ class IndividualApi {
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     String? referencePartialLeftSquareBracketRightSquareBracket,
     String? name,
+    String? tag,
+    String? centerLeftSquareBracketRightSquareBracket,
+    String? statusLeftSquareBracketRightSquareBracket,
+    String? orderLeftSquareBracketFirstnameRightSquareBracket,
+    String? orderLeftSquareBracketLastnameRightSquareBracket,
+    String? orderLeftSquareBracketCivilityRightSquareBracket,
+    String? orderLeftSquareBracketVisorClientsRightSquareBracket,
+    String? orderLeftSquareBracketVisorLogClientsRightSquareBracket,
+    String? orderLeftSquareBracketClientLinksRightSquareBracket,
+    String? orderLeftSquareBracketScheduleDesktopsRightSquareBracket,
+    String? orderLeftSquareBracketOwnedOpportunitiesRightSquareBracket,
+    String? orderLeftSquareBracketOwnedContractServicesRightSquareBracket,
+    String? orderLeftSquareBracketSignatoryContractsRightSquareBracket,
+    String? orderLeftSquareBracketEventsRightSquareBracket,
+    String? orderLeftSquareBracketClientRequestsRightSquareBracket,
+    String? orderLeftSquareBracketCustomerReservationsRightSquareBracket,
+    String? orderLeftSquareBracketContractServiceUsersRightSquareBracket,
+    String? orderLeftSquareBracketIsPresentRightSquareBracket,
+    String? orderLeftSquareBracketWifiLogsRightSquareBracket,
+    String? orderLeftSquareBracketPresenceLogsRightSquareBracket,
+    String? orderLeftSquareBracketWifiLoginRightSquareBracket,
+    String? orderLeftSquareBracketActivCornerAccessRightSquareBracket,
+    String? orderLeftSquareBracketVisorCentersRightSquareBracket,
+    String? orderLeftSquareBracketSourcesRightSquareBracket,
+    String? orderLeftSquareBracketPrescribedOpportunitiesRightSquareBracket,
+    String? orderLeftSquareBracketSignatoryOpportunitiesRightSquareBracket,
+    String? orderLeftSquareBracketDecidedOpportunitiesRightSquareBracket,
+    String? orderLeftSquareBracketPhoneCallsRightSquareBracket,
+    String? orderLeftSquareBracketSignatoryContractDraftsRightSquareBracket,
+    String? orderLeftSquareBracketOwnedContractServiceDraftsRightSquareBracket,
+    String? orderLeftSquareBracketContractServiceUserDraftsRightSquareBracket,
+    String? orderLeftSquareBracketWelcomrUuidRightSquareBracket,
+    String? orderLeftSquareBracketMeetingAttendeesRightSquareBracket,
+    String? orderLeftSquareBracketTosAcceptedAtRightSquareBracket,
+    String? orderLeftSquareBracketEnterprisesRightSquareBracket,
+    String? orderLeftSquareBracketLabelledNameRightSquareBracket,
+    String? orderLeftSquareBracketReadLinkRightSquareBracket,
+    String? orderLeftSquareBracketContractServicesRightSquareBracket,
+    String? orderLeftSquareBracketEmailRightSquareBracket,
+    String? orderLeftSquareBracketPhoneRightSquareBracket,
+    String? orderLeftSquareBracketMobileRightSquareBracket,
+    String? orderLeftSquareBracketExternalUserIDRightSquareBracket,
+    String? orderLeftSquareBracketFaxRightSquareBracket,
+    String? orderLeftSquareBracketMainCenterRightSquareBracket,
+    String? orderLeftSquareBracketLanguageRightSquareBracket,
+    String? orderLeftSquareBracketAccountsRightSquareBracket,
+    String? orderLeftSquareBracketContractsRightSquareBracket,
+    String? orderLeftSquareBracketMessagesRightSquareBracket,
+    String? orderLeftSquareBracketDocumentsRightSquareBracket,
+    String? orderLeftSquareBracketActivitiesRightSquareBracket,
+    String? orderLeftSquareBracketStatusRightSquareBracket,
+    String? orderLeftSquareBracketStripeIdRightSquareBracket,
+    String? orderLeftSquareBracketCreditsRightSquareBracket,
+    String? orderLeftSquareBracketClientCentersRightSquareBracket,
+    String? orderLeftSquareBracketIsKeyAccountRightSquareBracket,
+    String? orderLeftSquareBracketLitigationsRightSquareBracket,
+    String? orderLeftSquareBracketRadcheckIdRightSquareBracket,
+    String? orderLeftSquareBracketIsInvalidEmailRightSquareBracket,
+    String? orderLeftSquareBracketSsidUsersRightSquareBracket,
+    String? orderLeftSquareBracketPaymentsRightSquareBracket,
+    String? orderLeftSquareBracketContractDraftsRightSquareBracket,
+    String? orderLeftSquareBracketAddressRightSquareBracket,
+    String? orderLeftSquareBracketZipcodeRightSquareBracket,
+    String? orderLeftSquareBracketCityRightSquareBracket,
+    String? orderLeftSquareBracketCountryRightSquareBracket,
+    String? orderLeftSquareBracketTimezoneRightSquareBracket,
+    String? orderLeftSquareBracketRequiredInlineDocumentsRightSquareBracket,
+    String? orderLeftSquareBracketReferenceRightSquareBracket,
+    String? orderLeftSquareBracketIdRightSquareBracket,
+    String? orderLeftSquareBracketCreatedAtRightSquareBracket,
+    String? orderLeftSquareBracketUpdatedAtRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -369,6 +519,7 @@ class IndividualApi {
       if (lastname != null) r'lastname': encodeQueryParameter(_serializers, lastname, const FullType(String)),
       if (clientLinksPeriodEnterprise != null) r'clientLinks.enterprise': encodeQueryParameter(_serializers, clientLinksPeriodEnterprise, const FullType(String)),
       if (clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket != null) r'clientLinks.enterprise[]': encodeCollectionQueryParameter<String>(_serializers, clientLinksPeriodEnterpriseLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (clientLinksPeriodEnterprisePeriodName != null) r'clientLinks.enterprise.name': encodeQueryParameter(_serializers, clientLinksPeriodEnterprisePeriodName, const FullType(String)),
       if (email != null) r'email': encodeQueryParameter(_serializers, email, const FullType(String)),
       if (reference != null) r'reference': encodeQueryParameter(_serializers, reference, const FullType(String)),
       if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
@@ -376,6 +527,77 @@ class IndividualApi {
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (referencePartialLeftSquareBracketRightSquareBracket != null) r'reference_partial[]': encodeQueryParameter(_serializers, referencePartialLeftSquareBracketRightSquareBracket, const FullType(String)),
       if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
+      if (tag != null) r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),
+      if (centerLeftSquareBracketRightSquareBracket != null) r'center[]': encodeQueryParameter(_serializers, centerLeftSquareBracketRightSquareBracket, const FullType(String)),
+      if (statusLeftSquareBracketRightSquareBracket != null) r'status[]': encodeQueryParameter(_serializers, statusLeftSquareBracketRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketFirstnameRightSquareBracket != null) r'order[firstname]': encodeQueryParameter(_serializers, orderLeftSquareBracketFirstnameRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketLastnameRightSquareBracket != null) r'order[lastname]': encodeQueryParameter(_serializers, orderLeftSquareBracketLastnameRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketCivilityRightSquareBracket != null) r'order[civility]': encodeQueryParameter(_serializers, orderLeftSquareBracketCivilityRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketVisorClientsRightSquareBracket != null) r'order[visorClients]': encodeQueryParameter(_serializers, orderLeftSquareBracketVisorClientsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketVisorLogClientsRightSquareBracket != null) r'order[visorLogClients]': encodeQueryParameter(_serializers, orderLeftSquareBracketVisorLogClientsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketClientLinksRightSquareBracket != null) r'order[clientLinks]': encodeQueryParameter(_serializers, orderLeftSquareBracketClientLinksRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketScheduleDesktopsRightSquareBracket != null) r'order[scheduleDesktops]': encodeQueryParameter(_serializers, orderLeftSquareBracketScheduleDesktopsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketOwnedOpportunitiesRightSquareBracket != null) r'order[ownedOpportunities]': encodeQueryParameter(_serializers, orderLeftSquareBracketOwnedOpportunitiesRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketOwnedContractServicesRightSquareBracket != null) r'order[ownedContractServices]': encodeQueryParameter(_serializers, orderLeftSquareBracketOwnedContractServicesRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketSignatoryContractsRightSquareBracket != null) r'order[signatoryContracts]': encodeQueryParameter(_serializers, orderLeftSquareBracketSignatoryContractsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketEventsRightSquareBracket != null) r'order[events]': encodeQueryParameter(_serializers, orderLeftSquareBracketEventsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketClientRequestsRightSquareBracket != null) r'order[clientRequests]': encodeQueryParameter(_serializers, orderLeftSquareBracketClientRequestsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketCustomerReservationsRightSquareBracket != null) r'order[customerReservations]': encodeQueryParameter(_serializers, orderLeftSquareBracketCustomerReservationsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketContractServiceUsersRightSquareBracket != null) r'order[contractServiceUsers]': encodeQueryParameter(_serializers, orderLeftSquareBracketContractServiceUsersRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketIsPresentRightSquareBracket != null) r'order[isPresent]': encodeQueryParameter(_serializers, orderLeftSquareBracketIsPresentRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketWifiLogsRightSquareBracket != null) r'order[wifiLogs]': encodeQueryParameter(_serializers, orderLeftSquareBracketWifiLogsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketPresenceLogsRightSquareBracket != null) r'order[presenceLogs]': encodeQueryParameter(_serializers, orderLeftSquareBracketPresenceLogsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketWifiLoginRightSquareBracket != null) r'order[wifiLogin]': encodeQueryParameter(_serializers, orderLeftSquareBracketWifiLoginRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketActivCornerAccessRightSquareBracket != null) r'order[activCornerAccess]': encodeQueryParameter(_serializers, orderLeftSquareBracketActivCornerAccessRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketVisorCentersRightSquareBracket != null) r'order[visorCenters]': encodeQueryParameter(_serializers, orderLeftSquareBracketVisorCentersRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketSourcesRightSquareBracket != null) r'order[sources]': encodeQueryParameter(_serializers, orderLeftSquareBracketSourcesRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketPrescribedOpportunitiesRightSquareBracket != null) r'order[prescribedOpportunities]': encodeQueryParameter(_serializers, orderLeftSquareBracketPrescribedOpportunitiesRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketSignatoryOpportunitiesRightSquareBracket != null) r'order[signatoryOpportunities]': encodeQueryParameter(_serializers, orderLeftSquareBracketSignatoryOpportunitiesRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketDecidedOpportunitiesRightSquareBracket != null) r'order[decidedOpportunities]': encodeQueryParameter(_serializers, orderLeftSquareBracketDecidedOpportunitiesRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketPhoneCallsRightSquareBracket != null) r'order[phoneCalls]': encodeQueryParameter(_serializers, orderLeftSquareBracketPhoneCallsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketSignatoryContractDraftsRightSquareBracket != null) r'order[signatoryContractDrafts]': encodeQueryParameter(_serializers, orderLeftSquareBracketSignatoryContractDraftsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketOwnedContractServiceDraftsRightSquareBracket != null) r'order[ownedContractServiceDrafts]': encodeQueryParameter(_serializers, orderLeftSquareBracketOwnedContractServiceDraftsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketContractServiceUserDraftsRightSquareBracket != null) r'order[contractServiceUserDrafts]': encodeQueryParameter(_serializers, orderLeftSquareBracketContractServiceUserDraftsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketWelcomrUuidRightSquareBracket != null) r'order[welcomrUuid]': encodeQueryParameter(_serializers, orderLeftSquareBracketWelcomrUuidRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketMeetingAttendeesRightSquareBracket != null) r'order[meetingAttendees]': encodeQueryParameter(_serializers, orderLeftSquareBracketMeetingAttendeesRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketTosAcceptedAtRightSquareBracket != null) r'order[tosAcceptedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketTosAcceptedAtRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketEnterprisesRightSquareBracket != null) r'order[enterprises]': encodeQueryParameter(_serializers, orderLeftSquareBracketEnterprisesRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketLabelledNameRightSquareBracket != null) r'order[labelledName]': encodeQueryParameter(_serializers, orderLeftSquareBracketLabelledNameRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketReadLinkRightSquareBracket != null) r'order[readLink]': encodeQueryParameter(_serializers, orderLeftSquareBracketReadLinkRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketContractServicesRightSquareBracket != null) r'order[contractServices]': encodeQueryParameter(_serializers, orderLeftSquareBracketContractServicesRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketEmailRightSquareBracket != null) r'order[email]': encodeQueryParameter(_serializers, orderLeftSquareBracketEmailRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketPhoneRightSquareBracket != null) r'order[phone]': encodeQueryParameter(_serializers, orderLeftSquareBracketPhoneRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketMobileRightSquareBracket != null) r'order[mobile]': encodeQueryParameter(_serializers, orderLeftSquareBracketMobileRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketExternalUserIDRightSquareBracket != null) r'order[externalUserID]': encodeQueryParameter(_serializers, orderLeftSquareBracketExternalUserIDRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketFaxRightSquareBracket != null) r'order[fax]': encodeQueryParameter(_serializers, orderLeftSquareBracketFaxRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketMainCenterRightSquareBracket != null) r'order[mainCenter]': encodeQueryParameter(_serializers, orderLeftSquareBracketMainCenterRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketLanguageRightSquareBracket != null) r'order[language]': encodeQueryParameter(_serializers, orderLeftSquareBracketLanguageRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketAccountsRightSquareBracket != null) r'order[accounts]': encodeQueryParameter(_serializers, orderLeftSquareBracketAccountsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketContractsRightSquareBracket != null) r'order[contracts]': encodeQueryParameter(_serializers, orderLeftSquareBracketContractsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketMessagesRightSquareBracket != null) r'order[messages]': encodeQueryParameter(_serializers, orderLeftSquareBracketMessagesRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketDocumentsRightSquareBracket != null) r'order[documents]': encodeQueryParameter(_serializers, orderLeftSquareBracketDocumentsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketActivitiesRightSquareBracket != null) r'order[activities]': encodeQueryParameter(_serializers, orderLeftSquareBracketActivitiesRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketStatusRightSquareBracket != null) r'order[status]': encodeQueryParameter(_serializers, orderLeftSquareBracketStatusRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketStripeIdRightSquareBracket != null) r'order[stripeId]': encodeQueryParameter(_serializers, orderLeftSquareBracketStripeIdRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketCreditsRightSquareBracket != null) r'order[credits]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreditsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketClientCentersRightSquareBracket != null) r'order[clientCenters]': encodeQueryParameter(_serializers, orderLeftSquareBracketClientCentersRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketIsKeyAccountRightSquareBracket != null) r'order[isKeyAccount]': encodeQueryParameter(_serializers, orderLeftSquareBracketIsKeyAccountRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketLitigationsRightSquareBracket != null) r'order[litigations]': encodeQueryParameter(_serializers, orderLeftSquareBracketLitigationsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketRadcheckIdRightSquareBracket != null) r'order[radcheckId]': encodeQueryParameter(_serializers, orderLeftSquareBracketRadcheckIdRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketIsInvalidEmailRightSquareBracket != null) r'order[isInvalidEmail]': encodeQueryParameter(_serializers, orderLeftSquareBracketIsInvalidEmailRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketSsidUsersRightSquareBracket != null) r'order[ssidUsers]': encodeQueryParameter(_serializers, orderLeftSquareBracketSsidUsersRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketPaymentsRightSquareBracket != null) r'order[payments]': encodeQueryParameter(_serializers, orderLeftSquareBracketPaymentsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketContractDraftsRightSquareBracket != null) r'order[contractDrafts]': encodeQueryParameter(_serializers, orderLeftSquareBracketContractDraftsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketAddressRightSquareBracket != null) r'order[address]': encodeQueryParameter(_serializers, orderLeftSquareBracketAddressRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketZipcodeRightSquareBracket != null) r'order[zipcode]': encodeQueryParameter(_serializers, orderLeftSquareBracketZipcodeRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketCityRightSquareBracket != null) r'order[city]': encodeQueryParameter(_serializers, orderLeftSquareBracketCityRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketCountryRightSquareBracket != null) r'order[country]': encodeQueryParameter(_serializers, orderLeftSquareBracketCountryRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketTimezoneRightSquareBracket != null) r'order[timezone]': encodeQueryParameter(_serializers, orderLeftSquareBracketTimezoneRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketRequiredInlineDocumentsRightSquareBracket != null) r'order[requiredInlineDocuments]': encodeQueryParameter(_serializers, orderLeftSquareBracketRequiredInlineDocumentsRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketReferenceRightSquareBracket != null) r'order[reference]': encodeQueryParameter(_serializers, orderLeftSquareBracketReferenceRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketIdRightSquareBracket != null) r'order[id]': encodeQueryParameter(_serializers, orderLeftSquareBracketIdRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
+      if (orderLeftSquareBracketUpdatedAtRightSquareBracket != null) r'order[updatedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketUpdatedAtRightSquareBracket, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

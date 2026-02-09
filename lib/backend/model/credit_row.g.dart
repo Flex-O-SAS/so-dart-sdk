@@ -22,8 +22,6 @@ class _$CreditRow extends CreditRow {
   @override
   final num? total;
   @override
-  final int? sellsyId;
-  @override
   final num? vatRate;
   @override
   final String? period;
@@ -47,7 +45,6 @@ class _$CreditRow extends CreditRow {
       this.price,
       this.vat,
       this.total,
-      this.sellsyId,
       this.vatRate,
       this.period,
       this.discount,
@@ -74,7 +71,6 @@ class _$CreditRow extends CreditRow {
         price == other.price &&
         vat == other.vat &&
         total == other.total &&
-        sellsyId == other.sellsyId &&
         vatRate == other.vatRate &&
         period == other.period &&
         discount == other.discount &&
@@ -93,7 +89,6 @@ class _$CreditRow extends CreditRow {
     _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jc(_$hash, vat.hashCode);
     _$hash = $jc(_$hash, total.hashCode);
-    _$hash = $jc(_$hash, sellsyId.hashCode);
     _$hash = $jc(_$hash, vatRate.hashCode);
     _$hash = $jc(_$hash, period.hashCode);
     _$hash = $jc(_$hash, discount.hashCode);
@@ -114,7 +109,6 @@ class _$CreditRow extends CreditRow {
           ..add('price', price)
           ..add('vat', vat)
           ..add('total', total)
-          ..add('sellsyId', sellsyId)
           ..add('vatRate', vatRate)
           ..add('period', period)
           ..add('discount', discount)
@@ -158,10 +152,6 @@ class CreditRowBuilder implements Builder<CreditRow, CreditRowBuilder> {
   num? get total => _$this._total;
   set total(num? total) => _$this._total = total;
 
-  int? _sellsyId;
-  int? get sellsyId => _$this._sellsyId;
-  set sellsyId(int? sellsyId) => _$this._sellsyId = sellsyId;
-
   num? _vatRate;
   num? get vatRate => _$this._vatRate;
   set vatRate(num? vatRate) => _$this._vatRate = vatRate;
@@ -200,7 +190,6 @@ class CreditRowBuilder implements Builder<CreditRow, CreditRowBuilder> {
       _price = $v.price;
       _vat = $v.vat;
       _total = $v.total;
-      _sellsyId = $v.sellsyId;
       _vatRate = $v.vatRate;
       _period = $v.period;
       _discount = $v.discount;
@@ -238,7 +227,6 @@ class CreditRowBuilder implements Builder<CreditRow, CreditRowBuilder> {
             price: price,
             vat: vat,
             total: total,
-            sellsyId: sellsyId,
             vatRate: vatRate,
             period: period,
             discount: discount,

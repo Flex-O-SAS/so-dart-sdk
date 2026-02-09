@@ -15,6 +15,7 @@ import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/staff_csv_staff_search.dart';
 import 'package:so_dart_sdk/backend/model/staff_jsonld_staff_search.dart';
 import 'package:so_dart_sdk/backend/model/staff_staff_write_json_merge_patch.dart';
 

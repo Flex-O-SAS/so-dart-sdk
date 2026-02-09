@@ -5,15 +5,15 @@
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/hydra_collection_base_schema_no_pagination_search.dart';
 import 'package:so_dart_sdk/backend/model/hydra_collection_base_schema_all_of_view.dart';
-import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/backend/model/individual_jsonld_individual_search_individual_export.dart';
 import 'package:so_dart_sdk/backend/model/hydra_collection_base_schema.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'api_individuals_get_collection200_response.g.dart';
 
-/// Individual.jsonld-individual.search collection.
+/// Individual.jsonld-individual.search_individual.export collection.
 ///
 /// Properties:
 /// * [totalItems] 
@@ -23,7 +23,7 @@ part 'api_individuals_get_collection200_response.g.dart';
 @BuiltValue()
 abstract class ApiIndividualsGetCollection200Response implements HydraCollectionBaseSchema, Built<ApiIndividualsGetCollection200Response, ApiIndividualsGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
-  BuiltList<IndividualJsonldIndividualSearch> get member;
+  BuiltList<IndividualJsonldIndividualSearchIndividualExport> get member;
 
   ApiIndividualsGetCollection200Response._();
 
@@ -51,7 +51,7 @@ class _$ApiIndividualsGetCollection200ResponseSerializer implements PrimitiveSer
     yield r'member';
     yield serializers.serialize(
       object.member,
-      specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldIndividualSearch)]),
+      specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldIndividualSearchIndividualExport)]),
     );
     if (object.totalItems != null) {
       yield r'totalItems';
@@ -100,8 +100,8 @@ class _$ApiIndividualsGetCollection200ResponseSerializer implements PrimitiveSer
         case r'member':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldIndividualSearch)]),
-          ) as BuiltList<IndividualJsonldIndividualSearch>;
+            specifiedType: const FullType(BuiltList, [FullType(IndividualJsonldIndividualSearchIndividualExport)]),
+          ) as BuiltList<IndividualJsonldIndividualSearchIndividualExport>;
           result.member.replace(valueDes);
           break;
         case r'totalItems':

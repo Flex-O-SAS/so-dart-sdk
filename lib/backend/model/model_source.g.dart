@@ -16,8 +16,6 @@ class _$ModelSource extends ModelSource {
   @override
   final BuiltList<Opportunity>? opportunities;
   @override
-  final BuiltList<Broker>? brokers;
-  @override
   final BuiltList<AcquisitionCost>? acquisitionCosts;
   @override
   final BuiltList<Contract>? contracts;
@@ -44,7 +42,6 @@ class _$ModelSource extends ModelSource {
       this.parent,
       this.sources,
       this.opportunities,
-      this.brokers,
       this.acquisitionCosts,
       this.contracts,
       this.prescriber,
@@ -71,7 +68,6 @@ class _$ModelSource extends ModelSource {
         parent == other.parent &&
         sources == other.sources &&
         opportunities == other.opportunities &&
-        brokers == other.brokers &&
         acquisitionCosts == other.acquisitionCosts &&
         contracts == other.contracts &&
         prescriber == other.prescriber &&
@@ -90,7 +86,6 @@ class _$ModelSource extends ModelSource {
     _$hash = $jc(_$hash, parent.hashCode);
     _$hash = $jc(_$hash, sources.hashCode);
     _$hash = $jc(_$hash, opportunities.hashCode);
-    _$hash = $jc(_$hash, brokers.hashCode);
     _$hash = $jc(_$hash, acquisitionCosts.hashCode);
     _$hash = $jc(_$hash, contracts.hashCode);
     _$hash = $jc(_$hash, prescriber.hashCode);
@@ -111,7 +106,6 @@ class _$ModelSource extends ModelSource {
           ..add('parent', parent)
           ..add('sources', sources)
           ..add('opportunities', opportunities)
-          ..add('brokers', brokers)
           ..add('acquisitionCosts', acquisitionCosts)
           ..add('contracts', contracts)
           ..add('prescriber', prescriber)
@@ -146,11 +140,6 @@ class ModelSourceBuilder implements Builder<ModelSource, ModelSourceBuilder> {
       _$this._opportunities ??= new ListBuilder<Opportunity>();
   set opportunities(ListBuilder<Opportunity>? opportunities) =>
       _$this._opportunities = opportunities;
-
-  ListBuilder<Broker>? _brokers;
-  ListBuilder<Broker> get brokers =>
-      _$this._brokers ??= new ListBuilder<Broker>();
-  set brokers(ListBuilder<Broker>? brokers) => _$this._brokers = brokers;
 
   ListBuilder<AcquisitionCost>? _acquisitionCosts;
   ListBuilder<AcquisitionCost> get acquisitionCosts =>
@@ -207,7 +196,6 @@ class ModelSourceBuilder implements Builder<ModelSource, ModelSourceBuilder> {
       _parent = $v.parent?.toBuilder();
       _sources = $v.sources?.toBuilder();
       _opportunities = $v.opportunities?.toBuilder();
-      _brokers = $v.brokers?.toBuilder();
       _acquisitionCosts = $v.acquisitionCosts?.toBuilder();
       _contracts = $v.contracts?.toBuilder();
       _prescriber = $v.prescriber?.toBuilder();
@@ -245,7 +233,6 @@ class ModelSourceBuilder implements Builder<ModelSource, ModelSourceBuilder> {
             parent: _parent?.build(),
             sources: _sources?.build(),
             opportunities: _opportunities?.build(),
-            brokers: _brokers?.build(),
             acquisitionCosts: _acquisitionCosts?.build(),
             contracts: _contracts?.build(),
             prescriber: _prescriber?.build(),
@@ -265,8 +252,6 @@ class ModelSourceBuilder implements Builder<ModelSource, ModelSourceBuilder> {
         _sources?.build();
         _$failedField = 'opportunities';
         _opportunities?.build();
-        _$failedField = 'brokers';
-        _brokers?.build();
         _$failedField = 'acquisitionCosts';
         _acquisitionCosts?.build();
         _$failedField = 'contracts';

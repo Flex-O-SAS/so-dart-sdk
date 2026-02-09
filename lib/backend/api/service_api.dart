@@ -12,6 +12,8 @@ import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_service_internal_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_service_reservation_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/service_csv_reservation_read.dart';
+import 'package:so_dart_sdk/backend/model/service_csv_service_search.dart';
 
 class ServiceApi {
 

@@ -9,7 +9,7 @@ part of 'api_individuals_get_collection200_response.dart';
 class _$ApiIndividualsGetCollection200Response
     extends ApiIndividualsGetCollection200Response {
   @override
-  final BuiltList<IndividualJsonldIndividualSearch> member;
+  final BuiltList<IndividualJsonldIndividualSearchIndividualExport> member;
   @override
   final HydraCollectionBaseSchemaAllOfView? view;
   @override
@@ -80,10 +80,14 @@ class ApiIndividualsGetCollection200ResponseBuilder
         HydraCollectionBaseSchemaBuilder {
   _$ApiIndividualsGetCollection200Response? _$v;
 
-  ListBuilder<IndividualJsonldIndividualSearch>? _member;
-  ListBuilder<IndividualJsonldIndividualSearch> get member =>
-      _$this._member ??= new ListBuilder<IndividualJsonldIndividualSearch>();
-  set member(covariant ListBuilder<IndividualJsonldIndividualSearch>? member) =>
+  ListBuilder<IndividualJsonldIndividualSearchIndividualExport>? _member;
+  ListBuilder<IndividualJsonldIndividualSearchIndividualExport> get member =>
+      _$this._member ??=
+          new ListBuilder<IndividualJsonldIndividualSearchIndividualExport>();
+  set member(
+          covariant ListBuilder<
+                  IndividualJsonldIndividualSearchIndividualExport>?
+              member) =>
       _$this._member = member;
 
   HydraCollectionBaseSchemaAllOfViewBuilder? _view;

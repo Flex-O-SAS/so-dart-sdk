@@ -16,16 +16,27 @@ class _$EnterpriseIndividualSearch extends EnterpriseIndividualSearch {
   @override
   final String? mobile;
   @override
+  final CenterIndividualSearch? center;
+  @override
   final String? reference;
   @override
   final int? id;
+  @override
+  final DateTime? createdAt;
 
   factory _$EnterpriseIndividualSearch(
           [void Function(EnterpriseIndividualSearchBuilder)? updates]) =>
       (new EnterpriseIndividualSearchBuilder()..update(updates))._build();
 
   _$EnterpriseIndividualSearch._(
-      {this.name, this.email, this.phone, this.mobile, this.reference, this.id})
+      {this.name,
+      this.email,
+      this.phone,
+      this.mobile,
+      this.center,
+      this.reference,
+      this.id,
+      this.createdAt})
       : super._();
 
   @override
@@ -45,8 +56,10 @@ class _$EnterpriseIndividualSearch extends EnterpriseIndividualSearch {
         email == other.email &&
         phone == other.phone &&
         mobile == other.mobile &&
+        center == other.center &&
         reference == other.reference &&
-        id == other.id;
+        id == other.id &&
+        createdAt == other.createdAt;
   }
 
   @override
@@ -56,8 +69,10 @@ class _$EnterpriseIndividualSearch extends EnterpriseIndividualSearch {
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, mobile.hashCode);
+    _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -69,8 +84,10 @@ class _$EnterpriseIndividualSearch extends EnterpriseIndividualSearch {
           ..add('email', email)
           ..add('phone', phone)
           ..add('mobile', mobile)
+          ..add('center', center)
           ..add('reference', reference)
-          ..add('id', id))
+          ..add('id', id)
+          ..add('createdAt', createdAt))
         .toString();
   }
 }
@@ -96,6 +113,11 @@ class EnterpriseIndividualSearchBuilder
   String? get mobile => _$this._mobile;
   set mobile(String? mobile) => _$this._mobile = mobile;
 
+  CenterIndividualSearchBuilder? _center;
+  CenterIndividualSearchBuilder get center =>
+      _$this._center ??= new CenterIndividualSearchBuilder();
+  set center(CenterIndividualSearchBuilder? center) => _$this._center = center;
+
   String? _reference;
   String? get reference => _$this._reference;
   set reference(String? reference) => _$this._reference = reference;
@@ -103,6 +125,10 @@ class EnterpriseIndividualSearchBuilder
   int? _id;
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   EnterpriseIndividualSearchBuilder() {
     EnterpriseIndividualSearch._defaults(this);
@@ -115,8 +141,10 @@ class EnterpriseIndividualSearchBuilder
       _email = $v.email;
       _phone = $v.phone;
       _mobile = $v.mobile;
+      _center = $v.center?.toBuilder();
       _reference = $v.reference;
       _id = $v.id;
+      _createdAt = $v.createdAt;
       _$v = null;
     }
     return this;
@@ -137,15 +165,30 @@ class EnterpriseIndividualSearchBuilder
   EnterpriseIndividualSearch build() => _build();
 
   _$EnterpriseIndividualSearch _build() {
-    final _$result = _$v ??
-        new _$EnterpriseIndividualSearch._(
-          name: name,
-          email: email,
-          phone: phone,
-          mobile: mobile,
-          reference: reference,
-          id: id,
-        );
+    _$EnterpriseIndividualSearch _$result;
+    try {
+      _$result = _$v ??
+          new _$EnterpriseIndividualSearch._(
+            name: name,
+            email: email,
+            phone: phone,
+            mobile: mobile,
+            center: _center?.build(),
+            reference: reference,
+            id: id,
+            createdAt: createdAt,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'center';
+        _center?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'EnterpriseIndividualSearch', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

@@ -6,7 +6,6 @@
 import 'package:so_dart_sdk/backend/model/contract.dart';
 import 'package:so_dart_sdk/backend/model/prescriber.dart';
 import 'package:so_dart_sdk/backend/model/acquisition_cost.dart';
-import 'package:so_dart_sdk/backend/model/broker.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/model/opportunity.dart';
 import 'package:built_value/built_value.dart';
@@ -21,7 +20,6 @@ part 'model_source.g.dart';
 /// * [parent] 
 /// * [sources] 
 /// * [opportunities] 
-/// * [brokers] 
 /// * [acquisitionCosts] 
 /// * [contracts] 
 /// * [prescriber] 
@@ -44,9 +42,6 @@ abstract class ModelSource implements Built<ModelSource, ModelSourceBuilder> {
 
   @BuiltValueField(wireName: r'opportunities')
   BuiltList<Opportunity>? get opportunities;
-
-  @BuiltValueField(wireName: r'brokers')
-  BuiltList<Broker>? get brokers;
 
   @BuiltValueField(wireName: r'acquisitionCosts')
   BuiltList<AcquisitionCost>? get acquisitionCosts;
@@ -124,13 +119,6 @@ class _$ModelSourceSerializer implements PrimitiveSerializer<ModelSource> {
       yield serializers.serialize(
         object.opportunities,
         specifiedType: const FullType(BuiltList, [FullType(Opportunity)]),
-      );
-    }
-    if (object.brokers != null) {
-      yield r'brokers';
-      yield serializers.serialize(
-        object.brokers,
-        specifiedType: const FullType(BuiltList, [FullType(Broker)]),
       );
     }
     if (object.acquisitionCosts != null) {
@@ -247,13 +235,6 @@ class _$ModelSourceSerializer implements PrimitiveSerializer<ModelSource> {
             specifiedType: const FullType(BuiltList, [FullType(Opportunity)]),
           ) as BuiltList<Opportunity>;
           result.opportunities.replace(valueDes);
-          break;
-        case r'brokers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Broker)]),
-          ) as BuiltList<Broker>;
-          result.brokers.replace(valueDes);
           break;
         case r'acquisitionCosts':
           final valueDes = serializers.deserialize(

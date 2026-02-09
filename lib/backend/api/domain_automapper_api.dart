@@ -13,6 +13,7 @@ import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_domain_automapper_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/domain_automapper_csv_domain_automapper_search.dart';
 import 'package:so_dart_sdk/backend/model/domain_automapper_domain_automapper_write.dart';
 import 'package:so_dart_sdk/backend/model/domain_automapper_jsonld_domain_automapper_search.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';

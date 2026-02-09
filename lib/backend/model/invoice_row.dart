@@ -23,7 +23,6 @@ part 'invoice_row.g.dart';
 /// * [commissioningFees] 
 /// * [invoice] 
 /// * [contractService] 
-/// * [sellsyId] 
 /// * [type] 
 /// * [creditRows] 
 /// * [begin] 
@@ -63,9 +62,6 @@ abstract class InvoiceRow implements Built<InvoiceRow, InvoiceRowBuilder> {
 
   @BuiltValueField(wireName: r'contractService')
   String? get contractService;
-
-  @BuiltValueField(wireName: r'sellsyId')
-  int? get sellsyId;
 
   @BuiltValueField(wireName: r'type')
   int? get type;
@@ -183,13 +179,6 @@ class _$InvoiceRowSerializer implements PrimitiveSerializer<InvoiceRow> {
       yield serializers.serialize(
         object.contractService,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.sellsyId != null) {
-      yield r'sellsyId';
-      yield serializers.serialize(
-        object.sellsyId,
-        specifiedType: const FullType(int),
       );
     }
     if (object.type != null) {
@@ -340,13 +329,6 @@ class _$InvoiceRowSerializer implements PrimitiveSerializer<InvoiceRow> {
             specifiedType: const FullType(String),
           ) as String;
           result.contractService = valueDes;
-          break;
-        case r'sellsyId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.sellsyId = valueDes;
           break;
         case r'type':
           final valueDes = serializers.deserialize(

@@ -4,7 +4,6 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/event.dart';
-import 'package:so_dart_sdk/backend/model/broker.dart';
 import 'package:so_dart_sdk/backend/model/client.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -18,7 +17,6 @@ part 'activity.g.dart';
 /// * [message] 
 /// * [staff] 
 /// * [client] 
-/// * [broker] 
 /// * [event] 
 /// * [contract] 
 /// * [invoice] 
@@ -39,9 +37,6 @@ abstract class Activity implements Built<Activity, ActivityBuilder> {
 
   @BuiltValueField(wireName: r'client')
   Client? get client;
-
-  @BuiltValueField(wireName: r'broker')
-  Broker? get broker;
 
   @BuiltValueField(wireName: r'event')
   Event? get event;
@@ -113,13 +108,6 @@ class _$ActivitySerializer implements PrimitiveSerializer<Activity> {
       yield serializers.serialize(
         object.client,
         specifiedType: const FullType.nullable(Client),
-      );
-    }
-    if (object.broker != null) {
-      yield r'broker';
-      yield serializers.serialize(
-        object.broker,
-        specifiedType: const FullType.nullable(Broker),
       );
     }
     if (object.event != null) {
@@ -222,14 +210,6 @@ class _$ActivitySerializer implements PrimitiveSerializer<Activity> {
           ) as Client?;
           if (valueDes == null) continue;
           result.client.replace(valueDes);
-          break;
-        case r'broker':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Broker),
-          ) as Broker?;
-          if (valueDes == null) continue;
-          result.broker.replace(valueDes);
           break;
         case r'event':
           final valueDes = serializers.deserialize(

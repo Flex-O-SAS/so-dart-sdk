@@ -13,6 +13,8 @@ import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/enterprise_csv_enterprise_search_enterprise_export.dart';
+import 'package:so_dart_sdk/backend/model/enterprise_csv_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_enterprise_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_jsonld_enterprise_search_enterprise_read.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';

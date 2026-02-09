@@ -7,6 +7,7 @@ import 'package:so_dart_sdk/backend/model/enterprise_jsonld_individual_search.da
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_individual_search.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -20,17 +21,23 @@ part 'individual_jsonld_individual_search.g.dart';
 /// * [atType] 
 /// * [firstname] 
 /// * [lastname] 
+/// * [isPresent] 
 /// * [tosAcceptedAt] 
 /// * [enterprises] 
 /// * [email] 
 /// * [phone] 
 /// * [mobile] 
+/// * [center] 
 /// * [reference] 
 /// * [id] 
+/// * [createdAt] 
 @BuiltValue()
 abstract class IndividualJsonldIndividualSearch implements HydraItemBaseSchema, Built<IndividualJsonldIndividualSearch, IndividualJsonldIndividualSearchBuilder> {
   @BuiltValueField(wireName: r'reference')
   String? get reference;
+
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
 
   @BuiltValueField(wireName: r'firstname')
   String? get firstname;
@@ -38,8 +45,14 @@ abstract class IndividualJsonldIndividualSearch implements HydraItemBaseSchema, 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
 
+  @BuiltValueField(wireName: r'center')
+  CenterJsonldIndividualSearch? get center;
+
   @BuiltValueField(wireName: r'mobile')
   String? get mobile;
+
+  @BuiltValueField(wireName: r'isPresent')
+  bool? get isPresent;
 
   @BuiltValueField(wireName: r'tosAcceptedAt')
   DateTime? get tosAcceptedAt;
@@ -79,13 +92,6 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
     IndividualJsonldIndividualSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.reference != null) {
-      yield r'reference';
-      yield serializers.serialize(
-        object.reference,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.firstname != null) {
       yield r'firstname';
       yield serializers.serialize(
@@ -98,17 +104,66 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
       object.atId,
       specifiedType: const FullType(String),
     );
-    if (object.phone != null) {
-      yield r'phone';
+    if (object.center != null) {
+      yield r'center';
       yield serializers.serialize(
-        object.phone,
-        specifiedType: const FullType(String),
+        object.center,
+        specifiedType: const FullType.nullable(CenterJsonldIndividualSearch),
       );
     }
     if (object.mobile != null) {
       yield r'mobile';
       yield serializers.serialize(
         object.mobile,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.isPresent != null) {
+      yield r'isPresent';
+      yield serializers.serialize(
+        object.isPresent,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.tosAcceptedAt != null) {
+      yield r'tosAcceptedAt';
+      yield serializers.serialize(
+        object.tosAcceptedAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.enterprises != null) {
+      yield r'enterprises';
+      yield serializers.serialize(
+        object.enterprises,
+        specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldIndividualSearch)]),
+      );
+    }
+    if (object.lastname != null) {
+      yield r'lastname';
+      yield serializers.serialize(
+        object.lastname,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.reference != null) {
+      yield r'reference';
+      yield serializers.serialize(
+        object.reference,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.createdAt != null) {
+      yield r'createdAt';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.phone != null) {
+      yield r'phone';
+      yield serializers.serialize(
+        object.phone,
         specifiedType: const FullType(String),
       );
     }
@@ -119,25 +174,11 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
         specifiedType: const FullType(HydraItemBaseSchemaContext),
       );
     }
-    if (object.tosAcceptedAt != null) {
-      yield r'tosAcceptedAt';
-      yield serializers.serialize(
-        object.tosAcceptedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     if (object.id != null) {
       yield r'id';
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(int),
-      );
-    }
-    if (object.enterprises != null) {
-      yield r'enterprises';
-      yield serializers.serialize(
-        object.enterprises,
-        specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldIndividualSearch)]),
       );
     }
     yield r'@type';
@@ -149,13 +190,6 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
       yield r'email';
       yield serializers.serialize(
         object.email,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.lastname != null) {
-      yield r'lastname';
-      yield serializers.serialize(
-        object.lastname,
         specifiedType: const FullType(String),
       );
     }
@@ -182,13 +216,6 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'reference':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.reference = valueDes;
-          break;
         case r'firstname':
           final valueDes = serializers.deserialize(
             value,
@@ -203,12 +230,13 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
           ) as String;
           result.atId = valueDes;
           break;
-        case r'phone':
+        case r'center':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.phone = valueDes;
+            specifiedType: const FullType.nullable(CenterJsonldIndividualSearch),
+          ) as CenterJsonldIndividualSearch?;
+          if (valueDes == null) continue;
+          result.center.replace(valueDes);
           break;
         case r'mobile':
           final valueDes = serializers.deserialize(
@@ -217,12 +245,12 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
           ) as String;
           result.mobile = valueDes;
           break;
-        case r'@context':
+        case r'isPresent':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(HydraItemBaseSchemaContext),
-          ) as HydraItemBaseSchemaContext;
-          result.atContext.replace(valueDes);
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isPresent = valueDes;
           break;
         case r'tosAcceptedAt':
           final valueDes = serializers.deserialize(
@@ -231,19 +259,54 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
           ) as DateTime;
           result.tosAcceptedAt = valueDes;
           break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
         case r'enterprises':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(EnterpriseJsonldIndividualSearch)]),
           ) as BuiltList<EnterpriseJsonldIndividualSearch>;
           result.enterprises.replace(valueDes);
+          break;
+        case r'lastname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastname = valueDes;
+          break;
+        case r'reference':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.reference = valueDes;
+          break;
+        case r'createdAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
+          break;
+        case r'phone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.phone = valueDes;
+          break;
+        case r'@context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HydraItemBaseSchemaContext),
+          ) as HydraItemBaseSchemaContext;
+          result.atContext.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
           break;
         case r'@type':
           final valueDes = serializers.deserialize(
@@ -258,13 +321,6 @@ class _$IndividualJsonldIndividualSearchSerializer implements PrimitiveSerialize
             specifiedType: const FullType(String),
           ) as String;
           result.email = valueDes;
-          break;
-        case r'lastname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastname = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -11,6 +11,7 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_companies_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/company_csv_company_search.dart';
 
 class CompanyApi {
 

@@ -22,8 +22,6 @@ class _$Credit extends Credit {
   @override
   final num? amountDue;
   @override
-  final int? sellsyId;
-  @override
   final String? link;
   @override
   final BuiltList<CreditRow>? creditRows;
@@ -69,7 +67,6 @@ class _$Credit extends Credit {
       this.amountVat,
       this.amountTotal,
       this.amountDue,
-      this.sellsyId,
       this.link,
       this.creditRows,
       this.creditLinks,
@@ -107,7 +104,6 @@ class _$Credit extends Credit {
         amountVat == other.amountVat &&
         amountTotal == other.amountTotal &&
         amountDue == other.amountDue &&
-        sellsyId == other.sellsyId &&
         link == other.link &&
         creditRows == other.creditRows &&
         creditLinks == other.creditLinks &&
@@ -137,7 +133,6 @@ class _$Credit extends Credit {
     _$hash = $jc(_$hash, amountVat.hashCode);
     _$hash = $jc(_$hash, amountTotal.hashCode);
     _$hash = $jc(_$hash, amountDue.hashCode);
-    _$hash = $jc(_$hash, sellsyId.hashCode);
     _$hash = $jc(_$hash, link.hashCode);
     _$hash = $jc(_$hash, creditRows.hashCode);
     _$hash = $jc(_$hash, creditLinks.hashCode);
@@ -169,7 +164,6 @@ class _$Credit extends Credit {
           ..add('amountVat', amountVat)
           ..add('amountTotal', amountTotal)
           ..add('amountDue', amountDue)
-          ..add('sellsyId', sellsyId)
           ..add('link', link)
           ..add('creditRows', creditRows)
           ..add('creditLinks', creditLinks)
@@ -221,10 +215,6 @@ class CreditBuilder implements Builder<Credit, CreditBuilder> {
   num? _amountDue;
   num? get amountDue => _$this._amountDue;
   set amountDue(num? amountDue) => _$this._amountDue = amountDue;
-
-  int? _sellsyId;
-  int? get sellsyId => _$this._sellsyId;
-  set sellsyId(int? sellsyId) => _$this._sellsyId = sellsyId;
 
   String? _link;
   String? get link => _$this._link;
@@ -315,7 +305,6 @@ class CreditBuilder implements Builder<Credit, CreditBuilder> {
       _amountVat = $v.amountVat;
       _amountTotal = $v.amountTotal;
       _amountDue = $v.amountDue;
-      _sellsyId = $v.sellsyId;
       _link = $v.link;
       _creditRows = $v.creditRows?.toBuilder();
       _creditLinks = $v.creditLinks?.toBuilder();
@@ -364,7 +353,6 @@ class CreditBuilder implements Builder<Credit, CreditBuilder> {
             amountVat: amountVat,
             amountTotal: amountTotal,
             amountDue: amountDue,
-            sellsyId: sellsyId,
             link: link,
             creditRows: _creditRows?.build(),
             creditLinks: _creditLinks?.build(),

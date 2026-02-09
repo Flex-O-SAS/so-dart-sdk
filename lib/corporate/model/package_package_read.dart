@@ -23,6 +23,7 @@ part 'package_package_read.g.dart';
 /// * [handoverDate] 
 /// * [handoverClient] 
 /// * [securityCode] 
+/// * [quantity] 
 @BuiltValue()
 abstract class PackagePackageRead implements Built<PackagePackageRead, PackagePackageReadBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -59,6 +60,9 @@ abstract class PackagePackageRead implements Built<PackagePackageRead, PackagePa
 
   @BuiltValueField(wireName: r'securityCode')
   String get securityCode;
+
+  @BuiltValueField(wireName: r'quantity')
+  int get quantity;
 
   PackagePackageRead._();
 
@@ -143,6 +147,11 @@ class _$PackagePackageReadSerializer implements PrimitiveSerializer<PackagePacka
     yield serializers.serialize(
       object.securityCode,
       specifiedType: const FullType(String),
+    );
+    yield r'quantity';
+    yield serializers.serialize(
+      object.quantity,
+      specifiedType: const FullType(int),
     );
   }
 
@@ -243,6 +252,13 @@ class _$PackagePackageReadSerializer implements PrimitiveSerializer<PackagePacka
             specifiedType: const FullType(String),
           ) as String;
           result.securityCode = valueDes;
+          break;
+        case r'quantity':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.quantity = valueDes;
           break;
         default:
           unhandled.add(key);

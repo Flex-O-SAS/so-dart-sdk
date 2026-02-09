@@ -22,6 +22,7 @@ part 'package_package_write_json_merge_patch.g.dart';
 /// * [handoverDate] 
 /// * [handoverClient] 
 /// * [securityCode] 
+/// * [quantity] 
 @BuiltValue()
 abstract class PackagePackageWriteJsonMergePatch implements Built<PackagePackageWriteJsonMergePatch, PackagePackageWriteJsonMergePatchBuilder> {
   @BuiltValueField(wireName: r'recipient')
@@ -55,6 +56,9 @@ abstract class PackagePackageWriteJsonMergePatch implements Built<PackagePackage
 
   @BuiltValueField(wireName: r'securityCode')
   String? get securityCode;
+
+  @BuiltValueField(wireName: r'quantity')
+  int? get quantity;
 
   PackagePackageWriteJsonMergePatch._();
 
@@ -149,6 +153,13 @@ class _$PackagePackageWriteJsonMergePatchSerializer implements PrimitiveSerializ
         specifiedType: const FullType(String),
       );
     }
+    if (object.quantity != null) {
+      yield r'quantity';
+      yield serializers.serialize(
+        object.quantity,
+        specifiedType: const FullType(int),
+      );
+    }
   }
 
   @override
@@ -241,6 +252,13 @@ class _$PackagePackageWriteJsonMergePatchSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.securityCode = valueDes;
+          break;
+        case r'quantity':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.quantity = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -15,6 +15,7 @@ import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/service_shape_csv_service_shape_read.dart';
 import 'package:so_dart_sdk/backend/model/service_shape_jsonld_service_shape_read.dart';
 import 'package:so_dart_sdk/backend/model/service_shape_service_shape_write.dart';
 import 'package:so_dart_sdk/backend/model/service_shape_service_shape_write_json_merge_patch.dart';

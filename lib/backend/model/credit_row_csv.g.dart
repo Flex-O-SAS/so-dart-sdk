@@ -1,0 +1,254 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'credit_row_csv.dart';
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+class _$CreditRowCsv extends CreditRowCsv {
+  @override
+  final String? credit;
+  @override
+  final InvoiceRowCsv? invoiceRow;
+  @override
+  final String? label;
+  @override
+  final num? quantity;
+  @override
+  final num? price;
+  @override
+  final num? vat;
+  @override
+  final num? total;
+  @override
+  final num? vatRate;
+  @override
+  final String? period;
+  @override
+  final num? discount;
+  @override
+  final int? id;
+  @override
+  final DateTime? createdAt;
+  @override
+  final DateTime? updatedAt;
+
+  factory _$CreditRowCsv([void Function(CreditRowCsvBuilder)? updates]) =>
+      (new CreditRowCsvBuilder()..update(updates))._build();
+
+  _$CreditRowCsv._(
+      {this.credit,
+      this.invoiceRow,
+      this.label,
+      this.quantity,
+      this.price,
+      this.vat,
+      this.total,
+      this.vatRate,
+      this.period,
+      this.discount,
+      this.id,
+      this.createdAt,
+      this.updatedAt})
+      : super._();
+
+  @override
+  CreditRowCsv rebuild(void Function(CreditRowCsvBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  CreditRowCsvBuilder toBuilder() => new CreditRowCsvBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is CreditRowCsv &&
+        credit == other.credit &&
+        invoiceRow == other.invoiceRow &&
+        label == other.label &&
+        quantity == other.quantity &&
+        price == other.price &&
+        vat == other.vat &&
+        total == other.total &&
+        vatRate == other.vatRate &&
+        period == other.period &&
+        discount == other.discount &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        updatedAt == other.updatedAt;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, credit.hashCode);
+    _$hash = $jc(_$hash, invoiceRow.hashCode);
+    _$hash = $jc(_$hash, label.hashCode);
+    _$hash = $jc(_$hash, quantity.hashCode);
+    _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, vat.hashCode);
+    _$hash = $jc(_$hash, total.hashCode);
+    _$hash = $jc(_$hash, vatRate.hashCode);
+    _$hash = $jc(_$hash, period.hashCode);
+    _$hash = $jc(_$hash, discount.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'CreditRowCsv')
+          ..add('credit', credit)
+          ..add('invoiceRow', invoiceRow)
+          ..add('label', label)
+          ..add('quantity', quantity)
+          ..add('price', price)
+          ..add('vat', vat)
+          ..add('total', total)
+          ..add('vatRate', vatRate)
+          ..add('period', period)
+          ..add('discount', discount)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('updatedAt', updatedAt))
+        .toString();
+  }
+}
+
+class CreditRowCsvBuilder
+    implements Builder<CreditRowCsv, CreditRowCsvBuilder> {
+  _$CreditRowCsv? _$v;
+
+  String? _credit;
+  String? get credit => _$this._credit;
+  set credit(String? credit) => _$this._credit = credit;
+
+  InvoiceRowCsvBuilder? _invoiceRow;
+  InvoiceRowCsvBuilder get invoiceRow =>
+      _$this._invoiceRow ??= new InvoiceRowCsvBuilder();
+  set invoiceRow(InvoiceRowCsvBuilder? invoiceRow) =>
+      _$this._invoiceRow = invoiceRow;
+
+  String? _label;
+  String? get label => _$this._label;
+  set label(String? label) => _$this._label = label;
+
+  num? _quantity;
+  num? get quantity => _$this._quantity;
+  set quantity(num? quantity) => _$this._quantity = quantity;
+
+  num? _price;
+  num? get price => _$this._price;
+  set price(num? price) => _$this._price = price;
+
+  num? _vat;
+  num? get vat => _$this._vat;
+  set vat(num? vat) => _$this._vat = vat;
+
+  num? _total;
+  num? get total => _$this._total;
+  set total(num? total) => _$this._total = total;
+
+  num? _vatRate;
+  num? get vatRate => _$this._vatRate;
+  set vatRate(num? vatRate) => _$this._vatRate = vatRate;
+
+  String? _period;
+  String? get period => _$this._period;
+  set period(String? period) => _$this._period = period;
+
+  num? _discount;
+  num? get discount => _$this._discount;
+  set discount(num? discount) => _$this._discount = discount;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  CreditRowCsvBuilder() {
+    CreditRowCsv._defaults(this);
+  }
+
+  CreditRowCsvBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _credit = $v.credit;
+      _invoiceRow = $v.invoiceRow?.toBuilder();
+      _label = $v.label;
+      _quantity = $v.quantity;
+      _price = $v.price;
+      _vat = $v.vat;
+      _total = $v.total;
+      _vatRate = $v.vatRate;
+      _period = $v.period;
+      _discount = $v.discount;
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _updatedAt = $v.updatedAt;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(CreditRowCsv other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$CreditRowCsv;
+  }
+
+  @override
+  void update(void Function(CreditRowCsvBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  CreditRowCsv build() => _build();
+
+  _$CreditRowCsv _build() {
+    _$CreditRowCsv _$result;
+    try {
+      _$result = _$v ??
+          new _$CreditRowCsv._(
+            credit: credit,
+            invoiceRow: _invoiceRow?.build(),
+            label: label,
+            quantity: quantity,
+            price: price,
+            vat: vat,
+            total: total,
+            vatRate: vatRate,
+            period: period,
+            discount: discount,
+            id: id,
+            createdAt: createdAt,
+            updatedAt: updatedAt,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'invoiceRow';
+        _invoiceRow?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'CreditRowCsv', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

@@ -176,6 +176,8 @@ class _$PackagePackageWriteJsonMergePatch
   final String? handoverClient;
   @override
   final String? securityCode;
+  @override
+  final int? quantity;
 
   factory _$PackagePackageWriteJsonMergePatch(
           [void Function(PackagePackageWriteJsonMergePatchBuilder)? updates]) =>
@@ -192,7 +194,8 @@ class _$PackagePackageWriteJsonMergePatch
       this.receptionDate,
       this.handoverDate,
       this.handoverClient,
-      this.securityCode})
+      this.securityCode,
+      this.quantity})
       : super._();
 
   @override
@@ -217,7 +220,8 @@ class _$PackagePackageWriteJsonMergePatch
         receptionDate == other.receptionDate &&
         handoverDate == other.handoverDate &&
         handoverClient == other.handoverClient &&
-        securityCode == other.securityCode;
+        securityCode == other.securityCode &&
+        quantity == other.quantity;
   }
 
   @override
@@ -233,6 +237,7 @@ class _$PackagePackageWriteJsonMergePatch
     _$hash = $jc(_$hash, handoverDate.hashCode);
     _$hash = $jc(_$hash, handoverClient.hashCode);
     _$hash = $jc(_$hash, securityCode.hashCode);
+    _$hash = $jc(_$hash, quantity.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -249,7 +254,8 @@ class _$PackagePackageWriteJsonMergePatch
           ..add('receptionDate', receptionDate)
           ..add('handoverDate', handoverDate)
           ..add('handoverClient', handoverClient)
-          ..add('securityCode', securityCode))
+          ..add('securityCode', securityCode)
+          ..add('quantity', quantity))
         .toString();
   }
 }
@@ -306,6 +312,10 @@ class PackagePackageWriteJsonMergePatchBuilder
   String? get securityCode => _$this._securityCode;
   set securityCode(String? securityCode) => _$this._securityCode = securityCode;
 
+  int? _quantity;
+  int? get quantity => _$this._quantity;
+  set quantity(int? quantity) => _$this._quantity = quantity;
+
   PackagePackageWriteJsonMergePatchBuilder() {
     PackagePackageWriteJsonMergePatch._defaults(this);
   }
@@ -323,6 +333,7 @@ class PackagePackageWriteJsonMergePatchBuilder
       _handoverDate = $v.handoverDate;
       _handoverClient = $v.handoverClient;
       _securityCode = $v.securityCode;
+      _quantity = $v.quantity;
       _$v = null;
     }
     return this;
@@ -356,6 +367,7 @@ class PackagePackageWriteJsonMergePatchBuilder
           handoverDate: handoverDate,
           handoverClient: handoverClient,
           securityCode: securityCode,
+          quantity: quantity,
         );
     replace(_$result);
     return _$result;

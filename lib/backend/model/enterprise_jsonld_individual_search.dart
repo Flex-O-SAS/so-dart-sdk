@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_individual_search.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -20,15 +21,23 @@ part 'enterprise_jsonld_individual_search.g.dart';
 /// * [email] 
 /// * [phone] 
 /// * [mobile] 
+/// * [center] 
 /// * [reference] 
 /// * [id] 
+/// * [createdAt] 
 @BuiltValue()
 abstract class EnterpriseJsonldIndividualSearch implements HydraItemBaseSchema, Built<EnterpriseJsonldIndividualSearch, EnterpriseJsonldIndividualSearchBuilder> {
   @BuiltValueField(wireName: r'reference')
   String? get reference;
 
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
+
   @BuiltValueField(wireName: r'phone')
   String? get phone;
+
+  @BuiltValueField(wireName: r'center')
+  CenterJsonldIndividualSearch? get center;
 
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -72,6 +81,13 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
         specifiedType: const FullType(String),
       );
     }
+    if (object.createdAt != null) {
+      yield r'createdAt';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     yield r'@id';
     yield serializers.serialize(
       object.atId,
@@ -82,6 +98,13 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
       yield serializers.serialize(
         object.phone,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.center != null) {
+      yield r'center';
+      yield serializers.serialize(
+        object.center,
+        specifiedType: const FullType.nullable(CenterJsonldIndividualSearch),
       );
     }
     if (object.name != null) {
@@ -154,6 +177,13 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
           ) as String;
           result.reference = valueDes;
           break;
+        case r'createdAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
+          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,
@@ -167,6 +197,14 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
             specifiedType: const FullType(String),
           ) as String;
           result.phone = valueDes;
+          break;
+        case r'center':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(CenterJsonldIndividualSearch),
+          ) as CenterJsonldIndividualSearch?;
+          if (valueDes == null) continue;
+          result.center.replace(valueDes);
           break;
         case r'name':
           final valueDes = serializers.deserialize(

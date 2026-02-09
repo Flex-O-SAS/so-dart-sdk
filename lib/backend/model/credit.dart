@@ -24,7 +24,6 @@ part 'credit.g.dart';
 /// * [amountVat] 
 /// * [amountTotal] 
 /// * [amountDue] 
-/// * [sellsyId] 
 /// * [link] 
 /// * [creditRows] 
 /// * [creditLinks] 
@@ -64,9 +63,6 @@ abstract class Credit implements Built<Credit, CreditBuilder> {
 
   @BuiltValueField(wireName: r'amountDue')
   num? get amountDue;
-
-  @BuiltValueField(wireName: r'sellsyId')
-  int? get sellsyId;
 
   @BuiltValueField(wireName: r'link')
   String? get link;
@@ -191,13 +187,6 @@ class _$CreditSerializer implements PrimitiveSerializer<Credit> {
       yield serializers.serialize(
         object.amountDue,
         specifiedType: const FullType(num),
-      );
-    }
-    if (object.sellsyId != null) {
-      yield r'sellsyId';
-      yield serializers.serialize(
-        object.sellsyId,
-        specifiedType: const FullType(int),
       );
     }
     if (object.link != null) {
@@ -390,13 +379,6 @@ class _$CreditSerializer implements PrimitiveSerializer<Credit> {
             specifiedType: const FullType(num),
           ) as num;
           result.amountDue = valueDes;
-          break;
-        case r'sellsyId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.sellsyId = valueDes;
           break;
         case r'link':
           final valueDes = serializers.deserialize(

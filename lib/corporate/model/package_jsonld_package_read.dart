@@ -28,10 +28,14 @@ part 'package_jsonld_package_read.g.dart';
 /// * [handoverDate] 
 /// * [handoverClient] 
 /// * [securityCode] 
+/// * [quantity] 
 @BuiltValue()
 abstract class PackageJsonldPackageRead implements HydraItemBaseSchema, Built<PackageJsonldPackageRead, PackageJsonldPackageReadBuilder> {
   @BuiltValueField(wireName: r'site')
   int get site;
+
+  @BuiltValueField(wireName: r'quantity')
+  int get quantity;
 
   @BuiltValueField(wireName: r'receptionDate')
   DateTime get receptionDate;
@@ -88,6 +92,11 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
     PackageJsonldPackageRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'quantity';
+    yield serializers.serialize(
+      object.quantity,
+      specifiedType: const FullType(int),
+    );
     yield r'@id';
     yield serializers.serialize(
       object.atId,
@@ -189,6 +198,13 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'quantity':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.quantity = valueDes;
+          break;
         case r'@id':
           final valueDes = serializers.deserialize(
             value,

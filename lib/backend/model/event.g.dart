@@ -18,8 +18,6 @@ class _$Event extends Event {
   @override
   final String? owner;
   @override
-  final Broker? broker;
-  @override
   final String? staff;
   @override
   final String? opportunity;
@@ -49,7 +47,6 @@ class _$Event extends Event {
       this.groundRefusal,
       this.enterprise,
       this.owner,
-      this.broker,
       this.staff,
       this.opportunity,
       this.comment,
@@ -78,7 +75,6 @@ class _$Event extends Event {
         groundRefusal == other.groundRefusal &&
         enterprise == other.enterprise &&
         owner == other.owner &&
-        broker == other.broker &&
         staff == other.staff &&
         opportunity == other.opportunity &&
         comment == other.comment &&
@@ -99,7 +95,6 @@ class _$Event extends Event {
     _$hash = $jc(_$hash, groundRefusal.hashCode);
     _$hash = $jc(_$hash, enterprise.hashCode);
     _$hash = $jc(_$hash, owner.hashCode);
-    _$hash = $jc(_$hash, broker.hashCode);
     _$hash = $jc(_$hash, staff.hashCode);
     _$hash = $jc(_$hash, opportunity.hashCode);
     _$hash = $jc(_$hash, comment.hashCode);
@@ -122,7 +117,6 @@ class _$Event extends Event {
           ..add('groundRefusal', groundRefusal)
           ..add('enterprise', enterprise)
           ..add('owner', owner)
-          ..add('broker', broker)
           ..add('staff', staff)
           ..add('opportunity', opportunity)
           ..add('comment', comment)
@@ -160,10 +154,6 @@ class EventBuilder implements Builder<Event, EventBuilder> {
   String? _owner;
   String? get owner => _$this._owner;
   set owner(String? owner) => _$this._owner = owner;
-
-  BrokerBuilder? _broker;
-  BrokerBuilder get broker => _$this._broker ??= new BrokerBuilder();
-  set broker(BrokerBuilder? broker) => _$this._broker = broker;
 
   String? _staff;
   String? get staff => _$this._staff;
@@ -219,7 +209,6 @@ class EventBuilder implements Builder<Event, EventBuilder> {
       _groundRefusal = $v.groundRefusal;
       _enterprise = $v.enterprise;
       _owner = $v.owner;
-      _broker = $v.broker?.toBuilder();
       _staff = $v.staff;
       _opportunity = $v.opportunity;
       _comment = $v.comment;
@@ -259,7 +248,6 @@ class EventBuilder implements Builder<Event, EventBuilder> {
             groundRefusal: groundRefusal,
             enterprise: enterprise,
             owner: owner,
-            broker: _broker?.build(),
             staff: staff,
             opportunity: opportunity,
             comment: comment,
@@ -274,9 +262,6 @@ class EventBuilder implements Builder<Event, EventBuilder> {
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'broker';
-        _broker?.build();
-
         _$failedField = 'activities';
         _activities?.build();
       } catch (e) {

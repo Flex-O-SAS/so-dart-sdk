@@ -12,6 +12,8 @@ import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_public_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/center_csv_center_search.dart';
+import 'package:so_dart_sdk/backend/model/center_csv_public_center_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';

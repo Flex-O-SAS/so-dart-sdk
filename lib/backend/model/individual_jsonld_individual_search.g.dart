@@ -11,11 +11,17 @@ class _$IndividualJsonldIndividualSearch
   @override
   final String? reference;
   @override
+  final DateTime? createdAt;
+  @override
   final String? firstname;
   @override
   final String? phone;
   @override
+  final CenterJsonldIndividualSearch? center;
+  @override
   final String? mobile;
+  @override
+  final bool? isPresent;
   @override
   final DateTime? tosAcceptedAt;
   @override
@@ -39,9 +45,12 @@ class _$IndividualJsonldIndividualSearch
 
   _$IndividualJsonldIndividualSearch._(
       {this.reference,
+      this.createdAt,
       this.firstname,
       this.phone,
+      this.center,
       this.mobile,
+      this.isPresent,
       this.tosAcceptedAt,
       this.id,
       this.enterprises,
@@ -71,9 +80,12 @@ class _$IndividualJsonldIndividualSearch
     if (identical(other, this)) return true;
     return other is IndividualJsonldIndividualSearch &&
         reference == other.reference &&
+        createdAt == other.createdAt &&
         firstname == other.firstname &&
         phone == other.phone &&
+        center == other.center &&
         mobile == other.mobile &&
+        isPresent == other.isPresent &&
         tosAcceptedAt == other.tosAcceptedAt &&
         id == other.id &&
         enterprises == other.enterprises &&
@@ -88,9 +100,12 @@ class _$IndividualJsonldIndividualSearch
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, reference.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, firstname.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, mobile.hashCode);
+    _$hash = $jc(_$hash, isPresent.hashCode);
     _$hash = $jc(_$hash, tosAcceptedAt.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, enterprises.hashCode);
@@ -107,9 +122,12 @@ class _$IndividualJsonldIndividualSearch
   String toString() {
     return (newBuiltValueToStringHelper(r'IndividualJsonldIndividualSearch')
           ..add('reference', reference)
+          ..add('createdAt', createdAt)
           ..add('firstname', firstname)
           ..add('phone', phone)
+          ..add('center', center)
           ..add('mobile', mobile)
+          ..add('isPresent', isPresent)
           ..add('tosAcceptedAt', tosAcceptedAt)
           ..add('id', id)
           ..add('enterprises', enterprises)
@@ -133,6 +151,10 @@ class IndividualJsonldIndividualSearchBuilder
   String? get reference => _$this._reference;
   set reference(covariant String? reference) => _$this._reference = reference;
 
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
   String? _firstname;
   String? get firstname => _$this._firstname;
   set firstname(covariant String? firstname) => _$this._firstname = firstname;
@@ -141,9 +163,19 @@ class IndividualJsonldIndividualSearchBuilder
   String? get phone => _$this._phone;
   set phone(covariant String? phone) => _$this._phone = phone;
 
+  CenterJsonldIndividualSearchBuilder? _center;
+  CenterJsonldIndividualSearchBuilder get center =>
+      _$this._center ??= new CenterJsonldIndividualSearchBuilder();
+  set center(covariant CenterJsonldIndividualSearchBuilder? center) =>
+      _$this._center = center;
+
   String? _mobile;
   String? get mobile => _$this._mobile;
   set mobile(covariant String? mobile) => _$this._mobile = mobile;
+
+  bool? _isPresent;
+  bool? get isPresent => _$this._isPresent;
+  set isPresent(covariant bool? isPresent) => _$this._isPresent = isPresent;
 
   DateTime? _tosAcceptedAt;
   DateTime? get tosAcceptedAt => _$this._tosAcceptedAt;
@@ -193,9 +225,12 @@ class IndividualJsonldIndividualSearchBuilder
     final $v = _$v;
     if ($v != null) {
       _reference = $v.reference;
+      _createdAt = $v.createdAt;
       _firstname = $v.firstname;
       _phone = $v.phone;
+      _center = $v.center?.toBuilder();
       _mobile = $v.mobile;
+      _isPresent = $v.isPresent;
       _tosAcceptedAt = $v.tosAcceptedAt;
       _id = $v.id;
       _enterprises = $v.enterprises?.toBuilder();
@@ -229,9 +264,12 @@ class IndividualJsonldIndividualSearchBuilder
       _$result = _$v ??
           new _$IndividualJsonldIndividualSearch._(
             reference: reference,
+            createdAt: createdAt,
             firstname: firstname,
             phone: phone,
+            center: _center?.build(),
             mobile: mobile,
+            isPresent: isPresent,
             tosAcceptedAt: tosAcceptedAt,
             id: id,
             enterprises: _enterprises?.build(),
@@ -246,6 +284,9 @@ class IndividualJsonldIndividualSearchBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'center';
+        _center?.build();
+
         _$failedField = 'enterprises';
         _enterprises?.build();
 

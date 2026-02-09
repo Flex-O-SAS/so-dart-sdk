@@ -19,7 +19,6 @@ part 'credit_row_jsonld.g.dart';
 /// * [price] 
 /// * [vat] 
 /// * [total] 
-/// * [sellsyId] 
 /// * [vatRate] 
 /// * [period] 
 /// * [discount] 
@@ -48,9 +47,6 @@ abstract class CreditRowJsonld implements Built<CreditRowJsonld, CreditRowJsonld
 
   @BuiltValueField(wireName: r'total')
   num? get total;
-
-  @BuiltValueField(wireName: r'sellsyId')
-  int? get sellsyId;
 
   @BuiltValueField(wireName: r'vatRate')
   num? get vatRate;
@@ -141,13 +137,6 @@ class _$CreditRowJsonldSerializer implements PrimitiveSerializer<CreditRowJsonld
       yield serializers.serialize(
         object.total,
         specifiedType: const FullType(num),
-      );
-    }
-    if (object.sellsyId != null) {
-      yield r'sellsyId';
-      yield serializers.serialize(
-        object.sellsyId,
-        specifiedType: const FullType(int),
       );
     }
     if (object.vatRate != null) {
@@ -264,13 +253,6 @@ class _$CreditRowJsonldSerializer implements PrimitiveSerializer<CreditRowJsonld
             specifiedType: const FullType(num),
           ) as num;
           result.total = valueDes;
-          break;
-        case r'sellsyId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.sellsyId = valueDes;
           break;
         case r'vatRate':
           final valueDes = serializers.deserialize(

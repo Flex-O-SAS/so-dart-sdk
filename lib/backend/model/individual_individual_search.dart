@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/backend/model/center_individual_search.dart';
 import 'package:so_dart_sdk/backend/model/enterprise_individual_search.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -15,13 +16,16 @@ part 'individual_individual_search.g.dart';
 /// Properties:
 /// * [firstname] 
 /// * [lastname] 
+/// * [isPresent] 
 /// * [tosAcceptedAt] 
 /// * [enterprises] 
 /// * [email] 
 /// * [phone] 
 /// * [mobile] 
+/// * [center] 
 /// * [reference] 
 /// * [id] 
+/// * [createdAt] 
 @BuiltValue()
 abstract class IndividualIndividualSearch implements Built<IndividualIndividualSearch, IndividualIndividualSearchBuilder> {
   @BuiltValueField(wireName: r'firstname')
@@ -29,6 +33,9 @@ abstract class IndividualIndividualSearch implements Built<IndividualIndividualS
 
   @BuiltValueField(wireName: r'lastname')
   String? get lastname;
+
+  @BuiltValueField(wireName: r'isPresent')
+  bool? get isPresent;
 
   @BuiltValueField(wireName: r'tosAcceptedAt')
   DateTime? get tosAcceptedAt;
@@ -45,11 +52,17 @@ abstract class IndividualIndividualSearch implements Built<IndividualIndividualS
   @BuiltValueField(wireName: r'mobile')
   String? get mobile;
 
+  @BuiltValueField(wireName: r'center')
+  CenterIndividualSearch? get center;
+
   @BuiltValueField(wireName: r'reference')
   String? get reference;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
 
   IndividualIndividualSearch._();
 
@@ -88,6 +101,13 @@ class _$IndividualIndividualSearchSerializer implements PrimitiveSerializer<Indi
         specifiedType: const FullType(String),
       );
     }
+    if (object.isPresent != null) {
+      yield r'isPresent';
+      yield serializers.serialize(
+        object.isPresent,
+        specifiedType: const FullType(bool),
+      );
+    }
     if (object.tosAcceptedAt != null) {
       yield r'tosAcceptedAt';
       yield serializers.serialize(
@@ -123,6 +143,13 @@ class _$IndividualIndividualSearchSerializer implements PrimitiveSerializer<Indi
         specifiedType: const FullType(String),
       );
     }
+    if (object.center != null) {
+      yield r'center';
+      yield serializers.serialize(
+        object.center,
+        specifiedType: const FullType.nullable(CenterIndividualSearch),
+      );
+    }
     if (object.reference != null) {
       yield r'reference';
       yield serializers.serialize(
@@ -135,6 +162,13 @@ class _$IndividualIndividualSearchSerializer implements PrimitiveSerializer<Indi
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.createdAt != null) {
+      yield r'createdAt';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -174,6 +208,13 @@ class _$IndividualIndividualSearchSerializer implements PrimitiveSerializer<Indi
           ) as String;
           result.lastname = valueDes;
           break;
+        case r'isPresent':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isPresent = valueDes;
+          break;
         case r'tosAcceptedAt':
           final valueDes = serializers.deserialize(
             value,
@@ -209,6 +250,14 @@ class _$IndividualIndividualSearchSerializer implements PrimitiveSerializer<Indi
           ) as String;
           result.mobile = valueDes;
           break;
+        case r'center':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(CenterIndividualSearch),
+          ) as CenterIndividualSearch?;
+          if (valueDes == null) continue;
+          result.center.replace(valueDes);
+          break;
         case r'reference':
           final valueDes = serializers.deserialize(
             value,
@@ -222,6 +271,13 @@ class _$IndividualIndividualSearchSerializer implements PrimitiveSerializer<Indi
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
+          break;
+        case r'createdAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
           break;
         default:
           unhandled.add(key);

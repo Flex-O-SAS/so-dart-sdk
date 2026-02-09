@@ -31,7 +31,6 @@ part 'invoice_jsonld.g.dart';
 /// * [contract] 
 /// * [payments] 
 /// * [paymentLink] 
-/// * [sellsyId] 
 /// * [dueAmount] 
 /// * [amountVat] 
 /// * [totalCost] 
@@ -103,9 +102,6 @@ abstract class InvoiceJsonld implements HydraItemBaseSchema, Built<InvoiceJsonld
 
   @BuiltValueField(wireName: r'id')
   int? get id;
-
-  @BuiltValueField(wireName: r'sellsyId')
-  int? get sellsyId;
 
   @BuiltValueField(wireName: r'updatedAt')
   DateTime? get updatedAt;
@@ -291,13 +287,6 @@ class _$InvoiceJsonldSerializer implements PrimitiveSerializer<InvoiceJsonld> {
       yield r'id';
       yield serializers.serialize(
         object.id,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.sellsyId != null) {
-      yield r'sellsyId';
-      yield serializers.serialize(
-        object.sellsyId,
         specifiedType: const FullType(int),
       );
     }
@@ -545,13 +534,6 @@ class _$InvoiceJsonldSerializer implements PrimitiveSerializer<InvoiceJsonld> {
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
-          break;
-        case r'sellsyId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.sellsyId = valueDes;
           break;
         case r'@type':
           final valueDes = serializers.deserialize(

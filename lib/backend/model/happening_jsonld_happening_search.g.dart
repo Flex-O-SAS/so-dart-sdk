@@ -10,8 +10,6 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
   @override
   final int? maxUsers;
   @override
-  final JsonObject? happeningPartnerLink;
-  @override
   final String? center;
   @override
   final String? name;
@@ -44,7 +42,6 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
 
   _$HappeningJsonldHappeningSearch._(
       {this.maxUsers,
-      this.happeningPartnerLink,
       this.center,
       this.name,
       this.nbUsers,
@@ -79,7 +76,6 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
     if (identical(other, this)) return true;
     return other is HappeningJsonldHappeningSearch &&
         maxUsers == other.maxUsers &&
-        happeningPartnerLink == other.happeningPartnerLink &&
         center == other.center &&
         name == other.name &&
         nbUsers == other.nbUsers &&
@@ -99,7 +95,6 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, maxUsers.hashCode);
-    _$hash = $jc(_$hash, happeningPartnerLink.hashCode);
     _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, nbUsers.hashCode);
@@ -121,7 +116,6 @@ class _$HappeningJsonldHappeningSearch extends HappeningJsonldHappeningSearch {
   String toString() {
     return (newBuiltValueToStringHelper(r'HappeningJsonldHappeningSearch')
           ..add('maxUsers', maxUsers)
-          ..add('happeningPartnerLink', happeningPartnerLink)
           ..add('center', center)
           ..add('name', name)
           ..add('nbUsers', nbUsers)
@@ -149,11 +143,6 @@ class HappeningJsonldHappeningSearchBuilder
   int? _maxUsers;
   int? get maxUsers => _$this._maxUsers;
   set maxUsers(covariant int? maxUsers) => _$this._maxUsers = maxUsers;
-
-  JsonObject? _happeningPartnerLink;
-  JsonObject? get happeningPartnerLink => _$this._happeningPartnerLink;
-  set happeningPartnerLink(covariant JsonObject? happeningPartnerLink) =>
-      _$this._happeningPartnerLink = happeningPartnerLink;
 
   String? _center;
   String? get center => _$this._center;
@@ -220,7 +209,6 @@ class HappeningJsonldHappeningSearchBuilder
     final $v = _$v;
     if ($v != null) {
       _maxUsers = $v.maxUsers;
-      _happeningPartnerLink = $v.happeningPartnerLink;
       _center = $v.center;
       _name = $v.name;
       _nbUsers = $v.nbUsers;
@@ -259,7 +247,6 @@ class HappeningJsonldHappeningSearchBuilder
       _$result = _$v ??
           new _$HappeningJsonldHappeningSearch._(
             maxUsers: maxUsers,
-            happeningPartnerLink: happeningPartnerLink,
             center: center,
             name: name,
             nbUsers: nbUsers,

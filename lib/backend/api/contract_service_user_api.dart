@@ -13,6 +13,7 @@ import 'package:so_dart_sdk/backend/model/constraint_violation.dart';
 import 'package:so_dart_sdk/backend/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/contract_service_user_contract_service_user_update_json_merge_patch.dart';
 import 'package:so_dart_sdk/backend/model/contract_service_user_contract_service_user_write.dart';
+import 'package:so_dart_sdk/backend/model/contract_service_user_csv_contract_service_user_read.dart';
 import 'package:so_dart_sdk/backend/model/contract_service_user_jsonld_contract_service_user_read.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';

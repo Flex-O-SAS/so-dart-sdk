@@ -3,6 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,15 +15,30 @@ part 'constraint_violation_violations_inner.g.dart';
 /// Properties:
 /// * [propertyPath] - The property path of the violation
 /// * [message] - The message associated with the violation
+/// * [code] - The code of the violation
+/// * [hint] - An extra hint to understand the violation
+/// * [payload] - The serialized payload of the violation
 @BuiltValue()
 abstract class ConstraintViolationViolationsInner implements Built<ConstraintViolationViolationsInner, ConstraintViolationViolationsInnerBuilder> {
   /// The property path of the violation
   @BuiltValueField(wireName: r'propertyPath')
-  String? get propertyPath;
+  String get propertyPath;
 
   /// The message associated with the violation
   @BuiltValueField(wireName: r'message')
-  String? get message;
+  String get message;
+
+  /// The code of the violation
+  @BuiltValueField(wireName: r'code')
+  String? get code;
+
+  /// An extra hint to understand the violation
+  @BuiltValueField(wireName: r'hint')
+  String? get hint;
+
+  /// The serialized payload of the violation
+  @BuiltValueField(wireName: r'payload')
+  BuiltList<JsonObject?>? get payload;
 
   ConstraintViolationViolationsInner._();
 
@@ -46,18 +63,35 @@ class _$ConstraintViolationViolationsInnerSerializer implements PrimitiveSeriali
     ConstraintViolationViolationsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.propertyPath != null) {
-      yield r'propertyPath';
+    yield r'propertyPath';
+    yield serializers.serialize(
+      object.propertyPath,
+      specifiedType: const FullType(String),
+    );
+    yield r'message';
+    yield serializers.serialize(
+      object.message,
+      specifiedType: const FullType(String),
+    );
+    if (object.code != null) {
+      yield r'code';
       yield serializers.serialize(
-        object.propertyPath,
+        object.code,
         specifiedType: const FullType(String),
       );
     }
-    if (object.message != null) {
-      yield r'message';
+    if (object.hint != null) {
+      yield r'hint';
       yield serializers.serialize(
-        object.message,
+        object.hint,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.payload != null) {
+      yield r'payload';
+      yield serializers.serialize(
+        object.payload,
+        specifiedType: const FullType(BuiltList, [FullType.nullable(JsonObject)]),
       );
     }
   }
@@ -96,6 +130,27 @@ class _$ConstraintViolationViolationsInnerSerializer implements PrimitiveSeriali
             specifiedType: const FullType(String),
           ) as String;
           result.message = valueDes;
+          break;
+        case r'code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.code = valueDes;
+          break;
+        case r'hint':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.hint = valueDes;
+          break;
+        case r'payload':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType.nullable(JsonObject)]),
+          ) as BuiltList<JsonObject?>;
+          result.payload.replace(valueDes);
           break;
         default:
           unhandled.add(key);

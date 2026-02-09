@@ -12,6 +12,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add($HydraItemBaseSchema.serializer)
       ..add(ApiBrandingGetCollection200Response.serializer)
       ..add(ApiDevicesGetCollection200Response.serializer)
+      ..add(ApiNotificationsGetCollection200Response.serializer)
       ..add(ApiSubscribersGetCollection200Response.serializer)
       ..add(BrandingSettingBrandingSettingWrite.serializer)
       ..add(BrandingSettingBrandingSettingWriteJsonMergePatch.serializer)
@@ -79,6 +80,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(IdentityDtoJsonldNotificationRead)]),
           () => new ListBuilder<IdentityDtoJsonldNotificationRead>())
       ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(NotificationJsonldNotificationRead)]),
+          () => new ListBuilder<NotificationJsonldNotificationRead>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
@@ -92,6 +97,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(SubscriberJsonldSubscriberRead)]),
           () => new ListBuilder<SubscriberJsonldSubscriberRead>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType.nullable(JsonObject)]),
+          () => new ListBuilder<JsonObject?>())
       ..addBuilderFactory(
           const FullType(
               BuiltMap, const [const FullType(String), const FullType(String)]),

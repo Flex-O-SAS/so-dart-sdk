@@ -28,8 +28,6 @@ class _$HappeningHappeningRead extends HappeningHappeningRead {
   @override
   final int? maxUsers;
   @override
-  final JsonObject? happeningPartnerLink;
-  @override
   final bool? isActive;
   @override
   final BuiltList<JsonObject>? happeningStaffFeedBacks;
@@ -53,7 +51,6 @@ class _$HappeningHappeningRead extends HappeningHappeningRead {
       this.description,
       this.nbUsers,
       this.maxUsers,
-      this.happeningPartnerLink,
       this.isActive,
       this.happeningStaffFeedBacks,
       this.begin,
@@ -83,7 +80,6 @@ class _$HappeningHappeningRead extends HappeningHappeningRead {
         description == other.description &&
         nbUsers == other.nbUsers &&
         maxUsers == other.maxUsers &&
-        happeningPartnerLink == other.happeningPartnerLink &&
         isActive == other.isActive &&
         happeningStaffFeedBacks == other.happeningStaffFeedBacks &&
         begin == other.begin &&
@@ -103,7 +99,6 @@ class _$HappeningHappeningRead extends HappeningHappeningRead {
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, nbUsers.hashCode);
     _$hash = $jc(_$hash, maxUsers.hashCode);
-    _$hash = $jc(_$hash, happeningPartnerLink.hashCode);
     _$hash = $jc(_$hash, isActive.hashCode);
     _$hash = $jc(_$hash, happeningStaffFeedBacks.hashCode);
     _$hash = $jc(_$hash, begin.hashCode);
@@ -125,7 +120,6 @@ class _$HappeningHappeningRead extends HappeningHappeningRead {
           ..add('description', description)
           ..add('nbUsers', nbUsers)
           ..add('maxUsers', maxUsers)
-          ..add('happeningPartnerLink', happeningPartnerLink)
           ..add('isActive', isActive)
           ..add('happeningStaffFeedBacks', happeningStaffFeedBacks)
           ..add('begin', begin)
@@ -180,11 +174,6 @@ class HappeningHappeningReadBuilder
   int? get maxUsers => _$this._maxUsers;
   set maxUsers(int? maxUsers) => _$this._maxUsers = maxUsers;
 
-  JsonObject? _happeningPartnerLink;
-  JsonObject? get happeningPartnerLink => _$this._happeningPartnerLink;
-  set happeningPartnerLink(JsonObject? happeningPartnerLink) =>
-      _$this._happeningPartnerLink = happeningPartnerLink;
-
   bool? _isActive;
   bool? get isActive => _$this._isActive;
   set isActive(bool? isActive) => _$this._isActive = isActive;
@@ -221,7 +210,6 @@ class HappeningHappeningReadBuilder
       _description = $v.description;
       _nbUsers = $v.nbUsers;
       _maxUsers = $v.maxUsers;
-      _happeningPartnerLink = $v.happeningPartnerLink;
       _isActive = $v.isActive;
       _happeningStaffFeedBacks = $v.happeningStaffFeedBacks?.toBuilder();
       _begin = $v.begin;
@@ -260,7 +248,6 @@ class HappeningHappeningReadBuilder
             description: description,
             nbUsers: nbUsers,
             maxUsers: maxUsers,
-            happeningPartnerLink: happeningPartnerLink,
             isActive: isActive,
             happeningStaffFeedBacks: _happeningStaffFeedBacks?.build(),
             begin: begin,

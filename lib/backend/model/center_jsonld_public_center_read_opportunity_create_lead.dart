@@ -4,9 +4,9 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
-import 'package:so_dart_sdk/backend/model/center_jsonld_all_of_assets.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_create_lead_all_of_assets.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -55,7 +55,7 @@ abstract class CenterJsonldPublicCenterReadOpportunityCreateLead implements Hydr
   String? get zipcode;
 
   @BuiltValueField(wireName: r'assets')
-  BuiltList<CenterJsonldAllOfAssets>? get assets;
+  BuiltList<CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>? get assets;
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
@@ -153,7 +153,7 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLeadSerializer implements P
       yield r'assets';
       yield serializers.serialize(
         object.assets,
-        specifiedType: const FullType(BuiltList, [FullType(CenterJsonldAllOfAssets)]),
+        specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets)]),
       );
     }
     if (object.phone != null) {
@@ -285,8 +285,8 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLeadSerializer implements P
         case r'assets':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(CenterJsonldAllOfAssets)]),
-          ) as BuiltList<CenterJsonldAllOfAssets>;
+            specifiedType: const FullType(BuiltList, [FullType(CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets)]),
+          ) as BuiltList<CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>;
           result.assets.replace(valueDes);
           break;
         case r'phone':

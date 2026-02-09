@@ -153,6 +153,8 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
   @override
   final int site;
   @override
+  final int quantity;
+  @override
   final DateTime receptionDate;
   @override
   final String recipient;
@@ -185,6 +187,7 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
 
   _$PackageJsonldPackageRead._(
       {required this.site,
+      required this.quantity,
       required this.receptionDate,
       required this.recipient,
       required this.securityCode,
@@ -201,6 +204,8 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         site, r'PackageJsonldPackageRead', 'site');
+    BuiltValueNullFieldError.checkNotNull(
+        quantity, r'PackageJsonldPackageRead', 'quantity');
     BuiltValueNullFieldError.checkNotNull(
         receptionDate, r'PackageJsonldPackageRead', 'receptionDate');
     BuiltValueNullFieldError.checkNotNull(
@@ -235,6 +240,7 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
     if (identical(other, this)) return true;
     return other is PackageJsonldPackageRead &&
         site == other.site &&
+        quantity == other.quantity &&
         receptionDate == other.receptionDate &&
         recipient == other.recipient &&
         securityCode == other.securityCode &&
@@ -254,6 +260,7 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, site.hashCode);
+    _$hash = $jc(_$hash, quantity.hashCode);
     _$hash = $jc(_$hash, receptionDate.hashCode);
     _$hash = $jc(_$hash, recipient.hashCode);
     _$hash = $jc(_$hash, securityCode.hashCode);
@@ -275,6 +282,7 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
   String toString() {
     return (newBuiltValueToStringHelper(r'PackageJsonldPackageRead')
           ..add('site', site)
+          ..add('quantity', quantity)
           ..add('receptionDate', receptionDate)
           ..add('recipient', recipient)
           ..add('securityCode', securityCode)
@@ -301,6 +309,10 @@ class PackageJsonldPackageReadBuilder
   int? _site;
   int? get site => _$this._site;
   set site(covariant int? site) => _$this._site = site;
+
+  int? _quantity;
+  int? get quantity => _$this._quantity;
+  set quantity(covariant int? quantity) => _$this._quantity = quantity;
 
   DateTime? _receptionDate;
   DateTime? get receptionDate => _$this._receptionDate;
@@ -371,6 +383,7 @@ class PackageJsonldPackageReadBuilder
     final $v = _$v;
     if ($v != null) {
       _site = $v.site;
+      _quantity = $v.quantity;
       _receptionDate = $v.receptionDate;
       _recipient = $v.recipient;
       _securityCode = $v.securityCode;
@@ -410,6 +423,8 @@ class PackageJsonldPackageReadBuilder
           new _$PackageJsonldPackageRead._(
             site: BuiltValueNullFieldError.checkNotNull(
                 site, r'PackageJsonldPackageRead', 'site'),
+            quantity: BuiltValueNullFieldError.checkNotNull(
+                quantity, r'PackageJsonldPackageRead', 'quantity'),
             receptionDate: BuiltValueNullFieldError.checkNotNull(
                 receptionDate, r'PackageJsonldPackageRead', 'receptionDate'),
             recipient: BuiltValueNullFieldError.checkNotNull(

@@ -23,7 +23,8 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
   @override
   final String? zipcode;
   @override
-  final BuiltList<CenterJsonldAllOfAssets>? assets;
+  final BuiltList<CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>?
+      assets;
   @override
   final String? phone;
   @override
@@ -191,10 +192,15 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
   String? get zipcode => _$this._zipcode;
   set zipcode(covariant String? zipcode) => _$this._zipcode = zipcode;
 
-  ListBuilder<CenterJsonldAllOfAssets>? _assets;
-  ListBuilder<CenterJsonldAllOfAssets> get assets =>
-      _$this._assets ??= new ListBuilder<CenterJsonldAllOfAssets>();
-  set assets(covariant ListBuilder<CenterJsonldAllOfAssets>? assets) =>
+  ListBuilder<CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>?
+      _assets;
+  ListBuilder<CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>
+      get assets => _$this._assets ??= new ListBuilder<
+          CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>();
+  set assets(
+          covariant ListBuilder<
+                  CenterJsonldPublicCenterReadOpportunityCreateLeadAllOfAssets>?
+              assets) =>
       _$this._assets = assets;
 
   String? _phone;

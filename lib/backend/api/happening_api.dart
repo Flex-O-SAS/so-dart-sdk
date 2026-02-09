@@ -13,6 +13,8 @@ import 'package:so_dart_sdk/backend/api_util.dart';
 import 'package:so_dart_sdk/backend/model/api_happening_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/error.dart';
 import 'package:so_dart_sdk/backend/model/error_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/happening_csv_happening_read.dart';
+import 'package:so_dart_sdk/backend/model/happening_csv_happening_search.dart';
 import 'package:so_dart_sdk/backend/model/happening_jsonld_happening_read.dart';
 
 class HappeningApi {

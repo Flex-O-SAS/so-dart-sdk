@@ -22,6 +22,7 @@ part 'package_package_write.g.dart';
 /// * [handoverDate] 
 /// * [handoverClient] 
 /// * [securityCode] 
+/// * [quantity] 
 @BuiltValue()
 abstract class PackagePackageWrite implements Built<PackagePackageWrite, PackagePackageWriteBuilder> {
   @BuiltValueField(wireName: r'recipient')
@@ -55,6 +56,9 @@ abstract class PackagePackageWrite implements Built<PackagePackageWrite, Package
 
   @BuiltValueField(wireName: r'securityCode')
   String get securityCode;
+
+  @BuiltValueField(wireName: r'quantity')
+  int get quantity;
 
   PackagePackageWrite._();
 
@@ -132,6 +136,11 @@ class _$PackagePackageWriteSerializer implements PrimitiveSerializer<PackagePack
     yield serializers.serialize(
       object.securityCode,
       specifiedType: const FullType(String),
+    );
+    yield r'quantity';
+    yield serializers.serialize(
+      object.quantity,
+      specifiedType: const FullType(int),
     );
   }
 
@@ -225,6 +234,13 @@ class _$PackagePackageWriteSerializer implements PrimitiveSerializer<PackagePack
             specifiedType: const FullType(String),
           ) as String;
           result.securityCode = valueDes;
+          break;
+        case r'quantity':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.quantity = valueDes;
           break;
         default:
           unhandled.add(key);

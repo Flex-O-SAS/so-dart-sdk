@@ -143,6 +143,10 @@ class _$PackagePackageRead extends PackagePackageRead {
   @override
   final String recipient;
   @override
+  final String enterprise;
+  @override
+  final String enterpriseName;
+  @override
   final String staff;
   @override
   final int site;
@@ -170,6 +174,8 @@ class _$PackagePackageRead extends PackagePackageRead {
   _$PackagePackageRead._(
       {this.id,
       required this.recipient,
+      required this.enterprise,
+      required this.enterpriseName,
       required this.staff,
       required this.site,
       required this.type,
@@ -183,6 +189,10 @@ class _$PackagePackageRead extends PackagePackageRead {
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         recipient, r'PackagePackageRead', 'recipient');
+    BuiltValueNullFieldError.checkNotNull(
+        enterprise, r'PackagePackageRead', 'enterprise');
+    BuiltValueNullFieldError.checkNotNull(
+        enterpriseName, r'PackagePackageRead', 'enterpriseName');
     BuiltValueNullFieldError.checkNotNull(
         staff, r'PackagePackageRead', 'staff');
     BuiltValueNullFieldError.checkNotNull(site, r'PackagePackageRead', 'site');
@@ -214,6 +224,8 @@ class _$PackagePackageRead extends PackagePackageRead {
     return other is PackagePackageRead &&
         id == other.id &&
         recipient == other.recipient &&
+        enterprise == other.enterprise &&
+        enterpriseName == other.enterpriseName &&
         staff == other.staff &&
         site == other.site &&
         type == other.type &&
@@ -231,6 +243,8 @@ class _$PackagePackageRead extends PackagePackageRead {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, recipient.hashCode);
+    _$hash = $jc(_$hash, enterprise.hashCode);
+    _$hash = $jc(_$hash, enterpriseName.hashCode);
     _$hash = $jc(_$hash, staff.hashCode);
     _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
@@ -250,6 +264,8 @@ class _$PackagePackageRead extends PackagePackageRead {
     return (newBuiltValueToStringHelper(r'PackagePackageRead')
           ..add('id', id)
           ..add('recipient', recipient)
+          ..add('enterprise', enterprise)
+          ..add('enterpriseName', enterpriseName)
           ..add('staff', staff)
           ..add('site', site)
           ..add('type', type)
@@ -275,6 +291,15 @@ class PackagePackageReadBuilder
   String? _recipient;
   String? get recipient => _$this._recipient;
   set recipient(String? recipient) => _$this._recipient = recipient;
+
+  String? _enterprise;
+  String? get enterprise => _$this._enterprise;
+  set enterprise(String? enterprise) => _$this._enterprise = enterprise;
+
+  String? _enterpriseName;
+  String? get enterpriseName => _$this._enterpriseName;
+  set enterpriseName(String? enterpriseName) =>
+      _$this._enterpriseName = enterpriseName;
 
   String? _staff;
   String? get staff => _$this._staff;
@@ -329,6 +354,8 @@ class PackagePackageReadBuilder
     if ($v != null) {
       _id = $v.id;
       _recipient = $v.recipient;
+      _enterprise = $v.enterprise;
+      _enterpriseName = $v.enterpriseName;
       _staff = $v.staff;
       _site = $v.site;
       _type = $v.type;
@@ -364,6 +391,10 @@ class PackagePackageReadBuilder
           id: id,
           recipient: BuiltValueNullFieldError.checkNotNull(
               recipient, r'PackagePackageRead', 'recipient'),
+          enterprise: BuiltValueNullFieldError.checkNotNull(
+              enterprise, r'PackagePackageRead', 'enterprise'),
+          enterpriseName: BuiltValueNullFieldError.checkNotNull(
+              enterpriseName, r'PackagePackageRead', 'enterpriseName'),
           staff: BuiltValueNullFieldError.checkNotNull(
               staff, r'PackagePackageRead', 'staff'),
           site: BuiltValueNullFieldError.checkNotNull(

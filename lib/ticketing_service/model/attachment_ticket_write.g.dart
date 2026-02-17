@@ -8,13 +8,15 @@ part of 'attachment_ticket_write.dart';
 
 class _$AttachmentTicketWrite extends AttachmentTicketWrite {
   @override
-  final String? url;
+  final String url;
 
   factory _$AttachmentTicketWrite(
           [void Function(AttachmentTicketWriteBuilder)? updates]) =>
       (new AttachmentTicketWriteBuilder()..update(updates))._build();
 
-  _$AttachmentTicketWrite._({this.url}) : super._();
+  _$AttachmentTicketWrite._({required this.url}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(url, r'AttachmentTicketWrite', 'url');
+  }
 
   @override
   AttachmentTicketWrite rebuild(
@@ -85,7 +87,8 @@ class AttachmentTicketWriteBuilder
   _$AttachmentTicketWrite _build() {
     final _$result = _$v ??
         new _$AttachmentTicketWrite._(
-          url: url,
+          url: BuiltValueNullFieldError.checkNotNull(
+              url, r'AttachmentTicketWrite', 'url'),
         );
     replace(_$result);
     return _$result;

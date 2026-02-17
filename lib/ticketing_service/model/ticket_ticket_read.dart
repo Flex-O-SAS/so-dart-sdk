@@ -27,6 +27,7 @@ part 'ticket_ticket_read.g.dart';
 /// * [metadata] 
 /// * [createdAt] 
 /// * [updatedAt] 
+/// * [priority] 
 /// * [linkedUsers] 
 /// * [tags] 
 /// * [comments] 
@@ -73,6 +74,10 @@ abstract class TicketTicketRead implements Built<TicketTicketRead, TicketTicketR
   @BuiltValueField(wireName: r'updatedAt')
   DateTime? get updatedAt;
 
+  @BuiltValueField(wireName: r'priority')
+  TicketTicketReadPriorityEnum? get priority;
+  // enum priorityEnum {  low,  medium,  high,  };
+
   @BuiltValueField(wireName: r'linkedUsers')
   BuiltList<String>? get linkedUsers;
 
@@ -90,7 +95,8 @@ abstract class TicketTicketRead implements Built<TicketTicketRead, TicketTicketR
   factory TicketTicketRead([void updates(TicketTicketReadBuilder b)]) = _$TicketTicketRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TicketTicketReadBuilder b) => b;
+  static void _defaults(TicketTicketReadBuilder b) => b
+      ..priority = TicketTicketReadPriorityEnum.valueOf('medium');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<TicketTicketRead> get serializer => _$TicketTicketReadSerializer();
@@ -185,6 +191,13 @@ class _$TicketTicketReadSerializer implements PrimitiveSerializer<TicketTicketRe
       yield serializers.serialize(
         object.updatedAt,
         specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.priority != null) {
+      yield r'priority';
+      yield serializers.serialize(
+        object.priority,
+        specifiedType: const FullType(TicketTicketReadPriorityEnum),
       );
     }
     if (object.linkedUsers != null) {
@@ -329,6 +342,13 @@ class _$TicketTicketReadSerializer implements PrimitiveSerializer<TicketTicketRe
           ) as DateTime;
           result.updatedAt = valueDes;
           break;
+        case r'priority':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TicketTicketReadPriorityEnum),
+          ) as TicketTicketReadPriorityEnum;
+          result.priority = valueDes;
+          break;
         case r'linkedUsers':
           final valueDes = serializers.deserialize(
             value,
@@ -403,5 +423,22 @@ class TicketTicketReadStatusEnum extends EnumClass {
 
   static BuiltSet<TicketTicketReadStatusEnum> get values => _$ticketTicketReadStatusEnumValues;
   static TicketTicketReadStatusEnum valueOf(String name) => _$ticketTicketReadStatusEnumValueOf(name);
+}
+
+class TicketTicketReadPriorityEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'low')
+  static const TicketTicketReadPriorityEnum low = _$ticketTicketReadPriorityEnum_low;
+  @BuiltValueEnumConst(wireName: r'medium')
+  static const TicketTicketReadPriorityEnum medium = _$ticketTicketReadPriorityEnum_medium;
+  @BuiltValueEnumConst(wireName: r'high')
+  static const TicketTicketReadPriorityEnum high = _$ticketTicketReadPriorityEnum_high;
+
+  static Serializer<TicketTicketReadPriorityEnum> get serializer => _$ticketTicketReadPriorityEnumSerializer;
+
+  const TicketTicketReadPriorityEnum._(String name): super(name);
+
+  static BuiltSet<TicketTicketReadPriorityEnum> get values => _$ticketTicketReadPriorityEnumValues;
+  static TicketTicketReadPriorityEnum valueOf(String name) => _$ticketTicketReadPriorityEnumValueOf(name);
 }
 

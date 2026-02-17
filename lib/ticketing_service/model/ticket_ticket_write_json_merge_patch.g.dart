@@ -44,9 +44,44 @@ final BuiltSet<TicketTicketWriteJsonMergePatchStatusEnum>
   _$ticketTicketWriteJsonMergePatchStatusEnum_cancelled,
 ]);
 
+const TicketTicketWriteJsonMergePatchPriorityEnum
+    _$ticketTicketWriteJsonMergePatchPriorityEnum_low =
+    const TicketTicketWriteJsonMergePatchPriorityEnum._('low');
+const TicketTicketWriteJsonMergePatchPriorityEnum
+    _$ticketTicketWriteJsonMergePatchPriorityEnum_medium =
+    const TicketTicketWriteJsonMergePatchPriorityEnum._('medium');
+const TicketTicketWriteJsonMergePatchPriorityEnum
+    _$ticketTicketWriteJsonMergePatchPriorityEnum_high =
+    const TicketTicketWriteJsonMergePatchPriorityEnum._('high');
+
+TicketTicketWriteJsonMergePatchPriorityEnum
+    _$ticketTicketWriteJsonMergePatchPriorityEnumValueOf(String name) {
+  switch (name) {
+    case 'low':
+      return _$ticketTicketWriteJsonMergePatchPriorityEnum_low;
+    case 'medium':
+      return _$ticketTicketWriteJsonMergePatchPriorityEnum_medium;
+    case 'high':
+      return _$ticketTicketWriteJsonMergePatchPriorityEnum_high;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<TicketTicketWriteJsonMergePatchPriorityEnum>
+    _$ticketTicketWriteJsonMergePatchPriorityEnumValues = new BuiltSet<
+        TicketTicketWriteJsonMergePatchPriorityEnum>(const <TicketTicketWriteJsonMergePatchPriorityEnum>[
+  _$ticketTicketWriteJsonMergePatchPriorityEnum_low,
+  _$ticketTicketWriteJsonMergePatchPriorityEnum_medium,
+  _$ticketTicketWriteJsonMergePatchPriorityEnum_high,
+]);
+
 Serializer<TicketTicketWriteJsonMergePatchStatusEnum>
     _$ticketTicketWriteJsonMergePatchStatusEnumSerializer =
     new _$TicketTicketWriteJsonMergePatchStatusEnumSerializer();
+Serializer<TicketTicketWriteJsonMergePatchPriorityEnum>
+    _$ticketTicketWriteJsonMergePatchPriorityEnumSerializer =
+    new _$TicketTicketWriteJsonMergePatchPriorityEnumSerializer();
 
 class _$TicketTicketWriteJsonMergePatchStatusEnumSerializer
     implements PrimitiveSerializer<TicketTicketWriteJsonMergePatchStatusEnum> {
@@ -84,6 +119,41 @@ class _$TicketTicketWriteJsonMergePatchStatusEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$TicketTicketWriteJsonMergePatchPriorityEnumSerializer
+    implements
+        PrimitiveSerializer<TicketTicketWriteJsonMergePatchPriorityEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'low': 'low',
+    'medium': 'medium',
+    'high': 'high',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'low': 'low',
+    'medium': 'medium',
+    'high': 'high',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    TicketTicketWriteJsonMergePatchPriorityEnum
+  ];
+  @override
+  final String wireName = 'TicketTicketWriteJsonMergePatchPriorityEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          TicketTicketWriteJsonMergePatchPriorityEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  TicketTicketWriteJsonMergePatchPriorityEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      TicketTicketWriteJsonMergePatchPriorityEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$TicketTicketWriteJsonMergePatch
     extends TicketTicketWriteJsonMergePatch {
   @override
@@ -105,6 +175,8 @@ class _$TicketTicketWriteJsonMergePatch
   @override
   final JsonObject? metadata;
   @override
+  final TicketTicketWriteJsonMergePatchPriorityEnum? priority;
+  @override
   final BuiltList<LinkedUserTicketWrite>? linkedUsers;
   @override
   final BuiltList<String>? tags;
@@ -125,6 +197,7 @@ class _$TicketTicketWriteJsonMergePatch
       this.site,
       this.location,
       this.metadata,
+      this.priority,
       this.linkedUsers,
       this.tags,
       this.attachments})
@@ -152,6 +225,7 @@ class _$TicketTicketWriteJsonMergePatch
         site == other.site &&
         location == other.location &&
         metadata == other.metadata &&
+        priority == other.priority &&
         linkedUsers == other.linkedUsers &&
         tags == other.tags &&
         attachments == other.attachments;
@@ -169,6 +243,7 @@ class _$TicketTicketWriteJsonMergePatch
     _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, location.hashCode);
     _$hash = $jc(_$hash, metadata.hashCode);
+    _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, linkedUsers.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, attachments.hashCode);
@@ -188,6 +263,7 @@ class _$TicketTicketWriteJsonMergePatch
           ..add('site', site)
           ..add('location', location)
           ..add('metadata', metadata)
+          ..add('priority', priority)
           ..add('linkedUsers', linkedUsers)
           ..add('tags', tags)
           ..add('attachments', attachments))
@@ -238,6 +314,11 @@ class TicketTicketWriteJsonMergePatchBuilder
   JsonObject? get metadata => _$this._metadata;
   set metadata(JsonObject? metadata) => _$this._metadata = metadata;
 
+  TicketTicketWriteJsonMergePatchPriorityEnum? _priority;
+  TicketTicketWriteJsonMergePatchPriorityEnum? get priority => _$this._priority;
+  set priority(TicketTicketWriteJsonMergePatchPriorityEnum? priority) =>
+      _$this._priority = priority;
+
   ListBuilder<LinkedUserTicketWrite>? _linkedUsers;
   ListBuilder<LinkedUserTicketWrite> get linkedUsers =>
       _$this._linkedUsers ??= new ListBuilder<LinkedUserTicketWrite>();
@@ -270,6 +351,7 @@ class TicketTicketWriteJsonMergePatchBuilder
       _site = $v.site;
       _location = $v.location;
       _metadata = $v.metadata;
+      _priority = $v.priority;
       _linkedUsers = $v.linkedUsers?.toBuilder();
       _tags = $v.tags?.toBuilder();
       _attachments = $v.attachments?.toBuilder();
@@ -306,6 +388,7 @@ class TicketTicketWriteJsonMergePatchBuilder
             site: site,
             location: location,
             metadata: metadata,
+            priority: priority,
             linkedUsers: _linkedUsers?.build(),
             tags: _tags?.build(),
             attachments: _attachments?.build(),

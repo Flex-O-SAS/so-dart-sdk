@@ -24,6 +24,7 @@ part 'ticket_ticket_write_json_merge_patch.g.dart';
 /// * [site] 
 /// * [location] 
 /// * [metadata] 
+/// * [priority] 
 /// * [linkedUsers] 
 /// * [tags] 
 /// * [attachments] 
@@ -57,6 +58,10 @@ abstract class TicketTicketWriteJsonMergePatch implements Built<TicketTicketWrit
   @BuiltValueField(wireName: r'metadata')
   JsonObject? get metadata;
 
+  @BuiltValueField(wireName: r'priority')
+  TicketTicketWriteJsonMergePatchPriorityEnum? get priority;
+  // enum priorityEnum {  low,  medium,  high,  };
+
   @BuiltValueField(wireName: r'linkedUsers')
   BuiltList<LinkedUserTicketWrite>? get linkedUsers;
 
@@ -71,7 +76,8 @@ abstract class TicketTicketWriteJsonMergePatch implements Built<TicketTicketWrit
   factory TicketTicketWriteJsonMergePatch([void updates(TicketTicketWriteJsonMergePatchBuilder b)]) = _$TicketTicketWriteJsonMergePatch;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TicketTicketWriteJsonMergePatchBuilder b) => b;
+  static void _defaults(TicketTicketWriteJsonMergePatchBuilder b) => b
+      ..priority = TicketTicketWriteJsonMergePatchPriorityEnum.valueOf('medium');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<TicketTicketWriteJsonMergePatch> get serializer => _$TicketTicketWriteJsonMergePatchSerializer();
@@ -150,6 +156,13 @@ class _$TicketTicketWriteJsonMergePatchSerializer implements PrimitiveSerializer
       yield serializers.serialize(
         object.metadata,
         specifiedType: const FullType(JsonObject),
+      );
+    }
+    if (object.priority != null) {
+      yield r'priority';
+      yield serializers.serialize(
+        object.priority,
+        specifiedType: const FullType(TicketTicketWriteJsonMergePatchPriorityEnum),
       );
     }
     if (object.linkedUsers != null) {
@@ -259,6 +272,13 @@ class _$TicketTicketWriteJsonMergePatchSerializer implements PrimitiveSerializer
           ) as JsonObject;
           result.metadata = valueDes;
           break;
+        case r'priority':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TicketTicketWriteJsonMergePatchPriorityEnum),
+          ) as TicketTicketWriteJsonMergePatchPriorityEnum;
+          result.priority = valueDes;
+          break;
         case r'linkedUsers':
           final valueDes = serializers.deserialize(
             value,
@@ -326,5 +346,22 @@ class TicketTicketWriteJsonMergePatchStatusEnum extends EnumClass {
 
   static BuiltSet<TicketTicketWriteJsonMergePatchStatusEnum> get values => _$ticketTicketWriteJsonMergePatchStatusEnumValues;
   static TicketTicketWriteJsonMergePatchStatusEnum valueOf(String name) => _$ticketTicketWriteJsonMergePatchStatusEnumValueOf(name);
+}
+
+class TicketTicketWriteJsonMergePatchPriorityEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'low')
+  static const TicketTicketWriteJsonMergePatchPriorityEnum low = _$ticketTicketWriteJsonMergePatchPriorityEnum_low;
+  @BuiltValueEnumConst(wireName: r'medium')
+  static const TicketTicketWriteJsonMergePatchPriorityEnum medium = _$ticketTicketWriteJsonMergePatchPriorityEnum_medium;
+  @BuiltValueEnumConst(wireName: r'high')
+  static const TicketTicketWriteJsonMergePatchPriorityEnum high = _$ticketTicketWriteJsonMergePatchPriorityEnum_high;
+
+  static Serializer<TicketTicketWriteJsonMergePatchPriorityEnum> get serializer => _$ticketTicketWriteJsonMergePatchPriorityEnumSerializer;
+
+  const TicketTicketWriteJsonMergePatchPriorityEnum._(String name): super(name);
+
+  static BuiltSet<TicketTicketWriteJsonMergePatchPriorityEnum> get values => _$ticketTicketWriteJsonMergePatchPriorityEnumValues;
+  static TicketTicketWriteJsonMergePatchPriorityEnum valueOf(String name) => _$ticketTicketWriteJsonMergePatchPriorityEnumValueOf(name);
 }
 

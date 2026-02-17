@@ -15,7 +15,7 @@ part 'attachment_ticket_read.g.dart';
 @BuiltValue()
 abstract class AttachmentTicketRead implements Built<AttachmentTicketRead, AttachmentTicketReadBuilder> {
   @BuiltValueField(wireName: r'url')
-  String? get url;
+  String get url;
 
   AttachmentTicketRead._();
 
@@ -40,13 +40,11 @@ class _$AttachmentTicketReadSerializer implements PrimitiveSerializer<Attachment
     AttachmentTicketRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.url != null) {
-      yield r'url';
-      yield serializers.serialize(
-        object.url,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'url';
+    yield serializers.serialize(
+      object.url,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override

@@ -32,6 +32,7 @@ part 'ticket_jsonld_ticket_read.g.dart';
 /// * [metadata] 
 /// * [createdAt] 
 /// * [updatedAt] 
+/// * [priority] 
 /// * [linkedUsers] 
 /// * [tags] 
 /// * [comments] 
@@ -58,6 +59,10 @@ abstract class TicketJsonldTicketRead implements HydraItemBaseSchema, Built<Tick
 
   @BuiltValueField(wireName: r'title')
   String get title;
+
+  @BuiltValueField(wireName: r'priority')
+  TicketJsonldTicketReadPriorityEnum? get priority;
+  // enum priorityEnum {  low,  medium,  high,  };
 
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
@@ -95,7 +100,8 @@ abstract class TicketJsonldTicketRead implements HydraItemBaseSchema, Built<Tick
   factory TicketJsonldTicketRead([void updates(TicketJsonldTicketReadBuilder b)]) = _$TicketJsonldTicketRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TicketJsonldTicketReadBuilder b) => b;
+  static void _defaults(TicketJsonldTicketReadBuilder b) => b
+      ..priority = TicketJsonldTicketReadPriorityEnum.valueOf('medium');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<TicketJsonldTicketRead> get serializer => _$TicketJsonldTicketReadSerializer();
@@ -161,6 +167,13 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
       object.title,
       specifiedType: const FullType(String),
     );
+    if (object.priority != null) {
+      yield r'priority';
+      yield serializers.serialize(
+        object.priority,
+        specifiedType: const FullType(TicketJsonldTicketReadPriorityEnum),
+      );
+    }
     if (object.tags != null) {
       yield r'tags';
       yield serializers.serialize(
@@ -316,6 +329,13 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
           ) as String;
           result.title = valueDes;
           break;
+        case r'priority':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TicketJsonldTicketReadPriorityEnum),
+          ) as TicketJsonldTicketReadPriorityEnum;
+          result.priority = valueDes;
+          break;
         case r'tags':
           final valueDes = serializers.deserialize(
             value,
@@ -446,5 +466,22 @@ class TicketJsonldTicketReadStatusEnum extends EnumClass {
 
   static BuiltSet<TicketJsonldTicketReadStatusEnum> get values => _$ticketJsonldTicketReadStatusEnumValues;
   static TicketJsonldTicketReadStatusEnum valueOf(String name) => _$ticketJsonldTicketReadStatusEnumValueOf(name);
+}
+
+class TicketJsonldTicketReadPriorityEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'low')
+  static const TicketJsonldTicketReadPriorityEnum low = _$ticketJsonldTicketReadPriorityEnum_low;
+  @BuiltValueEnumConst(wireName: r'medium')
+  static const TicketJsonldTicketReadPriorityEnum medium = _$ticketJsonldTicketReadPriorityEnum_medium;
+  @BuiltValueEnumConst(wireName: r'high')
+  static const TicketJsonldTicketReadPriorityEnum high = _$ticketJsonldTicketReadPriorityEnum_high;
+
+  static Serializer<TicketJsonldTicketReadPriorityEnum> get serializer => _$ticketJsonldTicketReadPriorityEnumSerializer;
+
+  const TicketJsonldTicketReadPriorityEnum._(String name): super(name);
+
+  static BuiltSet<TicketJsonldTicketReadPriorityEnum> get values => _$ticketJsonldTicketReadPriorityEnumValues;
+  static TicketJsonldTicketReadPriorityEnum valueOf(String name) => _$ticketJsonldTicketReadPriorityEnumValueOf(name);
 }
 

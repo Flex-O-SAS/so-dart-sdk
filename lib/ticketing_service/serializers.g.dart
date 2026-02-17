@@ -42,12 +42,16 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(TagTagWrite.serializer)
       ..add(TagTagWriteJsonMergePatch.serializer)
       ..add(TicketJsonldTicketRead.serializer)
+      ..add(TicketJsonldTicketReadPriorityEnum.serializer)
       ..add(TicketJsonldTicketReadStatusEnum.serializer)
       ..add(TicketTicketRead.serializer)
+      ..add(TicketTicketReadPriorityEnum.serializer)
       ..add(TicketTicketReadStatusEnum.serializer)
       ..add(TicketTicketWrite.serializer)
       ..add(TicketTicketWriteJsonMergePatch.serializer)
+      ..add(TicketTicketWriteJsonMergePatchPriorityEnum.serializer)
       ..add(TicketTicketWriteJsonMergePatchStatusEnum.serializer)
+      ..add(TicketTicketWritePriorityEnum.serializer)
       ..add(TicketTicketWriteStatusEnum.serializer)
       ..addBuilderFactory(
           const FullType(
@@ -126,7 +130,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(TicketJsonldTicketRead)]),
-          () => new ListBuilder<TicketJsonldTicketRead>()))
+          () => new ListBuilder<TicketJsonldTicketRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType.nullable(JsonObject)
+          ]),
+          () => new MapBuilder<String, JsonObject?>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

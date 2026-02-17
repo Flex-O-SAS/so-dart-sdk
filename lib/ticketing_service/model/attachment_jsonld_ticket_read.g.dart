@@ -8,13 +8,16 @@ part of 'attachment_jsonld_ticket_read.dart';
 
 class _$AttachmentJsonldTicketRead extends AttachmentJsonldTicketRead {
   @override
-  final String? url;
+  final String url;
 
   factory _$AttachmentJsonldTicketRead(
           [void Function(AttachmentJsonldTicketReadBuilder)? updates]) =>
       (new AttachmentJsonldTicketReadBuilder()..update(updates))._build();
 
-  _$AttachmentJsonldTicketRead._({this.url}) : super._();
+  _$AttachmentJsonldTicketRead._({required this.url}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        url, r'AttachmentJsonldTicketRead', 'url');
+  }
 
   @override
   AttachmentJsonldTicketRead rebuild(
@@ -86,7 +89,8 @@ class AttachmentJsonldTicketReadBuilder
   _$AttachmentJsonldTicketRead _build() {
     final _$result = _$v ??
         new _$AttachmentJsonldTicketRead._(
-          url: url,
+          url: BuiltValueNullFieldError.checkNotNull(
+              url, r'AttachmentJsonldTicketRead', 'url'),
         );
     replace(_$result);
     return _$result;

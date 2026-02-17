@@ -8,13 +8,15 @@ part of 'attachment_ticket_read.dart';
 
 class _$AttachmentTicketRead extends AttachmentTicketRead {
   @override
-  final String? url;
+  final String url;
 
   factory _$AttachmentTicketRead(
           [void Function(AttachmentTicketReadBuilder)? updates]) =>
       (new AttachmentTicketReadBuilder()..update(updates))._build();
 
-  _$AttachmentTicketRead._({this.url}) : super._();
+  _$AttachmentTicketRead._({required this.url}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(url, r'AttachmentTicketRead', 'url');
+  }
 
   @override
   AttachmentTicketRead rebuild(
@@ -85,7 +87,8 @@ class AttachmentTicketReadBuilder
   _$AttachmentTicketRead _build() {
     final _$result = _$v ??
         new _$AttachmentTicketRead._(
-          url: url,
+          url: BuiltValueNullFieldError.checkNotNull(
+              url, r'AttachmentTicketRead', 'url'),
         );
     replace(_$result);
     return _$result;

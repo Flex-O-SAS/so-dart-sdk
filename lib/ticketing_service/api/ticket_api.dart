@@ -119,6 +119,8 @@ class TicketApi {
   /// * [tagsPeriodName] - 
   /// * [status] - 
   /// * [statusLeftSquareBracketRightSquareBracket] - 
+  /// * [priority] - 
+  /// * [priorityLeftSquareBracketRightSquareBracket] - 
   /// * [metadataLeftSquareBracketTypeRightSquareBracket] - JSON metadata partial search. example: metadata[type]=finance
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -164,6 +166,8 @@ class TicketApi {
     String? tagsPeriodName,
     String? status,
     BuiltList<String>? statusLeftSquareBracketRightSquareBracket,
+    String? priority,
+    BuiltList<String>? priorityLeftSquareBracketRightSquareBracket,
     String? metadataLeftSquareBracketTypeRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -227,6 +231,8 @@ class TicketApi {
       if (tagsPeriodName != null) r'tags.name': encodeQueryParameter(_serializers, tagsPeriodName, const FullType(String)),
       if (status != null) r'status': encodeQueryParameter(_serializers, status, const FullType(String)),
       if (statusLeftSquareBracketRightSquareBracket != null) r'status[]': encodeCollectionQueryParameter<String>(_serializers, statusLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
+      if (priority != null) r'priority': encodeQueryParameter(_serializers, priority, const FullType(String)),
+      if (priorityLeftSquareBracketRightSquareBracket != null) r'priority[]': encodeCollectionQueryParameter<String>(_serializers, priorityLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (metadataLeftSquareBracketTypeRightSquareBracket != null) r'metadata[type]': encodeQueryParameter(_serializers, metadataLeftSquareBracketTypeRightSquareBracket, const FullType(String)),
     };
 

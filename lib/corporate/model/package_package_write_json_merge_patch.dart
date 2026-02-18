@@ -13,6 +13,8 @@ part 'package_package_write_json_merge_patch.g.dart';
 ///
 /// Properties:
 /// * [recipient] 
+/// * [enterprise] 
+/// * [enterpriseName] 
 /// * [staff] 
 /// * [site] 
 /// * [type] 
@@ -27,6 +29,12 @@ part 'package_package_write_json_merge_patch.g.dart';
 abstract class PackagePackageWriteJsonMergePatch implements Built<PackagePackageWriteJsonMergePatch, PackagePackageWriteJsonMergePatchBuilder> {
   @BuiltValueField(wireName: r'recipient')
   String? get recipient;
+
+  @BuiltValueField(wireName: r'enterprise')
+  String? get enterprise;
+
+  @BuiltValueField(wireName: r'enterpriseName')
+  String? get enterpriseName;
 
   @BuiltValueField(wireName: r'staff')
   String? get staff;
@@ -87,6 +95,20 @@ class _$PackagePackageWriteJsonMergePatchSerializer implements PrimitiveSerializ
       yield r'recipient';
       yield serializers.serialize(
         object.recipient,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.enterprise != null) {
+      yield r'enterprise';
+      yield serializers.serialize(
+        object.enterprise,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.enterpriseName != null) {
+      yield r'enterpriseName';
+      yield serializers.serialize(
+        object.enterpriseName,
         specifiedType: const FullType(String),
       );
     }
@@ -189,6 +211,20 @@ class _$PackagePackageWriteJsonMergePatchSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.recipient = valueDes;
+          break;
+        case r'enterprise':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterprise = valueDes;
+          break;
+        case r'enterpriseName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterpriseName = valueDes;
           break;
         case r'staff':
           final valueDes = serializers.deserialize(

@@ -39,9 +39,41 @@ final BuiltSet<TicketTicketWriteStatusEnum>
   _$ticketTicketWriteStatusEnum_cancelled,
 ]);
 
+const TicketTicketWritePriorityEnum _$ticketTicketWritePriorityEnum_low =
+    const TicketTicketWritePriorityEnum._('low');
+const TicketTicketWritePriorityEnum _$ticketTicketWritePriorityEnum_medium =
+    const TicketTicketWritePriorityEnum._('medium');
+const TicketTicketWritePriorityEnum _$ticketTicketWritePriorityEnum_high =
+    const TicketTicketWritePriorityEnum._('high');
+
+TicketTicketWritePriorityEnum _$ticketTicketWritePriorityEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'low':
+      return _$ticketTicketWritePriorityEnum_low;
+    case 'medium':
+      return _$ticketTicketWritePriorityEnum_medium;
+    case 'high':
+      return _$ticketTicketWritePriorityEnum_high;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<TicketTicketWritePriorityEnum>
+    _$ticketTicketWritePriorityEnumValues = new BuiltSet<
+        TicketTicketWritePriorityEnum>(const <TicketTicketWritePriorityEnum>[
+  _$ticketTicketWritePriorityEnum_low,
+  _$ticketTicketWritePriorityEnum_medium,
+  _$ticketTicketWritePriorityEnum_high,
+]);
+
 Serializer<TicketTicketWriteStatusEnum>
     _$ticketTicketWriteStatusEnumSerializer =
     new _$TicketTicketWriteStatusEnumSerializer();
+Serializer<TicketTicketWritePriorityEnum>
+    _$ticketTicketWritePriorityEnumSerializer =
+    new _$TicketTicketWritePriorityEnumSerializer();
 
 class _$TicketTicketWriteStatusEnumSerializer
     implements PrimitiveSerializer<TicketTicketWriteStatusEnum> {
@@ -76,6 +108,38 @@ class _$TicketTicketWriteStatusEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$TicketTicketWritePriorityEnumSerializer
+    implements PrimitiveSerializer<TicketTicketWritePriorityEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'low': 'low',
+    'medium': 'medium',
+    'high': 'high',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'low': 'low',
+    'medium': 'medium',
+    'high': 'high',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[TicketTicketWritePriorityEnum];
+  @override
+  final String wireName = 'TicketTicketWritePriorityEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, TicketTicketWritePriorityEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  TicketTicketWritePriorityEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      TicketTicketWritePriorityEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$TicketTicketWrite extends TicketTicketWrite {
   @override
   final String title;
@@ -95,6 +159,8 @@ class _$TicketTicketWrite extends TicketTicketWrite {
   final String? location;
   @override
   final JsonObject? metadata;
+  @override
+  final TicketTicketWritePriorityEnum? priority;
   @override
   final BuiltList<LinkedUserTicketWrite>? linkedUsers;
   @override
@@ -116,6 +182,7 @@ class _$TicketTicketWrite extends TicketTicketWrite {
       required this.site,
       this.location,
       this.metadata,
+      this.priority,
       this.linkedUsers,
       this.tags,
       this.attachments})
@@ -153,6 +220,7 @@ class _$TicketTicketWrite extends TicketTicketWrite {
         site == other.site &&
         location == other.location &&
         metadata == other.metadata &&
+        priority == other.priority &&
         linkedUsers == other.linkedUsers &&
         tags == other.tags &&
         attachments == other.attachments;
@@ -170,6 +238,7 @@ class _$TicketTicketWrite extends TicketTicketWrite {
     _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, location.hashCode);
     _$hash = $jc(_$hash, metadata.hashCode);
+    _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, linkedUsers.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, attachments.hashCode);
@@ -189,6 +258,7 @@ class _$TicketTicketWrite extends TicketTicketWrite {
           ..add('site', site)
           ..add('location', location)
           ..add('metadata', metadata)
+          ..add('priority', priority)
           ..add('linkedUsers', linkedUsers)
           ..add('tags', tags)
           ..add('attachments', attachments))
@@ -236,6 +306,11 @@ class TicketTicketWriteBuilder
   JsonObject? get metadata => _$this._metadata;
   set metadata(JsonObject? metadata) => _$this._metadata = metadata;
 
+  TicketTicketWritePriorityEnum? _priority;
+  TicketTicketWritePriorityEnum? get priority => _$this._priority;
+  set priority(TicketTicketWritePriorityEnum? priority) =>
+      _$this._priority = priority;
+
   ListBuilder<LinkedUserTicketWrite>? _linkedUsers;
   ListBuilder<LinkedUserTicketWrite> get linkedUsers =>
       _$this._linkedUsers ??= new ListBuilder<LinkedUserTicketWrite>();
@@ -268,6 +343,7 @@ class TicketTicketWriteBuilder
       _site = $v.site;
       _location = $v.location;
       _metadata = $v.metadata;
+      _priority = $v.priority;
       _linkedUsers = $v.linkedUsers?.toBuilder();
       _tags = $v.tags?.toBuilder();
       _attachments = $v.attachments?.toBuilder();
@@ -310,6 +386,7 @@ class TicketTicketWriteBuilder
                 site, r'TicketTicketWrite', 'site'),
             location: location,
             metadata: metadata,
+            priority: priority,
             linkedUsers: _linkedUsers?.build(),
             tags: _tags?.build(),
             attachments: _attachments?.build(),

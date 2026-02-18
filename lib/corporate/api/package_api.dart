@@ -117,6 +117,7 @@ class PackageApi {
   /// * [handoverDateLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [handoverDateLeftSquareBracketAfterRightSquareBracket] - 
   /// * [handoverDateLeftSquareBracketStrictlyAfterRightSquareBracket] - 
+  /// * [enterpriseLeftSquareBracketRightSquareBracket] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -159,6 +160,7 @@ class PackageApi {
     String? handoverDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? handoverDateLeftSquareBracketAfterRightSquareBracket,
     String? handoverDateLeftSquareBracketStrictlyAfterRightSquareBracket,
+    String? enterpriseLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -219,6 +221,7 @@ class PackageApi {
       if (handoverDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'handoverDate[strictly_before]': encodeQueryParameter(_serializers, handoverDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (handoverDateLeftSquareBracketAfterRightSquareBracket != null) r'handoverDate[after]': encodeQueryParameter(_serializers, handoverDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
       if (handoverDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'handoverDate[strictly_after]': encodeQueryParameter(_serializers, handoverDateLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (enterpriseLeftSquareBracketRightSquareBracket != null) r'enterprise[]': encodeQueryParameter(_serializers, enterpriseLeftSquareBracketRightSquareBracket, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

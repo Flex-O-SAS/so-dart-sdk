@@ -151,29 +151,33 @@ class _$PackageJsonldPackageReadStatusEnumSerializer
 
 class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
   @override
-  final int site;
-  @override
   final int quantity;
   @override
   final DateTime receptionDate;
   @override
-  final String recipient;
+  final String enterprise;
   @override
   final String securityCode;
   @override
   final String staff;
   @override
-  final int? id;
-  @override
   final PackageJsonldPackageReadTypeEnum type;
   @override
   final String? handoverClient;
   @override
+  final DateTime? handoverDate;
+  @override
+  final int site;
+  @override
+  final String recipient;
+  @override
+  final int? id;
+  @override
+  final String enterpriseName;
+  @override
   final String trackingNumber;
   @override
   final PackageJsonldPackageReadStatusEnum status;
-  @override
-  final DateTime? handoverDate;
   @override
   final HydraItemBaseSchemaContext? atContext;
   @override
@@ -186,36 +190,42 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
       (new PackageJsonldPackageReadBuilder()..update(updates))._build();
 
   _$PackageJsonldPackageRead._(
-      {required this.site,
-      required this.quantity,
+      {required this.quantity,
       required this.receptionDate,
-      required this.recipient,
+      required this.enterprise,
       required this.securityCode,
       required this.staff,
-      this.id,
       required this.type,
       this.handoverClient,
+      this.handoverDate,
+      required this.site,
+      required this.recipient,
+      this.id,
+      required this.enterpriseName,
       required this.trackingNumber,
       required this.status,
-      this.handoverDate,
       this.atContext,
       required this.atId,
       required this.atType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        site, r'PackageJsonldPackageRead', 'site');
-    BuiltValueNullFieldError.checkNotNull(
         quantity, r'PackageJsonldPackageRead', 'quantity');
     BuiltValueNullFieldError.checkNotNull(
         receptionDate, r'PackageJsonldPackageRead', 'receptionDate');
     BuiltValueNullFieldError.checkNotNull(
-        recipient, r'PackageJsonldPackageRead', 'recipient');
+        enterprise, r'PackageJsonldPackageRead', 'enterprise');
     BuiltValueNullFieldError.checkNotNull(
         securityCode, r'PackageJsonldPackageRead', 'securityCode');
     BuiltValueNullFieldError.checkNotNull(
         staff, r'PackageJsonldPackageRead', 'staff');
     BuiltValueNullFieldError.checkNotNull(
         type, r'PackageJsonldPackageRead', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        site, r'PackageJsonldPackageRead', 'site');
+    BuiltValueNullFieldError.checkNotNull(
+        recipient, r'PackageJsonldPackageRead', 'recipient');
+    BuiltValueNullFieldError.checkNotNull(
+        enterpriseName, r'PackageJsonldPackageRead', 'enterpriseName');
     BuiltValueNullFieldError.checkNotNull(
         trackingNumber, r'PackageJsonldPackageRead', 'trackingNumber');
     BuiltValueNullFieldError.checkNotNull(
@@ -239,18 +249,20 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PackageJsonldPackageRead &&
-        site == other.site &&
         quantity == other.quantity &&
         receptionDate == other.receptionDate &&
-        recipient == other.recipient &&
+        enterprise == other.enterprise &&
         securityCode == other.securityCode &&
         staff == other.staff &&
-        id == other.id &&
         type == other.type &&
         handoverClient == other.handoverClient &&
+        handoverDate == other.handoverDate &&
+        site == other.site &&
+        recipient == other.recipient &&
+        id == other.id &&
+        enterpriseName == other.enterpriseName &&
         trackingNumber == other.trackingNumber &&
         status == other.status &&
-        handoverDate == other.handoverDate &&
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType;
@@ -259,18 +271,20 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, quantity.hashCode);
     _$hash = $jc(_$hash, receptionDate.hashCode);
-    _$hash = $jc(_$hash, recipient.hashCode);
+    _$hash = $jc(_$hash, enterprise.hashCode);
     _$hash = $jc(_$hash, securityCode.hashCode);
     _$hash = $jc(_$hash, staff.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, handoverClient.hashCode);
+    _$hash = $jc(_$hash, handoverDate.hashCode);
+    _$hash = $jc(_$hash, site.hashCode);
+    _$hash = $jc(_$hash, recipient.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, enterpriseName.hashCode);
     _$hash = $jc(_$hash, trackingNumber.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, handoverDate.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
@@ -281,18 +295,20 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'PackageJsonldPackageRead')
-          ..add('site', site)
           ..add('quantity', quantity)
           ..add('receptionDate', receptionDate)
-          ..add('recipient', recipient)
+          ..add('enterprise', enterprise)
           ..add('securityCode', securityCode)
           ..add('staff', staff)
-          ..add('id', id)
           ..add('type', type)
           ..add('handoverClient', handoverClient)
+          ..add('handoverDate', handoverDate)
+          ..add('site', site)
+          ..add('recipient', recipient)
+          ..add('id', id)
+          ..add('enterpriseName', enterpriseName)
           ..add('trackingNumber', trackingNumber)
           ..add('status', status)
-          ..add('handoverDate', handoverDate)
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType))
@@ -306,10 +322,6 @@ class PackageJsonldPackageReadBuilder
         HydraItemBaseSchemaBuilder {
   _$PackageJsonldPackageRead? _$v;
 
-  int? _site;
-  int? get site => _$this._site;
-  set site(covariant int? site) => _$this._site = site;
-
   int? _quantity;
   int? get quantity => _$this._quantity;
   set quantity(covariant int? quantity) => _$this._quantity = quantity;
@@ -319,9 +331,10 @@ class PackageJsonldPackageReadBuilder
   set receptionDate(covariant DateTime? receptionDate) =>
       _$this._receptionDate = receptionDate;
 
-  String? _recipient;
-  String? get recipient => _$this._recipient;
-  set recipient(covariant String? recipient) => _$this._recipient = recipient;
+  String? _enterprise;
+  String? get enterprise => _$this._enterprise;
+  set enterprise(covariant String? enterprise) =>
+      _$this._enterprise = enterprise;
 
   String? _securityCode;
   String? get securityCode => _$this._securityCode;
@@ -331,10 +344,6 @@ class PackageJsonldPackageReadBuilder
   String? _staff;
   String? get staff => _$this._staff;
   set staff(covariant String? staff) => _$this._staff = staff;
-
-  int? _id;
-  int? get id => _$this._id;
-  set id(covariant int? id) => _$this._id = id;
 
   PackageJsonldPackageReadTypeEnum? _type;
   PackageJsonldPackageReadTypeEnum? get type => _$this._type;
@@ -346,6 +355,28 @@ class PackageJsonldPackageReadBuilder
   set handoverClient(covariant String? handoverClient) =>
       _$this._handoverClient = handoverClient;
 
+  DateTime? _handoverDate;
+  DateTime? get handoverDate => _$this._handoverDate;
+  set handoverDate(covariant DateTime? handoverDate) =>
+      _$this._handoverDate = handoverDate;
+
+  int? _site;
+  int? get site => _$this._site;
+  set site(covariant int? site) => _$this._site = site;
+
+  String? _recipient;
+  String? get recipient => _$this._recipient;
+  set recipient(covariant String? recipient) => _$this._recipient = recipient;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  String? _enterpriseName;
+  String? get enterpriseName => _$this._enterpriseName;
+  set enterpriseName(covariant String? enterpriseName) =>
+      _$this._enterpriseName = enterpriseName;
+
   String? _trackingNumber;
   String? get trackingNumber => _$this._trackingNumber;
   set trackingNumber(covariant String? trackingNumber) =>
@@ -355,11 +386,6 @@ class PackageJsonldPackageReadBuilder
   PackageJsonldPackageReadStatusEnum? get status => _$this._status;
   set status(covariant PackageJsonldPackageReadStatusEnum? status) =>
       _$this._status = status;
-
-  DateTime? _handoverDate;
-  DateTime? get handoverDate => _$this._handoverDate;
-  set handoverDate(covariant DateTime? handoverDate) =>
-      _$this._handoverDate = handoverDate;
 
   HydraItemBaseSchemaContextBuilder? _atContext;
   HydraItemBaseSchemaContextBuilder get atContext =>
@@ -382,18 +408,20 @@ class PackageJsonldPackageReadBuilder
   PackageJsonldPackageReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _site = $v.site;
       _quantity = $v.quantity;
       _receptionDate = $v.receptionDate;
-      _recipient = $v.recipient;
+      _enterprise = $v.enterprise;
       _securityCode = $v.securityCode;
       _staff = $v.staff;
-      _id = $v.id;
       _type = $v.type;
       _handoverClient = $v.handoverClient;
+      _handoverDate = $v.handoverDate;
+      _site = $v.site;
+      _recipient = $v.recipient;
+      _id = $v.id;
+      _enterpriseName = $v.enterpriseName;
       _trackingNumber = $v.trackingNumber;
       _status = $v.status;
-      _handoverDate = $v.handoverDate;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
@@ -421,27 +449,31 @@ class PackageJsonldPackageReadBuilder
     try {
       _$result = _$v ??
           new _$PackageJsonldPackageRead._(
-            site: BuiltValueNullFieldError.checkNotNull(
-                site, r'PackageJsonldPackageRead', 'site'),
             quantity: BuiltValueNullFieldError.checkNotNull(
                 quantity, r'PackageJsonldPackageRead', 'quantity'),
             receptionDate: BuiltValueNullFieldError.checkNotNull(
                 receptionDate, r'PackageJsonldPackageRead', 'receptionDate'),
-            recipient: BuiltValueNullFieldError.checkNotNull(
-                recipient, r'PackageJsonldPackageRead', 'recipient'),
+            enterprise: BuiltValueNullFieldError.checkNotNull(
+                enterprise, r'PackageJsonldPackageRead', 'enterprise'),
             securityCode: BuiltValueNullFieldError.checkNotNull(
                 securityCode, r'PackageJsonldPackageRead', 'securityCode'),
             staff: BuiltValueNullFieldError.checkNotNull(
                 staff, r'PackageJsonldPackageRead', 'staff'),
-            id: id,
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'PackageJsonldPackageRead', 'type'),
             handoverClient: handoverClient,
+            handoverDate: handoverDate,
+            site: BuiltValueNullFieldError.checkNotNull(
+                site, r'PackageJsonldPackageRead', 'site'),
+            recipient: BuiltValueNullFieldError.checkNotNull(
+                recipient, r'PackageJsonldPackageRead', 'recipient'),
+            id: id,
+            enterpriseName: BuiltValueNullFieldError.checkNotNull(
+                enterpriseName, r'PackageJsonldPackageRead', 'enterpriseName'),
             trackingNumber: BuiltValueNullFieldError.checkNotNull(
                 trackingNumber, r'PackageJsonldPackageRead', 'trackingNumber'),
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'PackageJsonldPackageRead', 'status'),
-            handoverDate: handoverDate,
             atContext: _atContext?.build(),
             atId: BuiltValueNullFieldError.checkNotNull(
                 atId, r'PackageJsonldPackageRead', 'atId'),

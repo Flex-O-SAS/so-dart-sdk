@@ -38,8 +38,40 @@ final BuiltSet<TicketTicketReadStatusEnum> _$ticketTicketReadStatusEnumValues =
   _$ticketTicketReadStatusEnum_cancelled,
 ]);
 
+const TicketTicketReadPriorityEnum _$ticketTicketReadPriorityEnum_low =
+    const TicketTicketReadPriorityEnum._('low');
+const TicketTicketReadPriorityEnum _$ticketTicketReadPriorityEnum_medium =
+    const TicketTicketReadPriorityEnum._('medium');
+const TicketTicketReadPriorityEnum _$ticketTicketReadPriorityEnum_high =
+    const TicketTicketReadPriorityEnum._('high');
+
+TicketTicketReadPriorityEnum _$ticketTicketReadPriorityEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'low':
+      return _$ticketTicketReadPriorityEnum_low;
+    case 'medium':
+      return _$ticketTicketReadPriorityEnum_medium;
+    case 'high':
+      return _$ticketTicketReadPriorityEnum_high;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<TicketTicketReadPriorityEnum>
+    _$ticketTicketReadPriorityEnumValues = new BuiltSet<
+        TicketTicketReadPriorityEnum>(const <TicketTicketReadPriorityEnum>[
+  _$ticketTicketReadPriorityEnum_low,
+  _$ticketTicketReadPriorityEnum_medium,
+  _$ticketTicketReadPriorityEnum_high,
+]);
+
 Serializer<TicketTicketReadStatusEnum> _$ticketTicketReadStatusEnumSerializer =
     new _$TicketTicketReadStatusEnumSerializer();
+Serializer<TicketTicketReadPriorityEnum>
+    _$ticketTicketReadPriorityEnumSerializer =
+    new _$TicketTicketReadPriorityEnumSerializer();
 
 class _$TicketTicketReadStatusEnumSerializer
     implements PrimitiveSerializer<TicketTicketReadStatusEnum> {
@@ -74,6 +106,37 @@ class _$TicketTicketReadStatusEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$TicketTicketReadPriorityEnumSerializer
+    implements PrimitiveSerializer<TicketTicketReadPriorityEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'low': 'low',
+    'medium': 'medium',
+    'high': 'high',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'low': 'low',
+    'medium': 'medium',
+    'high': 'high',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[TicketTicketReadPriorityEnum];
+  @override
+  final String wireName = 'TicketTicketReadPriorityEnum';
+
+  @override
+  Object serialize(Serializers serializers, TicketTicketReadPriorityEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  TicketTicketReadPriorityEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      TicketTicketReadPriorityEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$TicketTicketRead extends TicketTicketRead {
   @override
   final int? id;
@@ -102,6 +165,8 @@ class _$TicketTicketRead extends TicketTicketRead {
   @override
   final DateTime? updatedAt;
   @override
+  final TicketTicketReadPriorityEnum? priority;
+  @override
   final BuiltList<String>? linkedUsers;
   @override
   final BuiltList<String>? tags;
@@ -128,6 +193,7 @@ class _$TicketTicketRead extends TicketTicketRead {
       this.metadata,
       this.createdAt,
       this.updatedAt,
+      this.priority,
       this.linkedUsers,
       this.tags,
       this.comments,
@@ -170,6 +236,7 @@ class _$TicketTicketRead extends TicketTicketRead {
         metadata == other.metadata &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt &&
+        priority == other.priority &&
         linkedUsers == other.linkedUsers &&
         tags == other.tags &&
         comments == other.comments &&
@@ -192,6 +259,7 @@ class _$TicketTicketRead extends TicketTicketRead {
     _$hash = $jc(_$hash, metadata.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, linkedUsers.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, comments.hashCode);
@@ -216,6 +284,7 @@ class _$TicketTicketRead extends TicketTicketRead {
           ..add('metadata', metadata)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt)
+          ..add('priority', priority)
           ..add('linkedUsers', linkedUsers)
           ..add('tags', tags)
           ..add('comments', comments)
@@ -280,6 +349,11 @@ class TicketTicketReadBuilder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
+  TicketTicketReadPriorityEnum? _priority;
+  TicketTicketReadPriorityEnum? get priority => _$this._priority;
+  set priority(TicketTicketReadPriorityEnum? priority) =>
+      _$this._priority = priority;
+
   ListBuilder<String>? _linkedUsers;
   ListBuilder<String> get linkedUsers =>
       _$this._linkedUsers ??= new ListBuilder<String>();
@@ -321,6 +395,7 @@ class TicketTicketReadBuilder
       _metadata = $v.metadata;
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
+      _priority = $v.priority;
       _linkedUsers = $v.linkedUsers?.toBuilder();
       _tags = $v.tags?.toBuilder();
       _comments = $v.comments?.toBuilder();
@@ -368,6 +443,7 @@ class TicketTicketReadBuilder
             metadata: metadata,
             createdAt: createdAt,
             updatedAt: updatedAt,
+            priority: priority,
             linkedUsers: _linkedUsers?.build(),
             tags: _tags?.build(),
             comments: _comments?.build(),

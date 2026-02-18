@@ -159,6 +159,10 @@ class _$PackagePackageWriteJsonMergePatch
   @override
   final String? recipient;
   @override
+  final String? enterprise;
+  @override
+  final String? enterpriseName;
+  @override
   final String? staff;
   @override
   final int? site;
@@ -186,6 +190,8 @@ class _$PackagePackageWriteJsonMergePatch
 
   _$PackagePackageWriteJsonMergePatch._(
       {this.recipient,
+      this.enterprise,
+      this.enterpriseName,
       this.staff,
       this.site,
       this.type,
@@ -212,6 +218,8 @@ class _$PackagePackageWriteJsonMergePatch
     if (identical(other, this)) return true;
     return other is PackagePackageWriteJsonMergePatch &&
         recipient == other.recipient &&
+        enterprise == other.enterprise &&
+        enterpriseName == other.enterpriseName &&
         staff == other.staff &&
         site == other.site &&
         type == other.type &&
@@ -228,6 +236,8 @@ class _$PackagePackageWriteJsonMergePatch
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, recipient.hashCode);
+    _$hash = $jc(_$hash, enterprise.hashCode);
+    _$hash = $jc(_$hash, enterpriseName.hashCode);
     _$hash = $jc(_$hash, staff.hashCode);
     _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
@@ -246,6 +256,8 @@ class _$PackagePackageWriteJsonMergePatch
   String toString() {
     return (newBuiltValueToStringHelper(r'PackagePackageWriteJsonMergePatch')
           ..add('recipient', recipient)
+          ..add('enterprise', enterprise)
+          ..add('enterpriseName', enterpriseName)
           ..add('staff', staff)
           ..add('site', site)
           ..add('type', type)
@@ -269,6 +281,15 @@ class PackagePackageWriteJsonMergePatchBuilder
   String? _recipient;
   String? get recipient => _$this._recipient;
   set recipient(String? recipient) => _$this._recipient = recipient;
+
+  String? _enterprise;
+  String? get enterprise => _$this._enterprise;
+  set enterprise(String? enterprise) => _$this._enterprise = enterprise;
+
+  String? _enterpriseName;
+  String? get enterpriseName => _$this._enterpriseName;
+  set enterpriseName(String? enterpriseName) =>
+      _$this._enterpriseName = enterpriseName;
 
   String? _staff;
   String? get staff => _$this._staff;
@@ -324,6 +345,8 @@ class PackagePackageWriteJsonMergePatchBuilder
     final $v = _$v;
     if ($v != null) {
       _recipient = $v.recipient;
+      _enterprise = $v.enterprise;
+      _enterpriseName = $v.enterpriseName;
       _staff = $v.staff;
       _site = $v.site;
       _type = $v.type;
@@ -358,6 +381,8 @@ class PackagePackageWriteJsonMergePatchBuilder
     final _$result = _$v ??
         new _$PackagePackageWriteJsonMergePatch._(
           recipient: recipient,
+          enterprise: enterprise,
+          enterpriseName: enterpriseName,
           staff: staff,
           site: site,
           type: type,

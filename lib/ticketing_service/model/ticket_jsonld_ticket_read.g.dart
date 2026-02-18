@@ -43,9 +43,44 @@ final BuiltSet<TicketJsonldTicketReadStatusEnum>
   _$ticketJsonldTicketReadStatusEnum_cancelled,
 ]);
 
+const TicketJsonldTicketReadPriorityEnum
+    _$ticketJsonldTicketReadPriorityEnum_low =
+    const TicketJsonldTicketReadPriorityEnum._('low');
+const TicketJsonldTicketReadPriorityEnum
+    _$ticketJsonldTicketReadPriorityEnum_medium =
+    const TicketJsonldTicketReadPriorityEnum._('medium');
+const TicketJsonldTicketReadPriorityEnum
+    _$ticketJsonldTicketReadPriorityEnum_high =
+    const TicketJsonldTicketReadPriorityEnum._('high');
+
+TicketJsonldTicketReadPriorityEnum _$ticketJsonldTicketReadPriorityEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'low':
+      return _$ticketJsonldTicketReadPriorityEnum_low;
+    case 'medium':
+      return _$ticketJsonldTicketReadPriorityEnum_medium;
+    case 'high':
+      return _$ticketJsonldTicketReadPriorityEnum_high;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<TicketJsonldTicketReadPriorityEnum>
+    _$ticketJsonldTicketReadPriorityEnumValues = new BuiltSet<
+        TicketJsonldTicketReadPriorityEnum>(const <TicketJsonldTicketReadPriorityEnum>[
+  _$ticketJsonldTicketReadPriorityEnum_low,
+  _$ticketJsonldTicketReadPriorityEnum_medium,
+  _$ticketJsonldTicketReadPriorityEnum_high,
+]);
+
 Serializer<TicketJsonldTicketReadStatusEnum>
     _$ticketJsonldTicketReadStatusEnumSerializer =
     new _$TicketJsonldTicketReadStatusEnumSerializer();
+Serializer<TicketJsonldTicketReadPriorityEnum>
+    _$ticketJsonldTicketReadPriorityEnumSerializer =
+    new _$TicketJsonldTicketReadPriorityEnumSerializer();
 
 class _$TicketJsonldTicketReadStatusEnumSerializer
     implements PrimitiveSerializer<TicketJsonldTicketReadStatusEnum> {
@@ -81,6 +116,38 @@ class _$TicketJsonldTicketReadStatusEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$TicketJsonldTicketReadPriorityEnumSerializer
+    implements PrimitiveSerializer<TicketJsonldTicketReadPriorityEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'low': 'low',
+    'medium': 'medium',
+    'high': 'high',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'low': 'low',
+    'medium': 'medium',
+    'high': 'high',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[TicketJsonldTicketReadPriorityEnum];
+  @override
+  final String wireName = 'TicketJsonldTicketReadPriorityEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, TicketJsonldTicketReadPriorityEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  TicketJsonldTicketReadPriorityEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      TicketJsonldTicketReadPriorityEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   @override
   final JsonObject? metadata;
@@ -96,6 +163,8 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   final String description;
   @override
   final String title;
+  @override
+  final TicketJsonldTicketReadPriorityEnum? priority;
   @override
   final BuiltList<String>? tags;
   @override
@@ -135,6 +204,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
       required this.author,
       required this.description,
       required this.title,
+      this.priority,
       this.tags,
       this.createdAt,
       required this.site,
@@ -187,6 +257,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
         author == other.author &&
         description == other.description &&
         title == other.title &&
+        priority == other.priority &&
         tags == other.tags &&
         createdAt == other.createdAt &&
         site == other.site &&
@@ -212,6 +283,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
     _$hash = $jc(_$hash, author.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, site.hashCode);
@@ -239,6 +311,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
           ..add('author', author)
           ..add('description', description)
           ..add('title', title)
+          ..add('priority', priority)
           ..add('tags', tags)
           ..add('createdAt', createdAt)
           ..add('site', site)
@@ -295,6 +368,11 @@ class TicketJsonldTicketReadBuilder
   String? _title;
   String? get title => _$this._title;
   set title(covariant String? title) => _$this._title = title;
+
+  TicketJsonldTicketReadPriorityEnum? _priority;
+  TicketJsonldTicketReadPriorityEnum? get priority => _$this._priority;
+  set priority(covariant TicketJsonldTicketReadPriorityEnum? priority) =>
+      _$this._priority = priority;
 
   ListBuilder<String>? _tags;
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
@@ -367,6 +445,7 @@ class TicketJsonldTicketReadBuilder
       _author = $v.author;
       _description = $v.description;
       _title = $v.title;
+      _priority = $v.priority;
       _tags = $v.tags?.toBuilder();
       _createdAt = $v.createdAt;
       _site = $v.site;
@@ -414,6 +493,7 @@ class TicketJsonldTicketReadBuilder
                 description, r'TicketJsonldTicketRead', 'description'),
             title: BuiltValueNullFieldError.checkNotNull(
                 title, r'TicketJsonldTicketRead', 'title'),
+            priority: priority,
             tags: _tags?.build(),
             createdAt: createdAt,
             site: BuiltValueNullFieldError.checkNotNull(

@@ -14,6 +14,8 @@ part 'package_package_read.g.dart';
 /// Properties:
 /// * [id] 
 /// * [recipient] 
+/// * [enterprise] 
+/// * [enterpriseName] 
 /// * [staff] 
 /// * [site] 
 /// * [type] 
@@ -31,6 +33,12 @@ abstract class PackagePackageRead implements Built<PackagePackageRead, PackagePa
 
   @BuiltValueField(wireName: r'recipient')
   String get recipient;
+
+  @BuiltValueField(wireName: r'enterprise')
+  String get enterprise;
+
+  @BuiltValueField(wireName: r'enterpriseName')
+  String get enterpriseName;
 
   @BuiltValueField(wireName: r'staff')
   String get staff;
@@ -97,6 +105,16 @@ class _$PackagePackageReadSerializer implements PrimitiveSerializer<PackagePacka
     yield r'recipient';
     yield serializers.serialize(
       object.recipient,
+      specifiedType: const FullType(String),
+    );
+    yield r'enterprise';
+    yield serializers.serialize(
+      object.enterprise,
+      specifiedType: const FullType(String),
+    );
+    yield r'enterpriseName';
+    yield serializers.serialize(
+      object.enterpriseName,
       specifiedType: const FullType(String),
     );
     yield r'staff';
@@ -189,6 +207,20 @@ class _$PackagePackageReadSerializer implements PrimitiveSerializer<PackagePacka
             specifiedType: const FullType(String),
           ) as String;
           result.recipient = valueDes;
+          break;
+        case r'enterprise':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterprise = valueDes;
+          break;
+        case r'enterpriseName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterpriseName = valueDes;
           break;
         case r'staff':
           final valueDes = serializers.deserialize(

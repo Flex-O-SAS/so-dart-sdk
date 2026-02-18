@@ -19,6 +19,8 @@ part 'package_jsonld_package_read.g.dart';
 /// * [atType] 
 /// * [id] 
 /// * [recipient] 
+/// * [enterprise] 
+/// * [enterpriseName] 
 /// * [staff] 
 /// * [site] 
 /// * [type] 
@@ -31,26 +33,20 @@ part 'package_jsonld_package_read.g.dart';
 /// * [quantity] 
 @BuiltValue()
 abstract class PackageJsonldPackageRead implements HydraItemBaseSchema, Built<PackageJsonldPackageRead, PackageJsonldPackageReadBuilder> {
-  @BuiltValueField(wireName: r'site')
-  int get site;
-
   @BuiltValueField(wireName: r'quantity')
   int get quantity;
 
   @BuiltValueField(wireName: r'receptionDate')
   DateTime get receptionDate;
 
-  @BuiltValueField(wireName: r'recipient')
-  String get recipient;
+  @BuiltValueField(wireName: r'enterprise')
+  String get enterprise;
 
   @BuiltValueField(wireName: r'securityCode')
   String get securityCode;
 
   @BuiltValueField(wireName: r'staff')
   String get staff;
-
-  @BuiltValueField(wireName: r'id')
-  int? get id;
 
   @BuiltValueField(wireName: r'type')
   PackageJsonldPackageReadTypeEnum get type;
@@ -59,15 +55,27 @@ abstract class PackageJsonldPackageRead implements HydraItemBaseSchema, Built<Pa
   @BuiltValueField(wireName: r'handoverClient')
   String? get handoverClient;
 
+  @BuiltValueField(wireName: r'handoverDate')
+  DateTime? get handoverDate;
+
+  @BuiltValueField(wireName: r'site')
+  int get site;
+
+  @BuiltValueField(wireName: r'recipient')
+  String get recipient;
+
+  @BuiltValueField(wireName: r'id')
+  int? get id;
+
+  @BuiltValueField(wireName: r'enterpriseName')
+  String get enterpriseName;
+
   @BuiltValueField(wireName: r'trackingNumber')
   String get trackingNumber;
 
   @BuiltValueField(wireName: r'status')
   PackageJsonldPackageReadStatusEnum get status;
   // enum statusEnum {  received,  handed_over,  };
-
-  @BuiltValueField(wireName: r'handoverDate')
-  DateTime? get handoverDate;
 
   PackageJsonldPackageRead._();
 
@@ -106,6 +114,11 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
     yield serializers.serialize(
       object.receptionDate,
       specifiedType: const FullType(DateTime),
+    );
+    yield r'enterprise';
+    yield serializers.serialize(
+      object.enterprise,
+      specifiedType: const FullType(String),
     );
     yield r'securityCode';
     yield serializers.serialize(
@@ -160,6 +173,11 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
         specifiedType: const FullType(int),
       );
     }
+    yield r'enterpriseName';
+    yield serializers.serialize(
+      object.enterpriseName,
+      specifiedType: const FullType(String),
+    );
     yield r'trackingNumber';
     yield serializers.serialize(
       object.trackingNumber,
@@ -218,6 +236,13 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.receptionDate = valueDes;
+          break;
+        case r'enterprise':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterprise = valueDes;
           break;
         case r'securityCode':
           final valueDes = serializers.deserialize(
@@ -281,6 +306,13 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
+          break;
+        case r'enterpriseName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterpriseName = valueDes;
           break;
         case r'trackingNumber':
           final valueDes = serializers.deserialize(

@@ -35,10 +35,10 @@ abstract class PackagePackageRead implements Built<PackagePackageRead, PackagePa
   String get recipient;
 
   @BuiltValueField(wireName: r'enterprise')
-  String get enterprise;
+  String? get enterprise;
 
   @BuiltValueField(wireName: r'enterpriseName')
-  String get enterpriseName;
+  String? get enterpriseName;
 
   @BuiltValueField(wireName: r'staff')
   String get staff;
@@ -107,16 +107,20 @@ class _$PackagePackageReadSerializer implements PrimitiveSerializer<PackagePacka
       object.recipient,
       specifiedType: const FullType(String),
     );
-    yield r'enterprise';
-    yield serializers.serialize(
-      object.enterprise,
-      specifiedType: const FullType(String),
-    );
-    yield r'enterpriseName';
-    yield serializers.serialize(
-      object.enterpriseName,
-      specifiedType: const FullType(String),
-    );
+    if (object.enterprise != null) {
+      yield r'enterprise';
+      yield serializers.serialize(
+        object.enterprise,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.enterpriseName != null) {
+      yield r'enterpriseName';
+      yield serializers.serialize(
+        object.enterpriseName,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'staff';
     yield serializers.serialize(
       object.staff,

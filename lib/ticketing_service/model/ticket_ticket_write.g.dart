@@ -150,6 +150,10 @@ class _$TicketTicketWrite extends TicketTicketWrite {
   @override
   final String author;
   @override
+  final String? enterprise;
+  @override
+  final String? enterpriseName;
+  @override
   final String? assignee;
   @override
   final TicketTicketWriteStatusEnum status;
@@ -177,6 +181,8 @@ class _$TicketTicketWrite extends TicketTicketWrite {
       required this.startDate,
       required this.description,
       required this.author,
+      this.enterprise,
+      this.enterpriseName,
       this.assignee,
       required this.status,
       required this.site,
@@ -215,6 +221,8 @@ class _$TicketTicketWrite extends TicketTicketWrite {
         startDate == other.startDate &&
         description == other.description &&
         author == other.author &&
+        enterprise == other.enterprise &&
+        enterpriseName == other.enterpriseName &&
         assignee == other.assignee &&
         status == other.status &&
         site == other.site &&
@@ -233,6 +241,8 @@ class _$TicketTicketWrite extends TicketTicketWrite {
     _$hash = $jc(_$hash, startDate.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, author.hashCode);
+    _$hash = $jc(_$hash, enterprise.hashCode);
+    _$hash = $jc(_$hash, enterpriseName.hashCode);
     _$hash = $jc(_$hash, assignee.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, site.hashCode);
@@ -253,6 +263,8 @@ class _$TicketTicketWrite extends TicketTicketWrite {
           ..add('startDate', startDate)
           ..add('description', description)
           ..add('author', author)
+          ..add('enterprise', enterprise)
+          ..add('enterpriseName', enterpriseName)
           ..add('assignee', assignee)
           ..add('status', status)
           ..add('site', site)
@@ -285,6 +297,15 @@ class TicketTicketWriteBuilder
   String? _author;
   String? get author => _$this._author;
   set author(String? author) => _$this._author = author;
+
+  String? _enterprise;
+  String? get enterprise => _$this._enterprise;
+  set enterprise(String? enterprise) => _$this._enterprise = enterprise;
+
+  String? _enterpriseName;
+  String? get enterpriseName => _$this._enterpriseName;
+  set enterpriseName(String? enterpriseName) =>
+      _$this._enterpriseName = enterpriseName;
 
   String? _assignee;
   String? get assignee => _$this._assignee;
@@ -338,6 +359,8 @@ class TicketTicketWriteBuilder
       _startDate = $v.startDate;
       _description = $v.description;
       _author = $v.author;
+      _enterprise = $v.enterprise;
+      _enterpriseName = $v.enterpriseName;
       _assignee = $v.assignee;
       _status = $v.status;
       _site = $v.site;
@@ -379,6 +402,8 @@ class TicketTicketWriteBuilder
                 description, r'TicketTicketWrite', 'description'),
             author: BuiltValueNullFieldError.checkNotNull(
                 author, r'TicketTicketWrite', 'author'),
+            enterprise: enterprise,
+            enterpriseName: enterpriseName,
             assignee: assignee,
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'TicketTicketWrite', 'status'),

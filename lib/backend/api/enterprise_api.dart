@@ -41,66 +41,66 @@ class EnterpriseApi {
   /// * [referenceLeftSquareBracketRightSquareBracket] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
-  /// * [referencePartialLeftSquareBracketRightSquareBracket] - 
-  /// * [centerLeftSquareBracketRightSquareBracket] - 
-  /// * [statusLeftSquareBracketRightSquareBracket] - 
+  /// * [referencePartialLeftSquareBracketRightSquareBracket] - Enterprise reference_partial
+  /// * [centerLeftSquareBracketRightSquareBracket] - Enterprise center
+  /// * [statusLeftSquareBracketRightSquareBracket] - Enterprise status
   /// * [tag] - Enterprise tag
-  /// * [orderLeftSquareBracketNameRightSquareBracket] - 
-  /// * [orderLeftSquareBracketSiretRightSquareBracket] - 
-  /// * [orderLeftSquareBracketCaRightSquareBracket] - 
-  /// * [orderLeftSquareBracketTvaRightSquareBracket] - 
-  /// * [orderLeftSquareBracketTypeRightSquareBracket] - 
-  /// * [orderLeftSquareBracketApeRightSquareBracket] - 
-  /// * [orderLeftSquareBracketRcsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketClientLinksRightSquareBracket] - 
-  /// * [orderLeftSquareBracketRcsCityRightSquareBracket] - 
-  /// * [orderLeftSquareBracketWorkforceRightSquareBracket] - 
-  /// * [orderLeftSquareBracketEventsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketWebsiteRightSquareBracket] - 
-  /// * [orderLeftSquareBracketClientRequestsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketAccountingContactRightSquareBracket] - 
-  /// * [orderLeftSquareBracketDueOffsetRightSquareBracket] - 
-  /// * [orderLeftSquareBracketPrescriberRightSquareBracket] - 
-  /// * [orderLeftSquareBracketMeetingAttendeesRightSquareBracket] - 
-  /// * [orderLeftSquareBracketOpportunitiesRightSquareBracket] - 
-  /// * [orderLeftSquareBracketTagsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketIsExternalRightSquareBracket] - 
-  /// * [orderLeftSquareBracketIndividualsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketLabelledNameRightSquareBracket] - 
-  /// * [orderLeftSquareBracketReadLinkRightSquareBracket] - 
-  /// * [orderLeftSquareBracketEmailRightSquareBracket] - 
-  /// * [orderLeftSquareBracketPhoneRightSquareBracket] - 
-  /// * [orderLeftSquareBracketMobileRightSquareBracket] - 
-  /// * [orderLeftSquareBracketExternalUserIDRightSquareBracket] - 
-  /// * [orderLeftSquareBracketFaxRightSquareBracket] - 
-  /// * [orderLeftSquareBracketMainCenterRightSquareBracket] - 
-  /// * [orderLeftSquareBracketLanguageRightSquareBracket] - 
-  /// * [orderLeftSquareBracketAccountsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketContractsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketMessagesRightSquareBracket] - 
-  /// * [orderLeftSquareBracketDocumentsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketActivitiesRightSquareBracket] - 
-  /// * [orderLeftSquareBracketStatusRightSquareBracket] - 
-  /// * [orderLeftSquareBracketStripeIdRightSquareBracket] - 
-  /// * [orderLeftSquareBracketCreditsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketClientCentersRightSquareBracket] - 
-  /// * [orderLeftSquareBracketIsKeyAccountRightSquareBracket] - 
-  /// * [orderLeftSquareBracketLitigationsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketRadcheckIdRightSquareBracket] - 
-  /// * [orderLeftSquareBracketIsInvalidEmailRightSquareBracket] - 
-  /// * [orderLeftSquareBracketSsidUsersRightSquareBracket] - 
-  /// * [orderLeftSquareBracketPaymentsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketContractDraftsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketAddressRightSquareBracket] - 
-  /// * [orderLeftSquareBracketZipcodeRightSquareBracket] - 
-  /// * [orderLeftSquareBracketCityRightSquareBracket] - 
-  /// * [orderLeftSquareBracketCountryRightSquareBracket] - 
-  /// * [orderLeftSquareBracketTimezoneRightSquareBracket] - 
-  /// * [orderLeftSquareBracketRequiredInlineDocumentsRightSquareBracket] - 
-  /// * [orderLeftSquareBracketReferenceRightSquareBracket] - 
-  /// * [orderLeftSquareBracketIdRightSquareBracket] - 
-  /// * [orderLeftSquareBracketCreatedAtRightSquareBracket] - 
-  /// * [orderLeftSquareBracketUpdatedAtRightSquareBracket] - 
+  /// * [orderLeftSquareBracketNameRightSquareBracket] - Enterprise order[name]
+  /// * [orderLeftSquareBracketSiretRightSquareBracket] - Enterprise order[siret]
+  /// * [orderLeftSquareBracketCaRightSquareBracket] - Enterprise order[ca]
+  /// * [orderLeftSquareBracketTvaRightSquareBracket] - Enterprise order[tva]
+  /// * [orderLeftSquareBracketTypeRightSquareBracket] - Enterprise order[type]
+  /// * [orderLeftSquareBracketApeRightSquareBracket] - Enterprise order[ape]
+  /// * [orderLeftSquareBracketRcsRightSquareBracket] - Enterprise order[rcs]
+  /// * [orderLeftSquareBracketClientLinksRightSquareBracket] - Enterprise order[clientLinks]
+  /// * [orderLeftSquareBracketRcsCityRightSquareBracket] - Enterprise order[rcsCity]
+  /// * [orderLeftSquareBracketWorkforceRightSquareBracket] - Enterprise order[workforce]
+  /// * [orderLeftSquareBracketEventsRightSquareBracket] - Enterprise order[events]
+  /// * [orderLeftSquareBracketWebsiteRightSquareBracket] - Enterprise order[website]
+  /// * [orderLeftSquareBracketClientRequestsRightSquareBracket] - Enterprise order[clientRequests]
+  /// * [orderLeftSquareBracketAccountingContactRightSquareBracket] - Enterprise order[accountingContact]
+  /// * [orderLeftSquareBracketDueOffsetRightSquareBracket] - Enterprise order[dueOffset]
+  /// * [orderLeftSquareBracketPrescriberRightSquareBracket] - Enterprise order[prescriber]
+  /// * [orderLeftSquareBracketMeetingAttendeesRightSquareBracket] - Enterprise order[meetingAttendees]
+  /// * [orderLeftSquareBracketOpportunitiesRightSquareBracket] - Enterprise order[opportunities]
+  /// * [orderLeftSquareBracketTagsRightSquareBracket] - Enterprise order[tags]
+  /// * [orderLeftSquareBracketIsExternalRightSquareBracket] - Enterprise order[isExternal]
+  /// * [orderLeftSquareBracketIndividualsRightSquareBracket] - Enterprise order[individuals]
+  /// * [orderLeftSquareBracketLabelledNameRightSquareBracket] - Enterprise order[labelledName]
+  /// * [orderLeftSquareBracketReadLinkRightSquareBracket] - Enterprise order[readLink]
+  /// * [orderLeftSquareBracketEmailRightSquareBracket] - Enterprise order[email]
+  /// * [orderLeftSquareBracketPhoneRightSquareBracket] - Enterprise order[phone]
+  /// * [orderLeftSquareBracketMobileRightSquareBracket] - Enterprise order[mobile]
+  /// * [orderLeftSquareBracketExternalUserIDRightSquareBracket] - Enterprise order[externalUserID]
+  /// * [orderLeftSquareBracketFaxRightSquareBracket] - Enterprise order[fax]
+  /// * [orderLeftSquareBracketMainCenterRightSquareBracket] - Enterprise order[mainCenter]
+  /// * [orderLeftSquareBracketLanguageRightSquareBracket] - Enterprise order[language]
+  /// * [orderLeftSquareBracketAccountsRightSquareBracket] - Enterprise order[accounts]
+  /// * [orderLeftSquareBracketContractsRightSquareBracket] - Enterprise order[contracts]
+  /// * [orderLeftSquareBracketMessagesRightSquareBracket] - Enterprise order[messages]
+  /// * [orderLeftSquareBracketDocumentsRightSquareBracket] - Enterprise order[documents]
+  /// * [orderLeftSquareBracketActivitiesRightSquareBracket] - Enterprise order[activities]
+  /// * [orderLeftSquareBracketStatusRightSquareBracket] - Enterprise order[status]
+  /// * [orderLeftSquareBracketStripeIdRightSquareBracket] - Enterprise order[stripeId]
+  /// * [orderLeftSquareBracketCreditsRightSquareBracket] - Enterprise order[credits]
+  /// * [orderLeftSquareBracketClientCentersRightSquareBracket] - Enterprise order[clientCenters]
+  /// * [orderLeftSquareBracketIsKeyAccountRightSquareBracket] - Enterprise order[isKeyAccount]
+  /// * [orderLeftSquareBracketLitigationsRightSquareBracket] - Enterprise order[litigations]
+  /// * [orderLeftSquareBracketRadcheckIdRightSquareBracket] - Enterprise order[radcheckId]
+  /// * [orderLeftSquareBracketIsInvalidEmailRightSquareBracket] - Enterprise order[isInvalidEmail]
+  /// * [orderLeftSquareBracketSsidUsersRightSquareBracket] - Enterprise order[ssidUsers]
+  /// * [orderLeftSquareBracketPaymentsRightSquareBracket] - Enterprise order[payments]
+  /// * [orderLeftSquareBracketContractDraftsRightSquareBracket] - Enterprise order[contractDrafts]
+  /// * [orderLeftSquareBracketAddressRightSquareBracket] - Enterprise order[address]
+  /// * [orderLeftSquareBracketZipcodeRightSquareBracket] - Enterprise order[zipcode]
+  /// * [orderLeftSquareBracketCityRightSquareBracket] - Enterprise order[city]
+  /// * [orderLeftSquareBracketCountryRightSquareBracket] - Enterprise order[country]
+  /// * [orderLeftSquareBracketTimezoneRightSquareBracket] - Enterprise order[timezone]
+  /// * [orderLeftSquareBracketRequiredInlineDocumentsRightSquareBracket] - Enterprise order[requiredInlineDocuments]
+  /// * [orderLeftSquareBracketReferenceRightSquareBracket] - Enterprise order[reference]
+  /// * [orderLeftSquareBracketIdRightSquareBracket] - Enterprise order[id]
+  /// * [orderLeftSquareBracketCreatedAtRightSquareBracket] - Enterprise order[createdAt]
+  /// * [orderLeftSquareBracketUpdatedAtRightSquareBracket] - Enterprise order[updatedAt]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -120,9 +120,9 @@ class EnterpriseApi {
     BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
-    String? referencePartialLeftSquareBracketRightSquareBracket,
-    String? centerLeftSquareBracketRightSquareBracket,
-    String? statusLeftSquareBracketRightSquareBracket,
+    BuiltList<String>? referencePartialLeftSquareBracketRightSquareBracket,
+    BuiltList<String>? centerLeftSquareBracketRightSquareBracket,
+    BuiltList<String>? statusLeftSquareBracketRightSquareBracket,
     String? tag,
     String? orderLeftSquareBracketNameRightSquareBracket,
     String? orderLeftSquareBracketSiretRightSquareBracket,
@@ -210,9 +210,9 @@ class EnterpriseApi {
       if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (referencePartialLeftSquareBracketRightSquareBracket != null) r'reference_partial[]': encodeQueryParameter(_serializers, referencePartialLeftSquareBracketRightSquareBracket, const FullType(String)),
-      if (centerLeftSquareBracketRightSquareBracket != null) r'center[]': encodeQueryParameter(_serializers, centerLeftSquareBracketRightSquareBracket, const FullType(String)),
-      if (statusLeftSquareBracketRightSquareBracket != null) r'status[]': encodeQueryParameter(_serializers, statusLeftSquareBracketRightSquareBracket, const FullType(String)),
+      if (referencePartialLeftSquareBracketRightSquareBracket != null) r'reference_partial[]': encodeCollectionQueryParameter<String>(_serializers, referencePartialLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.csv,),
+      if (centerLeftSquareBracketRightSquareBracket != null) r'center[]': encodeCollectionQueryParameter<String>(_serializers, centerLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.csv,),
+      if (statusLeftSquareBracketRightSquareBracket != null) r'status[]': encodeCollectionQueryParameter<String>(_serializers, statusLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.csv,),
       if (tag != null) r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),
       if (orderLeftSquareBracketNameRightSquareBracket != null) r'order[name]': encodeQueryParameter(_serializers, orderLeftSquareBracketNameRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketSiretRightSquareBracket != null) r'order[siret]': encodeQueryParameter(_serializers, orderLeftSquareBracketSiretRightSquareBracket, const FullType(String)),

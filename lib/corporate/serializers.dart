@@ -32,11 +32,17 @@ import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_write
 import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_client_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_client_signed_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_client_tsv_appointment_client_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_client_tsv_appointment_client_signed_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_client_tsv_appointment_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_client_signed_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_tsv_appointment_client_signed_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_tsv_appointment_read.dart';
 import 'package:so_dart_sdk/corporate/model/client_relation.dart';
 import 'package:so_dart_sdk/corporate/model/client_relation_json_merge_patch.dart';
 import 'package:so_dart_sdk/corporate/model/client_relation_jsonld.dart';
+import 'package:so_dart_sdk/corporate/model/client_relation_tsv.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation_violations_inner.dart';
@@ -54,6 +60,7 @@ import 'package:so_dart_sdk/corporate/model/package_jsonld_package_read.dart';
 import 'package:so_dart_sdk/corporate/model/package_package_read.dart';
 import 'package:so_dart_sdk/corporate/model/package_package_write.dart';
 import 'package:so_dart_sdk/corporate/model/package_package_write_json_merge_patch.dart';
+import 'package:so_dart_sdk/corporate/model/package_tsv_package_read.dart';
 
 part 'serializers.g.dart';
 
@@ -76,11 +83,17 @@ part 'serializers.g.dart';
   AppointmentClientJsonldAppointmentClientRead,
   AppointmentClientJsonldAppointmentClientSignedRead,
   AppointmentClientJsonldAppointmentRead,
+  AppointmentClientTsvAppointmentClientRead,
+  AppointmentClientTsvAppointmentClientSignedRead,
+  AppointmentClientTsvAppointmentRead,
   AppointmentJsonldAppointmentClientSignedRead,
   AppointmentJsonldAppointmentRead,
+  AppointmentTsvAppointmentClientSignedRead,
+  AppointmentTsvAppointmentRead,
   ClientRelation,
   ClientRelationJsonMergePatch,
   ClientRelationJsonld,
+  ClientRelationTsv,
   ConstraintViolation,
   ConstraintViolationJsonld,
   ConstraintViolationViolationsInner,
@@ -98,6 +111,7 @@ part 'serializers.g.dart';
   PackagePackageRead,
   PackagePackageWrite,
   PackagePackageWriteJsonMergePatch,
+  PackageTsvPackageRead,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(

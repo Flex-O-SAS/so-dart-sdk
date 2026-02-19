@@ -158,6 +158,10 @@ class _$AppointmentAppointmentWriteJsonMergePatch
   final BuiltList<AppointmentClientAppointmentWrite>? appointmentClients;
   @override
   final String? title;
+  @override
+  final String? enterprise;
+  @override
+  final String? enterpriseName;
 
   factory _$AppointmentAppointmentWriteJsonMergePatch(
           [void Function(AppointmentAppointmentWriteJsonMergePatchBuilder)?
@@ -177,7 +181,9 @@ class _$AppointmentAppointmentWriteJsonMergePatch
       this.beginDate,
       this.endDate,
       this.appointmentClients,
-      this.title})
+      this.title,
+      this.enterprise,
+      this.enterpriseName})
       : super._();
 
   @override
@@ -205,7 +211,9 @@ class _$AppointmentAppointmentWriteJsonMergePatch
         beginDate == other.beginDate &&
         endDate == other.endDate &&
         appointmentClients == other.appointmentClients &&
-        title == other.title;
+        title == other.title &&
+        enterprise == other.enterprise &&
+        enterpriseName == other.enterpriseName;
   }
 
   @override
@@ -223,6 +231,8 @@ class _$AppointmentAppointmentWriteJsonMergePatch
     _$hash = $jc(_$hash, endDate.hashCode);
     _$hash = $jc(_$hash, appointmentClients.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, enterprise.hashCode);
+    _$hash = $jc(_$hash, enterpriseName.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -242,7 +252,9 @@ class _$AppointmentAppointmentWriteJsonMergePatch
           ..add('beginDate', beginDate)
           ..add('endDate', endDate)
           ..add('appointmentClients', appointmentClients)
-          ..add('title', title))
+          ..add('title', title)
+          ..add('enterprise', enterprise)
+          ..add('enterpriseName', enterpriseName))
         .toString();
   }
 }
@@ -310,6 +322,15 @@ class AppointmentAppointmentWriteJsonMergePatchBuilder
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
 
+  String? _enterprise;
+  String? get enterprise => _$this._enterprise;
+  set enterprise(String? enterprise) => _$this._enterprise = enterprise;
+
+  String? _enterpriseName;
+  String? get enterpriseName => _$this._enterpriseName;
+  set enterpriseName(String? enterpriseName) =>
+      _$this._enterpriseName = enterpriseName;
+
   AppointmentAppointmentWriteJsonMergePatchBuilder() {
     AppointmentAppointmentWriteJsonMergePatch._defaults(this);
   }
@@ -329,6 +350,8 @@ class AppointmentAppointmentWriteJsonMergePatchBuilder
       _endDate = $v.endDate;
       _appointmentClients = $v.appointmentClients?.toBuilder();
       _title = $v.title;
+      _enterprise = $v.enterprise;
+      _enterpriseName = $v.enterpriseName;
       _$v = null;
     }
     return this;
@@ -367,6 +390,8 @@ class AppointmentAppointmentWriteJsonMergePatchBuilder
             endDate: endDate,
             appointmentClients: _appointmentClients?.build(),
             title: title,
+            enterprise: enterprise,
+            enterpriseName: enterpriseName,
           );
     } catch (_) {
       late String _$failedField;

@@ -155,7 +155,7 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
   @override
   final DateTime receptionDate;
   @override
-  final String enterprise;
+  final String? enterprise;
   @override
   final String securityCode;
   @override
@@ -173,7 +173,7 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
   @override
   final int? id;
   @override
-  final String enterpriseName;
+  final String? enterpriseName;
   @override
   final String trackingNumber;
   @override
@@ -192,7 +192,7 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
   _$PackageJsonldPackageRead._(
       {required this.quantity,
       required this.receptionDate,
-      required this.enterprise,
+      this.enterprise,
       required this.securityCode,
       required this.staff,
       required this.type,
@@ -201,7 +201,7 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
       required this.site,
       required this.recipient,
       this.id,
-      required this.enterpriseName,
+      this.enterpriseName,
       required this.trackingNumber,
       required this.status,
       this.atContext,
@@ -213,8 +213,6 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
     BuiltValueNullFieldError.checkNotNull(
         receptionDate, r'PackageJsonldPackageRead', 'receptionDate');
     BuiltValueNullFieldError.checkNotNull(
-        enterprise, r'PackageJsonldPackageRead', 'enterprise');
-    BuiltValueNullFieldError.checkNotNull(
         securityCode, r'PackageJsonldPackageRead', 'securityCode');
     BuiltValueNullFieldError.checkNotNull(
         staff, r'PackageJsonldPackageRead', 'staff');
@@ -224,8 +222,6 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
         site, r'PackageJsonldPackageRead', 'site');
     BuiltValueNullFieldError.checkNotNull(
         recipient, r'PackageJsonldPackageRead', 'recipient');
-    BuiltValueNullFieldError.checkNotNull(
-        enterpriseName, r'PackageJsonldPackageRead', 'enterpriseName');
     BuiltValueNullFieldError.checkNotNull(
         trackingNumber, r'PackageJsonldPackageRead', 'trackingNumber');
     BuiltValueNullFieldError.checkNotNull(
@@ -453,8 +449,7 @@ class PackageJsonldPackageReadBuilder
                 quantity, r'PackageJsonldPackageRead', 'quantity'),
             receptionDate: BuiltValueNullFieldError.checkNotNull(
                 receptionDate, r'PackageJsonldPackageRead', 'receptionDate'),
-            enterprise: BuiltValueNullFieldError.checkNotNull(
-                enterprise, r'PackageJsonldPackageRead', 'enterprise'),
+            enterprise: enterprise,
             securityCode: BuiltValueNullFieldError.checkNotNull(
                 securityCode, r'PackageJsonldPackageRead', 'securityCode'),
             staff: BuiltValueNullFieldError.checkNotNull(
@@ -468,8 +463,7 @@ class PackageJsonldPackageReadBuilder
             recipient: BuiltValueNullFieldError.checkNotNull(
                 recipient, r'PackageJsonldPackageRead', 'recipient'),
             id: id,
-            enterpriseName: BuiltValueNullFieldError.checkNotNull(
-                enterpriseName, r'PackageJsonldPackageRead', 'enterpriseName'),
+            enterpriseName: enterpriseName,
             trackingNumber: BuiltValueNullFieldError.checkNotNull(
                 trackingNumber, r'PackageJsonldPackageRead', 'trackingNumber'),
             status: BuiltValueNullFieldError.checkNotNull(

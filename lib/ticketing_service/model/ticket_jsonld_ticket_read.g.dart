@@ -160,6 +160,8 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   @override
   final String author;
   @override
+  final String? enterprise;
+  @override
   final String description;
   @override
   final String title;
@@ -179,6 +181,8 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   final int? id;
   @override
   final String? assignee;
+  @override
+  final String? enterpriseName;
   @override
   final DateTime startDate;
   @override
@@ -202,6 +206,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
       this.attachments,
       this.endDate,
       required this.author,
+      this.enterprise,
       required this.description,
       required this.title,
       this.priority,
@@ -212,6 +217,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
       this.location,
       this.id,
       this.assignee,
+      this.enterpriseName,
       required this.startDate,
       required this.status,
       this.updatedAt,
@@ -255,6 +261,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
         attachments == other.attachments &&
         endDate == other.endDate &&
         author == other.author &&
+        enterprise == other.enterprise &&
         description == other.description &&
         title == other.title &&
         priority == other.priority &&
@@ -265,6 +272,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
         location == other.location &&
         id == other.id &&
         assignee == other.assignee &&
+        enterpriseName == other.enterpriseName &&
         startDate == other.startDate &&
         status == other.status &&
         updatedAt == other.updatedAt &&
@@ -281,6 +289,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
     _$hash = $jc(_$hash, attachments.hashCode);
     _$hash = $jc(_$hash, endDate.hashCode);
     _$hash = $jc(_$hash, author.hashCode);
+    _$hash = $jc(_$hash, enterprise.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
@@ -291,6 +300,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
     _$hash = $jc(_$hash, location.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, assignee.hashCode);
+    _$hash = $jc(_$hash, enterpriseName.hashCode);
     _$hash = $jc(_$hash, startDate.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
@@ -309,6 +319,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
           ..add('attachments', attachments)
           ..add('endDate', endDate)
           ..add('author', author)
+          ..add('enterprise', enterprise)
           ..add('description', description)
           ..add('title', title)
           ..add('priority', priority)
@@ -319,6 +330,7 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
           ..add('location', location)
           ..add('id', id)
           ..add('assignee', assignee)
+          ..add('enterpriseName', enterpriseName)
           ..add('startDate', startDate)
           ..add('status', status)
           ..add('updatedAt', updatedAt)
@@ -359,6 +371,11 @@ class TicketJsonldTicketReadBuilder
   String? _author;
   String? get author => _$this._author;
   set author(covariant String? author) => _$this._author = author;
+
+  String? _enterprise;
+  String? get enterprise => _$this._enterprise;
+  set enterprise(covariant String? enterprise) =>
+      _$this._enterprise = enterprise;
 
   String? _description;
   String? get description => _$this._description;
@@ -404,6 +421,11 @@ class TicketJsonldTicketReadBuilder
   String? get assignee => _$this._assignee;
   set assignee(covariant String? assignee) => _$this._assignee = assignee;
 
+  String? _enterpriseName;
+  String? get enterpriseName => _$this._enterpriseName;
+  set enterpriseName(covariant String? enterpriseName) =>
+      _$this._enterpriseName = enterpriseName;
+
   DateTime? _startDate;
   DateTime? get startDate => _$this._startDate;
   set startDate(covariant DateTime? startDate) => _$this._startDate = startDate;
@@ -443,6 +465,7 @@ class TicketJsonldTicketReadBuilder
       _attachments = $v.attachments?.toBuilder();
       _endDate = $v.endDate;
       _author = $v.author;
+      _enterprise = $v.enterprise;
       _description = $v.description;
       _title = $v.title;
       _priority = $v.priority;
@@ -453,6 +476,7 @@ class TicketJsonldTicketReadBuilder
       _location = $v.location;
       _id = $v.id;
       _assignee = $v.assignee;
+      _enterpriseName = $v.enterpriseName;
       _startDate = $v.startDate;
       _status = $v.status;
       _updatedAt = $v.updatedAt;
@@ -489,6 +513,7 @@ class TicketJsonldTicketReadBuilder
             endDate: endDate,
             author: BuiltValueNullFieldError.checkNotNull(
                 author, r'TicketJsonldTicketRead', 'author'),
+            enterprise: enterprise,
             description: BuiltValueNullFieldError.checkNotNull(
                 description, r'TicketJsonldTicketRead', 'description'),
             title: BuiltValueNullFieldError.checkNotNull(
@@ -502,6 +527,7 @@ class TicketJsonldTicketReadBuilder
             location: location,
             id: id,
             assignee: assignee,
+            enterpriseName: enterpriseName,
             startDate: BuiltValueNullFieldError.checkNotNull(
                 startDate, r'TicketJsonldTicketRead', 'startDate'),
             status: BuiltValueNullFieldError.checkNotNull(

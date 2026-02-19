@@ -17,10 +17,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AttachmentJsonldTicketRead.serializer)
       ..add(AttachmentTicketRead.serializer)
       ..add(AttachmentTicketWrite.serializer)
+      ..add(AttachmentTsvTicketRead.serializer)
       ..add(CommentCommentRead.serializer)
       ..add(CommentCommentWrite.serializer)
       ..add(CommentCommentWriteJsonMergePatch.serializer)
       ..add(CommentJsonldCommentRead.serializer)
+      ..add(CommentTsvCommentRead.serializer)
       ..add(ConstraintViolation.serializer)
       ..add(ConstraintViolationJsonld.serializer)
       ..add(ConstraintViolationViolationsInner.serializer)
@@ -37,10 +39,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(LinkedUserLinkedUserWrite.serializer)
       ..add(LinkedUserLinkedUserWriteJsonMergePatch.serializer)
       ..add(LinkedUserTicketWrite.serializer)
+      ..add(LinkedUserTsvLinkedUserRead.serializer)
       ..add(TagJsonldTagRead.serializer)
       ..add(TagTagRead.serializer)
       ..add(TagTagWrite.serializer)
       ..add(TagTagWriteJsonMergePatch.serializer)
+      ..add(TagTsvTagRead.serializer)
       ..add(TicketJsonldTicketRead.serializer)
       ..add(TicketJsonldTicketReadPriorityEnum.serializer)
       ..add(TicketJsonldTicketReadStatusEnum.serializer)
@@ -53,6 +57,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(TicketTicketWriteJsonMergePatchStatusEnum.serializer)
       ..add(TicketTicketWritePriorityEnum.serializer)
       ..add(TicketTicketWriteStatusEnum.serializer)
+      ..add(TicketTsvTicketRead.serializer)
+      ..add(TicketTsvTicketReadPriorityEnum.serializer)
+      ..add(TicketTsvTicketReadStatusEnum.serializer)
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(CommentJsonldCommentRead)]),
@@ -124,6 +131,19 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(AttachmentTicketRead)]),
           () => new ListBuilder<AttachmentTicketRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(AttachmentTsvTicketRead)]),
+          () => new ListBuilder<AttachmentTsvTicketRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(TagJsonldTagRead)]),
           () => new ListBuilder<TagJsonldTagRead>())

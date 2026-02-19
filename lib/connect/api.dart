@@ -9,11 +9,16 @@ import 'package:so_dart_sdk/connect/auth/api_key_auth.dart';
 import 'package:so_dart_sdk/connect/auth/basic_auth.dart';
 import 'package:so_dart_sdk/connect/auth/bearer_auth.dart';
 import 'package:so_dart_sdk/connect/auth/oauth.dart';
+import 'package:so_dart_sdk/connect/api/access_api.dart';
 import 'package:so_dart_sdk/connect/api/access_cards_api.dart';
+import 'package:so_dart_sdk/connect/api/charging_stations_api.dart';
 import 'package:so_dart_sdk/connect/api/devices_api.dart';
 import 'package:so_dart_sdk/connect/api/lockers_api.dart';
 import 'package:so_dart_sdk/connect/api/misc_api.dart';
+import 'package:so_dart_sdk/connect/api/printers_api.dart';
 import 'package:so_dart_sdk/connect/api/providers_api.dart';
+import 'package:so_dart_sdk/connect/api/reservation_access_api.dart';
+import 'package:so_dart_sdk/connect/api/sites_api.dart';
 import 'package:so_dart_sdk/connect/api/users_api.dart';
 
 class SoDartSdk {
@@ -70,10 +75,22 @@ class SoDartSdk {
     }
   }
 
+  /// Get AccessApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AccessApi getAccessApi() {
+    return AccessApi(dio, serializers);
+  }
+
   /// Get AccessCardsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   AccessCardsApi getAccessCardsApi() {
     return AccessCardsApi(dio, serializers);
+  }
+
+  /// Get ChargingStationsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ChargingStationsApi getChargingStationsApi() {
+    return ChargingStationsApi(dio, serializers);
   }
 
   /// Get DevicesApi instance, base route and serializer can be overridden by a given but be careful,
@@ -94,10 +111,28 @@ class SoDartSdk {
     return MiscApi(dio, serializers);
   }
 
+  /// Get PrintersApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  PrintersApi getPrintersApi() {
+    return PrintersApi(dio, serializers);
+  }
+
   /// Get ProvidersApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   ProvidersApi getProvidersApi() {
     return ProvidersApi(dio, serializers);
+  }
+
+  /// Get ReservationAccessApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ReservationAccessApi getReservationAccessApi() {
+    return ReservationAccessApi(dio, serializers);
+  }
+
+  /// Get SitesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  SitesApi getSitesApi() {
+    return SitesApi(dio, serializers);
   }
 
   /// Get UsersApi instance, base route and serializer can be overridden by a given but be careful,

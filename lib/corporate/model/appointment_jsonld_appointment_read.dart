@@ -33,6 +33,8 @@ part 'appointment_jsonld_appointment_read.g.dart';
 /// * [createdAt] 
 /// * [updatedAt] 
 /// * [title] 
+/// * [enterprise] 
+/// * [enterpriseName] 
 @BuiltValue()
 abstract class AppointmentJsonldAppointmentRead implements HydraItemBaseSchema, Built<AppointmentJsonldAppointmentRead, AppointmentJsonldAppointmentReadBuilder> {
   @BuiltValueField(wireName: r'cancellationReason')
@@ -40,6 +42,9 @@ abstract class AppointmentJsonldAppointmentRead implements HydraItemBaseSchema, 
 
   @BuiltValueField(wireName: r'endDate')
   DateTime get endDate;
+
+  @BuiltValueField(wireName: r'enterprise')
+  String? get enterprise;
 
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -71,6 +76,9 @@ abstract class AppointmentJsonldAppointmentRead implements HydraItemBaseSchema, 
 
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  @BuiltValueField(wireName: r'enterpriseName')
+  String? get enterpriseName;
 
   @BuiltValueField(wireName: r'status')
   AppointmentJsonldAppointmentReadStatusEnum get status;
@@ -122,6 +130,13 @@ class _$AppointmentJsonldAppointmentReadSerializer implements PrimitiveSerialize
       object.endDate,
       specifiedType: const FullType(DateTime),
     );
+    if (object.enterprise != null) {
+      yield r'enterprise';
+      yield serializers.serialize(
+        object.enterprise,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -191,6 +206,13 @@ class _$AppointmentJsonldAppointmentReadSerializer implements PrimitiveSerialize
         specifiedType: const FullType(int),
       );
     }
+    if (object.enterpriseName != null) {
+      yield r'enterpriseName';
+      yield serializers.serialize(
+        object.enterpriseName,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'@type';
     yield serializers.serialize(
       object.atType,
@@ -258,6 +280,13 @@ class _$AppointmentJsonldAppointmentReadSerializer implements PrimitiveSerialize
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.endDate = valueDes;
+          break;
+        case r'enterprise':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterprise = valueDes;
           break;
         case r'description':
           final valueDes = serializers.deserialize(
@@ -335,6 +364,13 @@ class _$AppointmentJsonldAppointmentReadSerializer implements PrimitiveSerialize
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
+          break;
+        case r'enterpriseName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterpriseName = valueDes;
           break;
         case r'@type':
           final valueDes = serializers.deserialize(

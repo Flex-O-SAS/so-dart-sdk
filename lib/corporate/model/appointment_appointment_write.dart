@@ -25,6 +25,8 @@ part 'appointment_appointment_write.g.dart';
 /// * [endDate] 
 /// * [appointmentClients] 
 /// * [title] 
+/// * [enterprise] 
+/// * [enterpriseName] 
 @BuiltValue()
 abstract class AppointmentAppointmentWrite implements Built<AppointmentAppointmentWrite, AppointmentAppointmentWriteBuilder> {
   @BuiltValueField(wireName: r'organiser')
@@ -64,6 +66,12 @@ abstract class AppointmentAppointmentWrite implements Built<AppointmentAppointme
 
   @BuiltValueField(wireName: r'title')
   String? get title;
+
+  @BuiltValueField(wireName: r'enterprise')
+  String? get enterprise;
+
+  @BuiltValueField(wireName: r'enterpriseName')
+  String? get enterpriseName;
 
   AppointmentAppointmentWrite._();
 
@@ -157,6 +165,20 @@ class _$AppointmentAppointmentWriteSerializer implements PrimitiveSerializer<App
       yield r'title';
       yield serializers.serialize(
         object.title,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.enterprise != null) {
+      yield r'enterprise';
+      yield serializers.serialize(
+        object.enterprise,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.enterpriseName != null) {
+      yield r'enterpriseName';
+      yield serializers.serialize(
+        object.enterpriseName,
         specifiedType: const FullType(String),
       );
     }
@@ -266,6 +288,20 @@ class _$AppointmentAppointmentWriteSerializer implements PrimitiveSerializer<App
             specifiedType: const FullType(String),
           ) as String;
           result.title = valueDes;
+          break;
+        case r'enterprise':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterprise = valueDes;
+          break;
+        case r'enterpriseName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterpriseName = valueDes;
           break;
         default:
           unhandled.add(key);

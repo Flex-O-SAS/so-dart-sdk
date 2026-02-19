@@ -144,6 +144,8 @@ class _$AppointmentJsonldAppointmentClientSignedRead
   @override
   final DateTime endDate;
   @override
+  final String? enterprise;
+  @override
   final String? description;
   @override
   final String? staff;
@@ -161,6 +163,8 @@ class _$AppointmentJsonldAppointmentClientSignedRead
   final int site;
   @override
   final int? id;
+  @override
+  final String? enterpriseName;
   @override
   final AppointmentJsonldAppointmentClientSignedReadStatusEnum status;
   @override
@@ -184,6 +188,7 @@ class _$AppointmentJsonldAppointmentClientSignedRead
   _$AppointmentJsonldAppointmentClientSignedRead._(
       {this.cancellationReason,
       required this.endDate,
+      this.enterprise,
       this.description,
       this.staff,
       required this.type,
@@ -193,6 +198,7 @@ class _$AppointmentJsonldAppointmentClientSignedRead
       this.createdAt,
       required this.site,
       this.id,
+      this.enterpriseName,
       required this.status,
       this.cancellationDate,
       this.updatedAt,
@@ -234,6 +240,7 @@ class _$AppointmentJsonldAppointmentClientSignedRead
     return other is AppointmentJsonldAppointmentClientSignedRead &&
         cancellationReason == other.cancellationReason &&
         endDate == other.endDate &&
+        enterprise == other.enterprise &&
         description == other.description &&
         staff == other.staff &&
         type == other.type &&
@@ -243,6 +250,7 @@ class _$AppointmentJsonldAppointmentClientSignedRead
         createdAt == other.createdAt &&
         site == other.site &&
         id == other.id &&
+        enterpriseName == other.enterpriseName &&
         status == other.status &&
         cancellationDate == other.cancellationDate &&
         updatedAt == other.updatedAt &&
@@ -256,6 +264,7 @@ class _$AppointmentJsonldAppointmentClientSignedRead
     var _$hash = 0;
     _$hash = $jc(_$hash, cancellationReason.hashCode);
     _$hash = $jc(_$hash, endDate.hashCode);
+    _$hash = $jc(_$hash, enterprise.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, staff.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
@@ -265,6 +274,7 @@ class _$AppointmentJsonldAppointmentClientSignedRead
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, enterpriseName.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, cancellationDate.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
@@ -281,6 +291,7 @@ class _$AppointmentJsonldAppointmentClientSignedRead
             r'AppointmentJsonldAppointmentClientSignedRead')
           ..add('cancellationReason', cancellationReason)
           ..add('endDate', endDate)
+          ..add('enterprise', enterprise)
           ..add('description', description)
           ..add('staff', staff)
           ..add('type', type)
@@ -290,6 +301,7 @@ class _$AppointmentJsonldAppointmentClientSignedRead
           ..add('createdAt', createdAt)
           ..add('site', site)
           ..add('id', id)
+          ..add('enterpriseName', enterpriseName)
           ..add('status', status)
           ..add('cancellationDate', cancellationDate)
           ..add('updatedAt', updatedAt)
@@ -315,6 +327,11 @@ class AppointmentJsonldAppointmentClientSignedReadBuilder
   DateTime? _endDate;
   DateTime? get endDate => _$this._endDate;
   set endDate(covariant DateTime? endDate) => _$this._endDate = endDate;
+
+  String? _enterprise;
+  String? get enterprise => _$this._enterprise;
+  set enterprise(covariant String? enterprise) =>
+      _$this._enterprise = enterprise;
 
   String? _description;
   String? get description => _$this._description;
@@ -357,6 +374,11 @@ class AppointmentJsonldAppointmentClientSignedReadBuilder
   int? get id => _$this._id;
   set id(covariant int? id) => _$this._id = id;
 
+  String? _enterpriseName;
+  String? get enterpriseName => _$this._enterpriseName;
+  set enterpriseName(covariant String? enterpriseName) =>
+      _$this._enterpriseName = enterpriseName;
+
   AppointmentJsonldAppointmentClientSignedReadStatusEnum? _status;
   AppointmentJsonldAppointmentClientSignedReadStatusEnum? get status =>
       _$this._status;
@@ -397,6 +419,7 @@ class AppointmentJsonldAppointmentClientSignedReadBuilder
     if ($v != null) {
       _cancellationReason = $v.cancellationReason;
       _endDate = $v.endDate;
+      _enterprise = $v.enterprise;
       _description = $v.description;
       _staff = $v.staff;
       _type = $v.type;
@@ -406,6 +429,7 @@ class AppointmentJsonldAppointmentClientSignedReadBuilder
       _createdAt = $v.createdAt;
       _site = $v.site;
       _id = $v.id;
+      _enterpriseName = $v.enterpriseName;
       _status = $v.status;
       _cancellationDate = $v.cancellationDate;
       _updatedAt = $v.updatedAt;
@@ -441,6 +465,7 @@ class AppointmentJsonldAppointmentClientSignedReadBuilder
             cancellationReason: cancellationReason,
             endDate: BuiltValueNullFieldError.checkNotNull(endDate,
                 r'AppointmentJsonldAppointmentClientSignedRead', 'endDate'),
+            enterprise: enterprise,
             description: description,
             staff: staff,
             type: BuiltValueNullFieldError.checkNotNull(
@@ -454,6 +479,7 @@ class AppointmentJsonldAppointmentClientSignedReadBuilder
             site: BuiltValueNullFieldError.checkNotNull(
                 site, r'AppointmentJsonldAppointmentClientSignedRead', 'site'),
             id: id,
+            enterpriseName: enterpriseName,
             status: BuiltValueNullFieldError.checkNotNull(status,
                 r'AppointmentJsonldAppointmentClientSignedRead', 'status'),
             cancellationDate: cancellationDate,

@@ -655,10 +655,12 @@ export 'package:so_dart_sdk/ticketing_service/model/api_tickets_get_collection20
 export 'package:so_dart_sdk/ticketing_service/model/attachment_jsonld_ticket_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/attachment_ticket_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/attachment_ticket_write.dart';
+export 'package:so_dart_sdk/ticketing_service/model/attachment_tsv_ticket_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/comment_comment_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
 export 'package:so_dart_sdk/ticketing_service/model/comment_comment_write_json_merge_patch.dart';
 export 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
+export 'package:so_dart_sdk/ticketing_service/model/comment_tsv_comment_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/constraint_violation.dart';
 export 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld.dart';
 export 'package:so_dart_sdk/ticketing_service/model/constraint_violation_violations_inner.dart';
@@ -677,14 +679,17 @@ export 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_read
 export 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_write.dart';
 export 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_write_json_merge_patch.dart';
 export 'package:so_dart_sdk/ticketing_service/model/linked_user_ticket_write.dart';
+export 'package:so_dart_sdk/ticketing_service/model/linked_user_tsv_linked_user_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/tag_tag_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/tag_tag_write.dart';
 export 'package:so_dart_sdk/ticketing_service/model/tag_tag_write_json_merge_patch.dart';
+export 'package:so_dart_sdk/ticketing_service/model/tag_tsv_tag_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_read.dart';
 export 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write.dart';
 export 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write_json_merge_patch.dart';
+export 'package:so_dart_sdk/ticketing_service/model/ticket_tsv_ticket_read.dart';
 
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
@@ -721,11 +726,17 @@ export 'package:so_dart_sdk/corporate/model/appointment_client_appointment_write
 export 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_client_read.dart';
 export 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_client_signed_read.dart';
 export 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_read.dart';
+export 'package:so_dart_sdk/corporate/model/appointment_client_tsv_appointment_client_read.dart';
+export 'package:so_dart_sdk/corporate/model/appointment_client_tsv_appointment_client_signed_read.dart';
+export 'package:so_dart_sdk/corporate/model/appointment_client_tsv_appointment_read.dart';
 export 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_client_signed_read.dart';
 export 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read.dart';
+export 'package:so_dart_sdk/corporate/model/appointment_tsv_appointment_client_signed_read.dart';
+export 'package:so_dart_sdk/corporate/model/appointment_tsv_appointment_read.dart';
 export 'package:so_dart_sdk/corporate/model/client_relation.dart';
 export 'package:so_dart_sdk/corporate/model/client_relation_json_merge_patch.dart';
 export 'package:so_dart_sdk/corporate/model/client_relation_jsonld.dart';
+export 'package:so_dart_sdk/corporate/model/client_relation_tsv.dart';
 export 'package:so_dart_sdk/corporate/model/constraint_violation.dart';
 export 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld.dart';
 export 'package:so_dart_sdk/corporate/model/constraint_violation_violations_inner.dart';
@@ -743,6 +754,7 @@ export 'package:so_dart_sdk/corporate/model/package_jsonld_package_read.dart';
 export 'package:so_dart_sdk/corporate/model/package_package_read.dart';
 export 'package:so_dart_sdk/corporate/model/package_package_write.dart';
 export 'package:so_dart_sdk/corporate/model/package_package_write_json_merge_patch.dart';
+export 'package:so_dart_sdk/corporate/model/package_tsv_package_read.dart';
 
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
@@ -840,16 +852,27 @@ export 'package:so_dart_sdk/connect/auth/oauth.dart';
 export 'package:so_dart_sdk/connect/serializers.dart';
 export 'package:so_dart_sdk/connect/model/date.dart';
 
+export 'package:so_dart_sdk/connect/api/access_api.dart';
 export 'package:so_dart_sdk/connect/api/access_cards_api.dart';
+export 'package:so_dart_sdk/connect/api/charging_stations_api.dart';
 export 'package:so_dart_sdk/connect/api/devices_api.dart';
 export 'package:so_dart_sdk/connect/api/lockers_api.dart';
 export 'package:so_dart_sdk/connect/api/misc_api.dart';
+export 'package:so_dart_sdk/connect/api/printers_api.dart';
 export 'package:so_dart_sdk/connect/api/providers_api.dart';
+export 'package:so_dart_sdk/connect/api/reservation_access_api.dart';
+export 'package:so_dart_sdk/connect/api/sites_api.dart';
 export 'package:so_dart_sdk/connect/api/users_api.dart';
 
 export 'package:so_dart_sdk/connect/model/access_cards_provider_uuid_cards_get200_response_inner.dart';
+export 'package:so_dart_sdk/connect/model/access_device_dto.dart';
+export 'package:so_dart_sdk/connect/model/access_group_dto.dart';
 export 'package:so_dart_sdk/connect/model/auth_response.dart';
 export 'package:so_dart_sdk/connect/model/box_list_dto_inner.dart';
+export 'package:so_dart_sdk/connect/model/charging_station_user_dto.dart';
+export 'package:so_dart_sdk/connect/model/create_charging_station_user_body.dart';
+export 'package:so_dart_sdk/connect/model/create_reservation_access_body.dart';
+export 'package:so_dart_sdk/connect/model/delete_reservation_access_body.dart';
 export 'package:so_dart_sdk/connect/model/devices_unlock_post_request.dart';
 export 'package:so_dart_sdk/connect/model/error_response.dart';
 export 'package:so_dart_sdk/connect/model/menu_list_dto.dart';
@@ -857,10 +880,21 @@ export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner.dart';
 export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner.dart';
 export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_items_inner_items_inner.dart';
 export 'package:so_dart_sdk/connect/model/menu_list_dto_menus_inner_site.dart';
+export 'package:so_dart_sdk/connect/model/print_file_body.dart';
+export 'package:so_dart_sdk/connect/model/printer_dto.dart';
+export 'package:so_dart_sdk/connect/model/printer_group_dto.dart';
+export 'package:so_dart_sdk/connect/model/printer_pool_dto.dart';
 export 'package:so_dart_sdk/connect/model/provider_response_inner.dart';
 export 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get200_response.dart';
 export 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get404_response.dart';
+export 'package:so_dart_sdk/connect/model/reservation_slot_data.dart';
+export 'package:so_dart_sdk/connect/model/site_access_group_device_dto.dart';
+export 'package:so_dart_sdk/connect/model/site_access_group_dto.dart';
+export 'package:so_dart_sdk/connect/model/site_dto.dart';
 export 'package:so_dart_sdk/connect/model/unlock_response.dart';
+export 'package:so_dart_sdk/connect/model/update_printer_groups_body.dart';
+export 'package:so_dart_sdk/connect/model/update_reservation_access_body.dart';
+export 'package:so_dart_sdk/connect/model/update_user_access_groups_body.dart';
 export 'package:so_dart_sdk/connect/model/user_dto.dart';
 export 'package:so_dart_sdk/connect/model/user_response_dto.dart';
 

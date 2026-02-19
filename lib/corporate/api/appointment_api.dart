@@ -14,6 +14,7 @@ import 'package:so_dart_sdk/corporate/model/api_appointments_get_collection200_r
 import 'package:so_dart_sdk/corporate/model/appointment_appointment_write.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_appointment_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_jsonld_appointment_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_tsv_appointment_read.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/corporate/model/error.dart';
@@ -115,6 +116,7 @@ class AppointmentApi {
   /// * [endDateLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [endDateLeftSquareBracketAfterRightSquareBracket] - 
   /// * [endDateLeftSquareBracketStrictlyAfterRightSquareBracket] - 
+  /// * [enterprise] - Appointment enterprise
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -155,6 +157,7 @@ class AppointmentApi {
     String? endDateLeftSquareBracketStrictlyBeforeRightSquareBracket,
     String? endDateLeftSquareBracketAfterRightSquareBracket,
     String? endDateLeftSquareBracketStrictlyAfterRightSquareBracket,
+    String? enterprise,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -213,6 +216,7 @@ class AppointmentApi {
       if (endDateLeftSquareBracketStrictlyBeforeRightSquareBracket != null) r'endDate[strictly_before]': encodeQueryParameter(_serializers, endDateLeftSquareBracketStrictlyBeforeRightSquareBracket, const FullType(String)),
       if (endDateLeftSquareBracketAfterRightSquareBracket != null) r'endDate[after]': encodeQueryParameter(_serializers, endDateLeftSquareBracketAfterRightSquareBracket, const FullType(String)),
       if (endDateLeftSquareBracketStrictlyAfterRightSquareBracket != null) r'endDate[strictly_after]': encodeQueryParameter(_serializers, endDateLeftSquareBracketStrictlyAfterRightSquareBracket, const FullType(String)),
+      if (enterprise != null) r'enterprise': encodeQueryParameter(_serializers, enterprise, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

@@ -79,7 +79,7 @@ class _$ErrorSerializer implements PrimitiveSerializer<Error> {
       yield r'status';
       yield serializers.serialize(
         object.status,
-        specifiedType: const FullType(num),
+        specifiedType: const FullType.nullable(num),
       );
     }
     if (object.instance != null) {
@@ -136,8 +136,9 @@ class _$ErrorSerializer implements PrimitiveSerializer<Error> {
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
+            specifiedType: const FullType.nullable(num),
+          ) as num?;
+          if (valueDes == null) continue;
           result.status = valueDes;
           break;
         case r'instance':

@@ -14,6 +14,7 @@ import 'package:so_dart_sdk/corporate/model/api_client_relation_get_collection20
 import 'package:so_dart_sdk/corporate/model/client_relation.dart';
 import 'package:so_dart_sdk/corporate/model/client_relation_json_merge_patch.dart';
 import 'package:so_dart_sdk/corporate/model/client_relation_jsonld.dart';
+import 'package:so_dart_sdk/corporate/model/client_relation_tsv.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/corporate/model/error.dart';

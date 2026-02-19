@@ -16,6 +16,8 @@ import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_clien
 import 'package:so_dart_sdk/corporate/model/appointment_client_appointment_client_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_client_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_client_jsonld_appointment_client_signed_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_client_tsv_appointment_client_read.dart';
+import 'package:so_dart_sdk/corporate/model/appointment_client_tsv_appointment_client_signed_read.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation.dart';
 import 'package:so_dart_sdk/corporate/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/corporate/model/error.dart';

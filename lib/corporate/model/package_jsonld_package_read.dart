@@ -40,7 +40,7 @@ abstract class PackageJsonldPackageRead implements HydraItemBaseSchema, Built<Pa
   DateTime get receptionDate;
 
   @BuiltValueField(wireName: r'enterprise')
-  String get enterprise;
+  String? get enterprise;
 
   @BuiltValueField(wireName: r'securityCode')
   String get securityCode;
@@ -68,7 +68,7 @@ abstract class PackageJsonldPackageRead implements HydraItemBaseSchema, Built<Pa
   int? get id;
 
   @BuiltValueField(wireName: r'enterpriseName')
-  String get enterpriseName;
+  String? get enterpriseName;
 
   @BuiltValueField(wireName: r'trackingNumber')
   String get trackingNumber;
@@ -115,11 +115,13 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
       object.receptionDate,
       specifiedType: const FullType(DateTime),
     );
-    yield r'enterprise';
-    yield serializers.serialize(
-      object.enterprise,
-      specifiedType: const FullType(String),
-    );
+    if (object.enterprise != null) {
+      yield r'enterprise';
+      yield serializers.serialize(
+        object.enterprise,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'securityCode';
     yield serializers.serialize(
       object.securityCode,
@@ -173,11 +175,13 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
         specifiedType: const FullType(int),
       );
     }
-    yield r'enterpriseName';
-    yield serializers.serialize(
-      object.enterpriseName,
-      specifiedType: const FullType(String),
-    );
+    if (object.enterpriseName != null) {
+      yield r'enterpriseName';
+      yield serializers.serialize(
+        object.enterpriseName,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'trackingNumber';
     yield serializers.serialize(
       object.trackingNumber,

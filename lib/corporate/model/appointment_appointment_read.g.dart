@@ -158,6 +158,10 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
   final DateTime? updatedAt;
   @override
   final String? title;
+  @override
+  final String? enterprise;
+  @override
+  final String? enterpriseName;
 
   factory _$AppointmentAppointmentRead(
           [void Function(AppointmentAppointmentReadBuilder)? updates]) =>
@@ -178,7 +182,9 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
       this.appointmentClients,
       this.createdAt,
       this.updatedAt,
-      this.title})
+      this.title,
+      this.enterprise,
+      this.enterpriseName})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         organiser, r'AppointmentAppointmentRead', 'organiser');
@@ -221,7 +227,9 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
         appointmentClients == other.appointmentClients &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt &&
-        title == other.title;
+        title == other.title &&
+        enterprise == other.enterprise &&
+        enterpriseName == other.enterpriseName;
   }
 
   @override
@@ -242,6 +250,8 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, enterprise.hashCode);
+    _$hash = $jc(_$hash, enterpriseName.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -263,7 +273,9 @@ class _$AppointmentAppointmentRead extends AppointmentAppointmentRead {
           ..add('appointmentClients', appointmentClients)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt)
-          ..add('title', title))
+          ..add('title', title)
+          ..add('enterprise', enterprise)
+          ..add('enterpriseName', enterpriseName))
         .toString();
   }
 }
@@ -340,6 +352,15 @@ class AppointmentAppointmentReadBuilder
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
 
+  String? _enterprise;
+  String? get enterprise => _$this._enterprise;
+  set enterprise(String? enterprise) => _$this._enterprise = enterprise;
+
+  String? _enterpriseName;
+  String? get enterpriseName => _$this._enterpriseName;
+  set enterpriseName(String? enterpriseName) =>
+      _$this._enterpriseName = enterpriseName;
+
   AppointmentAppointmentReadBuilder() {
     AppointmentAppointmentRead._defaults(this);
   }
@@ -362,6 +383,8 @@ class AppointmentAppointmentReadBuilder
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
       _title = $v.title;
+      _enterprise = $v.enterprise;
+      _enterpriseName = $v.enterpriseName;
       _$v = null;
     }
     return this;
@@ -407,6 +430,8 @@ class AppointmentAppointmentReadBuilder
             createdAt: createdAt,
             updatedAt: updatedAt,
             title: title,
+            enterprise: enterprise,
+            enterpriseName: enterpriseName,
           );
     } catch (_) {
       late String _$failedField;

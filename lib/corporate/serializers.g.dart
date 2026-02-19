@@ -51,17 +51,32 @@ Serializers _$serializers = (new Serializers().toBuilder()
           .serializer)
       ..add(AppointmentClientJsonldAppointmentRead.serializer)
       ..add(AppointmentClientJsonldAppointmentReadStatusEnum.serializer)
+      ..add(AppointmentClientTsvAppointmentClientRead.serializer)
+      ..add(AppointmentClientTsvAppointmentClientReadStatusEnum.serializer)
+      ..add(AppointmentClientTsvAppointmentClientSignedRead.serializer)
+      ..add(
+          AppointmentClientTsvAppointmentClientSignedReadStatusEnum.serializer)
+      ..add(AppointmentClientTsvAppointmentRead.serializer)
+      ..add(AppointmentClientTsvAppointmentReadStatusEnum.serializer)
       ..add(AppointmentJsonldAppointmentClientSignedRead.serializer)
       ..add(AppointmentJsonldAppointmentClientSignedReadStatusEnum.serializer)
       ..add(AppointmentJsonldAppointmentClientSignedReadTypeEnum.serializer)
       ..add(AppointmentJsonldAppointmentRead.serializer)
       ..add(AppointmentJsonldAppointmentReadStatusEnum.serializer)
       ..add(AppointmentJsonldAppointmentReadTypeEnum.serializer)
+      ..add(AppointmentTsvAppointmentClientSignedRead.serializer)
+      ..add(AppointmentTsvAppointmentClientSignedReadStatusEnum.serializer)
+      ..add(AppointmentTsvAppointmentClientSignedReadTypeEnum.serializer)
+      ..add(AppointmentTsvAppointmentRead.serializer)
+      ..add(AppointmentTsvAppointmentReadStatusEnum.serializer)
+      ..add(AppointmentTsvAppointmentReadTypeEnum.serializer)
       ..add(ClientRelation.serializer)
       ..add(ClientRelationJsonMergePatch.serializer)
       ..add(ClientRelationJsonMergePatchTypeEnum.serializer)
       ..add(ClientRelationJsonld.serializer)
       ..add(ClientRelationJsonldTypeEnum.serializer)
+      ..add(ClientRelationTsv.serializer)
+      ..add(ClientRelationTsvTypeEnum.serializer)
       ..add(ClientRelationTypeEnum.serializer)
       ..add(ConstraintViolation.serializer)
       ..add(ConstraintViolationJsonld.serializer)
@@ -86,6 +101,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(PackagePackageWriteJsonMergePatchTypeEnum.serializer)
       ..add(PackagePackageWriteStatusEnum.serializer)
       ..add(PackagePackageWriteTypeEnum.serializer)
+      ..add(PackageTsvPackageRead.serializer)
+      ..add(PackageTsvPackageReadStatusEnum.serializer)
+      ..add(PackageTsvPackageReadTypeEnum.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(AppointmentClientAppointmentRead)]),
@@ -107,6 +125,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(AppointmentClientJsonldAppointmentRead)]),
           () => new ListBuilder<AppointmentClientJsonldAppointmentRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(AppointmentClientTsvAppointmentRead)]),
+          () => new ListBuilder<AppointmentClientTsvAppointmentRead>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(AppointmentJsonldAppointmentRead)]),
@@ -133,7 +155,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(PackageJsonldPackageRead)]),
-          () => new ListBuilder<PackageJsonldPackageRead>()))
+          () => new ListBuilder<PackageJsonldPackageRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType.nullable(JsonObject)
+          ]),
+          () => new MapBuilder<String, JsonObject?>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

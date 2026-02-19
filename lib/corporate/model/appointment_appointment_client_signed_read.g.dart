@@ -161,6 +161,10 @@ class _$AppointmentAppointmentClientSignedRead
   final DateTime? updatedAt;
   @override
   final String? title;
+  @override
+  final String? enterprise;
+  @override
+  final String? enterpriseName;
 
   factory _$AppointmentAppointmentClientSignedRead(
           [void Function(AppointmentAppointmentClientSignedReadBuilder)?
@@ -182,7 +186,9 @@ class _$AppointmentAppointmentClientSignedRead
       required this.endDate,
       this.createdAt,
       this.updatedAt,
-      this.title})
+      this.title,
+      this.enterprise,
+      this.enterpriseName})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         organiser, r'AppointmentAppointmentClientSignedRead', 'organiser');
@@ -225,7 +231,9 @@ class _$AppointmentAppointmentClientSignedRead
         endDate == other.endDate &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt &&
-        title == other.title;
+        title == other.title &&
+        enterprise == other.enterprise &&
+        enterpriseName == other.enterpriseName;
   }
 
   @override
@@ -245,6 +253,8 @@ class _$AppointmentAppointmentClientSignedRead
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, enterprise.hashCode);
+    _$hash = $jc(_$hash, enterpriseName.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -266,7 +276,9 @@ class _$AppointmentAppointmentClientSignedRead
           ..add('endDate', endDate)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt)
-          ..add('title', title))
+          ..add('title', title)
+          ..add('enterprise', enterprise)
+          ..add('enterpriseName', enterpriseName))
         .toString();
   }
 }
@@ -338,6 +350,15 @@ class AppointmentAppointmentClientSignedReadBuilder
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
 
+  String? _enterprise;
+  String? get enterprise => _$this._enterprise;
+  set enterprise(String? enterprise) => _$this._enterprise = enterprise;
+
+  String? _enterpriseName;
+  String? get enterpriseName => _$this._enterpriseName;
+  set enterpriseName(String? enterpriseName) =>
+      _$this._enterpriseName = enterpriseName;
+
   AppointmentAppointmentClientSignedReadBuilder() {
     AppointmentAppointmentClientSignedRead._defaults(this);
   }
@@ -359,6 +380,8 @@ class AppointmentAppointmentClientSignedReadBuilder
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
       _title = $v.title;
+      _enterprise = $v.enterprise;
+      _enterpriseName = $v.enterpriseName;
       _$v = null;
     }
     return this;
@@ -402,6 +425,8 @@ class AppointmentAppointmentClientSignedReadBuilder
           createdAt: createdAt,
           updatedAt: updatedAt,
           title: title,
+          enterprise: enterprise,
+          enterpriseName: enterpriseName,
         );
     replace(_$result);
     return _$result;

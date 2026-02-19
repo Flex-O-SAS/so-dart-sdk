@@ -8,6 +8,7 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/api_util.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apitags_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation.dart';
@@ -17,6 +18,7 @@ import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_tag_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_tag_write_json_merge_patch.dart';
+import 'package:so_dart_sdk/ticketing_service/model/tag_tsv_tag_read.dart';
 
 class TagApi {
 

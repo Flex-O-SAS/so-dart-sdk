@@ -25,6 +25,8 @@ part 'appointment_appointment_write_json_merge_patch.g.dart';
 /// * [endDate] 
 /// * [appointmentClients] 
 /// * [title] 
+/// * [enterprise] 
+/// * [enterpriseName] 
 @BuiltValue()
 abstract class AppointmentAppointmentWriteJsonMergePatch implements Built<AppointmentAppointmentWriteJsonMergePatch, AppointmentAppointmentWriteJsonMergePatchBuilder> {
   @BuiltValueField(wireName: r'organiser')
@@ -64,6 +66,12 @@ abstract class AppointmentAppointmentWriteJsonMergePatch implements Built<Appoin
 
   @BuiltValueField(wireName: r'title')
   String? get title;
+
+  @BuiltValueField(wireName: r'enterprise')
+  String? get enterprise;
+
+  @BuiltValueField(wireName: r'enterpriseName')
+  String? get enterpriseName;
 
   AppointmentAppointmentWriteJsonMergePatch._();
 
@@ -169,6 +177,20 @@ class _$AppointmentAppointmentWriteJsonMergePatchSerializer implements Primitive
       yield r'title';
       yield serializers.serialize(
         object.title,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.enterprise != null) {
+      yield r'enterprise';
+      yield serializers.serialize(
+        object.enterprise,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.enterpriseName != null) {
+      yield r'enterpriseName';
+      yield serializers.serialize(
+        object.enterpriseName,
         specifiedType: const FullType(String),
       );
     }
@@ -278,6 +300,20 @@ class _$AppointmentAppointmentWriteJsonMergePatchSerializer implements Primitive
             specifiedType: const FullType(String),
           ) as String;
           result.title = valueDes;
+          break;
+        case r'enterprise':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterprise = valueDes;
+          break;
+        case r'enterpriseName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterpriseName = valueDes;
           break;
         default:
           unhandled.add(key);

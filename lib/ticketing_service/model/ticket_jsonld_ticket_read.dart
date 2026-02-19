@@ -25,6 +25,8 @@ part 'ticket_jsonld_ticket_read.g.dart';
 /// * [endDate] 
 /// * [description] 
 /// * [author] 
+/// * [enterprise] 
+/// * [enterpriseName] 
 /// * [assignee] 
 /// * [status] 
 /// * [site] 
@@ -53,6 +55,9 @@ abstract class TicketJsonldTicketRead implements HydraItemBaseSchema, Built<Tick
 
   @BuiltValueField(wireName: r'author')
   String get author;
+
+  @BuiltValueField(wireName: r'enterprise')
+  String? get enterprise;
 
   @BuiltValueField(wireName: r'description')
   String get description;
@@ -84,6 +89,9 @@ abstract class TicketJsonldTicketRead implements HydraItemBaseSchema, Built<Tick
 
   @BuiltValueField(wireName: r'assignee')
   String? get assignee;
+
+  @BuiltValueField(wireName: r'enterpriseName')
+  String? get enterpriseName;
 
   @BuiltValueField(wireName: r'startDate')
   DateTime get startDate;
@@ -157,6 +165,13 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
       object.author,
       specifiedType: const FullType(String),
     );
+    if (object.enterprise != null) {
+      yield r'enterprise';
+      yield serializers.serialize(
+        object.enterprise,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'description';
     yield serializers.serialize(
       object.description,
@@ -225,6 +240,13 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
       yield r'assignee';
       yield serializers.serialize(
         object.assignee,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.enterpriseName != null) {
+      yield r'enterpriseName';
+      yield serializers.serialize(
+        object.enterpriseName,
         specifiedType: const FullType(String),
       );
     }
@@ -315,6 +337,13 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
           ) as String;
           result.author = valueDes;
           break;
+        case r'enterprise':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterprise = valueDes;
+          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -391,6 +420,13 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
             specifiedType: const FullType(String),
           ) as String;
           result.assignee = valueDes;
+          break;
+        case r'enterpriseName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterpriseName = valueDes;
           break;
         case r'@type':
           final valueDes = serializers.deserialize(

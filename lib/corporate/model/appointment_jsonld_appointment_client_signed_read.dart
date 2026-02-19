@@ -31,6 +31,8 @@ part 'appointment_jsonld_appointment_client_signed_read.g.dart';
 /// * [createdAt] 
 /// * [updatedAt] 
 /// * [title] 
+/// * [enterprise] 
+/// * [enterpriseName] 
 @BuiltValue()
 abstract class AppointmentJsonldAppointmentClientSignedRead implements HydraItemBaseSchema, Built<AppointmentJsonldAppointmentClientSignedRead, AppointmentJsonldAppointmentClientSignedReadBuilder> {
   @BuiltValueField(wireName: r'cancellationReason')
@@ -38,6 +40,9 @@ abstract class AppointmentJsonldAppointmentClientSignedRead implements HydraItem
 
   @BuiltValueField(wireName: r'endDate')
   DateTime get endDate;
+
+  @BuiltValueField(wireName: r'enterprise')
+  String? get enterprise;
 
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -66,6 +71,9 @@ abstract class AppointmentJsonldAppointmentClientSignedRead implements HydraItem
 
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  @BuiltValueField(wireName: r'enterpriseName')
+  String? get enterpriseName;
 
   @BuiltValueField(wireName: r'status')
   AppointmentJsonldAppointmentClientSignedReadStatusEnum get status;
@@ -117,6 +125,13 @@ class _$AppointmentJsonldAppointmentClientSignedReadSerializer implements Primit
       object.endDate,
       specifiedType: const FullType(DateTime),
     );
+    if (object.enterprise != null) {
+      yield r'enterprise';
+      yield serializers.serialize(
+        object.enterprise,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -177,6 +192,13 @@ class _$AppointmentJsonldAppointmentClientSignedReadSerializer implements Primit
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.enterpriseName != null) {
+      yield r'enterpriseName';
+      yield serializers.serialize(
+        object.enterpriseName,
+        specifiedType: const FullType(String),
       );
     }
     yield r'@type';
@@ -247,6 +269,13 @@ class _$AppointmentJsonldAppointmentClientSignedReadSerializer implements Primit
           ) as DateTime;
           result.endDate = valueDes;
           break;
+        case r'enterprise':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterprise = valueDes;
+          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -316,6 +345,13 @@ class _$AppointmentJsonldAppointmentClientSignedReadSerializer implements Primit
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
+          break;
+        case r'enterpriseName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterpriseName = valueDes;
           break;
         case r'@type':
           final valueDes = serializers.deserialize(

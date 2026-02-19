@@ -154,6 +154,10 @@ class _$AppointmentAppointmentWrite extends AppointmentAppointmentWrite {
   final BuiltList<AppointmentClientAppointmentWrite>? appointmentClients;
   @override
   final String? title;
+  @override
+  final String? enterprise;
+  @override
+  final String? enterpriseName;
 
   factory _$AppointmentAppointmentWrite(
           [void Function(AppointmentAppointmentWriteBuilder)? updates]) =>
@@ -171,7 +175,9 @@ class _$AppointmentAppointmentWrite extends AppointmentAppointmentWrite {
       required this.beginDate,
       required this.endDate,
       this.appointmentClients,
-      this.title})
+      this.title,
+      this.enterprise,
+      this.enterpriseName})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         organiser, r'AppointmentAppointmentWrite', 'organiser');
@@ -211,7 +217,9 @@ class _$AppointmentAppointmentWrite extends AppointmentAppointmentWrite {
         beginDate == other.beginDate &&
         endDate == other.endDate &&
         appointmentClients == other.appointmentClients &&
-        title == other.title;
+        title == other.title &&
+        enterprise == other.enterprise &&
+        enterpriseName == other.enterpriseName;
   }
 
   @override
@@ -229,6 +237,8 @@ class _$AppointmentAppointmentWrite extends AppointmentAppointmentWrite {
     _$hash = $jc(_$hash, endDate.hashCode);
     _$hash = $jc(_$hash, appointmentClients.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, enterprise.hashCode);
+    _$hash = $jc(_$hash, enterpriseName.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -247,7 +257,9 @@ class _$AppointmentAppointmentWrite extends AppointmentAppointmentWrite {
           ..add('beginDate', beginDate)
           ..add('endDate', endDate)
           ..add('appointmentClients', appointmentClients)
-          ..add('title', title))
+          ..add('title', title)
+          ..add('enterprise', enterprise)
+          ..add('enterpriseName', enterpriseName))
         .toString();
   }
 }
@@ -313,6 +325,15 @@ class AppointmentAppointmentWriteBuilder
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
 
+  String? _enterprise;
+  String? get enterprise => _$this._enterprise;
+  set enterprise(String? enterprise) => _$this._enterprise = enterprise;
+
+  String? _enterpriseName;
+  String? get enterpriseName => _$this._enterpriseName;
+  set enterpriseName(String? enterpriseName) =>
+      _$this._enterpriseName = enterpriseName;
+
   AppointmentAppointmentWriteBuilder() {
     AppointmentAppointmentWrite._defaults(this);
   }
@@ -332,6 +353,8 @@ class AppointmentAppointmentWriteBuilder
       _endDate = $v.endDate;
       _appointmentClients = $v.appointmentClients?.toBuilder();
       _title = $v.title;
+      _enterprise = $v.enterprise;
+      _enterpriseName = $v.enterpriseName;
       _$v = null;
     }
     return this;
@@ -374,6 +397,8 @@ class AppointmentAppointmentWriteBuilder
                 endDate, r'AppointmentAppointmentWrite', 'endDate'),
             appointmentClients: _appointmentClients?.build(),
             title: title,
+            enterprise: enterprise,
+            enterpriseName: enterpriseName,
           );
     } catch (_) {
       late String _$failedField;

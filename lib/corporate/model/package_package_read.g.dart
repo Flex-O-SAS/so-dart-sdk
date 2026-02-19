@@ -143,9 +143,9 @@ class _$PackagePackageRead extends PackagePackageRead {
   @override
   final String recipient;
   @override
-  final String enterprise;
+  final String? enterprise;
   @override
-  final String enterpriseName;
+  final String? enterpriseName;
   @override
   final String staff;
   @override
@@ -174,8 +174,8 @@ class _$PackagePackageRead extends PackagePackageRead {
   _$PackagePackageRead._(
       {this.id,
       required this.recipient,
-      required this.enterprise,
-      required this.enterpriseName,
+      this.enterprise,
+      this.enterpriseName,
       required this.staff,
       required this.site,
       required this.type,
@@ -189,10 +189,6 @@ class _$PackagePackageRead extends PackagePackageRead {
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         recipient, r'PackagePackageRead', 'recipient');
-    BuiltValueNullFieldError.checkNotNull(
-        enterprise, r'PackagePackageRead', 'enterprise');
-    BuiltValueNullFieldError.checkNotNull(
-        enterpriseName, r'PackagePackageRead', 'enterpriseName');
     BuiltValueNullFieldError.checkNotNull(
         staff, r'PackagePackageRead', 'staff');
     BuiltValueNullFieldError.checkNotNull(site, r'PackagePackageRead', 'site');
@@ -391,10 +387,8 @@ class PackagePackageReadBuilder
           id: id,
           recipient: BuiltValueNullFieldError.checkNotNull(
               recipient, r'PackagePackageRead', 'recipient'),
-          enterprise: BuiltValueNullFieldError.checkNotNull(
-              enterprise, r'PackagePackageRead', 'enterprise'),
-          enterpriseName: BuiltValueNullFieldError.checkNotNull(
-              enterpriseName, r'PackagePackageRead', 'enterpriseName'),
+          enterprise: enterprise,
+          enterpriseName: enterpriseName,
           staff: BuiltValueNullFieldError.checkNotNull(
               staff, r'PackagePackageRead', 'staff'),
           site: BuiltValueNullFieldError.checkNotNull(

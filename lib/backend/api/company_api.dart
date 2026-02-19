@@ -30,8 +30,8 @@ class CompanyApi {
   /// * [companyName] - 
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
-  /// * [referenceLeftSquareBracketRightSquareBracket] - 
-  /// * [referencePartialLeftSquareBracketRightSquareBracket] - 
+  /// * [referenceLeftSquareBracketRightSquareBracket] - Company reference
+  /// * [referencePartialLeftSquareBracketRightSquareBracket] - Company reference_partial
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -47,8 +47,8 @@ class CompanyApi {
     String? companyName,
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
-    String? referenceLeftSquareBracketRightSquareBracket,
-    String? referencePartialLeftSquareBracketRightSquareBracket,
+    BuiltList<String>? referenceLeftSquareBracketRightSquareBracket,
+    BuiltList<String>? referencePartialLeftSquareBracketRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -75,8 +75,8 @@ class CompanyApi {
       if (companyName != null) r'companyName': encodeQueryParameter(_serializers, companyName, const FullType(String)),
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
-      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeQueryParameter(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(String)),
-      if (referencePartialLeftSquareBracketRightSquareBracket != null) r'reference_partial[]': encodeQueryParameter(_serializers, referencePartialLeftSquareBracketRightSquareBracket, const FullType(String)),
+      if (referenceLeftSquareBracketRightSquareBracket != null) r'reference[]': encodeCollectionQueryParameter<String>(_serializers, referenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.csv,),
+      if (referencePartialLeftSquareBracketRightSquareBracket != null) r'reference_partial[]': encodeCollectionQueryParameter<String>(_serializers, referencePartialLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.csv,),
     };
 
     final _response = await _dio.request<Object>(

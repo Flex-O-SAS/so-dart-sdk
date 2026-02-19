@@ -20,6 +20,8 @@ part 'ticket_ticket_read.g.dart';
 /// * [endDate] 
 /// * [description] 
 /// * [author] 
+/// * [enterprise] 
+/// * [enterpriseName] 
 /// * [assignee] 
 /// * [status] 
 /// * [site] 
@@ -51,6 +53,12 @@ abstract class TicketTicketRead implements Built<TicketTicketRead, TicketTicketR
 
   @BuiltValueField(wireName: r'author')
   String get author;
+
+  @BuiltValueField(wireName: r'enterprise')
+  String? get enterprise;
+
+  @BuiltValueField(wireName: r'enterpriseName')
+  String? get enterpriseName;
 
   @BuiltValueField(wireName: r'assignee')
   String? get assignee;
@@ -148,6 +156,20 @@ class _$TicketTicketReadSerializer implements PrimitiveSerializer<TicketTicketRe
       object.author,
       specifiedType: const FullType(String),
     );
+    if (object.enterprise != null) {
+      yield r'enterprise';
+      yield serializers.serialize(
+        object.enterprise,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.enterpriseName != null) {
+      yield r'enterpriseName';
+      yield serializers.serialize(
+        object.enterpriseName,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.assignee != null) {
       yield r'assignee';
       yield serializers.serialize(
@@ -292,6 +314,20 @@ class _$TicketTicketReadSerializer implements PrimitiveSerializer<TicketTicketRe
             specifiedType: const FullType(String),
           ) as String;
           result.author = valueDes;
+          break;
+        case r'enterprise':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterprise = valueDes;
+          break;
+        case r'enterpriseName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterpriseName = valueDes;
           break;
         case r'assignee':
           final valueDes = serializers.deserialize(

@@ -14,6 +14,7 @@ import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collecti
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/comment_tsv_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error.dart';

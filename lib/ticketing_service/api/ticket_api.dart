@@ -18,6 +18,7 @@ import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write_json_merge_patch.dart';
+import 'package:so_dart_sdk/ticketing_service/model/ticket_tsv_ticket_read.dart';
 
 class TicketApi {
 
@@ -122,6 +123,7 @@ class TicketApi {
   /// * [priority] - 
   /// * [priorityLeftSquareBracketRightSquareBracket] - 
   /// * [metadataLeftSquareBracketTypeRightSquareBracket] - JSON metadata partial search. example: metadata[type]=finance
+  /// * [enterprise] - Ticket enterprise
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -169,6 +171,7 @@ class TicketApi {
     String? priority,
     BuiltList<String>? priorityLeftSquareBracketRightSquareBracket,
     String? metadataLeftSquareBracketTypeRightSquareBracket,
+    String? enterprise,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -234,6 +237,7 @@ class TicketApi {
       if (priority != null) r'priority': encodeQueryParameter(_serializers, priority, const FullType(String)),
       if (priorityLeftSquareBracketRightSquareBracket != null) r'priority[]': encodeCollectionQueryParameter<String>(_serializers, priorityLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (metadataLeftSquareBracketTypeRightSquareBracket != null) r'metadata[type]': encodeQueryParameter(_serializers, metadataLeftSquareBracketTypeRightSquareBracket, const FullType(String)),
+      if (enterprise != null) r'enterprise': encodeQueryParameter(_serializers, enterprise, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

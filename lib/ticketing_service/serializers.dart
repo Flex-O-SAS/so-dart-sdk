@@ -21,10 +21,12 @@ import 'package:so_dart_sdk/ticketing_service/model/api_tickets_get_collection20
 import 'package:so_dart_sdk/ticketing_service/model/attachment_jsonld_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/attachment_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/attachment_ticket_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/attachment_tsv_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/comment_tsv_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation_violations_inner.dart';
@@ -43,14 +45,17 @@ import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_read
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_ticket_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/linked_user_tsv_linked_user_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_tag_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_tag_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_tag_write_json_merge_patch.dart';
+import 'package:so_dart_sdk/ticketing_service/model/tag_tsv_tag_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write_json_merge_patch.dart';
+import 'package:so_dart_sdk/ticketing_service/model/ticket_tsv_ticket_read.dart';
 
 part 'serializers.g.dart';
 
@@ -62,10 +67,12 @@ part 'serializers.g.dart';
   AttachmentJsonldTicketRead,
   AttachmentTicketRead,
   AttachmentTicketWrite,
+  AttachmentTsvTicketRead,
   CommentCommentRead,
   CommentCommentWrite,
   CommentCommentWriteJsonMergePatch,
   CommentJsonldCommentRead,
+  CommentTsvCommentRead,
   ConstraintViolation,
   ConstraintViolationJsonld,
   ConstraintViolationViolationsInner,
@@ -84,14 +91,17 @@ part 'serializers.g.dart';
   LinkedUserLinkedUserWrite,
   LinkedUserLinkedUserWriteJsonMergePatch,
   LinkedUserTicketWrite,
+  LinkedUserTsvLinkedUserRead,
   TagJsonldTagRead,
   TagTagRead,
   TagTagWrite,
   TagTagWriteJsonMergePatch,
+  TagTsvTagRead,
   TicketJsonldTicketRead,
   TicketTicketRead,
   TicketTicketWrite,
   TicketTicketWriteJsonMergePatch,
+  TicketTsvTicketRead,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(

@@ -9,9 +9,15 @@ part of 'constraint_violation_violations_inner.dart';
 class _$ConstraintViolationViolationsInner
     extends ConstraintViolationViolationsInner {
   @override
-  final String? propertyPath;
+  final String propertyPath;
   @override
-  final String? message;
+  final String message;
+  @override
+  final String? code;
+  @override
+  final String? hint;
+  @override
+  final BuiltMap<String, JsonObject?>? payload;
 
   factory _$ConstraintViolationViolationsInner(
           [void Function(ConstraintViolationViolationsInnerBuilder)?
@@ -19,8 +25,18 @@ class _$ConstraintViolationViolationsInner
       (new ConstraintViolationViolationsInnerBuilder()..update(updates))
           ._build();
 
-  _$ConstraintViolationViolationsInner._({this.propertyPath, this.message})
-      : super._();
+  _$ConstraintViolationViolationsInner._(
+      {required this.propertyPath,
+      required this.message,
+      this.code,
+      this.hint,
+      this.payload})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        propertyPath, r'ConstraintViolationViolationsInner', 'propertyPath');
+    BuiltValueNullFieldError.checkNotNull(
+        message, r'ConstraintViolationViolationsInner', 'message');
+  }
 
   @override
   ConstraintViolationViolationsInner rebuild(
@@ -36,7 +52,10 @@ class _$ConstraintViolationViolationsInner
     if (identical(other, this)) return true;
     return other is ConstraintViolationViolationsInner &&
         propertyPath == other.propertyPath &&
-        message == other.message;
+        message == other.message &&
+        code == other.code &&
+        hint == other.hint &&
+        payload == other.payload;
   }
 
   @override
@@ -44,6 +63,9 @@ class _$ConstraintViolationViolationsInner
     var _$hash = 0;
     _$hash = $jc(_$hash, propertyPath.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, hint.hashCode);
+    _$hash = $jc(_$hash, payload.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -52,7 +74,10 @@ class _$ConstraintViolationViolationsInner
   String toString() {
     return (newBuiltValueToStringHelper(r'ConstraintViolationViolationsInner')
           ..add('propertyPath', propertyPath)
-          ..add('message', message))
+          ..add('message', message)
+          ..add('code', code)
+          ..add('hint', hint)
+          ..add('payload', payload))
         .toString();
   }
 }
@@ -71,6 +96,20 @@ class ConstraintViolationViolationsInnerBuilder
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
+  String? _code;
+  String? get code => _$this._code;
+  set code(String? code) => _$this._code = code;
+
+  String? _hint;
+  String? get hint => _$this._hint;
+  set hint(String? hint) => _$this._hint = hint;
+
+  MapBuilder<String, JsonObject?>? _payload;
+  MapBuilder<String, JsonObject?> get payload =>
+      _$this._payload ??= new MapBuilder<String, JsonObject?>();
+  set payload(MapBuilder<String, JsonObject?>? payload) =>
+      _$this._payload = payload;
+
   ConstraintViolationViolationsInnerBuilder() {
     ConstraintViolationViolationsInner._defaults(this);
   }
@@ -80,6 +119,9 @@ class ConstraintViolationViolationsInnerBuilder
     if ($v != null) {
       _propertyPath = $v.propertyPath;
       _message = $v.message;
+      _code = $v.code;
+      _hint = $v.hint;
+      _payload = $v.payload?.toBuilder();
       _$v = null;
     }
     return this;
@@ -101,11 +143,29 @@ class ConstraintViolationViolationsInnerBuilder
   ConstraintViolationViolationsInner build() => _build();
 
   _$ConstraintViolationViolationsInner _build() {
-    final _$result = _$v ??
-        new _$ConstraintViolationViolationsInner._(
-          propertyPath: propertyPath,
-          message: message,
-        );
+    _$ConstraintViolationViolationsInner _$result;
+    try {
+      _$result = _$v ??
+          new _$ConstraintViolationViolationsInner._(
+            propertyPath: BuiltValueNullFieldError.checkNotNull(propertyPath,
+                r'ConstraintViolationViolationsInner', 'propertyPath'),
+            message: BuiltValueNullFieldError.checkNotNull(
+                message, r'ConstraintViolationViolationsInner', 'message'),
+            code: code,
+            hint: hint,
+            payload: _payload?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'payload';
+        _payload?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'ConstraintViolationViolationsInner', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

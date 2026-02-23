@@ -14,6 +14,8 @@ part 'reservation_reservation_write.g.dart';
 /// Properties:
 /// * [item] 
 /// * [author] 
+/// * [enterprise] 
+/// * [enterpriseName] 
 /// * [description] 
 /// * [quantity] 
 /// * [date] 
@@ -25,6 +27,12 @@ abstract class ReservationReservationWrite implements Built<ReservationReservati
 
   @BuiltValueField(wireName: r'author')
   String get author;
+
+  @BuiltValueField(wireName: r'enterprise')
+  String? get enterprise;
+
+  @BuiltValueField(wireName: r'enterpriseName')
+  String? get enterpriseName;
 
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -72,6 +80,20 @@ class _$ReservationReservationWriteSerializer implements PrimitiveSerializer<Res
       object.author,
       specifiedType: const FullType(String),
     );
+    if (object.enterprise != null) {
+      yield r'enterprise';
+      yield serializers.serialize(
+        object.enterprise,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.enterpriseName != null) {
+      yield r'enterpriseName';
+      yield serializers.serialize(
+        object.enterpriseName,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -130,6 +152,20 @@ class _$ReservationReservationWriteSerializer implements PrimitiveSerializer<Res
             specifiedType: const FullType(String),
           ) as String;
           result.author = valueDes;
+          break;
+        case r'enterprise':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterprise = valueDes;
+          break;
+        case r'enterpriseName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.enterpriseName = valueDes;
           break;
         case r'description':
           final valueDes = serializers.deserialize(

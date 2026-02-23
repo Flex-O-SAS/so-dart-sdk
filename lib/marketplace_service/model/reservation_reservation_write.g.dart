@@ -83,6 +83,10 @@ class _$ReservationReservationWrite extends ReservationReservationWrite {
   @override
   final String author;
   @override
+  final String? enterprise;
+  @override
+  final String? enterpriseName;
+  @override
   final String? description;
   @override
   final int quantity;
@@ -98,6 +102,8 @@ class _$ReservationReservationWrite extends ReservationReservationWrite {
   _$ReservationReservationWrite._(
       {required this.item,
       required this.author,
+      this.enterprise,
+      this.enterpriseName,
       this.description,
       required this.quantity,
       required this.date,
@@ -130,6 +136,8 @@ class _$ReservationReservationWrite extends ReservationReservationWrite {
     return other is ReservationReservationWrite &&
         item == other.item &&
         author == other.author &&
+        enterprise == other.enterprise &&
+        enterpriseName == other.enterpriseName &&
         description == other.description &&
         quantity == other.quantity &&
         date == other.date &&
@@ -141,6 +149,8 @@ class _$ReservationReservationWrite extends ReservationReservationWrite {
     var _$hash = 0;
     _$hash = $jc(_$hash, item.hashCode);
     _$hash = $jc(_$hash, author.hashCode);
+    _$hash = $jc(_$hash, enterprise.hashCode);
+    _$hash = $jc(_$hash, enterpriseName.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, quantity.hashCode);
     _$hash = $jc(_$hash, date.hashCode);
@@ -154,6 +164,8 @@ class _$ReservationReservationWrite extends ReservationReservationWrite {
     return (newBuiltValueToStringHelper(r'ReservationReservationWrite')
           ..add('item', item)
           ..add('author', author)
+          ..add('enterprise', enterprise)
+          ..add('enterpriseName', enterpriseName)
           ..add('description', description)
           ..add('quantity', quantity)
           ..add('date', date)
@@ -175,6 +187,15 @@ class ReservationReservationWriteBuilder
   String? _author;
   String? get author => _$this._author;
   set author(String? author) => _$this._author = author;
+
+  String? _enterprise;
+  String? get enterprise => _$this._enterprise;
+  set enterprise(String? enterprise) => _$this._enterprise = enterprise;
+
+  String? _enterpriseName;
+  String? get enterpriseName => _$this._enterpriseName;
+  set enterpriseName(String? enterpriseName) =>
+      _$this._enterpriseName = enterpriseName;
 
   String? _description;
   String? get description => _$this._description;
@@ -204,6 +225,8 @@ class ReservationReservationWriteBuilder
     if ($v != null) {
       _item = $v.item;
       _author = $v.author;
+      _enterprise = $v.enterprise;
+      _enterpriseName = $v.enterpriseName;
       _description = $v.description;
       _quantity = $v.quantity;
       _date = $v.date;
@@ -234,6 +257,8 @@ class ReservationReservationWriteBuilder
               item, r'ReservationReservationWrite', 'item'),
           author: BuiltValueNullFieldError.checkNotNull(
               author, r'ReservationReservationWrite', 'author'),
+          enterprise: enterprise,
+          enterpriseName: enterpriseName,
           description: description,
           quantity: BuiltValueNullFieldError.checkNotNull(
               quantity, r'ReservationReservationWrite', 'quantity'),

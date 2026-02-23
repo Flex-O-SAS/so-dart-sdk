@@ -52,6 +52,8 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
   @override
   final String? ticketingUrl;
   @override
+  final String? agentUrl;
+  @override
   final String? growthbookCustomerApiKey;
   @override
   final String? customer;
@@ -92,6 +94,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
       this.managerUrl,
       this.company,
       this.ticketingUrl,
+      this.agentUrl,
       this.growthbookCustomerApiKey,
       this.customer,
       this.atContext,
@@ -140,6 +143,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
         managerUrl == other.managerUrl &&
         company == other.company &&
         ticketingUrl == other.ticketingUrl &&
+        agentUrl == other.agentUrl &&
         growthbookCustomerApiKey == other.growthbookCustomerApiKey &&
         customer == other.customer &&
         atContext == other.atContext &&
@@ -171,6 +175,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
     _$hash = $jc(_$hash, managerUrl.hashCode);
     _$hash = $jc(_$hash, company.hashCode);
     _$hash = $jc(_$hash, ticketingUrl.hashCode);
+    _$hash = $jc(_$hash, agentUrl.hashCode);
     _$hash = $jc(_$hash, growthbookCustomerApiKey.hashCode);
     _$hash = $jc(_$hash, customer.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
@@ -205,6 +210,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
           ..add('managerUrl', managerUrl)
           ..add('company', company)
           ..add('ticketingUrl', ticketingUrl)
+          ..add('agentUrl', agentUrl)
           ..add('growthbookCustomerApiKey', growthbookCustomerApiKey)
           ..add('customer', customer)
           ..add('atContext', atContext)
@@ -328,6 +334,10 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
   set ticketingUrl(covariant String? ticketingUrl) =>
       _$this._ticketingUrl = ticketingUrl;
 
+  String? _agentUrl;
+  String? get agentUrl => _$this._agentUrl;
+  set agentUrl(covariant String? agentUrl) => _$this._agentUrl = agentUrl;
+
   String? _growthbookCustomerApiKey;
   String? get growthbookCustomerApiKey => _$this._growthbookCustomerApiKey;
   set growthbookCustomerApiKey(covariant String? growthbookCustomerApiKey) =>
@@ -379,6 +389,7 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
       _managerUrl = $v.managerUrl;
       _company = $v.company;
       _ticketingUrl = $v.ticketingUrl;
+      _agentUrl = $v.agentUrl;
       _growthbookCustomerApiKey = $v.growthbookCustomerApiKey;
       _customer = $v.customer;
       _atContext = $v.atContext?.toBuilder();
@@ -432,6 +443,7 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
             managerUrl: managerUrl,
             company: company,
             ticketingUrl: ticketingUrl,
+            agentUrl: agentUrl,
             growthbookCustomerApiKey: growthbookCustomerApiKey,
             customer: customer,
             atContext: _atContext?.build(),

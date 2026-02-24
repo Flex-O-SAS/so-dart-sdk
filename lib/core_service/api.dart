@@ -13,6 +13,7 @@ import 'package:so_dart_sdk/core_service/api/branding_setting_api.dart';
 import 'package:so_dart_sdk/core_service/api/device_api.dart';
 import 'package:so_dart_sdk/core_service/api/discovery_api.dart';
 import 'package:so_dart_sdk/core_service/api/notification_api.dart';
+import 'package:so_dart_sdk/core_service/api/point_of_interest_api.dart';
 import 'package:so_dart_sdk/core_service/api/subscriber_api.dart';
 
 class SoDartSdk {
@@ -91,6 +92,12 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   NotificationApi getNotificationApi() {
     return NotificationApi(dio, serializers);
+  }
+
+  /// Get PointOfInterestApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  PointOfInterestApi getPointOfInterestApi() {
+    return PointOfInterestApi(dio, serializers);
   }
 
   /// Get SubscriberApi instance, base route and serializer can be overridden by a given but be careful,

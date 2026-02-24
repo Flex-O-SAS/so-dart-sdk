@@ -18,6 +18,8 @@ import 'package:so_dart_sdk/corporate/model/api_appointment_client_get_collectio
 import 'package:so_dart_sdk/corporate/model/api_appointments_get_collection200_response.dart';
 import 'package:so_dart_sdk/corporate/model/api_client_relation_get_collection200_response.dart';
 import 'package:so_dart_sdk/corporate/model/api_packages_get_collection200_response.dart';
+import 'package:so_dart_sdk/corporate/model/api_round_get_collection200_response.dart';
+import 'package:so_dart_sdk/corporate/model/api_step_get_collection200_response.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_appointment_client_signed_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_appointment_read.dart';
 import 'package:so_dart_sdk/corporate/model/appointment_appointment_write.dart';
@@ -61,6 +63,16 @@ import 'package:so_dart_sdk/corporate/model/package_package_read.dart';
 import 'package:so_dart_sdk/corporate/model/package_package_write.dart';
 import 'package:so_dart_sdk/corporate/model/package_package_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/corporate/model/package_tsv_package_read.dart';
+import 'package:so_dart_sdk/corporate/model/round_jsonld_round_read.dart';
+import 'package:so_dart_sdk/corporate/model/round_round_read.dart';
+import 'package:so_dart_sdk/corporate/model/round_round_write.dart';
+import 'package:so_dart_sdk/corporate/model/round_round_write_json_merge_patch.dart';
+import 'package:so_dart_sdk/corporate/model/round_tsv_round_read.dart';
+import 'package:so_dart_sdk/corporate/model/step_jsonld_step_read.dart';
+import 'package:so_dart_sdk/corporate/model/step_step_read.dart';
+import 'package:so_dart_sdk/corporate/model/step_step_write.dart';
+import 'package:so_dart_sdk/corporate/model/step_step_write_json_merge_patch.dart';
+import 'package:so_dart_sdk/corporate/model/step_tsv_step_read.dart';
 
 part 'serializers.g.dart';
 
@@ -69,6 +81,8 @@ part 'serializers.g.dart';
   ApiAppointmentsGetCollection200Response,
   ApiClientRelationGetCollection200Response,
   ApiPackagesGetCollection200Response,
+  ApiRoundGetCollection200Response,
+  ApiStepGetCollection200Response,
   AppointmentAppointmentClientSignedRead,
   AppointmentAppointmentRead,
   AppointmentAppointmentWrite,
@@ -112,6 +126,16 @@ part 'serializers.g.dart';
   PackagePackageWrite,
   PackagePackageWriteJsonMergePatch,
   PackageTsvPackageRead,
+  RoundJsonldRoundRead,
+  RoundRoundRead,
+  RoundRoundWrite,
+  RoundRoundWriteJsonMergePatch,
+  RoundTsvRoundRead,
+  StepJsonldStepRead,
+  StepStepRead,
+  StepStepWrite,
+  StepStepWriteJsonMergePatch,
+  StepTsvStepRead,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(

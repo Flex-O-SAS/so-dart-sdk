@@ -17,7 +17,7 @@ class _$ConstraintViolationViolationsInner
   @override
   final String? hint;
   @override
-  final BuiltList<JsonObject?>? payload;
+  final BuiltMap<String, JsonObject?>? payload;
 
   factory _$ConstraintViolationViolationsInner(
           [void Function(ConstraintViolationViolationsInnerBuilder)?
@@ -104,10 +104,11 @@ class ConstraintViolationViolationsInnerBuilder
   String? get hint => _$this._hint;
   set hint(String? hint) => _$this._hint = hint;
 
-  ListBuilder<JsonObject?>? _payload;
-  ListBuilder<JsonObject?> get payload =>
-      _$this._payload ??= new ListBuilder<JsonObject?>();
-  set payload(ListBuilder<JsonObject?>? payload) => _$this._payload = payload;
+  MapBuilder<String, JsonObject?>? _payload;
+  MapBuilder<String, JsonObject?> get payload =>
+      _$this._payload ??= new MapBuilder<String, JsonObject?>();
+  set payload(MapBuilder<String, JsonObject?>? payload) =>
+      _$this._payload = payload;
 
   ConstraintViolationViolationsInnerBuilder() {
     ConstraintViolationViolationsInner._defaults(this);

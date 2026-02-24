@@ -14,6 +14,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiAppointmentsGetCollection200Response.serializer)
       ..add(ApiClientRelationGetCollection200Response.serializer)
       ..add(ApiPackagesGetCollection200Response.serializer)
+      ..add(ApiRoundGetCollection200Response.serializer)
+      ..add(ApiStepGetCollection200Response.serializer)
       ..add(AppointmentAppointmentClientSignedRead.serializer)
       ..add(AppointmentAppointmentClientSignedReadStatusEnum.serializer)
       ..add(AppointmentAppointmentClientSignedReadTypeEnum.serializer)
@@ -104,6 +106,21 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(PackageTsvPackageRead.serializer)
       ..add(PackageTsvPackageReadStatusEnum.serializer)
       ..add(PackageTsvPackageReadTypeEnum.serializer)
+      ..add(RoundJsonldRoundRead.serializer)
+      ..add(RoundRoundRead.serializer)
+      ..add(RoundRoundWrite.serializer)
+      ..add(RoundRoundWriteJsonMergePatch.serializer)
+      ..add(RoundTsvRoundRead.serializer)
+      ..add(StepJsonldStepRead.serializer)
+      ..add(StepJsonldStepReadTypeEnum.serializer)
+      ..add(StepStepRead.serializer)
+      ..add(StepStepReadTypeEnum.serializer)
+      ..add(StepStepWrite.serializer)
+      ..add(StepStepWriteJsonMergePatch.serializer)
+      ..add(StepStepWriteJsonMergePatchTypeEnum.serializer)
+      ..add(StepStepWriteTypeEnum.serializer)
+      ..add(StepTsvStepRead.serializer)
+      ..add(StepTsvStepReadTypeEnum.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(AppointmentClientAppointmentRead)]),
@@ -156,6 +173,28 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(PackageJsonldPackageRead)]),
           () => new ListBuilder<PackageJsonldPackageRead>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(RoundJsonldRoundRead)]),
+          () => new ListBuilder<RoundJsonldRoundRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(StepJsonldStepRead)]),
+          () => new ListBuilder<StepJsonldStepRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltMap, const [
             const FullType(String),

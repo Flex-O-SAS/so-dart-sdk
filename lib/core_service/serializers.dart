@@ -17,6 +17,7 @@ import 'package:so_dart_sdk/core_service/model/date.dart';
 import 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/api_notifications_get_collection200_response.dart';
+import 'package:so_dart_sdk/core_service/model/api_point_of_interest_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/api_subscribers_get_collection200_response.dart';
 import 'package:so_dart_sdk/core_service/model/branding_setting_branding_setting_write.dart';
 import 'package:so_dart_sdk/core_service/model/branding_setting_branding_setting_write_json_merge_patch.dart';
@@ -43,6 +44,9 @@ import 'package:so_dart_sdk/core_service/model/identity_dto_jsonld_notification_
 import 'package:so_dart_sdk/core_service/model/identity_dto_notification_write.dart';
 import 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';
 import 'package:so_dart_sdk/core_service/model/notification_notification_dto_notification_write.dart';
+import 'package:so_dart_sdk/core_service/model/point_of_interest_jsonld_poi_read.dart';
+import 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write.dart';
+import 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write_point.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_subscriber_write.dart';
 
@@ -52,6 +56,7 @@ part 'serializers.g.dart';
   ApiBrandingGetCollection200Response,
   ApiDevicesGetCollection200Response,
   ApiNotificationsGetCollection200Response,
+  ApiPointOfInterestGetCollection200Response,
   ApiSubscribersGetCollection200Response,
   BrandingSettingBrandingSettingWrite,
   BrandingSettingBrandingSettingWriteJsonMergePatch,
@@ -78,6 +83,9 @@ part 'serializers.g.dart';
   IdentityDtoNotificationWrite,
   NotificationJsonldNotificationRead,
   NotificationNotificationDtoNotificationWrite,
+  PointOfInterestJsonldPoiRead,
+  PointOfInterestPoiWrite,
+  PointOfInterestPoiWritePoint,
   SubscriberJsonldSubscriberRead,
   SubscriberSubscriberWrite,
 ])

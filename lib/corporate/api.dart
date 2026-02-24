@@ -13,6 +13,8 @@ import 'package:so_dart_sdk/corporate/api/appointment_api.dart';
 import 'package:so_dart_sdk/corporate/api/appointment_client_api.dart';
 import 'package:so_dart_sdk/corporate/api/client_relation_api.dart';
 import 'package:so_dart_sdk/corporate/api/package_api.dart';
+import 'package:so_dart_sdk/corporate/api/round_api.dart';
+import 'package:so_dart_sdk/corporate/api/step_api.dart';
 
 class SoDartSdk {
   static const String basePath = r'http://localhost';
@@ -90,5 +92,17 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   PackageApi getPackageApi() {
     return PackageApi(dio, serializers);
+  }
+
+  /// Get RoundApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  RoundApi getRoundApi() {
+    return RoundApi(dio, serializers);
+  }
+
+  /// Get StepApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  StepApi getStepApi() {
+    return StepApi(dio, serializers);
   }
 }

@@ -13,6 +13,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiBrandingGetCollection200Response.serializer)
       ..add(ApiDevicesGetCollection200Response.serializer)
       ..add(ApiNotificationsGetCollection200Response.serializer)
+      ..add(ApiPointOfInterestGetCollection200Response.serializer)
       ..add(ApiSubscribersGetCollection200Response.serializer)
       ..add(BrandingSettingBrandingSettingWrite.serializer)
       ..add(BrandingSettingBrandingSettingWriteJsonMergePatch.serializer)
@@ -50,6 +51,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(NotificationJsonldNotificationReadTypeEnum.serializer)
       ..add(NotificationNotificationDtoNotificationWrite.serializer)
       ..add(NotificationNotificationDtoNotificationWriteTypeEnum.serializer)
+      ..add(PointOfInterestJsonldPoiRead.serializer)
+      ..add(PointOfInterestPoiWrite.serializer)
+      ..add(PointOfInterestPoiWritePoint.serializer)
       ..add(SubscriberJsonldSubscriberRead.serializer)
       ..add(SubscriberSubscriberWrite.serializer)
       ..addBuilderFactory(
@@ -84,6 +88,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(NotificationJsonldNotificationRead)]),
           () => new ListBuilder<NotificationJsonldNotificationRead>())
       ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(PointOfInterestJsonldPoiRead)]),
+          () => new ListBuilder<PointOfInterestJsonldPoiRead>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
@@ -99,10 +107,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<SubscriberJsonldSubscriberRead>())
       ..addBuilderFactory(
           const FullType(
-              BuiltList, const [const FullType.nullable(JsonObject)]),
-          () => new ListBuilder<JsonObject?>())
-      ..addBuilderFactory(
-          const FullType(
               BuiltMap, const [const FullType(String), const FullType(String)]),
           () => new MapBuilder<String, String>())
       ..addBuilderFactory(
@@ -112,7 +116,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(DataPartDtoNotificationWrite)]),
-          () => new ListBuilder<DataPartDtoNotificationWrite>()))
+          () => new ListBuilder<DataPartDtoNotificationWrite>())
+      ..addBuilderFactory(
+          const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType.nullable(JsonObject)
+          ]),
+          () => new MapBuilder<String, JsonObject?>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

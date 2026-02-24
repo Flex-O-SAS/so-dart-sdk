@@ -38,7 +38,7 @@ abstract class ConstraintViolationViolationsInner implements Built<ConstraintVio
 
   /// The serialized payload of the violation
   @BuiltValueField(wireName: r'payload')
-  BuiltList<JsonObject?>? get payload;
+  BuiltMap<String, JsonObject?>? get payload;
 
   ConstraintViolationViolationsInner._();
 
@@ -91,7 +91,7 @@ class _$ConstraintViolationViolationsInnerSerializer implements PrimitiveSeriali
       yield r'payload';
       yield serializers.serialize(
         object.payload,
-        specifiedType: const FullType(BuiltList, [FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
       );
     }
   }
@@ -148,8 +148,8 @@ class _$ConstraintViolationViolationsInnerSerializer implements PrimitiveSeriali
         case r'payload':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType.nullable(JsonObject)]),
-          ) as BuiltList<JsonObject?>;
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+          ) as BuiltMap<String, JsonObject?>;
           result.payload.replace(valueDes);
           break;
         default:

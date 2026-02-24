@@ -707,11 +707,15 @@ export 'package:so_dart_sdk/corporate/api/appointment_api.dart';
 export 'package:so_dart_sdk/corporate/api/appointment_client_api.dart';
 export 'package:so_dart_sdk/corporate/api/client_relation_api.dart';
 export 'package:so_dart_sdk/corporate/api/package_api.dart';
+export 'package:so_dart_sdk/corporate/api/round_api.dart';
+export 'package:so_dart_sdk/corporate/api/step_api.dart';
 
 export 'package:so_dart_sdk/corporate/model/api_appointment_client_get_collection200_response.dart';
 export 'package:so_dart_sdk/corporate/model/api_appointments_get_collection200_response.dart';
 export 'package:so_dart_sdk/corporate/model/api_client_relation_get_collection200_response.dart';
 export 'package:so_dart_sdk/corporate/model/api_packages_get_collection200_response.dart';
+export 'package:so_dart_sdk/corporate/model/api_round_get_collection200_response.dart';
+export 'package:so_dart_sdk/corporate/model/api_step_get_collection200_response.dart';
 export 'package:so_dart_sdk/corporate/model/appointment_appointment_client_signed_read.dart';
 export 'package:so_dart_sdk/corporate/model/appointment_appointment_read.dart';
 export 'package:so_dart_sdk/corporate/model/appointment_appointment_write.dart';
@@ -755,6 +759,16 @@ export 'package:so_dart_sdk/corporate/model/package_package_read.dart';
 export 'package:so_dart_sdk/corporate/model/package_package_write.dart';
 export 'package:so_dart_sdk/corporate/model/package_package_write_json_merge_patch.dart';
 export 'package:so_dart_sdk/corporate/model/package_tsv_package_read.dart';
+export 'package:so_dart_sdk/corporate/model/round_jsonld_round_read.dart';
+export 'package:so_dart_sdk/corporate/model/round_round_read.dart';
+export 'package:so_dart_sdk/corporate/model/round_round_write.dart';
+export 'package:so_dart_sdk/corporate/model/round_round_write_json_merge_patch.dart';
+export 'package:so_dart_sdk/corporate/model/round_tsv_round_read.dart';
+export 'package:so_dart_sdk/corporate/model/step_jsonld_step_read.dart';
+export 'package:so_dart_sdk/corporate/model/step_step_read.dart';
+export 'package:so_dart_sdk/corporate/model/step_step_write.dart';
+export 'package:so_dart_sdk/corporate/model/step_step_write_json_merge_patch.dart';
+export 'package:so_dart_sdk/corporate/model/step_tsv_step_read.dart';
 
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
@@ -806,11 +820,13 @@ export 'package:so_dart_sdk/core_service/api/branding_setting_api.dart';
 export 'package:so_dart_sdk/core_service/api/device_api.dart';
 export 'package:so_dart_sdk/core_service/api/discovery_api.dart';
 export 'package:so_dart_sdk/core_service/api/notification_api.dart';
+export 'package:so_dart_sdk/core_service/api/point_of_interest_api.dart';
 export 'package:so_dart_sdk/core_service/api/subscriber_api.dart';
 
 export 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response.dart';
 export 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
 export 'package:so_dart_sdk/core_service/model/api_notifications_get_collection200_response.dart';
+export 'package:so_dart_sdk/core_service/model/api_point_of_interest_get_collection200_response.dart';
 export 'package:so_dart_sdk/core_service/model/api_subscribers_get_collection200_response.dart';
 export 'package:so_dart_sdk/core_service/model/branding_setting_branding_setting_write.dart';
 export 'package:so_dart_sdk/core_service/model/branding_setting_branding_setting_write_json_merge_patch.dart';
@@ -837,6 +853,9 @@ export 'package:so_dart_sdk/core_service/model/identity_dto_jsonld_notification_
 export 'package:so_dart_sdk/core_service/model/identity_dto_notification_write.dart';
 export 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';
 export 'package:so_dart_sdk/core_service/model/notification_notification_dto_notification_write.dart';
+export 'package:so_dart_sdk/core_service/model/point_of_interest_jsonld_poi_read.dart';
+export 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write.dart';
+export 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write_point.dart';
 export 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
 export 'package:so_dart_sdk/core_service/model/subscriber_subscriber_write.dart';
 

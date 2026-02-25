@@ -16,7 +16,7 @@ for service in "${services[@]}"
 do
     git clone --depth 1 git@github.com:Flex-O-SAS/${service}.git "${cwd}/services/${service}"
     cd "${cwd}/services/${service}"
-    composer install --no-scripts
+    composer install --no-scripts --ignore-platform-req=php
     php -d memory_limit=-1 bin/console api:openapi:export --spec-version "3" --output "${cwd}/services/${service}/openapi.json"
 
     if [ "$service" != "connect" ]; then

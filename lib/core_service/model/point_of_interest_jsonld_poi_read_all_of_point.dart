@@ -7,42 +7,42 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'point_of_interest_poi_write_point.g.dart';
+part 'point_of_interest_jsonld_poi_read_all_of_point.g.dart';
 
-/// PointOfInterestPoiWritePoint
+/// PointOfInterestJsonldPoiReadAllOfPoint
 ///
 /// Properties:
 /// * [latitude] 
 /// * [longitude] 
 @BuiltValue()
-abstract class PointOfInterestPoiWritePoint implements Built<PointOfInterestPoiWritePoint, PointOfInterestPoiWritePointBuilder> {
+abstract class PointOfInterestJsonldPoiReadAllOfPoint implements Built<PointOfInterestJsonldPoiReadAllOfPoint, PointOfInterestJsonldPoiReadAllOfPointBuilder> {
   @BuiltValueField(wireName: r'latitude')
   JsonObject? get latitude;
 
   @BuiltValueField(wireName: r'longitude')
   JsonObject? get longitude;
 
-  PointOfInterestPoiWritePoint._();
+  PointOfInterestJsonldPoiReadAllOfPoint._();
 
-  factory PointOfInterestPoiWritePoint([void updates(PointOfInterestPoiWritePointBuilder b)]) = _$PointOfInterestPoiWritePoint;
+  factory PointOfInterestJsonldPoiReadAllOfPoint([void updates(PointOfInterestJsonldPoiReadAllOfPointBuilder b)]) = _$PointOfInterestJsonldPoiReadAllOfPoint;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PointOfInterestPoiWritePointBuilder b) => b;
+  static void _defaults(PointOfInterestJsonldPoiReadAllOfPointBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<PointOfInterestPoiWritePoint> get serializer => _$PointOfInterestPoiWritePointSerializer();
+  static Serializer<PointOfInterestJsonldPoiReadAllOfPoint> get serializer => _$PointOfInterestJsonldPoiReadAllOfPointSerializer();
 }
 
-class _$PointOfInterestPoiWritePointSerializer implements PrimitiveSerializer<PointOfInterestPoiWritePoint> {
+class _$PointOfInterestJsonldPoiReadAllOfPointSerializer implements PrimitiveSerializer<PointOfInterestJsonldPoiReadAllOfPoint> {
   @override
-  final Iterable<Type> types = const [PointOfInterestPoiWritePoint, _$PointOfInterestPoiWritePoint];
+  final Iterable<Type> types = const [PointOfInterestJsonldPoiReadAllOfPoint, _$PointOfInterestJsonldPoiReadAllOfPoint];
 
   @override
-  final String wireName = r'PointOfInterestPoiWritePoint';
+  final String wireName = r'PointOfInterestJsonldPoiReadAllOfPoint';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    PointOfInterestPoiWritePoint object, {
+    PointOfInterestJsonldPoiReadAllOfPoint object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'latitude';
@@ -60,7 +60,7 @@ class _$PointOfInterestPoiWritePointSerializer implements PrimitiveSerializer<Po
   @override
   Object serialize(
     Serializers serializers,
-    PointOfInterestPoiWritePoint object, {
+    PointOfInterestJsonldPoiReadAllOfPoint object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -71,7 +71,7 @@ class _$PointOfInterestPoiWritePointSerializer implements PrimitiveSerializer<Po
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required PointOfInterestPoiWritePointBuilder result,
+    required PointOfInterestJsonldPoiReadAllOfPointBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -103,12 +103,12 @@ class _$PointOfInterestPoiWritePointSerializer implements PrimitiveSerializer<Po
   }
 
   @override
-  PointOfInterestPoiWritePoint deserialize(
+  PointOfInterestJsonldPoiReadAllOfPoint deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = PointOfInterestPoiWritePointBuilder();
+    final result = PointOfInterestJsonldPoiReadAllOfPointBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

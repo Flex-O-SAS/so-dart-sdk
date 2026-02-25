@@ -3,64 +3,63 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'point_of_interest_poi_write_point.g.dart';
+part 'geo_point.g.dart';
 
-/// PointOfInterestPoiWritePoint
+/// GeoPoint
 ///
 /// Properties:
 /// * [latitude] 
 /// * [longitude] 
 @BuiltValue()
-abstract class PointOfInterestPoiWritePoint implements Built<PointOfInterestPoiWritePoint, PointOfInterestPoiWritePointBuilder> {
+abstract class GeoPoint implements Built<GeoPoint, GeoPointBuilder> {
   @BuiltValueField(wireName: r'latitude')
-  JsonObject? get latitude;
+  num get latitude;
 
   @BuiltValueField(wireName: r'longitude')
-  JsonObject? get longitude;
+  num get longitude;
 
-  PointOfInterestPoiWritePoint._();
+  GeoPoint._();
 
-  factory PointOfInterestPoiWritePoint([void updates(PointOfInterestPoiWritePointBuilder b)]) = _$PointOfInterestPoiWritePoint;
+  factory GeoPoint([void updates(GeoPointBuilder b)]) = _$GeoPoint;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PointOfInterestPoiWritePointBuilder b) => b;
+  static void _defaults(GeoPointBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<PointOfInterestPoiWritePoint> get serializer => _$PointOfInterestPoiWritePointSerializer();
+  static Serializer<GeoPoint> get serializer => _$GeoPointSerializer();
 }
 
-class _$PointOfInterestPoiWritePointSerializer implements PrimitiveSerializer<PointOfInterestPoiWritePoint> {
+class _$GeoPointSerializer implements PrimitiveSerializer<GeoPoint> {
   @override
-  final Iterable<Type> types = const [PointOfInterestPoiWritePoint, _$PointOfInterestPoiWritePoint];
+  final Iterable<Type> types = const [GeoPoint, _$GeoPoint];
 
   @override
-  final String wireName = r'PointOfInterestPoiWritePoint';
+  final String wireName = r'GeoPoint';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    PointOfInterestPoiWritePoint object, {
+    GeoPoint object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'latitude';
-    yield object.latitude == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.latitude,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(num),
     );
     yield r'longitude';
-    yield object.longitude == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.longitude,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(num),
     );
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    PointOfInterestPoiWritePoint object, {
+    GeoPoint object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -71,7 +70,7 @@ class _$PointOfInterestPoiWritePointSerializer implements PrimitiveSerializer<Po
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required PointOfInterestPoiWritePointBuilder result,
+    required GeoPointBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -81,17 +80,15 @@ class _$PointOfInterestPoiWritePointSerializer implements PrimitiveSerializer<Po
         case r'latitude':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(num),
+          ) as num;
           result.latitude = valueDes;
           break;
         case r'longitude':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(num),
+          ) as num;
           result.longitude = valueDes;
           break;
         default:
@@ -103,12 +100,12 @@ class _$PointOfInterestPoiWritePointSerializer implements PrimitiveSerializer<Po
   }
 
   @override
-  PointOfInterestPoiWritePoint deserialize(
+  GeoPoint deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = PointOfInterestPoiWritePointBuilder();
+    final result = GeoPointBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

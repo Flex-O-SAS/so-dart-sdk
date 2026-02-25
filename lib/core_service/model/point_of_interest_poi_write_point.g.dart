@@ -8,22 +8,15 @@ part of 'point_of_interest_poi_write_point.dart';
 
 class _$PointOfInterestPoiWritePoint extends PointOfInterestPoiWritePoint {
   @override
-  final num latitude;
+  final JsonObject? latitude;
   @override
-  final num longitude;
+  final JsonObject? longitude;
 
   factory _$PointOfInterestPoiWritePoint(
           [void Function(PointOfInterestPoiWritePointBuilder)? updates]) =>
       (new PointOfInterestPoiWritePointBuilder()..update(updates))._build();
 
-  _$PointOfInterestPoiWritePoint._(
-      {required this.latitude, required this.longitude})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        latitude, r'PointOfInterestPoiWritePoint', 'latitude');
-    BuiltValueNullFieldError.checkNotNull(
-        longitude, r'PointOfInterestPoiWritePoint', 'longitude');
-  }
+  _$PointOfInterestPoiWritePoint._({this.latitude, this.longitude}) : super._();
 
   @override
   PointOfInterestPoiWritePoint rebuild(
@@ -66,13 +59,13 @@ class PointOfInterestPoiWritePointBuilder
             PointOfInterestPoiWritePointBuilder> {
   _$PointOfInterestPoiWritePoint? _$v;
 
-  num? _latitude;
-  num? get latitude => _$this._latitude;
-  set latitude(num? latitude) => _$this._latitude = latitude;
+  JsonObject? _latitude;
+  JsonObject? get latitude => _$this._latitude;
+  set latitude(JsonObject? latitude) => _$this._latitude = latitude;
 
-  num? _longitude;
-  num? get longitude => _$this._longitude;
-  set longitude(num? longitude) => _$this._longitude = longitude;
+  JsonObject? _longitude;
+  JsonObject? get longitude => _$this._longitude;
+  set longitude(JsonObject? longitude) => _$this._longitude = longitude;
 
   PointOfInterestPoiWritePointBuilder() {
     PointOfInterestPoiWritePoint._defaults(this);
@@ -105,10 +98,8 @@ class PointOfInterestPoiWritePointBuilder
   _$PointOfInterestPoiWritePoint _build() {
     final _$result = _$v ??
         new _$PointOfInterestPoiWritePoint._(
-          latitude: BuiltValueNullFieldError.checkNotNull(
-              latitude, r'PointOfInterestPoiWritePoint', 'latitude'),
-          longitude: BuiltValueNullFieldError.checkNotNull(
-              longitude, r'PointOfInterestPoiWritePoint', 'longitude'),
+          latitude: latitude,
+          longitude: longitude,
         );
     replace(_$result);
     return _$result;

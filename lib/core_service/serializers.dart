@@ -32,6 +32,7 @@ import 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
 import 'package:so_dart_sdk/core_service/model/discovery_jsonld_discovery_read_branding_setting_read.dart';
 import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/geo_point.dart';
 import 'package:so_dart_sdk/core_service/model/hydra_collection_base_schema.dart';
 import 'package:so_dart_sdk/core_service/model/hydra_collection_base_schema_all_of_view.dart';
 import 'package:so_dart_sdk/core_service/model/hydra_collection_base_schema_no_pagination.dart';
@@ -45,6 +46,7 @@ import 'package:so_dart_sdk/core_service/model/identity_dto_notification_write.d
 import 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';
 import 'package:so_dart_sdk/core_service/model/notification_notification_dto_notification_write.dart';
 import 'package:so_dart_sdk/core_service/model/point_of_interest_jsonld_poi_read.dart';
+import 'package:so_dart_sdk/core_service/model/point_of_interest_jsonld_poi_read_all_of_point.dart';
 import 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write.dart';
 import 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write_point.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
@@ -71,6 +73,7 @@ part 'serializers.g.dart';
   DiscoveryJsonldDiscoveryReadBrandingSettingRead,
   Error,
   ErrorJsonld,
+  GeoPoint,
   HydraCollectionBaseSchema,$HydraCollectionBaseSchema,
   HydraCollectionBaseSchemaAllOfView,
   HydraCollectionBaseSchemaNoPagination,$HydraCollectionBaseSchemaNoPagination,
@@ -84,6 +87,7 @@ part 'serializers.g.dart';
   NotificationJsonldNotificationRead,
   NotificationNotificationDtoNotificationWrite,
   PointOfInterestJsonldPoiRead,
+  PointOfInterestJsonldPoiReadAllOfPoint,
   PointOfInterestPoiWrite,
   PointOfInterestPoiWritePoint,
   SubscriberJsonldSubscriberRead,

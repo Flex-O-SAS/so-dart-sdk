@@ -57,14 +57,7 @@ class BrandingSettingApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'JWT',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -115,14 +108,7 @@ class BrandingSettingApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'JWT',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -204,14 +190,7 @@ class BrandingSettingApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'JWT',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -288,14 +267,7 @@ class BrandingSettingApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'JWT',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       contentType: 'application/merge-patch+json',
@@ -390,14 +362,7 @@ class BrandingSettingApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'JWT',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       contentType: 'application/ld+json',

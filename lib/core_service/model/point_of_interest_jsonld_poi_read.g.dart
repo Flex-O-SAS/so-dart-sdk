@@ -14,7 +14,7 @@ class _$PointOfInterestJsonldPoiRead extends PointOfInterestJsonldPoiRead {
   @override
   final int? floorPlan;
   @override
-  final PointOfInterestPoiWritePoint? point;
+  final PointOfInterestJsonldPoiReadAllOfPoint? point;
   @override
   final HydraItemBaseSchemaContext? atContext;
   @override
@@ -114,10 +114,10 @@ class PointOfInterestJsonldPoiReadBuilder
   int? get floorPlan => _$this._floorPlan;
   set floorPlan(covariant int? floorPlan) => _$this._floorPlan = floorPlan;
 
-  PointOfInterestPoiWritePointBuilder? _point;
-  PointOfInterestPoiWritePointBuilder get point =>
-      _$this._point ??= new PointOfInterestPoiWritePointBuilder();
-  set point(covariant PointOfInterestPoiWritePointBuilder? point) =>
+  PointOfInterestJsonldPoiReadAllOfPointBuilder? _point;
+  PointOfInterestJsonldPoiReadAllOfPointBuilder get point =>
+      _$this._point ??= new PointOfInterestJsonldPoiReadAllOfPointBuilder();
+  set point(covariant PointOfInterestJsonldPoiReadAllOfPointBuilder? point) =>
       _$this._point = point;
 
   HydraItemBaseSchemaContextBuilder? _atContext;

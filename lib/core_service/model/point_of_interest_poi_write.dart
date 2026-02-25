@@ -126,7 +126,7 @@ class _$PointOfInterestPoiWriteSerializer implements PrimitiveSerializer<PointOf
             value,
             specifiedType: const FullType(PointOfInterestPoiWritePoint),
           ) as PointOfInterestPoiWritePoint;
-          result.point = valueDes;
+          result.point.replace(valueDes);
           break;
         default:
           unhandled.add(key);

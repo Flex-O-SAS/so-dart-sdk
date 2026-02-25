@@ -841,6 +841,7 @@ export 'package:so_dart_sdk/core_service/model/device_jsonld_device_read.dart';
 export 'package:so_dart_sdk/core_service/model/discovery_jsonld_discovery_read_branding_setting_read.dart';
 export 'package:so_dart_sdk/core_service/model/error.dart';
 export 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
+export 'package:so_dart_sdk/core_service/model/geo_point.dart';
 export 'package:so_dart_sdk/core_service/model/hydra_collection_base_schema.dart';
 export 'package:so_dart_sdk/core_service/model/hydra_collection_base_schema_all_of_view.dart';
 export 'package:so_dart_sdk/core_service/model/hydra_collection_base_schema_no_pagination.dart';
@@ -854,6 +855,7 @@ export 'package:so_dart_sdk/core_service/model/identity_dto_notification_write.d
 export 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';
 export 'package:so_dart_sdk/core_service/model/notification_notification_dto_notification_write.dart';
 export 'package:so_dart_sdk/core_service/model/point_of_interest_jsonld_poi_read.dart';
+export 'package:so_dart_sdk/core_service/model/point_of_interest_jsonld_poi_read_all_of_point.dart';
 export 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write.dart';
 export 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write_point.dart';
 export 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';

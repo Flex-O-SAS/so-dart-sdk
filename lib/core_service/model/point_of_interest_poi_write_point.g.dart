@@ -8,15 +8,22 @@ part of 'point_of_interest_poi_write_point.dart';
 
 class _$PointOfInterestPoiWritePoint extends PointOfInterestPoiWritePoint {
   @override
-  final JsonObject? latitude;
+  final num latitude;
   @override
-  final JsonObject? longitude;
+  final num longitude;
 
   factory _$PointOfInterestPoiWritePoint(
           [void Function(PointOfInterestPoiWritePointBuilder)? updates]) =>
       (new PointOfInterestPoiWritePointBuilder()..update(updates))._build();
 
-  _$PointOfInterestPoiWritePoint._({this.latitude, this.longitude}) : super._();
+  _$PointOfInterestPoiWritePoint._(
+      {required this.latitude, required this.longitude})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        latitude, r'PointOfInterestPoiWritePoint', 'latitude');
+    BuiltValueNullFieldError.checkNotNull(
+        longitude, r'PointOfInterestPoiWritePoint', 'longitude');
+  }
 
   @override
   PointOfInterestPoiWritePoint rebuild(
@@ -56,16 +63,17 @@ class _$PointOfInterestPoiWritePoint extends PointOfInterestPoiWritePoint {
 class PointOfInterestPoiWritePointBuilder
     implements
         Builder<PointOfInterestPoiWritePoint,
-            PointOfInterestPoiWritePointBuilder> {
+            PointOfInterestPoiWritePointBuilder>,
+        GeoPointBuilder {
   _$PointOfInterestPoiWritePoint? _$v;
 
-  JsonObject? _latitude;
-  JsonObject? get latitude => _$this._latitude;
-  set latitude(JsonObject? latitude) => _$this._latitude = latitude;
+  num? _latitude;
+  num? get latitude => _$this._latitude;
+  set latitude(covariant num? latitude) => _$this._latitude = latitude;
 
-  JsonObject? _longitude;
-  JsonObject? get longitude => _$this._longitude;
-  set longitude(JsonObject? longitude) => _$this._longitude = longitude;
+  num? _longitude;
+  num? get longitude => _$this._longitude;
+  set longitude(covariant num? longitude) => _$this._longitude = longitude;
 
   PointOfInterestPoiWritePointBuilder() {
     PointOfInterestPoiWritePoint._defaults(this);
@@ -82,7 +90,7 @@ class PointOfInterestPoiWritePointBuilder
   }
 
   @override
-  void replace(PointOfInterestPoiWritePoint other) {
+  void replace(covariant PointOfInterestPoiWritePoint other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$PointOfInterestPoiWritePoint;
   }
@@ -98,8 +106,10 @@ class PointOfInterestPoiWritePointBuilder
   _$PointOfInterestPoiWritePoint _build() {
     final _$result = _$v ??
         new _$PointOfInterestPoiWritePoint._(
-          latitude: latitude,
-          longitude: longitude,
+          latitude: BuiltValueNullFieldError.checkNotNull(
+              latitude, r'PointOfInterestPoiWritePoint', 'latitude'),
+          longitude: BuiltValueNullFieldError.checkNotNull(
+              longitude, r'PointOfInterestPoiWritePoint', 'longitude'),
         );
     replace(_$result);
     return _$result;

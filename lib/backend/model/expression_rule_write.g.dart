@@ -158,6 +158,9 @@ const ExpressionRuleWriteLeftSideEnum
 const ExpressionRuleWriteLeftSideEnum
     _$expressionRuleWriteLeftSideEnum_targetEnterpriseTag =
     const ExpressionRuleWriteLeftSideEnum._('targetEnterpriseTag');
+const ExpressionRuleWriteLeftSideEnum
+    _$expressionRuleWriteLeftSideEnum_contractType =
+    const ExpressionRuleWriteLeftSideEnum._('contractType');
 
 ExpressionRuleWriteLeftSideEnum _$expressionRuleWriteLeftSideEnumValueOf(
     String name) {
@@ -202,6 +205,8 @@ ExpressionRuleWriteLeftSideEnum _$expressionRuleWriteLeftSideEnumValueOf(
       return _$expressionRuleWriteLeftSideEnum_targetType;
     case 'targetEnterpriseTag':
       return _$expressionRuleWriteLeftSideEnum_targetEnterpriseTag;
+    case 'contractType':
+      return _$expressionRuleWriteLeftSideEnum_contractType;
     default:
       throw new ArgumentError(name);
   }
@@ -230,6 +235,7 @@ final BuiltSet<ExpressionRuleWriteLeftSideEnum>
   _$expressionRuleWriteLeftSideEnum_targetUser,
   _$expressionRuleWriteLeftSideEnum_targetType,
   _$expressionRuleWriteLeftSideEnum_targetEnterpriseTag,
+  _$expressionRuleWriteLeftSideEnum_contractType,
 ]);
 
 Serializer<ExpressionRuleWriteComparatorEnum>
@@ -314,6 +320,7 @@ class _$ExpressionRuleWriteLeftSideEnumSerializer
     'targetUser': 'TargetUser',
     'targetType': 'TargetType',
     'targetEnterpriseTag': 'TargetEnterpriseTag',
+    'contractType': 'ContractType',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'BookingBeginHour': 'bookingBeginHour',
@@ -336,6 +343,7 @@ class _$ExpressionRuleWriteLeftSideEnumSerializer
     'TargetUser': 'targetUser',
     'TargetType': 'targetType',
     'TargetEnterpriseTag': 'targetEnterpriseTag',
+    'ContractType': 'contractType',
   };
 
   @override

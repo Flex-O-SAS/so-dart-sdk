@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/center_assets_inner.dart';
+import 'package:so_dart_sdk/backend/model/center_public_center_read_opportunity_create_lead_assets_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -50,7 +50,7 @@ abstract class CenterCsvPublicCenterReadOpportunityCreateLead implements Built<C
   DateTime? get openingDate;
 
   @BuiltValueField(wireName: r'assets')
-  BuiltList<CenterAssetsInner>? get assets;
+  BuiltList<CenterPublicCenterReadOpportunityCreateLeadAssetsInner>? get assets;
 
   @BuiltValueField(wireName: r'address')
   String? get address;
@@ -143,7 +143,7 @@ class _$CenterCsvPublicCenterReadOpportunityCreateLeadSerializer implements Prim
       yield r'assets';
       yield serializers.serialize(
         object.assets,
-        specifiedType: const FullType(BuiltList, [FullType(CenterAssetsInner)]),
+        specifiedType: const FullType(BuiltList, [FullType(CenterPublicCenterReadOpportunityCreateLeadAssetsInner)]),
       );
     }
     if (object.address != null) {
@@ -256,8 +256,8 @@ class _$CenterCsvPublicCenterReadOpportunityCreateLeadSerializer implements Prim
         case r'assets':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(CenterAssetsInner)]),
-          ) as BuiltList<CenterAssetsInner>;
+            specifiedType: const FullType(BuiltList, [FullType(CenterPublicCenterReadOpportunityCreateLeadAssetsInner)]),
+          ) as BuiltList<CenterPublicCenterReadOpportunityCreateLeadAssetsInner>;
           result.assets.replace(valueDes);
           break;
         case r'address':

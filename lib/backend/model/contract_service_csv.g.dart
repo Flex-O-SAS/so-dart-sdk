@@ -20,8 +20,6 @@ class _$ContractServiceCsv extends ContractServiceCsv {
   @override
   final num? rolloverIncreaseRate;
   @override
-  final ScheduleDesktopCsv? scheduleDesktop;
-  @override
   final String? staff;
   @override
   final CustomerReservationCsv? customerReservation;
@@ -83,7 +81,6 @@ class _$ContractServiceCsv extends ContractServiceCsv {
       this.customServiceDetail,
       this.owner,
       this.rolloverIncreaseRate,
-      this.scheduleDesktop,
       this.staff,
       this.customerReservation,
       this.fees,
@@ -130,7 +127,6 @@ class _$ContractServiceCsv extends ContractServiceCsv {
         customServiceDetail == other.customServiceDetail &&
         owner == other.owner &&
         rolloverIncreaseRate == other.rolloverIncreaseRate &&
-        scheduleDesktop == other.scheduleDesktop &&
         staff == other.staff &&
         customerReservation == other.customerReservation &&
         fees == other.fees &&
@@ -167,7 +163,6 @@ class _$ContractServiceCsv extends ContractServiceCsv {
     _$hash = $jc(_$hash, customServiceDetail.hashCode);
     _$hash = $jc(_$hash, owner.hashCode);
     _$hash = $jc(_$hash, rolloverIncreaseRate.hashCode);
-    _$hash = $jc(_$hash, scheduleDesktop.hashCode);
     _$hash = $jc(_$hash, staff.hashCode);
     _$hash = $jc(_$hash, customerReservation.hashCode);
     _$hash = $jc(_$hash, fees.hashCode);
@@ -206,7 +201,6 @@ class _$ContractServiceCsv extends ContractServiceCsv {
           ..add('customServiceDetail', customServiceDetail)
           ..add('owner', owner)
           ..add('rolloverIncreaseRate', rolloverIncreaseRate)
-          ..add('scheduleDesktop', scheduleDesktop)
           ..add('staff', staff)
           ..add('customerReservation', customerReservation)
           ..add('fees', fees)
@@ -268,12 +262,6 @@ class ContractServiceCsvBuilder
   num? get rolloverIncreaseRate => _$this._rolloverIncreaseRate;
   set rolloverIncreaseRate(num? rolloverIncreaseRate) =>
       _$this._rolloverIncreaseRate = rolloverIncreaseRate;
-
-  ScheduleDesktopCsvBuilder? _scheduleDesktop;
-  ScheduleDesktopCsvBuilder get scheduleDesktop =>
-      _$this._scheduleDesktop ??= new ScheduleDesktopCsvBuilder();
-  set scheduleDesktop(ScheduleDesktopCsvBuilder? scheduleDesktop) =>
-      _$this._scheduleDesktop = scheduleDesktop;
 
   String? _staff;
   String? get staff => _$this._staff;
@@ -398,7 +386,6 @@ class ContractServiceCsvBuilder
       _customServiceDetail = $v.customServiceDetail?.toBuilder();
       _owner = $v.owner;
       _rolloverIncreaseRate = $v.rolloverIncreaseRate;
-      _scheduleDesktop = $v.scheduleDesktop?.toBuilder();
       _staff = $v.staff;
       _customerReservation = $v.customerReservation?.toBuilder();
       _fees = $v.fees;
@@ -455,7 +442,6 @@ class ContractServiceCsvBuilder
             customServiceDetail: _customServiceDetail?.build(),
             owner: owner,
             rolloverIncreaseRate: rolloverIncreaseRate,
-            scheduleDesktop: _scheduleDesktop?.build(),
             staff: staff,
             customerReservation: _customerReservation?.build(),
             fees: fees,
@@ -489,9 +475,6 @@ class ContractServiceCsvBuilder
         _invoiceRows?.build();
         _$failedField = 'customServiceDetail';
         _customServiceDetail?.build();
-
-        _$failedField = 'scheduleDesktop';
-        _scheduleDesktop?.build();
 
         _$failedField = 'customerReservation';
         _customerReservation?.build();

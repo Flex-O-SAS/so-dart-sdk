@@ -27,7 +27,7 @@ abstract class ExpressionExpressionWriteJsonMergePatch implements Built<Expressi
 
   @BuiltValueField(wireName: r'leftSide')
   ExpressionExpressionWriteJsonMergePatchLeftSideEnum? get leftSide;
-  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  TargetEnterpriseTag,  };
+  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  TargetEnterpriseTag,  ContractType,  };
 
   @BuiltValueField(wireName: r'rightSide')
   String? get rightSide;
@@ -279,6 +279,8 @@ class ExpressionExpressionWriteJsonMergePatchLeftSideEnum extends EnumClass {
   static const ExpressionExpressionWriteJsonMergePatchLeftSideEnum targetType = _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetType;
   @BuiltValueEnumConst(wireName: r'TargetEnterpriseTag')
   static const ExpressionExpressionWriteJsonMergePatchLeftSideEnum targetEnterpriseTag = _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetEnterpriseTag;
+  @BuiltValueEnumConst(wireName: r'ContractType')
+  static const ExpressionExpressionWriteJsonMergePatchLeftSideEnum contractType = _$expressionExpressionWriteJsonMergePatchLeftSideEnum_contractType;
 
   static Serializer<ExpressionExpressionWriteJsonMergePatchLeftSideEnum> get serializer => _$expressionExpressionWriteJsonMergePatchLeftSideEnumSerializer;
 

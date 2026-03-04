@@ -158,6 +158,9 @@ const ExpressionJsonldExpressionReadLeftSideEnum
 const ExpressionJsonldExpressionReadLeftSideEnum
     _$expressionJsonldExpressionReadLeftSideEnum_targetEnterpriseTag =
     const ExpressionJsonldExpressionReadLeftSideEnum._('targetEnterpriseTag');
+const ExpressionJsonldExpressionReadLeftSideEnum
+    _$expressionJsonldExpressionReadLeftSideEnum_contractType =
+    const ExpressionJsonldExpressionReadLeftSideEnum._('contractType');
 
 ExpressionJsonldExpressionReadLeftSideEnum
     _$expressionJsonldExpressionReadLeftSideEnumValueOf(String name) {
@@ -202,6 +205,8 @@ ExpressionJsonldExpressionReadLeftSideEnum
       return _$expressionJsonldExpressionReadLeftSideEnum_targetType;
     case 'targetEnterpriseTag':
       return _$expressionJsonldExpressionReadLeftSideEnum_targetEnterpriseTag;
+    case 'contractType':
+      return _$expressionJsonldExpressionReadLeftSideEnum_contractType;
     default:
       throw new ArgumentError(name);
   }
@@ -230,6 +235,7 @@ final BuiltSet<ExpressionJsonldExpressionReadLeftSideEnum>
   _$expressionJsonldExpressionReadLeftSideEnum_targetUser,
   _$expressionJsonldExpressionReadLeftSideEnum_targetType,
   _$expressionJsonldExpressionReadLeftSideEnum_targetEnterpriseTag,
+  _$expressionJsonldExpressionReadLeftSideEnum_contractType,
 ]);
 
 Serializer<ExpressionJsonldExpressionReadComparatorEnum>
@@ -317,6 +323,7 @@ class _$ExpressionJsonldExpressionReadLeftSideEnumSerializer
     'targetUser': 'TargetUser',
     'targetType': 'TargetType',
     'targetEnterpriseTag': 'TargetEnterpriseTag',
+    'contractType': 'ContractType',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'BookingBeginHour': 'bookingBeginHour',
@@ -339,6 +346,7 @@ class _$ExpressionJsonldExpressionReadLeftSideEnumSerializer
     'TargetUser': 'targetUser',
     'TargetType': 'targetType',
     'TargetEnterpriseTag': 'targetEnterpriseTag',
+    'ContractType': 'contractType',
   };
 
   @override

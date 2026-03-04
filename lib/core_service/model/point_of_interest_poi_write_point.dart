@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/core_service/model/geo_point.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -15,13 +16,7 @@ part 'point_of_interest_poi_write_point.g.dart';
 /// * [latitude] 
 /// * [longitude] 
 @BuiltValue()
-abstract class PointOfInterestPoiWritePoint implements Built<PointOfInterestPoiWritePoint, PointOfInterestPoiWritePointBuilder> {
-  @BuiltValueField(wireName: r'latitude')
-  JsonObject? get latitude;
-
-  @BuiltValueField(wireName: r'longitude')
-  JsonObject? get longitude;
-
+abstract class PointOfInterestPoiWritePoint implements GeoPoint, Built<PointOfInterestPoiWritePoint, PointOfInterestPoiWritePointBuilder> {
   PointOfInterestPoiWritePoint._();
 
   factory PointOfInterestPoiWritePoint([void updates(PointOfInterestPoiWritePointBuilder b)]) = _$PointOfInterestPoiWritePoint;
@@ -46,14 +41,14 @@ class _$PointOfInterestPoiWritePointSerializer implements PrimitiveSerializer<Po
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'latitude';
-    yield object.latitude == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.latitude,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(num),
     );
     yield r'longitude';
-    yield object.longitude == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.longitude,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(num),
     );
   }
 
@@ -81,17 +76,15 @@ class _$PointOfInterestPoiWritePointSerializer implements PrimitiveSerializer<Po
         case r'latitude':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(num),
+          ) as num;
           result.latitude = valueDes;
           break;
         case r'longitude':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(num),
+          ) as num;
           result.longitude = valueDes;
           break;
         default:

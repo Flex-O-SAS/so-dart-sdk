@@ -8,7 +8,6 @@ import 'package:so_dart_sdk/backend/model/contract_service_indexing_log.dart';
 import 'package:so_dart_sdk/backend/model/custom_service_detail.dart';
 import 'package:so_dart_sdk/backend/model/customer_reservation.dart';
 import 'package:so_dart_sdk/backend/model/invoice_row.dart';
-import 'package:so_dart_sdk/backend/model/schedule_desktop.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -23,7 +22,6 @@ part 'contract_service.g.dart';
 /// * [customServiceDetail] 
 /// * [owner] 
 /// * [rolloverIncreaseRate] 
-/// * [scheduleDesktop] 
 /// * [staff] 
 /// * [customerReservation] 
 /// * [fees] 
@@ -68,9 +66,6 @@ abstract class ContractService implements Built<ContractService, ContractService
 
   @BuiltValueField(wireName: r'rolloverIncreaseRate')
   num? get rolloverIncreaseRate;
-
-  @BuiltValueField(wireName: r'scheduleDesktop')
-  ScheduleDesktop? get scheduleDesktop;
 
   @BuiltValueField(wireName: r'staff')
   String? get staff;
@@ -212,13 +207,6 @@ class _$ContractServiceSerializer implements PrimitiveSerializer<ContractService
       yield serializers.serialize(
         object.rolloverIncreaseRate,
         specifiedType: const FullType.nullable(num),
-      );
-    }
-    if (object.scheduleDesktop != null) {
-      yield r'scheduleDesktop';
-      yield serializers.serialize(
-        object.scheduleDesktop,
-        specifiedType: const FullType.nullable(ScheduleDesktop),
       );
     }
     if (object.staff != null) {
@@ -462,14 +450,6 @@ class _$ContractServiceSerializer implements PrimitiveSerializer<ContractService
           ) as num?;
           if (valueDes == null) continue;
           result.rolloverIncreaseRate = valueDes;
-          break;
-        case r'scheduleDesktop':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ScheduleDesktop),
-          ) as ScheduleDesktop?;
-          if (valueDes == null) continue;
-          result.scheduleDesktop.replace(valueDes);
           break;
         case r'staff':
           final valueDes = serializers.deserialize(

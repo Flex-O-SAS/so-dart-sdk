@@ -179,6 +179,9 @@ const ExpressionExpressionWriteJsonMergePatchLeftSideEnum
     _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetEnterpriseTag =
     const ExpressionExpressionWriteJsonMergePatchLeftSideEnum._(
         'targetEnterpriseTag');
+const ExpressionExpressionWriteJsonMergePatchLeftSideEnum
+    _$expressionExpressionWriteJsonMergePatchLeftSideEnum_contractType =
+    const ExpressionExpressionWriteJsonMergePatchLeftSideEnum._('contractType');
 
 ExpressionExpressionWriteJsonMergePatchLeftSideEnum
     _$expressionExpressionWriteJsonMergePatchLeftSideEnumValueOf(String name) {
@@ -223,6 +226,8 @@ ExpressionExpressionWriteJsonMergePatchLeftSideEnum
       return _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetType;
     case 'targetEnterpriseTag':
       return _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetEnterpriseTag;
+    case 'contractType':
+      return _$expressionExpressionWriteJsonMergePatchLeftSideEnum_contractType;
     default:
       throw new ArgumentError(name);
   }
@@ -251,6 +256,7 @@ final BuiltSet<ExpressionExpressionWriteJsonMergePatchLeftSideEnum>
   _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetUser,
   _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetType,
   _$expressionExpressionWriteJsonMergePatchLeftSideEnum_targetEnterpriseTag,
+  _$expressionExpressionWriteJsonMergePatchLeftSideEnum_contractType,
 ]);
 
 Serializer<ExpressionExpressionWriteJsonMergePatchComparatorEnum>
@@ -342,6 +348,7 @@ class _$ExpressionExpressionWriteJsonMergePatchLeftSideEnumSerializer
     'targetUser': 'TargetUser',
     'targetType': 'TargetType',
     'targetEnterpriseTag': 'TargetEnterpriseTag',
+    'contractType': 'ContractType',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'BookingBeginHour': 'bookingBeginHour',
@@ -364,6 +371,7 @@ class _$ExpressionExpressionWriteJsonMergePatchLeftSideEnumSerializer
     'TargetUser': 'targetUser',
     'TargetType': 'targetType',
     'TargetEnterpriseTag': 'targetEnterpriseTag',
+    'ContractType': 'contractType',
   };
 
   @override

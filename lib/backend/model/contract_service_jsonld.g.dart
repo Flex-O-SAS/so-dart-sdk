@@ -21,8 +21,6 @@ class _$ContractServiceJsonld extends ContractServiceJsonld {
   @override
   final int? type;
   @override
-  final ScheduleDesktopJsonld? scheduleDesktop;
-  @override
   final int? capacity;
   @override
   final DateTime? createdAt;
@@ -90,7 +88,6 @@ class _$ContractServiceJsonld extends ContractServiceJsonld {
       this.contractServiceIndexingLogs,
       this.contractServiceUsers,
       this.type,
-      this.scheduleDesktop,
       this.capacity,
       this.createdAt,
       this.price,
@@ -145,7 +142,6 @@ class _$ContractServiceJsonld extends ContractServiceJsonld {
         contractServiceIndexingLogs == other.contractServiceIndexingLogs &&
         contractServiceUsers == other.contractServiceUsers &&
         type == other.type &&
-        scheduleDesktop == other.scheduleDesktop &&
         capacity == other.capacity &&
         createdAt == other.createdAt &&
         price == other.price &&
@@ -185,7 +181,6 @@ class _$ContractServiceJsonld extends ContractServiceJsonld {
     _$hash = $jc(_$hash, contractServiceIndexingLogs.hashCode);
     _$hash = $jc(_$hash, contractServiceUsers.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, scheduleDesktop.hashCode);
     _$hash = $jc(_$hash, capacity.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
@@ -227,7 +222,6 @@ class _$ContractServiceJsonld extends ContractServiceJsonld {
           ..add('contractServiceIndexingLogs', contractServiceIndexingLogs)
           ..add('contractServiceUsers', contractServiceUsers)
           ..add('type', type)
-          ..add('scheduleDesktop', scheduleDesktop)
           ..add('capacity', capacity)
           ..add('createdAt', createdAt)
           ..add('price', price)
@@ -299,13 +293,6 @@ class ContractServiceJsonldBuilder
   int? _type;
   int? get type => _$this._type;
   set type(covariant int? type) => _$this._type = type;
-
-  ScheduleDesktopJsonldBuilder? _scheduleDesktop;
-  ScheduleDesktopJsonldBuilder get scheduleDesktop =>
-      _$this._scheduleDesktop ??= new ScheduleDesktopJsonldBuilder();
-  set scheduleDesktop(
-          covariant ScheduleDesktopJsonldBuilder? scheduleDesktop) =>
-      _$this._scheduleDesktop = scheduleDesktop;
 
   int? _capacity;
   int? get capacity => _$this._capacity;
@@ -447,7 +434,6 @@ class ContractServiceJsonldBuilder
           $v.contractServiceIndexingLogs?.toBuilder();
       _contractServiceUsers = $v.contractServiceUsers?.toBuilder();
       _type = $v.type;
-      _scheduleDesktop = $v.scheduleDesktop?.toBuilder();
       _capacity = $v.capacity;
       _createdAt = $v.createdAt;
       _price = $v.price;
@@ -506,7 +492,6 @@ class ContractServiceJsonldBuilder
             contractServiceIndexingLogs: _contractServiceIndexingLogs?.build(),
             contractServiceUsers: _contractServiceUsers?.build(),
             type: type,
-            scheduleDesktop: _scheduleDesktop?.build(),
             capacity: capacity,
             createdAt: createdAt,
             price: price,
@@ -545,9 +530,6 @@ class ContractServiceJsonldBuilder
         _contractServiceIndexingLogs?.build();
         _$failedField = 'contractServiceUsers';
         _contractServiceUsers?.build();
-
-        _$failedField = 'scheduleDesktop';
-        _scheduleDesktop?.build();
 
         _$failedField = 'customerReservation';
         _customerReservation?.build();

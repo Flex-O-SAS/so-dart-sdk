@@ -46,7 +46,6 @@ import 'package:so_dart_sdk/core_service/model/identity_dto_notification_write.d
 import 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_read.dart';
 import 'package:so_dart_sdk/core_service/model/notification_notification_dto_notification_write.dart';
 import 'package:so_dart_sdk/core_service/model/point_of_interest_jsonld_poi_read.dart';
-import 'package:so_dart_sdk/core_service/model/point_of_interest_jsonld_poi_read_all_of_point.dart';
 import 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write.dart';
 import 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write_point.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
@@ -73,7 +72,7 @@ part 'serializers.g.dart';
   DiscoveryJsonldDiscoveryReadBrandingSettingRead,
   Error,
   ErrorJsonld,
-  GeoPoint,
+  GeoPoint,$GeoPoint,
   HydraCollectionBaseSchema,$HydraCollectionBaseSchema,
   HydraCollectionBaseSchemaAllOfView,
   HydraCollectionBaseSchemaNoPagination,$HydraCollectionBaseSchemaNoPagination,
@@ -87,7 +86,6 @@ part 'serializers.g.dart';
   NotificationJsonldNotificationRead,
   NotificationNotificationDtoNotificationWrite,
   PointOfInterestJsonldPoiRead,
-  PointOfInterestJsonldPoiReadAllOfPoint,
   PointOfInterestPoiWrite,
   PointOfInterestPoiWritePoint,
   SubscriberJsonldSubscriberRead,
@@ -98,6 +96,7 @@ Serializers serializers = (_$serializers.toBuilder()
         const FullType(BuiltList, [FullType(String)]),
         () => ListBuilder<String>(),
       )
+      ..add(GeoPoint.serializer)
       ..add(HydraCollectionBaseSchema.serializer)
       ..add(HydraCollectionBaseSchemaNoPagination.serializer)
       ..add(HydraItemBaseSchema.serializer)

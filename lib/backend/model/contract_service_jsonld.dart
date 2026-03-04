@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/backend/model/schedule_desktop_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
 import 'package:so_dart_sdk/backend/model/contract_service_indexing_log_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
@@ -28,7 +27,6 @@ part 'contract_service_jsonld.g.dart';
 /// * [customServiceDetail] 
 /// * [owner] 
 /// * [rolloverIncreaseRate] 
-/// * [scheduleDesktop] 
 /// * [staff] 
 /// * [customerReservation] 
 /// * [fees] 
@@ -73,9 +71,6 @@ abstract class ContractServiceJsonld implements HydraItemBaseSchema, Built<Contr
 
   @BuiltValueField(wireName: r'type')
   int? get type;
-
-  @BuiltValueField(wireName: r'scheduleDesktop')
-  ScheduleDesktopJsonld? get scheduleDesktop;
 
   @BuiltValueField(wireName: r'capacity')
   int? get capacity;
@@ -222,13 +217,6 @@ class _$ContractServiceJsonldSerializer implements PrimitiveSerializer<ContractS
       yield serializers.serialize(
         object.type,
         specifiedType: const FullType(int),
-      );
-    }
-    if (object.scheduleDesktop != null) {
-      yield r'scheduleDesktop';
-      yield serializers.serialize(
-        object.scheduleDesktop,
-        specifiedType: const FullType.nullable(ScheduleDesktopJsonld),
       );
     }
     if (object.capacity != null) {
@@ -490,14 +478,6 @@ class _$ContractServiceJsonldSerializer implements PrimitiveSerializer<ContractS
             specifiedType: const FullType(int),
           ) as int;
           result.type = valueDes;
-          break;
-        case r'scheduleDesktop':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ScheduleDesktopJsonld),
-          ) as ScheduleDesktopJsonld?;
-          if (valueDes == null) continue;
-          result.scheduleDesktop.replace(valueDes);
           break;
         case r'capacity':
           final valueDes = serializers.deserialize(

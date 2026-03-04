@@ -87,7 +87,7 @@ class StepApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
-  /// * [roundLeftSquareBracketRightSquareBracket] - Step round
+  /// * [round] - Step round
   /// * [orderLeftSquareBracketCreatedAtRightSquareBracket] - Step order[createdAt]
   /// * [orderLeftSquareBracketIdRightSquareBracket] - Step order[id]
   /// * [orderLeftSquareBracketUpdatedAtRightSquareBracket] - Step order[updatedAt]
@@ -102,7 +102,7 @@ class StepApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiStepGetCollection200Response>> apiStepGetCollection({ 
     int? page = 1,
-    BuiltList<String>? roundLeftSquareBracketRightSquareBracket,
+    String? round,
     String? orderLeftSquareBracketCreatedAtRightSquareBracket,
     String? orderLeftSquareBracketIdRightSquareBracket,
     String? orderLeftSquareBracketUpdatedAtRightSquareBracket,
@@ -135,7 +135,7 @@ class StepApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
-      if (roundLeftSquareBracketRightSquareBracket != null) r'round[]': encodeCollectionQueryParameter<String>(_serializers, roundLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.csv,),
+      if (round != null) r'round': encodeQueryParameter(_serializers, round, const FullType(String)),
       if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketIdRightSquareBracket != null) r'order[id]': encodeQueryParameter(_serializers, orderLeftSquareBracketIdRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketUpdatedAtRightSquareBracket != null) r'order[updatedAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketUpdatedAtRightSquareBracket, const FullType(String)),

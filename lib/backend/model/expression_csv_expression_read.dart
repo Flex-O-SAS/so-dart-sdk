@@ -26,7 +26,7 @@ abstract class ExpressionCsvExpressionRead implements Built<ExpressionCsvExpress
 
   @BuiltValueField(wireName: r'leftSide')
   ExpressionCsvExpressionReadLeftSideEnum? get leftSide;
-  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  TargetEnterpriseTag,  };
+  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  TargetEnterpriseTag,  ContractType,  };
 
   @BuiltValueField(wireName: r'rightSide')
   String? get rightSide;
@@ -261,6 +261,8 @@ class ExpressionCsvExpressionReadLeftSideEnum extends EnumClass {
   static const ExpressionCsvExpressionReadLeftSideEnum targetType = _$expressionCsvExpressionReadLeftSideEnum_targetType;
   @BuiltValueEnumConst(wireName: r'TargetEnterpriseTag')
   static const ExpressionCsvExpressionReadLeftSideEnum targetEnterpriseTag = _$expressionCsvExpressionReadLeftSideEnum_targetEnterpriseTag;
+  @BuiltValueEnumConst(wireName: r'ContractType')
+  static const ExpressionCsvExpressionReadLeftSideEnum contractType = _$expressionCsvExpressionReadLeftSideEnum_contractType;
 
   static Serializer<ExpressionCsvExpressionReadLeftSideEnum> get serializer => _$expressionCsvExpressionReadLeftSideEnumSerializer;
 

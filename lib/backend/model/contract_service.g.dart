@@ -20,8 +20,6 @@ class _$ContractService extends ContractService {
   @override
   final num? rolloverIncreaseRate;
   @override
-  final ScheduleDesktop? scheduleDesktop;
-  @override
   final String? staff;
   @override
   final CustomerReservation? customerReservation;
@@ -82,7 +80,6 @@ class _$ContractService extends ContractService {
       this.customServiceDetail,
       this.owner,
       this.rolloverIncreaseRate,
-      this.scheduleDesktop,
       this.staff,
       this.customerReservation,
       this.fees,
@@ -128,7 +125,6 @@ class _$ContractService extends ContractService {
         customServiceDetail == other.customServiceDetail &&
         owner == other.owner &&
         rolloverIncreaseRate == other.rolloverIncreaseRate &&
-        scheduleDesktop == other.scheduleDesktop &&
         staff == other.staff &&
         customerReservation == other.customerReservation &&
         fees == other.fees &&
@@ -165,7 +161,6 @@ class _$ContractService extends ContractService {
     _$hash = $jc(_$hash, customServiceDetail.hashCode);
     _$hash = $jc(_$hash, owner.hashCode);
     _$hash = $jc(_$hash, rolloverIncreaseRate.hashCode);
-    _$hash = $jc(_$hash, scheduleDesktop.hashCode);
     _$hash = $jc(_$hash, staff.hashCode);
     _$hash = $jc(_$hash, customerReservation.hashCode);
     _$hash = $jc(_$hash, fees.hashCode);
@@ -204,7 +199,6 @@ class _$ContractService extends ContractService {
           ..add('customServiceDetail', customServiceDetail)
           ..add('owner', owner)
           ..add('rolloverIncreaseRate', rolloverIncreaseRate)
-          ..add('scheduleDesktop', scheduleDesktop)
           ..add('staff', staff)
           ..add('customerReservation', customerReservation)
           ..add('fees', fees)
@@ -266,12 +260,6 @@ class ContractServiceBuilder
   num? get rolloverIncreaseRate => _$this._rolloverIncreaseRate;
   set rolloverIncreaseRate(num? rolloverIncreaseRate) =>
       _$this._rolloverIncreaseRate = rolloverIncreaseRate;
-
-  ScheduleDesktopBuilder? _scheduleDesktop;
-  ScheduleDesktopBuilder get scheduleDesktop =>
-      _$this._scheduleDesktop ??= new ScheduleDesktopBuilder();
-  set scheduleDesktop(ScheduleDesktopBuilder? scheduleDesktop) =>
-      _$this._scheduleDesktop = scheduleDesktop;
 
   String? _staff;
   String? get staff => _$this._staff;
@@ -396,7 +384,6 @@ class ContractServiceBuilder
       _customServiceDetail = $v.customServiceDetail?.toBuilder();
       _owner = $v.owner;
       _rolloverIncreaseRate = $v.rolloverIncreaseRate;
-      _scheduleDesktop = $v.scheduleDesktop?.toBuilder();
       _staff = $v.staff;
       _customerReservation = $v.customerReservation?.toBuilder();
       _fees = $v.fees;
@@ -453,7 +440,6 @@ class ContractServiceBuilder
             customServiceDetail: _customServiceDetail?.build(),
             owner: owner,
             rolloverIncreaseRate: rolloverIncreaseRate,
-            scheduleDesktop: _scheduleDesktop?.build(),
             staff: staff,
             customerReservation: _customerReservation?.build(),
             fees: fees,
@@ -487,9 +473,6 @@ class ContractServiceBuilder
         _invoiceRows?.build();
         _$failedField = 'customServiceDetail';
         _customServiceDetail?.build();
-
-        _$failedField = 'scheduleDesktop';
-        _scheduleDesktop?.build();
 
         _$failedField = 'customerReservation';
         _customerReservation?.build();

@@ -333,7 +333,6 @@ class IndividualApi {
   /// * [orderLeftSquareBracketVisorClientsRightSquareBracket] - Individual order[visorClients]
   /// * [orderLeftSquareBracketVisorLogClientsRightSquareBracket] - Individual order[visorLogClients]
   /// * [orderLeftSquareBracketClientLinksRightSquareBracket] - Individual order[clientLinks]
-  /// * [orderLeftSquareBracketScheduleDesktopsRightSquareBracket] - Individual order[scheduleDesktops]
   /// * [orderLeftSquareBracketOwnedOpportunitiesRightSquareBracket] - Individual order[ownedOpportunities]
   /// * [orderLeftSquareBracketOwnedContractServicesRightSquareBracket] - Individual order[ownedContractServices]
   /// * [orderLeftSquareBracketSignatoryContractsRightSquareBracket] - Individual order[signatoryContracts]
@@ -361,7 +360,6 @@ class IndividualApi {
   /// * [orderLeftSquareBracketEnterprisesRightSquareBracket] - Individual order[enterprises]
   /// * [orderLeftSquareBracketLabelledNameRightSquareBracket] - Individual order[labelledName]
   /// * [orderLeftSquareBracketReadLinkRightSquareBracket] - Individual order[readLink]
-  /// * [orderLeftSquareBracketContractServicesRightSquareBracket] - Individual order[contractServices]
   /// * [orderLeftSquareBracketEmailRightSquareBracket] - Individual order[email]
   /// * [orderLeftSquareBracketPhoneRightSquareBracket] - Individual order[phone]
   /// * [orderLeftSquareBracketMobileRightSquareBracket] - Individual order[mobile]
@@ -429,7 +427,6 @@ class IndividualApi {
     String? orderLeftSquareBracketVisorClientsRightSquareBracket,
     String? orderLeftSquareBracketVisorLogClientsRightSquareBracket,
     String? orderLeftSquareBracketClientLinksRightSquareBracket,
-    String? orderLeftSquareBracketScheduleDesktopsRightSquareBracket,
     String? orderLeftSquareBracketOwnedOpportunitiesRightSquareBracket,
     String? orderLeftSquareBracketOwnedContractServicesRightSquareBracket,
     String? orderLeftSquareBracketSignatoryContractsRightSquareBracket,
@@ -457,7 +454,6 @@ class IndividualApi {
     String? orderLeftSquareBracketEnterprisesRightSquareBracket,
     String? orderLeftSquareBracketLabelledNameRightSquareBracket,
     String? orderLeftSquareBracketReadLinkRightSquareBracket,
-    String? orderLeftSquareBracketContractServicesRightSquareBracket,
     String? orderLeftSquareBracketEmailRightSquareBracket,
     String? orderLeftSquareBracketPhoneRightSquareBracket,
     String? orderLeftSquareBracketMobileRightSquareBracket,
@@ -536,7 +532,6 @@ class IndividualApi {
       if (orderLeftSquareBracketVisorClientsRightSquareBracket != null) r'order[visorClients]': encodeQueryParameter(_serializers, orderLeftSquareBracketVisorClientsRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketVisorLogClientsRightSquareBracket != null) r'order[visorLogClients]': encodeQueryParameter(_serializers, orderLeftSquareBracketVisorLogClientsRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketClientLinksRightSquareBracket != null) r'order[clientLinks]': encodeQueryParameter(_serializers, orderLeftSquareBracketClientLinksRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketScheduleDesktopsRightSquareBracket != null) r'order[scheduleDesktops]': encodeQueryParameter(_serializers, orderLeftSquareBracketScheduleDesktopsRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketOwnedOpportunitiesRightSquareBracket != null) r'order[ownedOpportunities]': encodeQueryParameter(_serializers, orderLeftSquareBracketOwnedOpportunitiesRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketOwnedContractServicesRightSquareBracket != null) r'order[ownedContractServices]': encodeQueryParameter(_serializers, orderLeftSquareBracketOwnedContractServicesRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketSignatoryContractsRightSquareBracket != null) r'order[signatoryContracts]': encodeQueryParameter(_serializers, orderLeftSquareBracketSignatoryContractsRightSquareBracket, const FullType(String)),
@@ -564,7 +559,6 @@ class IndividualApi {
       if (orderLeftSquareBracketEnterprisesRightSquareBracket != null) r'order[enterprises]': encodeQueryParameter(_serializers, orderLeftSquareBracketEnterprisesRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketLabelledNameRightSquareBracket != null) r'order[labelledName]': encodeQueryParameter(_serializers, orderLeftSquareBracketLabelledNameRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketReadLinkRightSquareBracket != null) r'order[readLink]': encodeQueryParameter(_serializers, orderLeftSquareBracketReadLinkRightSquareBracket, const FullType(String)),
-      if (orderLeftSquareBracketContractServicesRightSquareBracket != null) r'order[contractServices]': encodeQueryParameter(_serializers, orderLeftSquareBracketContractServicesRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketEmailRightSquareBracket != null) r'order[email]': encodeQueryParameter(_serializers, orderLeftSquareBracketEmailRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketPhoneRightSquareBracket != null) r'order[phone]': encodeQueryParameter(_serializers, orderLeftSquareBracketPhoneRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketMobileRightSquareBracket != null) r'order[mobile]': encodeQueryParameter(_serializers, orderLeftSquareBracketMobileRightSquareBracket, const FullType(String)),

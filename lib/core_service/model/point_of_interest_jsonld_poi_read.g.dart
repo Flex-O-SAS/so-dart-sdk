@@ -14,7 +14,7 @@ class _$PointOfInterestJsonldPoiRead extends PointOfInterestJsonldPoiRead {
   @override
   final int? floorPlan;
   @override
-  final PointOfInterestJsonldPoiReadAllOfPoint? point;
+  final JsonObject? point;
   @override
   final HydraItemBaseSchemaContext? atContext;
   @override
@@ -114,11 +114,9 @@ class PointOfInterestJsonldPoiReadBuilder
   int? get floorPlan => _$this._floorPlan;
   set floorPlan(covariant int? floorPlan) => _$this._floorPlan = floorPlan;
 
-  PointOfInterestJsonldPoiReadAllOfPointBuilder? _point;
-  PointOfInterestJsonldPoiReadAllOfPointBuilder get point =>
-      _$this._point ??= new PointOfInterestJsonldPoiReadAllOfPointBuilder();
-  set point(covariant PointOfInterestJsonldPoiReadAllOfPointBuilder? point) =>
-      _$this._point = point;
+  JsonObject? _point;
+  JsonObject? get point => _$this._point;
+  set point(covariant JsonObject? point) => _$this._point = point;
 
   HydraItemBaseSchemaContextBuilder? _atContext;
   HydraItemBaseSchemaContextBuilder get atContext =>
@@ -144,7 +142,7 @@ class PointOfInterestJsonldPoiReadBuilder
       _site = $v.site;
       _name = $v.name;
       _floorPlan = $v.floorPlan;
-      _point = $v.point?.toBuilder();
+      _point = $v.point;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
@@ -177,7 +175,7 @@ class PointOfInterestJsonldPoiReadBuilder
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'PointOfInterestJsonldPoiRead', 'name'),
             floorPlan: floorPlan,
-            point: _point?.build(),
+            point: point,
             atContext: _atContext?.build(),
             atId: BuiltValueNullFieldError.checkNotNull(
                 atId, r'PointOfInterestJsonldPoiRead', 'atId'),
@@ -187,8 +185,6 @@ class PointOfInterestJsonldPoiReadBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'point';
-        _point?.build();
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {

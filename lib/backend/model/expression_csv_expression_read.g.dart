@@ -158,6 +158,9 @@ const ExpressionCsvExpressionReadLeftSideEnum
 const ExpressionCsvExpressionReadLeftSideEnum
     _$expressionCsvExpressionReadLeftSideEnum_targetEnterpriseTag =
     const ExpressionCsvExpressionReadLeftSideEnum._('targetEnterpriseTag');
+const ExpressionCsvExpressionReadLeftSideEnum
+    _$expressionCsvExpressionReadLeftSideEnum_contractType =
+    const ExpressionCsvExpressionReadLeftSideEnum._('contractType');
 
 ExpressionCsvExpressionReadLeftSideEnum
     _$expressionCsvExpressionReadLeftSideEnumValueOf(String name) {
@@ -202,6 +205,8 @@ ExpressionCsvExpressionReadLeftSideEnum
       return _$expressionCsvExpressionReadLeftSideEnum_targetType;
     case 'targetEnterpriseTag':
       return _$expressionCsvExpressionReadLeftSideEnum_targetEnterpriseTag;
+    case 'contractType':
+      return _$expressionCsvExpressionReadLeftSideEnum_contractType;
     default:
       throw new ArgumentError(name);
   }
@@ -230,6 +235,7 @@ final BuiltSet<ExpressionCsvExpressionReadLeftSideEnum>
   _$expressionCsvExpressionReadLeftSideEnum_targetUser,
   _$expressionCsvExpressionReadLeftSideEnum_targetType,
   _$expressionCsvExpressionReadLeftSideEnum_targetEnterpriseTag,
+  _$expressionCsvExpressionReadLeftSideEnum_contractType,
 ]);
 
 Serializer<ExpressionCsvExpressionReadComparatorEnum>
@@ -316,6 +322,7 @@ class _$ExpressionCsvExpressionReadLeftSideEnumSerializer
     'targetUser': 'TargetUser',
     'targetType': 'TargetType',
     'targetEnterpriseTag': 'TargetEnterpriseTag',
+    'contractType': 'ContractType',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'BookingBeginHour': 'bookingBeginHour',
@@ -338,6 +345,7 @@ class _$ExpressionCsvExpressionReadLeftSideEnumSerializer
     'TargetUser': 'targetUser',
     'TargetType': 'targetType',
     'TargetEnterpriseTag': 'targetEnterpriseTag',
+    'ContractType': 'contractType',
   };
 
   @override

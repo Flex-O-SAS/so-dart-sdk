@@ -8,7 +8,6 @@ import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/model/custom_service_detail_csv.dart';
 import 'package:so_dart_sdk/backend/model/customer_reservation_csv.dart';
 import 'package:so_dart_sdk/backend/model/invoice_row_csv.dart';
-import 'package:so_dart_sdk/backend/model/schedule_desktop_csv.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -23,7 +22,6 @@ part 'contract_service_csv.g.dart';
 /// * [customServiceDetail] 
 /// * [owner] 
 /// * [rolloverIncreaseRate] 
-/// * [scheduleDesktop] 
 /// * [staff] 
 /// * [customerReservation] 
 /// * [fees] 
@@ -68,9 +66,6 @@ abstract class ContractServiceCsv implements Built<ContractServiceCsv, ContractS
 
   @BuiltValueField(wireName: r'rolloverIncreaseRate')
   num? get rolloverIncreaseRate;
-
-  @BuiltValueField(wireName: r'scheduleDesktop')
-  ScheduleDesktopCsv? get scheduleDesktop;
 
   @BuiltValueField(wireName: r'staff')
   String? get staff;
@@ -212,13 +207,6 @@ class _$ContractServiceCsvSerializer implements PrimitiveSerializer<ContractServ
       yield serializers.serialize(
         object.rolloverIncreaseRate,
         specifiedType: const FullType.nullable(num),
-      );
-    }
-    if (object.scheduleDesktop != null) {
-      yield r'scheduleDesktop';
-      yield serializers.serialize(
-        object.scheduleDesktop,
-        specifiedType: const FullType.nullable(ScheduleDesktopCsv),
       );
     }
     if (object.staff != null) {
@@ -462,14 +450,6 @@ class _$ContractServiceCsvSerializer implements PrimitiveSerializer<ContractServ
           ) as num?;
           if (valueDes == null) continue;
           result.rolloverIncreaseRate = valueDes;
-          break;
-        case r'scheduleDesktop':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ScheduleDesktopCsv),
-          ) as ScheduleDesktopCsv?;
-          if (valueDes == null) continue;
-          result.scheduleDesktop.replace(valueDes);
           break;
         case r'staff':
           final valueDes = serializers.deserialize(

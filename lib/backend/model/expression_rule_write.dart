@@ -25,7 +25,7 @@ abstract class ExpressionRuleWrite implements Built<ExpressionRuleWrite, Express
 
   @BuiltValueField(wireName: r'leftSide')
   ExpressionRuleWriteLeftSideEnum? get leftSide;
-  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  TargetEnterpriseTag,  };
+  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  TargetEnterpriseTag,  ContractType,  };
 
   @BuiltValueField(wireName: r'rightSide')
   String? get rightSide;
@@ -260,6 +260,8 @@ class ExpressionRuleWriteLeftSideEnum extends EnumClass {
   static const ExpressionRuleWriteLeftSideEnum targetType = _$expressionRuleWriteLeftSideEnum_targetType;
   @BuiltValueEnumConst(wireName: r'TargetEnterpriseTag')
   static const ExpressionRuleWriteLeftSideEnum targetEnterpriseTag = _$expressionRuleWriteLeftSideEnum_targetEnterpriseTag;
+  @BuiltValueEnumConst(wireName: r'ContractType')
+  static const ExpressionRuleWriteLeftSideEnum contractType = _$expressionRuleWriteLeftSideEnum_contractType;
 
   static Serializer<ExpressionRuleWriteLeftSideEnum> get serializer => _$expressionRuleWriteLeftSideEnumSerializer;
 

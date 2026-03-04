@@ -31,7 +31,7 @@ abstract class ExpressionJsonldExpressionRead implements HydraItemBaseSchema, Bu
 
   @BuiltValueField(wireName: r'leftSide')
   ExpressionJsonldExpressionReadLeftSideEnum? get leftSide;
-  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  TargetEnterpriseTag,  };
+  // enum leftSideEnum {  BookingBeginHour,  BookingEndHour,  BookingDayAllowed,  BookingDuration,  BookingWindow,  BookingDelayBetween,  BookingCancelDelay,  BookingHasFood,  BookingMadeDay,  BookingMadeWeek,  BookingMadeMonth,  BookingMadeQuarter,  BookingMadeSemester,  BookingMadeYear,  TargetCenter,  TargetRoom,  TargetRole,  TargetUser,  TargetType,  TargetEnterpriseTag,  ContractType,  };
 
   @BuiltValueField(wireName: r'rule')
   RuleJsonldExpressionRead? get rule;
@@ -304,6 +304,8 @@ class ExpressionJsonldExpressionReadLeftSideEnum extends EnumClass {
   static const ExpressionJsonldExpressionReadLeftSideEnum targetType = _$expressionJsonldExpressionReadLeftSideEnum_targetType;
   @BuiltValueEnumConst(wireName: r'TargetEnterpriseTag')
   static const ExpressionJsonldExpressionReadLeftSideEnum targetEnterpriseTag = _$expressionJsonldExpressionReadLeftSideEnum_targetEnterpriseTag;
+  @BuiltValueEnumConst(wireName: r'ContractType')
+  static const ExpressionJsonldExpressionReadLeftSideEnum contractType = _$expressionJsonldExpressionReadLeftSideEnum_contractType;
 
   static Serializer<ExpressionJsonldExpressionReadLeftSideEnum> get serializer => _$expressionJsonldExpressionReadLeftSideEnumSerializer;
 

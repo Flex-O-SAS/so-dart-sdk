@@ -23,7 +23,8 @@ class _$CenterCsvPublicCenterReadOpportunityCreateLead
   @override
   final DateTime? openingDate;
   @override
-  final BuiltList<CenterAssetsInner>? assets;
+  final BuiltList<CenterPublicCenterReadOpportunityCreateLeadAssetsInner>?
+      assets;
   @override
   final String? address;
   @override
@@ -163,10 +164,14 @@ class CenterCsvPublicCenterReadOpportunityCreateLeadBuilder
   DateTime? get openingDate => _$this._openingDate;
   set openingDate(DateTime? openingDate) => _$this._openingDate = openingDate;
 
-  ListBuilder<CenterAssetsInner>? _assets;
-  ListBuilder<CenterAssetsInner> get assets =>
-      _$this._assets ??= new ListBuilder<CenterAssetsInner>();
-  set assets(ListBuilder<CenterAssetsInner>? assets) => _$this._assets = assets;
+  ListBuilder<CenterPublicCenterReadOpportunityCreateLeadAssetsInner>? _assets;
+  ListBuilder<CenterPublicCenterReadOpportunityCreateLeadAssetsInner>
+      get assets => _$this._assets ??= new ListBuilder<
+          CenterPublicCenterReadOpportunityCreateLeadAssetsInner>();
+  set assets(
+          ListBuilder<CenterPublicCenterReadOpportunityCreateLeadAssetsInner>?
+              assets) =>
+      _$this._assets = assets;
 
   String? _address;
   String? get address => _$this._address;

@@ -13,20 +13,13 @@ part 'geo_point.g.dart';
 /// Properties:
 /// * [latitude] 
 /// * [longitude] 
-@BuiltValue()
-abstract class GeoPoint implements Built<GeoPoint, GeoPointBuilder> {
+@BuiltValue(instantiable: false)
+abstract class GeoPoint  {
   @BuiltValueField(wireName: r'latitude')
   num get latitude;
 
   @BuiltValueField(wireName: r'longitude')
   num get longitude;
-
-  GeoPoint._();
-
-  factory GeoPoint([void updates(GeoPointBuilder b)]) = _$GeoPoint;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(GeoPointBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<GeoPoint> get serializer => _$GeoPointSerializer();
@@ -34,7 +27,7 @@ abstract class GeoPoint implements Built<GeoPoint, GeoPointBuilder> {
 
 class _$GeoPointSerializer implements PrimitiveSerializer<GeoPoint> {
   @override
-  final Iterable<Type> types = const [GeoPoint, _$GeoPoint];
+  final Iterable<Type> types = const [GeoPoint];
 
   @override
   final String wireName = r'GeoPoint';
@@ -63,6 +56,46 @@ class _$GeoPointSerializer implements PrimitiveSerializer<GeoPoint> {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  @override
+  GeoPoint deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return serializers.deserialize(serialized, specifiedType: FullType($GeoPoint)) as $GeoPoint;
+  }
+}
+
+/// a concrete implementation of [GeoPoint], since [GeoPoint] is not instantiable
+@BuiltValue(instantiable: true)
+abstract class $GeoPoint implements GeoPoint, Built<$GeoPoint, $GeoPointBuilder> {
+  $GeoPoint._();
+
+  factory $GeoPoint([void Function($GeoPointBuilder)? updates]) = _$$GeoPoint;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($GeoPointBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<$GeoPoint> get serializer => _$$GeoPointSerializer();
+}
+
+class _$$GeoPointSerializer implements PrimitiveSerializer<$GeoPoint> {
+  @override
+  final Iterable<Type> types = const [$GeoPoint, _$$GeoPoint];
+
+  @override
+  final String wireName = r'$GeoPoint';
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    $GeoPoint object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return serializers.serialize(object, specifiedType: FullType(GeoPoint))!;
   }
 
   void _deserializeProperties(
@@ -100,12 +133,12 @@ class _$GeoPointSerializer implements PrimitiveSerializer<GeoPoint> {
   }
 
   @override
-  GeoPoint deserialize(
+  $GeoPoint deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = GeoPointBuilder();
+    final result = $GeoPointBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

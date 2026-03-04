@@ -3,9 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/core_service/model/point_of_interest_jsonld_poi_read_all_of_point.dart';
 import 'package:so_dart_sdk/core_service/model/hydra_item_base_schema.dart';
 import 'package:so_dart_sdk/core_service/model/hydra_item_base_schema_context.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -33,7 +33,7 @@ abstract class PointOfInterestJsonldPoiRead implements HydraItemBaseSchema, Buil
   int? get floorPlan;
 
   @BuiltValueField(wireName: r'point')
-  PointOfInterestJsonldPoiReadAllOfPoint? get point;
+  JsonObject? get point;
 
   PointOfInterestJsonldPoiRead._();
 
@@ -96,7 +96,7 @@ class _$PointOfInterestJsonldPoiReadSerializer implements PrimitiveSerializer<Po
       yield r'point';
       yield serializers.serialize(
         object.point,
-        specifiedType: const FullType(PointOfInterestJsonldPoiReadAllOfPoint),
+        specifiedType: const FullType.nullable(JsonObject),
       );
     }
   }
@@ -167,9 +167,10 @@ class _$PointOfInterestJsonldPoiReadSerializer implements PrimitiveSerializer<Po
         case r'point':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(PointOfInterestJsonldPoiReadAllOfPoint),
-          ) as PointOfInterestJsonldPoiReadAllOfPoint;
-          result.point.replace(valueDes);
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.point = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -17,7 +17,7 @@ import 'package:so_dart_sdk/ticketing_service/model/error.dart';
 import 'package:so_dart_sdk/ticketing_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write_json_merge_patch.dart';
+import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write_partial_json_merge_patch.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_tsv_ticket_read.dart';
 
 class TicketApi {
@@ -367,7 +367,7 @@ class TicketApi {
   ///
   /// Parameters:
   /// * [id] - Ticket identifier
-  /// * [ticketTicketWriteJsonMergePatch] - The updated Ticket resource
+  /// * [ticketTicketWritePartialJsonMergePatch] - The updated Ticket resource
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -379,7 +379,7 @@ class TicketApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<TicketJsonldTicketRead>> apiTicketsPatchItem({ 
     required String id,
-    required TicketTicketWriteJsonMergePatch ticketTicketWriteJsonMergePatch,
+    required TicketTicketWritePartialJsonMergePatch ticketTicketWritePartialJsonMergePatch,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -411,8 +411,8 @@ class TicketApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TicketTicketWriteJsonMergePatch);
-      _bodyData = _serializers.serialize(ticketTicketWriteJsonMergePatch, specifiedType: _type);
+      const _type = FullType(TicketTicketWritePartialJsonMergePatch);
+      _bodyData = _serializers.serialize(ticketTicketWritePartialJsonMergePatch, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

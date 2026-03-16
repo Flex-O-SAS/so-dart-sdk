@@ -8,41 +8,45 @@ import 'package:so_dart_sdk/ticketing_service/model/hydra_item_base_schema_conte
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'attachment_jsonld_ticket_read.g.dart';
+part 'attachment_jsonld_attachment_read.g.dart';
 
-/// AttachmentJsonldTicketRead
+/// AttachmentJsonldAttachmentRead
 ///
 /// Properties:
 /// * [atContext] 
 /// * [atId] 
 /// * [atType] 
+/// * [id] 
 /// * [url] 
 @BuiltValue()
-abstract class AttachmentJsonldTicketRead implements HydraItemBaseSchema, Built<AttachmentJsonldTicketRead, AttachmentJsonldTicketReadBuilder> {
+abstract class AttachmentJsonldAttachmentRead implements HydraItemBaseSchema, Built<AttachmentJsonldAttachmentRead, AttachmentJsonldAttachmentReadBuilder> {
+  @BuiltValueField(wireName: r'id')
+  int? get id;
+
   @BuiltValueField(wireName: r'url')
   String get url;
 
-  AttachmentJsonldTicketRead._();
+  AttachmentJsonldAttachmentRead._();
 
-  factory AttachmentJsonldTicketRead([void updates(AttachmentJsonldTicketReadBuilder b)]) = _$AttachmentJsonldTicketRead;
+  factory AttachmentJsonldAttachmentRead([void updates(AttachmentJsonldAttachmentReadBuilder b)]) = _$AttachmentJsonldAttachmentRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AttachmentJsonldTicketReadBuilder b) => b;
+  static void _defaults(AttachmentJsonldAttachmentReadBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AttachmentJsonldTicketRead> get serializer => _$AttachmentJsonldTicketReadSerializer();
+  static Serializer<AttachmentJsonldAttachmentRead> get serializer => _$AttachmentJsonldAttachmentReadSerializer();
 }
 
-class _$AttachmentJsonldTicketReadSerializer implements PrimitiveSerializer<AttachmentJsonldTicketRead> {
+class _$AttachmentJsonldAttachmentReadSerializer implements PrimitiveSerializer<AttachmentJsonldAttachmentRead> {
   @override
-  final Iterable<Type> types = const [AttachmentJsonldTicketRead, _$AttachmentJsonldTicketRead];
+  final Iterable<Type> types = const [AttachmentJsonldAttachmentRead, _$AttachmentJsonldAttachmentRead];
 
   @override
-  final String wireName = r'AttachmentJsonldTicketRead';
+  final String wireName = r'AttachmentJsonldAttachmentRead';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AttachmentJsonldTicketRead object, {
+    AttachmentJsonldAttachmentRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.atContext != null) {
@@ -50,6 +54,13 @@ class _$AttachmentJsonldTicketReadSerializer implements PrimitiveSerializer<Atta
       yield serializers.serialize(
         object.atContext,
         specifiedType: const FullType(HydraItemBaseSchemaContext),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(int),
       );
     }
     yield r'@id';
@@ -72,7 +83,7 @@ class _$AttachmentJsonldTicketReadSerializer implements PrimitiveSerializer<Atta
   @override
   Object serialize(
     Serializers serializers,
-    AttachmentJsonldTicketRead object, {
+    AttachmentJsonldAttachmentRead object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -83,7 +94,7 @@ class _$AttachmentJsonldTicketReadSerializer implements PrimitiveSerializer<Atta
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AttachmentJsonldTicketReadBuilder result,
+    required AttachmentJsonldAttachmentReadBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -96,6 +107,13 @@ class _$AttachmentJsonldTicketReadSerializer implements PrimitiveSerializer<Atta
             specifiedType: const FullType(HydraItemBaseSchemaContext),
           ) as HydraItemBaseSchemaContext;
           result.atContext.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(
@@ -127,12 +145,12 @@ class _$AttachmentJsonldTicketReadSerializer implements PrimitiveSerializer<Atta
   }
 
   @override
-  AttachmentJsonldTicketRead deserialize(
+  AttachmentJsonldAttachmentRead deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AttachmentJsonldTicketReadBuilder();
+    final result = AttachmentJsonldAttachmentReadBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

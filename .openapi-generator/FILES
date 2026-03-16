@@ -35,6 +35,7 @@ lib/connect/model/menu_list_dto_menus_inner.dart
 lib/connect/model/menu_list_dto_menus_inner_items_inner.dart
 lib/connect/model/menu_list_dto_menus_inner_items_inner_items_inner.dart
 lib/connect/model/menu_list_dto_menus_inner_site.dart
+lib/connect/model/mobile_key_response.dart
 lib/connect/model/print_file_body.dart
 lib/connect/model/printer_dto.dart
 lib/connect/model/printer_group_dto.dart
@@ -42,6 +43,7 @@ lib/connect/model/printer_pool_dto.dart
 lib/connect/model/provider_response_inner.dart
 lib/connect/model/providers_provider_uuid_users_user_reference_qrcode_get200_response.dart
 lib/connect/model/providers_provider_uuid_users_user_reference_qrcode_get404_response.dart
+lib/connect/model/provision_mobile_key_body.dart
 lib/connect/model/reservation_slot_data.dart
 lib/connect/model/site_access_group_device_dto.dart
 lib/connect/model/site_access_group_dto.dart

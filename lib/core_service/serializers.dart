@@ -47,6 +47,7 @@ import 'package:so_dart_sdk/core_service/model/notification_jsonld_notification_
 import 'package:so_dart_sdk/core_service/model/notification_notification_dto_notification_write.dart';
 import 'package:so_dart_sdk/core_service/model/point_of_interest_jsonld_poi_read.dart';
 import 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write.dart';
+import 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write_point.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_subscriber_write.dart';
@@ -87,6 +88,7 @@ part 'serializers.g.dart';
   NotificationNotificationDtoNotificationWrite,
   PointOfInterestJsonldPoiRead,
   PointOfInterestPoiWrite,
+  PointOfInterestPoiWriteJsonMergePatch,
   PointOfInterestPoiWritePoint,
   SubscriberJsonldSubscriberRead,
   SubscriberSubscriberWrite,

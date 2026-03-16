@@ -12,6 +12,8 @@ import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/connect/api_util.dart';
 import 'package:so_dart_sdk/connect/model/access_group_dto.dart';
 import 'package:so_dart_sdk/connect/model/error_response.dart';
+import 'package:so_dart_sdk/connect/model/mobile_key_response.dart';
+import 'package:so_dart_sdk/connect/model/provision_mobile_key_body.dart';
 import 'package:so_dart_sdk/connect/model/update_user_access_groups_body.dart';
 
 class AccessApi {
@@ -21,6 +23,109 @@ class AccessApi {
   final Serializers _serializers;
 
   const AccessApi(this._dio, this._serializers);
+
+  /// Provisionner une clé mobile Salto
+  /// Enregistre l&#39;appareil auprès du site Salto et télécharge la clé mobile (mkey_data). L&#39;email de l&#39;utilisateur est extrait du token JWT. Le site est résolu depuis le site actif du provider. 
+  ///
+  /// Parameters:
+  /// * [providerUuid] - UUID du provider Salto
+  /// * [provisionMobileKeyBody] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [MobileKeyResponse] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<MobileKeyResponse>> accessProviderUuidMobileKeyPost({ 
+    required String providerUuid,
+    required ProvisionMobileKeyBody provisionMobileKeyBody,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/access/{provider_uuid}/mobile-key'.replaceAll('{' r'provider_uuid' '}', encodeQueryParameter(_serializers, providerUuid, const FullType(String)).toString());
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(ProvisionMobileKeyBody);
+      _bodyData = _serializers.serialize(provisionMobileKeyBody, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    MobileKeyResponse? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(MobileKeyResponse),
+      ) as MobileKeyResponse;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<MobileKeyResponse>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
 
   /// Lister les groupes d&#39;accès d&#39;un utilisateur pour un site
   /// Récupère la liste des groupes d&#39;accès associés à un utilisateur pour un site et un provider spécifique. 

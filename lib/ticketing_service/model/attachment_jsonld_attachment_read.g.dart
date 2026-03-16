@@ -1,12 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'attachment_jsonld_ticket_read.dart';
+part of 'attachment_jsonld_attachment_read.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AttachmentJsonldTicketRead extends AttachmentJsonldTicketRead {
+class _$AttachmentJsonldAttachmentRead extends AttachmentJsonldAttachmentRead {
+  @override
+  final int? id;
   @override
   final String url;
   @override
@@ -16,37 +18,39 @@ class _$AttachmentJsonldTicketRead extends AttachmentJsonldTicketRead {
   @override
   final String atType;
 
-  factory _$AttachmentJsonldTicketRead(
-          [void Function(AttachmentJsonldTicketReadBuilder)? updates]) =>
-      (new AttachmentJsonldTicketReadBuilder()..update(updates))._build();
+  factory _$AttachmentJsonldAttachmentRead(
+          [void Function(AttachmentJsonldAttachmentReadBuilder)? updates]) =>
+      (new AttachmentJsonldAttachmentReadBuilder()..update(updates))._build();
 
-  _$AttachmentJsonldTicketRead._(
-      {required this.url,
+  _$AttachmentJsonldAttachmentRead._(
+      {this.id,
+      required this.url,
       this.atContext,
       required this.atId,
       required this.atType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        url, r'AttachmentJsonldTicketRead', 'url');
+        url, r'AttachmentJsonldAttachmentRead', 'url');
     BuiltValueNullFieldError.checkNotNull(
-        atId, r'AttachmentJsonldTicketRead', 'atId');
+        atId, r'AttachmentJsonldAttachmentRead', 'atId');
     BuiltValueNullFieldError.checkNotNull(
-        atType, r'AttachmentJsonldTicketRead', 'atType');
+        atType, r'AttachmentJsonldAttachmentRead', 'atType');
   }
 
   @override
-  AttachmentJsonldTicketRead rebuild(
-          void Function(AttachmentJsonldTicketReadBuilder) updates) =>
+  AttachmentJsonldAttachmentRead rebuild(
+          void Function(AttachmentJsonldAttachmentReadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AttachmentJsonldTicketReadBuilder toBuilder() =>
-      new AttachmentJsonldTicketReadBuilder()..replace(this);
+  AttachmentJsonldAttachmentReadBuilder toBuilder() =>
+      new AttachmentJsonldAttachmentReadBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AttachmentJsonldTicketRead &&
+    return other is AttachmentJsonldAttachmentRead &&
+        id == other.id &&
         url == other.url &&
         atContext == other.atContext &&
         atId == other.atId &&
@@ -56,6 +60,7 @@ class _$AttachmentJsonldTicketRead extends AttachmentJsonldTicketRead {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
@@ -66,7 +71,8 @@ class _$AttachmentJsonldTicketRead extends AttachmentJsonldTicketRead {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AttachmentJsonldTicketRead')
+    return (newBuiltValueToStringHelper(r'AttachmentJsonldAttachmentRead')
+          ..add('id', id)
           ..add('url', url)
           ..add('atContext', atContext)
           ..add('atId', atId)
@@ -75,11 +81,16 @@ class _$AttachmentJsonldTicketRead extends AttachmentJsonldTicketRead {
   }
 }
 
-class AttachmentJsonldTicketReadBuilder
+class AttachmentJsonldAttachmentReadBuilder
     implements
-        Builder<AttachmentJsonldTicketRead, AttachmentJsonldTicketReadBuilder>,
+        Builder<AttachmentJsonldAttachmentRead,
+            AttachmentJsonldAttachmentReadBuilder>,
         HydraItemBaseSchemaBuilder {
-  _$AttachmentJsonldTicketRead? _$v;
+  _$AttachmentJsonldAttachmentRead? _$v;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
 
   String? _url;
   String? get url => _$this._url;
@@ -99,13 +110,14 @@ class AttachmentJsonldTicketReadBuilder
   String? get atType => _$this._atType;
   set atType(covariant String? atType) => _$this._atType = atType;
 
-  AttachmentJsonldTicketReadBuilder() {
-    AttachmentJsonldTicketRead._defaults(this);
+  AttachmentJsonldAttachmentReadBuilder() {
+    AttachmentJsonldAttachmentRead._defaults(this);
   }
 
-  AttachmentJsonldTicketReadBuilder get _$this {
+  AttachmentJsonldAttachmentReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _url = $v.url;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
@@ -116,31 +128,32 @@ class AttachmentJsonldTicketReadBuilder
   }
 
   @override
-  void replace(covariant AttachmentJsonldTicketRead other) {
+  void replace(covariant AttachmentJsonldAttachmentRead other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$AttachmentJsonldTicketRead;
+    _$v = other as _$AttachmentJsonldAttachmentRead;
   }
 
   @override
-  void update(void Function(AttachmentJsonldTicketReadBuilder)? updates) {
+  void update(void Function(AttachmentJsonldAttachmentReadBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AttachmentJsonldTicketRead build() => _build();
+  AttachmentJsonldAttachmentRead build() => _build();
 
-  _$AttachmentJsonldTicketRead _build() {
-    _$AttachmentJsonldTicketRead _$result;
+  _$AttachmentJsonldAttachmentRead _build() {
+    _$AttachmentJsonldAttachmentRead _$result;
     try {
       _$result = _$v ??
-          new _$AttachmentJsonldTicketRead._(
+          new _$AttachmentJsonldAttachmentRead._(
+            id: id,
             url: BuiltValueNullFieldError.checkNotNull(
-                url, r'AttachmentJsonldTicketRead', 'url'),
+                url, r'AttachmentJsonldAttachmentRead', 'url'),
             atContext: _atContext?.build(),
             atId: BuiltValueNullFieldError.checkNotNull(
-                atId, r'AttachmentJsonldTicketRead', 'atId'),
+                atId, r'AttachmentJsonldAttachmentRead', 'atId'),
             atType: BuiltValueNullFieldError.checkNotNull(
-                atType, r'AttachmentJsonldTicketRead', 'atType'),
+                atType, r'AttachmentJsonldAttachmentRead', 'atType'),
           );
     } catch (_) {
       late String _$failedField;
@@ -149,7 +162,7 @@ class AttachmentJsonldTicketReadBuilder
         _atContext?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'AttachmentJsonldTicketRead', _$failedField, e.toString());
+            r'AttachmentJsonldAttachmentRead', _$failedField, e.toString());
       }
       rethrow;
     }

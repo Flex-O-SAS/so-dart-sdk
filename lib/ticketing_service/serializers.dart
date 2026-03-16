@@ -17,10 +17,16 @@ import 'package:so_dart_sdk/ticketing_service/model/date.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apilinked_users_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apitags_get_collection200_response.dart';
+import 'package:so_dart_sdk/ticketing_service/model/api_attachments_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_tickets_get_collection200_response.dart';
+import 'package:so_dart_sdk/ticketing_service/model/attachment_attachment_read.dart';
+import 'package:so_dart_sdk/ticketing_service/model/attachment_attachment_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/attachment_jsonld_attachment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/attachment_jsonld_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/attachment_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/attachment_ticket_write.dart';
+import 'package:so_dart_sdk/ticketing_service/model/attachment_ticket_write_partial.dart';
+import 'package:so_dart_sdk/ticketing_service/model/attachment_tsv_attachment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/attachment_tsv_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
@@ -54,7 +60,7 @@ import 'package:so_dart_sdk/ticketing_service/model/tag_tsv_tag_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_jsonld_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write_json_merge_patch.dart';
+import 'package:so_dart_sdk/ticketing_service/model/ticket_ticket_write_partial_json_merge_patch.dart';
 import 'package:so_dart_sdk/ticketing_service/model/ticket_tsv_ticket_read.dart';
 
 part 'serializers.g.dart';
@@ -63,10 +69,16 @@ part 'serializers.g.dart';
   ApiApicommentsGetCollection200Response,
   ApiApilinkedUsersGetCollection200Response,
   ApiApitagsGetCollection200Response,
+  ApiAttachmentsGetCollection200Response,
   ApiTicketsGetCollection200Response,
+  AttachmentAttachmentRead,
+  AttachmentAttachmentWrite,
+  AttachmentJsonldAttachmentRead,
   AttachmentJsonldTicketRead,
   AttachmentTicketRead,
   AttachmentTicketWrite,
+  AttachmentTicketWritePartial,
+  AttachmentTsvAttachmentRead,
   AttachmentTsvTicketRead,
   CommentCommentRead,
   CommentCommentWrite,
@@ -100,7 +112,7 @@ part 'serializers.g.dart';
   TicketJsonldTicketRead,
   TicketTicketRead,
   TicketTicketWrite,
-  TicketTicketWriteJsonMergePatch,
+  TicketTicketWritePartialJsonMergePatch,
   TicketTsvTicketRead,
 ])
 Serializers serializers = (_$serializers.toBuilder()

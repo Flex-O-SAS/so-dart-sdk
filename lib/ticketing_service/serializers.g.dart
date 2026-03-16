@@ -13,10 +13,16 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiApicommentsGetCollection200Response.serializer)
       ..add(ApiApilinkedUsersGetCollection200Response.serializer)
       ..add(ApiApitagsGetCollection200Response.serializer)
+      ..add(ApiAttachmentsGetCollection200Response.serializer)
       ..add(ApiTicketsGetCollection200Response.serializer)
+      ..add(AttachmentAttachmentRead.serializer)
+      ..add(AttachmentAttachmentWrite.serializer)
+      ..add(AttachmentJsonldAttachmentRead.serializer)
       ..add(AttachmentJsonldTicketRead.serializer)
       ..add(AttachmentTicketRead.serializer)
       ..add(AttachmentTicketWrite.serializer)
+      ..add(AttachmentTicketWritePartial.serializer)
+      ..add(AttachmentTsvAttachmentRead.serializer)
       ..add(AttachmentTsvTicketRead.serializer)
       ..add(CommentCommentRead.serializer)
       ..add(CommentCommentWrite.serializer)
@@ -52,14 +58,20 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(TicketTicketReadPriorityEnum.serializer)
       ..add(TicketTicketReadStatusEnum.serializer)
       ..add(TicketTicketWrite.serializer)
-      ..add(TicketTicketWriteJsonMergePatch.serializer)
-      ..add(TicketTicketWriteJsonMergePatchPriorityEnum.serializer)
-      ..add(TicketTicketWriteJsonMergePatchStatusEnum.serializer)
+      ..add(TicketTicketWritePartialJsonMergePatch.serializer)
       ..add(TicketTicketWritePriorityEnum.serializer)
       ..add(TicketTicketWriteStatusEnum.serializer)
       ..add(TicketTsvTicketRead.serializer)
       ..add(TicketTsvTicketReadPriorityEnum.serializer)
       ..add(TicketTsvTicketReadStatusEnum.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(AttachmentJsonldAttachmentRead)]),
+          () => new ListBuilder<AttachmentJsonldAttachmentRead>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(AttachmentTicketWritePartial)]),
+          () => new ListBuilder<AttachmentTicketWritePartial>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(CommentJsonldCommentRead)]),
@@ -83,17 +95,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(LinkedUserJsonldLinkedUserRead)]),
           () => new ListBuilder<LinkedUserJsonldLinkedUserRead>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(LinkedUserTicketWrite)]),
-          () => new ListBuilder<LinkedUserTicketWrite>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(AttachmentTicketWrite)]),
-          () => new ListBuilder<AttachmentTicketWrite>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(LinkedUserTicketWrite)]),

@@ -9,6 +9,7 @@ import 'package:so_dart_sdk/ticketing_service/auth/api_key_auth.dart';
 import 'package:so_dart_sdk/ticketing_service/auth/basic_auth.dart';
 import 'package:so_dart_sdk/ticketing_service/auth/bearer_auth.dart';
 import 'package:so_dart_sdk/ticketing_service/auth/oauth.dart';
+import 'package:so_dart_sdk/ticketing_service/api/attachment_api.dart';
 import 'package:so_dart_sdk/ticketing_service/api/comment_api.dart';
 import 'package:so_dart_sdk/ticketing_service/api/linked_user_api.dart';
 import 'package:so_dart_sdk/ticketing_service/api/tag_api.dart';
@@ -66,6 +67,12 @@ class SoDartSdk {
     if (this.dio.interceptors.any((i) => i is ApiKeyAuthInterceptor)) {
       (this.dio.interceptors.firstWhere((element) => element is ApiKeyAuthInterceptor) as ApiKeyAuthInterceptor).apiKeys[name] = apiKey;
     }
+  }
+
+  /// Get AttachmentApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AttachmentApi getAttachmentApi() {
+    return AttachmentApi(dio, serializers);
   }
 
   /// Get CommentApi instance, base route and serializer can be overridden by a given but be careful,

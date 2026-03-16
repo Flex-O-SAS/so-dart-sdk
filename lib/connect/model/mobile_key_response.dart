@@ -3,76 +3,89 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:so_dart_sdk/ticketing_service/model/hydra_item_base_schema.dart';
-import 'package:so_dart_sdk/ticketing_service/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'attachment_jsonld_ticket_read.g.dart';
+part 'mobile_key_response.g.dart';
 
-/// AttachmentJsonldTicketRead
+/// MobileKeyResponse
 ///
 /// Properties:
-/// * [atContext] 
-/// * [atId] 
-/// * [atType] 
-/// * [url] 
+/// * [mkeyData] - Données chiffrées de la clé mobile à stocker dans le SDK
+/// * [deviceId] - Identifiant du device enregistré côté Salto
+/// * [keyId] - Identifiant de la clé mobile
+/// * [expiryDate] - Date d'expiration de la clé
 @BuiltValue()
-abstract class AttachmentJsonldTicketRead implements HydraItemBaseSchema, Built<AttachmentJsonldTicketRead, AttachmentJsonldTicketReadBuilder> {
-  @BuiltValueField(wireName: r'url')
-  String get url;
+abstract class MobileKeyResponse implements Built<MobileKeyResponse, MobileKeyResponseBuilder> {
+  /// Données chiffrées de la clé mobile à stocker dans le SDK
+  @BuiltValueField(wireName: r'mkeyData')
+  String get mkeyData;
 
-  AttachmentJsonldTicketRead._();
+  /// Identifiant du device enregistré côté Salto
+  @BuiltValueField(wireName: r'deviceId')
+  String get deviceId;
 
-  factory AttachmentJsonldTicketRead([void updates(AttachmentJsonldTicketReadBuilder b)]) = _$AttachmentJsonldTicketRead;
+  /// Identifiant de la clé mobile
+  @BuiltValueField(wireName: r'keyId')
+  String? get keyId;
+
+  /// Date d'expiration de la clé
+  @BuiltValueField(wireName: r'expiryDate')
+  String? get expiryDate;
+
+  MobileKeyResponse._();
+
+  factory MobileKeyResponse([void updates(MobileKeyResponseBuilder b)]) = _$MobileKeyResponse;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AttachmentJsonldTicketReadBuilder b) => b;
+  static void _defaults(MobileKeyResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AttachmentJsonldTicketRead> get serializer => _$AttachmentJsonldTicketReadSerializer();
+  static Serializer<MobileKeyResponse> get serializer => _$MobileKeyResponseSerializer();
 }
 
-class _$AttachmentJsonldTicketReadSerializer implements PrimitiveSerializer<AttachmentJsonldTicketRead> {
+class _$MobileKeyResponseSerializer implements PrimitiveSerializer<MobileKeyResponse> {
   @override
-  final Iterable<Type> types = const [AttachmentJsonldTicketRead, _$AttachmentJsonldTicketRead];
+  final Iterable<Type> types = const [MobileKeyResponse, _$MobileKeyResponse];
 
   @override
-  final String wireName = r'AttachmentJsonldTicketRead';
+  final String wireName = r'MobileKeyResponse';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AttachmentJsonldTicketRead object, {
+    MobileKeyResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.atContext != null) {
-      yield r'@context';
+    yield r'mkeyData';
+    yield serializers.serialize(
+      object.mkeyData,
+      specifiedType: const FullType(String),
+    );
+    yield r'deviceId';
+    yield serializers.serialize(
+      object.deviceId,
+      specifiedType: const FullType(String),
+    );
+    if (object.keyId != null) {
+      yield r'keyId';
       yield serializers.serialize(
-        object.atContext,
-        specifiedType: const FullType(HydraItemBaseSchemaContext),
+        object.keyId,
+        specifiedType: const FullType(String),
       );
     }
-    yield r'@id';
-    yield serializers.serialize(
-      object.atId,
-      specifiedType: const FullType(String),
-    );
-    yield r'@type';
-    yield serializers.serialize(
-      object.atType,
-      specifiedType: const FullType(String),
-    );
-    yield r'url';
-    yield serializers.serialize(
-      object.url,
-      specifiedType: const FullType(String),
-    );
+    if (object.expiryDate != null) {
+      yield r'expiryDate';
+      yield serializers.serialize(
+        object.expiryDate,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    AttachmentJsonldTicketRead object, {
+    MobileKeyResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -83,40 +96,40 @@ class _$AttachmentJsonldTicketReadSerializer implements PrimitiveSerializer<Atta
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AttachmentJsonldTicketReadBuilder result,
+    required MobileKeyResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'@context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HydraItemBaseSchemaContext),
-          ) as HydraItemBaseSchemaContext;
-          result.atContext.replace(valueDes);
-          break;
-        case r'@id':
+        case r'mkeyData':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atId = valueDes;
+          result.mkeyData = valueDes;
           break;
-        case r'@type':
+        case r'deviceId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.atType = valueDes;
+          result.deviceId = valueDes;
           break;
-        case r'url':
+        case r'keyId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.url = valueDes;
+          result.keyId = valueDes;
+          break;
+        case r'expiryDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.expiryDate = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -127,12 +140,12 @@ class _$AttachmentJsonldTicketReadSerializer implements PrimitiveSerializer<Atta
   }
 
   @override
-  AttachmentJsonldTicketRead deserialize(
+  MobileKeyResponse deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AttachmentJsonldTicketReadBuilder();
+    final result = MobileKeyResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

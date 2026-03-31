@@ -1,0 +1,23 @@
+generate.sh
+  005a49c42fc56868 7,13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23",
+  "base_commit_sha": "6ce7bf36b508c92e49b4b63276f51895f16c7d7b",
+  "prompts": {
+    "005a49c42fc56868": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "9c5a139e-7d8e-4c55-a03e-15c07e0c72bf",
+        "model": "claude-4.6-opus-high-thinking"
+      },
+      "human_author": "theodorefs <theodore.faraut-schwieg@saas-office.com>",
+      "messages": [],
+      "total_additions": 2,
+      "total_deletions": 0,
+      "accepted_lines": 2,
+      "overriden_lines": 0
+    }
+  }
+}

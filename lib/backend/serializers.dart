@@ -19,6 +19,7 @@ import 'package:so_dart_sdk/backend/model/api_centers_public_get_collection200_r
 import 'package:so_dart_sdk/backend/model/api_companies_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_contracts_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_credits_get_collection200_response.dart';
+import 'package:so_dart_sdk/backend/model/api_customer_reservation_public_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_domain_automapper_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_expressions_get_collection200_response.dart';
@@ -107,9 +108,9 @@ import 'package:so_dart_sdk/backend/model/credit_row_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/custom_service_detail.dart';
 import 'package:so_dart_sdk/backend/model/custom_service_detail_csv.dart';
 import 'package:so_dart_sdk/backend/model/custom_service_detail_jsonld.dart';
-import 'package:so_dart_sdk/backend/model/customer_reservation.dart';
-import 'package:so_dart_sdk/backend/model/customer_reservation_csv.dart';
-import 'package:so_dart_sdk/backend/model/customer_reservation_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/customer_reservation_csv_public_customer_reservation_read.dart';
+import 'package:so_dart_sdk/backend/model/customer_reservation_jsonld_public_customer_reservation_read.dart';
+import 'package:so_dart_sdk/backend/model/customer_reservation_public_customer_reservation_read.dart';
 import 'package:so_dart_sdk/backend/model/domain_automapper_csv_domain_automapper_search.dart';
 import 'package:so_dart_sdk/backend/model/domain_automapper_domain_automapper_search.dart';
 import 'package:so_dart_sdk/backend/model/domain_automapper_domain_automapper_write.dart';
@@ -196,9 +197,6 @@ import 'package:so_dart_sdk/backend/model/invoice_row_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/language_csv_public_language_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/language_jsonld_public_language_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/language_public_language_read_opportunity_create_lead.dart';
-import 'package:so_dart_sdk/backend/model/meeting_attendee.dart';
-import 'package:so_dart_sdk/backend/model/meeting_attendee_csv.dart';
-import 'package:so_dart_sdk/backend/model/meeting_attendee_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_csv_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_csv_opportunity_search.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_create_lead.dart';
@@ -277,6 +275,7 @@ part 'serializers.g.dart';
   ApiCompaniesGetCollection200Response,
   ApiContractsGetCollection200Response,
   ApiCreditsGetCollection200Response,
+  ApiCustomerReservationPublicGetCollection200Response,
   ApiDomainAutomapperGetCollection200Response,
   ApiEnterprisesGetCollection200Response,
   ApiExpressionsGetCollection200Response,
@@ -365,9 +364,9 @@ part 'serializers.g.dart';
   CustomServiceDetail,
   CustomServiceDetailCsv,
   CustomServiceDetailJsonld,
-  CustomerReservation,
-  CustomerReservationCsv,
-  CustomerReservationJsonld,
+  CustomerReservationCsvPublicCustomerReservationRead,
+  CustomerReservationJsonldPublicCustomerReservationRead,
+  CustomerReservationPublicCustomerReservationRead,
   DomainAutomapperCsvDomainAutomapperSearch,
   DomainAutomapperDomainAutomapperSearch,
   DomainAutomapperDomainAutomapperWrite,
@@ -454,9 +453,6 @@ part 'serializers.g.dart';
   LanguageCsvPublicLanguageReadOpportunityCreateLead,
   LanguageJsonldPublicLanguageReadOpportunityCreateLead,
   LanguagePublicLanguageReadOpportunityCreateLead,
-  MeetingAttendee,
-  MeetingAttendeeCsv,
-  MeetingAttendeeJsonld,
   OpportunityCsvOpportunityCreateLead,
   OpportunityCsvOpportunitySearch,
   OpportunityJsonldOpportunityCreateLead,

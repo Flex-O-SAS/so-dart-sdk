@@ -24,8 +24,10 @@ part 'package_package_read.g.dart';
 /// * [receptionDate] 
 /// * [handoverDate] 
 /// * [handoverClient] 
+/// * [handoverBy] 
 /// * [securityCode] 
 /// * [quantity] 
+/// * [lastSentCode] 
 @BuiltValue()
 abstract class PackagePackageRead implements Built<PackagePackageRead, PackagePackageReadBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -52,7 +54,7 @@ abstract class PackagePackageRead implements Built<PackagePackageRead, PackagePa
 
   @BuiltValueField(wireName: r'status')
   PackagePackageReadStatusEnum get status;
-  // enum statusEnum {  received,  handed_over,  };
+  // enum statusEnum {  received,  handed_over,  handed_over_without_code,  cancelled,  };
 
   @BuiltValueField(wireName: r'trackingNumber')
   String get trackingNumber;
@@ -66,11 +68,17 @@ abstract class PackagePackageRead implements Built<PackagePackageRead, PackagePa
   @BuiltValueField(wireName: r'handoverClient')
   String? get handoverClient;
 
+  @BuiltValueField(wireName: r'handoverBy')
+  String? get handoverBy;
+
   @BuiltValueField(wireName: r'securityCode')
   String get securityCode;
 
   @BuiltValueField(wireName: r'quantity')
   int get quantity;
+
+  @BuiltValueField(wireName: r'lastSentCode')
+  DateTime? get lastSentCode;
 
   PackagePackageRead._();
 
@@ -165,6 +173,13 @@ class _$PackagePackageReadSerializer implements PrimitiveSerializer<PackagePacka
         specifiedType: const FullType(String),
       );
     }
+    if (object.handoverBy != null) {
+      yield r'handoverBy';
+      yield serializers.serialize(
+        object.handoverBy,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'securityCode';
     yield serializers.serialize(
       object.securityCode,
@@ -175,6 +190,13 @@ class _$PackagePackageReadSerializer implements PrimitiveSerializer<PackagePacka
       object.quantity,
       specifiedType: const FullType(int),
     );
+    if (object.lastSentCode != null) {
+      yield r'lastSentCode';
+      yield serializers.serialize(
+        object.lastSentCode,
+        specifiedType: const FullType(DateTime),
+      );
+    }
   }
 
   @override
@@ -282,6 +304,13 @@ class _$PackagePackageReadSerializer implements PrimitiveSerializer<PackagePacka
           ) as String;
           result.handoverClient = valueDes;
           break;
+        case r'handoverBy':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.handoverBy = valueDes;
+          break;
         case r'securityCode':
           final valueDes = serializers.deserialize(
             value,
@@ -295,6 +324,13 @@ class _$PackagePackageReadSerializer implements PrimitiveSerializer<PackagePacka
             specifiedType: const FullType(int),
           ) as int;
           result.quantity = valueDes;
+          break;
+        case r'lastSentCode':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.lastSentCode = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -352,6 +388,10 @@ class PackagePackageReadStatusEnum extends EnumClass {
   static const PackagePackageReadStatusEnum received = _$packagePackageReadStatusEnum_received;
   @BuiltValueEnumConst(wireName: r'handed_over')
   static const PackagePackageReadStatusEnum handedOver = _$packagePackageReadStatusEnum_handedOver;
+  @BuiltValueEnumConst(wireName: r'handed_over_without_code')
+  static const PackagePackageReadStatusEnum handedOverWithoutCode = _$packagePackageReadStatusEnum_handedOverWithoutCode;
+  @BuiltValueEnumConst(wireName: r'cancelled')
+  static const PackagePackageReadStatusEnum cancelled = _$packagePackageReadStatusEnum_cancelled;
 
   static Serializer<PackagePackageReadStatusEnum> get serializer => _$packagePackageReadStatusEnumSerializer;
 

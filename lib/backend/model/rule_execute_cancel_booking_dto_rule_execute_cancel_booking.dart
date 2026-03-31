@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -16,7 +15,7 @@ part 'rule_execute_cancel_booking_dto_rule_execute_cancel_booking.g.dart';
 @BuiltValue()
 abstract class RuleExecuteCancelBookingDtoRuleExecuteCancelBooking implements Built<RuleExecuteCancelBookingDtoRuleExecuteCancelBooking, RuleExecuteCancelBookingDtoRuleExecuteCancelBookingBuilder> {
   @BuiltValueField(wireName: r'booking')
-  JsonObject get booking;
+  String get booking;
 
   RuleExecuteCancelBookingDtoRuleExecuteCancelBooking._();
 
@@ -44,7 +43,7 @@ class _$RuleExecuteCancelBookingDtoRuleExecuteCancelBookingSerializer implements
     yield r'booking';
     yield serializers.serialize(
       object.booking,
-      specifiedType: const FullType(JsonObject),
+      specifiedType: const FullType(String),
     );
   }
 
@@ -72,8 +71,8 @@ class _$RuleExecuteCancelBookingDtoRuleExecuteCancelBookingSerializer implements
         case r'booking':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
+            specifiedType: const FullType(String),
+          ) as String;
           result.booking = valueDes;
           break;
         default:

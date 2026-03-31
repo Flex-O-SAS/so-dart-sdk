@@ -23,6 +23,7 @@ part 'package_package_write.g.dart';
 /// * [receptionDate] 
 /// * [handoverDate] 
 /// * [handoverClient] 
+/// * [handoverBy] 
 /// * [securityCode] 
 /// * [quantity] 
 @BuiltValue()
@@ -48,7 +49,7 @@ abstract class PackagePackageWrite implements Built<PackagePackageWrite, Package
 
   @BuiltValueField(wireName: r'status')
   PackagePackageWriteStatusEnum get status;
-  // enum statusEnum {  received,  handed_over,  };
+  // enum statusEnum {  received,  handed_over,  handed_over_without_code,  cancelled,  };
 
   @BuiltValueField(wireName: r'trackingNumber')
   String get trackingNumber;
@@ -61,6 +62,9 @@ abstract class PackagePackageWrite implements Built<PackagePackageWrite, Package
 
   @BuiltValueField(wireName: r'handoverClient')
   String? get handoverClient;
+
+  @BuiltValueField(wireName: r'handoverBy')
+  String? get handoverBy;
 
   @BuiltValueField(wireName: r'securityCode')
   String get securityCode;
@@ -151,6 +155,13 @@ class _$PackagePackageWriteSerializer implements PrimitiveSerializer<PackagePack
       yield r'handoverClient';
       yield serializers.serialize(
         object.handoverClient,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.handoverBy != null) {
+      yield r'handoverBy';
+      yield serializers.serialize(
+        object.handoverBy,
         specifiedType: const FullType(String),
       );
     }
@@ -264,6 +275,13 @@ class _$PackagePackageWriteSerializer implements PrimitiveSerializer<PackagePack
           ) as String;
           result.handoverClient = valueDes;
           break;
+        case r'handoverBy':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.handoverBy = valueDes;
+          break;
         case r'securityCode':
           final valueDes = serializers.deserialize(
             value,
@@ -334,6 +352,10 @@ class PackagePackageWriteStatusEnum extends EnumClass {
   static const PackagePackageWriteStatusEnum received = _$packagePackageWriteStatusEnum_received;
   @BuiltValueEnumConst(wireName: r'handed_over')
   static const PackagePackageWriteStatusEnum handedOver = _$packagePackageWriteStatusEnum_handedOver;
+  @BuiltValueEnumConst(wireName: r'handed_over_without_code')
+  static const PackagePackageWriteStatusEnum handedOverWithoutCode = _$packagePackageWriteStatusEnum_handedOverWithoutCode;
+  @BuiltValueEnumConst(wireName: r'cancelled')
+  static const PackagePackageWriteStatusEnum cancelled = _$packagePackageWriteStatusEnum_cancelled;
 
   static Serializer<PackagePackageWriteStatusEnum> get serializer => _$packagePackageWriteStatusEnumSerializer;
 

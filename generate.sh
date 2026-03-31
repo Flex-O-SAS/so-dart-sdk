@@ -4,11 +4,13 @@ service="corporate"
 
 rm -Rf "${cwd}/services"
 rm -Rf "${cwd}/lib"
+mkdir -p "${cwd}/lib"
 services=("backend" "marketplace-service" "ticketing-service" "corporate" "media-service" "core-service" "connect")
 
 export DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
 export TRUSTED_HOSTS=""
 export TRUSTED_PROXIES=""
+export FRONT_MANAGER_CLIENT_ID=""
 
 echo "" > "${cwd}/lib/all.dart"
 for service in "${services[@]}"

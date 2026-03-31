@@ -29,8 +29,10 @@ part 'package_jsonld_package_read.g.dart';
 /// * [receptionDate] 
 /// * [handoverDate] 
 /// * [handoverClient] 
+/// * [handoverBy] 
 /// * [securityCode] 
 /// * [quantity] 
+/// * [lastSentCode] 
 @BuiltValue()
 abstract class PackageJsonldPackageRead implements HydraItemBaseSchema, Built<PackageJsonldPackageRead, PackageJsonldPackageReadBuilder> {
   @BuiltValueField(wireName: r'quantity')
@@ -61,6 +63,12 @@ abstract class PackageJsonldPackageRead implements HydraItemBaseSchema, Built<Pa
   @BuiltValueField(wireName: r'site')
   int get site;
 
+  @BuiltValueField(wireName: r'lastSentCode')
+  DateTime? get lastSentCode;
+
+  @BuiltValueField(wireName: r'handoverBy')
+  String? get handoverBy;
+
   @BuiltValueField(wireName: r'recipient')
   String get recipient;
 
@@ -75,7 +83,7 @@ abstract class PackageJsonldPackageRead implements HydraItemBaseSchema, Built<Pa
 
   @BuiltValueField(wireName: r'status')
   PackageJsonldPackageReadStatusEnum get status;
-  // enum statusEnum {  received,  handed_over,  };
+  // enum statusEnum {  received,  handed_over,  handed_over_without_code,  cancelled,  };
 
   PackageJsonldPackageRead._();
 
@@ -156,6 +164,20 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
       object.site,
       specifiedType: const FullType(int),
     );
+    if (object.lastSentCode != null) {
+      yield r'lastSentCode';
+      yield serializers.serialize(
+        object.lastSentCode,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.handoverBy != null) {
+      yield r'handoverBy';
+      yield serializers.serialize(
+        object.handoverBy,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'recipient';
     yield serializers.serialize(
       object.recipient,
@@ -290,6 +312,20 @@ class _$PackageJsonldPackageReadSerializer implements PrimitiveSerializer<Packag
           ) as int;
           result.site = valueDes;
           break;
+        case r'lastSentCode':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.lastSentCode = valueDes;
+          break;
+        case r'handoverBy':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.handoverBy = valueDes;
+          break;
         case r'recipient':
           final valueDes = serializers.deserialize(
             value,
@@ -395,6 +431,10 @@ class PackageJsonldPackageReadStatusEnum extends EnumClass {
   static const PackageJsonldPackageReadStatusEnum received = _$packageJsonldPackageReadStatusEnum_received;
   @BuiltValueEnumConst(wireName: r'handed_over')
   static const PackageJsonldPackageReadStatusEnum handedOver = _$packageJsonldPackageReadStatusEnum_handedOver;
+  @BuiltValueEnumConst(wireName: r'handed_over_without_code')
+  static const PackageJsonldPackageReadStatusEnum handedOverWithoutCode = _$packageJsonldPackageReadStatusEnum_handedOverWithoutCode;
+  @BuiltValueEnumConst(wireName: r'cancelled')
+  static const PackageJsonldPackageReadStatusEnum cancelled = _$packageJsonldPackageReadStatusEnum_cancelled;
 
   static Serializer<PackageJsonldPackageReadStatusEnum> get serializer => _$packageJsonldPackageReadStatusEnumSerializer;
 

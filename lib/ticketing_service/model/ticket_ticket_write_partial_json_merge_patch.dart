@@ -15,6 +15,7 @@ part 'ticket_ticket_write_partial_json_merge_patch.g.dart';
 /// Properties:
 /// * [title] 
 /// * [description] 
+/// * [status] 
 /// * [location] 
 /// * [attachments] 
 @BuiltValue()
@@ -24,6 +25,10 @@ abstract class TicketTicketWritePartialJsonMergePatch implements Built<TicketTic
 
   @BuiltValueField(wireName: r'description')
   String? get description;
+
+  @BuiltValueField(wireName: r'status')
+  TicketTicketWritePartialJsonMergePatchStatusEnum? get status;
+  // enum statusEnum {  created,  in_progress,  done,  cancelled,  };
 
   @BuiltValueField(wireName: r'location')
   String? get location;
@@ -66,6 +71,13 @@ class _$TicketTicketWritePartialJsonMergePatchSerializer implements PrimitiveSer
       yield serializers.serialize(
         object.description,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.status != null) {
+      yield r'status';
+      yield serializers.serialize(
+        object.status,
+        specifiedType: const FullType(TicketTicketWritePartialJsonMergePatchStatusEnum),
       );
     }
     if (object.location != null) {
@@ -119,6 +131,13 @@ class _$TicketTicketWritePartialJsonMergePatchSerializer implements PrimitiveSer
           ) as String;
           result.description = valueDes;
           break;
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TicketTicketWritePartialJsonMergePatchStatusEnum),
+          ) as TicketTicketWritePartialJsonMergePatchStatusEnum;
+          result.status = valueDes;
+          break;
         case r'location':
           final valueDes = serializers.deserialize(
             value,
@@ -160,5 +179,24 @@ class _$TicketTicketWritePartialJsonMergePatchSerializer implements PrimitiveSer
     );
     return result.build();
   }
+}
+
+class TicketTicketWritePartialJsonMergePatchStatusEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'created')
+  static const TicketTicketWritePartialJsonMergePatchStatusEnum created = _$ticketTicketWritePartialJsonMergePatchStatusEnum_created;
+  @BuiltValueEnumConst(wireName: r'in_progress')
+  static const TicketTicketWritePartialJsonMergePatchStatusEnum inProgress = _$ticketTicketWritePartialJsonMergePatchStatusEnum_inProgress;
+  @BuiltValueEnumConst(wireName: r'done')
+  static const TicketTicketWritePartialJsonMergePatchStatusEnum done = _$ticketTicketWritePartialJsonMergePatchStatusEnum_done;
+  @BuiltValueEnumConst(wireName: r'cancelled')
+  static const TicketTicketWritePartialJsonMergePatchStatusEnum cancelled = _$ticketTicketWritePartialJsonMergePatchStatusEnum_cancelled;
+
+  static Serializer<TicketTicketWritePartialJsonMergePatchStatusEnum> get serializer => _$ticketTicketWritePartialJsonMergePatchStatusEnumSerializer;
+
+  const TicketTicketWritePartialJsonMergePatchStatusEnum._(String name): super(name);
+
+  static BuiltSet<TicketTicketWritePartialJsonMergePatchStatusEnum> get values => _$ticketTicketWritePartialJsonMergePatchStatusEnumValues;
+  static TicketTicketWritePartialJsonMergePatchStatusEnum valueOf(String name) => _$ticketTicketWritePartialJsonMergePatchStatusEnumValueOf(name);
 }
 

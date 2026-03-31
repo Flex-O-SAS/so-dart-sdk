@@ -23,6 +23,7 @@ part 'package_package_write_json_merge_patch.g.dart';
 /// * [receptionDate] 
 /// * [handoverDate] 
 /// * [handoverClient] 
+/// * [handoverBy] 
 /// * [securityCode] 
 /// * [quantity] 
 @BuiltValue()
@@ -48,7 +49,7 @@ abstract class PackagePackageWriteJsonMergePatch implements Built<PackagePackage
 
   @BuiltValueField(wireName: r'status')
   PackagePackageWriteJsonMergePatchStatusEnum? get status;
-  // enum statusEnum {  received,  handed_over,  };
+  // enum statusEnum {  received,  handed_over,  handed_over_without_code,  cancelled,  };
 
   @BuiltValueField(wireName: r'trackingNumber')
   String? get trackingNumber;
@@ -61,6 +62,9 @@ abstract class PackagePackageWriteJsonMergePatch implements Built<PackagePackage
 
   @BuiltValueField(wireName: r'handoverClient')
   String? get handoverClient;
+
+  @BuiltValueField(wireName: r'handoverBy')
+  String? get handoverBy;
 
   @BuiltValueField(wireName: r'securityCode')
   String? get securityCode;
@@ -165,6 +169,13 @@ class _$PackagePackageWriteJsonMergePatchSerializer implements PrimitiveSerializ
       yield r'handoverClient';
       yield serializers.serialize(
         object.handoverClient,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.handoverBy != null) {
+      yield r'handoverBy';
+      yield serializers.serialize(
+        object.handoverBy,
         specifiedType: const FullType(String),
       );
     }
@@ -282,6 +293,13 @@ class _$PackagePackageWriteJsonMergePatchSerializer implements PrimitiveSerializ
           ) as String;
           result.handoverClient = valueDes;
           break;
+        case r'handoverBy':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.handoverBy = valueDes;
+          break;
         case r'securityCode':
           final valueDes = serializers.deserialize(
             value,
@@ -352,6 +370,10 @@ class PackagePackageWriteJsonMergePatchStatusEnum extends EnumClass {
   static const PackagePackageWriteJsonMergePatchStatusEnum received = _$packagePackageWriteJsonMergePatchStatusEnum_received;
   @BuiltValueEnumConst(wireName: r'handed_over')
   static const PackagePackageWriteJsonMergePatchStatusEnum handedOver = _$packagePackageWriteJsonMergePatchStatusEnum_handedOver;
+  @BuiltValueEnumConst(wireName: r'handed_over_without_code')
+  static const PackagePackageWriteJsonMergePatchStatusEnum handedOverWithoutCode = _$packagePackageWriteJsonMergePatchStatusEnum_handedOverWithoutCode;
+  @BuiltValueEnumConst(wireName: r'cancelled')
+  static const PackagePackageWriteJsonMergePatchStatusEnum cancelled = _$packagePackageWriteJsonMergePatchStatusEnum_cancelled;
 
   static Serializer<PackagePackageWriteJsonMergePatchStatusEnum> get serializer => _$packagePackageWriteJsonMergePatchStatusEnumSerializer;
 

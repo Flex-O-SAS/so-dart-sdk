@@ -34,6 +34,7 @@ part 'ticket_tsv_ticket_read.g.dart';
 /// * [tags] 
 /// * [comments] 
 /// * [attachments] 
+/// * [appLink] 
 @BuiltValue()
 abstract class TicketTsvTicketRead implements Built<TicketTsvTicketRead, TicketTsvTicketReadBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -97,6 +98,9 @@ abstract class TicketTsvTicketRead implements Built<TicketTsvTicketRead, TicketT
 
   @BuiltValueField(wireName: r'attachments')
   BuiltList<AttachmentTsvTicketRead>? get attachments;
+
+  @BuiltValueField(wireName: r'appLink')
+  String? get appLink;
 
   TicketTsvTicketRead._();
 
@@ -248,6 +252,13 @@ class _$TicketTsvTicketReadSerializer implements PrimitiveSerializer<TicketTsvTi
       yield serializers.serialize(
         object.attachments,
         specifiedType: const FullType(BuiltList, [FullType(AttachmentTsvTicketRead)]),
+      );
+    }
+    if (object.appLink != null) {
+      yield r'appLink';
+      yield serializers.serialize(
+        object.appLink,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -412,6 +423,13 @@ class _$TicketTsvTicketReadSerializer implements PrimitiveSerializer<TicketTsvTi
             specifiedType: const FullType(BuiltList, [FullType(AttachmentTsvTicketRead)]),
           ) as BuiltList<AttachmentTsvTicketRead>;
           result.attachments.replace(valueDes);
+          break;
+        case r'appLink':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.appLink = valueDes;
           break;
         default:
           unhandled.add(key);

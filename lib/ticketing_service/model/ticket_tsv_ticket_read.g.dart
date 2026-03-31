@@ -183,6 +183,8 @@ class _$TicketTsvTicketRead extends TicketTsvTicketRead {
   final BuiltList<String>? comments;
   @override
   final BuiltList<AttachmentTsvTicketRead>? attachments;
+  @override
+  final String? appLink;
 
   factory _$TicketTsvTicketRead(
           [void Function(TicketTsvTicketReadBuilder)? updates]) =>
@@ -208,7 +210,8 @@ class _$TicketTsvTicketRead extends TicketTsvTicketRead {
       this.linkedUsers,
       this.tags,
       this.comments,
-      this.attachments})
+      this.attachments,
+      this.appLink})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         title, r'TicketTsvTicketRead', 'title');
@@ -255,7 +258,8 @@ class _$TicketTsvTicketRead extends TicketTsvTicketRead {
         linkedUsers == other.linkedUsers &&
         tags == other.tags &&
         comments == other.comments &&
-        attachments == other.attachments;
+        attachments == other.attachments &&
+        appLink == other.appLink;
   }
 
   @override
@@ -281,6 +285,7 @@ class _$TicketTsvTicketRead extends TicketTsvTicketRead {
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jc(_$hash, attachments.hashCode);
+    _$hash = $jc(_$hash, appLink.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -307,7 +312,8 @@ class _$TicketTsvTicketRead extends TicketTsvTicketRead {
           ..add('linkedUsers', linkedUsers)
           ..add('tags', tags)
           ..add('comments', comments)
-          ..add('attachments', attachments))
+          ..add('attachments', attachments)
+          ..add('appLink', appLink))
         .toString();
   }
 }
@@ -403,6 +409,10 @@ class TicketTsvTicketReadBuilder
   set attachments(ListBuilder<AttachmentTsvTicketRead>? attachments) =>
       _$this._attachments = attachments;
 
+  String? _appLink;
+  String? get appLink => _$this._appLink;
+  set appLink(String? appLink) => _$this._appLink = appLink;
+
   TicketTsvTicketReadBuilder() {
     TicketTsvTicketRead._defaults(this);
   }
@@ -430,6 +440,7 @@ class TicketTsvTicketReadBuilder
       _tags = $v.tags?.toBuilder();
       _comments = $v.comments?.toBuilder();
       _attachments = $v.attachments?.toBuilder();
+      _appLink = $v.appLink;
       _$v = null;
     }
     return this;
@@ -480,6 +491,7 @@ class TicketTsvTicketReadBuilder
             tags: _tags?.build(),
             comments: _comments?.build(),
             attachments: _attachments?.build(),
+            appLink: appLink,
           );
     } catch (_) {
       late String _$failedField;

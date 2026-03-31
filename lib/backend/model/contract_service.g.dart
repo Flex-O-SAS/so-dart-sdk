@@ -22,7 +22,7 @@ class _$ContractService extends ContractService {
   @override
   final String? staff;
   @override
-  final CustomerReservation? customerReservation;
+  final String? customerReservation;
   @override
   final num? fees;
   @override
@@ -265,10 +265,9 @@ class ContractServiceBuilder
   String? get staff => _$this._staff;
   set staff(String? staff) => _$this._staff = staff;
 
-  CustomerReservationBuilder? _customerReservation;
-  CustomerReservationBuilder get customerReservation =>
-      _$this._customerReservation ??= new CustomerReservationBuilder();
-  set customerReservation(CustomerReservationBuilder? customerReservation) =>
+  String? _customerReservation;
+  String? get customerReservation => _$this._customerReservation;
+  set customerReservation(String? customerReservation) =>
       _$this._customerReservation = customerReservation;
 
   num? _fees;
@@ -385,7 +384,7 @@ class ContractServiceBuilder
       _owner = $v.owner;
       _rolloverIncreaseRate = $v.rolloverIncreaseRate;
       _staff = $v.staff;
-      _customerReservation = $v.customerReservation?.toBuilder();
+      _customerReservation = $v.customerReservation;
       _fees = $v.fees;
       _contractServiceIndexingLogs =
           $v.contractServiceIndexingLogs?.toBuilder();
@@ -441,7 +440,7 @@ class ContractServiceBuilder
             owner: owner,
             rolloverIncreaseRate: rolloverIncreaseRate,
             staff: staff,
-            customerReservation: _customerReservation?.build(),
+            customerReservation: customerReservation,
             fees: fees,
             contractServiceIndexingLogs: _contractServiceIndexingLogs?.build(),
             contractServiceUsers: _contractServiceUsers?.build(),
@@ -473,9 +472,6 @@ class ContractServiceBuilder
         _invoiceRows?.build();
         _$failedField = 'customServiceDetail';
         _customServiceDetail?.build();
-
-        _$failedField = 'customerReservation';
-        _customerReservation?.build();
 
         _$failedField = 'contractServiceIndexingLogs';
         _contractServiceIndexingLogs?.build();

@@ -31,7 +31,7 @@ class _$ContractServiceJsonld extends ContractServiceJsonld {
   @override
   final DateTime? end;
   @override
-  final CustomerReservationJsonld? customerReservation;
+  final String? customerReservation;
   @override
   final int? id;
   @override
@@ -315,11 +315,9 @@ class ContractServiceJsonldBuilder
   DateTime? get end => _$this._end;
   set end(covariant DateTime? end) => _$this._end = end;
 
-  CustomerReservationJsonldBuilder? _customerReservation;
-  CustomerReservationJsonldBuilder get customerReservation =>
-      _$this._customerReservation ??= new CustomerReservationJsonldBuilder();
-  set customerReservation(
-          covariant CustomerReservationJsonldBuilder? customerReservation) =>
+  String? _customerReservation;
+  String? get customerReservation => _$this._customerReservation;
+  set customerReservation(covariant String? customerReservation) =>
       _$this._customerReservation = customerReservation;
 
   int? _id;
@@ -439,7 +437,7 @@ class ContractServiceJsonldBuilder
       _price = $v.price;
       _bookingKey = $v.bookingKey;
       _end = $v.end;
-      _customerReservation = $v.customerReservation?.toBuilder();
+      _customerReservation = $v.customerReservation;
       _id = $v.id;
       _deadline = $v.deadline;
       _finalState = $v.finalState;
@@ -497,7 +495,7 @@ class ContractServiceJsonldBuilder
             price: price,
             bookingKey: bookingKey,
             end: end,
-            customerReservation: _customerReservation?.build(),
+            customerReservation: customerReservation,
             id: id,
             deadline: deadline,
             finalState: finalState,
@@ -530,9 +528,6 @@ class ContractServiceJsonldBuilder
         _contractServiceIndexingLogs?.build();
         _$failedField = 'contractServiceUsers';
         _contractServiceUsers?.build();
-
-        _$failedField = 'customerReservation';
-        _customerReservation?.build();
 
         _$failedField = 'customServiceDetail';
         _customServiceDetail?.build();

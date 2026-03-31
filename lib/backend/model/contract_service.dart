@@ -6,7 +6,6 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/model/contract_service_indexing_log.dart';
 import 'package:so_dart_sdk/backend/model/custom_service_detail.dart';
-import 'package:so_dart_sdk/backend/model/customer_reservation.dart';
 import 'package:so_dart_sdk/backend/model/invoice_row.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -71,7 +70,7 @@ abstract class ContractService implements Built<ContractService, ContractService
   String? get staff;
 
   @BuiltValueField(wireName: r'customerReservation')
-  CustomerReservation? get customerReservation;
+  String? get customerReservation;
 
   @BuiltValueField(wireName: r'fees')
   num? get fees;
@@ -220,7 +219,7 @@ class _$ContractServiceSerializer implements PrimitiveSerializer<ContractService
       yield r'customerReservation';
       yield serializers.serialize(
         object.customerReservation,
-        specifiedType: const FullType.nullable(CustomerReservation),
+        specifiedType: const FullType(String),
       );
     }
     if (object.fees != null) {
@@ -461,10 +460,9 @@ class _$ContractServiceSerializer implements PrimitiveSerializer<ContractService
         case r'customerReservation':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(CustomerReservation),
-          ) as CustomerReservation?;
-          if (valueDes == null) continue;
-          result.customerReservation.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.customerReservation = valueDes;
           break;
         case r'fees':
           final valueDes = serializers.deserialize(

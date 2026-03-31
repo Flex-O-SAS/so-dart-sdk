@@ -1,3 +1,4 @@
+
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
@@ -17,6 +18,7 @@ export 'package:so_dart_sdk/backend/api/contract_api.dart';
 export 'package:so_dart_sdk/backend/api/contract_service_api.dart';
 export 'package:so_dart_sdk/backend/api/contract_service_user_api.dart';
 export 'package:so_dart_sdk/backend/api/credit_api.dart';
+export 'package:so_dart_sdk/backend/api/customer_reservation_api.dart';
 export 'package:so_dart_sdk/backend/api/domain_automapper_api.dart';
 export 'package:so_dart_sdk/backend/api/enterprise_api.dart';
 export 'package:so_dart_sdk/backend/api/expression_api.dart';
@@ -39,6 +41,7 @@ export 'package:so_dart_sdk/backend/model/api_centers_public_get_collection200_r
 export 'package:so_dart_sdk/backend/model/api_companies_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_contracts_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_credits_get_collection200_response.dart';
+export 'package:so_dart_sdk/backend/model/api_customer_reservation_public_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_domain_automapper_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_enterprises_get_collection200_response.dart';
 export 'package:so_dart_sdk/backend/model/api_expressions_get_collection200_response.dart';
@@ -127,9 +130,9 @@ export 'package:so_dart_sdk/backend/model/credit_row_jsonld.dart';
 export 'package:so_dart_sdk/backend/model/custom_service_detail.dart';
 export 'package:so_dart_sdk/backend/model/custom_service_detail_csv.dart';
 export 'package:so_dart_sdk/backend/model/custom_service_detail_jsonld.dart';
-export 'package:so_dart_sdk/backend/model/customer_reservation.dart';
-export 'package:so_dart_sdk/backend/model/customer_reservation_csv.dart';
-export 'package:so_dart_sdk/backend/model/customer_reservation_jsonld.dart';
+export 'package:so_dart_sdk/backend/model/customer_reservation_csv_public_customer_reservation_read.dart';
+export 'package:so_dart_sdk/backend/model/customer_reservation_jsonld_public_customer_reservation_read.dart';
+export 'package:so_dart_sdk/backend/model/customer_reservation_public_customer_reservation_read.dart';
 export 'package:so_dart_sdk/backend/model/domain_automapper_csv_domain_automapper_search.dart';
 export 'package:so_dart_sdk/backend/model/domain_automapper_domain_automapper_search.dart';
 export 'package:so_dart_sdk/backend/model/domain_automapper_domain_automapper_write.dart';
@@ -216,9 +219,6 @@ export 'package:so_dart_sdk/backend/model/invoice_row_jsonld.dart';
 export 'package:so_dart_sdk/backend/model/language_csv_public_language_read_opportunity_create_lead.dart';
 export 'package:so_dart_sdk/backend/model/language_jsonld_public_language_read_opportunity_create_lead.dart';
 export 'package:so_dart_sdk/backend/model/language_public_language_read_opportunity_create_lead.dart';
-export 'package:so_dart_sdk/backend/model/meeting_attendee.dart';
-export 'package:so_dart_sdk/backend/model/meeting_attendee_csv.dart';
-export 'package:so_dart_sdk/backend/model/meeting_attendee_jsonld.dart';
 export 'package:so_dart_sdk/backend/model/opportunity_csv_opportunity_create_lead.dart';
 export 'package:so_dart_sdk/backend/model/opportunity_csv_opportunity_search.dart';
 export 'package:so_dart_sdk/backend/model/opportunity_jsonld_opportunity_create_lead.dart';

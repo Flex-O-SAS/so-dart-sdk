@@ -56,6 +56,12 @@ const PackageJsonldPackageReadStatusEnum
 const PackageJsonldPackageReadStatusEnum
     _$packageJsonldPackageReadStatusEnum_handedOver =
     const PackageJsonldPackageReadStatusEnum._('handedOver');
+const PackageJsonldPackageReadStatusEnum
+    _$packageJsonldPackageReadStatusEnum_handedOverWithoutCode =
+    const PackageJsonldPackageReadStatusEnum._('handedOverWithoutCode');
+const PackageJsonldPackageReadStatusEnum
+    _$packageJsonldPackageReadStatusEnum_cancelled =
+    const PackageJsonldPackageReadStatusEnum._('cancelled');
 
 PackageJsonldPackageReadStatusEnum _$packageJsonldPackageReadStatusEnumValueOf(
     String name) {
@@ -64,6 +70,10 @@ PackageJsonldPackageReadStatusEnum _$packageJsonldPackageReadStatusEnumValueOf(
       return _$packageJsonldPackageReadStatusEnum_received;
     case 'handedOver':
       return _$packageJsonldPackageReadStatusEnum_handedOver;
+    case 'handedOverWithoutCode':
+      return _$packageJsonldPackageReadStatusEnum_handedOverWithoutCode;
+    case 'cancelled':
+      return _$packageJsonldPackageReadStatusEnum_cancelled;
     default:
       throw new ArgumentError(name);
   }
@@ -74,6 +84,8 @@ final BuiltSet<PackageJsonldPackageReadStatusEnum>
         PackageJsonldPackageReadStatusEnum>(const <PackageJsonldPackageReadStatusEnum>[
   _$packageJsonldPackageReadStatusEnum_received,
   _$packageJsonldPackageReadStatusEnum_handedOver,
+  _$packageJsonldPackageReadStatusEnum_handedOverWithoutCode,
+  _$packageJsonldPackageReadStatusEnum_cancelled,
 ]);
 
 Serializer<PackageJsonldPackageReadTypeEnum>
@@ -124,10 +136,14 @@ class _$PackageJsonldPackageReadStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'received': 'received',
     'handedOver': 'handed_over',
+    'handedOverWithoutCode': 'handed_over_without_code',
+    'cancelled': 'cancelled',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'received': 'received',
     'handed_over': 'handedOver',
+    'handed_over_without_code': 'handedOverWithoutCode',
+    'cancelled': 'cancelled',
   };
 
   @override
@@ -169,6 +185,10 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
   @override
   final int site;
   @override
+  final DateTime? lastSentCode;
+  @override
+  final String? handoverBy;
+  @override
   final String recipient;
   @override
   final int? id;
@@ -199,6 +219,8 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
       this.handoverClient,
       this.handoverDate,
       required this.site,
+      this.lastSentCode,
+      this.handoverBy,
       required this.recipient,
       this.id,
       this.enterpriseName,
@@ -254,6 +276,8 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
         handoverClient == other.handoverClient &&
         handoverDate == other.handoverDate &&
         site == other.site &&
+        lastSentCode == other.lastSentCode &&
+        handoverBy == other.handoverBy &&
         recipient == other.recipient &&
         id == other.id &&
         enterpriseName == other.enterpriseName &&
@@ -276,6 +300,8 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
     _$hash = $jc(_$hash, handoverClient.hashCode);
     _$hash = $jc(_$hash, handoverDate.hashCode);
     _$hash = $jc(_$hash, site.hashCode);
+    _$hash = $jc(_$hash, lastSentCode.hashCode);
+    _$hash = $jc(_$hash, handoverBy.hashCode);
     _$hash = $jc(_$hash, recipient.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, enterpriseName.hashCode);
@@ -300,6 +326,8 @@ class _$PackageJsonldPackageRead extends PackageJsonldPackageRead {
           ..add('handoverClient', handoverClient)
           ..add('handoverDate', handoverDate)
           ..add('site', site)
+          ..add('lastSentCode', lastSentCode)
+          ..add('handoverBy', handoverBy)
           ..add('recipient', recipient)
           ..add('id', id)
           ..add('enterpriseName', enterpriseName)
@@ -360,6 +388,16 @@ class PackageJsonldPackageReadBuilder
   int? get site => _$this._site;
   set site(covariant int? site) => _$this._site = site;
 
+  DateTime? _lastSentCode;
+  DateTime? get lastSentCode => _$this._lastSentCode;
+  set lastSentCode(covariant DateTime? lastSentCode) =>
+      _$this._lastSentCode = lastSentCode;
+
+  String? _handoverBy;
+  String? get handoverBy => _$this._handoverBy;
+  set handoverBy(covariant String? handoverBy) =>
+      _$this._handoverBy = handoverBy;
+
   String? _recipient;
   String? get recipient => _$this._recipient;
   set recipient(covariant String? recipient) => _$this._recipient = recipient;
@@ -413,6 +451,8 @@ class PackageJsonldPackageReadBuilder
       _handoverClient = $v.handoverClient;
       _handoverDate = $v.handoverDate;
       _site = $v.site;
+      _lastSentCode = $v.lastSentCode;
+      _handoverBy = $v.handoverBy;
       _recipient = $v.recipient;
       _id = $v.id;
       _enterpriseName = $v.enterpriseName;
@@ -460,6 +500,8 @@ class PackageJsonldPackageReadBuilder
             handoverDate: handoverDate,
             site: BuiltValueNullFieldError.checkNotNull(
                 site, r'PackageJsonldPackageRead', 'site'),
+            lastSentCode: lastSentCode,
+            handoverBy: handoverBy,
             recipient: BuiltValueNullFieldError.checkNotNull(
                 recipient, r'PackageJsonldPackageRead', 'recipient'),
             id: id,

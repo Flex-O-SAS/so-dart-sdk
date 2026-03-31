@@ -49,6 +49,11 @@ const PackagePackageWriteStatusEnum _$packagePackageWriteStatusEnum_received =
     const PackagePackageWriteStatusEnum._('received');
 const PackagePackageWriteStatusEnum _$packagePackageWriteStatusEnum_handedOver =
     const PackagePackageWriteStatusEnum._('handedOver');
+const PackagePackageWriteStatusEnum
+    _$packagePackageWriteStatusEnum_handedOverWithoutCode =
+    const PackagePackageWriteStatusEnum._('handedOverWithoutCode');
+const PackagePackageWriteStatusEnum _$packagePackageWriteStatusEnum_cancelled =
+    const PackagePackageWriteStatusEnum._('cancelled');
 
 PackagePackageWriteStatusEnum _$packagePackageWriteStatusEnumValueOf(
     String name) {
@@ -57,6 +62,10 @@ PackagePackageWriteStatusEnum _$packagePackageWriteStatusEnumValueOf(
       return _$packagePackageWriteStatusEnum_received;
     case 'handedOver':
       return _$packagePackageWriteStatusEnum_handedOver;
+    case 'handedOverWithoutCode':
+      return _$packagePackageWriteStatusEnum_handedOverWithoutCode;
+    case 'cancelled':
+      return _$packagePackageWriteStatusEnum_cancelled;
     default:
       throw new ArgumentError(name);
   }
@@ -67,6 +76,8 @@ final BuiltSet<PackagePackageWriteStatusEnum>
         PackagePackageWriteStatusEnum>(const <PackagePackageWriteStatusEnum>[
   _$packagePackageWriteStatusEnum_received,
   _$packagePackageWriteStatusEnum_handedOver,
+  _$packagePackageWriteStatusEnum_handedOverWithoutCode,
+  _$packagePackageWriteStatusEnum_cancelled,
 ]);
 
 Serializer<PackagePackageWriteTypeEnum>
@@ -116,10 +127,14 @@ class _$PackagePackageWriteStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'received': 'received',
     'handedOver': 'handed_over',
+    'handedOverWithoutCode': 'handed_over_without_code',
+    'cancelled': 'cancelled',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'received': 'received',
     'handed_over': 'handedOver',
+    'handed_over_without_code': 'handedOverWithoutCode',
+    'cancelled': 'cancelled',
   };
 
   @override
@@ -165,6 +180,8 @@ class _$PackagePackageWrite extends PackagePackageWrite {
   @override
   final String? handoverClient;
   @override
+  final String? handoverBy;
+  @override
   final String securityCode;
   @override
   final int quantity;
@@ -185,6 +202,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
       required this.receptionDate,
       this.handoverDate,
       this.handoverClient,
+      this.handoverBy,
       required this.securityCode,
       required this.quantity})
       : super._() {
@@ -230,6 +248,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
         receptionDate == other.receptionDate &&
         handoverDate == other.handoverDate &&
         handoverClient == other.handoverClient &&
+        handoverBy == other.handoverBy &&
         securityCode == other.securityCode &&
         quantity == other.quantity;
   }
@@ -248,6 +267,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
     _$hash = $jc(_$hash, receptionDate.hashCode);
     _$hash = $jc(_$hash, handoverDate.hashCode);
     _$hash = $jc(_$hash, handoverClient.hashCode);
+    _$hash = $jc(_$hash, handoverBy.hashCode);
     _$hash = $jc(_$hash, securityCode.hashCode);
     _$hash = $jc(_$hash, quantity.hashCode);
     _$hash = $jf(_$hash);
@@ -268,6 +288,7 @@ class _$PackagePackageWrite extends PackagePackageWrite {
           ..add('receptionDate', receptionDate)
           ..add('handoverDate', handoverDate)
           ..add('handoverClient', handoverClient)
+          ..add('handoverBy', handoverBy)
           ..add('securityCode', securityCode)
           ..add('quantity', quantity))
         .toString();
@@ -327,6 +348,10 @@ class PackagePackageWriteBuilder
   set handoverClient(String? handoverClient) =>
       _$this._handoverClient = handoverClient;
 
+  String? _handoverBy;
+  String? get handoverBy => _$this._handoverBy;
+  set handoverBy(String? handoverBy) => _$this._handoverBy = handoverBy;
+
   String? _securityCode;
   String? get securityCode => _$this._securityCode;
   set securityCode(String? securityCode) => _$this._securityCode = securityCode;
@@ -353,6 +378,7 @@ class PackagePackageWriteBuilder
       _receptionDate = $v.receptionDate;
       _handoverDate = $v.handoverDate;
       _handoverClient = $v.handoverClient;
+      _handoverBy = $v.handoverBy;
       _securityCode = $v.securityCode;
       _quantity = $v.quantity;
       _$v = null;
@@ -395,6 +421,7 @@ class PackagePackageWriteBuilder
               receptionDate, r'PackagePackageWrite', 'receptionDate'),
           handoverDate: handoverDate,
           handoverClient: handoverClient,
+          handoverBy: handoverBy,
           securityCode: BuiltValueNullFieldError.checkNotNull(
               securityCode, r'PackagePackageWrite', 'securityCode'),
           quantity: BuiltValueNullFieldError.checkNotNull(

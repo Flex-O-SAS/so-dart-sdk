@@ -47,6 +47,11 @@ const PackagePackageReadStatusEnum _$packagePackageReadStatusEnum_received =
     const PackagePackageReadStatusEnum._('received');
 const PackagePackageReadStatusEnum _$packagePackageReadStatusEnum_handedOver =
     const PackagePackageReadStatusEnum._('handedOver');
+const PackagePackageReadStatusEnum
+    _$packagePackageReadStatusEnum_handedOverWithoutCode =
+    const PackagePackageReadStatusEnum._('handedOverWithoutCode');
+const PackagePackageReadStatusEnum _$packagePackageReadStatusEnum_cancelled =
+    const PackagePackageReadStatusEnum._('cancelled');
 
 PackagePackageReadStatusEnum _$packagePackageReadStatusEnumValueOf(
     String name) {
@@ -55,6 +60,10 @@ PackagePackageReadStatusEnum _$packagePackageReadStatusEnumValueOf(
       return _$packagePackageReadStatusEnum_received;
     case 'handedOver':
       return _$packagePackageReadStatusEnum_handedOver;
+    case 'handedOverWithoutCode':
+      return _$packagePackageReadStatusEnum_handedOverWithoutCode;
+    case 'cancelled':
+      return _$packagePackageReadStatusEnum_cancelled;
     default:
       throw new ArgumentError(name);
   }
@@ -65,6 +74,8 @@ final BuiltSet<PackagePackageReadStatusEnum>
         PackagePackageReadStatusEnum>(const <PackagePackageReadStatusEnum>[
   _$packagePackageReadStatusEnum_received,
   _$packagePackageReadStatusEnum_handedOver,
+  _$packagePackageReadStatusEnum_handedOverWithoutCode,
+  _$packagePackageReadStatusEnum_cancelled,
 ]);
 
 Serializer<PackagePackageReadTypeEnum> _$packagePackageReadTypeEnumSerializer =
@@ -113,10 +124,14 @@ class _$PackagePackageReadStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'received': 'received',
     'handedOver': 'handed_over',
+    'handedOverWithoutCode': 'handed_over_without_code',
+    'cancelled': 'cancelled',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'received': 'received',
     'handed_over': 'handedOver',
+    'handed_over_without_code': 'handedOverWithoutCode',
+    'cancelled': 'cancelled',
   };
 
   @override
@@ -163,9 +178,13 @@ class _$PackagePackageRead extends PackagePackageRead {
   @override
   final String? handoverClient;
   @override
+  final String? handoverBy;
+  @override
   final String securityCode;
   @override
   final int quantity;
+  @override
+  final DateTime? lastSentCode;
 
   factory _$PackagePackageRead(
           [void Function(PackagePackageReadBuilder)? updates]) =>
@@ -184,8 +203,10 @@ class _$PackagePackageRead extends PackagePackageRead {
       required this.receptionDate,
       this.handoverDate,
       this.handoverClient,
+      this.handoverBy,
       required this.securityCode,
-      required this.quantity})
+      required this.quantity,
+      this.lastSentCode})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         recipient, r'PackagePackageRead', 'recipient');
@@ -230,8 +251,10 @@ class _$PackagePackageRead extends PackagePackageRead {
         receptionDate == other.receptionDate &&
         handoverDate == other.handoverDate &&
         handoverClient == other.handoverClient &&
+        handoverBy == other.handoverBy &&
         securityCode == other.securityCode &&
-        quantity == other.quantity;
+        quantity == other.quantity &&
+        lastSentCode == other.lastSentCode;
   }
 
   @override
@@ -249,8 +272,10 @@ class _$PackagePackageRead extends PackagePackageRead {
     _$hash = $jc(_$hash, receptionDate.hashCode);
     _$hash = $jc(_$hash, handoverDate.hashCode);
     _$hash = $jc(_$hash, handoverClient.hashCode);
+    _$hash = $jc(_$hash, handoverBy.hashCode);
     _$hash = $jc(_$hash, securityCode.hashCode);
     _$hash = $jc(_$hash, quantity.hashCode);
+    _$hash = $jc(_$hash, lastSentCode.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -270,8 +295,10 @@ class _$PackagePackageRead extends PackagePackageRead {
           ..add('receptionDate', receptionDate)
           ..add('handoverDate', handoverDate)
           ..add('handoverClient', handoverClient)
+          ..add('handoverBy', handoverBy)
           ..add('securityCode', securityCode)
-          ..add('quantity', quantity))
+          ..add('quantity', quantity)
+          ..add('lastSentCode', lastSentCode))
         .toString();
   }
 }
@@ -333,6 +360,10 @@ class PackagePackageReadBuilder
   set handoverClient(String? handoverClient) =>
       _$this._handoverClient = handoverClient;
 
+  String? _handoverBy;
+  String? get handoverBy => _$this._handoverBy;
+  set handoverBy(String? handoverBy) => _$this._handoverBy = handoverBy;
+
   String? _securityCode;
   String? get securityCode => _$this._securityCode;
   set securityCode(String? securityCode) => _$this._securityCode = securityCode;
@@ -340,6 +371,11 @@ class PackagePackageReadBuilder
   int? _quantity;
   int? get quantity => _$this._quantity;
   set quantity(int? quantity) => _$this._quantity = quantity;
+
+  DateTime? _lastSentCode;
+  DateTime? get lastSentCode => _$this._lastSentCode;
+  set lastSentCode(DateTime? lastSentCode) =>
+      _$this._lastSentCode = lastSentCode;
 
   PackagePackageReadBuilder() {
     PackagePackageRead._defaults(this);
@@ -360,8 +396,10 @@ class PackagePackageReadBuilder
       _receptionDate = $v.receptionDate;
       _handoverDate = $v.handoverDate;
       _handoverClient = $v.handoverClient;
+      _handoverBy = $v.handoverBy;
       _securityCode = $v.securityCode;
       _quantity = $v.quantity;
+      _lastSentCode = $v.lastSentCode;
       _$v = null;
     }
     return this;
@@ -403,10 +441,12 @@ class PackagePackageReadBuilder
               receptionDate, r'PackagePackageRead', 'receptionDate'),
           handoverDate: handoverDate,
           handoverClient: handoverClient,
+          handoverBy: handoverBy,
           securityCode: BuiltValueNullFieldError.checkNotNull(
               securityCode, r'PackagePackageRead', 'securityCode'),
           quantity: BuiltValueNullFieldError.checkNotNull(
               quantity, r'PackagePackageRead', 'quantity'),
+          lastSentCode: lastSentCode,
         );
     replace(_$result);
     return _$result;

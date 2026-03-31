@@ -9,7 +9,7 @@ part of 'rule_execute_cancel_booking_dto_rule_execute_cancel_booking.dart';
 class _$RuleExecuteCancelBookingDtoRuleExecuteCancelBooking
     extends RuleExecuteCancelBookingDtoRuleExecuteCancelBooking {
   @override
-  final JsonObject booking;
+  final String booking;
 
   factory _$RuleExecuteCancelBookingDtoRuleExecuteCancelBooking(
           [void Function(
@@ -68,9 +68,9 @@ class RuleExecuteCancelBookingDtoRuleExecuteCancelBookingBuilder
             RuleExecuteCancelBookingDtoRuleExecuteCancelBookingBuilder> {
   _$RuleExecuteCancelBookingDtoRuleExecuteCancelBooking? _$v;
 
-  JsonObject? _booking;
-  JsonObject? get booking => _$this._booking;
-  set booking(JsonObject? booking) => _$this._booking = booking;
+  String? _booking;
+  String? get booking => _$this._booking;
+  set booking(String? booking) => _$this._booking = booking;
 
   RuleExecuteCancelBookingDtoRuleExecuteCancelBookingBuilder() {
     RuleExecuteCancelBookingDtoRuleExecuteCancelBooking._defaults(this);

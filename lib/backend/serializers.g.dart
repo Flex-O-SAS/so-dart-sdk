@@ -15,6 +15,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiCompaniesGetCollection200Response.serializer)
       ..add(ApiContractsGetCollection200Response.serializer)
       ..add(ApiCreditsGetCollection200Response.serializer)
+      ..add(ApiCustomerReservationPublicGetCollection200Response.serializer)
       ..add(ApiDomainAutomapperGetCollection200Response.serializer)
       ..add(ApiEnterprisesGetCollection200Response.serializer)
       ..add(ApiExpressionsGetCollection200Response.serializer)
@@ -106,9 +107,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CustomServiceDetail.serializer)
       ..add(CustomServiceDetailCsv.serializer)
       ..add(CustomServiceDetailJsonld.serializer)
-      ..add(CustomerReservation.serializer)
-      ..add(CustomerReservationCsv.serializer)
-      ..add(CustomerReservationJsonld.serializer)
+      ..add(CustomerReservationCsvPublicCustomerReservationRead.serializer)
+      ..add(CustomerReservationJsonldPublicCustomerReservationRead.serializer)
+      ..add(CustomerReservationPublicCustomerReservationRead.serializer)
       ..add(DomainAutomapperCsvDomainAutomapperSearch.serializer)
       ..add(DomainAutomapperCsvDomainAutomapperSearchTypeEnum.serializer)
       ..add(DomainAutomapperDomainAutomapperSearch.serializer)
@@ -215,9 +216,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(LanguageCsvPublicLanguageReadOpportunityCreateLead.serializer)
       ..add(LanguageJsonldPublicLanguageReadOpportunityCreateLead.serializer)
       ..add(LanguagePublicLanguageReadOpportunityCreateLead.serializer)
-      ..add(MeetingAttendee.serializer)
-      ..add(MeetingAttendeeCsv.serializer)
-      ..add(MeetingAttendeeJsonld.serializer)
       ..add(OpportunityCsvOpportunityCreateLead.serializer)
       ..add(OpportunityCsvOpportunityCreateLeadOriginEnum.serializer)
       ..add(OpportunityCsvOpportunityCreateLeadTypeEnum.serializer)
@@ -352,18 +350,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(ContractJsonldContractSearch)]),
           () => new ListBuilder<ContractJsonldContractSearch>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(ContractService)]),
-          () => new ListBuilder<ContractService>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(MeetingAttendee)]),
-          () => new ListBuilder<MeetingAttendee>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(ContractServiceCsv)]),
-          () => new ListBuilder<ContractServiceCsv>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(MeetingAttendeeCsv)]),
-          () => new ListBuilder<MeetingAttendeeCsv>())
-      ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ContractServiceIndexingLogJsonld)]),
           () => new ListBuilder<ContractServiceIndexingLogJsonld>())
@@ -373,14 +359,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(InvoiceRowJsonld)]),
           () => new ListBuilder<InvoiceRowJsonld>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(ContractServiceJsonld)]),
-          () => new ListBuilder<ContractServiceJsonld>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(MeetingAttendeeJsonld)]),
-          () => new ListBuilder<MeetingAttendeeJsonld>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(CreditJsonldCreditSearch)]),
@@ -394,6 +372,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(CreditRowJsonld)]),
           () => new ListBuilder<CreditRowJsonld>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                CustomerReservationJsonldPublicCustomerReservationRead)
+          ]),
+          () => new ListBuilder<
+              CustomerReservationJsonldPublicCustomerReservationRead>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(DomainAutomapperJsonldDomainAutomapperSearch)

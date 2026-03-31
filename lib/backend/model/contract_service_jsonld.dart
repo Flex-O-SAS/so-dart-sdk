@@ -7,7 +7,6 @@ import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
 import 'package:so_dart_sdk/backend/model/contract_service_indexing_log_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/backend/model/customer_reservation_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/invoice_row_jsonld.dart';
 import 'package:so_dart_sdk/backend/model/custom_service_detail_jsonld.dart';
 import 'package:built_value/built_value.dart';
@@ -88,7 +87,7 @@ abstract class ContractServiceJsonld implements HydraItemBaseSchema, Built<Contr
   DateTime? get end;
 
   @BuiltValueField(wireName: r'customerReservation')
-  CustomerReservationJsonld? get customerReservation;
+  String? get customerReservation;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -265,7 +264,7 @@ class _$ContractServiceJsonldSerializer implements PrimitiveSerializer<ContractS
       yield r'customerReservation';
       yield serializers.serialize(
         object.customerReservation,
-        specifiedType: const FullType.nullable(CustomerReservationJsonld),
+        specifiedType: const FullType(String),
       );
     }
     if (object.id != null) {
@@ -525,10 +524,9 @@ class _$ContractServiceJsonldSerializer implements PrimitiveSerializer<ContractS
         case r'customerReservation':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(CustomerReservationJsonld),
-          ) as CustomerReservationJsonld?;
-          if (valueDes == null) continue;
-          result.customerReservation.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.customerReservation = valueDes;
           break;
         case r'id':
           final valueDes = serializers.deserialize(

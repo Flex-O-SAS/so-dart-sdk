@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_apicomments_get_collection200_response.dart';
+part of 'api_customer_reservations_get_collection200_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$ApiApicommentsGetCollection200Response
-    extends ApiApicommentsGetCollection200Response {
+class _$ApiCustomerReservationsGetCollection200Response
+    extends ApiCustomerReservationsGetCollection200Response {
   @override
-  final BuiltList<CommentJsonldCommentRead> member;
+  final BuiltList<CustomerReservationJsonldCustomerReservationSearch> member;
   @override
   final HydraCollectionBaseSchemaAllOfView? view;
   @override
@@ -17,33 +17,36 @@ class _$ApiApicommentsGetCollection200Response
   @override
   final HydraCollectionBaseSchemaNoPaginationSearch? search;
 
-  factory _$ApiApicommentsGetCollection200Response(
-          [void Function(ApiApicommentsGetCollection200ResponseBuilder)?
+  factory _$ApiCustomerReservationsGetCollection200Response(
+          [void Function(
+                  ApiCustomerReservationsGetCollection200ResponseBuilder)?
               updates]) =>
-      (new ApiApicommentsGetCollection200ResponseBuilder()..update(updates))
+      (new ApiCustomerReservationsGetCollection200ResponseBuilder()
+            ..update(updates))
           ._build();
 
-  _$ApiApicommentsGetCollection200Response._(
+  _$ApiCustomerReservationsGetCollection200Response._(
       {required this.member, this.view, this.totalItems, this.search})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        member, r'ApiApicommentsGetCollection200Response', 'member');
+        member, r'ApiCustomerReservationsGetCollection200Response', 'member');
   }
 
   @override
-  ApiApicommentsGetCollection200Response rebuild(
-          void Function(ApiApicommentsGetCollection200ResponseBuilder)
+  ApiCustomerReservationsGetCollection200Response rebuild(
+          void Function(ApiCustomerReservationsGetCollection200ResponseBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ApiApicommentsGetCollection200ResponseBuilder toBuilder() =>
-      new ApiApicommentsGetCollection200ResponseBuilder()..replace(this);
+  ApiCustomerReservationsGetCollection200ResponseBuilder toBuilder() =>
+      new ApiCustomerReservationsGetCollection200ResponseBuilder()
+        ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiApicommentsGetCollection200Response &&
+    return other is ApiCustomerReservationsGetCollection200Response &&
         member == other.member &&
         view == other.view &&
         totalItems == other.totalItems &&
@@ -64,7 +67,7 @@ class _$ApiApicommentsGetCollection200Response
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ApiApicommentsGetCollection200Response')
+            r'ApiCustomerReservationsGetCollection200Response')
           ..add('member', member)
           ..add('view', view)
           ..add('totalItems', totalItems)
@@ -73,17 +76,21 @@ class _$ApiApicommentsGetCollection200Response
   }
 }
 
-class ApiApicommentsGetCollection200ResponseBuilder
+class ApiCustomerReservationsGetCollection200ResponseBuilder
     implements
-        Builder<ApiApicommentsGetCollection200Response,
-            ApiApicommentsGetCollection200ResponseBuilder>,
+        Builder<ApiCustomerReservationsGetCollection200Response,
+            ApiCustomerReservationsGetCollection200ResponseBuilder>,
         HydraCollectionBaseSchemaBuilder {
-  _$ApiApicommentsGetCollection200Response? _$v;
+  _$ApiCustomerReservationsGetCollection200Response? _$v;
 
-  ListBuilder<CommentJsonldCommentRead>? _member;
-  ListBuilder<CommentJsonldCommentRead> get member =>
-      _$this._member ??= new ListBuilder<CommentJsonldCommentRead>();
-  set member(covariant ListBuilder<CommentJsonldCommentRead>? member) =>
+  ListBuilder<CustomerReservationJsonldCustomerReservationSearch>? _member;
+  ListBuilder<CustomerReservationJsonldCustomerReservationSearch> get member =>
+      _$this._member ??=
+          new ListBuilder<CustomerReservationJsonldCustomerReservationSearch>();
+  set member(
+          covariant ListBuilder<
+                  CustomerReservationJsonldCustomerReservationSearch>?
+              member) =>
       _$this._member = member;
 
   HydraCollectionBaseSchemaAllOfViewBuilder? _view;
@@ -105,11 +112,11 @@ class ApiApicommentsGetCollection200ResponseBuilder
               search) =>
       _$this._search = search;
 
-  ApiApicommentsGetCollection200ResponseBuilder() {
-    ApiApicommentsGetCollection200Response._defaults(this);
+  ApiCustomerReservationsGetCollection200ResponseBuilder() {
+    ApiCustomerReservationsGetCollection200Response._defaults(this);
   }
 
-  ApiApicommentsGetCollection200ResponseBuilder get _$this {
+  ApiCustomerReservationsGetCollection200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _member = $v.member.toBuilder();
@@ -122,25 +129,27 @@ class ApiApicommentsGetCollection200ResponseBuilder
   }
 
   @override
-  void replace(covariant ApiApicommentsGetCollection200Response other) {
+  void replace(
+      covariant ApiCustomerReservationsGetCollection200Response other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApiApicommentsGetCollection200Response;
+    _$v = other as _$ApiCustomerReservationsGetCollection200Response;
   }
 
   @override
   void update(
-      void Function(ApiApicommentsGetCollection200ResponseBuilder)? updates) {
+      void Function(ApiCustomerReservationsGetCollection200ResponseBuilder)?
+          updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  ApiApicommentsGetCollection200Response build() => _build();
+  ApiCustomerReservationsGetCollection200Response build() => _build();
 
-  _$ApiApicommentsGetCollection200Response _build() {
-    _$ApiApicommentsGetCollection200Response _$result;
+  _$ApiCustomerReservationsGetCollection200Response _build() {
+    _$ApiCustomerReservationsGetCollection200Response _$result;
     try {
       _$result = _$v ??
-          new _$ApiApicommentsGetCollection200Response._(
+          new _$ApiCustomerReservationsGetCollection200Response._(
             member: member.build(),
             view: _view?.build(),
             totalItems: totalItems,
@@ -158,7 +167,7 @@ class ApiApicommentsGetCollection200ResponseBuilder
         _search?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'ApiApicommentsGetCollection200Response',
+            r'ApiCustomerReservationsGetCollection200Response',
             _$failedField,
             e.toString());
       }

@@ -26,6 +26,8 @@ class _$IndividualIndividualSearch extends IndividualIndividualSearch {
   @override
   final CenterIndividualSearch? center;
   @override
+  final String? timezone;
+  @override
   final String? reference;
   @override
   final int? id;
@@ -46,6 +48,7 @@ class _$IndividualIndividualSearch extends IndividualIndividualSearch {
       this.phone,
       this.mobile,
       this.center,
+      this.timezone,
       this.reference,
       this.id,
       this.createdAt})
@@ -73,6 +76,7 @@ class _$IndividualIndividualSearch extends IndividualIndividualSearch {
         phone == other.phone &&
         mobile == other.mobile &&
         center == other.center &&
+        timezone == other.timezone &&
         reference == other.reference &&
         id == other.id &&
         createdAt == other.createdAt;
@@ -90,6 +94,7 @@ class _$IndividualIndividualSearch extends IndividualIndividualSearch {
     _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, mobile.hashCode);
     _$hash = $jc(_$hash, center.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
@@ -109,6 +114,7 @@ class _$IndividualIndividualSearch extends IndividualIndividualSearch {
           ..add('phone', phone)
           ..add('mobile', mobile)
           ..add('center', center)
+          ..add('timezone', timezone)
           ..add('reference', reference)
           ..add('id', id)
           ..add('createdAt', createdAt))
@@ -161,6 +167,10 @@ class IndividualIndividualSearchBuilder
       _$this._center ??= new CenterIndividualSearchBuilder();
   set center(CenterIndividualSearchBuilder? center) => _$this._center = center;
 
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(String? timezone) => _$this._timezone = timezone;
+
   String? _reference;
   String? get reference => _$this._reference;
   set reference(String? reference) => _$this._reference = reference;
@@ -189,6 +199,7 @@ class IndividualIndividualSearchBuilder
       _phone = $v.phone;
       _mobile = $v.mobile;
       _center = $v.center?.toBuilder();
+      _timezone = $v.timezone;
       _reference = $v.reference;
       _id = $v.id;
       _createdAt = $v.createdAt;
@@ -225,6 +236,7 @@ class IndividualIndividualSearchBuilder
             phone: phone,
             mobile: mobile,
             center: _center?.build(),
+            timezone: timezone,
             reference: reference,
             id: id,
             createdAt: createdAt,

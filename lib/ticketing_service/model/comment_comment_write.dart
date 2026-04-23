@@ -14,6 +14,7 @@ part 'comment_comment_write.g.dart';
 /// * [author] 
 /// * [description] 
 /// * [notify] 
+/// * [hidden] 
 /// * [ticket] 
 @BuiltValue()
 abstract class CommentCommentWrite implements Built<CommentCommentWrite, CommentCommentWriteBuilder> {
@@ -26,6 +27,9 @@ abstract class CommentCommentWrite implements Built<CommentCommentWrite, Comment
   @BuiltValueField(wireName: r'notify')
   bool get notify;
 
+  @BuiltValueField(wireName: r'hidden')
+  bool? get hidden;
+
   @BuiltValueField(wireName: r'ticket')
   String get ticket;
 
@@ -34,7 +38,8 @@ abstract class CommentCommentWrite implements Built<CommentCommentWrite, Comment
   factory CommentCommentWrite([void updates(CommentCommentWriteBuilder b)]) = _$CommentCommentWrite;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CommentCommentWriteBuilder b) => b;
+  static void _defaults(CommentCommentWriteBuilder b) => b
+      ..hidden = false;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CommentCommentWrite> get serializer => _$CommentCommentWriteSerializer();
@@ -67,6 +72,13 @@ class _$CommentCommentWriteSerializer implements PrimitiveSerializer<CommentComm
       object.notify,
       specifiedType: const FullType(bool),
     );
+    if (object.hidden != null) {
+      yield r'hidden';
+      yield serializers.serialize(
+        object.hidden,
+        specifiedType: const FullType(bool),
+      );
+    }
     yield r'ticket';
     yield serializers.serialize(
       object.ticket,
@@ -115,6 +127,13 @@ class _$CommentCommentWriteSerializer implements PrimitiveSerializer<CommentComm
             specifiedType: const FullType(bool),
           ) as bool;
           result.notify = valueDes;
+          break;
+        case r'hidden':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.hidden = valueDes;
           break;
         case r'ticket':
           final valueDes = serializers.deserialize(

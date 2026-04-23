@@ -5,7 +5,6 @@
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/ticketing_service/model/attachment_ticket_write.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_ticket_write.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -27,7 +26,6 @@ part 'ticket_ticket_write.g.dart';
 /// * [location] 
 /// * [metadata] 
 /// * [priority] 
-/// * [linkedUsers] 
 /// * [tags] 
 /// * [attachments] 
 @BuiltValue()
@@ -69,9 +67,6 @@ abstract class TicketTicketWrite implements Built<TicketTicketWrite, TicketTicke
   @BuiltValueField(wireName: r'priority')
   TicketTicketWritePriorityEnum? get priority;
   // enum priorityEnum {  low,  medium,  high,  };
-
-  @BuiltValueField(wireName: r'linkedUsers')
-  BuiltList<LinkedUserTicketWrite>? get linkedUsers;
 
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
@@ -173,13 +168,6 @@ class _$TicketTicketWriteSerializer implements PrimitiveSerializer<TicketTicketW
       yield serializers.serialize(
         object.priority,
         specifiedType: const FullType(TicketTicketWritePriorityEnum),
-      );
-    }
-    if (object.linkedUsers != null) {
-      yield r'linkedUsers';
-      yield serializers.serialize(
-        object.linkedUsers,
-        specifiedType: const FullType(BuiltList, [FullType(LinkedUserTicketWrite)]),
       );
     }
     if (object.tags != null) {
@@ -302,13 +290,6 @@ class _$TicketTicketWriteSerializer implements PrimitiveSerializer<TicketTicketW
             specifiedType: const FullType(TicketTicketWritePriorityEnum),
           ) as TicketTicketWritePriorityEnum;
           result.priority = valueDes;
-          break;
-        case r'linkedUsers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(LinkedUserTicketWrite)]),
-          ) as BuiltList<LinkedUserTicketWrite>;
-          result.linkedUsers.replace(valueDes);
           break;
         case r'tags':
           final valueDes = serializers.deserialize(

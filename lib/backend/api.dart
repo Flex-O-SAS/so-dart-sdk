@@ -17,6 +17,7 @@ import 'package:so_dart_sdk/backend/api/contract_service_api.dart';
 import 'package:so_dart_sdk/backend/api/contract_service_user_api.dart';
 import 'package:so_dart_sdk/backend/api/credit_api.dart';
 import 'package:so_dart_sdk/backend/api/customer_reservation_api.dart';
+import 'package:so_dart_sdk/backend/api/customer_reservation_sum_api.dart';
 import 'package:so_dart_sdk/backend/api/domain_automapper_api.dart';
 import 'package:so_dart_sdk/backend/api/enterprise_api.dart';
 import 'package:so_dart_sdk/backend/api/expression_api.dart';
@@ -134,6 +135,12 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   CustomerReservationApi getCustomerReservationApi() {
     return CustomerReservationApi(dio, serializers);
+  }
+
+  /// Get CustomerReservationSumApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  CustomerReservationSumApi getCustomerReservationSumApi() {
+    return CustomerReservationSumApi(dio, serializers);
   }
 
   /// Get DomainAutomapperApi instance, base route and serializer can be overridden by a given but be careful,

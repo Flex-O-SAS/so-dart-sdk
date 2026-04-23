@@ -28,22 +28,17 @@ part 'individual_jsonld_individual_search_individual_export.g.dart';
 /// * [phone] 
 /// * [mobile] 
 /// * [center] 
+/// * [timezone] 
 /// * [reference] 
 /// * [id] 
 /// * [createdAt] 
 @BuiltValue()
 abstract class IndividualJsonldIndividualSearchIndividualExport implements HydraItemBaseSchema, Built<IndividualJsonldIndividualSearchIndividualExport, IndividualJsonldIndividualSearchIndividualExportBuilder> {
-  @BuiltValueField(wireName: r'reference')
-  String? get reference;
-
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
-
   @BuiltValueField(wireName: r'firstname')
   String? get firstname;
 
-  @BuiltValueField(wireName: r'phone')
-  String? get phone;
+  @BuiltValueField(wireName: r'timezone')
+  String? get timezone;
 
   @BuiltValueField(wireName: r'center')
   CenterJsonldIndividualSearchIndividualExport? get center;
@@ -57,17 +52,26 @@ abstract class IndividualJsonldIndividualSearchIndividualExport implements Hydra
   @BuiltValueField(wireName: r'tosAcceptedAt')
   DateTime? get tosAcceptedAt;
 
-  @BuiltValueField(wireName: r'id')
-  int? get id;
-
   @BuiltValueField(wireName: r'enterprises')
   BuiltList<EnterpriseJsonldIndividualSearchIndividualExport>? get enterprises;
 
-  @BuiltValueField(wireName: r'email')
-  String? get email;
-
   @BuiltValueField(wireName: r'lastname')
   String? get lastname;
+
+  @BuiltValueField(wireName: r'reference')
+  String? get reference;
+
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
+
+  @BuiltValueField(wireName: r'phone')
+  String? get phone;
+
+  @BuiltValueField(wireName: r'id')
+  int? get id;
+
+  @BuiltValueField(wireName: r'email')
+  String? get email;
 
   IndividualJsonldIndividualSearchIndividualExport._();
 
@@ -104,6 +108,13 @@ class _$IndividualJsonldIndividualSearchIndividualExportSerializer implements Pr
       object.atId,
       specifiedType: const FullType(String),
     );
+    if (object.timezone != null) {
+      yield r'timezone';
+      yield serializers.serialize(
+        object.timezone,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.center != null) {
       yield r'center';
       yield serializers.serialize(
@@ -229,6 +240,13 @@ class _$IndividualJsonldIndividualSearchIndividualExportSerializer implements Pr
             specifiedType: const FullType(String),
           ) as String;
           result.atId = valueDes;
+          break;
+        case r'timezone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timezone = valueDes;
           break;
         case r'center':
           final valueDes = serializers.deserialize(

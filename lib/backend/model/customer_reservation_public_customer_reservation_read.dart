@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,7 +20,8 @@ part 'customer_reservation_public_customer_reservation_read.g.dart';
 @BuiltValue()
 abstract class CustomerReservationPublicCustomerReservationRead implements Built<CustomerReservationPublicCustomerReservationRead, CustomerReservationPublicCustomerReservationReadBuilder> {
   @BuiltValueField(wireName: r'status')
-  int? get status;
+  CustomerReservationPublicCustomerReservationReadStatusEnum? get status;
+  // enum statusEnum {  1,  2,  3,  };
 
   @BuiltValueField(wireName: r'center')
   String? get center;
@@ -39,7 +41,7 @@ abstract class CustomerReservationPublicCustomerReservationRead implements Built
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CustomerReservationPublicCustomerReservationReadBuilder b) => b
-      ..status = 1;
+      ..status = CustomerReservationPublicCustomerReservationReadStatusEnum.valueOf(CustomerReservationPublicCustomerReservationReadStatusEnum.number1);
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CustomerReservationPublicCustomerReservationRead> get serializer => _$CustomerReservationPublicCustomerReservationReadSerializer();
@@ -61,7 +63,7 @@ class _$CustomerReservationPublicCustomerReservationReadSerializer implements Pr
       yield r'status';
       yield serializers.serialize(
         object.status,
-        specifiedType: const FullType(int),
+        specifiedType: const FullType(CustomerReservationPublicCustomerReservationReadStatusEnum),
       );
     }
     if (object.center != null) {
@@ -118,8 +120,8 @@ class _$CustomerReservationPublicCustomerReservationReadSerializer implements Pr
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType(CustomerReservationPublicCustomerReservationReadStatusEnum),
+          ) as CustomerReservationPublicCustomerReservationReadStatusEnum;
           result.status = valueDes;
           break;
         case r'center':
@@ -177,5 +179,22 @@ class _$CustomerReservationPublicCustomerReservationReadSerializer implements Pr
     );
     return result.build();
   }
+}
+
+class CustomerReservationPublicCustomerReservationReadStatusEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireNumber: 1)
+  static const CustomerReservationPublicCustomerReservationReadStatusEnum number1 = _$customerReservationPublicCustomerReservationReadStatusEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 2)
+  static const CustomerReservationPublicCustomerReservationReadStatusEnum number2 = _$customerReservationPublicCustomerReservationReadStatusEnum_number2;
+  @BuiltValueEnumConst(wireNumber: 3)
+  static const CustomerReservationPublicCustomerReservationReadStatusEnum number3 = _$customerReservationPublicCustomerReservationReadStatusEnum_number3;
+
+  static Serializer<CustomerReservationPublicCustomerReservationReadStatusEnum> get serializer => _$customerReservationPublicCustomerReservationReadStatusEnumSerializer;
+
+  const CustomerReservationPublicCustomerReservationReadStatusEnum._(String name): super(name);
+
+  static BuiltSet<CustomerReservationPublicCustomerReservationReadStatusEnum> get values => _$customerReservationPublicCustomerReservationReadStatusEnumValues;
+  static CustomerReservationPublicCustomerReservationReadStatusEnum valueOf(String name) => _$customerReservationPublicCustomerReservationReadStatusEnumValueOf(name);
 }
 

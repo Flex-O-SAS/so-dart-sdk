@@ -14,10 +14,10 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:so_dart_sdk/ticketing_service/date_serializer.dart';
 import 'package:so_dart_sdk/ticketing_service/model/date.dart';
 
-import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apilinked_users_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_apitags_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_attachments_get_collection200_response.dart';
+import 'package:so_dart_sdk/ticketing_service/model/api_comments_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/api_tickets_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/attachment_attachment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/attachment_attachment_write.dart';
@@ -30,7 +30,6 @@ import 'package:so_dart_sdk/ticketing_service/model/attachment_tsv_attachment_re
 import 'package:so_dart_sdk/ticketing_service/model/attachment_tsv_ticket_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_tsv_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation.dart';
@@ -50,7 +49,6 @@ import 'package:so_dart_sdk/ticketing_service/model/linked_user_jsonld_linked_us
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_linked_user_write_json_merge_patch.dart';
-import 'package:so_dart_sdk/ticketing_service/model/linked_user_ticket_write.dart';
 import 'package:so_dart_sdk/ticketing_service/model/linked_user_tsv_linked_user_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_jsonld_tag_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/tag_tag_read.dart';
@@ -66,10 +64,10 @@ import 'package:so_dart_sdk/ticketing_service/model/ticket_tsv_ticket_read.dart'
 part 'serializers.g.dart';
 
 @SerializersFor([
-  ApiApicommentsGetCollection200Response,
   ApiApilinkedUsersGetCollection200Response,
   ApiApitagsGetCollection200Response,
   ApiAttachmentsGetCollection200Response,
+  ApiCommentsGetCollection200Response,
   ApiTicketsGetCollection200Response,
   AttachmentAttachmentRead,
   AttachmentAttachmentWrite,
@@ -82,7 +80,6 @@ part 'serializers.g.dart';
   AttachmentTsvTicketRead,
   CommentCommentRead,
   CommentCommentWrite,
-  CommentCommentWriteJsonMergePatch,
   CommentJsonldCommentRead,
   CommentTsvCommentRead,
   ConstraintViolation,
@@ -102,7 +99,6 @@ part 'serializers.g.dart';
   LinkedUserLinkedUserRead,
   LinkedUserLinkedUserWrite,
   LinkedUserLinkedUserWriteJsonMergePatch,
-  LinkedUserTicketWrite,
   LinkedUserTsvLinkedUserRead,
   TagJsonldTagRead,
   TagTagRead,

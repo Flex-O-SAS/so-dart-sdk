@@ -171,8 +171,6 @@ class _$TicketTicketRead extends TicketTicketRead {
   @override
   final TicketTicketReadPriorityEnum? priority;
   @override
-  final BuiltList<String>? linkedUsers;
-  @override
   final BuiltList<String>? tags;
   @override
   final BuiltList<String>? comments;
@@ -202,7 +200,6 @@ class _$TicketTicketRead extends TicketTicketRead {
       this.createdAt,
       this.updatedAt,
       this.priority,
-      this.linkedUsers,
       this.tags,
       this.comments,
       this.attachments,
@@ -248,7 +245,6 @@ class _$TicketTicketRead extends TicketTicketRead {
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt &&
         priority == other.priority &&
-        linkedUsers == other.linkedUsers &&
         tags == other.tags &&
         comments == other.comments &&
         attachments == other.attachments &&
@@ -274,7 +270,6 @@ class _$TicketTicketRead extends TicketTicketRead {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
-    _$hash = $jc(_$hash, linkedUsers.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jc(_$hash, attachments.hashCode);
@@ -302,7 +297,6 @@ class _$TicketTicketRead extends TicketTicketRead {
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt)
           ..add('priority', priority)
-          ..add('linkedUsers', linkedUsers)
           ..add('tags', tags)
           ..add('comments', comments)
           ..add('attachments', attachments)
@@ -381,12 +375,6 @@ class TicketTicketReadBuilder
   set priority(TicketTicketReadPriorityEnum? priority) =>
       _$this._priority = priority;
 
-  ListBuilder<String>? _linkedUsers;
-  ListBuilder<String> get linkedUsers =>
-      _$this._linkedUsers ??= new ListBuilder<String>();
-  set linkedUsers(ListBuilder<String>? linkedUsers) =>
-      _$this._linkedUsers = linkedUsers;
-
   ListBuilder<String>? _tags;
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
@@ -429,7 +417,6 @@ class TicketTicketReadBuilder
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
       _priority = $v.priority;
-      _linkedUsers = $v.linkedUsers?.toBuilder();
       _tags = $v.tags?.toBuilder();
       _comments = $v.comments?.toBuilder();
       _attachments = $v.attachments?.toBuilder();
@@ -480,7 +467,6 @@ class TicketTicketReadBuilder
             createdAt: createdAt,
             updatedAt: updatedAt,
             priority: priority,
-            linkedUsers: _linkedUsers?.build(),
             tags: _tags?.build(),
             comments: _comments?.build(),
             attachments: _attachments?.build(),
@@ -489,8 +475,6 @@ class TicketTicketReadBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'linkedUsers';
-        _linkedUsers?.build();
         _$failedField = 'tags';
         _tags?.build();
         _$failedField = 'comments';

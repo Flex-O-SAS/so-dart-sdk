@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -36,7 +37,8 @@ abstract class CustomerReservationJsonldPublicCustomerReservationRead implements
   DateTime? get begin;
 
   @BuiltValueField(wireName: r'status')
-  int? get status;
+  CustomerReservationJsonldPublicCustomerReservationReadStatusEnum? get status;
+  // enum statusEnum {  1,  2,  3,  };
 
   CustomerReservationJsonldPublicCustomerReservationRead._();
 
@@ -44,7 +46,7 @@ abstract class CustomerReservationJsonldPublicCustomerReservationRead implements
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CustomerReservationJsonldPublicCustomerReservationReadBuilder b) => b
-      ..status = 1;
+      ..status = CustomerReservationJsonldPublicCustomerReservationReadStatusEnum.valueOf(CustomerReservationJsonldPublicCustomerReservationReadStatusEnum.number1);
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CustomerReservationJsonldPublicCustomerReservationRead> get serializer => _$CustomerReservationJsonldPublicCustomerReservationReadSerializer();
@@ -111,7 +113,7 @@ class _$CustomerReservationJsonldPublicCustomerReservationReadSerializer impleme
       yield r'status';
       yield serializers.serialize(
         object.status,
-        specifiedType: const FullType(int),
+        specifiedType: const FullType(CustomerReservationJsonldPublicCustomerReservationReadStatusEnum),
       );
     }
   }
@@ -189,8 +191,8 @@ class _$CustomerReservationJsonldPublicCustomerReservationReadSerializer impleme
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType(CustomerReservationJsonldPublicCustomerReservationReadStatusEnum),
+          ) as CustomerReservationJsonldPublicCustomerReservationReadStatusEnum;
           result.status = valueDes;
           break;
         default:
@@ -220,5 +222,22 @@ class _$CustomerReservationJsonldPublicCustomerReservationReadSerializer impleme
     );
     return result.build();
   }
+}
+
+class CustomerReservationJsonldPublicCustomerReservationReadStatusEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireNumber: 1)
+  static const CustomerReservationJsonldPublicCustomerReservationReadStatusEnum number1 = _$customerReservationJsonldPublicCustomerReservationReadStatusEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 2)
+  static const CustomerReservationJsonldPublicCustomerReservationReadStatusEnum number2 = _$customerReservationJsonldPublicCustomerReservationReadStatusEnum_number2;
+  @BuiltValueEnumConst(wireNumber: 3)
+  static const CustomerReservationJsonldPublicCustomerReservationReadStatusEnum number3 = _$customerReservationJsonldPublicCustomerReservationReadStatusEnum_number3;
+
+  static Serializer<CustomerReservationJsonldPublicCustomerReservationReadStatusEnum> get serializer => _$customerReservationJsonldPublicCustomerReservationReadStatusEnumSerializer;
+
+  const CustomerReservationJsonldPublicCustomerReservationReadStatusEnum._(String name): super(name);
+
+  static BuiltSet<CustomerReservationJsonldPublicCustomerReservationReadStatusEnum> get values => _$customerReservationJsonldPublicCustomerReservationReadStatusEnumValues;
+  static CustomerReservationJsonldPublicCustomerReservationReadStatusEnum valueOf(String name) => _$customerReservationJsonldPublicCustomerReservationReadStatusEnumValueOf(name);
 }
 

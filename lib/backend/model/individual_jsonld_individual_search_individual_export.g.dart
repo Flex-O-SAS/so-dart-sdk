@@ -9,13 +9,9 @@ part of 'individual_jsonld_individual_search_individual_export.dart';
 class _$IndividualJsonldIndividualSearchIndividualExport
     extends IndividualJsonldIndividualSearchIndividualExport {
   @override
-  final String? reference;
-  @override
-  final DateTime? createdAt;
-  @override
   final String? firstname;
   @override
-  final String? phone;
+  final String? timezone;
   @override
   final CenterJsonldIndividualSearchIndividualExport? center;
   @override
@@ -25,14 +21,20 @@ class _$IndividualJsonldIndividualSearchIndividualExport
   @override
   final DateTime? tosAcceptedAt;
   @override
-  final int? id;
-  @override
   final BuiltList<EnterpriseJsonldIndividualSearchIndividualExport>?
       enterprises;
   @override
-  final String? email;
-  @override
   final String? lastname;
+  @override
+  final String? reference;
+  @override
+  final DateTime? createdAt;
+  @override
+  final String? phone;
+  @override
+  final int? id;
+  @override
+  final String? email;
   @override
   final HydraItemBaseSchemaContext? atContext;
   @override
@@ -49,18 +51,19 @@ class _$IndividualJsonldIndividualSearchIndividualExport
           ._build();
 
   _$IndividualJsonldIndividualSearchIndividualExport._(
-      {this.reference,
-      this.createdAt,
-      this.firstname,
-      this.phone,
+      {this.firstname,
+      this.timezone,
       this.center,
       this.mobile,
       this.isPresent,
       this.tosAcceptedAt,
-      this.id,
       this.enterprises,
-      this.email,
       this.lastname,
+      this.reference,
+      this.createdAt,
+      this.phone,
+      this.id,
+      this.email,
       this.atContext,
       required this.atId,
       required this.atType})
@@ -86,18 +89,19 @@ class _$IndividualJsonldIndividualSearchIndividualExport
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is IndividualJsonldIndividualSearchIndividualExport &&
-        reference == other.reference &&
-        createdAt == other.createdAt &&
         firstname == other.firstname &&
-        phone == other.phone &&
+        timezone == other.timezone &&
         center == other.center &&
         mobile == other.mobile &&
         isPresent == other.isPresent &&
         tosAcceptedAt == other.tosAcceptedAt &&
-        id == other.id &&
         enterprises == other.enterprises &&
-        email == other.email &&
         lastname == other.lastname &&
+        reference == other.reference &&
+        createdAt == other.createdAt &&
+        phone == other.phone &&
+        id == other.id &&
+        email == other.email &&
         atContext == other.atContext &&
         atId == other.atId &&
         atType == other.atType;
@@ -106,18 +110,19 @@ class _$IndividualJsonldIndividualSearchIndividualExport
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, reference.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, firstname.hashCode);
-    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, mobile.hashCode);
     _$hash = $jc(_$hash, isPresent.hashCode);
     _$hash = $jc(_$hash, tosAcceptedAt.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, enterprises.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, lastname.hashCode);
+    _$hash = $jc(_$hash, reference.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
     _$hash = $jc(_$hash, atType.hashCode);
@@ -129,18 +134,19 @@ class _$IndividualJsonldIndividualSearchIndividualExport
   String toString() {
     return (newBuiltValueToStringHelper(
             r'IndividualJsonldIndividualSearchIndividualExport')
-          ..add('reference', reference)
-          ..add('createdAt', createdAt)
           ..add('firstname', firstname)
-          ..add('phone', phone)
+          ..add('timezone', timezone)
           ..add('center', center)
           ..add('mobile', mobile)
           ..add('isPresent', isPresent)
           ..add('tosAcceptedAt', tosAcceptedAt)
-          ..add('id', id)
           ..add('enterprises', enterprises)
-          ..add('email', email)
           ..add('lastname', lastname)
+          ..add('reference', reference)
+          ..add('createdAt', createdAt)
+          ..add('phone', phone)
+          ..add('id', id)
+          ..add('email', email)
           ..add('atContext', atContext)
           ..add('atId', atId)
           ..add('atType', atType))
@@ -155,21 +161,13 @@ class IndividualJsonldIndividualSearchIndividualExportBuilder
         HydraItemBaseSchemaBuilder {
   _$IndividualJsonldIndividualSearchIndividualExport? _$v;
 
-  String? _reference;
-  String? get reference => _$this._reference;
-  set reference(covariant String? reference) => _$this._reference = reference;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
-
   String? _firstname;
   String? get firstname => _$this._firstname;
   set firstname(covariant String? firstname) => _$this._firstname = firstname;
 
-  String? _phone;
-  String? get phone => _$this._phone;
-  set phone(covariant String? phone) => _$this._phone = phone;
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(covariant String? timezone) => _$this._timezone = timezone;
 
   CenterJsonldIndividualSearchIndividualExportBuilder? _center;
   CenterJsonldIndividualSearchIndividualExportBuilder get center =>
@@ -193,10 +191,6 @@ class IndividualJsonldIndividualSearchIndividualExportBuilder
   set tosAcceptedAt(covariant DateTime? tosAcceptedAt) =>
       _$this._tosAcceptedAt = tosAcceptedAt;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(covariant int? id) => _$this._id = id;
-
   ListBuilder<EnterpriseJsonldIndividualSearchIndividualExport>? _enterprises;
   ListBuilder<EnterpriseJsonldIndividualSearchIndividualExport>
       get enterprises => _$this._enterprises ??=
@@ -207,13 +201,29 @@ class IndividualJsonldIndividualSearchIndividualExportBuilder
               enterprises) =>
       _$this._enterprises = enterprises;
 
-  String? _email;
-  String? get email => _$this._email;
-  set email(covariant String? email) => _$this._email = email;
-
   String? _lastname;
   String? get lastname => _$this._lastname;
   set lastname(covariant String? lastname) => _$this._lastname = lastname;
+
+  String? _reference;
+  String? get reference => _$this._reference;
+  set reference(covariant String? reference) => _$this._reference = reference;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(covariant String? phone) => _$this._phone = phone;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  String? _email;
+  String? get email => _$this._email;
+  set email(covariant String? email) => _$this._email = email;
 
   HydraItemBaseSchemaContextBuilder? _atContext;
   HydraItemBaseSchemaContextBuilder get atContext =>
@@ -236,18 +246,19 @@ class IndividualJsonldIndividualSearchIndividualExportBuilder
   IndividualJsonldIndividualSearchIndividualExportBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _reference = $v.reference;
-      _createdAt = $v.createdAt;
       _firstname = $v.firstname;
-      _phone = $v.phone;
+      _timezone = $v.timezone;
       _center = $v.center?.toBuilder();
       _mobile = $v.mobile;
       _isPresent = $v.isPresent;
       _tosAcceptedAt = $v.tosAcceptedAt;
-      _id = $v.id;
       _enterprises = $v.enterprises?.toBuilder();
-      _email = $v.email;
       _lastname = $v.lastname;
+      _reference = $v.reference;
+      _createdAt = $v.createdAt;
+      _phone = $v.phone;
+      _id = $v.id;
+      _email = $v.email;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
       _atType = $v.atType;
@@ -278,18 +289,19 @@ class IndividualJsonldIndividualSearchIndividualExportBuilder
     try {
       _$result = _$v ??
           new _$IndividualJsonldIndividualSearchIndividualExport._(
-            reference: reference,
-            createdAt: createdAt,
             firstname: firstname,
-            phone: phone,
+            timezone: timezone,
             center: _center?.build(),
             mobile: mobile,
             isPresent: isPresent,
             tosAcceptedAt: tosAcceptedAt,
-            id: id,
             enterprises: _enterprises?.build(),
-            email: email,
             lastname: lastname,
+            reference: reference,
+            createdAt: createdAt,
+            phone: phone,
+            id: id,
+            email: email,
             atContext: _atContext?.build(),
             atId: BuiltValueNullFieldError.checkNotNull(atId,
                 r'IndividualJsonldIndividualSearchIndividualExport', 'atId'),

@@ -35,7 +35,6 @@ part 'ticket_jsonld_ticket_read.g.dart';
 /// * [createdAt] 
 /// * [updatedAt] 
 /// * [priority] 
-/// * [linkedUsers] 
 /// * [tags] 
 /// * [comments] 
 /// * [attachments] 
@@ -78,9 +77,6 @@ abstract class TicketJsonldTicketRead implements HydraItemBaseSchema, Built<Tick
 
   @BuiltValueField(wireName: r'site')
   String get site;
-
-  @BuiltValueField(wireName: r'linkedUsers')
-  BuiltList<String>? get linkedUsers;
 
   @BuiltValueField(wireName: r'appLink')
   String? get appLink;
@@ -212,13 +208,6 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
       object.site,
       specifiedType: const FullType(String),
     );
-    if (object.linkedUsers != null) {
-      yield r'linkedUsers';
-      yield serializers.serialize(
-        object.linkedUsers,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
     if (object.appLink != null) {
       yield r'appLink';
       yield serializers.serialize(
@@ -396,13 +385,6 @@ class _$TicketJsonldTicketReadSerializer implements PrimitiveSerializer<TicketJs
             specifiedType: const FullType(String),
           ) as String;
           result.site = valueDes;
-          break;
-        case r'linkedUsers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.linkedUsers.replace(valueDes);
           break;
         case r'appLink':
           final valueDes = serializers.deserialize(

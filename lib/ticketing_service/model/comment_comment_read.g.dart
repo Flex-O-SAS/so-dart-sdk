@@ -16,6 +16,8 @@ class _$CommentCommentRead extends CommentCommentRead {
   @override
   final bool notify;
   @override
+  final bool? hidden;
+  @override
   final DateTime? createdAt;
   @override
   final DateTime? updatedAt;
@@ -31,6 +33,7 @@ class _$CommentCommentRead extends CommentCommentRead {
       required this.author,
       required this.description,
       required this.notify,
+      this.hidden,
       this.createdAt,
       this.updatedAt,
       required this.ticket})
@@ -62,6 +65,7 @@ class _$CommentCommentRead extends CommentCommentRead {
         author == other.author &&
         description == other.description &&
         notify == other.notify &&
+        hidden == other.hidden &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt &&
         ticket == other.ticket;
@@ -74,6 +78,7 @@ class _$CommentCommentRead extends CommentCommentRead {
     _$hash = $jc(_$hash, author.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, notify.hashCode);
+    _$hash = $jc(_$hash, hidden.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, ticket.hashCode);
@@ -88,6 +93,7 @@ class _$CommentCommentRead extends CommentCommentRead {
           ..add('author', author)
           ..add('description', description)
           ..add('notify', notify)
+          ..add('hidden', hidden)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt)
           ..add('ticket', ticket))
@@ -115,6 +121,10 @@ class CommentCommentReadBuilder
   bool? get notify => _$this._notify;
   set notify(bool? notify) => _$this._notify = notify;
 
+  bool? _hidden;
+  bool? get hidden => _$this._hidden;
+  set hidden(bool? hidden) => _$this._hidden = hidden;
+
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
@@ -138,6 +148,7 @@ class CommentCommentReadBuilder
       _author = $v.author;
       _description = $v.description;
       _notify = $v.notify;
+      _hidden = $v.hidden;
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
       _ticket = $v.ticket;
@@ -170,6 +181,7 @@ class CommentCommentReadBuilder
               description, r'CommentCommentRead', 'description'),
           notify: BuiltValueNullFieldError.checkNotNull(
               notify, r'CommentCommentRead', 'notify'),
+          hidden: hidden,
           createdAt: createdAt,
           updatedAt: updatedAt,
           ticket: BuiltValueNullFieldError.checkNotNull(

@@ -10,9 +10,8 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/ticketing_service/api_util.dart';
-import 'package:so_dart_sdk/ticketing_service/model/api_apicomments_get_collection200_response.dart';
+import 'package:so_dart_sdk/ticketing_service/model/api_comments_get_collection200_response.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write.dart';
-import 'package:so_dart_sdk/ticketing_service/model/comment_comment_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/comment_tsv_comment_read.dart';
 import 'package:so_dart_sdk/ticketing_service/model/constraint_violation.dart';
@@ -28,6 +27,60 @@ class CommentApi {
 
   const CommentApi(this._dio, this._serializers);
 
+  /// Removes the Comment resource.
+  /// Removes the Comment resource.
+  ///
+  /// Parameters:
+  /// * [id] - Comment identifier
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> apiCommentsDeleteItem({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/comments/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'JWT',
+            'keyName': 'Authorization',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
   /// Retrieves the collection of Comment resources.
   /// Retrieves the collection of Comment resources.
   ///
@@ -41,9 +94,11 @@ class CommentApi {
   /// * [updatedAtLeftSquareBracketStrictlyBeforeRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketAfterRightSquareBracket] - 
   /// * [updatedAtLeftSquareBracketStrictlyAfterRightSquareBracket] - 
-  /// * [orderLeftSquareBracketCreatedAtRightSquareBracket] - 
+  /// * [orderLeftSquareBracketCreatedAtRightSquareBracket] - Comment order[createdAt]
   /// * [ticketPeriodId] - 
   /// * [ticketPeriodIdLeftSquareBracketRightSquareBracket] - 
+  /// * [ticketLeftSquareBracketRightSquareBracket] - Comment ticket
+  /// * [orderLeftSquareBracketIdRightSquareBracket] - Comment order[id]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -51,9 +106,9 @@ class CommentApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ApiApicommentsGetCollection200Response] as data
+  /// Returns a [Future] containing a [Response] with a [ApiCommentsGetCollection200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApiApicommentsGetCollection200Response>> apiApicommentsGetCollection({ 
+  Future<Response<ApiCommentsGetCollection200Response>> apiCommentsGetCollection({ 
     int? page = 1,
     String? createdAtLeftSquareBracketBeforeRightSquareBracket,
     String? createdAtLeftSquareBracketStrictlyBeforeRightSquareBracket,
@@ -66,6 +121,8 @@ class CommentApi {
     String? orderLeftSquareBracketCreatedAtRightSquareBracket = 'asc',
     int? ticketPeriodId,
     BuiltList<int>? ticketPeriodIdLeftSquareBracketRightSquareBracket,
+    BuiltList<String>? ticketLeftSquareBracketRightSquareBracket,
+    String? orderLeftSquareBracketIdRightSquareBracket,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -106,6 +163,8 @@ class CommentApi {
       if (orderLeftSquareBracketCreatedAtRightSquareBracket != null) r'order[createdAt]': encodeQueryParameter(_serializers, orderLeftSquareBracketCreatedAtRightSquareBracket, const FullType(String)),
       if (ticketPeriodId != null) r'ticket.id': encodeQueryParameter(_serializers, ticketPeriodId, const FullType(int)),
       if (ticketPeriodIdLeftSquareBracketRightSquareBracket != null) r'ticket.id[]': encodeCollectionQueryParameter<int>(_serializers, ticketPeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
+      if (ticketLeftSquareBracketRightSquareBracket != null) r'ticket[]': encodeCollectionQueryParameter<String>(_serializers, ticketLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.csv,),
+      if (orderLeftSquareBracketIdRightSquareBracket != null) r'order[id]': encodeQueryParameter(_serializers, orderLeftSquareBracketIdRightSquareBracket, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -117,14 +176,14 @@ class CommentApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApiApicommentsGetCollection200Response? _responseData;
+    ApiCommentsGetCollection200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(ApiApicommentsGetCollection200Response),
-      ) as ApiApicommentsGetCollection200Response;
+        specifiedType: const FullType(ApiCommentsGetCollection200Response),
+      ) as ApiCommentsGetCollection200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -136,247 +195,7 @@ class CommentApi {
       );
     }
 
-    return Response<ApiApicommentsGetCollection200Response>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Removes the Comment resource.
-  /// Removes the Comment resource.
-  ///
-  /// Parameters:
-  /// * [id] - Comment identifier
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> apiApicommentsIdDelete({ 
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/comments/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
-    final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'JWT',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
-  /// Retrieves a Comment resource.
-  /// Retrieves a Comment resource.
-  ///
-  /// Parameters:
-  /// * [id] - Comment identifier
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [CommentJsonldCommentRead] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<CommentJsonldCommentRead>> apiApicommentsIdGet({ 
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/comments/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'JWT',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    CommentJsonldCommentRead? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CommentJsonldCommentRead),
-      ) as CommentJsonldCommentRead;
-
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<CommentJsonldCommentRead>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Updates the Comment resource.
-  /// Updates the Comment resource.
-  ///
-  /// Parameters:
-  /// * [id] - Comment identifier
-  /// * [commentCommentWriteJsonMergePatch] - The updated Comment resource
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [CommentJsonldCommentRead] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<CommentJsonldCommentRead>> apiApicommentsIdPatch({ 
-    required String id,
-    required CommentCommentWriteJsonMergePatch commentCommentWriteJsonMergePatch,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/comments/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
-    final _options = Options(
-      method: r'PATCH',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'JWT',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/merge-patch+json',
-      validateStatus: validateStatus,
-    );
-
-    dynamic _bodyData;
-
-    try {
-      const _type = FullType(CommentCommentWriteJsonMergePatch);
-      _bodyData = _serializers.serialize(commentCommentWriteJsonMergePatch, specifiedType: _type);
-
-    } catch(error, stackTrace) {
-      throw DioException(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    CommentJsonldCommentRead? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CommentJsonldCommentRead),
-      ) as CommentJsonldCommentRead;
-
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<CommentJsonldCommentRead>(
+    return Response<ApiCommentsGetCollection200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -402,7 +221,7 @@ class CommentApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CommentJsonldCommentRead] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CommentJsonldCommentRead>> apiApicommentsPost({ 
+  Future<Response<CommentJsonldCommentRead>> apiCommentsPostItem({ 
     required CommentCommentWrite commentCommentWrite,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

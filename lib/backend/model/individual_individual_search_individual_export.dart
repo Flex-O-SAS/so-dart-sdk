@@ -23,6 +23,7 @@ part 'individual_individual_search_individual_export.g.dart';
 /// * [phone] 
 /// * [mobile] 
 /// * [center] 
+/// * [timezone] 
 /// * [reference] 
 /// * [id] 
 /// * [createdAt] 
@@ -54,6 +55,9 @@ abstract class IndividualIndividualSearchIndividualExport implements Built<Indiv
 
   @BuiltValueField(wireName: r'center')
   CenterIndividualSearchIndividualExport? get center;
+
+  @BuiltValueField(wireName: r'timezone')
+  String? get timezone;
 
   @BuiltValueField(wireName: r'reference')
   String? get reference;
@@ -148,6 +152,13 @@ class _$IndividualIndividualSearchIndividualExportSerializer implements Primitiv
       yield serializers.serialize(
         object.center,
         specifiedType: const FullType.nullable(CenterIndividualSearchIndividualExport),
+      );
+    }
+    if (object.timezone != null) {
+      yield r'timezone';
+      yield serializers.serialize(
+        object.timezone,
+        specifiedType: const FullType(String),
       );
     }
     if (object.reference != null) {
@@ -257,6 +268,13 @@ class _$IndividualIndividualSearchIndividualExportSerializer implements Primitiv
           ) as CenterIndividualSearchIndividualExport?;
           if (valueDes == null) continue;
           result.center.replace(valueDes);
+          break;
+        case r'timezone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timezone = valueDes;
           break;
         case r'reference':
           final valueDes = serializers.deserialize(

@@ -20,6 +20,7 @@ part 'comment_jsonld_comment_read.g.dart';
 /// * [author] 
 /// * [description] 
 /// * [notify] 
+/// * [hidden] 
 /// * [createdAt] 
 /// * [updatedAt] 
 /// * [ticket] 
@@ -27,6 +28,9 @@ part 'comment_jsonld_comment_read.g.dart';
 abstract class CommentJsonldCommentRead implements HydraItemBaseSchema, Built<CommentJsonldCommentRead, CommentJsonldCommentReadBuilder> {
   @BuiltValueField(wireName: r'createdAt')
   DateTime? get createdAt;
+
+  @BuiltValueField(wireName: r'hidden')
+  bool? get hidden;
 
   @BuiltValueField(wireName: r'ticket')
   String get ticket;
@@ -51,7 +55,8 @@ abstract class CommentJsonldCommentRead implements HydraItemBaseSchema, Built<Co
   factory CommentJsonldCommentRead([void updates(CommentJsonldCommentReadBuilder b)]) = _$CommentJsonldCommentRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CommentJsonldCommentReadBuilder b) => b;
+  static void _defaults(CommentJsonldCommentReadBuilder b) => b
+      ..hidden = false;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CommentJsonldCommentRead> get serializer => _$CommentJsonldCommentReadSerializer();
@@ -81,6 +86,13 @@ class _$CommentJsonldCommentReadSerializer implements PrimitiveSerializer<Commen
       object.atId,
       specifiedType: const FullType(String),
     );
+    if (object.hidden != null) {
+      yield r'hidden';
+      yield serializers.serialize(
+        object.hidden,
+        specifiedType: const FullType(bool),
+      );
+    }
     yield r'ticket';
     yield serializers.serialize(
       object.ticket,
@@ -163,6 +175,13 @@ class _$CommentJsonldCommentReadSerializer implements PrimitiveSerializer<Commen
             specifiedType: const FullType(String),
           ) as String;
           result.atId = valueDes;
+          break;
+        case r'hidden':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.hidden = valueDes;
           break;
         case r'ticket':
           final valueDes = serializers.deserialize(

@@ -15,6 +15,7 @@ part 'identity_dto_jsonld_notification_read.g.dart';
 /// * [identifier] 
 /// * [type] 
 /// * [locale] 
+/// * [timezone] 
 @BuiltValue()
 abstract class IdentityDtoJsonldNotificationRead implements Built<IdentityDtoJsonldNotificationRead, IdentityDtoJsonldNotificationReadBuilder> {
   @BuiltValueField(wireName: r'identifier')
@@ -26,6 +27,9 @@ abstract class IdentityDtoJsonldNotificationRead implements Built<IdentityDtoJso
 
   @BuiltValueField(wireName: r'locale')
   String? get locale;
+
+  @BuiltValueField(wireName: r'timezone')
+  String? get timezone;
 
   IdentityDtoJsonldNotificationRead._();
 
@@ -64,6 +68,13 @@ class _$IdentityDtoJsonldNotificationReadSerializer implements PrimitiveSerializ
       yield r'locale';
       yield serializers.serialize(
         object.locale,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.timezone != null) {
+      yield r'timezone';
+      yield serializers.serialize(
+        object.timezone,
         specifiedType: const FullType(String),
       );
     }
@@ -110,6 +121,13 @@ class _$IdentityDtoJsonldNotificationReadSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.locale = valueDes;
+          break;
+        case r'timezone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timezone = valueDes;
           break;
         default:
           unhandled.add(key);

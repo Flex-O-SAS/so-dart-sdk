@@ -174,8 +174,6 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
   @override
   final String site;
   @override
-  final BuiltList<String>? linkedUsers;
-  @override
   final String? appLink;
   @override
   final String? location;
@@ -215,7 +213,6 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
       this.tags,
       this.createdAt,
       required this.site,
-      this.linkedUsers,
       this.appLink,
       this.location,
       this.id,
@@ -271,7 +268,6 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
         tags == other.tags &&
         createdAt == other.createdAt &&
         site == other.site &&
-        linkedUsers == other.linkedUsers &&
         appLink == other.appLink &&
         location == other.location &&
         id == other.id &&
@@ -300,7 +296,6 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, site.hashCode);
-    _$hash = $jc(_$hash, linkedUsers.hashCode);
     _$hash = $jc(_$hash, appLink.hashCode);
     _$hash = $jc(_$hash, location.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
@@ -331,7 +326,6 @@ class _$TicketJsonldTicketRead extends TicketJsonldTicketRead {
           ..add('tags', tags)
           ..add('createdAt', createdAt)
           ..add('site', site)
-          ..add('linkedUsers', linkedUsers)
           ..add('appLink', appLink)
           ..add('location', location)
           ..add('id', id)
@@ -409,12 +403,6 @@ class TicketJsonldTicketReadBuilder
   String? get site => _$this._site;
   set site(covariant String? site) => _$this._site = site;
 
-  ListBuilder<String>? _linkedUsers;
-  ListBuilder<String> get linkedUsers =>
-      _$this._linkedUsers ??= new ListBuilder<String>();
-  set linkedUsers(covariant ListBuilder<String>? linkedUsers) =>
-      _$this._linkedUsers = linkedUsers;
-
   String? _appLink;
   String? get appLink => _$this._appLink;
   set appLink(covariant String? appLink) => _$this._appLink = appLink;
@@ -482,7 +470,6 @@ class TicketJsonldTicketReadBuilder
       _tags = $v.tags?.toBuilder();
       _createdAt = $v.createdAt;
       _site = $v.site;
-      _linkedUsers = $v.linkedUsers?.toBuilder();
       _appLink = $v.appLink;
       _location = $v.location;
       _id = $v.id;
@@ -534,7 +521,6 @@ class TicketJsonldTicketReadBuilder
             createdAt: createdAt,
             site: BuiltValueNullFieldError.checkNotNull(
                 site, r'TicketJsonldTicketRead', 'site'),
-            linkedUsers: _linkedUsers?.build(),
             appLink: appLink,
             location: location,
             id: id,
@@ -561,9 +547,6 @@ class TicketJsonldTicketReadBuilder
 
         _$failedField = 'tags';
         _tags?.build();
-
-        _$failedField = 'linkedUsers';
-        _linkedUsers?.build();
 
         _$failedField = 'atContext';
         _atContext?.build();

@@ -6,6 +6,86 @@ part of 'customer_reservation_jsonld_public_customer_reservation_read.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const CustomerReservationJsonldPublicCustomerReservationReadStatusEnum
+    _$customerReservationJsonldPublicCustomerReservationReadStatusEnum_number1 =
+    const CustomerReservationJsonldPublicCustomerReservationReadStatusEnum._(
+        'number1');
+const CustomerReservationJsonldPublicCustomerReservationReadStatusEnum
+    _$customerReservationJsonldPublicCustomerReservationReadStatusEnum_number2 =
+    const CustomerReservationJsonldPublicCustomerReservationReadStatusEnum._(
+        'number2');
+const CustomerReservationJsonldPublicCustomerReservationReadStatusEnum
+    _$customerReservationJsonldPublicCustomerReservationReadStatusEnum_number3 =
+    const CustomerReservationJsonldPublicCustomerReservationReadStatusEnum._(
+        'number3');
+
+CustomerReservationJsonldPublicCustomerReservationReadStatusEnum
+    _$customerReservationJsonldPublicCustomerReservationReadStatusEnumValueOf(
+        String name) {
+  switch (name) {
+    case 'number1':
+      return _$customerReservationJsonldPublicCustomerReservationReadStatusEnum_number1;
+    case 'number2':
+      return _$customerReservationJsonldPublicCustomerReservationReadStatusEnum_number2;
+    case 'number3':
+      return _$customerReservationJsonldPublicCustomerReservationReadStatusEnum_number3;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<CustomerReservationJsonldPublicCustomerReservationReadStatusEnum>
+    _$customerReservationJsonldPublicCustomerReservationReadStatusEnumValues =
+    new BuiltSet<
+        CustomerReservationJsonldPublicCustomerReservationReadStatusEnum>(const <CustomerReservationJsonldPublicCustomerReservationReadStatusEnum>[
+  _$customerReservationJsonldPublicCustomerReservationReadStatusEnum_number1,
+  _$customerReservationJsonldPublicCustomerReservationReadStatusEnum_number2,
+  _$customerReservationJsonldPublicCustomerReservationReadStatusEnum_number3,
+]);
+
+Serializer<CustomerReservationJsonldPublicCustomerReservationReadStatusEnum>
+    _$customerReservationJsonldPublicCustomerReservationReadStatusEnumSerializer =
+    new _$CustomerReservationJsonldPublicCustomerReservationReadStatusEnumSerializer();
+
+class _$CustomerReservationJsonldPublicCustomerReservationReadStatusEnumSerializer
+    implements
+        PrimitiveSerializer<
+            CustomerReservationJsonldPublicCustomerReservationReadStatusEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'number1': 1,
+    'number2': 2,
+    'number3': 3,
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    1: 'number1',
+    2: 'number2',
+    3: 'number3',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    CustomerReservationJsonldPublicCustomerReservationReadStatusEnum
+  ];
+  @override
+  final String wireName =
+      'CustomerReservationJsonldPublicCustomerReservationReadStatusEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers,
+          CustomerReservationJsonldPublicCustomerReservationReadStatusEnum
+              object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  CustomerReservationJsonldPublicCustomerReservationReadStatusEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      CustomerReservationJsonldPublicCustomerReservationReadStatusEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$CustomerReservationJsonldPublicCustomerReservationRead
     extends CustomerReservationJsonldPublicCustomerReservationRead {
   @override
@@ -17,7 +97,8 @@ class _$CustomerReservationJsonldPublicCustomerReservationRead
   @override
   final DateTime? begin;
   @override
-  final int? status;
+  final CustomerReservationJsonldPublicCustomerReservationReadStatusEnum?
+      status;
   @override
   final HydraItemBaseSchemaContext? atContext;
   @override
@@ -129,9 +210,13 @@ class CustomerReservationJsonldPublicCustomerReservationReadBuilder
   DateTime? get begin => _$this._begin;
   set begin(covariant DateTime? begin) => _$this._begin = begin;
 
-  int? _status;
-  int? get status => _$this._status;
-  set status(covariant int? status) => _$this._status = status;
+  CustomerReservationJsonldPublicCustomerReservationReadStatusEnum? _status;
+  CustomerReservationJsonldPublicCustomerReservationReadStatusEnum?
+      get status => _$this._status;
+  set status(
+          covariant CustomerReservationJsonldPublicCustomerReservationReadStatusEnum?
+              status) =>
+      _$this._status = status;
 
   HydraItemBaseSchemaContextBuilder? _atContext;
   HydraItemBaseSchemaContextBuilder get atContext =>

@@ -166,8 +166,6 @@ class _$TicketTicketWrite extends TicketTicketWrite {
   @override
   final TicketTicketWritePriorityEnum? priority;
   @override
-  final BuiltList<LinkedUserTicketWrite>? linkedUsers;
-  @override
   final BuiltList<String>? tags;
   @override
   final BuiltList<AttachmentTicketWrite>? attachments;
@@ -189,7 +187,6 @@ class _$TicketTicketWrite extends TicketTicketWrite {
       this.location,
       this.metadata,
       this.priority,
-      this.linkedUsers,
       this.tags,
       this.attachments})
       : super._() {
@@ -229,7 +226,6 @@ class _$TicketTicketWrite extends TicketTicketWrite {
         location == other.location &&
         metadata == other.metadata &&
         priority == other.priority &&
-        linkedUsers == other.linkedUsers &&
         tags == other.tags &&
         attachments == other.attachments;
   }
@@ -249,7 +245,6 @@ class _$TicketTicketWrite extends TicketTicketWrite {
     _$hash = $jc(_$hash, location.hashCode);
     _$hash = $jc(_$hash, metadata.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
-    _$hash = $jc(_$hash, linkedUsers.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, attachments.hashCode);
     _$hash = $jf(_$hash);
@@ -271,7 +266,6 @@ class _$TicketTicketWrite extends TicketTicketWrite {
           ..add('location', location)
           ..add('metadata', metadata)
           ..add('priority', priority)
-          ..add('linkedUsers', linkedUsers)
           ..add('tags', tags)
           ..add('attachments', attachments))
         .toString();
@@ -332,12 +326,6 @@ class TicketTicketWriteBuilder
   set priority(TicketTicketWritePriorityEnum? priority) =>
       _$this._priority = priority;
 
-  ListBuilder<LinkedUserTicketWrite>? _linkedUsers;
-  ListBuilder<LinkedUserTicketWrite> get linkedUsers =>
-      _$this._linkedUsers ??= new ListBuilder<LinkedUserTicketWrite>();
-  set linkedUsers(ListBuilder<LinkedUserTicketWrite>? linkedUsers) =>
-      _$this._linkedUsers = linkedUsers;
-
   ListBuilder<String>? _tags;
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
@@ -367,7 +355,6 @@ class TicketTicketWriteBuilder
       _location = $v.location;
       _metadata = $v.metadata;
       _priority = $v.priority;
-      _linkedUsers = $v.linkedUsers?.toBuilder();
       _tags = $v.tags?.toBuilder();
       _attachments = $v.attachments?.toBuilder();
       _$v = null;
@@ -412,15 +399,12 @@ class TicketTicketWriteBuilder
             location: location,
             metadata: metadata,
             priority: priority,
-            linkedUsers: _linkedUsers?.build(),
             tags: _tags?.build(),
             attachments: _attachments?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'linkedUsers';
-        _linkedUsers?.build();
         _$failedField = 'tags';
         _tags?.build();
         _$failedField = 'attachments';

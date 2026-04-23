@@ -30,7 +30,6 @@ part 'ticket_tsv_ticket_read.g.dart';
 /// * [createdAt] 
 /// * [updatedAt] 
 /// * [priority] 
-/// * [linkedUsers] 
 /// * [tags] 
 /// * [comments] 
 /// * [attachments] 
@@ -86,9 +85,6 @@ abstract class TicketTsvTicketRead implements Built<TicketTsvTicketRead, TicketT
   @BuiltValueField(wireName: r'priority')
   TicketTsvTicketReadPriorityEnum? get priority;
   // enum priorityEnum {  low,  medium,  high,  };
-
-  @BuiltValueField(wireName: r'linkedUsers')
-  BuiltList<String>? get linkedUsers;
 
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
@@ -224,13 +220,6 @@ class _$TicketTsvTicketReadSerializer implements PrimitiveSerializer<TicketTsvTi
       yield serializers.serialize(
         object.priority,
         specifiedType: const FullType(TicketTsvTicketReadPriorityEnum),
-      );
-    }
-    if (object.linkedUsers != null) {
-      yield r'linkedUsers';
-      yield serializers.serialize(
-        object.linkedUsers,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
     if (object.tags != null) {
@@ -395,13 +384,6 @@ class _$TicketTsvTicketReadSerializer implements PrimitiveSerializer<TicketTsvTi
             specifiedType: const FullType(TicketTsvTicketReadPriorityEnum),
           ) as TicketTsvTicketReadPriorityEnum;
           result.priority = valueDes;
-          break;
-        case r'linkedUsers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.linkedUsers.replace(valueDes);
           break;
         case r'tags':
           final valueDes = serializers.deserialize(

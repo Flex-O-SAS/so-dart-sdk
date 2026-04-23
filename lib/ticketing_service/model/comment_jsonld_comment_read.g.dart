@@ -10,6 +10,8 @@ class _$CommentJsonldCommentRead extends CommentJsonldCommentRead {
   @override
   final DateTime? createdAt;
   @override
+  final bool? hidden;
+  @override
   final String ticket;
   @override
   final String author;
@@ -34,6 +36,7 @@ class _$CommentJsonldCommentRead extends CommentJsonldCommentRead {
 
   _$CommentJsonldCommentRead._(
       {this.createdAt,
+      this.hidden,
       required this.ticket,
       required this.author,
       required this.description,
@@ -72,6 +75,7 @@ class _$CommentJsonldCommentRead extends CommentJsonldCommentRead {
     if (identical(other, this)) return true;
     return other is CommentJsonldCommentRead &&
         createdAt == other.createdAt &&
+        hidden == other.hidden &&
         ticket == other.ticket &&
         author == other.author &&
         description == other.description &&
@@ -87,6 +91,7 @@ class _$CommentJsonldCommentRead extends CommentJsonldCommentRead {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, hidden.hashCode);
     _$hash = $jc(_$hash, ticket.hashCode);
     _$hash = $jc(_$hash, author.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
@@ -104,6 +109,7 @@ class _$CommentJsonldCommentRead extends CommentJsonldCommentRead {
   String toString() {
     return (newBuiltValueToStringHelper(r'CommentJsonldCommentRead')
           ..add('createdAt', createdAt)
+          ..add('hidden', hidden)
           ..add('ticket', ticket)
           ..add('author', author)
           ..add('description', description)
@@ -126,6 +132,10 @@ class CommentJsonldCommentReadBuilder
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  bool? _hidden;
+  bool? get hidden => _$this._hidden;
+  set hidden(covariant bool? hidden) => _$this._hidden = hidden;
 
   String? _ticket;
   String? get ticket => _$this._ticket;
@@ -174,6 +184,7 @@ class CommentJsonldCommentReadBuilder
     final $v = _$v;
     if ($v != null) {
       _createdAt = $v.createdAt;
+      _hidden = $v.hidden;
       _ticket = $v.ticket;
       _author = $v.author;
       _description = $v.description;
@@ -208,6 +219,7 @@ class CommentJsonldCommentReadBuilder
       _$result = _$v ??
           new _$CommentJsonldCommentRead._(
             createdAt: createdAt,
+            hidden: hidden,
             ticket: BuiltValueNullFieldError.checkNotNull(
                 ticket, r'CommentJsonldCommentRead', 'ticket'),
             author: BuiltValueNullFieldError.checkNotNull(

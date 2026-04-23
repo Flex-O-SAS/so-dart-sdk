@@ -15,6 +15,7 @@ part 'identity_dto_notification_write.g.dart';
 /// * [identifier] 
 /// * [type] 
 /// * [locale] 
+/// * [timezone] 
 @BuiltValue()
 abstract class IdentityDtoNotificationWrite implements Built<IdentityDtoNotificationWrite, IdentityDtoNotificationWriteBuilder> {
   @BuiltValueField(wireName: r'identifier')
@@ -26,6 +27,9 @@ abstract class IdentityDtoNotificationWrite implements Built<IdentityDtoNotifica
 
   @BuiltValueField(wireName: r'locale')
   String? get locale;
+
+  @BuiltValueField(wireName: r'timezone')
+  String? get timezone;
 
   IdentityDtoNotificationWrite._();
 
@@ -64,6 +68,13 @@ class _$IdentityDtoNotificationWriteSerializer implements PrimitiveSerializer<Id
       yield r'locale';
       yield serializers.serialize(
         object.locale,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.timezone != null) {
+      yield r'timezone';
+      yield serializers.serialize(
+        object.timezone,
         specifiedType: const FullType(String),
       );
     }
@@ -110,6 +121,13 @@ class _$IdentityDtoNotificationWriteSerializer implements PrimitiveSerializer<Id
             specifiedType: const FullType(String),
           ) as String;
           result.locale = valueDes;
+          break;
+        case r'timezone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timezone = valueDes;
           break;
         default:
           unhandled.add(key);

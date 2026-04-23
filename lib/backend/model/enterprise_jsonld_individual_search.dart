@@ -22,6 +22,7 @@ part 'enterprise_jsonld_individual_search.g.dart';
 /// * [phone] 
 /// * [mobile] 
 /// * [center] 
+/// * [timezone] 
 /// * [reference] 
 /// * [id] 
 /// * [createdAt] 
@@ -35,6 +36,9 @@ abstract class EnterpriseJsonldIndividualSearch implements HydraItemBaseSchema, 
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
+
+  @BuiltValueField(wireName: r'timezone')
+  String? get timezone;
 
   @BuiltValueField(wireName: r'center')
   CenterJsonldIndividualSearch? get center;
@@ -97,6 +101,13 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
       yield r'phone';
       yield serializers.serialize(
         object.phone,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.timezone != null) {
+      yield r'timezone';
+      yield serializers.serialize(
+        object.timezone,
         specifiedType: const FullType(String),
       );
     }
@@ -197,6 +208,13 @@ class _$EnterpriseJsonldIndividualSearchSerializer implements PrimitiveSerialize
             specifiedType: const FullType(String),
           ) as String;
           result.phone = valueDes;
+          break;
+        case r'timezone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timezone = valueDes;
           break;
         case r'center':
           final valueDes = serializers.deserialize(

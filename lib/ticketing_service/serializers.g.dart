@@ -10,10 +10,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add($HydraCollectionBaseSchema.serializer)
       ..add($HydraCollectionBaseSchemaNoPagination.serializer)
       ..add($HydraItemBaseSchema.serializer)
-      ..add(ApiApicommentsGetCollection200Response.serializer)
       ..add(ApiApilinkedUsersGetCollection200Response.serializer)
       ..add(ApiApitagsGetCollection200Response.serializer)
       ..add(ApiAttachmentsGetCollection200Response.serializer)
+      ..add(ApiCommentsGetCollection200Response.serializer)
       ..add(ApiTicketsGetCollection200Response.serializer)
       ..add(AttachmentAttachmentRead.serializer)
       ..add(AttachmentAttachmentWrite.serializer)
@@ -26,7 +26,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AttachmentTsvTicketRead.serializer)
       ..add(CommentCommentRead.serializer)
       ..add(CommentCommentWrite.serializer)
-      ..add(CommentCommentWriteJsonMergePatch.serializer)
       ..add(CommentJsonldCommentRead.serializer)
       ..add(CommentTsvCommentRead.serializer)
       ..add(ConstraintViolation.serializer)
@@ -44,7 +43,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(LinkedUserLinkedUserRead.serializer)
       ..add(LinkedUserLinkedUserWrite.serializer)
       ..add(LinkedUserLinkedUserWriteJsonMergePatch.serializer)
-      ..add(LinkedUserTicketWrite.serializer)
       ..add(LinkedUserTsvLinkedUserRead.serializer)
       ..add(TagJsonldTagRead.serializer)
       ..add(TagTagRead.serializer)
@@ -97,17 +95,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(LinkedUserJsonldLinkedUserRead)]),
           () => new ListBuilder<LinkedUserJsonldLinkedUserRead>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(LinkedUserTicketWrite)]),
-          () => new ListBuilder<LinkedUserTicketWrite>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(AttachmentTicketWrite)]),
-          () => new ListBuilder<AttachmentTicketWrite>())
-      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
@@ -121,8 +108,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+          const FullType(
+              BuiltList, const [const FullType(AttachmentTicketWrite)]),
+          () => new ListBuilder<AttachmentTicketWrite>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
@@ -133,9 +121,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(AttachmentTicketRead)]),
           () => new ListBuilder<AttachmentTicketRead>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

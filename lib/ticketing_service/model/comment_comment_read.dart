@@ -15,6 +15,7 @@ part 'comment_comment_read.g.dart';
 /// * [author] 
 /// * [description] 
 /// * [notify] 
+/// * [hidden] 
 /// * [createdAt] 
 /// * [updatedAt] 
 /// * [ticket] 
@@ -32,6 +33,9 @@ abstract class CommentCommentRead implements Built<CommentCommentRead, CommentCo
   @BuiltValueField(wireName: r'notify')
   bool get notify;
 
+  @BuiltValueField(wireName: r'hidden')
+  bool? get hidden;
+
   @BuiltValueField(wireName: r'createdAt')
   DateTime? get createdAt;
 
@@ -46,7 +50,8 @@ abstract class CommentCommentRead implements Built<CommentCommentRead, CommentCo
   factory CommentCommentRead([void updates(CommentCommentReadBuilder b)]) = _$CommentCommentRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CommentCommentReadBuilder b) => b;
+  static void _defaults(CommentCommentReadBuilder b) => b
+      ..hidden = false;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CommentCommentRead> get serializer => _$CommentCommentReadSerializer();
@@ -86,6 +91,13 @@ class _$CommentCommentReadSerializer implements PrimitiveSerializer<CommentComme
       object.notify,
       specifiedType: const FullType(bool),
     );
+    if (object.hidden != null) {
+      yield r'hidden';
+      yield serializers.serialize(
+        object.hidden,
+        specifiedType: const FullType(bool),
+      );
+    }
     if (object.createdAt != null) {
       yield r'createdAt';
       yield serializers.serialize(
@@ -155,6 +167,13 @@ class _$CommentCommentReadSerializer implements PrimitiveSerializer<CommentComme
             specifiedType: const FullType(bool),
           ) as bool;
           result.notify = valueDes;
+          break;
+        case r'hidden':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.hidden = valueDes;
           break;
         case r'createdAt':
           final valueDes = serializers.deserialize(

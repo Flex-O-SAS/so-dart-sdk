@@ -42,6 +42,7 @@ class EnterpriseApi {
   /// * [id] - 
   /// * [idLeftSquareBracketRightSquareBracket] - 
   /// * [referencePartialLeftSquareBracketRightSquareBracket] - Enterprise reference_partial
+  /// * [nameExactLeftSquareBracketRightSquareBracket] - Enterprise name_exact
   /// * [centerLeftSquareBracketRightSquareBracket] - Enterprise center
   /// * [statusLeftSquareBracketRightSquareBracket] - Enterprise status
   /// * [tag] - Enterprise tag
@@ -121,6 +122,7 @@ class EnterpriseApi {
     int? id,
     BuiltList<int>? idLeftSquareBracketRightSquareBracket,
     BuiltList<String>? referencePartialLeftSquareBracketRightSquareBracket,
+    BuiltList<String>? nameExactLeftSquareBracketRightSquareBracket,
     BuiltList<String>? centerLeftSquareBracketRightSquareBracket,
     BuiltList<String>? statusLeftSquareBracketRightSquareBracket,
     String? tag,
@@ -211,6 +213,7 @@ class EnterpriseApi {
       if (id != null) r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
       if (idLeftSquareBracketRightSquareBracket != null) r'id[]': encodeCollectionQueryParameter<int>(_serializers, idLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (referencePartialLeftSquareBracketRightSquareBracket != null) r'reference_partial[]': encodeCollectionQueryParameter<String>(_serializers, referencePartialLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.csv,),
+      if (nameExactLeftSquareBracketRightSquareBracket != null) r'name_exact[]': encodeCollectionQueryParameter<String>(_serializers, nameExactLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.csv,),
       if (centerLeftSquareBracketRightSquareBracket != null) r'center[]': encodeCollectionQueryParameter<String>(_serializers, centerLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.csv,),
       if (statusLeftSquareBracketRightSquareBracket != null) r'status[]': encodeCollectionQueryParameter<String>(_serializers, statusLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.csv,),
       if (tag != null) r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),

@@ -6,51 +6,53 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'linked_user_ticket_write.g.dart';
+part 'client_csv_customer_reservation_search.g.dart';
 
-/// LinkedUserTicketWrite
+/// ClientCsvCustomerReservationSearch
 ///
 /// Properties:
-/// * [user] 
+/// * [id] 
 @BuiltValue()
-abstract class LinkedUserTicketWrite implements Built<LinkedUserTicketWrite, LinkedUserTicketWriteBuilder> {
-  @BuiltValueField(wireName: r'user')
-  String get user;
+abstract class ClientCsvCustomerReservationSearch implements Built<ClientCsvCustomerReservationSearch, ClientCsvCustomerReservationSearchBuilder> {
+  @BuiltValueField(wireName: r'id')
+  int? get id;
 
-  LinkedUserTicketWrite._();
+  ClientCsvCustomerReservationSearch._();
 
-  factory LinkedUserTicketWrite([void updates(LinkedUserTicketWriteBuilder b)]) = _$LinkedUserTicketWrite;
+  factory ClientCsvCustomerReservationSearch([void updates(ClientCsvCustomerReservationSearchBuilder b)]) = _$ClientCsvCustomerReservationSearch;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LinkedUserTicketWriteBuilder b) => b;
+  static void _defaults(ClientCsvCustomerReservationSearchBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LinkedUserTicketWrite> get serializer => _$LinkedUserTicketWriteSerializer();
+  static Serializer<ClientCsvCustomerReservationSearch> get serializer => _$ClientCsvCustomerReservationSearchSerializer();
 }
 
-class _$LinkedUserTicketWriteSerializer implements PrimitiveSerializer<LinkedUserTicketWrite> {
+class _$ClientCsvCustomerReservationSearchSerializer implements PrimitiveSerializer<ClientCsvCustomerReservationSearch> {
   @override
-  final Iterable<Type> types = const [LinkedUserTicketWrite, _$LinkedUserTicketWrite];
+  final Iterable<Type> types = const [ClientCsvCustomerReservationSearch, _$ClientCsvCustomerReservationSearch];
 
   @override
-  final String wireName = r'LinkedUserTicketWrite';
+  final String wireName = r'ClientCsvCustomerReservationSearch';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    LinkedUserTicketWrite object, {
+    ClientCsvCustomerReservationSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'user';
-    yield serializers.serialize(
-      object.user,
-      specifiedType: const FullType(String),
-    );
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(int),
+      );
+    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    LinkedUserTicketWrite object, {
+    ClientCsvCustomerReservationSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -61,19 +63,19 @@ class _$LinkedUserTicketWriteSerializer implements PrimitiveSerializer<LinkedUse
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LinkedUserTicketWriteBuilder result,
+    required ClientCsvCustomerReservationSearchBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'user':
+        case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.user = valueDes;
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -84,12 +86,12 @@ class _$LinkedUserTicketWriteSerializer implements PrimitiveSerializer<LinkedUse
   }
 
   @override
-  LinkedUserTicketWrite deserialize(
+  ClientCsvCustomerReservationSearch deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LinkedUserTicketWriteBuilder();
+    final result = ClientCsvCustomerReservationSearchBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

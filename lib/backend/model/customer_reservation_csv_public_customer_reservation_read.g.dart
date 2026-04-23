@@ -6,10 +6,88 @@ part of 'customer_reservation_csv_public_customer_reservation_read.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const CustomerReservationCsvPublicCustomerReservationReadStatusEnum
+    _$customerReservationCsvPublicCustomerReservationReadStatusEnum_number1 =
+    const CustomerReservationCsvPublicCustomerReservationReadStatusEnum._(
+        'number1');
+const CustomerReservationCsvPublicCustomerReservationReadStatusEnum
+    _$customerReservationCsvPublicCustomerReservationReadStatusEnum_number2 =
+    const CustomerReservationCsvPublicCustomerReservationReadStatusEnum._(
+        'number2');
+const CustomerReservationCsvPublicCustomerReservationReadStatusEnum
+    _$customerReservationCsvPublicCustomerReservationReadStatusEnum_number3 =
+    const CustomerReservationCsvPublicCustomerReservationReadStatusEnum._(
+        'number3');
+
+CustomerReservationCsvPublicCustomerReservationReadStatusEnum
+    _$customerReservationCsvPublicCustomerReservationReadStatusEnumValueOf(
+        String name) {
+  switch (name) {
+    case 'number1':
+      return _$customerReservationCsvPublicCustomerReservationReadStatusEnum_number1;
+    case 'number2':
+      return _$customerReservationCsvPublicCustomerReservationReadStatusEnum_number2;
+    case 'number3':
+      return _$customerReservationCsvPublicCustomerReservationReadStatusEnum_number3;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<CustomerReservationCsvPublicCustomerReservationReadStatusEnum>
+    _$customerReservationCsvPublicCustomerReservationReadStatusEnumValues =
+    new BuiltSet<
+        CustomerReservationCsvPublicCustomerReservationReadStatusEnum>(const <CustomerReservationCsvPublicCustomerReservationReadStatusEnum>[
+  _$customerReservationCsvPublicCustomerReservationReadStatusEnum_number1,
+  _$customerReservationCsvPublicCustomerReservationReadStatusEnum_number2,
+  _$customerReservationCsvPublicCustomerReservationReadStatusEnum_number3,
+]);
+
+Serializer<CustomerReservationCsvPublicCustomerReservationReadStatusEnum>
+    _$customerReservationCsvPublicCustomerReservationReadStatusEnumSerializer =
+    new _$CustomerReservationCsvPublicCustomerReservationReadStatusEnumSerializer();
+
+class _$CustomerReservationCsvPublicCustomerReservationReadStatusEnumSerializer
+    implements
+        PrimitiveSerializer<
+            CustomerReservationCsvPublicCustomerReservationReadStatusEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'number1': 1,
+    'number2': 2,
+    'number3': 3,
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    1: 'number1',
+    2: 'number2',
+    3: 'number3',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    CustomerReservationCsvPublicCustomerReservationReadStatusEnum
+  ];
+  @override
+  final String wireName =
+      'CustomerReservationCsvPublicCustomerReservationReadStatusEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          CustomerReservationCsvPublicCustomerReservationReadStatusEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  CustomerReservationCsvPublicCustomerReservationReadStatusEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      CustomerReservationCsvPublicCustomerReservationReadStatusEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$CustomerReservationCsvPublicCustomerReservationRead
     extends CustomerReservationCsvPublicCustomerReservationRead {
   @override
-  final int? status;
+  final CustomerReservationCsvPublicCustomerReservationReadStatusEnum? status;
   @override
   final String? center;
   @override
@@ -85,9 +163,13 @@ class CustomerReservationCsvPublicCustomerReservationReadBuilder
             CustomerReservationCsvPublicCustomerReservationReadBuilder> {
   _$CustomerReservationCsvPublicCustomerReservationRead? _$v;
 
-  int? _status;
-  int? get status => _$this._status;
-  set status(int? status) => _$this._status = status;
+  CustomerReservationCsvPublicCustomerReservationReadStatusEnum? _status;
+  CustomerReservationCsvPublicCustomerReservationReadStatusEnum? get status =>
+      _$this._status;
+  set status(
+          CustomerReservationCsvPublicCustomerReservationReadStatusEnum?
+              status) =>
+      _$this._status = status;
 
   String? _center;
   String? get center => _$this._center;

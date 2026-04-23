@@ -15,6 +15,8 @@ class _$EnterpriseJsonldIndividualSearchIndividualExport
   @override
   final String? phone;
   @override
+  final String? timezone;
+  @override
   final CenterJsonldIndividualSearchIndividualExport? center;
   @override
   final String? name;
@@ -43,6 +45,7 @@ class _$EnterpriseJsonldIndividualSearchIndividualExport
       {this.reference,
       this.createdAt,
       this.phone,
+      this.timezone,
       this.center,
       this.name,
       this.mobile,
@@ -76,6 +79,7 @@ class _$EnterpriseJsonldIndividualSearchIndividualExport
         reference == other.reference &&
         createdAt == other.createdAt &&
         phone == other.phone &&
+        timezone == other.timezone &&
         center == other.center &&
         name == other.name &&
         mobile == other.mobile &&
@@ -92,6 +96,7 @@ class _$EnterpriseJsonldIndividualSearchIndividualExport
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jc(_$hash, center.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, mobile.hashCode);
@@ -111,6 +116,7 @@ class _$EnterpriseJsonldIndividualSearchIndividualExport
           ..add('reference', reference)
           ..add('createdAt', createdAt)
           ..add('phone', phone)
+          ..add('timezone', timezone)
           ..add('center', center)
           ..add('name', name)
           ..add('mobile', mobile)
@@ -141,6 +147,10 @@ class EnterpriseJsonldIndividualSearchIndividualExportBuilder
   String? _phone;
   String? get phone => _$this._phone;
   set phone(covariant String? phone) => _$this._phone = phone;
+
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(covariant String? timezone) => _$this._timezone = timezone;
 
   CenterJsonldIndividualSearchIndividualExportBuilder? _center;
   CenterJsonldIndividualSearchIndividualExportBuilder get center =>
@@ -191,6 +201,7 @@ class EnterpriseJsonldIndividualSearchIndividualExportBuilder
       _reference = $v.reference;
       _createdAt = $v.createdAt;
       _phone = $v.phone;
+      _timezone = $v.timezone;
       _center = $v.center?.toBuilder();
       _name = $v.name;
       _mobile = $v.mobile;
@@ -229,6 +240,7 @@ class EnterpriseJsonldIndividualSearchIndividualExportBuilder
             reference: reference,
             createdAt: createdAt,
             phone: phone,
+            timezone: timezone,
             center: _center?.build(),
             name: name,
             mobile: mobile,

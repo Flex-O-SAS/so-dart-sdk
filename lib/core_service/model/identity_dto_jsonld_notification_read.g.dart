@@ -140,6 +140,8 @@ class _$IdentityDtoJsonldNotificationRead
   final IdentityDtoJsonldNotificationReadTypeEnum type;
   @override
   final String? locale;
+  @override
+  final String? timezone;
 
   factory _$IdentityDtoJsonldNotificationRead(
           [void Function(IdentityDtoJsonldNotificationReadBuilder)? updates]) =>
@@ -147,7 +149,10 @@ class _$IdentityDtoJsonldNotificationRead
           ._build();
 
   _$IdentityDtoJsonldNotificationRead._(
-      {required this.identifier, required this.type, this.locale})
+      {required this.identifier,
+      required this.type,
+      this.locale,
+      this.timezone})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         identifier, r'IdentityDtoJsonldNotificationRead', 'identifier');
@@ -170,7 +175,8 @@ class _$IdentityDtoJsonldNotificationRead
     return other is IdentityDtoJsonldNotificationRead &&
         identifier == other.identifier &&
         type == other.type &&
-        locale == other.locale;
+        locale == other.locale &&
+        timezone == other.timezone;
   }
 
   @override
@@ -179,6 +185,7 @@ class _$IdentityDtoJsonldNotificationRead
     _$hash = $jc(_$hash, identifier.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, locale.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -188,7 +195,8 @@ class _$IdentityDtoJsonldNotificationRead
     return (newBuiltValueToStringHelper(r'IdentityDtoJsonldNotificationRead')
           ..add('identifier', identifier)
           ..add('type', type)
-          ..add('locale', locale))
+          ..add('locale', locale)
+          ..add('timezone', timezone))
         .toString();
   }
 }
@@ -212,6 +220,10 @@ class IdentityDtoJsonldNotificationReadBuilder
   String? get locale => _$this._locale;
   set locale(String? locale) => _$this._locale = locale;
 
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(String? timezone) => _$this._timezone = timezone;
+
   IdentityDtoJsonldNotificationReadBuilder() {
     IdentityDtoJsonldNotificationRead._defaults(this);
   }
@@ -222,6 +234,7 @@ class IdentityDtoJsonldNotificationReadBuilder
       _identifier = $v.identifier;
       _type = $v.type;
       _locale = $v.locale;
+      _timezone = $v.timezone;
       _$v = null;
     }
     return this;
@@ -250,6 +263,7 @@ class IdentityDtoJsonldNotificationReadBuilder
           type: BuiltValueNullFieldError.checkNotNull(
               type, r'IdentityDtoJsonldNotificationRead', 'type'),
           locale: locale,
+          timezone: timezone,
         );
     replace(_$result);
     return _$result;

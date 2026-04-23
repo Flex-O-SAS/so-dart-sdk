@@ -11,7 +11,7 @@ import 'package:so_dart_sdk/ticketing_service/model/comment_jsonld_comment_read.
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'api_apicomments_get_collection200_response.g.dart';
+part 'api_comments_get_collection200_response.g.dart';
 
 /// Comment.jsonld-comment.read collection.
 ///
@@ -21,31 +21,31 @@ part 'api_apicomments_get_collection200_response.g.dart';
 /// * [view] 
 /// * [member] 
 @BuiltValue()
-abstract class ApiApicommentsGetCollection200Response implements HydraCollectionBaseSchema, Built<ApiApicommentsGetCollection200Response, ApiApicommentsGetCollection200ResponseBuilder> {
+abstract class ApiCommentsGetCollection200Response implements HydraCollectionBaseSchema, Built<ApiCommentsGetCollection200Response, ApiCommentsGetCollection200ResponseBuilder> {
   @BuiltValueField(wireName: r'member')
   BuiltList<CommentJsonldCommentRead> get member;
 
-  ApiApicommentsGetCollection200Response._();
+  ApiCommentsGetCollection200Response._();
 
-  factory ApiApicommentsGetCollection200Response([void updates(ApiApicommentsGetCollection200ResponseBuilder b)]) = _$ApiApicommentsGetCollection200Response;
+  factory ApiCommentsGetCollection200Response([void updates(ApiCommentsGetCollection200ResponseBuilder b)]) = _$ApiCommentsGetCollection200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiApicommentsGetCollection200ResponseBuilder b) => b;
+  static void _defaults(ApiCommentsGetCollection200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ApiApicommentsGetCollection200Response> get serializer => _$ApiApicommentsGetCollection200ResponseSerializer();
+  static Serializer<ApiCommentsGetCollection200Response> get serializer => _$ApiCommentsGetCollection200ResponseSerializer();
 }
 
-class _$ApiApicommentsGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiApicommentsGetCollection200Response> {
+class _$ApiCommentsGetCollection200ResponseSerializer implements PrimitiveSerializer<ApiCommentsGetCollection200Response> {
   @override
-  final Iterable<Type> types = const [ApiApicommentsGetCollection200Response, _$ApiApicommentsGetCollection200Response];
+  final Iterable<Type> types = const [ApiCommentsGetCollection200Response, _$ApiCommentsGetCollection200Response];
 
   @override
-  final String wireName = r'ApiApicommentsGetCollection200Response';
+  final String wireName = r'ApiCommentsGetCollection200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ApiApicommentsGetCollection200Response object, {
+    ApiCommentsGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'member';
@@ -79,7 +79,7 @@ class _$ApiApicommentsGetCollection200ResponseSerializer implements PrimitiveSer
   @override
   Object serialize(
     Serializers serializers,
-    ApiApicommentsGetCollection200Response object, {
+    ApiCommentsGetCollection200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -90,7 +90,7 @@ class _$ApiApicommentsGetCollection200ResponseSerializer implements PrimitiveSer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ApiApicommentsGetCollection200ResponseBuilder result,
+    required ApiCommentsGetCollection200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -134,12 +134,12 @@ class _$ApiApicommentsGetCollection200ResponseSerializer implements PrimitiveSer
   }
 
   @override
-  ApiApicommentsGetCollection200Response deserialize(
+  ApiCommentsGetCollection200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ApiApicommentsGetCollection200ResponseBuilder();
+    final result = ApiCommentsGetCollection200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

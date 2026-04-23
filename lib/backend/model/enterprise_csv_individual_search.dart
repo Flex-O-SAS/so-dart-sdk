@@ -17,6 +17,7 @@ part 'enterprise_csv_individual_search.g.dart';
 /// * [phone] 
 /// * [mobile] 
 /// * [center] 
+/// * [timezone] 
 /// * [reference] 
 /// * [id] 
 /// * [createdAt] 
@@ -36,6 +37,9 @@ abstract class EnterpriseCsvIndividualSearch implements Built<EnterpriseCsvIndiv
 
   @BuiltValueField(wireName: r'center')
   CenterCsvIndividualSearch? get center;
+
+  @BuiltValueField(wireName: r'timezone')
+  String? get timezone;
 
   @BuiltValueField(wireName: r'reference')
   String? get reference;
@@ -102,6 +106,13 @@ class _$EnterpriseCsvIndividualSearchSerializer implements PrimitiveSerializer<E
       yield serializers.serialize(
         object.center,
         specifiedType: const FullType.nullable(CenterCsvIndividualSearch),
+      );
+    }
+    if (object.timezone != null) {
+      yield r'timezone';
+      yield serializers.serialize(
+        object.timezone,
+        specifiedType: const FullType(String),
       );
     }
     if (object.reference != null) {
@@ -183,6 +194,13 @@ class _$EnterpriseCsvIndividualSearchSerializer implements PrimitiveSerializer<E
           ) as CenterCsvIndividualSearch?;
           if (valueDes == null) continue;
           result.center.replace(valueDes);
+          break;
+        case r'timezone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timezone = valueDes;
           break;
         case r'reference':
           final valueDes = serializers.deserialize(

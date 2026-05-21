@@ -33,6 +33,7 @@ import 'package:so_dart_sdk/core_service/model/discovery_jsonld_discovery_read_b
 import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/geo_point.dart';
+import 'package:so_dart_sdk/core_service/model/go_bright_jwt_jsonld_gobright_jwt_read.dart';
 import 'package:so_dart_sdk/core_service/model/hydra_collection_base_schema.dart';
 import 'package:so_dart_sdk/core_service/model/hydra_collection_base_schema_all_of_view.dart';
 import 'package:so_dart_sdk/core_service/model/hydra_collection_base_schema_no_pagination.dart';
@@ -74,6 +75,7 @@ part 'serializers.g.dart';
   Error,
   ErrorJsonld,
   GeoPoint,$GeoPoint,
+  GoBrightJwtJsonldGobrightJwtRead,
   HydraCollectionBaseSchema,$HydraCollectionBaseSchema,
   HydraCollectionBaseSchemaAllOfView,
   HydraCollectionBaseSchemaNoPagination,$HydraCollectionBaseSchemaNoPagination,

@@ -41,7 +41,7 @@ abstract class CustomerReservationPublicCustomerReservationRead implements Built
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CustomerReservationPublicCustomerReservationReadBuilder b) => b
-      ..status = CustomerReservationPublicCustomerReservationReadStatusEnum.valueOf(CustomerReservationPublicCustomerReservationReadStatusEnum.number1);
+      ..status = CustomerReservationPublicCustomerReservationReadStatusEnum.number1;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CustomerReservationPublicCustomerReservationRead> get serializer => _$CustomerReservationPublicCustomerReservationReadSerializer();

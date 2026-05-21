@@ -77,8 +77,8 @@ abstract class CustomerReservationCustomerReservationSearch implements Built<Cus
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CustomerReservationCustomerReservationSearchBuilder b) => b
-      ..status = CustomerReservationCustomerReservationSearchStatusEnum.valueOf(CustomerReservationCustomerReservationSearchStatusEnum.number1)
-      ..type = CustomerReservationCustomerReservationSearchTypeEnum.valueOf(CustomerReservationCustomerReservationSearchTypeEnum.number1);
+      ..status = CustomerReservationCustomerReservationSearchStatusEnum.number1
+      ..type = CustomerReservationCustomerReservationSearchTypeEnum.number1;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CustomerReservationCustomerReservationSearch> get serializer => _$CustomerReservationCustomerReservationSearchSerializer();

@@ -41,7 +41,7 @@ abstract class CustomerReservationCsvPublicCustomerReservationRead implements Bu
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CustomerReservationCsvPublicCustomerReservationReadBuilder b) => b
-      ..status = CustomerReservationCsvPublicCustomerReservationReadStatusEnum.valueOf(CustomerReservationCsvPublicCustomerReservationReadStatusEnum.number1);
+      ..status = CustomerReservationCsvPublicCustomerReservationReadStatusEnum.number1;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CustomerReservationCsvPublicCustomerReservationRead> get serializer => _$CustomerReservationCsvPublicCustomerReservationReadSerializer();

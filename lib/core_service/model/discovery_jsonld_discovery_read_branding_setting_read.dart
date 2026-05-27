@@ -40,10 +40,35 @@ part 'discovery_jsonld_discovery_read_branding_setting_read.g.dart';
 /// * [customer] 
 /// * [product] 
 /// * [company] 
+/// * [gobrightOrganisation] 
 /// * [availableOnHosts] 
 /// * [brandingSettings] 
 @BuiltValue()
 abstract class DiscoveryJsonldDiscoveryReadBrandingSettingRead implements HydraItemBaseSchema, Built<DiscoveryJsonldDiscoveryReadBrandingSettingRead, DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder> {
+  @BuiltValueField(wireName: r'growthbookManagerApiKey')
+  String? get growthbookManagerApiKey;
+
+  @BuiltValueField(wireName: r'corporateUrl')
+  String? get corporateUrl;
+
+  @BuiltValueField(wireName: r'backendUrl')
+  String? get backendUrl;
+
+  @BuiltValueField(wireName: r'reference')
+  String? get reference;
+
+  @BuiltValueField(wireName: r'customerUrl')
+  String? get customerUrl;
+
+  @BuiltValueField(wireName: r'zitadelIssuer')
+  String? get zitadelIssuer;
+
+  @BuiltValueField(wireName: r'company')
+  String? get company;
+
+  @BuiltValueField(wireName: r'ticketingUrl')
+  String? get ticketingUrl;
+
   @BuiltValueField(wireName: r'zitadelOrgId')
   String? get zitadelOrgId;
 
@@ -52,9 +77,6 @@ abstract class DiscoveryJsonldDiscoveryReadBrandingSettingRead implements HydraI
 
   @BuiltValueField(wireName: r'connectUrl')
   String? get connectUrl;
-
-  @BuiltValueField(wireName: r'growthbookManagerApiKey')
-  String? get growthbookManagerApiKey;
 
   @BuiltValueField(wireName: r'product')
   String? get product;
@@ -71,20 +93,11 @@ abstract class DiscoveryJsonldDiscoveryReadBrandingSettingRead implements HydraI
   @BuiltValueField(wireName: r'zitadelCustomerWebClientId')
   String? get zitadelCustomerWebClientId;
 
-  @BuiltValueField(wireName: r'corporateUrl')
-  String? get corporateUrl;
-
   @BuiltValueField(wireName: r'marketplaceUrl')
   String? get marketplaceUrl;
 
-  @BuiltValueField(wireName: r'backendUrl')
-  String? get backendUrl;
-
-  @BuiltValueField(wireName: r'reference')
-  String? get reference;
-
-  @BuiltValueField(wireName: r'customerUrl')
-  String? get customerUrl;
+  @BuiltValueField(wireName: r'gobrightOrganisation')
+  String? get gobrightOrganisation;
 
   @BuiltValueField(wireName: r'brandingSettings')
   BuiltList<BrandingSettingJsonldDiscoveryReadBrandingSettingRead>? get brandingSettings;
@@ -95,17 +108,8 @@ abstract class DiscoveryJsonldDiscoveryReadBrandingSettingRead implements HydraI
   @BuiltValueField(wireName: r'coreUrl')
   String? get coreUrl;
 
-  @BuiltValueField(wireName: r'zitadelIssuer')
-  String? get zitadelIssuer;
-
   @BuiltValueField(wireName: r'managerUrl')
   String? get managerUrl;
-
-  @BuiltValueField(wireName: r'company')
-  String? get company;
-
-  @BuiltValueField(wireName: r'ticketingUrl')
-  String? get ticketingUrl;
 
   @BuiltValueField(wireName: r'agentUrl')
   String? get agentUrl;
@@ -272,6 +276,13 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingReadSerializer implements Pri
       yield r'marketplaceUrl';
       yield serializers.serialize(
         object.marketplaceUrl,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.gobrightOrganisation != null) {
+      yield r'gobrightOrganisation';
+      yield serializers.serialize(
+        object.gobrightOrganisation,
         specifiedType: const FullType(String),
       );
     }
@@ -486,6 +497,13 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingReadSerializer implements Pri
             specifiedType: const FullType(String),
           ) as String;
           result.marketplaceUrl = valueDes;
+          break;
+        case r'gobrightOrganisation':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.gobrightOrganisation = valueDes;
           break;
         case r'brandingSettings':
           final valueDes = serializers.deserialize(

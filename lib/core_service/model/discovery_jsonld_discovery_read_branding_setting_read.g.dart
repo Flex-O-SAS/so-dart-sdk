@@ -9,13 +9,27 @@ part of 'discovery_jsonld_discovery_read_branding_setting_read.dart';
 class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
     extends DiscoveryJsonldDiscoveryReadBrandingSettingRead {
   @override
+  final String? growthbookManagerApiKey;
+  @override
+  final String? corporateUrl;
+  @override
+  final String? backendUrl;
+  @override
+  final String? reference;
+  @override
+  final String? customerUrl;
+  @override
+  final String? zitadelIssuer;
+  @override
+  final String? company;
+  @override
+  final String? ticketingUrl;
+  @override
   final String? zitadelOrgId;
   @override
   final String? zitadelCustomerClientId;
   @override
   final String? connectUrl;
-  @override
-  final String? growthbookManagerApiKey;
   @override
   final String? product;
   @override
@@ -27,15 +41,9 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
   @override
   final String? zitadelCustomerWebClientId;
   @override
-  final String? corporateUrl;
-  @override
   final String? marketplaceUrl;
   @override
-  final String? backendUrl;
-  @override
-  final String? reference;
-  @override
-  final String? customerUrl;
+  final String? gobrightOrganisation;
   @override
   final BuiltList<BrandingSettingJsonldDiscoveryReadBrandingSettingRead>?
       brandingSettings;
@@ -44,13 +52,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
   @override
   final String? coreUrl;
   @override
-  final String? zitadelIssuer;
-  @override
   final String? managerUrl;
-  @override
-  final String? company;
-  @override
-  final String? ticketingUrl;
   @override
   final String? agentUrl;
   @override
@@ -73,27 +75,28 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
           ._build();
 
   _$DiscoveryJsonldDiscoveryReadBrandingSettingRead._(
-      {this.zitadelOrgId,
+      {this.growthbookManagerApiKey,
+      this.corporateUrl,
+      this.backendUrl,
+      this.reference,
+      this.customerUrl,
+      this.zitadelIssuer,
+      this.company,
+      this.ticketingUrl,
+      this.zitadelOrgId,
       this.zitadelCustomerClientId,
       this.connectUrl,
-      this.growthbookManagerApiKey,
       this.product,
       this.mediaUrl,
       this.availableOnHosts,
       this.zitadelManagerClientId,
       this.zitadelCustomerWebClientId,
-      this.corporateUrl,
       this.marketplaceUrl,
-      this.backendUrl,
-      this.reference,
-      this.customerUrl,
+      this.gobrightOrganisation,
       this.brandingSettings,
       this.name,
       this.coreUrl,
-      this.zitadelIssuer,
       this.managerUrl,
-      this.company,
-      this.ticketingUrl,
       this.agentUrl,
       this.growthbookCustomerApiKey,
       this.customer,
@@ -122,27 +125,28 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DiscoveryJsonldDiscoveryReadBrandingSettingRead &&
+        growthbookManagerApiKey == other.growthbookManagerApiKey &&
+        corporateUrl == other.corporateUrl &&
+        backendUrl == other.backendUrl &&
+        reference == other.reference &&
+        customerUrl == other.customerUrl &&
+        zitadelIssuer == other.zitadelIssuer &&
+        company == other.company &&
+        ticketingUrl == other.ticketingUrl &&
         zitadelOrgId == other.zitadelOrgId &&
         zitadelCustomerClientId == other.zitadelCustomerClientId &&
         connectUrl == other.connectUrl &&
-        growthbookManagerApiKey == other.growthbookManagerApiKey &&
         product == other.product &&
         mediaUrl == other.mediaUrl &&
         availableOnHosts == other.availableOnHosts &&
         zitadelManagerClientId == other.zitadelManagerClientId &&
         zitadelCustomerWebClientId == other.zitadelCustomerWebClientId &&
-        corporateUrl == other.corporateUrl &&
         marketplaceUrl == other.marketplaceUrl &&
-        backendUrl == other.backendUrl &&
-        reference == other.reference &&
-        customerUrl == other.customerUrl &&
+        gobrightOrganisation == other.gobrightOrganisation &&
         brandingSettings == other.brandingSettings &&
         name == other.name &&
         coreUrl == other.coreUrl &&
-        zitadelIssuer == other.zitadelIssuer &&
         managerUrl == other.managerUrl &&
-        company == other.company &&
-        ticketingUrl == other.ticketingUrl &&
         agentUrl == other.agentUrl &&
         growthbookCustomerApiKey == other.growthbookCustomerApiKey &&
         customer == other.customer &&
@@ -154,27 +158,28 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, growthbookManagerApiKey.hashCode);
+    _$hash = $jc(_$hash, corporateUrl.hashCode);
+    _$hash = $jc(_$hash, backendUrl.hashCode);
+    _$hash = $jc(_$hash, reference.hashCode);
+    _$hash = $jc(_$hash, customerUrl.hashCode);
+    _$hash = $jc(_$hash, zitadelIssuer.hashCode);
+    _$hash = $jc(_$hash, company.hashCode);
+    _$hash = $jc(_$hash, ticketingUrl.hashCode);
     _$hash = $jc(_$hash, zitadelOrgId.hashCode);
     _$hash = $jc(_$hash, zitadelCustomerClientId.hashCode);
     _$hash = $jc(_$hash, connectUrl.hashCode);
-    _$hash = $jc(_$hash, growthbookManagerApiKey.hashCode);
     _$hash = $jc(_$hash, product.hashCode);
     _$hash = $jc(_$hash, mediaUrl.hashCode);
     _$hash = $jc(_$hash, availableOnHosts.hashCode);
     _$hash = $jc(_$hash, zitadelManagerClientId.hashCode);
     _$hash = $jc(_$hash, zitadelCustomerWebClientId.hashCode);
-    _$hash = $jc(_$hash, corporateUrl.hashCode);
     _$hash = $jc(_$hash, marketplaceUrl.hashCode);
-    _$hash = $jc(_$hash, backendUrl.hashCode);
-    _$hash = $jc(_$hash, reference.hashCode);
-    _$hash = $jc(_$hash, customerUrl.hashCode);
+    _$hash = $jc(_$hash, gobrightOrganisation.hashCode);
     _$hash = $jc(_$hash, brandingSettings.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, coreUrl.hashCode);
-    _$hash = $jc(_$hash, zitadelIssuer.hashCode);
     _$hash = $jc(_$hash, managerUrl.hashCode);
-    _$hash = $jc(_$hash, company.hashCode);
-    _$hash = $jc(_$hash, ticketingUrl.hashCode);
     _$hash = $jc(_$hash, agentUrl.hashCode);
     _$hash = $jc(_$hash, growthbookCustomerApiKey.hashCode);
     _$hash = $jc(_$hash, customer.hashCode);
@@ -189,27 +194,28 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DiscoveryJsonldDiscoveryReadBrandingSettingRead')
+          ..add('growthbookManagerApiKey', growthbookManagerApiKey)
+          ..add('corporateUrl', corporateUrl)
+          ..add('backendUrl', backendUrl)
+          ..add('reference', reference)
+          ..add('customerUrl', customerUrl)
+          ..add('zitadelIssuer', zitadelIssuer)
+          ..add('company', company)
+          ..add('ticketingUrl', ticketingUrl)
           ..add('zitadelOrgId', zitadelOrgId)
           ..add('zitadelCustomerClientId', zitadelCustomerClientId)
           ..add('connectUrl', connectUrl)
-          ..add('growthbookManagerApiKey', growthbookManagerApiKey)
           ..add('product', product)
           ..add('mediaUrl', mediaUrl)
           ..add('availableOnHosts', availableOnHosts)
           ..add('zitadelManagerClientId', zitadelManagerClientId)
           ..add('zitadelCustomerWebClientId', zitadelCustomerWebClientId)
-          ..add('corporateUrl', corporateUrl)
           ..add('marketplaceUrl', marketplaceUrl)
-          ..add('backendUrl', backendUrl)
-          ..add('reference', reference)
-          ..add('customerUrl', customerUrl)
+          ..add('gobrightOrganisation', gobrightOrganisation)
           ..add('brandingSettings', brandingSettings)
           ..add('name', name)
           ..add('coreUrl', coreUrl)
-          ..add('zitadelIssuer', zitadelIssuer)
           ..add('managerUrl', managerUrl)
-          ..add('company', company)
-          ..add('ticketingUrl', ticketingUrl)
           ..add('agentUrl', agentUrl)
           ..add('growthbookCustomerApiKey', growthbookCustomerApiKey)
           ..add('customer', customer)
@@ -227,6 +233,44 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
         HydraItemBaseSchemaBuilder {
   _$DiscoveryJsonldDiscoveryReadBrandingSettingRead? _$v;
 
+  String? _growthbookManagerApiKey;
+  String? get growthbookManagerApiKey => _$this._growthbookManagerApiKey;
+  set growthbookManagerApiKey(covariant String? growthbookManagerApiKey) =>
+      _$this._growthbookManagerApiKey = growthbookManagerApiKey;
+
+  String? _corporateUrl;
+  String? get corporateUrl => _$this._corporateUrl;
+  set corporateUrl(covariant String? corporateUrl) =>
+      _$this._corporateUrl = corporateUrl;
+
+  String? _backendUrl;
+  String? get backendUrl => _$this._backendUrl;
+  set backendUrl(covariant String? backendUrl) =>
+      _$this._backendUrl = backendUrl;
+
+  String? _reference;
+  String? get reference => _$this._reference;
+  set reference(covariant String? reference) => _$this._reference = reference;
+
+  String? _customerUrl;
+  String? get customerUrl => _$this._customerUrl;
+  set customerUrl(covariant String? customerUrl) =>
+      _$this._customerUrl = customerUrl;
+
+  String? _zitadelIssuer;
+  String? get zitadelIssuer => _$this._zitadelIssuer;
+  set zitadelIssuer(covariant String? zitadelIssuer) =>
+      _$this._zitadelIssuer = zitadelIssuer;
+
+  String? _company;
+  String? get company => _$this._company;
+  set company(covariant String? company) => _$this._company = company;
+
+  String? _ticketingUrl;
+  String? get ticketingUrl => _$this._ticketingUrl;
+  set ticketingUrl(covariant String? ticketingUrl) =>
+      _$this._ticketingUrl = ticketingUrl;
+
   String? _zitadelOrgId;
   String? get zitadelOrgId => _$this._zitadelOrgId;
   set zitadelOrgId(covariant String? zitadelOrgId) =>
@@ -241,11 +285,6 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
   String? get connectUrl => _$this._connectUrl;
   set connectUrl(covariant String? connectUrl) =>
       _$this._connectUrl = connectUrl;
-
-  String? _growthbookManagerApiKey;
-  String? get growthbookManagerApiKey => _$this._growthbookManagerApiKey;
-  set growthbookManagerApiKey(covariant String? growthbookManagerApiKey) =>
-      _$this._growthbookManagerApiKey = growthbookManagerApiKey;
 
   String? _product;
   String? get product => _$this._product;
@@ -272,29 +311,15 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
           covariant String? zitadelCustomerWebClientId) =>
       _$this._zitadelCustomerWebClientId = zitadelCustomerWebClientId;
 
-  String? _corporateUrl;
-  String? get corporateUrl => _$this._corporateUrl;
-  set corporateUrl(covariant String? corporateUrl) =>
-      _$this._corporateUrl = corporateUrl;
-
   String? _marketplaceUrl;
   String? get marketplaceUrl => _$this._marketplaceUrl;
   set marketplaceUrl(covariant String? marketplaceUrl) =>
       _$this._marketplaceUrl = marketplaceUrl;
 
-  String? _backendUrl;
-  String? get backendUrl => _$this._backendUrl;
-  set backendUrl(covariant String? backendUrl) =>
-      _$this._backendUrl = backendUrl;
-
-  String? _reference;
-  String? get reference => _$this._reference;
-  set reference(covariant String? reference) => _$this._reference = reference;
-
-  String? _customerUrl;
-  String? get customerUrl => _$this._customerUrl;
-  set customerUrl(covariant String? customerUrl) =>
-      _$this._customerUrl = customerUrl;
+  String? _gobrightOrganisation;
+  String? get gobrightOrganisation => _$this._gobrightOrganisation;
+  set gobrightOrganisation(covariant String? gobrightOrganisation) =>
+      _$this._gobrightOrganisation = gobrightOrganisation;
 
   ListBuilder<BrandingSettingJsonldDiscoveryReadBrandingSettingRead>?
       _brandingSettings;
@@ -315,24 +340,10 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
   String? get coreUrl => _$this._coreUrl;
   set coreUrl(covariant String? coreUrl) => _$this._coreUrl = coreUrl;
 
-  String? _zitadelIssuer;
-  String? get zitadelIssuer => _$this._zitadelIssuer;
-  set zitadelIssuer(covariant String? zitadelIssuer) =>
-      _$this._zitadelIssuer = zitadelIssuer;
-
   String? _managerUrl;
   String? get managerUrl => _$this._managerUrl;
   set managerUrl(covariant String? managerUrl) =>
       _$this._managerUrl = managerUrl;
-
-  String? _company;
-  String? get company => _$this._company;
-  set company(covariant String? company) => _$this._company = company;
-
-  String? _ticketingUrl;
-  String? get ticketingUrl => _$this._ticketingUrl;
-  set ticketingUrl(covariant String? ticketingUrl) =>
-      _$this._ticketingUrl = ticketingUrl;
 
   String? _agentUrl;
   String? get agentUrl => _$this._agentUrl;
@@ -368,27 +379,28 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
   DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _growthbookManagerApiKey = $v.growthbookManagerApiKey;
+      _corporateUrl = $v.corporateUrl;
+      _backendUrl = $v.backendUrl;
+      _reference = $v.reference;
+      _customerUrl = $v.customerUrl;
+      _zitadelIssuer = $v.zitadelIssuer;
+      _company = $v.company;
+      _ticketingUrl = $v.ticketingUrl;
       _zitadelOrgId = $v.zitadelOrgId;
       _zitadelCustomerClientId = $v.zitadelCustomerClientId;
       _connectUrl = $v.connectUrl;
-      _growthbookManagerApiKey = $v.growthbookManagerApiKey;
       _product = $v.product;
       _mediaUrl = $v.mediaUrl;
       _availableOnHosts = $v.availableOnHosts?.toBuilder();
       _zitadelManagerClientId = $v.zitadelManagerClientId;
       _zitadelCustomerWebClientId = $v.zitadelCustomerWebClientId;
-      _corporateUrl = $v.corporateUrl;
       _marketplaceUrl = $v.marketplaceUrl;
-      _backendUrl = $v.backendUrl;
-      _reference = $v.reference;
-      _customerUrl = $v.customerUrl;
+      _gobrightOrganisation = $v.gobrightOrganisation;
       _brandingSettings = $v.brandingSettings?.toBuilder();
       _name = $v.name;
       _coreUrl = $v.coreUrl;
-      _zitadelIssuer = $v.zitadelIssuer;
       _managerUrl = $v.managerUrl;
-      _company = $v.company;
-      _ticketingUrl = $v.ticketingUrl;
       _agentUrl = $v.agentUrl;
       _growthbookCustomerApiKey = $v.growthbookCustomerApiKey;
       _customer = $v.customer;
@@ -422,27 +434,28 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
     try {
       _$result = _$v ??
           new _$DiscoveryJsonldDiscoveryReadBrandingSettingRead._(
+            growthbookManagerApiKey: growthbookManagerApiKey,
+            corporateUrl: corporateUrl,
+            backendUrl: backendUrl,
+            reference: reference,
+            customerUrl: customerUrl,
+            zitadelIssuer: zitadelIssuer,
+            company: company,
+            ticketingUrl: ticketingUrl,
             zitadelOrgId: zitadelOrgId,
             zitadelCustomerClientId: zitadelCustomerClientId,
             connectUrl: connectUrl,
-            growthbookManagerApiKey: growthbookManagerApiKey,
             product: product,
             mediaUrl: mediaUrl,
             availableOnHosts: _availableOnHosts?.build(),
             zitadelManagerClientId: zitadelManagerClientId,
             zitadelCustomerWebClientId: zitadelCustomerWebClientId,
-            corporateUrl: corporateUrl,
             marketplaceUrl: marketplaceUrl,
-            backendUrl: backendUrl,
-            reference: reference,
-            customerUrl: customerUrl,
+            gobrightOrganisation: gobrightOrganisation,
             brandingSettings: _brandingSettings?.build(),
             name: name,
             coreUrl: coreUrl,
-            zitadelIssuer: zitadelIssuer,
             managerUrl: managerUrl,
-            company: company,
-            ticketingUrl: ticketingUrl,
             agentUrl: agentUrl,
             growthbookCustomerApiKey: growthbookCustomerApiKey,
             customer: customer,

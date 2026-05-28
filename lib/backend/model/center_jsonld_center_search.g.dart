@@ -10,6 +10,8 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
   @override
   final String? reference;
   @override
+  final String? timezone;
+  @override
   final String? name;
   @override
   final int? id;
@@ -26,6 +28,7 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
 
   _$CenterJsonldCenterSearch._(
       {this.reference,
+      this.timezone,
       this.name,
       this.id,
       this.atContext,
@@ -52,6 +55,7 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
     if (identical(other, this)) return true;
     return other is CenterJsonldCenterSearch &&
         reference == other.reference &&
+        timezone == other.timezone &&
         name == other.name &&
         id == other.id &&
         atContext == other.atContext &&
@@ -63,6 +67,7 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, reference.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
@@ -76,6 +81,7 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
   String toString() {
     return (newBuiltValueToStringHelper(r'CenterJsonldCenterSearch')
           ..add('reference', reference)
+          ..add('timezone', timezone)
           ..add('name', name)
           ..add('id', id)
           ..add('atContext', atContext)
@@ -94,6 +100,10 @@ class CenterJsonldCenterSearchBuilder
   String? _reference;
   String? get reference => _$this._reference;
   set reference(covariant String? reference) => _$this._reference = reference;
+
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(covariant String? timezone) => _$this._timezone = timezone;
 
   String? _name;
   String? get name => _$this._name;
@@ -125,6 +135,7 @@ class CenterJsonldCenterSearchBuilder
     final $v = _$v;
     if ($v != null) {
       _reference = $v.reference;
+      _timezone = $v.timezone;
       _name = $v.name;
       _id = $v.id;
       _atContext = $v.atContext?.toBuilder();
@@ -155,6 +166,7 @@ class CenterJsonldCenterSearchBuilder
       _$result = _$v ??
           new _$CenterJsonldCenterSearch._(
             reference: reference,
+            timezone: timezone,
             name: name,
             id: id,
             atContext: _atContext?.build(),

@@ -15,6 +15,7 @@ import 'package:so_dart_sdk/media_service/model/constraint_violation.dart';
 import 'package:so_dart_sdk/media_service/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/media_service/model/date.dart';
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read.dart';
+import 'package:so_dart_sdk/media_service/model/document_media_write.dart';
 import 'package:so_dart_sdk/media_service/model/error.dart';
 import 'package:so_dart_sdk/media_service/model/error_jsonld.dart';
 
@@ -25,6 +26,140 @@ class DocumentApi {
   final Serializers _serializers;
 
   const DocumentApi(this._dio, this._serializers);
+
+  /// Unindex a Document for the given agent.
+  /// Removes the RAG entry and its R2 object.
+  ///
+  /// Parameters:
+  /// * [id] - 
+  /// * [agent] - 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> apiDocumentsAgentDeleteItem({ 
+    required int id,
+    required String agent,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/documents/{id}/agents/{agent}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(int)).toString()).replaceAll('{' r'agent' '}', encodeQueryParameter(_serializers, agent, const FullType(String)).toString());
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'JWT',
+            'keyName': 'Authorization',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
+  /// Index a Document for the given agent in the RAG bucket.
+  /// Idempotent. **201** on first index, **200** on subsequent calls (no-op or metadata refresh when &#x60;metadata.centers&#x60; changed).
+  ///
+  /// Parameters:
+  /// * [id] - 
+  /// * [agent] - 
+  /// * [documentMediaWrite] - The updated Document resource
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> apiDocumentsAgentPutItem({ 
+    required int id,
+    required String agent,
+    required DocumentMediaWrite documentMediaWrite,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/documents/{id}/agents/{agent}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(int)).toString()).replaceAll('{' r'agent' '}', encodeQueryParameter(_serializers, agent, const FullType(String)).toString());
+    final _options = Options(
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'JWT',
+            'keyName': 'Authorization',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/ld+json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(DocumentMediaWrite);
+      _bodyData = _serializers.serialize(documentMediaWrite, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
 
   /// Removes the Document resource.
   /// Removes the Document resource.

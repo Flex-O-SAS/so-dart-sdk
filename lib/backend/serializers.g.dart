@@ -10,6 +10,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add($HydraCollectionBaseSchema.serializer)
       ..add($HydraCollectionBaseSchemaNoPagination.serializer)
       ..add($HydraItemBaseSchema.serializer)
+      ..add(ApiCenterContactsGetCollection200Response.serializer)
       ..add(ApiCentersGetCollection200Response.serializer)
       ..add(ApiCentersPublicGetCollection200Response.serializer)
       ..add(ApiCompaniesGetCollection200Response.serializer)
@@ -36,6 +37,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ApiStaffGetCollection200Response.serializer)
       ..add(ApiTagsGetCollection200Response.serializer)
       ..add(CenterCenterSearch.serializer)
+      ..add(CenterContactCenterContactRead.serializer)
+      ..add(CenterContactCenterContactWrite.serializer)
+      ..add(CenterContactCenterContactWriteJsonMergePatch.serializer)
+      ..add(CenterContactCsvCenterContactRead.serializer)
+      ..add(CenterContactJsonldCenterContactRead.serializer)
       ..add(CenterCsvCenterSearch.serializer)
       ..add(CenterCsvCustomerReservationSearch.serializer)
       ..add(CenterCsvEnterpriseSearchEnterpriseExport.serializer)
@@ -333,6 +339,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(TagTagRead.serializer)
       ..add(TagTagWrite.serializer)
       ..add(TagTagWriteJsonMergePatch.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CenterContactJsonldCenterContactRead)]),
+          () => new ListBuilder<CenterContactJsonldCenterContactRead>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(CenterJsonldCenterSearch)]),

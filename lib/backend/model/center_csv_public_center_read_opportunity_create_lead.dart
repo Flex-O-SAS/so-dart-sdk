@@ -17,6 +17,7 @@ part 'center_csv_public_center_read_opportunity_create_lead.g.dart';
 /// * [name] 
 /// * [email] 
 /// * [phone] 
+/// * [timezone] 
 /// * [openingHour] 
 /// * [closureHour] 
 /// * [openingDate] 
@@ -39,6 +40,9 @@ abstract class CenterCsvPublicCenterReadOpportunityCreateLead implements Built<C
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
+
+  @BuiltValueField(wireName: r'timezone')
+  String? get timezone;
 
   @BuiltValueField(wireName: r'openingHour')
   DateTime? get openingHour;
@@ -115,6 +119,13 @@ class _$CenterCsvPublicCenterReadOpportunityCreateLeadSerializer implements Prim
       yield r'phone';
       yield serializers.serialize(
         object.phone,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.timezone != null) {
+      yield r'timezone';
+      yield serializers.serialize(
+        object.timezone,
         specifiedType: const FullType(String),
       );
     }
@@ -231,6 +242,13 @@ class _$CenterCsvPublicCenterReadOpportunityCreateLeadSerializer implements Prim
             specifiedType: const FullType(String),
           ) as String;
           result.phone = valueDes;
+          break;
+        case r'timezone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timezone = valueDes;
           break;
         case r'openingHour':
           final valueDes = serializers.deserialize(

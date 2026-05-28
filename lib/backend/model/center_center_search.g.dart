@@ -12,13 +12,16 @@ class _$CenterCenterSearch extends CenterCenterSearch {
   @override
   final String? name;
   @override
+  final String? timezone;
+  @override
   final int? id;
 
   factory _$CenterCenterSearch(
           [void Function(CenterCenterSearchBuilder)? updates]) =>
       (new CenterCenterSearchBuilder()..update(updates))._build();
 
-  _$CenterCenterSearch._({this.reference, this.name, this.id}) : super._();
+  _$CenterCenterSearch._({this.reference, this.name, this.timezone, this.id})
+      : super._();
 
   @override
   CenterCenterSearch rebuild(
@@ -35,6 +38,7 @@ class _$CenterCenterSearch extends CenterCenterSearch {
     return other is CenterCenterSearch &&
         reference == other.reference &&
         name == other.name &&
+        timezone == other.timezone &&
         id == other.id;
   }
 
@@ -43,6 +47,7 @@ class _$CenterCenterSearch extends CenterCenterSearch {
     var _$hash = 0;
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -53,6 +58,7 @@ class _$CenterCenterSearch extends CenterCenterSearch {
     return (newBuiltValueToStringHelper(r'CenterCenterSearch')
           ..add('reference', reference)
           ..add('name', name)
+          ..add('timezone', timezone)
           ..add('id', id))
         .toString();
   }
@@ -70,6 +76,10 @@ class CenterCenterSearchBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(String? timezone) => _$this._timezone = timezone;
+
   int? _id;
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
@@ -83,6 +93,7 @@ class CenterCenterSearchBuilder
     if ($v != null) {
       _reference = $v.reference;
       _name = $v.name;
+      _timezone = $v.timezone;
       _id = $v.id;
       _$v = null;
     }
@@ -108,6 +119,7 @@ class CenterCenterSearchBuilder
         new _$CenterCenterSearch._(
           reference: reference,
           name: name,
+          timezone: timezone,
           id: id,
         );
     replace(_$result);

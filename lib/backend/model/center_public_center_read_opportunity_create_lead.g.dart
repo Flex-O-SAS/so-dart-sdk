@@ -17,6 +17,8 @@ class _$CenterPublicCenterReadOpportunityCreateLead
   @override
   final String? phone;
   @override
+  final String? timezone;
+  @override
   final DateTime? openingHour;
   @override
   final DateTime? closureHour;
@@ -48,6 +50,7 @@ class _$CenterPublicCenterReadOpportunityCreateLead
       this.name,
       this.email,
       this.phone,
+      this.timezone,
       this.openingHour,
       this.closureHour,
       this.openingDate,
@@ -77,6 +80,7 @@ class _$CenterPublicCenterReadOpportunityCreateLead
         name == other.name &&
         email == other.email &&
         phone == other.phone &&
+        timezone == other.timezone &&
         openingHour == other.openingHour &&
         closureHour == other.closureHour &&
         openingDate == other.openingDate &&
@@ -95,6 +99,7 @@ class _$CenterPublicCenterReadOpportunityCreateLead
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jc(_$hash, openingHour.hashCode);
     _$hash = $jc(_$hash, closureHour.hashCode);
     _$hash = $jc(_$hash, openingDate.hashCode);
@@ -116,6 +121,7 @@ class _$CenterPublicCenterReadOpportunityCreateLead
           ..add('name', name)
           ..add('email', email)
           ..add('phone', phone)
+          ..add('timezone', timezone)
           ..add('openingHour', openingHour)
           ..add('closureHour', closureHour)
           ..add('openingDate', openingDate)
@@ -150,6 +156,10 @@ class CenterPublicCenterReadOpportunityCreateLeadBuilder
   String? _phone;
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
+
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(String? timezone) => _$this._timezone = timezone;
 
   DateTime? _openingHour;
   DateTime? get openingHour => _$this._openingHour;
@@ -203,6 +213,7 @@ class CenterPublicCenterReadOpportunityCreateLeadBuilder
       _name = $v.name;
       _email = $v.email;
       _phone = $v.phone;
+      _timezone = $v.timezone;
       _openingHour = $v.openingHour;
       _closureHour = $v.closureHour;
       _openingDate = $v.openingDate;
@@ -242,6 +253,7 @@ class CenterPublicCenterReadOpportunityCreateLeadBuilder
             name: name,
             email: email,
             phone: phone,
+            timezone: timezone,
             openingHour: openingHour,
             closureHour: closureHour,
             openingDate: openingDate,

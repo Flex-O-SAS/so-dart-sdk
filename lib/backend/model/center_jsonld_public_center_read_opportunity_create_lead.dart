@@ -22,6 +22,7 @@ part 'center_jsonld_public_center_read_opportunity_create_lead.g.dart';
 /// * [name] 
 /// * [email] 
 /// * [phone] 
+/// * [timezone] 
 /// * [openingHour] 
 /// * [closureHour] 
 /// * [openingDate] 
@@ -44,6 +45,9 @@ abstract class CenterJsonldPublicCenterReadOpportunityCreateLead implements Hydr
 
   @BuiltValueField(wireName: r'city')
   String? get city;
+
+  @BuiltValueField(wireName: r'timezone')
+  String? get timezone;
 
   @BuiltValueField(wireName: r'closureHour')
   DateTime? get closureHour;
@@ -125,6 +129,13 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLeadSerializer implements P
       yield r'city';
       yield serializers.serialize(
         object.city,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.timezone != null) {
+      yield r'timezone';
+      yield serializers.serialize(
+        object.timezone,
         specifiedType: const FullType(String),
       );
     }
@@ -260,6 +271,13 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLeadSerializer implements P
             specifiedType: const FullType(String),
           ) as String;
           result.city = valueDes;
+          break;
+        case r'timezone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timezone = valueDes;
           break;
         case r'closureHour':
           final valueDes = serializers.deserialize(

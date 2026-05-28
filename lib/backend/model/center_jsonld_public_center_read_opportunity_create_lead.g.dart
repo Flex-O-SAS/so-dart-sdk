@@ -17,6 +17,8 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
   @override
   final String? city;
   @override
+  final String? timezone;
+  @override
   final DateTime? closureHour;
   @override
   final String? reference;
@@ -55,6 +57,7 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
       this.country,
       this.address,
       this.city,
+      this.timezone,
       this.closureHour,
       this.reference,
       this.zipcode,
@@ -94,6 +97,7 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
         country == other.country &&
         address == other.address &&
         city == other.city &&
+        timezone == other.timezone &&
         closureHour == other.closureHour &&
         reference == other.reference &&
         zipcode == other.zipcode &&
@@ -115,6 +119,7 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
     _$hash = $jc(_$hash, country.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jc(_$hash, city.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jc(_$hash, closureHour.hashCode);
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, zipcode.hashCode);
@@ -139,6 +144,7 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
           ..add('country', country)
           ..add('address', address)
           ..add('city', city)
+          ..add('timezone', timezone)
           ..add('closureHour', closureHour)
           ..add('reference', reference)
           ..add('zipcode', zipcode)
@@ -178,6 +184,10 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
   String? _city;
   String? get city => _$this._city;
   set city(covariant String? city) => _$this._city = city;
+
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(covariant String? timezone) => _$this._timezone = timezone;
 
   DateTime? _closureHour;
   DateTime? get closureHour => _$this._closureHour;
@@ -249,6 +259,7 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
       _country = $v.country;
       _address = $v.address;
       _city = $v.city;
+      _timezone = $v.timezone;
       _closureHour = $v.closureHour;
       _reference = $v.reference;
       _zipcode = $v.zipcode;
@@ -292,6 +303,7 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
             country: country,
             address: address,
             city: city,
+            timezone: timezone,
             closureHour: closureHour,
             reference: reference,
             zipcode: zipcode,

@@ -14,6 +14,7 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:so_dart_sdk/backend/date_serializer.dart';
 import 'package:so_dart_sdk/backend/model/date.dart';
 
+import 'package:so_dart_sdk/backend/model/api_center_contacts_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_centers_public_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_companies_get_collection200_response.dart';
@@ -40,6 +41,11 @@ import 'package:so_dart_sdk/backend/model/api_service_type_get_collection200_res
 import 'package:so_dart_sdk/backend/model/api_staff_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/api_tags_get_collection200_response.dart';
 import 'package:so_dart_sdk/backend/model/center_center_search.dart';
+import 'package:so_dart_sdk/backend/model/center_contact_center_contact_read.dart';
+import 'package:so_dart_sdk/backend/model/center_contact_center_contact_write.dart';
+import 'package:so_dart_sdk/backend/model/center_contact_center_contact_write_json_merge_patch.dart';
+import 'package:so_dart_sdk/backend/model/center_contact_csv_center_contact_read.dart';
+import 'package:so_dart_sdk/backend/model/center_contact_jsonld_center_contact_read.dart';
 import 'package:so_dart_sdk/backend/model/center_csv_center_search.dart';
 import 'package:so_dart_sdk/backend/model/center_csv_customer_reservation_search.dart';
 import 'package:so_dart_sdk/backend/model/center_csv_enterprise_search_enterprise_export.dart';
@@ -286,6 +292,7 @@ import 'package:so_dart_sdk/backend/model/tag_tag_write_json_merge_patch.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
+  ApiCenterContactsGetCollection200Response,
   ApiCentersGetCollection200Response,
   ApiCentersPublicGetCollection200Response,
   ApiCompaniesGetCollection200Response,
@@ -312,6 +319,11 @@ part 'serializers.g.dart';
   ApiStaffGetCollection200Response,
   ApiTagsGetCollection200Response,
   CenterCenterSearch,
+  CenterContactCenterContactRead,
+  CenterContactCenterContactWrite,
+  CenterContactCenterContactWriteJsonMergePatch,
+  CenterContactCsvCenterContactRead,
+  CenterContactJsonldCenterContactRead,
   CenterCsvCenterSearch,
   CenterCsvCustomerReservationSearch,
   CenterCsvEnterpriseSearchEnterpriseExport,

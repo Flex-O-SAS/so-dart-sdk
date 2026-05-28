@@ -20,6 +20,7 @@ import 'package:so_dart_sdk/media_service/model/constraint_violation.dart';
 import 'package:so_dart_sdk/media_service/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/media_service/model/constraint_violation_violations_inner.dart';
 import 'package:so_dart_sdk/media_service/model/document_jsonld_media_read.dart';
+import 'package:so_dart_sdk/media_service/model/document_media_write.dart';
 import 'package:so_dart_sdk/media_service/model/error.dart';
 import 'package:so_dart_sdk/media_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/media_service/model/hydra_collection_base_schema.dart';
@@ -41,6 +42,7 @@ part 'serializers.g.dart';
   ConstraintViolationJsonld,
   ConstraintViolationViolationsInner,
   DocumentJsonldMediaRead,
+  DocumentMediaWrite,
   Error,
   ErrorJsonld,
   HydraCollectionBaseSchema,$HydraCollectionBaseSchema,

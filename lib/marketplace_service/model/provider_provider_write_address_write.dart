@@ -19,6 +19,7 @@ part 'provider_provider_write_address_write.g.dart';
 /// * [link] 
 /// * [linkLabel] 
 /// * [phone] 
+/// * [siteReference] 
 /// * [imageLink] 
 /// * [address] 
 /// * [isActive] 
@@ -42,6 +43,9 @@ abstract class ProviderProviderWriteAddressWrite implements Built<ProviderProvid
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
+
+  @BuiltValueField(wireName: r'siteReference')
+  String get siteReference;
 
   @BuiltValueField(wireName: r'imageLink')
   String? get imageLink;
@@ -118,6 +122,11 @@ class _$ProviderProviderWriteAddressWriteSerializer implements PrimitiveSerializ
         specifiedType: const FullType(String),
       );
     }
+    yield r'siteReference';
+    yield serializers.serialize(
+      object.siteReference,
+      specifiedType: const FullType(String),
+    );
     if (object.imageLink != null) {
       yield r'imageLink';
       yield serializers.serialize(
@@ -206,6 +215,13 @@ class _$ProviderProviderWriteAddressWriteSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.phone = valueDes;
+          break;
+        case r'siteReference':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.siteReference = valueDes;
           break;
         case r'imageLink':
           final valueDes = serializers.deserialize(

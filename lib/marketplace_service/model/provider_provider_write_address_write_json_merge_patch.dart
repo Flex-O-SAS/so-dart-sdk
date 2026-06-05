@@ -19,6 +19,7 @@ part 'provider_provider_write_address_write_json_merge_patch.g.dart';
 /// * [link] 
 /// * [linkLabel] 
 /// * [phone] 
+/// * [siteReference] 
 /// * [imageLink] 
 /// * [address] 
 /// * [isActive] 
@@ -42,6 +43,9 @@ abstract class ProviderProviderWriteAddressWriteJsonMergePatch implements Built<
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
+
+  @BuiltValueField(wireName: r'siteReference')
+  String? get siteReference;
 
   @BuiltValueField(wireName: r'imageLink')
   String? get imageLink;
@@ -117,6 +121,13 @@ class _$ProviderProviderWriteAddressWriteJsonMergePatchSerializer implements Pri
       yield r'phone';
       yield serializers.serialize(
         object.phone,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.siteReference != null) {
+      yield r'siteReference';
+      yield serializers.serialize(
+        object.siteReference,
         specifiedType: const FullType(String),
       );
     }
@@ -212,6 +223,13 @@ class _$ProviderProviderWriteAddressWriteJsonMergePatchSerializer implements Pri
             specifiedType: const FullType(String),
           ) as String;
           result.phone = valueDes;
+          break;
+        case r'siteReference':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.siteReference = valueDes;
           break;
         case r'imageLink':
           final valueDes = serializers.deserialize(

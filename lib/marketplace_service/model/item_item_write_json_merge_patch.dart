@@ -14,7 +14,6 @@ part 'item_item_write_json_merge_patch.g.dart';
 /// * [provider] 
 /// * [service] 
 /// * [label] 
-/// * [site] 
 /// * [description] 
 /// * [price] 
 /// * [isBookable] 
@@ -32,9 +31,6 @@ abstract class ItemItemWriteJsonMergePatch implements Built<ItemItemWriteJsonMer
 
   @BuiltValueField(wireName: r'label')
   String? get label;
-
-  @BuiltValueField(wireName: r'site')
-  int? get site;
 
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -99,13 +95,6 @@ class _$ItemItemWriteJsonMergePatchSerializer implements PrimitiveSerializer<Ite
       yield serializers.serialize(
         object.label,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.site != null) {
-      yield r'site';
-      yield serializers.serialize(
-        object.site,
-        specifiedType: const FullType(int),
       );
     }
     if (object.description != null) {
@@ -200,13 +189,6 @@ class _$ItemItemWriteJsonMergePatchSerializer implements PrimitiveSerializer<Ite
             specifiedType: const FullType(String),
           ) as String;
           result.label = valueDes;
-          break;
-        case r'site':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.site = valueDes;
           break;
         case r'description':
           final valueDes = serializers.deserialize(

@@ -26,6 +26,7 @@ part 'provider_jsonld_provider_read_address_read.g.dart';
 /// * [link] 
 /// * [linkLabel] 
 /// * [phone] 
+/// * [siteReference] 
 /// * [imageLink] 
 /// * [items] 
 /// * [address] 
@@ -41,6 +42,9 @@ abstract class ProviderJsonldProviderReadAddressRead implements HydraItemBaseSch
 
   @BuiltValueField(wireName: r'address')
   AddressJsonldProviderReadAddressRead get address;
+
+  @BuiltValueField(wireName: r'siteReference')
+  String get siteReference;
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
@@ -104,6 +108,11 @@ class _$ProviderJsonldProviderReadAddressReadSerializer implements PrimitiveSeri
     yield r'@id';
     yield serializers.serialize(
       object.atId,
+      specifiedType: const FullType(String),
+    );
+    yield r'siteReference';
+    yield serializers.serialize(
+      object.siteReference,
       specifiedType: const FullType(String),
     );
     if (object.link != null) {
@@ -220,6 +229,13 @@ class _$ProviderJsonldProviderReadAddressReadSerializer implements PrimitiveSeri
             specifiedType: const FullType(String),
           ) as String;
           result.atId = valueDes;
+          break;
+        case r'siteReference':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.siteReference = valueDes;
           break;
         case r'link':
           final valueDes = serializers.deserialize(

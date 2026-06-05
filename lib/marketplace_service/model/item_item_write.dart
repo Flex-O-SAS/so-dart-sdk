@@ -14,7 +14,6 @@ part 'item_item_write.g.dart';
 /// * [provider] 
 /// * [service] 
 /// * [label] 
-/// * [site] 
 /// * [description] 
 /// * [price] 
 /// * [isBookable] 
@@ -32,9 +31,6 @@ abstract class ItemItemWrite implements Built<ItemItemWrite, ItemItemWriteBuilde
 
   @BuiltValueField(wireName: r'label')
   String get label;
-
-  @BuiltValueField(wireName: r'site')
-  int? get site;
 
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -95,13 +91,6 @@ class _$ItemItemWriteSerializer implements PrimitiveSerializer<ItemItemWrite> {
       object.label,
       specifiedType: const FullType(String),
     );
-    if (object.site != null) {
-      yield r'site';
-      yield serializers.serialize(
-        object.site,
-        specifiedType: const FullType(int),
-      );
-    }
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -188,13 +177,6 @@ class _$ItemItemWriteSerializer implements PrimitiveSerializer<ItemItemWrite> {
             specifiedType: const FullType(String),
           ) as String;
           result.label = valueDes;
-          break;
-        case r'site':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.site = valueDes;
           break;
         case r'description':
           final valueDes = serializers.deserialize(

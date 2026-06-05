@@ -21,6 +21,8 @@ class _$ProviderProviderWriteAddressWriteJsonMergePatch
   @override
   final String? phone;
   @override
+  final String? siteReference;
+  @override
   final String? imageLink;
   @override
   final AddressProviderWriteAddressWrite? address;
@@ -44,6 +46,7 @@ class _$ProviderProviderWriteAddressWriteJsonMergePatch
       this.link,
       this.linkLabel,
       this.phone,
+      this.siteReference,
       this.imageLink,
       this.address,
       this.isActive,
@@ -71,6 +74,7 @@ class _$ProviderProviderWriteAddressWriteJsonMergePatch
         link == other.link &&
         linkLabel == other.linkLabel &&
         phone == other.phone &&
+        siteReference == other.siteReference &&
         imageLink == other.imageLink &&
         address == other.address &&
         isActive == other.isActive &&
@@ -86,6 +90,7 @@ class _$ProviderProviderWriteAddressWriteJsonMergePatch
     _$hash = $jc(_$hash, link.hashCode);
     _$hash = $jc(_$hash, linkLabel.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, siteReference.hashCode);
     _$hash = $jc(_$hash, imageLink.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jc(_$hash, isActive.hashCode);
@@ -104,6 +109,7 @@ class _$ProviderProviderWriteAddressWriteJsonMergePatch
           ..add('link', link)
           ..add('linkLabel', linkLabel)
           ..add('phone', phone)
+          ..add('siteReference', siteReference)
           ..add('imageLink', imageLink)
           ..add('address', address)
           ..add('isActive', isActive)
@@ -142,6 +148,11 @@ class ProviderProviderWriteAddressWriteJsonMergePatchBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
+  String? _siteReference;
+  String? get siteReference => _$this._siteReference;
+  set siteReference(String? siteReference) =>
+      _$this._siteReference = siteReference;
+
   String? _imageLink;
   String? get imageLink => _$this._imageLink;
   set imageLink(String? imageLink) => _$this._imageLink = imageLink;
@@ -173,6 +184,7 @@ class ProviderProviderWriteAddressWriteJsonMergePatchBuilder
       _link = $v.link;
       _linkLabel = $v.linkLabel;
       _phone = $v.phone;
+      _siteReference = $v.siteReference;
       _imageLink = $v.imageLink;
       _address = $v.address?.toBuilder();
       _isActive = $v.isActive;
@@ -209,6 +221,7 @@ class ProviderProviderWriteAddressWriteJsonMergePatchBuilder
             link: link,
             linkLabel: linkLabel,
             phone: phone,
+            siteReference: siteReference,
             imageLink: imageLink,
             address: _address?.build(),
             isActive: isActive,

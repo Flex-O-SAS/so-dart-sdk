@@ -14,8 +14,6 @@ class _$ItemItemWrite extends ItemItemWrite {
   @override
   final String label;
   @override
-  final int? site;
-  @override
   final String? description;
   @override
   final num? price;
@@ -37,7 +35,6 @@ class _$ItemItemWrite extends ItemItemWrite {
       {required this.provider,
       required this.service,
       required this.label,
-      this.site,
       this.description,
       this.price,
       required this.isBookable,
@@ -72,7 +69,6 @@ class _$ItemItemWrite extends ItemItemWrite {
         provider == other.provider &&
         service == other.service &&
         label == other.label &&
-        site == other.site &&
         description == other.description &&
         price == other.price &&
         isBookable == other.isBookable &&
@@ -88,7 +84,6 @@ class _$ItemItemWrite extends ItemItemWrite {
     _$hash = $jc(_$hash, provider.hashCode);
     _$hash = $jc(_$hash, service.hashCode);
     _$hash = $jc(_$hash, label.hashCode);
-    _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jc(_$hash, isBookable.hashCode);
@@ -106,7 +101,6 @@ class _$ItemItemWrite extends ItemItemWrite {
           ..add('provider', provider)
           ..add('service', service)
           ..add('label', label)
-          ..add('site', site)
           ..add('description', description)
           ..add('price', price)
           ..add('isBookable', isBookable)
@@ -133,10 +127,6 @@ class ItemItemWriteBuilder
   String? _label;
   String? get label => _$this._label;
   set label(String? label) => _$this._label = label;
-
-  int? _site;
-  int? get site => _$this._site;
-  set site(int? site) => _$this._site = site;
 
   String? _description;
   String? get description => _$this._description;
@@ -176,7 +166,6 @@ class ItemItemWriteBuilder
       _provider = $v.provider;
       _service = $v.service;
       _label = $v.label;
-      _site = $v.site;
       _description = $v.description;
       _price = $v.price;
       _isBookable = $v.isBookable;
@@ -212,7 +201,6 @@ class ItemItemWriteBuilder
               service, r'ItemItemWrite', 'service'),
           label: BuiltValueNullFieldError.checkNotNull(
               label, r'ItemItemWrite', 'label'),
-          site: site,
           description: description,
           price: price,
           isBookable: BuiltValueNullFieldError.checkNotNull(

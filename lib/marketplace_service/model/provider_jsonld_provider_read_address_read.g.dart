@@ -15,6 +15,8 @@ class _$ProviderJsonldProviderReadAddressRead
   @override
   final AddressJsonldProviderReadAddressRead address;
   @override
+  final String siteReference;
+  @override
   final String? phone;
   @override
   final String name;
@@ -47,6 +49,7 @@ class _$ProviderJsonldProviderReadAddressRead
       {this.linkLabel,
       this.imageLink,
       required this.address,
+      required this.siteReference,
       this.phone,
       required this.name,
       this.link,
@@ -61,6 +64,8 @@ class _$ProviderJsonldProviderReadAddressRead
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         address, r'ProviderJsonldProviderReadAddressRead', 'address');
+    BuiltValueNullFieldError.checkNotNull(siteReference,
+        r'ProviderJsonldProviderReadAddressRead', 'siteReference');
     BuiltValueNullFieldError.checkNotNull(
         name, r'ProviderJsonldProviderReadAddressRead', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -88,6 +93,7 @@ class _$ProviderJsonldProviderReadAddressRead
         linkLabel == other.linkLabel &&
         imageLink == other.imageLink &&
         address == other.address &&
+        siteReference == other.siteReference &&
         phone == other.phone &&
         name == other.name &&
         link == other.link &&
@@ -107,6 +113,7 @@ class _$ProviderJsonldProviderReadAddressRead
     _$hash = $jc(_$hash, linkLabel.hashCode);
     _$hash = $jc(_$hash, imageLink.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, siteReference.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, link.hashCode);
@@ -129,6 +136,7 @@ class _$ProviderJsonldProviderReadAddressRead
           ..add('linkLabel', linkLabel)
           ..add('imageLink', imageLink)
           ..add('address', address)
+          ..add('siteReference', siteReference)
           ..add('phone', phone)
           ..add('name', name)
           ..add('link', link)
@@ -164,6 +172,11 @@ class ProviderJsonldProviderReadAddressReadBuilder
       _$this._address ??= new AddressJsonldProviderReadAddressReadBuilder();
   set address(covariant AddressJsonldProviderReadAddressReadBuilder? address) =>
       _$this._address = address;
+
+  String? _siteReference;
+  String? get siteReference => _$this._siteReference;
+  set siteReference(covariant String? siteReference) =>
+      _$this._siteReference = siteReference;
 
   String? _phone;
   String? get phone => _$this._phone;
@@ -226,6 +239,7 @@ class ProviderJsonldProviderReadAddressReadBuilder
       _linkLabel = $v.linkLabel;
       _imageLink = $v.imageLink;
       _address = $v.address.toBuilder();
+      _siteReference = $v.siteReference;
       _phone = $v.phone;
       _name = $v.name;
       _link = $v.link;
@@ -265,6 +279,8 @@ class ProviderJsonldProviderReadAddressReadBuilder
             linkLabel: linkLabel,
             imageLink: imageLink,
             address: address.build(),
+            siteReference: BuiltValueNullFieldError.checkNotNull(siteReference,
+                r'ProviderJsonldProviderReadAddressRead', 'siteReference'),
             phone: phone,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'ProviderJsonldProviderReadAddressRead', 'name'),

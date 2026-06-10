@@ -21,6 +21,8 @@ class _$ProviderProviderReadAddressRead
   @override
   final String? phone;
   @override
+  final String siteReference;
+  @override
   final String? imageLink;
   @override
   final BuiltList<ItemProviderReadAddressRead>? items;
@@ -42,6 +44,7 @@ class _$ProviderProviderReadAddressRead
       this.link,
       this.linkLabel,
       this.phone,
+      required this.siteReference,
       this.imageLink,
       this.items,
       required this.address,
@@ -50,6 +53,8 @@ class _$ProviderProviderReadAddressRead
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         name, r'ProviderProviderReadAddressRead', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        siteReference, r'ProviderProviderReadAddressRead', 'siteReference');
     BuiltValueNullFieldError.checkNotNull(
         address, r'ProviderProviderReadAddressRead', 'address');
     BuiltValueNullFieldError.checkNotNull(
@@ -75,6 +80,7 @@ class _$ProviderProviderReadAddressRead
         link == other.link &&
         linkLabel == other.linkLabel &&
         phone == other.phone &&
+        siteReference == other.siteReference &&
         imageLink == other.imageLink &&
         items == other.items &&
         address == other.address &&
@@ -91,6 +97,7 @@ class _$ProviderProviderReadAddressRead
     _$hash = $jc(_$hash, link.hashCode);
     _$hash = $jc(_$hash, linkLabel.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, siteReference.hashCode);
     _$hash = $jc(_$hash, imageLink.hashCode);
     _$hash = $jc(_$hash, items.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
@@ -109,6 +116,7 @@ class _$ProviderProviderReadAddressRead
           ..add('link', link)
           ..add('linkLabel', linkLabel)
           ..add('phone', phone)
+          ..add('siteReference', siteReference)
           ..add('imageLink', imageLink)
           ..add('items', items)
           ..add('address', address)
@@ -147,6 +155,11 @@ class ProviderProviderReadAddressReadBuilder
   String? _phone;
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
+
+  String? _siteReference;
+  String? get siteReference => _$this._siteReference;
+  set siteReference(String? siteReference) =>
+      _$this._siteReference = siteReference;
 
   String? _imageLink;
   String? get imageLink => _$this._imageLink;
@@ -187,6 +200,7 @@ class ProviderProviderReadAddressReadBuilder
       _link = $v.link;
       _linkLabel = $v.linkLabel;
       _phone = $v.phone;
+      _siteReference = $v.siteReference;
       _imageLink = $v.imageLink;
       _items = $v.items?.toBuilder();
       _address = $v.address.toBuilder();
@@ -223,6 +237,8 @@ class ProviderProviderReadAddressReadBuilder
             link: link,
             linkLabel: linkLabel,
             phone: phone,
+            siteReference: BuiltValueNullFieldError.checkNotNull(siteReference,
+                r'ProviderProviderReadAddressRead', 'siteReference'),
             imageLink: imageLink,
             items: _items?.build(),
             address: address.build(),

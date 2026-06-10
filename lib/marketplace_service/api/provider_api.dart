@@ -86,6 +86,7 @@ class ProviderApi {
   ///
   /// Parameters:
   /// * [page] - The collection page number
+  /// * [pagination] - Enable or disable pagination
   /// * [search] - 
   /// * [orderLeftSquareBracketNameRightSquareBracket] - 
   /// * [orderLeftSquareBracketDescriptionRightSquareBracket] - 
@@ -94,6 +95,8 @@ class ProviderApi {
   /// * [orderLeftSquareBracketAddressPeriodCountryRightSquareBracket] - 
   /// * [name] - 
   /// * [description] - 
+  /// * [siteReference] - 
+  /// * [siteReferenceLeftSquareBracketRightSquareBracket] - 
   /// * [itemsPeriodServicePeriodId] - 
   /// * [itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket] - 
   /// * [itemsPeriodLabel] - 
@@ -119,6 +122,7 @@ class ProviderApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiProvidersGetCollection200Response>> apiProvidersGetCollection({ 
     int? page = 1,
+    bool? pagination,
     String? search,
     String? orderLeftSquareBracketNameRightSquareBracket = 'asc',
     String? orderLeftSquareBracketDescriptionRightSquareBracket = 'asc',
@@ -127,6 +131,8 @@ class ProviderApi {
     String? orderLeftSquareBracketAddressPeriodCountryRightSquareBracket = 'asc',
     String? name,
     String? description,
+    String? siteReference,
+    BuiltList<String>? siteReferenceLeftSquareBracketRightSquareBracket,
     int? itemsPeriodServicePeriodId,
     BuiltList<int>? itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket,
     String? itemsPeriodLabel,
@@ -170,6 +176,7 @@ class ProviderApi {
 
     final _queryParameters = <String, dynamic>{
       if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
+      if (pagination != null) r'pagination': encodeQueryParameter(_serializers, pagination, const FullType(bool)),
       if (search != null) r'search': encodeQueryParameter(_serializers, search, const FullType(String)),
       if (orderLeftSquareBracketNameRightSquareBracket != null) r'order[name]': encodeQueryParameter(_serializers, orderLeftSquareBracketNameRightSquareBracket, const FullType(String)),
       if (orderLeftSquareBracketDescriptionRightSquareBracket != null) r'order[description]': encodeQueryParameter(_serializers, orderLeftSquareBracketDescriptionRightSquareBracket, const FullType(String)),
@@ -178,6 +185,8 @@ class ProviderApi {
       if (orderLeftSquareBracketAddressPeriodCountryRightSquareBracket != null) r'order[address.country]': encodeQueryParameter(_serializers, orderLeftSquareBracketAddressPeriodCountryRightSquareBracket, const FullType(String)),
       if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
       if (description != null) r'description': encodeQueryParameter(_serializers, description, const FullType(String)),
+      if (siteReference != null) r'siteReference': encodeQueryParameter(_serializers, siteReference, const FullType(String)),
+      if (siteReferenceLeftSquareBracketRightSquareBracket != null) r'siteReference[]': encodeCollectionQueryParameter<String>(_serializers, siteReferenceLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(String)]), format: ListFormat.multi,),
       if (itemsPeriodServicePeriodId != null) r'items.service.id': encodeQueryParameter(_serializers, itemsPeriodServicePeriodId, const FullType(int)),
       if (itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket != null) r'items.service.id[]': encodeCollectionQueryParameter<int>(_serializers, itemsPeriodServicePeriodIdLeftSquareBracketRightSquareBracket, const FullType(BuiltList, [FullType(int)]), format: ListFormat.multi,),
       if (itemsPeriodLabel != null) r'items.label': encodeQueryParameter(_serializers, itemsPeriodLabel, const FullType(String)),

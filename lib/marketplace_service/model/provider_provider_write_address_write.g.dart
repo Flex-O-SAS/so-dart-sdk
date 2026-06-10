@@ -21,6 +21,8 @@ class _$ProviderProviderWriteAddressWrite
   @override
   final String? phone;
   @override
+  final String siteReference;
+  @override
   final String? imageLink;
   @override
   final AddressProviderWriteAddressWrite address;
@@ -41,6 +43,7 @@ class _$ProviderProviderWriteAddressWrite
       this.link,
       this.linkLabel,
       this.phone,
+      required this.siteReference,
       this.imageLink,
       required this.address,
       required this.isActive,
@@ -48,6 +51,8 @@ class _$ProviderProviderWriteAddressWrite
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         name, r'ProviderProviderWriteAddressWrite', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        siteReference, r'ProviderProviderWriteAddressWrite', 'siteReference');
     BuiltValueNullFieldError.checkNotNull(
         address, r'ProviderProviderWriteAddressWrite', 'address');
     BuiltValueNullFieldError.checkNotNull(
@@ -73,6 +78,7 @@ class _$ProviderProviderWriteAddressWrite
         link == other.link &&
         linkLabel == other.linkLabel &&
         phone == other.phone &&
+        siteReference == other.siteReference &&
         imageLink == other.imageLink &&
         address == other.address &&
         isActive == other.isActive &&
@@ -88,6 +94,7 @@ class _$ProviderProviderWriteAddressWrite
     _$hash = $jc(_$hash, link.hashCode);
     _$hash = $jc(_$hash, linkLabel.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, siteReference.hashCode);
     _$hash = $jc(_$hash, imageLink.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jc(_$hash, isActive.hashCode);
@@ -105,6 +112,7 @@ class _$ProviderProviderWriteAddressWrite
           ..add('link', link)
           ..add('linkLabel', linkLabel)
           ..add('phone', phone)
+          ..add('siteReference', siteReference)
           ..add('imageLink', imageLink)
           ..add('address', address)
           ..add('isActive', isActive)
@@ -143,6 +151,11 @@ class ProviderProviderWriteAddressWriteBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
+  String? _siteReference;
+  String? get siteReference => _$this._siteReference;
+  set siteReference(String? siteReference) =>
+      _$this._siteReference = siteReference;
+
   String? _imageLink;
   String? get imageLink => _$this._imageLink;
   set imageLink(String? imageLink) => _$this._imageLink = imageLink;
@@ -174,6 +187,7 @@ class ProviderProviderWriteAddressWriteBuilder
       _link = $v.link;
       _linkLabel = $v.linkLabel;
       _phone = $v.phone;
+      _siteReference = $v.siteReference;
       _imageLink = $v.imageLink;
       _address = $v.address.toBuilder();
       _isActive = $v.isActive;
@@ -210,6 +224,8 @@ class ProviderProviderWriteAddressWriteBuilder
             link: link,
             linkLabel: linkLabel,
             phone: phone,
+            siteReference: BuiltValueNullFieldError.checkNotNull(siteReference,
+                r'ProviderProviderWriteAddressWrite', 'siteReference'),
             imageLink: imageLink,
             address: address.build(),
             isActive: BuiltValueNullFieldError.checkNotNull(

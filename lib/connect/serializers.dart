@@ -36,6 +36,7 @@ import 'package:so_dart_sdk/connect/model/printer_dto.dart';
 import 'package:so_dart_sdk/connect/model/printer_group_dto.dart';
 import 'package:so_dart_sdk/connect/model/printer_pool_dto.dart';
 import 'package:so_dart_sdk/connect/model/provider_response_inner.dart';
+import 'package:so_dart_sdk/connect/model/providers_provider_uuid_events_post_request.dart';
 import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get200_response.dart';
 import 'package:so_dart_sdk/connect/model/providers_provider_uuid_users_user_reference_qrcode_get404_response.dart';
 import 'package:so_dart_sdk/connect/model/provision_mobile_key_body.dart';
@@ -75,6 +76,7 @@ part 'serializers.g.dart';
   PrinterGroupDto,
   PrinterPoolDto,
   ProviderResponseInner,
+  ProvidersProviderUuidEventsPostRequest,
   ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response,
   ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response,
   ProvisionMobileKeyBody,

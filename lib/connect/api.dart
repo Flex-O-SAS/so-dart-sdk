@@ -13,6 +13,7 @@ import 'package:so_dart_sdk/connect/api/access_api.dart';
 import 'package:so_dart_sdk/connect/api/access_cards_api.dart';
 import 'package:so_dart_sdk/connect/api/charging_stations_api.dart';
 import 'package:so_dart_sdk/connect/api/devices_api.dart';
+import 'package:so_dart_sdk/connect/api/events_api.dart';
 import 'package:so_dart_sdk/connect/api/lockers_api.dart';
 import 'package:so_dart_sdk/connect/api/misc_api.dart';
 import 'package:so_dart_sdk/connect/api/printers_api.dart';
@@ -137,6 +138,12 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   DevicesApi getDevicesApi() {
     return DevicesApi(dio, serializers);
+  }
+
+  /// Get EventsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  EventsApi getEventsApi() {
+    return EventsApi(dio, serializers);
   }
 
   /// Get LockersApi instance, base route and serializer can be overridden by a given but be careful,

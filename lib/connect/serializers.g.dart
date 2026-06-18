@@ -29,6 +29,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(PrinterGroupDto.serializer)
       ..add(PrinterPoolDto.serializer)
       ..add(ProviderResponseInner.serializer)
+      ..add(ProvidersProviderUuidEventsPostRequest.serializer)
+      ..add(ProvidersProviderUuidEventsPostRequestActionEnum.serializer)
+      ..add(ProvidersProviderUuidEventsPostRequestDomainEnum.serializer)
       ..add(ProvidersProviderUuidUsersUserReferenceQrcodeGet200Response
           .serializer)
       ..add(ProvidersProviderUuidUsersUserReferenceQrcodeGet404Response
@@ -76,7 +79,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(
               BuiltMap, const [const FullType(String), const FullType(String)]),
-          () => new MapBuilder<String, String>()))
+          () => new MapBuilder<String, String>())
+      ..addBuilderFactory(
+          const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType.nullable(JsonObject)
+          ]),
+          () => new MapBuilder<String, JsonObject?>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

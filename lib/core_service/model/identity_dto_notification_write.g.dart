@@ -16,6 +16,9 @@ const IdentityDtoNotificationWriteTypeEnum
     _$identityDtoNotificationWriteTypeEnum_site =
     const IdentityDtoNotificationWriteTypeEnum._('site');
 const IdentityDtoNotificationWriteTypeEnum
+    _$identityDtoNotificationWriteTypeEnum_siteIncident =
+    const IdentityDtoNotificationWriteTypeEnum._('siteIncident');
+const IdentityDtoNotificationWriteTypeEnum
     _$identityDtoNotificationWriteTypeEnum_staff =
     const IdentityDtoNotificationWriteTypeEnum._('staff');
 const IdentityDtoNotificationWriteTypeEnum
@@ -46,6 +49,8 @@ IdentityDtoNotificationWriteTypeEnum
       return _$identityDtoNotificationWriteTypeEnum_enterprise;
     case 'site':
       return _$identityDtoNotificationWriteTypeEnum_site;
+    case 'siteIncident':
+      return _$identityDtoNotificationWriteTypeEnum_siteIncident;
     case 'staff':
       return _$identityDtoNotificationWriteTypeEnum_staff;
     case 'user':
@@ -71,6 +76,7 @@ final BuiltSet<IdentityDtoNotificationWriteTypeEnum>
   _$identityDtoNotificationWriteTypeEnum_config,
   _$identityDtoNotificationWriteTypeEnum_enterprise,
   _$identityDtoNotificationWriteTypeEnum_site,
+  _$identityDtoNotificationWriteTypeEnum_siteIncident,
   _$identityDtoNotificationWriteTypeEnum_staff,
   _$identityDtoNotificationWriteTypeEnum_user,
   _$identityDtoNotificationWriteTypeEnum_email,
@@ -90,6 +96,7 @@ class _$IdentityDtoNotificationWriteTypeEnumSerializer
     'config': 'config',
     'enterprise': 'enterprise',
     'site': 'site',
+    'siteIncident': 'site_incident',
     'staff': 'staff',
     'user': 'user',
     'email': 'email',
@@ -102,6 +109,7 @@ class _$IdentityDtoNotificationWriteTypeEnumSerializer
     'config': 'config',
     'enterprise': 'enterprise',
     'site': 'site',
+    'site_incident': 'siteIncident',
     'staff': 'staff',
     'user': 'user',
     'email': 'email',

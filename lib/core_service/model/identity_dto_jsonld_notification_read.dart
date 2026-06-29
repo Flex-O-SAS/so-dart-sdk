@@ -23,7 +23,7 @@ abstract class IdentityDtoJsonldNotificationRead implements Built<IdentityDtoJso
 
   @BuiltValueField(wireName: r'type')
   IdentityDtoJsonldNotificationReadTypeEnum get type;
-  // enum typeEnum {  config,  enterprise,  site,  staff,  user,  email,  phone,  client,  users_enterprise,  users_site,  };
+  // enum typeEnum {  config,  enterprise,  site,  site_incident,  staff,  user,  email,  phone,  client,  users_enterprise,  users_site,  };
 
   @BuiltValueField(wireName: r'locale')
   String? get locale;
@@ -166,6 +166,8 @@ class IdentityDtoJsonldNotificationReadTypeEnum extends EnumClass {
   static const IdentityDtoJsonldNotificationReadTypeEnum enterprise = _$identityDtoJsonldNotificationReadTypeEnum_enterprise;
   @BuiltValueEnumConst(wireName: r'site')
   static const IdentityDtoJsonldNotificationReadTypeEnum site = _$identityDtoJsonldNotificationReadTypeEnum_site;
+  @BuiltValueEnumConst(wireName: r'site_incident')
+  static const IdentityDtoJsonldNotificationReadTypeEnum siteIncident = _$identityDtoJsonldNotificationReadTypeEnum_siteIncident;
   @BuiltValueEnumConst(wireName: r'staff')
   static const IdentityDtoJsonldNotificationReadTypeEnum staff = _$identityDtoJsonldNotificationReadTypeEnum_staff;
   @BuiltValueEnumConst(wireName: r'user')

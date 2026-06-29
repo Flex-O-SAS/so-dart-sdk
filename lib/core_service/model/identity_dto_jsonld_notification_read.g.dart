@@ -16,6 +16,9 @@ const IdentityDtoJsonldNotificationReadTypeEnum
     _$identityDtoJsonldNotificationReadTypeEnum_site =
     const IdentityDtoJsonldNotificationReadTypeEnum._('site');
 const IdentityDtoJsonldNotificationReadTypeEnum
+    _$identityDtoJsonldNotificationReadTypeEnum_siteIncident =
+    const IdentityDtoJsonldNotificationReadTypeEnum._('siteIncident');
+const IdentityDtoJsonldNotificationReadTypeEnum
     _$identityDtoJsonldNotificationReadTypeEnum_staff =
     const IdentityDtoJsonldNotificationReadTypeEnum._('staff');
 const IdentityDtoJsonldNotificationReadTypeEnum
@@ -46,6 +49,8 @@ IdentityDtoJsonldNotificationReadTypeEnum
       return _$identityDtoJsonldNotificationReadTypeEnum_enterprise;
     case 'site':
       return _$identityDtoJsonldNotificationReadTypeEnum_site;
+    case 'siteIncident':
+      return _$identityDtoJsonldNotificationReadTypeEnum_siteIncident;
     case 'staff':
       return _$identityDtoJsonldNotificationReadTypeEnum_staff;
     case 'user':
@@ -71,6 +76,7 @@ final BuiltSet<IdentityDtoJsonldNotificationReadTypeEnum>
   _$identityDtoJsonldNotificationReadTypeEnum_config,
   _$identityDtoJsonldNotificationReadTypeEnum_enterprise,
   _$identityDtoJsonldNotificationReadTypeEnum_site,
+  _$identityDtoJsonldNotificationReadTypeEnum_siteIncident,
   _$identityDtoJsonldNotificationReadTypeEnum_staff,
   _$identityDtoJsonldNotificationReadTypeEnum_user,
   _$identityDtoJsonldNotificationReadTypeEnum_email,
@@ -90,6 +96,7 @@ class _$IdentityDtoJsonldNotificationReadTypeEnumSerializer
     'config': 'config',
     'enterprise': 'enterprise',
     'site': 'site',
+    'siteIncident': 'site_incident',
     'staff': 'staff',
     'user': 'user',
     'email': 'email',
@@ -102,6 +109,7 @@ class _$IdentityDtoJsonldNotificationReadTypeEnumSerializer
     'config': 'config',
     'enterprise': 'enterprise',
     'site': 'site',
+    'site_incident': 'siteIncident',
     'staff': 'staff',
     'user': 'user',
     'email': 'email',

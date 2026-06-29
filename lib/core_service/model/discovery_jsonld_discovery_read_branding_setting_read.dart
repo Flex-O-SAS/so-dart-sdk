@@ -42,6 +42,7 @@ part 'discovery_jsonld_discovery_read_branding_setting_read.g.dart';
 /// * [company] 
 /// * [gobrightOrganisation] 
 /// * [availableOnHosts] 
+/// * [ssoIdpIds] 
 /// * [brandingSettings] 
 @BuiltValue()
 abstract class DiscoveryJsonldDiscoveryReadBrandingSettingRead implements HydraItemBaseSchema, Built<DiscoveryJsonldDiscoveryReadBrandingSettingRead, DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder> {
@@ -53,6 +54,9 @@ abstract class DiscoveryJsonldDiscoveryReadBrandingSettingRead implements HydraI
 
   @BuiltValueField(wireName: r'backendUrl')
   String? get backendUrl;
+
+  @BuiltValueField(wireName: r'ssoIdpIds')
+  BuiltList<String>? get ssoIdpIds;
 
   @BuiltValueField(wireName: r'reference')
   String? get reference;
@@ -167,6 +171,13 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingReadSerializer implements Pri
       yield serializers.serialize(
         object.backendUrl,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.ssoIdpIds != null) {
+      yield r'ssoIdpIds';
+      yield serializers.serialize(
+        object.ssoIdpIds,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
     if (object.reference != null) {
@@ -385,6 +396,13 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingReadSerializer implements Pri
             specifiedType: const FullType(String),
           ) as String;
           result.backendUrl = valueDes;
+          break;
+        case r'ssoIdpIds':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.ssoIdpIds.replace(valueDes);
           break;
         case r'reference':
           final valueDes = serializers.deserialize(

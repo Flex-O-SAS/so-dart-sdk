@@ -1,0 +1,27 @@
+lib/backend/model/center_center_search.g.dart
+  s_83bc5af06fbd8e::t_d9643214709d56 25,134-136
+  s_83bc5af06fbd8e::t_70477014b81802 26
+  s_83bc5af06fbd8e::t_2013afdddf2cc2 131-133
+  s_83bc5af06fbd8e::t_8b7f510a0a13e2 137-139
+lib/media_service/serializers.g.dart
+  s_83bc5af06fbd8e::t_d9643214709d56 52
+  s_83bc5af06fbd8e::t_713ba8cc907b0b 53-55
+lib/so_dart_sdk.dart
+  s_83bc5af06fbd8e::t_d9643214709d56 326-332,334-338,340-387
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "50a06af4bad46327c352a43740054622e4ed5526",
+  "prompts": {},
+  "sessions": {
+    "s_83bc5af06fbd8e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6769119e-e43d-4544-bd29-059d57a020a6",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "theodorefs <theodore.faraut-schwieg@saas-office.com>"
+    }
+  }
+}

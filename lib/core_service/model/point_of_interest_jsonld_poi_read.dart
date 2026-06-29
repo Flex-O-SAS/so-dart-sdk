@@ -96,7 +96,7 @@ class _$PointOfInterestJsonldPoiReadSerializer implements PrimitiveSerializer<Po
       yield r'point';
       yield serializers.serialize(
         object.point,
-        specifiedType: const FullType.nullable(JsonObject),
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -167,9 +167,8 @@ class _$PointOfInterestJsonldPoiReadSerializer implements PrimitiveSerializer<Po
         case r'point':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.point = valueDes;
           break;
         default:

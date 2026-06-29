@@ -23,7 +23,7 @@ abstract class IdentityDtoNotificationWrite implements Built<IdentityDtoNotifica
 
   @BuiltValueField(wireName: r'type')
   IdentityDtoNotificationWriteTypeEnum get type;
-  // enum typeEnum {  config,  enterprise,  site,  staff,  user,  email,  phone,  client,  users_enterprise,  users_site,  };
+  // enum typeEnum {  config,  enterprise,  site,  site_incident,  staff,  user,  email,  phone,  client,  users_enterprise,  users_site,  };
 
   @BuiltValueField(wireName: r'locale')
   String? get locale;
@@ -166,6 +166,8 @@ class IdentityDtoNotificationWriteTypeEnum extends EnumClass {
   static const IdentityDtoNotificationWriteTypeEnum enterprise = _$identityDtoNotificationWriteTypeEnum_enterprise;
   @BuiltValueEnumConst(wireName: r'site')
   static const IdentityDtoNotificationWriteTypeEnum site = _$identityDtoNotificationWriteTypeEnum_site;
+  @BuiltValueEnumConst(wireName: r'site_incident')
+  static const IdentityDtoNotificationWriteTypeEnum siteIncident = _$identityDtoNotificationWriteTypeEnum_siteIncident;
   @BuiltValueEnumConst(wireName: r'staff')
   static const IdentityDtoNotificationWriteTypeEnum staff = _$identityDtoNotificationWriteTypeEnum_staff;
   @BuiltValueEnumConst(wireName: r'user')

@@ -15,6 +15,8 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
   @override
   final String? backendUrl;
   @override
+  final BuiltList<String>? ssoIdpIds;
+  @override
   final String? reference;
   @override
   final String? customerUrl;
@@ -78,6 +80,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
       {this.growthbookManagerApiKey,
       this.corporateUrl,
       this.backendUrl,
+      this.ssoIdpIds,
       this.reference,
       this.customerUrl,
       this.zitadelIssuer,
@@ -128,6 +131,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
         growthbookManagerApiKey == other.growthbookManagerApiKey &&
         corporateUrl == other.corporateUrl &&
         backendUrl == other.backendUrl &&
+        ssoIdpIds == other.ssoIdpIds &&
         reference == other.reference &&
         customerUrl == other.customerUrl &&
         zitadelIssuer == other.zitadelIssuer &&
@@ -161,6 +165,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
     _$hash = $jc(_$hash, growthbookManagerApiKey.hashCode);
     _$hash = $jc(_$hash, corporateUrl.hashCode);
     _$hash = $jc(_$hash, backendUrl.hashCode);
+    _$hash = $jc(_$hash, ssoIdpIds.hashCode);
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, customerUrl.hashCode);
     _$hash = $jc(_$hash, zitadelIssuer.hashCode);
@@ -197,6 +202,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
           ..add('growthbookManagerApiKey', growthbookManagerApiKey)
           ..add('corporateUrl', corporateUrl)
           ..add('backendUrl', backendUrl)
+          ..add('ssoIdpIds', ssoIdpIds)
           ..add('reference', reference)
           ..add('customerUrl', customerUrl)
           ..add('zitadelIssuer', zitadelIssuer)
@@ -247,6 +253,12 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
   String? get backendUrl => _$this._backendUrl;
   set backendUrl(covariant String? backendUrl) =>
       _$this._backendUrl = backendUrl;
+
+  ListBuilder<String>? _ssoIdpIds;
+  ListBuilder<String> get ssoIdpIds =>
+      _$this._ssoIdpIds ??= new ListBuilder<String>();
+  set ssoIdpIds(covariant ListBuilder<String>? ssoIdpIds) =>
+      _$this._ssoIdpIds = ssoIdpIds;
 
   String? _reference;
   String? get reference => _$this._reference;
@@ -382,6 +394,7 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
       _growthbookManagerApiKey = $v.growthbookManagerApiKey;
       _corporateUrl = $v.corporateUrl;
       _backendUrl = $v.backendUrl;
+      _ssoIdpIds = $v.ssoIdpIds?.toBuilder();
       _reference = $v.reference;
       _customerUrl = $v.customerUrl;
       _zitadelIssuer = $v.zitadelIssuer;
@@ -437,6 +450,7 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
             growthbookManagerApiKey: growthbookManagerApiKey,
             corporateUrl: corporateUrl,
             backendUrl: backendUrl,
+            ssoIdpIds: _ssoIdpIds?.build(),
             reference: reference,
             customerUrl: customerUrl,
             zitadelIssuer: zitadelIssuer,
@@ -468,6 +482,9 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'ssoIdpIds';
+        _ssoIdpIds?.build();
+
         _$failedField = 'availableOnHosts';
         _availableOnHosts?.build();
 

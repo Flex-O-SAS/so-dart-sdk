@@ -76,9 +76,7 @@ abstract class CustomerReservationCsvCustomerReservationSearch implements Built<
   factory CustomerReservationCsvCustomerReservationSearch([void updates(CustomerReservationCsvCustomerReservationSearchBuilder b)]) = _$CustomerReservationCsvCustomerReservationSearch;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CustomerReservationCsvCustomerReservationSearchBuilder b) => b
-      ..status = CustomerReservationCsvCustomerReservationSearchStatusEnum.number1
-      ..type = CustomerReservationCsvCustomerReservationSearchTypeEnum.number1;
+  static void _defaults(CustomerReservationCsvCustomerReservationSearchBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CustomerReservationCsvCustomerReservationSearch> get serializer => _$CustomerReservationCsvCustomerReservationSearchSerializer();

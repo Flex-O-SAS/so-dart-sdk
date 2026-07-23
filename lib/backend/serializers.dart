@@ -216,8 +216,14 @@ import 'package:so_dart_sdk/backend/model/invoice_jsonld_invoice_search.dart';
 import 'package:so_dart_sdk/backend/model/invoice_row.dart';
 import 'package:so_dart_sdk/backend/model/invoice_row_csv.dart';
 import 'package:so_dart_sdk/backend/model/invoice_row_jsonld.dart';
+import 'package:so_dart_sdk/backend/model/language_center_search.dart';
+import 'package:so_dart_sdk/backend/model/language_csv_center_search.dart';
+import 'package:so_dart_sdk/backend/model/language_csv_public_center_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/language_csv_public_language_read_opportunity_create_lead.dart';
+import 'package:so_dart_sdk/backend/model/language_jsonld_center_search.dart';
+import 'package:so_dart_sdk/backend/model/language_jsonld_public_center_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/language_jsonld_public_language_read_opportunity_create_lead.dart';
+import 'package:so_dart_sdk/backend/model/language_public_center_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/language_public_language_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_csv_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/opportunity_csv_opportunity_search.dart';
@@ -494,8 +500,14 @@ part 'serializers.g.dart';
   InvoiceRow,
   InvoiceRowCsv,
   InvoiceRowJsonld,
+  LanguageCenterSearch,
+  LanguageCsvCenterSearch,
+  LanguageCsvPublicCenterReadOpportunityCreateLead,
   LanguageCsvPublicLanguageReadOpportunityCreateLead,
+  LanguageJsonldCenterSearch,
+  LanguageJsonldPublicCenterReadOpportunityCreateLead,
   LanguageJsonldPublicLanguageReadOpportunityCreateLead,
+  LanguagePublicCenterReadOpportunityCreateLead,
   LanguagePublicLanguageReadOpportunityCreateLead,
   OpportunityCsvOpportunityCreateLead,
   OpportunityCsvOpportunitySearch,

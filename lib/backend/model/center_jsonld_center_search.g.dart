@@ -14,6 +14,8 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
   @override
   final String? name;
   @override
+  final LanguageJsonldCenterSearch? language;
+  @override
   final int? id;
   @override
   final HydraItemBaseSchemaContext? atContext;
@@ -30,6 +32,7 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
       {this.reference,
       this.timezone,
       this.name,
+      this.language,
       this.id,
       this.atContext,
       required this.atId,
@@ -57,6 +60,7 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
         reference == other.reference &&
         timezone == other.timezone &&
         name == other.name &&
+        language == other.language &&
         id == other.id &&
         atContext == other.atContext &&
         atId == other.atId &&
@@ -69,6 +73,7 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, language.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, atContext.hashCode);
     _$hash = $jc(_$hash, atId.hashCode);
@@ -83,6 +88,7 @@ class _$CenterJsonldCenterSearch extends CenterJsonldCenterSearch {
           ..add('reference', reference)
           ..add('timezone', timezone)
           ..add('name', name)
+          ..add('language', language)
           ..add('id', id)
           ..add('atContext', atContext)
           ..add('atId', atId)
@@ -108,6 +114,12 @@ class CenterJsonldCenterSearchBuilder
   String? _name;
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
+
+  LanguageJsonldCenterSearchBuilder? _language;
+  LanguageJsonldCenterSearchBuilder get language =>
+      _$this._language ??= new LanguageJsonldCenterSearchBuilder();
+  set language(covariant LanguageJsonldCenterSearchBuilder? language) =>
+      _$this._language = language;
 
   int? _id;
   int? get id => _$this._id;
@@ -137,6 +149,7 @@ class CenterJsonldCenterSearchBuilder
       _reference = $v.reference;
       _timezone = $v.timezone;
       _name = $v.name;
+      _language = $v.language?.toBuilder();
       _id = $v.id;
       _atContext = $v.atContext?.toBuilder();
       _atId = $v.atId;
@@ -168,6 +181,7 @@ class CenterJsonldCenterSearchBuilder
             reference: reference,
             timezone: timezone,
             name: name,
+            language: _language?.build(),
             id: id,
             atContext: _atContext?.build(),
             atId: BuiltValueNullFieldError.checkNotNull(
@@ -178,6 +192,9 @@ class CenterJsonldCenterSearchBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'language';
+        _language?.build();
+
         _$failedField = 'atContext';
         _atContext?.build();
       } catch (e) {

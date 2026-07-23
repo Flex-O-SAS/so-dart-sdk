@@ -12,10 +12,14 @@ part 'contract_contract_write_json_merge_patch.g.dart';
 ///
 /// Properties:
 /// * [specialMentions] 
+/// * [options] 
 @BuiltValue()
 abstract class ContractContractWriteJsonMergePatch implements Built<ContractContractWriteJsonMergePatch, ContractContractWriteJsonMergePatchBuilder> {
   @BuiltValueField(wireName: r'specialMentions')
   String? get specialMentions;
+
+  @BuiltValueField(wireName: r'options')
+  String? get options;
 
   ContractContractWriteJsonMergePatch._();
 
@@ -44,6 +48,13 @@ class _$ContractContractWriteJsonMergePatchSerializer implements PrimitiveSerial
       yield r'specialMentions';
       yield serializers.serialize(
         object.specialMentions,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.options != null) {
+      yield r'options';
+      yield serializers.serialize(
+        object.options,
         specifiedType: const FullType(String),
       );
     }
@@ -76,6 +87,13 @@ class _$ContractContractWriteJsonMergePatchSerializer implements PrimitiveSerial
             specifiedType: const FullType(String),
           ) as String;
           result.specialMentions = valueDes;
+          break;
+        case r'options':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.options = valueDes;
           break;
         default:
           unhandled.add(key);

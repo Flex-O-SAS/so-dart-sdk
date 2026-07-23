@@ -14,13 +14,16 @@ class _$CenterCenterSearch extends CenterCenterSearch {
   @override
   final String? timezone;
   @override
+  final LanguageCenterSearch? language;
+  @override
   final int? id;
 
   factory _$CenterCenterSearch(
           [void Function(CenterCenterSearchBuilder)? updates]) =>
       (new CenterCenterSearchBuilder()..update(updates))._build();
 
-  _$CenterCenterSearch._({this.reference, this.name, this.timezone, this.id})
+  _$CenterCenterSearch._(
+      {this.reference, this.name, this.timezone, this.language, this.id})
       : super._();
 
   @override
@@ -39,6 +42,7 @@ class _$CenterCenterSearch extends CenterCenterSearch {
         reference == other.reference &&
         name == other.name &&
         timezone == other.timezone &&
+        language == other.language &&
         id == other.id;
   }
 
@@ -48,6 +52,7 @@ class _$CenterCenterSearch extends CenterCenterSearch {
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, timezone.hashCode);
+    _$hash = $jc(_$hash, language.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -59,6 +64,7 @@ class _$CenterCenterSearch extends CenterCenterSearch {
           ..add('reference', reference)
           ..add('name', name)
           ..add('timezone', timezone)
+          ..add('language', language)
           ..add('id', id))
         .toString();
   }
@@ -80,6 +86,12 @@ class CenterCenterSearchBuilder
   String? get timezone => _$this._timezone;
   set timezone(String? timezone) => _$this._timezone = timezone;
 
+  LanguageCenterSearchBuilder? _language;
+  LanguageCenterSearchBuilder get language =>
+      _$this._language ??= new LanguageCenterSearchBuilder();
+  set language(LanguageCenterSearchBuilder? language) =>
+      _$this._language = language;
+
   int? _id;
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
@@ -94,6 +106,7 @@ class CenterCenterSearchBuilder
       _reference = $v.reference;
       _name = $v.name;
       _timezone = $v.timezone;
+      _language = $v.language?.toBuilder();
       _id = $v.id;
       _$v = null;
     }
@@ -115,13 +128,27 @@ class CenterCenterSearchBuilder
   CenterCenterSearch build() => _build();
 
   _$CenterCenterSearch _build() {
-    final _$result = _$v ??
-        new _$CenterCenterSearch._(
-          reference: reference,
-          name: name,
-          timezone: timezone,
-          id: id,
-        );
+    _$CenterCenterSearch _$result;
+    try {
+      _$result = _$v ??
+          new _$CenterCenterSearch._(
+            reference: reference,
+            name: name,
+            timezone: timezone,
+            language: _language?.build(),
+            id: id,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'language';
+        _language?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'CenterCenterSearch', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

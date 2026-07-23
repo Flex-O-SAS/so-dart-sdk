@@ -10,6 +10,8 @@ class _$ContractContractWriteJsonMergePatch
     extends ContractContractWriteJsonMergePatch {
   @override
   final String? specialMentions;
+  @override
+  final String? options;
 
   factory _$ContractContractWriteJsonMergePatch(
           [void Function(ContractContractWriteJsonMergePatchBuilder)?
@@ -17,7 +19,8 @@ class _$ContractContractWriteJsonMergePatch
       (new ContractContractWriteJsonMergePatchBuilder()..update(updates))
           ._build();
 
-  _$ContractContractWriteJsonMergePatch._({this.specialMentions}) : super._();
+  _$ContractContractWriteJsonMergePatch._({this.specialMentions, this.options})
+      : super._();
 
   @override
   ContractContractWriteJsonMergePatch rebuild(
@@ -32,13 +35,15 @@ class _$ContractContractWriteJsonMergePatch
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ContractContractWriteJsonMergePatch &&
-        specialMentions == other.specialMentions;
+        specialMentions == other.specialMentions &&
+        options == other.options;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, specialMentions.hashCode);
+    _$hash = $jc(_$hash, options.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -46,7 +51,8 @@ class _$ContractContractWriteJsonMergePatch
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ContractContractWriteJsonMergePatch')
-          ..add('specialMentions', specialMentions))
+          ..add('specialMentions', specialMentions)
+          ..add('options', options))
         .toString();
   }
 }
@@ -62,6 +68,10 @@ class ContractContractWriteJsonMergePatchBuilder
   set specialMentions(String? specialMentions) =>
       _$this._specialMentions = specialMentions;
 
+  String? _options;
+  String? get options => _$this._options;
+  set options(String? options) => _$this._options = options;
+
   ContractContractWriteJsonMergePatchBuilder() {
     ContractContractWriteJsonMergePatch._defaults(this);
   }
@@ -70,6 +80,7 @@ class ContractContractWriteJsonMergePatchBuilder
     final $v = _$v;
     if ($v != null) {
       _specialMentions = $v.specialMentions;
+      _options = $v.options;
       _$v = null;
     }
     return this;
@@ -94,6 +105,7 @@ class ContractContractWriteJsonMergePatchBuilder
     final _$result = _$v ??
         new _$ContractContractWriteJsonMergePatch._(
           specialMentions: specialMentions,
+          options: options,
         );
     replace(_$result);
     return _$result;

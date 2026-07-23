@@ -81,9 +81,7 @@ abstract class CustomerReservationJsonldCustomerReservationSearch implements Hyd
   factory CustomerReservationJsonldCustomerReservationSearch([void updates(CustomerReservationJsonldCustomerReservationSearchBuilder b)]) = _$CustomerReservationJsonldCustomerReservationSearch;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CustomerReservationJsonldCustomerReservationSearchBuilder b) => b
-      ..type = CustomerReservationJsonldCustomerReservationSearchTypeEnum.number1
-      ..status = CustomerReservationJsonldCustomerReservationSearchStatusEnum.number1;
+  static void _defaults(CustomerReservationJsonldCustomerReservationSearchBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CustomerReservationJsonldCustomerReservationSearch> get serializer => _$CustomerReservationJsonldCustomerReservationSearchSerializer();

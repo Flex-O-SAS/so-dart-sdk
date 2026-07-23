@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:so_dart_sdk/backend/model/language_public_center_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/center_public_center_read_opportunity_create_lead_assets_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -18,6 +19,7 @@ part 'center_public_center_read_opportunity_create_lead.g.dart';
 /// * [email] 
 /// * [phone] 
 /// * [timezone] 
+/// * [language] 
 /// * [openingHour] 
 /// * [closureHour] 
 /// * [openingDate] 
@@ -43,6 +45,9 @@ abstract class CenterPublicCenterReadOpportunityCreateLead implements Built<Cent
 
   @BuiltValueField(wireName: r'timezone')
   String? get timezone;
+
+  @BuiltValueField(wireName: r'language')
+  LanguagePublicCenterReadOpportunityCreateLead? get language;
 
   @BuiltValueField(wireName: r'openingHour')
   DateTime? get openingHour;
@@ -127,6 +132,13 @@ class _$CenterPublicCenterReadOpportunityCreateLeadSerializer implements Primiti
       yield serializers.serialize(
         object.timezone,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.language != null) {
+      yield r'language';
+      yield serializers.serialize(
+        object.language,
+        specifiedType: const FullType(LanguagePublicCenterReadOpportunityCreateLead),
       );
     }
     if (object.openingHour != null) {
@@ -249,6 +261,13 @@ class _$CenterPublicCenterReadOpportunityCreateLeadSerializer implements Primiti
             specifiedType: const FullType(String),
           ) as String;
           result.timezone = valueDes;
+          break;
+        case r'language':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(LanguagePublicCenterReadOpportunityCreateLead),
+          ) as LanguagePublicCenterReadOpportunityCreateLead;
+          result.language.replace(valueDes);
           break;
         case r'openingHour':
           final valueDes = serializers.deserialize(

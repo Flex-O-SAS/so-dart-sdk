@@ -40,8 +40,7 @@ abstract class CustomerReservationPublicCustomerReservationRead implements Built
   factory CustomerReservationPublicCustomerReservationRead([void updates(CustomerReservationPublicCustomerReservationReadBuilder b)]) = _$CustomerReservationPublicCustomerReservationRead;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CustomerReservationPublicCustomerReservationReadBuilder b) => b
-      ..status = CustomerReservationPublicCustomerReservationReadStatusEnum.number1;
+  static void _defaults(CustomerReservationPublicCustomerReservationReadBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CustomerReservationPublicCustomerReservationRead> get serializer => _$CustomerReservationPublicCustomerReservationReadSerializer();

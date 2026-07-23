@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/language_center_search.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,6 +15,7 @@ part 'center_center_search.g.dart';
 /// * [reference] 
 /// * [name] 
 /// * [timezone] 
+/// * [language] 
 /// * [id] 
 @BuiltValue()
 abstract class CenterCenterSearch implements Built<CenterCenterSearch, CenterCenterSearchBuilder> {
@@ -25,6 +27,9 @@ abstract class CenterCenterSearch implements Built<CenterCenterSearch, CenterCen
 
   @BuiltValueField(wireName: r'timezone')
   String? get timezone;
+
+  @BuiltValueField(wireName: r'language')
+  LanguageCenterSearch? get language;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -71,6 +76,13 @@ class _$CenterCenterSearchSerializer implements PrimitiveSerializer<CenterCenter
       yield serializers.serialize(
         object.timezone,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.language != null) {
+      yield r'language';
+      yield serializers.serialize(
+        object.language,
+        specifiedType: const FullType(LanguageCenterSearch),
       );
     }
     if (object.id != null) {
@@ -123,6 +135,13 @@ class _$CenterCenterSearchSerializer implements PrimitiveSerializer<CenterCenter
             specifiedType: const FullType(String),
           ) as String;
           result.timezone = valueDes;
+          break;
+        case r'language':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(LanguageCenterSearch),
+          ) as LanguageCenterSearch;
+          result.language.replace(valueDes);
           break;
         case r'id':
           final valueDes = serializers.deserialize(

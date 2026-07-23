@@ -19,6 +19,8 @@ class _$CenterPublicCenterReadOpportunityCreateLead
   @override
   final String? timezone;
   @override
+  final LanguagePublicCenterReadOpportunityCreateLead? language;
+  @override
   final DateTime? openingHour;
   @override
   final DateTime? closureHour;
@@ -51,6 +53,7 @@ class _$CenterPublicCenterReadOpportunityCreateLead
       this.email,
       this.phone,
       this.timezone,
+      this.language,
       this.openingHour,
       this.closureHour,
       this.openingDate,
@@ -81,6 +84,7 @@ class _$CenterPublicCenterReadOpportunityCreateLead
         email == other.email &&
         phone == other.phone &&
         timezone == other.timezone &&
+        language == other.language &&
         openingHour == other.openingHour &&
         closureHour == other.closureHour &&
         openingDate == other.openingDate &&
@@ -100,6 +104,7 @@ class _$CenterPublicCenterReadOpportunityCreateLead
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, timezone.hashCode);
+    _$hash = $jc(_$hash, language.hashCode);
     _$hash = $jc(_$hash, openingHour.hashCode);
     _$hash = $jc(_$hash, closureHour.hashCode);
     _$hash = $jc(_$hash, openingDate.hashCode);
@@ -122,6 +127,7 @@ class _$CenterPublicCenterReadOpportunityCreateLead
           ..add('email', email)
           ..add('phone', phone)
           ..add('timezone', timezone)
+          ..add('language', language)
           ..add('openingHour', openingHour)
           ..add('closureHour', closureHour)
           ..add('openingDate', openingDate)
@@ -160,6 +166,14 @@ class CenterPublicCenterReadOpportunityCreateLeadBuilder
   String? _timezone;
   String? get timezone => _$this._timezone;
   set timezone(String? timezone) => _$this._timezone = timezone;
+
+  LanguagePublicCenterReadOpportunityCreateLeadBuilder? _language;
+  LanguagePublicCenterReadOpportunityCreateLeadBuilder get language =>
+      _$this._language ??=
+          new LanguagePublicCenterReadOpportunityCreateLeadBuilder();
+  set language(
+          LanguagePublicCenterReadOpportunityCreateLeadBuilder? language) =>
+      _$this._language = language;
 
   DateTime? _openingHour;
   DateTime? get openingHour => _$this._openingHour;
@@ -214,6 +228,7 @@ class CenterPublicCenterReadOpportunityCreateLeadBuilder
       _email = $v.email;
       _phone = $v.phone;
       _timezone = $v.timezone;
+      _language = $v.language?.toBuilder();
       _openingHour = $v.openingHour;
       _closureHour = $v.closureHour;
       _openingDate = $v.openingDate;
@@ -254,6 +269,7 @@ class CenterPublicCenterReadOpportunityCreateLeadBuilder
             email: email,
             phone: phone,
             timezone: timezone,
+            language: _language?.build(),
             openingHour: openingHour,
             closureHour: closureHour,
             openingDate: openingDate,
@@ -267,6 +283,9 @@ class CenterPublicCenterReadOpportunityCreateLeadBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'language';
+        _language?.build();
+
         _$failedField = 'assets';
         _assets?.build();
       } catch (e) {

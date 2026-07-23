@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:so_dart_sdk/backend/model/language_jsonld_center_search.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_value/built_value.dart';
@@ -19,6 +20,7 @@ part 'center_jsonld_center_search.g.dart';
 /// * [reference] 
 /// * [name] 
 /// * [timezone] 
+/// * [language] 
 /// * [id] 
 @BuiltValue()
 abstract class CenterJsonldCenterSearch implements HydraItemBaseSchema, Built<CenterJsonldCenterSearch, CenterJsonldCenterSearchBuilder> {
@@ -30,6 +32,9 @@ abstract class CenterJsonldCenterSearch implements HydraItemBaseSchema, Built<Ce
 
   @BuiltValueField(wireName: r'name')
   String? get name;
+
+  @BuiltValueField(wireName: r'language')
+  LanguageJsonldCenterSearch? get language;
 
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -81,6 +86,13 @@ class _$CenterJsonldCenterSearchSerializer implements PrimitiveSerializer<Center
       yield serializers.serialize(
         object.name,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.language != null) {
+      yield r'language';
+      yield serializers.serialize(
+        object.language,
+        specifiedType: const FullType(LanguageJsonldCenterSearch),
       );
     }
     if (object.atContext != null) {
@@ -152,6 +164,13 @@ class _$CenterJsonldCenterSearchSerializer implements PrimitiveSerializer<Center
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'language':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(LanguageJsonldCenterSearch),
+          ) as LanguageJsonldCenterSearch;
+          result.language.replace(valueDes);
           break;
         case r'@context':
           final valueDes = serializers.deserialize(

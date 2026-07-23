@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema.dart';
+import 'package:so_dart_sdk/backend/model/language_jsonld_public_center_read_opportunity_create_lead.dart';
 import 'package:so_dart_sdk/backend/model/hydra_item_base_schema_context.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:so_dart_sdk/backend/model/center_jsonld_public_center_read_opportunity_create_lead_all_of_assets.dart';
@@ -23,6 +24,7 @@ part 'center_jsonld_public_center_read_opportunity_create_lead.g.dart';
 /// * [email] 
 /// * [phone] 
 /// * [timezone] 
+/// * [language] 
 /// * [openingHour] 
 /// * [closureHour] 
 /// * [openingDate] 
@@ -48,6 +50,9 @@ abstract class CenterJsonldPublicCenterReadOpportunityCreateLead implements Hydr
 
   @BuiltValueField(wireName: r'timezone')
   String? get timezone;
+
+  @BuiltValueField(wireName: r'language')
+  LanguageJsonldPublicCenterReadOpportunityCreateLead? get language;
 
   @BuiltValueField(wireName: r'closureHour')
   DateTime? get closureHour;
@@ -137,6 +142,13 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLeadSerializer implements P
       yield serializers.serialize(
         object.timezone,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.language != null) {
+      yield r'language';
+      yield serializers.serialize(
+        object.language,
+        specifiedType: const FullType(LanguageJsonldPublicCenterReadOpportunityCreateLead),
       );
     }
     if (object.closureHour != null) {
@@ -278,6 +290,13 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLeadSerializer implements P
             specifiedType: const FullType(String),
           ) as String;
           result.timezone = valueDes;
+          break;
+        case r'language':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(LanguageJsonldPublicCenterReadOpportunityCreateLead),
+          ) as LanguageJsonldPublicCenterReadOpportunityCreateLead;
+          result.language.replace(valueDes);
           break;
         case r'closureHour':
           final valueDes = serializers.deserialize(

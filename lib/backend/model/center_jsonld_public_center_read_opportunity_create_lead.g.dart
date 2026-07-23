@@ -19,6 +19,8 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
   @override
   final String? timezone;
   @override
+  final LanguageJsonldPublicCenterReadOpportunityCreateLead? language;
+  @override
   final DateTime? closureHour;
   @override
   final String? reference;
@@ -58,6 +60,7 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
       this.address,
       this.city,
       this.timezone,
+      this.language,
       this.closureHour,
       this.reference,
       this.zipcode,
@@ -98,6 +101,7 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
         address == other.address &&
         city == other.city &&
         timezone == other.timezone &&
+        language == other.language &&
         closureHour == other.closureHour &&
         reference == other.reference &&
         zipcode == other.zipcode &&
@@ -120,6 +124,7 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
     _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jc(_$hash, city.hashCode);
     _$hash = $jc(_$hash, timezone.hashCode);
+    _$hash = $jc(_$hash, language.hashCode);
     _$hash = $jc(_$hash, closureHour.hashCode);
     _$hash = $jc(_$hash, reference.hashCode);
     _$hash = $jc(_$hash, zipcode.hashCode);
@@ -145,6 +150,7 @@ class _$CenterJsonldPublicCenterReadOpportunityCreateLead
           ..add('address', address)
           ..add('city', city)
           ..add('timezone', timezone)
+          ..add('language', language)
           ..add('closureHour', closureHour)
           ..add('reference', reference)
           ..add('zipcode', zipcode)
@@ -188,6 +194,15 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
   String? _timezone;
   String? get timezone => _$this._timezone;
   set timezone(covariant String? timezone) => _$this._timezone = timezone;
+
+  LanguageJsonldPublicCenterReadOpportunityCreateLeadBuilder? _language;
+  LanguageJsonldPublicCenterReadOpportunityCreateLeadBuilder get language =>
+      _$this._language ??=
+          new LanguageJsonldPublicCenterReadOpportunityCreateLeadBuilder();
+  set language(
+          covariant LanguageJsonldPublicCenterReadOpportunityCreateLeadBuilder?
+              language) =>
+      _$this._language = language;
 
   DateTime? _closureHour;
   DateTime? get closureHour => _$this._closureHour;
@@ -260,6 +275,7 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
       _address = $v.address;
       _city = $v.city;
       _timezone = $v.timezone;
+      _language = $v.language?.toBuilder();
       _closureHour = $v.closureHour;
       _reference = $v.reference;
       _zipcode = $v.zipcode;
@@ -304,6 +320,7 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
             address: address,
             city: city,
             timezone: timezone,
+            language: _language?.build(),
             closureHour: closureHour,
             reference: reference,
             zipcode: zipcode,
@@ -322,6 +339,9 @@ class CenterJsonldPublicCenterReadOpportunityCreateLeadBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'language';
+        _language?.build();
+
         _$failedField = 'assets';
         _assets?.build();
 

@@ -1,0 +1,34 @@
+.openapi-generator/FILES
+  h_6738e1258d4cc7 2-61
+lib/connect/api/access_cards_api.dart
+  h_6738e1258d4cc7 14,16,114-275
+lib/connect/model/access_cards_provider_uuid_enrollment_link_get200_response.dart
+  h_6738e1258d4cc7 1-107
+lib/connect/model/access_cards_provider_uuid_enrollment_link_get200_response.g.dart
+  h_6738e1258d4cc7 1-114
+lib/connect/model/error_response.dart
+  h_6738e1258d4cc7 16,24-27,62-68,106-112
+lib/connect/model/error_response.g.dart
+  h_6738e1258d4cc7 13-14,20,34,42,52,66-69,82,107
+lib/connect/model/zone_dto.dart
+  h_6738e1258d4cc7 1-128
+lib/connect/model/zone_dto.g.dart
+  h_6738e1258d4cc7 1-101
+lib/connect/serializers.dart
+  h_6738e1258d4cc7 18,54,60,96,123-126
+lib/connect/serializers.g.dart
+  h_6738e1258d4cc7 11,51
+lib/so_dart_sdk.dart
+  h_6738e1258d4cc7 576-627,648,684
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3fee13cb064b4a975bc7d5458e1fc434054c53ca",
+  "prompts": {},
+  "humans": {
+    "h_6738e1258d4cc7": {
+      "author": "reda-amlah <mohamed.reda-amlah@saas-office.com>"
+    }
+  }
+}

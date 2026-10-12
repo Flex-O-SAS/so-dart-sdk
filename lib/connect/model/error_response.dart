@@ -13,12 +13,17 @@ part 'error_response.g.dart';
 ///
 /// Properties:
 /// * [message] - Message d'erreur
+/// * [code] - Code métier stable, présent quand la cause est connue de Connect
 /// * [errors] - Détails des erreurs de validation
 @BuiltValue()
 abstract class ErrorResponse implements Built<ErrorResponse, ErrorResponseBuilder> {
   /// Message d'erreur
   @BuiltValueField(wireName: r'message')
   String? get message;
+
+  /// Code métier stable, présent quand la cause est connue de Connect
+  @BuiltValueField(wireName: r'code')
+  String? get code;
 
   /// Détails des erreurs de validation
   @BuiltValueField(wireName: r'errors')
@@ -51,6 +56,13 @@ class _$ErrorResponseSerializer implements PrimitiveSerializer<ErrorResponse> {
       yield r'message';
       yield serializers.serialize(
         object.message,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.code != null) {
+      yield r'code';
+      yield serializers.serialize(
+        object.code,
         specifiedType: const FullType(String),
       );
     }
@@ -90,6 +102,13 @@ class _$ErrorResponseSerializer implements PrimitiveSerializer<ErrorResponse> {
             specifiedType: const FullType(String),
           ) as String;
           result.message = valueDes;
+          break;
+        case r'code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.code = valueDes;
           break;
         case r'errors':
           final valueDes = serializers.deserialize(

@@ -8,6 +8,7 @@ part of 'serializers.dart';
 
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AccessCardsProviderUuidCardsGet200ResponseInner.serializer)
+      ..add(AccessCardsProviderUuidEnrollmentLinkGet200Response.serializer)
       ..add(AccessDeviceDto.serializer)
       ..add(AccessGroupDto.serializer)
       ..add(AuthResponse.serializer)
@@ -47,6 +48,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(UpdateUserAccessGroupsBody.serializer)
       ..add(UserDto.serializer)
       ..add(UserResponseDto.serializer)
+      ..add(ZoneDto.serializer)
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(MenuListDtoMenusInner)]),

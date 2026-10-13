@@ -15,6 +15,7 @@ import 'package:so_dart_sdk/connect/date_serializer.dart';
 import 'package:so_dart_sdk/connect/model/date.dart';
 
 import 'package:so_dart_sdk/connect/model/access_cards_provider_uuid_cards_get200_response_inner.dart';
+import 'package:so_dart_sdk/connect/model/access_cards_provider_uuid_enrollment_link_get200_response.dart';
 import 'package:so_dart_sdk/connect/model/access_device_dto.dart';
 import 'package:so_dart_sdk/connect/model/access_group_dto.dart';
 import 'package:so_dart_sdk/connect/model/auth_response.dart';
@@ -50,11 +51,13 @@ import 'package:so_dart_sdk/connect/model/update_reservation_access_body.dart';
 import 'package:so_dart_sdk/connect/model/update_user_access_groups_body.dart';
 import 'package:so_dart_sdk/connect/model/user_dto.dart';
 import 'package:so_dart_sdk/connect/model/user_response_dto.dart';
+import 'package:so_dart_sdk/connect/model/zone_dto.dart';
 
 part 'serializers.g.dart';
 
 @SerializersFor([
   AccessCardsProviderUuidCardsGet200ResponseInner,
+  AccessCardsProviderUuidEnrollmentLinkGet200Response,
   AccessDeviceDto,
   AccessGroupDto,
   AuthResponse,
@@ -90,6 +93,7 @@ part 'serializers.g.dart';
   UpdateUserAccessGroupsBody,
   UserDto,
   UserResponseDto,
+  ZoneDto,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
@@ -115,6 +119,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(AccessCardsProviderUuidCardsGet200ResponseInner)]),
         () => ListBuilder<AccessCardsProviderUuidCardsGet200ResponseInner>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(ZoneDto)]),
+        () => ListBuilder<ZoneDto>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(SiteAccessGroupDto)]),

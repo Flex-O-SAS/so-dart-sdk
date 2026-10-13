@@ -10,12 +10,14 @@ class _$ErrorResponse extends ErrorResponse {
   @override
   final String? message;
   @override
+  final String? code;
+  @override
   final JsonObject? errors;
 
   factory _$ErrorResponse([void Function(ErrorResponseBuilder)? updates]) =>
       (new ErrorResponseBuilder()..update(updates))._build();
 
-  _$ErrorResponse._({this.message, this.errors}) : super._();
+  _$ErrorResponse._({this.message, this.code, this.errors}) : super._();
 
   @override
   ErrorResponse rebuild(void Function(ErrorResponseBuilder) updates) =>
@@ -29,6 +31,7 @@ class _$ErrorResponse extends ErrorResponse {
     if (identical(other, this)) return true;
     return other is ErrorResponse &&
         message == other.message &&
+        code == other.code &&
         errors == other.errors;
   }
 
@@ -36,6 +39,7 @@ class _$ErrorResponse extends ErrorResponse {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -45,6 +49,7 @@ class _$ErrorResponse extends ErrorResponse {
   String toString() {
     return (newBuiltValueToStringHelper(r'ErrorResponse')
           ..add('message', message)
+          ..add('code', code)
           ..add('errors', errors))
         .toString();
   }
@@ -58,6 +63,10 @@ class ErrorResponseBuilder
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
+  String? _code;
+  String? get code => _$this._code;
+  set code(String? code) => _$this._code = code;
+
   JsonObject? _errors;
   JsonObject? get errors => _$this._errors;
   set errors(JsonObject? errors) => _$this._errors = errors;
@@ -70,6 +79,7 @@ class ErrorResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _message = $v.message;
+      _code = $v.code;
       _errors = $v.errors;
       _$v = null;
     }
@@ -94,6 +104,7 @@ class ErrorResponseBuilder
     final _$result = _$v ??
         new _$ErrorResponse._(
           message: message,
+          code: code,
           errors: errors,
         );
     replace(_$result);

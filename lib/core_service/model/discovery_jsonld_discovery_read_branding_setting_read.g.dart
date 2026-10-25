@@ -11,6 +11,8 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
   @override
   final String? growthbookManagerApiKey;
   @override
+  final String? agendaUrl;
+  @override
   final String? corporateUrl;
   @override
   final String? backendUrl;
@@ -78,6 +80,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
 
   _$DiscoveryJsonldDiscoveryReadBrandingSettingRead._(
       {this.growthbookManagerApiKey,
+      this.agendaUrl,
       this.corporateUrl,
       this.backendUrl,
       this.ssoIdpIds,
@@ -129,6 +132,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
     if (identical(other, this)) return true;
     return other is DiscoveryJsonldDiscoveryReadBrandingSettingRead &&
         growthbookManagerApiKey == other.growthbookManagerApiKey &&
+        agendaUrl == other.agendaUrl &&
         corporateUrl == other.corporateUrl &&
         backendUrl == other.backendUrl &&
         ssoIdpIds == other.ssoIdpIds &&
@@ -163,6 +167,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, growthbookManagerApiKey.hashCode);
+    _$hash = $jc(_$hash, agendaUrl.hashCode);
     _$hash = $jc(_$hash, corporateUrl.hashCode);
     _$hash = $jc(_$hash, backendUrl.hashCode);
     _$hash = $jc(_$hash, ssoIdpIds.hashCode);
@@ -200,6 +205,7 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingRead
     return (newBuiltValueToStringHelper(
             r'DiscoveryJsonldDiscoveryReadBrandingSettingRead')
           ..add('growthbookManagerApiKey', growthbookManagerApiKey)
+          ..add('agendaUrl', agendaUrl)
           ..add('corporateUrl', corporateUrl)
           ..add('backendUrl', backendUrl)
           ..add('ssoIdpIds', ssoIdpIds)
@@ -243,6 +249,10 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
   String? get growthbookManagerApiKey => _$this._growthbookManagerApiKey;
   set growthbookManagerApiKey(covariant String? growthbookManagerApiKey) =>
       _$this._growthbookManagerApiKey = growthbookManagerApiKey;
+
+  String? _agendaUrl;
+  String? get agendaUrl => _$this._agendaUrl;
+  set agendaUrl(covariant String? agendaUrl) => _$this._agendaUrl = agendaUrl;
 
   String? _corporateUrl;
   String? get corporateUrl => _$this._corporateUrl;
@@ -392,6 +402,7 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
     final $v = _$v;
     if ($v != null) {
       _growthbookManagerApiKey = $v.growthbookManagerApiKey;
+      _agendaUrl = $v.agendaUrl;
       _corporateUrl = $v.corporateUrl;
       _backendUrl = $v.backendUrl;
       _ssoIdpIds = $v.ssoIdpIds?.toBuilder();
@@ -448,6 +459,7 @@ class DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder
       _$result = _$v ??
           new _$DiscoveryJsonldDiscoveryReadBrandingSettingRead._(
             growthbookManagerApiKey: growthbookManagerApiKey,
+            agendaUrl: agendaUrl,
             corporateUrl: corporateUrl,
             backendUrl: backendUrl,
             ssoIdpIds: _ssoIdpIds?.build(),

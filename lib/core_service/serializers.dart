@@ -23,6 +23,9 @@ import 'package:so_dart_sdk/core_service/model/branding_setting_branding_setting
 import 'package:so_dart_sdk/core_service/model/branding_setting_branding_setting_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_branding_setting_read.dart';
 import 'package:so_dart_sdk/core_service/model/branding_setting_jsonld_discovery_read_branding_setting_read.dart';
+import 'package:so_dart_sdk/core_service/model/computed_home_configuration_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/configuration_version_dto.dart';
+import 'package:so_dart_sdk/core_service/model/configuration_version_dto_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/constraint_violation_violations_inner.dart';
@@ -34,6 +37,7 @@ import 'package:so_dart_sdk/core_service/model/error.dart';
 import 'package:so_dart_sdk/core_service/model/error_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/geo_point.dart';
 import 'package:so_dart_sdk/core_service/model/go_bright_jwt_jsonld_gobright_jwt_read.dart';
+import 'package:so_dart_sdk/core_service/model/home_configuration_version_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/hydra_collection_base_schema.dart';
 import 'package:so_dart_sdk/core_service/model/hydra_collection_base_schema_all_of_view.dart';
 import 'package:so_dart_sdk/core_service/model/hydra_collection_base_schema_no_pagination.dart';
@@ -50,8 +54,17 @@ import 'package:so_dart_sdk/core_service/model/point_of_interest_jsonld_poi_read
 import 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write.dart';
 import 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write_json_merge_patch.dart';
 import 'package:so_dart_sdk/core_service/model/point_of_interest_poi_write_point.dart';
+import 'package:so_dart_sdk/core_service/model/published_site_home_configuration_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/published_site_home_configuration_publish_site_home_configuration_input.dart';
+import 'package:so_dart_sdk/core_service/model/published_tenant_home_configuration_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/published_tenant_home_configuration_publish_home_configuration_input.dart';
+import 'package:so_dart_sdk/core_service/model/resolved_block_dto_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/resolved_tile_dto_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/site_home_configuration_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_subscriber_write.dart';
+import 'package:so_dart_sdk/core_service/model/tenant_home_configuration_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/tile_content_dto.dart';
 
 part 'serializers.g.dart';
 
@@ -65,6 +78,9 @@ part 'serializers.g.dart';
   BrandingSettingBrandingSettingWriteJsonMergePatch,
   BrandingSettingJsonldBrandingSettingRead,
   BrandingSettingJsonldDiscoveryReadBrandingSettingRead,
+  ComputedHomeConfigurationJsonld,
+  ConfigurationVersionDto,
+  ConfigurationVersionDtoJsonld,
   ConstraintViolation,
   ConstraintViolationJsonld,
   ConstraintViolationViolationsInner,
@@ -76,6 +92,7 @@ part 'serializers.g.dart';
   ErrorJsonld,
   GeoPoint,$GeoPoint,
   GoBrightJwtJsonldGobrightJwtRead,
+  HomeConfigurationVersionJsonld,
   HydraCollectionBaseSchema,$HydraCollectionBaseSchema,
   HydraCollectionBaseSchemaAllOfView,
   HydraCollectionBaseSchemaNoPagination,$HydraCollectionBaseSchemaNoPagination,
@@ -92,8 +109,17 @@ part 'serializers.g.dart';
   PointOfInterestPoiWrite,
   PointOfInterestPoiWriteJsonMergePatch,
   PointOfInterestPoiWritePoint,
+  PublishedSiteHomeConfigurationJsonld,
+  PublishedSiteHomeConfigurationPublishSiteHomeConfigurationInput,
+  PublishedTenantHomeConfigurationJsonld,
+  PublishedTenantHomeConfigurationPublishHomeConfigurationInput,
+  ResolvedBlockDtoJsonld,
+  ResolvedTileDtoJsonld,
+  SiteHomeConfigurationJsonld,
   SubscriberJsonldSubscriberRead,
   SubscriberSubscriberWrite,
+  TenantHomeConfigurationJsonld,
+  TileContentDto,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(

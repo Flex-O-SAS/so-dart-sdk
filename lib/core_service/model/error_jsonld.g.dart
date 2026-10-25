@@ -18,7 +18,7 @@ class _$ErrorJsonld extends ErrorJsonld {
   @override
   final String? type;
   @override
-  final num? status;
+  final int? status;
   @override
   final HydraItemBaseSchemaContext? atContext;
   @override
@@ -125,9 +125,9 @@ class ErrorJsonldBuilder
   String? get type => _$this._type;
   set type(covariant String? type) => _$this._type = type;
 
-  num? _status;
-  num? get status => _$this._status;
-  set status(covariant num? status) => _$this._status = status;
+  int? _status;
+  int? get status => _$this._status;
+  set status(covariant int? status) => _$this._status = status;
 
   HydraItemBaseSchemaContextBuilder? _atContext;
   HydraItemBaseSchemaContextBuilder get atContext =>

@@ -35,6 +35,7 @@ part 'discovery_jsonld_discovery_read_branding_setting_read.g.dart';
 /// * [connectUrl] 
 /// * [coreUrl] 
 /// * [agentUrl] 
+/// * [agendaUrl] 
 /// * [growthbookCustomerApiKey] 
 /// * [growthbookManagerApiKey] 
 /// * [customer] 
@@ -48,6 +49,9 @@ part 'discovery_jsonld_discovery_read_branding_setting_read.g.dart';
 abstract class DiscoveryJsonldDiscoveryReadBrandingSettingRead implements HydraItemBaseSchema, Built<DiscoveryJsonldDiscoveryReadBrandingSettingRead, DiscoveryJsonldDiscoveryReadBrandingSettingReadBuilder> {
   @BuiltValueField(wireName: r'growthbookManagerApiKey')
   String? get growthbookManagerApiKey;
+
+  @BuiltValueField(wireName: r'agendaUrl')
+  String? get agendaUrl;
 
   @BuiltValueField(wireName: r'corporateUrl')
   String? get corporateUrl;
@@ -151,6 +155,13 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingReadSerializer implements Pri
       yield r'growthbookManagerApiKey';
       yield serializers.serialize(
         object.growthbookManagerApiKey,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.agendaUrl != null) {
+      yield r'agendaUrl';
+      yield serializers.serialize(
+        object.agendaUrl,
         specifiedType: const FullType(String),
       );
     }
@@ -375,6 +386,13 @@ class _$DiscoveryJsonldDiscoveryReadBrandingSettingReadSerializer implements Pri
             specifiedType: const FullType(String),
           ) as String;
           result.growthbookManagerApiKey = valueDes;
+          break;
+        case r'agendaUrl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.agendaUrl = valueDes;
           break;
         case r'@id':
           final valueDes = serializers.deserialize(

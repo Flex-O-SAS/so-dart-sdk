@@ -26,6 +26,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BrandingSettingJsonldDiscoveryReadBrandingSettingRead.serializer)
       ..add(BrandingSettingJsonldDiscoveryReadBrandingSettingReadThemeModeEnum
           .serializer)
+      ..add(ComputedHomeConfigurationJsonld.serializer)
+      ..add(ConfigurationVersionDto.serializer)
+      ..add(ConfigurationVersionDtoJsonld.serializer)
       ..add(ConstraintViolation.serializer)
       ..add(ConstraintViolationJsonld.serializer)
       ..add(ConstraintViolationViolationsInner.serializer)
@@ -38,6 +41,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Error.serializer)
       ..add(ErrorJsonld.serializer)
       ..add(GoBrightJwtJsonldGobrightJwtRead.serializer)
+      ..add(HomeConfigurationVersionJsonld.serializer)
       ..add(HydraCollectionBaseSchemaAllOfView.serializer)
       ..add(HydraCollectionBaseSchemaNoPaginationSearch.serializer)
       ..add(HydraCollectionBaseSchemaNoPaginationSearchMappingInner.serializer)
@@ -57,8 +61,29 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(PointOfInterestPoiWrite.serializer)
       ..add(PointOfInterestPoiWriteJsonMergePatch.serializer)
       ..add(PointOfInterestPoiWritePoint.serializer)
+      ..add(PublishedSiteHomeConfigurationJsonld.serializer)
+      ..add(PublishedSiteHomeConfigurationPublishSiteHomeConfigurationInput
+          .serializer)
+      ..add(
+          PublishedSiteHomeConfigurationPublishSiteHomeConfigurationInputBlockOrderEnum
+              .serializer)
+      ..add(PublishedTenantHomeConfigurationJsonld.serializer)
+      ..add(PublishedTenantHomeConfigurationPublishHomeConfigurationInput
+          .serializer)
+      ..add(
+          PublishedTenantHomeConfigurationPublishHomeConfigurationInputBlockOrderEnum
+              .serializer)
+      ..add(ResolvedBlockDtoJsonld.serializer)
+      ..add(ResolvedBlockDtoJsonldTypeEnum.serializer)
+      ..add(ResolvedTileDtoJsonld.serializer)
+      ..add(ResolvedTileDtoJsonldStatusEnum.serializer)
+      ..add(SiteHomeConfigurationJsonld.serializer)
       ..add(SubscriberJsonldSubscriberRead.serializer)
       ..add(SubscriberSubscriberWrite.serializer)
+      ..add(TenantHomeConfigurationJsonld.serializer)
+      ..add(TileContentDto.serializer)
+      ..add(TileContentDtoBlockEnum.serializer)
+      ..add(TileContentDtoStatusEnum.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(BrandingSettingJsonldBrandingSettingRead)]),
@@ -94,6 +119,68 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(PointOfInterestJsonldPoiRead)]),
           () => new ListBuilder<PointOfInterestJsonldPoiRead>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                PublishedSiteHomeConfigurationPublishSiteHomeConfigurationInputBlockOrderEnum)
+          ]),
+          () => new ListBuilder<
+              PublishedSiteHomeConfigurationPublishSiteHomeConfigurationInputBlockOrderEnum>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(TileContentDto)]),
+          () => new ListBuilder<TileContentDto>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                PublishedTenantHomeConfigurationPublishHomeConfigurationInputBlockOrderEnum)
+          ]),
+          () => new ListBuilder<
+              PublishedTenantHomeConfigurationPublishHomeConfigurationInputBlockOrderEnum>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(TileContentDto)]),
+          () => new ListBuilder<TileContentDto>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ResolvedBlockDtoJsonld)]),
+          () => new ListBuilder<ResolvedBlockDtoJsonld>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ResolvedTileDtoJsonld)]),
+          () => new ListBuilder<ResolvedTileDtoJsonld>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ResolvedTileDtoJsonld)]),
+          () => new ListBuilder<ResolvedTileDtoJsonld>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ResolvedTileDtoJsonld)]),
+          () => new ListBuilder<ResolvedTileDtoJsonld>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ResolvedBlockDtoJsonld)]),
+          () => new ListBuilder<ResolvedBlockDtoJsonld>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ResolvedTileDtoJsonld)]),
+          () => new ListBuilder<ResolvedTileDtoJsonld>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ResolvedTileDtoJsonld)]),
+          () => new ListBuilder<ResolvedTileDtoJsonld>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ResolvedBlockDtoJsonld)]),
+          () => new ListBuilder<ResolvedBlockDtoJsonld>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(ResolvedTileDtoJsonld)]),
+          () => new ListBuilder<ResolvedTileDtoJsonld>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

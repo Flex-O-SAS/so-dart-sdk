@@ -27,7 +27,7 @@ abstract class Error implements Built<Error, ErrorBuilder> {
   String? get detail;
 
   @BuiltValueField(wireName: r'status')
-  num? get status;
+  int? get status;
 
   /// A URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if dereferenced.
   @BuiltValueField(wireName: r'instance')
@@ -79,7 +79,7 @@ class _$ErrorSerializer implements PrimitiveSerializer<Error> {
       yield r'status';
       yield serializers.serialize(
         object.status,
-        specifiedType: const FullType.nullable(num),
+        specifiedType: const FullType(int),
       );
     }
     if (object.instance != null) {
@@ -136,9 +136,8 @@ class _$ErrorSerializer implements PrimitiveSerializer<Error> {
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(int),
+          ) as int;
           result.status = valueDes;
           break;
         case r'instance':

@@ -44,7 +44,7 @@ abstract class ErrorJsonld implements HydraItemBaseSchema, Built<ErrorJsonld, Er
   String? get type;
 
   @BuiltValueField(wireName: r'status')
-  num? get status;
+  int? get status;
 
   ErrorJsonld._();
 
@@ -126,7 +126,7 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
       yield r'status';
       yield serializers.serialize(
         object.status,
-        specifiedType: const FullType.nullable(num),
+        specifiedType: const FullType(int),
       );
     }
   }
@@ -211,9 +211,8 @@ class _$ErrorJsonldSerializer implements PrimitiveSerializer<ErrorJsonld> {
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(int),
+          ) as int;
           result.status = valueDes;
           break;
         default:

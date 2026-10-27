@@ -12,7 +12,7 @@ class _$Error extends Error {
   @override
   final String? detail;
   @override
-  final num? status;
+  final int? status;
   @override
   final String? instance;
   @override
@@ -77,9 +77,9 @@ class ErrorBuilder implements Builder<Error, ErrorBuilder> {
   String? get detail => _$this._detail;
   set detail(String? detail) => _$this._detail = detail;
 
-  num? _status;
-  num? get status => _$this._status;
-  set status(num? status) => _$this._status = status;
+  int? _status;
+  int? get status => _$this._status;
+  set status(int? status) => _$this._status = status;
 
   String? _instance;
   String? get instance => _$this._instance;

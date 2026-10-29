@@ -16,6 +16,7 @@ import 'package:so_dart_sdk/core_service/api/go_bright_jwt_api.dart';
 import 'package:so_dart_sdk/core_service/api/notification_api.dart';
 import 'package:so_dart_sdk/core_service/api/personalization_api.dart';
 import 'package:so_dart_sdk/core_service/api/point_of_interest_api.dart';
+import 'package:so_dart_sdk/core_service/api/site_branding_setting_api.dart';
 import 'package:so_dart_sdk/core_service/api/subscriber_api.dart';
 
 class SoDartSdk {
@@ -152,6 +153,12 @@ class SoDartSdk {
   /// by doing that all interceptors will not be executed
   PointOfInterestApi getPointOfInterestApi() {
     return PointOfInterestApi(dio, serializers);
+  }
+
+  /// Get SiteBrandingSettingApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  SiteBrandingSettingApi getSiteBrandingSettingApi() {
+    return SiteBrandingSettingApi(dio, serializers);
   }
 
   /// Get SubscriberApi instance, base route and serializer can be overridden by a given but be careful,

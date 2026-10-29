@@ -77,6 +77,17 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ResolvedBlockDtoJsonldTypeEnum.serializer)
       ..add(ResolvedTileDtoJsonld.serializer)
       ..add(ResolvedTileDtoJsonldStatusEnum.serializer)
+      ..add(SiteBrandingSettingBrandingSettingWriteJsonMergePatch.serializer)
+      ..add(SiteBrandingSettingBrandingSettingWriteJsonMergePatchThemeModeEnum
+          .serializer)
+      ..add(SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate
+          .serializer)
+      ..add(
+          SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateThemeModeEnum
+              .serializer)
+      ..add(SiteBrandingSettingJsonldBrandingSettingRead.serializer)
+      ..add(
+          SiteBrandingSettingJsonldBrandingSettingReadThemeModeEnum.serializer)
       ..add(SiteHomeConfigurationJsonld.serializer)
       ..add(SubscriberJsonldSubscriberRead.serializer)
       ..add(SubscriberSubscriberWrite.serializer)

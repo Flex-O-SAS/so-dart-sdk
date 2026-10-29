@@ -644,6 +644,7 @@ export 'package:so_dart_sdk/core_service/api/go_bright_jwt_api.dart';
 export 'package:so_dart_sdk/core_service/api/notification_api.dart';
 export 'package:so_dart_sdk/core_service/api/personalization_api.dart';
 export 'package:so_dart_sdk/core_service/api/point_of_interest_api.dart';
+export 'package:so_dart_sdk/core_service/api/site_branding_setting_api.dart';
 export 'package:so_dart_sdk/core_service/api/subscriber_api.dart';
 export 'package:so_dart_sdk/core_service/model/api_branding_get_collection200_response.dart';
 export 'package:so_dart_sdk/core_service/model/api_devices_get_collection200_response.dart';
@@ -691,6 +692,9 @@ export 'package:so_dart_sdk/core_service/model/published_tenant_home_configurati
 export 'package:so_dart_sdk/core_service/model/published_tenant_home_configuration_publish_home_configuration_input.dart';
 export 'package:so_dart_sdk/core_service/model/resolved_block_dto_jsonld.dart';
 export 'package:so_dart_sdk/core_service/model/resolved_tile_dto_jsonld.dart';
+export 'package:so_dart_sdk/core_service/model/site_branding_setting_branding_setting_write_json_merge_patch.dart';
+export 'package:so_dart_sdk/core_service/model/site_branding_setting_branding_setting_write_site_branding_setting_create.dart';
+export 'package:so_dart_sdk/core_service/model/site_branding_setting_jsonld_branding_setting_read.dart';
 export 'package:so_dart_sdk/core_service/model/site_home_configuration_jsonld.dart';
 export 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
 export 'package:so_dart_sdk/core_service/model/subscriber_subscriber_write.dart';

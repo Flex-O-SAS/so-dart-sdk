@@ -60,6 +60,9 @@ import 'package:so_dart_sdk/core_service/model/published_tenant_home_configurati
 import 'package:so_dart_sdk/core_service/model/published_tenant_home_configuration_publish_home_configuration_input.dart';
 import 'package:so_dart_sdk/core_service/model/resolved_block_dto_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/resolved_tile_dto_jsonld.dart';
+import 'package:so_dart_sdk/core_service/model/site_branding_setting_branding_setting_write_json_merge_patch.dart';
+import 'package:so_dart_sdk/core_service/model/site_branding_setting_branding_setting_write_site_branding_setting_create.dart';
+import 'package:so_dart_sdk/core_service/model/site_branding_setting_jsonld_branding_setting_read.dart';
 import 'package:so_dart_sdk/core_service/model/site_home_configuration_jsonld.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_jsonld_subscriber_read.dart';
 import 'package:so_dart_sdk/core_service/model/subscriber_subscriber_write.dart';
@@ -115,6 +118,9 @@ part 'serializers.g.dart';
   PublishedTenantHomeConfigurationPublishHomeConfigurationInput,
   ResolvedBlockDtoJsonld,
   ResolvedTileDtoJsonld,
+  SiteBrandingSettingBrandingSettingWriteJsonMergePatch,
+  SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate,
+  SiteBrandingSettingJsonldBrandingSettingRead,
   SiteHomeConfigurationJsonld,
   SubscriberJsonldSubscriberRead,
   SubscriberSubscriberWrite,

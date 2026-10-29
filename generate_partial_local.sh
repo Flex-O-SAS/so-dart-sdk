@@ -109,6 +109,8 @@ fi
 
 perl -0777 -pe 's/"type":\s*\[\s*"string"\s*,\s*"null"\s*\]/"type": "string"/g' -i "${WORKDIR}/openapi.json"
 perl -0777 -pe 's/"type":\s*\[\s*"integer"\s*,\s*"null"\s*\]/"type": "integer"/g' -i "${WORKDIR}/openapi.json"
+# API Platform >= 4.4 exports OpenAPI 3.2.0, which openapi-generator cannot read yet
+perl -pe 's/"openapi":\s*"3\.2\.0"/"openapi": "3.1.0"/' -i "${WORKDIR}/openapi.json"
 
 openapi-generator generate \
     -i "${WORKDIR}/openapi.json" \

@@ -1,0 +1,45 @@
+lib/core_service/model/site_branding_setting_jsonld_branding_setting_read.g.dart
+  s_4de2855c3bcdbf::t_08b5a2373acad6 109,141,146,165-166,418-419
+lib/core_service/model/branding_setting_branding_setting_write_json_merge_patch.dart
+  s_4de2855c3bcdbf::t_08b5a2373acad6 17-18,39-44,120-133,248,251-253,255,260-267
+lib/core_service/model/branding_setting_jsonld_branding_setting_read.g.dart
+  s_4de2855c3bcdbf::t_08b5a2373acad6 111,150,172-173,446-447
+lib/core_service/model/branding_setting_jsonld_discovery_read_branding_setting_read.dart
+  s_4de2855c3bcdbf::t_3de4bd06162ff6 22
+  s_4de2855c3bcdbf::t_08b5a2373acad6 57,150-154
+  s_4de2855c3bcdbf::t_22a734e74d0391 23
+lib/core_service/model/branding_setting_jsonld_discovery_read_branding_setting_read.g.dart
+  s_4de2855c3bcdbf::t_08b5a2373acad6 115,157,187-188,479-482
+lib/core_service/model/site_branding_setting_jsonld_branding_setting_read.dart
+  s_4de2855c3bcdbf::t_08b5a2373acad6 52,136,138-139
+lib/core_service/model/branding_setting_jsonld_branding_setting_read.dart
+  s_4de2855c3bcdbf::t_08b5a2373acad6 57,150-154
+  s_4de2855c3bcdbf::t_3de4bd06162ff6 22
+  s_4de2855c3bcdbf::t_0d7e08eb8bb6c4 23
+lib/core_service/model/branding_setting_branding_setting_write_json_merge_patch.g.dart
+  s_4de2855c3bcdbf::t_08b5a2373acad6 103-106,143-144,177-178,198-199,222-223,255-263,330-331,370-371
+lib/core_service/model/branding_setting_branding_setting_write.dart
+  s_4de2855c3bcdbf::t_08b5a2373acad6 17-18,39-44,79,116-125,189,191-192,224,227-229,231,236-243
+lib/core_service/model/branding_setting_branding_setting_write.g.dart
+  s_4de2855c3bcdbf::t_08b5a2373acad6 97-100,123,134-135,147,153-156,171-172,190-191,211-212,234-235,267-275,340-341,383-388,413-414
+lib/core_service/model/site_branding_setting_branding_setting_write_site_branding_setting_create.g.dart
+  s_4de2855c3bcdbf::t_08b5a2373acad6 130,155,190,192,434-435,437
+lib/core_service/model/site_branding_setting_branding_setting_write_site_branding_setting_create.dart
+  s_4de2855c3bcdbf::t_08b5a2373acad6 71,172,174-175
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "37cc902bbee2686c7d12184b72e46bd6d8d45be8",
+  "prompts": {},
+  "sessions": {
+    "s_4de2855c3bcdbf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "caa8fc57-714f-434f-a1e0-51314b1a3416",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Edgar <edgar.pfennig@saas-office.com>"
+    }
+  }
+}

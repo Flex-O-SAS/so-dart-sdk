@@ -14,7 +14,6 @@ part 'site_branding_setting_branding_setting_write_site_branding_setting_create.
 /// Properties:
 /// * [site] 
 /// * [primaryColor] 
-/// * [hideLoginNameSuffix] 
 /// * [warnColor] 
 /// * [backgroundColor] 
 /// * [fontColor] 
@@ -26,7 +25,6 @@ part 'site_branding_setting_branding_setting_write_site_branding_setting_create.
 /// * [logoDarkUrl] 
 /// * [iconUrl] 
 /// * [iconDarkUrl] 
-/// * [disableWatermark] 
 /// * [themeMode] 
 @BuiltValue()
 abstract class SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate implements Built<SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate, SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateBuilder> {
@@ -35,9 +33,6 @@ abstract class SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate 
 
   @BuiltValueField(wireName: r'primaryColor')
   String get primaryColor;
-
-  @BuiltValueField(wireName: r'hideLoginNameSuffix')
-  bool get hideLoginNameSuffix;
 
   @BuiltValueField(wireName: r'warnColor')
   String get warnColor;
@@ -72,11 +67,8 @@ abstract class SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate 
   @BuiltValueField(wireName: r'iconDarkUrl')
   String? get iconDarkUrl;
 
-  @BuiltValueField(wireName: r'disableWatermark')
-  bool get disableWatermark;
-
   @BuiltValueField(wireName: r'themeMode')
-  SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateThemeModeEnum? get themeMode;
+  SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateThemeModeEnum get themeMode;
   // enum themeModeEnum {  THEME_MODE_UNSPECIFIED,  THEME_MODE_AUTO,  THEME_MODE_DARK,  THEME_MODE_LIGHT,  };
 
   SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate._();
@@ -113,11 +105,6 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateSerializ
     yield serializers.serialize(
       object.primaryColor,
       specifiedType: const FullType(String),
-    );
-    yield r'hideLoginNameSuffix';
-    yield serializers.serialize(
-      object.hideLoginNameSuffix,
-      specifiedType: const FullType(bool),
     );
     yield r'warnColor';
     yield serializers.serialize(
@@ -182,18 +169,11 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateSerializ
         specifiedType: const FullType(String),
       );
     }
-    yield r'disableWatermark';
+    yield r'themeMode';
     yield serializers.serialize(
-      object.disableWatermark,
-      specifiedType: const FullType(bool),
+      object.themeMode,
+      specifiedType: const FullType(SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateThemeModeEnum),
     );
-    if (object.themeMode != null) {
-      yield r'themeMode';
-      yield serializers.serialize(
-        object.themeMode,
-        specifiedType: const FullType(SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateThemeModeEnum),
-      );
-    }
   }
 
   @override
@@ -230,13 +210,6 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.primaryColor = valueDes;
-          break;
-        case r'hideLoginNameSuffix':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.hideLoginNameSuffix = valueDes;
           break;
         case r'warnColor':
           final valueDes = serializers.deserialize(
@@ -314,13 +287,6 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.iconDarkUrl = valueDes;
-          break;
-        case r'disableWatermark':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.disableWatermark = valueDes;
           break;
         case r'themeMode':
           final valueDes = serializers.deserialize(

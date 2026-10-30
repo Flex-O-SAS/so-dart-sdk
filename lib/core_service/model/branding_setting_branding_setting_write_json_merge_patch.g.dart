@@ -98,9 +98,11 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatch
   @override
   final String? orgId;
   @override
-  final String? primaryColor;
-  @override
   final bool? hideLoginNameSuffix;
+  @override
+  final bool? disableWatermark;
+  @override
+  final String? primaryColor;
   @override
   final String? warnColor;
   @override
@@ -124,8 +126,6 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatch
   @override
   final String? iconDarkUrl;
   @override
-  final bool? disableWatermark;
-  @override
   final BrandingSettingBrandingSettingWriteJsonMergePatchThemeModeEnum?
       themeMode;
 
@@ -139,8 +139,9 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatch
 
   _$BrandingSettingBrandingSettingWriteJsonMergePatch._(
       {this.orgId,
-      this.primaryColor,
       this.hideLoginNameSuffix,
+      this.disableWatermark,
+      this.primaryColor,
       this.warnColor,
       this.backgroundColor,
       this.fontColor,
@@ -152,7 +153,6 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatch
       this.logoDarkUrl,
       this.iconUrl,
       this.iconDarkUrl,
-      this.disableWatermark,
       this.themeMode})
       : super._();
 
@@ -173,8 +173,9 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatch
     if (identical(other, this)) return true;
     return other is BrandingSettingBrandingSettingWriteJsonMergePatch &&
         orgId == other.orgId &&
-        primaryColor == other.primaryColor &&
         hideLoginNameSuffix == other.hideLoginNameSuffix &&
+        disableWatermark == other.disableWatermark &&
+        primaryColor == other.primaryColor &&
         warnColor == other.warnColor &&
         backgroundColor == other.backgroundColor &&
         fontColor == other.fontColor &&
@@ -186,7 +187,6 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatch
         logoDarkUrl == other.logoDarkUrl &&
         iconUrl == other.iconUrl &&
         iconDarkUrl == other.iconDarkUrl &&
-        disableWatermark == other.disableWatermark &&
         themeMode == other.themeMode;
   }
 
@@ -194,8 +194,9 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatch
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, orgId.hashCode);
-    _$hash = $jc(_$hash, primaryColor.hashCode);
     _$hash = $jc(_$hash, hideLoginNameSuffix.hashCode);
+    _$hash = $jc(_$hash, disableWatermark.hashCode);
+    _$hash = $jc(_$hash, primaryColor.hashCode);
     _$hash = $jc(_$hash, warnColor.hashCode);
     _$hash = $jc(_$hash, backgroundColor.hashCode);
     _$hash = $jc(_$hash, fontColor.hashCode);
@@ -207,7 +208,6 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatch
     _$hash = $jc(_$hash, logoDarkUrl.hashCode);
     _$hash = $jc(_$hash, iconUrl.hashCode);
     _$hash = $jc(_$hash, iconDarkUrl.hashCode);
-    _$hash = $jc(_$hash, disableWatermark.hashCode);
     _$hash = $jc(_$hash, themeMode.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -218,8 +218,9 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatch
     return (newBuiltValueToStringHelper(
             r'BrandingSettingBrandingSettingWriteJsonMergePatch')
           ..add('orgId', orgId)
-          ..add('primaryColor', primaryColor)
           ..add('hideLoginNameSuffix', hideLoginNameSuffix)
+          ..add('disableWatermark', disableWatermark)
+          ..add('primaryColor', primaryColor)
           ..add('warnColor', warnColor)
           ..add('backgroundColor', backgroundColor)
           ..add('fontColor', fontColor)
@@ -231,7 +232,6 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatch
           ..add('logoDarkUrl', logoDarkUrl)
           ..add('iconUrl', iconUrl)
           ..add('iconDarkUrl', iconDarkUrl)
-          ..add('disableWatermark', disableWatermark)
           ..add('themeMode', themeMode))
         .toString();
   }
@@ -247,14 +247,19 @@ class BrandingSettingBrandingSettingWriteJsonMergePatchBuilder
   String? get orgId => _$this._orgId;
   set orgId(String? orgId) => _$this._orgId = orgId;
 
-  String? _primaryColor;
-  String? get primaryColor => _$this._primaryColor;
-  set primaryColor(String? primaryColor) => _$this._primaryColor = primaryColor;
-
   bool? _hideLoginNameSuffix;
   bool? get hideLoginNameSuffix => _$this._hideLoginNameSuffix;
   set hideLoginNameSuffix(bool? hideLoginNameSuffix) =>
       _$this._hideLoginNameSuffix = hideLoginNameSuffix;
+
+  bool? _disableWatermark;
+  bool? get disableWatermark => _$this._disableWatermark;
+  set disableWatermark(bool? disableWatermark) =>
+      _$this._disableWatermark = disableWatermark;
+
+  String? _primaryColor;
+  String? get primaryColor => _$this._primaryColor;
+  set primaryColor(String? primaryColor) => _$this._primaryColor = primaryColor;
 
   String? _warnColor;
   String? get warnColor => _$this._warnColor;
@@ -305,11 +310,6 @@ class BrandingSettingBrandingSettingWriteJsonMergePatchBuilder
   String? get iconDarkUrl => _$this._iconDarkUrl;
   set iconDarkUrl(String? iconDarkUrl) => _$this._iconDarkUrl = iconDarkUrl;
 
-  bool? _disableWatermark;
-  bool? get disableWatermark => _$this._disableWatermark;
-  set disableWatermark(bool? disableWatermark) =>
-      _$this._disableWatermark = disableWatermark;
-
   BrandingSettingBrandingSettingWriteJsonMergePatchThemeModeEnum? _themeMode;
   BrandingSettingBrandingSettingWriteJsonMergePatchThemeModeEnum?
       get themeMode => _$this._themeMode;
@@ -326,8 +326,9 @@ class BrandingSettingBrandingSettingWriteJsonMergePatchBuilder
     final $v = _$v;
     if ($v != null) {
       _orgId = $v.orgId;
-      _primaryColor = $v.primaryColor;
       _hideLoginNameSuffix = $v.hideLoginNameSuffix;
+      _disableWatermark = $v.disableWatermark;
+      _primaryColor = $v.primaryColor;
       _warnColor = $v.warnColor;
       _backgroundColor = $v.backgroundColor;
       _fontColor = $v.fontColor;
@@ -339,7 +340,6 @@ class BrandingSettingBrandingSettingWriteJsonMergePatchBuilder
       _logoDarkUrl = $v.logoDarkUrl;
       _iconUrl = $v.iconUrl;
       _iconDarkUrl = $v.iconDarkUrl;
-      _disableWatermark = $v.disableWatermark;
       _themeMode = $v.themeMode;
       _$v = null;
     }
@@ -366,8 +366,9 @@ class BrandingSettingBrandingSettingWriteJsonMergePatchBuilder
     final _$result = _$v ??
         new _$BrandingSettingBrandingSettingWriteJsonMergePatch._(
           orgId: orgId,
-          primaryColor: primaryColor,
           hideLoginNameSuffix: hideLoginNameSuffix,
+          disableWatermark: disableWatermark,
+          primaryColor: primaryColor,
           warnColor: warnColor,
           backgroundColor: backgroundColor,
           fontColor: fontColor,
@@ -379,7 +380,6 @@ class BrandingSettingBrandingSettingWriteJsonMergePatchBuilder
           logoDarkUrl: logoDarkUrl,
           iconUrl: iconUrl,
           iconDarkUrl: iconDarkUrl,
-          disableWatermark: disableWatermark,
           themeMode: themeMode,
         );
     replace(_$result);

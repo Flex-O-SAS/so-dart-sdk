@@ -18,8 +18,9 @@ part 'branding_setting_jsonld_branding_setting_read.g.dart';
 /// * [atId] 
 /// * [atType] 
 /// * [orgId] 
-/// * [primaryColor] 
 /// * [hideLoginNameSuffix] 
+/// * [disableWatermark] 
+/// * [primaryColor] 
 /// * [warnColor] 
 /// * [backgroundColor] 
 /// * [fontColor] 
@@ -31,7 +32,6 @@ part 'branding_setting_jsonld_branding_setting_read.g.dart';
 /// * [logoDarkUrl] 
 /// * [iconUrl] 
 /// * [iconDarkUrl] 
-/// * [disableWatermark] 
 /// * [themeMode] 
 @BuiltValue()
 abstract class BrandingSettingJsonldBrandingSettingRead implements HydraItemBaseSchema, Built<BrandingSettingJsonldBrandingSettingRead, BrandingSettingJsonldBrandingSettingReadBuilder> {
@@ -54,7 +54,7 @@ abstract class BrandingSettingJsonldBrandingSettingRead implements HydraItemBase
   String? get logoDarkUrl;
 
   @BuiltValueField(wireName: r'themeMode')
-  BrandingSettingJsonldBrandingSettingReadThemeModeEnum? get themeMode;
+  BrandingSettingJsonldBrandingSettingReadThemeModeEnum get themeMode;
   // enum themeModeEnum {  THEME_MODE_UNSPECIFIED,  THEME_MODE_AUTO,  THEME_MODE_DARK,  THEME_MODE_LIGHT,  };
 
   @BuiltValueField(wireName: r'disableWatermark')
@@ -147,13 +147,11 @@ class _$BrandingSettingJsonldBrandingSettingReadSerializer implements PrimitiveS
         specifiedType: const FullType(String),
       );
     }
-    if (object.themeMode != null) {
-      yield r'themeMode';
-      yield serializers.serialize(
-        object.themeMode,
-        specifiedType: const FullType(BrandingSettingJsonldBrandingSettingReadThemeModeEnum),
-      );
-    }
+    yield r'themeMode';
+    yield serializers.serialize(
+      object.themeMode,
+      specifiedType: const FullType(BrandingSettingJsonldBrandingSettingReadThemeModeEnum),
+    );
     yield r'disableWatermark';
     yield serializers.serialize(
       object.disableWatermark,

@@ -105,8 +105,6 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate
   @override
   final String primaryColor;
   @override
-  final bool hideLoginNameSuffix;
-  @override
   final String warnColor;
   @override
   final String backgroundColor;
@@ -129,9 +127,7 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate
   @override
   final String? iconDarkUrl;
   @override
-  final bool disableWatermark;
-  @override
-  final SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateThemeModeEnum?
+  final SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateThemeModeEnum
       themeMode;
 
   factory _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate(
@@ -145,7 +141,6 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate
   _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate._(
       {this.site,
       required this.primaryColor,
-      required this.hideLoginNameSuffix,
       required this.warnColor,
       required this.backgroundColor,
       required this.fontColor,
@@ -157,17 +152,12 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate
       this.logoDarkUrl,
       this.iconUrl,
       this.iconDarkUrl,
-      required this.disableWatermark,
-      this.themeMode})
+      required this.themeMode})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         primaryColor,
         r'SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate',
         'primaryColor');
-    BuiltValueNullFieldError.checkNotNull(
-        hideLoginNameSuffix,
-        r'SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate',
-        'hideLoginNameSuffix');
     BuiltValueNullFieldError.checkNotNull(
         warnColor,
         r'SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate',
@@ -197,9 +187,9 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate
         r'SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate',
         'fontColorDark');
     BuiltValueNullFieldError.checkNotNull(
-        disableWatermark,
+        themeMode,
         r'SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate',
-        'disableWatermark');
+        'themeMode');
   }
 
   @override
@@ -222,7 +212,6 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate
             is SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate &&
         site == other.site &&
         primaryColor == other.primaryColor &&
-        hideLoginNameSuffix == other.hideLoginNameSuffix &&
         warnColor == other.warnColor &&
         backgroundColor == other.backgroundColor &&
         fontColor == other.fontColor &&
@@ -234,7 +223,6 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate
         logoDarkUrl == other.logoDarkUrl &&
         iconUrl == other.iconUrl &&
         iconDarkUrl == other.iconDarkUrl &&
-        disableWatermark == other.disableWatermark &&
         themeMode == other.themeMode;
   }
 
@@ -243,7 +231,6 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate
     var _$hash = 0;
     _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, primaryColor.hashCode);
-    _$hash = $jc(_$hash, hideLoginNameSuffix.hashCode);
     _$hash = $jc(_$hash, warnColor.hashCode);
     _$hash = $jc(_$hash, backgroundColor.hashCode);
     _$hash = $jc(_$hash, fontColor.hashCode);
@@ -255,7 +242,6 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate
     _$hash = $jc(_$hash, logoDarkUrl.hashCode);
     _$hash = $jc(_$hash, iconUrl.hashCode);
     _$hash = $jc(_$hash, iconDarkUrl.hashCode);
-    _$hash = $jc(_$hash, disableWatermark.hashCode);
     _$hash = $jc(_$hash, themeMode.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -267,7 +253,6 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate
             r'SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate')
           ..add('site', site)
           ..add('primaryColor', primaryColor)
-          ..add('hideLoginNameSuffix', hideLoginNameSuffix)
           ..add('warnColor', warnColor)
           ..add('backgroundColor', backgroundColor)
           ..add('fontColor', fontColor)
@@ -279,7 +264,6 @@ class _$SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate
           ..add('logoDarkUrl', logoDarkUrl)
           ..add('iconUrl', iconUrl)
           ..add('iconDarkUrl', iconDarkUrl)
-          ..add('disableWatermark', disableWatermark)
           ..add('themeMode', themeMode))
         .toString();
   }
@@ -299,11 +283,6 @@ class SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateBuilder
   String? _primaryColor;
   String? get primaryColor => _$this._primaryColor;
   set primaryColor(String? primaryColor) => _$this._primaryColor = primaryColor;
-
-  bool? _hideLoginNameSuffix;
-  bool? get hideLoginNameSuffix => _$this._hideLoginNameSuffix;
-  set hideLoginNameSuffix(bool? hideLoginNameSuffix) =>
-      _$this._hideLoginNameSuffix = hideLoginNameSuffix;
 
   String? _warnColor;
   String? get warnColor => _$this._warnColor;
@@ -354,11 +333,6 @@ class SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateBuilder
   String? get iconDarkUrl => _$this._iconDarkUrl;
   set iconDarkUrl(String? iconDarkUrl) => _$this._iconDarkUrl = iconDarkUrl;
 
-  bool? _disableWatermark;
-  bool? get disableWatermark => _$this._disableWatermark;
-  set disableWatermark(bool? disableWatermark) =>
-      _$this._disableWatermark = disableWatermark;
-
   SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateThemeModeEnum?
       _themeMode;
   SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateThemeModeEnum?
@@ -379,7 +353,6 @@ class SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateBuilder
     if ($v != null) {
       _site = $v.site;
       _primaryColor = $v.primaryColor;
-      _hideLoginNameSuffix = $v.hideLoginNameSuffix;
       _warnColor = $v.warnColor;
       _backgroundColor = $v.backgroundColor;
       _fontColor = $v.fontColor;
@@ -391,7 +364,6 @@ class SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateBuilder
       _logoDarkUrl = $v.logoDarkUrl;
       _iconUrl = $v.iconUrl;
       _iconDarkUrl = $v.iconDarkUrl;
-      _disableWatermark = $v.disableWatermark;
       _themeMode = $v.themeMode;
       _$v = null;
     }
@@ -427,10 +399,6 @@ class SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateBuilder
               primaryColor,
               r'SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate',
               'primaryColor'),
-          hideLoginNameSuffix: BuiltValueNullFieldError.checkNotNull(
-              hideLoginNameSuffix,
-              r'SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate',
-              'hideLoginNameSuffix'),
           warnColor: BuiltValueNullFieldError.checkNotNull(
               warnColor,
               r'SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate',
@@ -463,11 +431,10 @@ class SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreateBuilder
           logoDarkUrl: logoDarkUrl,
           iconUrl: iconUrl,
           iconDarkUrl: iconDarkUrl,
-          disableWatermark: BuiltValueNullFieldError.checkNotNull(
-              disableWatermark,
+          themeMode: BuiltValueNullFieldError.checkNotNull(
+              themeMode,
               r'SiteBrandingSettingBrandingSettingWriteSiteBrandingSettingCreate',
-              'disableWatermark'),
-          themeMode: themeMode,
+              'themeMode'),
         );
     replace(_$result);
     return _$result;

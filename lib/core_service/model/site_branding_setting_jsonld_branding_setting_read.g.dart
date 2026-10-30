@@ -96,8 +96,6 @@ class _$SiteBrandingSettingJsonldBrandingSettingReadThemeModeEnumSerializer
 class _$SiteBrandingSettingJsonldBrandingSettingRead
     extends SiteBrandingSettingJsonldBrandingSettingRead {
   @override
-  final bool hideLoginNameSuffix;
-  @override
   final String backgroundColor;
   @override
   final String? iconDarkUrl;
@@ -108,9 +106,7 @@ class _$SiteBrandingSettingJsonldBrandingSettingRead
   @override
   final String? logoDarkUrl;
   @override
-  final SiteBrandingSettingJsonldBrandingSettingReadThemeModeEnum? themeMode;
-  @override
-  final bool disableWatermark;
+  final SiteBrandingSettingJsonldBrandingSettingReadThemeModeEnum themeMode;
   @override
   final String backgroundColorDark;
   @override
@@ -142,14 +138,12 @@ class _$SiteBrandingSettingJsonldBrandingSettingRead
           ._build();
 
   _$SiteBrandingSettingJsonldBrandingSettingRead._(
-      {required this.hideLoginNameSuffix,
-      required this.backgroundColor,
+      {required this.backgroundColor,
       this.iconDarkUrl,
       required this.primaryColor,
       required this.warnColorDark,
       this.logoDarkUrl,
-      this.themeMode,
-      required this.disableWatermark,
+      required this.themeMode,
       required this.backgroundColorDark,
       required this.fontColorDark,
       this.logoUrl,
@@ -162,16 +156,14 @@ class _$SiteBrandingSettingJsonldBrandingSettingRead
       required this.atId,
       required this.atType})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(hideLoginNameSuffix,
-        r'SiteBrandingSettingJsonldBrandingSettingRead', 'hideLoginNameSuffix');
     BuiltValueNullFieldError.checkNotNull(backgroundColor,
         r'SiteBrandingSettingJsonldBrandingSettingRead', 'backgroundColor');
     BuiltValueNullFieldError.checkNotNull(primaryColor,
         r'SiteBrandingSettingJsonldBrandingSettingRead', 'primaryColor');
     BuiltValueNullFieldError.checkNotNull(warnColorDark,
         r'SiteBrandingSettingJsonldBrandingSettingRead', 'warnColorDark');
-    BuiltValueNullFieldError.checkNotNull(disableWatermark,
-        r'SiteBrandingSettingJsonldBrandingSettingRead', 'disableWatermark');
+    BuiltValueNullFieldError.checkNotNull(themeMode,
+        r'SiteBrandingSettingJsonldBrandingSettingRead', 'themeMode');
     BuiltValueNullFieldError.checkNotNull(backgroundColorDark,
         r'SiteBrandingSettingJsonldBrandingSettingRead', 'backgroundColorDark');
     BuiltValueNullFieldError.checkNotNull(fontColorDark,
@@ -202,14 +194,12 @@ class _$SiteBrandingSettingJsonldBrandingSettingRead
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is SiteBrandingSettingJsonldBrandingSettingRead &&
-        hideLoginNameSuffix == other.hideLoginNameSuffix &&
         backgroundColor == other.backgroundColor &&
         iconDarkUrl == other.iconDarkUrl &&
         primaryColor == other.primaryColor &&
         warnColorDark == other.warnColorDark &&
         logoDarkUrl == other.logoDarkUrl &&
         themeMode == other.themeMode &&
-        disableWatermark == other.disableWatermark &&
         backgroundColorDark == other.backgroundColorDark &&
         fontColorDark == other.fontColorDark &&
         logoUrl == other.logoUrl &&
@@ -226,14 +216,12 @@ class _$SiteBrandingSettingJsonldBrandingSettingRead
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, hideLoginNameSuffix.hashCode);
     _$hash = $jc(_$hash, backgroundColor.hashCode);
     _$hash = $jc(_$hash, iconDarkUrl.hashCode);
     _$hash = $jc(_$hash, primaryColor.hashCode);
     _$hash = $jc(_$hash, warnColorDark.hashCode);
     _$hash = $jc(_$hash, logoDarkUrl.hashCode);
     _$hash = $jc(_$hash, themeMode.hashCode);
-    _$hash = $jc(_$hash, disableWatermark.hashCode);
     _$hash = $jc(_$hash, backgroundColorDark.hashCode);
     _$hash = $jc(_$hash, fontColorDark.hashCode);
     _$hash = $jc(_$hash, logoUrl.hashCode);
@@ -253,14 +241,12 @@ class _$SiteBrandingSettingJsonldBrandingSettingRead
   String toString() {
     return (newBuiltValueToStringHelper(
             r'SiteBrandingSettingJsonldBrandingSettingRead')
-          ..add('hideLoginNameSuffix', hideLoginNameSuffix)
           ..add('backgroundColor', backgroundColor)
           ..add('iconDarkUrl', iconDarkUrl)
           ..add('primaryColor', primaryColor)
           ..add('warnColorDark', warnColorDark)
           ..add('logoDarkUrl', logoDarkUrl)
           ..add('themeMode', themeMode)
-          ..add('disableWatermark', disableWatermark)
           ..add('backgroundColorDark', backgroundColorDark)
           ..add('fontColorDark', fontColorDark)
           ..add('logoUrl', logoUrl)
@@ -282,11 +268,6 @@ class SiteBrandingSettingJsonldBrandingSettingReadBuilder
             SiteBrandingSettingJsonldBrandingSettingReadBuilder>,
         HydraItemBaseSchemaBuilder {
   _$SiteBrandingSettingJsonldBrandingSettingRead? _$v;
-
-  bool? _hideLoginNameSuffix;
-  bool? get hideLoginNameSuffix => _$this._hideLoginNameSuffix;
-  set hideLoginNameSuffix(covariant bool? hideLoginNameSuffix) =>
-      _$this._hideLoginNameSuffix = hideLoginNameSuffix;
 
   String? _backgroundColor;
   String? get backgroundColor => _$this._backgroundColor;
@@ -320,11 +301,6 @@ class SiteBrandingSettingJsonldBrandingSettingReadBuilder
           covariant SiteBrandingSettingJsonldBrandingSettingReadThemeModeEnum?
               themeMode) =>
       _$this._themeMode = themeMode;
-
-  bool? _disableWatermark;
-  bool? get disableWatermark => _$this._disableWatermark;
-  set disableWatermark(covariant bool? disableWatermark) =>
-      _$this._disableWatermark = disableWatermark;
 
   String? _backgroundColorDark;
   String? get backgroundColorDark => _$this._backgroundColorDark;
@@ -382,14 +358,12 @@ class SiteBrandingSettingJsonldBrandingSettingReadBuilder
   SiteBrandingSettingJsonldBrandingSettingReadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _hideLoginNameSuffix = $v.hideLoginNameSuffix;
       _backgroundColor = $v.backgroundColor;
       _iconDarkUrl = $v.iconDarkUrl;
       _primaryColor = $v.primaryColor;
       _warnColorDark = $v.warnColorDark;
       _logoDarkUrl = $v.logoDarkUrl;
       _themeMode = $v.themeMode;
-      _disableWatermark = $v.disableWatermark;
       _backgroundColorDark = $v.backgroundColorDark;
       _fontColorDark = $v.fontColorDark;
       _logoUrl = $v.logoUrl;
@@ -427,10 +401,6 @@ class SiteBrandingSettingJsonldBrandingSettingReadBuilder
     try {
       _$result = _$v ??
           new _$SiteBrandingSettingJsonldBrandingSettingRead._(
-            hideLoginNameSuffix: BuiltValueNullFieldError.checkNotNull(
-                hideLoginNameSuffix,
-                r'SiteBrandingSettingJsonldBrandingSettingRead',
-                'hideLoginNameSuffix'),
             backgroundColor: BuiltValueNullFieldError.checkNotNull(
                 backgroundColor,
                 r'SiteBrandingSettingJsonldBrandingSettingRead',
@@ -445,11 +415,8 @@ class SiteBrandingSettingJsonldBrandingSettingReadBuilder
                 r'SiteBrandingSettingJsonldBrandingSettingRead',
                 'warnColorDark'),
             logoDarkUrl: logoDarkUrl,
-            themeMode: themeMode,
-            disableWatermark: BuiltValueNullFieldError.checkNotNull(
-                disableWatermark,
-                r'SiteBrandingSettingJsonldBrandingSettingRead',
-                'disableWatermark'),
+            themeMode: BuiltValueNullFieldError.checkNotNull(themeMode,
+                r'SiteBrandingSettingJsonldBrandingSettingRead', 'themeMode'),
             backgroundColorDark: BuiltValueNullFieldError.checkNotNull(
                 backgroundColorDark,
                 r'SiteBrandingSettingJsonldBrandingSettingRead',

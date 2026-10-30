@@ -19,7 +19,6 @@ part 'site_branding_setting_jsonld_branding_setting_read.g.dart';
 /// * [atType] 
 /// * [site] 
 /// * [primaryColor] 
-/// * [hideLoginNameSuffix] 
 /// * [warnColor] 
 /// * [backgroundColor] 
 /// * [fontColor] 
@@ -31,13 +30,9 @@ part 'site_branding_setting_jsonld_branding_setting_read.g.dart';
 /// * [logoDarkUrl] 
 /// * [iconUrl] 
 /// * [iconDarkUrl] 
-/// * [disableWatermark] 
 /// * [themeMode] 
 @BuiltValue()
 abstract class SiteBrandingSettingJsonldBrandingSettingRead implements HydraItemBaseSchema, Built<SiteBrandingSettingJsonldBrandingSettingRead, SiteBrandingSettingJsonldBrandingSettingReadBuilder> {
-  @BuiltValueField(wireName: r'hideLoginNameSuffix')
-  bool get hideLoginNameSuffix;
-
   @BuiltValueField(wireName: r'backgroundColor')
   String get backgroundColor;
 
@@ -54,11 +49,8 @@ abstract class SiteBrandingSettingJsonldBrandingSettingRead implements HydraItem
   String? get logoDarkUrl;
 
   @BuiltValueField(wireName: r'themeMode')
-  SiteBrandingSettingJsonldBrandingSettingReadThemeModeEnum? get themeMode;
+  SiteBrandingSettingJsonldBrandingSettingReadThemeModeEnum get themeMode;
   // enum themeModeEnum {  THEME_MODE_UNSPECIFIED,  THEME_MODE_AUTO,  THEME_MODE_DARK,  THEME_MODE_LIGHT,  };
-
-  @BuiltValueField(wireName: r'disableWatermark')
-  bool get disableWatermark;
 
   @BuiltValueField(wireName: r'backgroundColorDark')
   String get backgroundColorDark;
@@ -107,11 +99,6 @@ class _$SiteBrandingSettingJsonldBrandingSettingReadSerializer implements Primit
     SiteBrandingSettingJsonldBrandingSettingRead object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'hideLoginNameSuffix';
-    yield serializers.serialize(
-      object.hideLoginNameSuffix,
-      specifiedType: const FullType(bool),
-    );
     yield r'backgroundColor';
     yield serializers.serialize(
       object.backgroundColor,
@@ -146,17 +133,10 @@ class _$SiteBrandingSettingJsonldBrandingSettingReadSerializer implements Primit
         specifiedType: const FullType(String),
       );
     }
-    if (object.themeMode != null) {
-      yield r'themeMode';
-      yield serializers.serialize(
-        object.themeMode,
-        specifiedType: const FullType(SiteBrandingSettingJsonldBrandingSettingReadThemeModeEnum),
-      );
-    }
-    yield r'disableWatermark';
+    yield r'themeMode';
     yield serializers.serialize(
-      object.disableWatermark,
-      specifiedType: const FullType(bool),
+      object.themeMode,
+      specifiedType: const FullType(SiteBrandingSettingJsonldBrandingSettingReadThemeModeEnum),
     );
     yield r'backgroundColorDark';
     yield serializers.serialize(
@@ -239,13 +219,6 @@ class _$SiteBrandingSettingJsonldBrandingSettingReadSerializer implements Primit
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'hideLoginNameSuffix':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.hideLoginNameSuffix = valueDes;
-          break;
         case r'backgroundColor':
           final valueDes = serializers.deserialize(
             value,
@@ -294,13 +267,6 @@ class _$SiteBrandingSettingJsonldBrandingSettingReadSerializer implements Primit
             specifiedType: const FullType(SiteBrandingSettingJsonldBrandingSettingReadThemeModeEnum),
           ) as SiteBrandingSettingJsonldBrandingSettingReadThemeModeEnum;
           result.themeMode = valueDes;
-          break;
-        case r'disableWatermark':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.disableWatermark = valueDes;
           break;
         case r'backgroundColorDark':
           final valueDes = serializers.deserialize(

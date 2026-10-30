@@ -13,8 +13,9 @@ part 'branding_setting_branding_setting_write.g.dart';
 ///
 /// Properties:
 /// * [orgId] 
-/// * [primaryColor] 
 /// * [hideLoginNameSuffix] 
+/// * [disableWatermark] 
+/// * [primaryColor] 
 /// * [warnColor] 
 /// * [backgroundColor] 
 /// * [fontColor] 
@@ -26,18 +27,20 @@ part 'branding_setting_branding_setting_write.g.dart';
 /// * [logoDarkUrl] 
 /// * [iconUrl] 
 /// * [iconDarkUrl] 
-/// * [disableWatermark] 
 /// * [themeMode] 
 @BuiltValue()
 abstract class BrandingSettingBrandingSettingWrite implements Built<BrandingSettingBrandingSettingWrite, BrandingSettingBrandingSettingWriteBuilder> {
   @BuiltValueField(wireName: r'orgId')
   String get orgId;
 
-  @BuiltValueField(wireName: r'primaryColor')
-  String get primaryColor;
-
   @BuiltValueField(wireName: r'hideLoginNameSuffix')
   bool get hideLoginNameSuffix;
+
+  @BuiltValueField(wireName: r'disableWatermark')
+  bool get disableWatermark;
+
+  @BuiltValueField(wireName: r'primaryColor')
+  String get primaryColor;
 
   @BuiltValueField(wireName: r'warnColor')
   String get warnColor;
@@ -72,11 +75,8 @@ abstract class BrandingSettingBrandingSettingWrite implements Built<BrandingSett
   @BuiltValueField(wireName: r'iconDarkUrl')
   String? get iconDarkUrl;
 
-  @BuiltValueField(wireName: r'disableWatermark')
-  bool get disableWatermark;
-
   @BuiltValueField(wireName: r'themeMode')
-  BrandingSettingBrandingSettingWriteThemeModeEnum? get themeMode;
+  BrandingSettingBrandingSettingWriteThemeModeEnum get themeMode;
   // enum themeModeEnum {  THEME_MODE_UNSPECIFIED,  THEME_MODE_AUTO,  THEME_MODE_DARK,  THEME_MODE_LIGHT,  };
 
   BrandingSettingBrandingSettingWrite._();
@@ -108,15 +108,20 @@ class _$BrandingSettingBrandingSettingWriteSerializer implements PrimitiveSerial
       object.orgId,
       specifiedType: const FullType(String),
     );
-    yield r'primaryColor';
-    yield serializers.serialize(
-      object.primaryColor,
-      specifiedType: const FullType(String),
-    );
     yield r'hideLoginNameSuffix';
     yield serializers.serialize(
       object.hideLoginNameSuffix,
       specifiedType: const FullType(bool),
+    );
+    yield r'disableWatermark';
+    yield serializers.serialize(
+      object.disableWatermark,
+      specifiedType: const FullType(bool),
+    );
+    yield r'primaryColor';
+    yield serializers.serialize(
+      object.primaryColor,
+      specifiedType: const FullType(String),
     );
     yield r'warnColor';
     yield serializers.serialize(
@@ -181,18 +186,11 @@ class _$BrandingSettingBrandingSettingWriteSerializer implements PrimitiveSerial
         specifiedType: const FullType(String),
       );
     }
-    yield r'disableWatermark';
+    yield r'themeMode';
     yield serializers.serialize(
-      object.disableWatermark,
-      specifiedType: const FullType(bool),
+      object.themeMode,
+      specifiedType: const FullType(BrandingSettingBrandingSettingWriteThemeModeEnum),
     );
-    if (object.themeMode != null) {
-      yield r'themeMode';
-      yield serializers.serialize(
-        object.themeMode,
-        specifiedType: const FullType(BrandingSettingBrandingSettingWriteThemeModeEnum),
-      );
-    }
   }
 
   @override
@@ -223,19 +221,26 @@ class _$BrandingSettingBrandingSettingWriteSerializer implements PrimitiveSerial
           ) as String;
           result.orgId = valueDes;
           break;
-        case r'primaryColor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.primaryColor = valueDes;
-          break;
         case r'hideLoginNameSuffix':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.hideLoginNameSuffix = valueDes;
+          break;
+        case r'disableWatermark':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.disableWatermark = valueDes;
+          break;
+        case r'primaryColor':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.primaryColor = valueDes;
           break;
         case r'warnColor':
           final valueDes = serializers.deserialize(
@@ -313,13 +318,6 @@ class _$BrandingSettingBrandingSettingWriteSerializer implements PrimitiveSerial
             specifiedType: const FullType(String),
           ) as String;
           result.iconDarkUrl = valueDes;
-          break;
-        case r'disableWatermark':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.disableWatermark = valueDes;
           break;
         case r'themeMode':
           final valueDes = serializers.deserialize(

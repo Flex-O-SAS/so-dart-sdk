@@ -92,9 +92,11 @@ class _$BrandingSettingBrandingSettingWrite
   @override
   final String orgId;
   @override
-  final String primaryColor;
-  @override
   final bool hideLoginNameSuffix;
+  @override
+  final bool disableWatermark;
+  @override
+  final String primaryColor;
   @override
   final String warnColor;
   @override
@@ -118,9 +120,7 @@ class _$BrandingSettingBrandingSettingWrite
   @override
   final String? iconDarkUrl;
   @override
-  final bool disableWatermark;
-  @override
-  final BrandingSettingBrandingSettingWriteThemeModeEnum? themeMode;
+  final BrandingSettingBrandingSettingWriteThemeModeEnum themeMode;
 
   factory _$BrandingSettingBrandingSettingWrite(
           [void Function(BrandingSettingBrandingSettingWriteBuilder)?
@@ -130,8 +130,9 @@ class _$BrandingSettingBrandingSettingWrite
 
   _$BrandingSettingBrandingSettingWrite._(
       {required this.orgId,
-      required this.primaryColor,
       required this.hideLoginNameSuffix,
+      required this.disableWatermark,
+      required this.primaryColor,
       required this.warnColor,
       required this.backgroundColor,
       required this.fontColor,
@@ -143,15 +144,16 @@ class _$BrandingSettingBrandingSettingWrite
       this.logoDarkUrl,
       this.iconUrl,
       this.iconDarkUrl,
-      required this.disableWatermark,
-      this.themeMode})
+      required this.themeMode})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         orgId, r'BrandingSettingBrandingSettingWrite', 'orgId');
-    BuiltValueNullFieldError.checkNotNull(
-        primaryColor, r'BrandingSettingBrandingSettingWrite', 'primaryColor');
     BuiltValueNullFieldError.checkNotNull(hideLoginNameSuffix,
         r'BrandingSettingBrandingSettingWrite', 'hideLoginNameSuffix');
+    BuiltValueNullFieldError.checkNotNull(disableWatermark,
+        r'BrandingSettingBrandingSettingWrite', 'disableWatermark');
+    BuiltValueNullFieldError.checkNotNull(
+        primaryColor, r'BrandingSettingBrandingSettingWrite', 'primaryColor');
     BuiltValueNullFieldError.checkNotNull(
         warnColor, r'BrandingSettingBrandingSettingWrite', 'warnColor');
     BuiltValueNullFieldError.checkNotNull(backgroundColor,
@@ -166,8 +168,8 @@ class _$BrandingSettingBrandingSettingWrite
         warnColorDark, r'BrandingSettingBrandingSettingWrite', 'warnColorDark');
     BuiltValueNullFieldError.checkNotNull(
         fontColorDark, r'BrandingSettingBrandingSettingWrite', 'fontColorDark');
-    BuiltValueNullFieldError.checkNotNull(disableWatermark,
-        r'BrandingSettingBrandingSettingWrite', 'disableWatermark');
+    BuiltValueNullFieldError.checkNotNull(
+        themeMode, r'BrandingSettingBrandingSettingWrite', 'themeMode');
   }
 
   @override
@@ -184,8 +186,9 @@ class _$BrandingSettingBrandingSettingWrite
     if (identical(other, this)) return true;
     return other is BrandingSettingBrandingSettingWrite &&
         orgId == other.orgId &&
-        primaryColor == other.primaryColor &&
         hideLoginNameSuffix == other.hideLoginNameSuffix &&
+        disableWatermark == other.disableWatermark &&
+        primaryColor == other.primaryColor &&
         warnColor == other.warnColor &&
         backgroundColor == other.backgroundColor &&
         fontColor == other.fontColor &&
@@ -197,7 +200,6 @@ class _$BrandingSettingBrandingSettingWrite
         logoDarkUrl == other.logoDarkUrl &&
         iconUrl == other.iconUrl &&
         iconDarkUrl == other.iconDarkUrl &&
-        disableWatermark == other.disableWatermark &&
         themeMode == other.themeMode;
   }
 
@@ -205,8 +207,9 @@ class _$BrandingSettingBrandingSettingWrite
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, orgId.hashCode);
-    _$hash = $jc(_$hash, primaryColor.hashCode);
     _$hash = $jc(_$hash, hideLoginNameSuffix.hashCode);
+    _$hash = $jc(_$hash, disableWatermark.hashCode);
+    _$hash = $jc(_$hash, primaryColor.hashCode);
     _$hash = $jc(_$hash, warnColor.hashCode);
     _$hash = $jc(_$hash, backgroundColor.hashCode);
     _$hash = $jc(_$hash, fontColor.hashCode);
@@ -218,7 +221,6 @@ class _$BrandingSettingBrandingSettingWrite
     _$hash = $jc(_$hash, logoDarkUrl.hashCode);
     _$hash = $jc(_$hash, iconUrl.hashCode);
     _$hash = $jc(_$hash, iconDarkUrl.hashCode);
-    _$hash = $jc(_$hash, disableWatermark.hashCode);
     _$hash = $jc(_$hash, themeMode.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -228,8 +230,9 @@ class _$BrandingSettingBrandingSettingWrite
   String toString() {
     return (newBuiltValueToStringHelper(r'BrandingSettingBrandingSettingWrite')
           ..add('orgId', orgId)
-          ..add('primaryColor', primaryColor)
           ..add('hideLoginNameSuffix', hideLoginNameSuffix)
+          ..add('disableWatermark', disableWatermark)
+          ..add('primaryColor', primaryColor)
           ..add('warnColor', warnColor)
           ..add('backgroundColor', backgroundColor)
           ..add('fontColor', fontColor)
@@ -241,7 +244,6 @@ class _$BrandingSettingBrandingSettingWrite
           ..add('logoDarkUrl', logoDarkUrl)
           ..add('iconUrl', iconUrl)
           ..add('iconDarkUrl', iconDarkUrl)
-          ..add('disableWatermark', disableWatermark)
           ..add('themeMode', themeMode))
         .toString();
   }
@@ -257,14 +259,19 @@ class BrandingSettingBrandingSettingWriteBuilder
   String? get orgId => _$this._orgId;
   set orgId(String? orgId) => _$this._orgId = orgId;
 
-  String? _primaryColor;
-  String? get primaryColor => _$this._primaryColor;
-  set primaryColor(String? primaryColor) => _$this._primaryColor = primaryColor;
-
   bool? _hideLoginNameSuffix;
   bool? get hideLoginNameSuffix => _$this._hideLoginNameSuffix;
   set hideLoginNameSuffix(bool? hideLoginNameSuffix) =>
       _$this._hideLoginNameSuffix = hideLoginNameSuffix;
+
+  bool? _disableWatermark;
+  bool? get disableWatermark => _$this._disableWatermark;
+  set disableWatermark(bool? disableWatermark) =>
+      _$this._disableWatermark = disableWatermark;
+
+  String? _primaryColor;
+  String? get primaryColor => _$this._primaryColor;
+  set primaryColor(String? primaryColor) => _$this._primaryColor = primaryColor;
 
   String? _warnColor;
   String? get warnColor => _$this._warnColor;
@@ -315,11 +322,6 @@ class BrandingSettingBrandingSettingWriteBuilder
   String? get iconDarkUrl => _$this._iconDarkUrl;
   set iconDarkUrl(String? iconDarkUrl) => _$this._iconDarkUrl = iconDarkUrl;
 
-  bool? _disableWatermark;
-  bool? get disableWatermark => _$this._disableWatermark;
-  set disableWatermark(bool? disableWatermark) =>
-      _$this._disableWatermark = disableWatermark;
-
   BrandingSettingBrandingSettingWriteThemeModeEnum? _themeMode;
   BrandingSettingBrandingSettingWriteThemeModeEnum? get themeMode =>
       _$this._themeMode;
@@ -334,8 +336,9 @@ class BrandingSettingBrandingSettingWriteBuilder
     final $v = _$v;
     if ($v != null) {
       _orgId = $v.orgId;
-      _primaryColor = $v.primaryColor;
       _hideLoginNameSuffix = $v.hideLoginNameSuffix;
+      _disableWatermark = $v.disableWatermark;
+      _primaryColor = $v.primaryColor;
       _warnColor = $v.warnColor;
       _backgroundColor = $v.backgroundColor;
       _fontColor = $v.fontColor;
@@ -347,7 +350,6 @@ class BrandingSettingBrandingSettingWriteBuilder
       _logoDarkUrl = $v.logoDarkUrl;
       _iconUrl = $v.iconUrl;
       _iconDarkUrl = $v.iconDarkUrl;
-      _disableWatermark = $v.disableWatermark;
       _themeMode = $v.themeMode;
       _$v = null;
     }
@@ -374,12 +376,16 @@ class BrandingSettingBrandingSettingWriteBuilder
         new _$BrandingSettingBrandingSettingWrite._(
           orgId: BuiltValueNullFieldError.checkNotNull(
               orgId, r'BrandingSettingBrandingSettingWrite', 'orgId'),
-          primaryColor: BuiltValueNullFieldError.checkNotNull(primaryColor,
-              r'BrandingSettingBrandingSettingWrite', 'primaryColor'),
           hideLoginNameSuffix: BuiltValueNullFieldError.checkNotNull(
               hideLoginNameSuffix,
               r'BrandingSettingBrandingSettingWrite',
               'hideLoginNameSuffix'),
+          disableWatermark: BuiltValueNullFieldError.checkNotNull(
+              disableWatermark,
+              r'BrandingSettingBrandingSettingWrite',
+              'disableWatermark'),
+          primaryColor: BuiltValueNullFieldError.checkNotNull(primaryColor,
+              r'BrandingSettingBrandingSettingWrite', 'primaryColor'),
           warnColor: BuiltValueNullFieldError.checkNotNull(
               warnColor, r'BrandingSettingBrandingSettingWrite', 'warnColor'),
           backgroundColor: BuiltValueNullFieldError.checkNotNull(
@@ -404,11 +410,8 @@ class BrandingSettingBrandingSettingWriteBuilder
           logoDarkUrl: logoDarkUrl,
           iconUrl: iconUrl,
           iconDarkUrl: iconDarkUrl,
-          disableWatermark: BuiltValueNullFieldError.checkNotNull(
-              disableWatermark,
-              r'BrandingSettingBrandingSettingWrite',
-              'disableWatermark'),
-          themeMode: themeMode,
+          themeMode: BuiltValueNullFieldError.checkNotNull(
+              themeMode, r'BrandingSettingBrandingSettingWrite', 'themeMode'),
         );
     replace(_$result);
     return _$result;

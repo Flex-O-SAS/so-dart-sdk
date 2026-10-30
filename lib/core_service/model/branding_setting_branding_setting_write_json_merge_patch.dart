@@ -13,8 +13,9 @@ part 'branding_setting_branding_setting_write_json_merge_patch.g.dart';
 ///
 /// Properties:
 /// * [orgId] 
-/// * [primaryColor] 
 /// * [hideLoginNameSuffix] 
+/// * [disableWatermark] 
+/// * [primaryColor] 
 /// * [warnColor] 
 /// * [backgroundColor] 
 /// * [fontColor] 
@@ -26,18 +27,20 @@ part 'branding_setting_branding_setting_write_json_merge_patch.g.dart';
 /// * [logoDarkUrl] 
 /// * [iconUrl] 
 /// * [iconDarkUrl] 
-/// * [disableWatermark] 
 /// * [themeMode] 
 @BuiltValue()
 abstract class BrandingSettingBrandingSettingWriteJsonMergePatch implements Built<BrandingSettingBrandingSettingWriteJsonMergePatch, BrandingSettingBrandingSettingWriteJsonMergePatchBuilder> {
   @BuiltValueField(wireName: r'orgId')
   String? get orgId;
 
-  @BuiltValueField(wireName: r'primaryColor')
-  String? get primaryColor;
-
   @BuiltValueField(wireName: r'hideLoginNameSuffix')
   bool? get hideLoginNameSuffix;
+
+  @BuiltValueField(wireName: r'disableWatermark')
+  bool? get disableWatermark;
+
+  @BuiltValueField(wireName: r'primaryColor')
+  String? get primaryColor;
 
   @BuiltValueField(wireName: r'warnColor')
   String? get warnColor;
@@ -71,9 +74,6 @@ abstract class BrandingSettingBrandingSettingWriteJsonMergePatch implements Buil
 
   @BuiltValueField(wireName: r'iconDarkUrl')
   String? get iconDarkUrl;
-
-  @BuiltValueField(wireName: r'disableWatermark')
-  bool? get disableWatermark;
 
   @BuiltValueField(wireName: r'themeMode')
   BrandingSettingBrandingSettingWriteJsonMergePatchThemeModeEnum? get themeMode;
@@ -110,18 +110,25 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatchSerializer implements P
         specifiedType: const FullType(String),
       );
     }
-    if (object.primaryColor != null) {
-      yield r'primaryColor';
-      yield serializers.serialize(
-        object.primaryColor,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.hideLoginNameSuffix != null) {
       yield r'hideLoginNameSuffix';
       yield serializers.serialize(
         object.hideLoginNameSuffix,
         specifiedType: const FullType(bool),
+      );
+    }
+    if (object.disableWatermark != null) {
+      yield r'disableWatermark';
+      yield serializers.serialize(
+        object.disableWatermark,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.primaryColor != null) {
+      yield r'primaryColor';
+      yield serializers.serialize(
+        object.primaryColor,
+        specifiedType: const FullType(String),
       );
     }
     if (object.warnColor != null) {
@@ -201,13 +208,6 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatchSerializer implements P
         specifiedType: const FullType(String),
       );
     }
-    if (object.disableWatermark != null) {
-      yield r'disableWatermark';
-      yield serializers.serialize(
-        object.disableWatermark,
-        specifiedType: const FullType(bool),
-      );
-    }
     if (object.themeMode != null) {
       yield r'themeMode';
       yield serializers.serialize(
@@ -245,19 +245,26 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatchSerializer implements P
           ) as String;
           result.orgId = valueDes;
           break;
-        case r'primaryColor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.primaryColor = valueDes;
-          break;
         case r'hideLoginNameSuffix':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.hideLoginNameSuffix = valueDes;
+          break;
+        case r'disableWatermark':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.disableWatermark = valueDes;
+          break;
+        case r'primaryColor':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.primaryColor = valueDes;
           break;
         case r'warnColor':
           final valueDes = serializers.deserialize(
@@ -335,13 +342,6 @@ class _$BrandingSettingBrandingSettingWriteJsonMergePatchSerializer implements P
             specifiedType: const FullType(String),
           ) as String;
           result.iconDarkUrl = valueDes;
-          break;
-        case r'disableWatermark':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.disableWatermark = valueDes;
           break;
         case r'themeMode':
           final valueDes = serializers.deserialize(

@@ -108,7 +108,7 @@ class _$BrandingSettingJsonldBrandingSettingRead
   @override
   final String? logoDarkUrl;
   @override
-  final BrandingSettingJsonldBrandingSettingReadThemeModeEnum? themeMode;
+  final BrandingSettingJsonldBrandingSettingReadThemeModeEnum themeMode;
   @override
   final bool disableWatermark;
   @override
@@ -147,7 +147,7 @@ class _$BrandingSettingJsonldBrandingSettingRead
       required this.primaryColor,
       required this.warnColorDark,
       this.logoDarkUrl,
-      this.themeMode,
+      required this.themeMode,
       required this.disableWatermark,
       required this.backgroundColorDark,
       required this.orgId,
@@ -169,6 +169,8 @@ class _$BrandingSettingJsonldBrandingSettingRead
         r'BrandingSettingJsonldBrandingSettingRead', 'primaryColor');
     BuiltValueNullFieldError.checkNotNull(warnColorDark,
         r'BrandingSettingJsonldBrandingSettingRead', 'warnColorDark');
+    BuiltValueNullFieldError.checkNotNull(
+        themeMode, r'BrandingSettingJsonldBrandingSettingRead', 'themeMode');
     BuiltValueNullFieldError.checkNotNull(disableWatermark,
         r'BrandingSettingJsonldBrandingSettingRead', 'disableWatermark');
     BuiltValueNullFieldError.checkNotNull(backgroundColorDark,
@@ -441,7 +443,8 @@ class BrandingSettingJsonldBrandingSettingReadBuilder
             warnColorDark: BuiltValueNullFieldError.checkNotNull(warnColorDark,
                 r'BrandingSettingJsonldBrandingSettingRead', 'warnColorDark'),
             logoDarkUrl: logoDarkUrl,
-            themeMode: themeMode,
+            themeMode: BuiltValueNullFieldError.checkNotNull(themeMode,
+                r'BrandingSettingJsonldBrandingSettingRead', 'themeMode'),
             disableWatermark: BuiltValueNullFieldError.checkNotNull(
                 disableWatermark,
                 r'BrandingSettingJsonldBrandingSettingRead',

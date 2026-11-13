@@ -51,6 +51,7 @@ import 'package:so_dart_sdk/connect/model/update_reservation_access_body.dart';
 import 'package:so_dart_sdk/connect/model/update_user_access_groups_body.dart';
 import 'package:so_dart_sdk/connect/model/user_dto.dart';
 import 'package:so_dart_sdk/connect/model/user_response_dto.dart';
+import 'package:so_dart_sdk/connect/model/v2_devices_unlock_post_request.dart';
 import 'package:so_dart_sdk/connect/model/zone_dto.dart';
 
 part 'serializers.g.dart';
@@ -93,6 +94,7 @@ part 'serializers.g.dart';
   UpdateUserAccessGroupsBody,
   UserDto,
   UserResponseDto,
+  V2DevicesUnlockPostRequest,
   ZoneDto,
 ])
 Serializers serializers = (_$serializers.toBuilder()

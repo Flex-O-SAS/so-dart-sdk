@@ -629,6 +629,7 @@ export 'package:so_dart_sdk/connect/model/update_reservation_access_body.dart';
 export 'package:so_dart_sdk/connect/model/update_user_access_groups_body.dart';
 export 'package:so_dart_sdk/connect/model/user_dto.dart';
 export 'package:so_dart_sdk/connect/model/user_response_dto.dart';
+export 'package:so_dart_sdk/connect/model/v2_devices_unlock_post_request.dart';
 export 'package:so_dart_sdk/connect/model/zone_dto.dart';
 export 'package:so_dart_sdk/core_service/api.dart';
 export 'package:so_dart_sdk/core_service/auth/api_key_auth.dart';

@@ -48,6 +48,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(UpdateUserAccessGroupsBody.serializer)
       ..add(UserDto.serializer)
       ..add(UserResponseDto.serializer)
+      ..add(V2DevicesUnlockPostRequest.serializer)
       ..add(ZoneDto.serializer)
       ..addBuilderFactory(
           const FullType(
